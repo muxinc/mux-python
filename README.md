@@ -8,14 +8,20 @@ Not familiar with Mux? Check out https://mux.com/ for more information.
 Python 2.7 or 3.4+
 
 ## Installation
-### pip install
 
-If the python package is hosted on Github, you can install directly from Github
+### Via pip
 
 ```sh
 pip install git+https://github.com/muxinc/mux-python.git
 ```
-(you may need to run `pip` with root permission: `sudo pip install git+https://github.com/muxinc/mux-python.git`)
+(you may need to run `pip` with root permission)
+
+### Via source
+```sh
+git checkout git@github.com:muxinc/mux-python.git
+cd mux-python
+python setup.py install --user
+```
 
 ## Getting Started
 
@@ -29,23 +35,26 @@ Here's a quick example of using mux-python to list the Video assets stored in yo
 from __future__ import print_function
 import os
 import time
-import mux_video_sdk
-from mux_video_sdk.rest import ApiException
+import mux_python
+from mux_python.rest import ApiException
 from pprint import pprint
 
-# Authentication Setup
-configuration = mux_video_sdk.Configuration()
+# Auth Setup
+configuration = mux_python.Configuration()
 configuration.username = os.environ['MUX_ACCESS_TOKEN_ID']
 configuration.password = os.environ['MUX_ACCESS_TOKEN_SECRET']
 
-# API Client Initialization
-api_instance = mux_video_sdk.AssetsApi(mux_video_sdk.ApiClient(configuration))
+# API Client Init
+assets_api = mux_python.AssetsApi(mux_python.ApiClient(configuration))
+live_streams_api = mux_python.LiveStreamsApi(mux_python.ApiClient(configuration))
+direct_uploads_api = mux_python.DirectUploadsApi(mux_python.ApiClient(configuration))
+# signing_key_api = mux_python.URLSigningKeysApi()
 
 # List Assets
-print("Listing Assets in account: \n")
+print("Listing Assets: \n")
 try:
-    list_assets_success_response = api_instance.list_assets()
-    for asset in list_assets_success_response.data:
+    list_assets_response = assets_api.list_assets()
+    for asset in list_assets_response.data:
         print('Asset ID: ' + asset.id)
         print('Status: ' + asset.status)
         print('Duration: ' + str(asset.duration) + "\n")

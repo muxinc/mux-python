@@ -9,7 +9,7 @@ NOTE: This class is auto generated. Do not edit the class manually.
 
 from setuptools import setup, find_packages  # noqa: H301
 
-NAME = "Mux Python"
+NAME = "mux_python"
 VERSION = "1.0.0"
 # To install the library, run the following
 #
