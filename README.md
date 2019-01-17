@@ -18,7 +18,7 @@ pip install git+https://github.com/muxinc/mux-python.git
 
 ### Via source
 ```sh
-git checkout git@github.com:muxinc/mux-python.git
+git checkout https://github.com/muxinc/mux-python.git
 cd mux-python
 python setup.py install --user
 ```
