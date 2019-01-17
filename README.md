@@ -48,9 +48,6 @@ configuration.password = os.environ['MUX_ACCESS_TOKEN_SECRET']
 
 # API Client Init
 assets_api = mux_python.AssetsApi(mux_python.ApiClient(configuration))
-live_streams_api = mux_python.LiveStreamsApi(mux_python.ApiClient(configuration))
-direct_uploads_api = mux_python.DirectUploadsApi(mux_python.ApiClient(configuration))
-# signing_key_api = mux_python.URLSigningKeysApi()
 
 # List Assets
 print("Listing Assets: \n")
