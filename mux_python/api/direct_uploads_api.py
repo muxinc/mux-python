@@ -16,7 +16,7 @@ import six
 
 from mux_python.api_client import ApiClient
 
-class DirectUploadApi(object):
+class DirectUploadsApi(object):
 
     def __init__(self, api_client=None):
         if api_client is None:

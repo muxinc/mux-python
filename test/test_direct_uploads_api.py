@@ -12,15 +12,15 @@ from __future__ import absolute_import
 import unittest
 
 import mux_python
-from mux_python.api.direct_upload_api import DirectUploadApi  # noqa: E501
+from mux_python.api.direct_uploads_api import DirectUploadsApi  # noqa: E501
 from mux_python.rest import ApiException
 
 
-class TestDirectUploadApi(unittest.TestCase):
-    """DirectUploadApi unit test stubs"""
+class TestDirectUploadsApi(unittest.TestCase):
+    """DirectUploadsApi unit test stubs"""
 
     def setUp(self):
-        self.api = mux_python.api.direct_upload_api.DirectUploadApi()  # noqa: E501
+        self.api = mux_python.api.direct_uploads_api.DirectUploadsApi()  # noqa: E501
 
     def tearDown(self):
         pass
