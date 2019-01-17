@@ -29,7 +29,9 @@ python setup.py install --user
 TODO: Document this.
 
 ### Example Usage
-Here's a quick example of using mux-python to list the Video assets stored in your Mux account:
+Here's a quick example of using mux-python to list the Video assets stored in your Mux account.
+
+[For more examples, check out python-demo.py.](python-demo.py)
 
 ```python
 from __future__ import print_function
