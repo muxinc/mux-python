@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 
 # **create_live_stream**
-> LiveStreamResponse create_live_stream(limit=limit, page=page, create_live_stream_request=create_live_stream_request)
+> LiveStreamResponse create_live_stream(create_live_stream_request=create_live_stream_request)
 
 Create a live stream
 
@@ -35,13 +35,11 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = mux_python.LiveStreamsApi(mux_python.ApiClient(configuration))
-limit = 25 # int | Number of items to include in the response (optional) (default to 25)
-page = 1 # int | Offset by this many pages, of the size of `limit` (optional) (default to 1)
 create_live_stream_request = mux_python.CreateLiveStreamRequest() # CreateLiveStreamRequest |  (optional)
 
 try:
     # Create a live stream
-    api_response = api_instance.create_live_stream(limit=limit, page=page, create_live_stream_request=create_live_stream_request)
+    api_response = api_instance.create_live_stream(create_live_stream_request=create_live_stream_request)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling LiveStreamsApi->create_live_stream: %s\n" % e)
@@ -51,8 +49,6 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **limit** | **int**| Number of items to include in the response | [optional] [default to 25]
- **page** | **int**| Offset by this many pages, of the size of &#x60;limit&#x60; | [optional] [default to 1]
  **create_live_stream_request** | [**CreateLiveStreamRequest**](CreateLiveStreamRequest.md)|  | [optional] 
 
 ### Return type

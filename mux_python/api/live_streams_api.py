@@ -32,8 +32,6 @@ class LiveStreamsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param int limit: Number of items to include in the response
-        :param int page: Offset by this many pages, of the size of `limit`
         :param CreateLiveStreamRequest create_live_stream_request:
         :return: LiveStreamResponse
                  If the method is called asynchronously,
@@ -55,8 +53,6 @@ class LiveStreamsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param int limit: Number of items to include in the response
-        :param int page: Offset by this many pages, of the size of `limit`
         :param CreateLiveStreamRequest create_live_stream_request:
         :return: LiveStreamResponse
                  If the method is called asynchronously,
@@ -65,7 +61,7 @@ class LiveStreamsApi(object):
 
         local_var_params = locals()
 
-        all_params = ['limit', 'page', 'create_live_stream_request']  # noqa: E501
+        all_params = ['create_live_stream_request']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -85,10 +81,6 @@ class LiveStreamsApi(object):
         path_params = {}
 
         query_params = []
-        if 'limit' in local_var_params:
-            query_params.append(('limit', local_var_params['limit']))  # noqa: E501
-        if 'page' in local_var_params:
-            query_params.append(('page', local_var_params['page']))  # noqa: E501
 
         header_params = {}
 

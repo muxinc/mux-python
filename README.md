@@ -26,7 +26,9 @@ python setup.py install --user
 ## Getting Started
 
 ### Authentication
-TODO: Document this.
+To use the Mux API, you'll need an access token and a secret. [Details on obtaining these can be found here in the Mux documentation.](https://docs.mux.com/docs#section-1-get-an-api-access-token)
+
+Its up to you to manage your token and secret. In our examples, we read them from `MUX_ACCESS_TOKEN_ID` and `MUX_ACCESS_TOKEN_SECRET` in your environment.
 
 ### Example Usage
 Below is a quick example of using mux-python to list the Video assets stored in your Mux account.
@@ -34,6 +36,7 @@ Below is a quick example of using mux-python to list the Video assets stored in 
 Be sure to also checkout the [exmples directory](examples/):
 * [List Assets, Live Streams, Signing Keys, and Uploads.](examples/list-everything.py)
 * [Create an Asset, wait for it to become availiable, and print its playback URL](examples/ingest.py)
+* [Create a new Live Stream and retrieve its Stream key.](examples/create-live-stream.py)
 
 ```python
 import os
