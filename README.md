@@ -59,7 +59,7 @@ except ApiException as e:
 ```
 
 ## Issues
-If you run into problems, please raise a GitHub issue, filling in the issue template. We'll take a look as soon as possible.
+If you run into problems, [please raise a GitHub issue,](https://github.com/muxinc/mux-python/issues) filling in the issue template. We'll take a look as soon as possible.
 
 ## Contributing
 Please do not submit PRs against this package. It is generated from our OpenAPI definitions - [Please open an issue instead!](https://github.com/muxinc/mux-python/issues)
