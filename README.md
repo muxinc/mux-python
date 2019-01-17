@@ -31,9 +31,9 @@ TODO: Document this.
 ### Example Usage
 Below is a quick example of using mux-python to list the Video assets stored in your Mux account.
 
-There's more exmples:
-* [List Assets, Live Streams, Signing Keys, and Uploads.](python-demo.py)
-* [Create an Asset, wait for it to become availiable, and print its playback URL](create-asset.py)
+Be sure to also checkout the [exmples directory](examples/):
+* [List Assets, Live Streams, Signing Keys, and Uploads.](examples/list-everything.py)
+* [Create an Asset, wait for it to become availiable, and print its playback URL](examples/ingest.py)
 
 ```python
 import os
