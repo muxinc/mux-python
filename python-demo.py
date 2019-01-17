@@ -1,20 +1,17 @@
-from __future__ import print_function
 import os
-import time
 import mux_python
 from mux_python.rest import ApiException
-from pprint import pprint
 
 # To install package locally (see python-sdk/README.md):
 # cd python-sdk
 # python setup.py install --user
 
-# Auth Setup
+# Authentication Setup
 configuration = mux_python.Configuration()
 configuration.username = os.environ['MUX_ACCESS_TOKEN_ID']
 configuration.password = os.environ['MUX_ACCESS_TOKEN_SECRET']
 
-# API Client Init
+# API Client Initialization
 assets_api = mux_python.AssetsApi(mux_python.ApiClient(configuration))
 live_streams_api = mux_python.LiveStreamsApi(mux_python.ApiClient(configuration))
 direct_uploads_api = mux_python.DirectUploadsApi(mux_python.ApiClient(configuration))

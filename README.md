@@ -34,19 +34,16 @@ Here's a quick example of using mux-python to list the Video assets stored in yo
 [For more examples, check out python-demo.py.](python-demo.py)
 
 ```python
-from __future__ import print_function
 import os
-import time
 import mux_python
 from mux_python.rest import ApiException
-from pprint import pprint
 
-# Auth Setup
+# Authentication Setup
 configuration = mux_python.Configuration()
 configuration.username = os.environ['MUX_ACCESS_TOKEN_ID']
 configuration.password = os.environ['MUX_ACCESS_TOKEN_SECRET']
 
-# API Client Init
+# API Client Initialization
 assets_api = mux_python.AssetsApi(mux_python.ApiClient(configuration))
 
 # List Assets
@@ -65,7 +62,7 @@ except ApiException as e:
 If you run into problems, please raise a GitHub issue, filling in the issue template. We'll take a look as soon as possible.
 
 ## Contributing
-Please do not submit PRs against this package. It is generated from our OpenAPI definitions - [Please open an issue instead!](##Issues)
+Please do not submit PRs against this package. It is generated from our OpenAPI definitions - [Please open an issue instead!](https://github.com/muxinc/mux-python/issues)
 
 ## License
-[MIT License.](LICENSE.md) Copyright 2019 Mux, Inc.
+[MIT License.](LICENSE) Copyright 2019 Mux, Inc.
