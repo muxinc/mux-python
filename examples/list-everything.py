@@ -2,10 +2,6 @@ import os
 import mux_python
 from mux_python.rest import ApiException
 
-# To install package locally (see python-sdk/README.md):
-# cd python-sdk
-# python setup.py install --user
-
 # Authentication Setup
 configuration = mux_python.Configuration()
 configuration.username = os.environ['MUX_ACCESS_TOKEN_ID']
