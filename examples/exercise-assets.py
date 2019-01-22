@@ -18,7 +18,7 @@ from mux_python.rest import ApiException
 #   update-asset-mp4-support
 
 def print_debug(log_line):
-    if sys.argv[1] == "--debug":
+    if len(sys.argv) == 2 and sys.argv[1] == "--debug":
         print log_line
 
 # Authentication Setup
