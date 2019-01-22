@@ -11,7 +11,6 @@ Method | HTTP request | Description
 [**get_asset**](AssetsApi.md#get_asset) | **GET** /video/v1/assets/{ASSET_ID} | Retrieve an asset
 [**get_asset_input_info**](AssetsApi.md#get_asset_input_info) | **GET** /video/v1/assets/{ASSET_ID}/input-info | Retrieve asset input info
 [**get_asset_playback_id**](AssetsApi.md#get_asset_playback_id) | **GET** /video/v1/assets/{ASSET_ID}/playback-ids/{PLAYBACK_ID} | Retrieve a playback ID
-[**list_asset_playback_ids**](AssetsApi.md#list_asset_playback_ids) | **GET** /video/v1/assets/{ASSET_ID}/playback-ids | List an asset&#39;s playback IDs
 [**list_assets**](AssetsApi.md#list_assets) | **GET** /video/v1/assets | List assets
 [**update_asset_mp4_support**](AssetsApi.md#update_asset_mp4_support) | **PUT** /video/v1/assets/{ASSET_ID}/mp4-support | Update MP4 support
 
@@ -378,60 +377,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**GetAssetPlaybackIDResponse**](GetAssetPlaybackIDResponse.md)
-
-### Authorization
-
-[accessToken](../README.md#accessToken)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **list_asset_playback_ids**
-> ListAssetPlaybackIDsResponse list_asset_playback_ids(asset_id)
-
-List an asset's playback IDs
-
-Gets the Playback IDs associated with the asset 
-
-### Example
-
-* Basic Authentication (accessToken): 
-```python
-from __future__ import print_function
-import time
-import mux_python
-from mux_python.rest import ApiException
-from pprint import pprint
-configuration = mux_python.Configuration()
-# Configure HTTP basic authorization: accessToken
-configuration.username = 'YOUR_USERNAME'
-configuration.password = 'YOUR_PASSWORD'
-
-# create an instance of the API class
-api_instance = mux_python.AssetsApi(mux_python.ApiClient(configuration))
-asset_id = 'asset_id_example' # str | The asset ID.
-
-try:
-    # List an asset's playback IDs
-    api_response = api_instance.list_asset_playback_ids(asset_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AssetsApi->list_asset_playback_ids: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **asset_id** | **str**| The asset ID. | 
-
-### Return type
-
-[**ListAssetPlaybackIDsResponse**](ListAssetPlaybackIDsResponse.md)
 
 ### Authorization
 
