@@ -104,7 +104,7 @@ class DirectUploadsApi(object):
         auth_settings = ['accessToken']  # noqa: E501
 
         return self.api_client.call_api(
-            '/video/v1/uploads/{id}/cancel', 'PUT',
+            '/video/v1/uploads/{UPLOAD_ID}/cancel', 'PUT',
             path_params,
             query_params,
             header_params,
@@ -296,7 +296,7 @@ class DirectUploadsApi(object):
         auth_settings = ['accessToken']  # noqa: E501
 
         return self.api_client.call_api(
-            '/video/v1/uploads/{id}', 'GET',
+            '/video/v1/uploads/{UPLOAD_ID}', 'GET',
             path_params,
             query_params,
             header_params,

@@ -35,7 +35,6 @@ from mux_python.models.list_signing_keys_response import ListSigningKeysResponse
 from mux_python.models.list_uploads_response import ListUploadsResponse
 from mux_python.models.live_stream import LiveStream
 from mux_python.models.live_stream_response import LiveStreamResponse
-from mux_python.models.new_asset_settings import NewAssetSettings
 from mux_python.models.playback_id import PlaybackID
 from mux_python.models.playback_policy import PlaybackPolicy
 from mux_python.models.signal_live_stream_complete_response import SignalLiveStreamCompleteResponse
