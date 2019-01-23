@@ -51,7 +51,9 @@ print "get-url-signing-key OK ✅"
 # ========== delete-url-signing-key ==========
 keys_api.delete_url_signing_key(create_key_response.data.id)
 try:
-    deleted_key_response = keys_api.get_url_signing_key(create_key_response.data.id)
+    keys_api.get_url_signing_key(create_key_response.data.id)
+    print "Should have 404'd when getting deleted signing key ❌ "
+    sys.exit(1)
 except ApiException as e:
     assert e != None
     print "delete-url-signing-key OK ✅"

@@ -7,14 +7,14 @@ import mux_python
 from mux_python.rest import ApiException
 
 # Exercises all live stream operations:
-# DONE create-live-stream
-# DONE list-live-streams
-# DONE get-live-stream
-# DONE delete-live-stream
-# DONE create-live-stream-playback-id
-# DONE delete-live-stream-playback-id
-# DONE reset-stream-key
-# signal-live-stream-complete
+#   create-live-stream
+#   list-live-streams
+#   get-live-stream
+#   delete-live-stream
+#   create-live-stream-playback-id
+#   delete-live-stream-playback-id
+#   reset-stream-key
+#   signal-live-stream-complete
 
 def print_debug(log_line):
     if len(sys.argv) == 2 and sys.argv[1] == "--debug":
