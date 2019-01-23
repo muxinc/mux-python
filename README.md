@@ -1,6 +1,8 @@
 # Mux Python
 Official Mux API wrapper for python projects 🐍.
 
+Mux Video is an API-first platform, powered by data and designed by video experts to make beautiful video possible for every development team.
+
 Not familiar with Mux? Check out https://mux.com/ for more information.
 
 ## Requirements.
@@ -28,7 +30,7 @@ python setup.py install --user
 ### Authentication
 To use the Mux API, you'll need an access token and a secret. [Details on obtaining these can be found here in the Mux documentation.](https://docs.mux.com/docs#section-1-get-an-api-access-token)
 
-Its up to you to manage your token and secret. In our examples, we read them from `MUX_ACCESS_TOKEN_ID` and `MUX_ACCESS_TOKEN_SECRET` in your environment.
+Its up to you to manage your token and secret. In our examples, we read them from `MUX_TOKEN_ID` and `MUX_TOKEN_SECRET` in your environment.
 
 ### Example Usage
 Below is a quick example of using mux-python to list the Video assets stored in your Mux account.
@@ -51,8 +53,8 @@ from mux_python.rest import ApiException
 
 # Authentication Setup
 configuration = mux_python.Configuration()
-configuration.username = os.environ['MUX_ACCESS_TOKEN_ID']
-configuration.password = os.environ['MUX_ACCESS_TOKEN_SECRET']
+configuration.username = os.environ['MUX_TOKEN_ID']
+configuration.password = os.environ['MUX_TOKEN_SECRET']
 
 # API Client Initialization
 assets_api = mux_python.AssetsApi(mux_python.ApiClient(configuration))

@@ -18,8 +18,8 @@ def print_debug(log_line):
 
 # Authentication Setup
 configuration = mux_python.Configuration()
-configuration.username = os.environ['MUX_ACCESS_TOKEN_ID']
-configuration.password = os.environ['MUX_ACCESS_TOKEN_SECRET']
+configuration.username = os.environ['MUX_TOKEN_ID']
+configuration.password = os.environ['MUX_TOKEN_SECRET']
 
 # API Client Initialization
 uploads_api = mux_python.DirectUploadsApi(mux_python.ApiClient(configuration))
