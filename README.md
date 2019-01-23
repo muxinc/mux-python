@@ -38,6 +38,12 @@ Be sure to also checkout the [exmples directory](examples/):
 * [Create an Asset, wait for it to become availiable, and print its playback URL](examples/ingest.py)
 * [Create a new Live Stream and retrieve its Stream key.](examples/create-live-stream.py)
 
+There's also example usage of every API call (also used for testing):
+* [Assets API](examples/exercise-assets.py)
+* [Live Streams API](examples/exercise-live-streams.py)
+* [Signing Keys API](examples/exercise-signing-keys.py)
+* [Uploads API](examples/exercise-uploads.py)
+
 ```python
 import os
 import mux_python
