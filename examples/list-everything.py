@@ -4,8 +4,8 @@ from mux_python.rest import ApiException
 
 # Authentication Setup
 configuration = mux_python.Configuration()
-configuration.username = os.environ['MUX_ACCESS_TOKEN_ID']
-configuration.password = os.environ['MUX_ACCESS_TOKEN_SECRET']
+configuration.username = os.environ['MUX_TOKEN_ID']
+configuration.password = os.environ['MUX_TOKEN_SECRET']
 
 # API Client Initialization
 assets_api = mux_python.AssetsApi(mux_python.ApiClient(configuration))
