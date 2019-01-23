@@ -104,7 +104,9 @@ print "delete-asset-playback-id OK ✅"
 assets_api.delete_asset(create_asset_response.data.id)
 print_debug("Deleted Asset (void response) ")
 try:
-    deleted_asset_response = assets_api.get_asset(create_asset_response.data.id)
+    assets_api.get_asset(create_asset_response.data.id)
+    print "Should have 404'd when getting deleted asset ❌ "
+    sys.exit(1)
 except ApiException as e:
     assert e != None
     print "delete-asset OK ✅"
