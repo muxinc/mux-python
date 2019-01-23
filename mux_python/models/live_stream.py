@@ -29,7 +29,7 @@ class LiveStream(object):
         'recent_asset_ids': 'list[str]',
         'status': 'str',
         'playback_ids': 'list[PlaybackID]',
-        'new_asset_settings': 'NewAssetSettings',
+        'new_asset_settings': 'Asset',
         'passthrough': 'str',
         'reconnect_window': 'float'
     }
@@ -236,7 +236,7 @@ class LiveStream(object):
 
 
         :return: The new_asset_settings of this LiveStream.  # noqa: E501
-        :rtype: NewAssetSettings
+        :rtype: Asset
         """
         return self._new_asset_settings
 
@@ -246,7 +246,7 @@ class LiveStream(object):
 
 
         :param new_asset_settings: The new_asset_settings of this LiveStream.  # noqa: E501
-        :type: NewAssetSettings
+        :type: Asset
         """
 
         self._new_asset_settings = new_asset_settings

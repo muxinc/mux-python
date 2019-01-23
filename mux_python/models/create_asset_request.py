@@ -23,7 +23,7 @@ class CreateAssetRequest(object):
     """
     openapi_types = {
         'input': 'InputSettings',
-        'playback_policies': 'list[PlaybackPolicy]',
+        'playback_policy': 'list[PlaybackPolicy]',
         'demo': 'bool',
         'per_title_encode': 'bool',
         'passthrough': 'str',
@@ -32,18 +32,18 @@ class CreateAssetRequest(object):
 
     attribute_map = {
         'input': 'input',
-        'playback_policies': 'playback_policies',
+        'playback_policy': 'playback_policy',
         'demo': 'demo',
         'per_title_encode': 'per_title_encode',
         'passthrough': 'passthrough',
         'mp4_support': 'mp4_support'
     }
 
-    def __init__(self, input=None, playback_policies=None, demo=None, per_title_encode=None, passthrough=None, mp4_support=None):  # noqa: E501
+    def __init__(self, input=None, playback_policy=None, demo=None, per_title_encode=None, passthrough=None, mp4_support=None):  # noqa: E501
         """CreateAssetRequest - a model defined in OpenAPI"""  # noqa: E501
 
         self._input = None
-        self._playback_policies = None
+        self._playback_policy = None
         self._demo = None
         self._per_title_encode = None
         self._passthrough = None
@@ -52,8 +52,8 @@ class CreateAssetRequest(object):
 
         if input is not None:
             self.input = input
-        if playback_policies is not None:
-            self.playback_policies = playback_policies
+        if playback_policy is not None:
+            self.playback_policy = playback_policy
         if demo is not None:
             self.demo = demo
         if per_title_encode is not None:
@@ -85,25 +85,25 @@ class CreateAssetRequest(object):
         self._input = input
 
     @property
-    def playback_policies(self):
-        """Gets the playback_policies of this CreateAssetRequest.  # noqa: E501
+    def playback_policy(self):
+        """Gets the playback_policy of this CreateAssetRequest.  # noqa: E501
 
 
-        :return: The playback_policies of this CreateAssetRequest.  # noqa: E501
+        :return: The playback_policy of this CreateAssetRequest.  # noqa: E501
         :rtype: list[PlaybackPolicy]
         """
-        return self._playback_policies
+        return self._playback_policy
 
-    @playback_policies.setter
-    def playback_policies(self, playback_policies):
-        """Sets the playback_policies of this CreateAssetRequest.
+    @playback_policy.setter
+    def playback_policy(self, playback_policy):
+        """Sets the playback_policy of this CreateAssetRequest.
 
 
-        :param playback_policies: The playback_policies of this CreateAssetRequest.  # noqa: E501
+        :param playback_policy: The playback_policy of this CreateAssetRequest.  # noqa: E501
         :type: list[PlaybackPolicy]
         """
 
-        self._playback_policies = playback_policies
+        self._playback_policy = playback_policy
 
     @property
     def demo(self):

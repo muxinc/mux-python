@@ -22,47 +22,47 @@ class CreateLiveStreamRequest(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'policy': 'PlaybackPolicy',
-        'new_asset_settings': 'NewAssetSettings'
+        'playback_policy': 'list[PlaybackPolicy]',
+        'new_asset_settings': 'CreateAssetRequest'
     }
 
     attribute_map = {
-        'policy': 'policy',
+        'playback_policy': 'playback_policy',
         'new_asset_settings': 'new_asset_settings'
     }
 
-    def __init__(self, policy=None, new_asset_settings=None):  # noqa: E501
+    def __init__(self, playback_policy=None, new_asset_settings=None):  # noqa: E501
         """CreateLiveStreamRequest - a model defined in OpenAPI"""  # noqa: E501
 
-        self._policy = None
+        self._playback_policy = None
         self._new_asset_settings = None
         self.discriminator = None
 
-        if policy is not None:
-            self.policy = policy
+        if playback_policy is not None:
+            self.playback_policy = playback_policy
         if new_asset_settings is not None:
             self.new_asset_settings = new_asset_settings
 
     @property
-    def policy(self):
-        """Gets the policy of this CreateLiveStreamRequest.  # noqa: E501
+    def playback_policy(self):
+        """Gets the playback_policy of this CreateLiveStreamRequest.  # noqa: E501
 
 
-        :return: The policy of this CreateLiveStreamRequest.  # noqa: E501
-        :rtype: PlaybackPolicy
+        :return: The playback_policy of this CreateLiveStreamRequest.  # noqa: E501
+        :rtype: list[PlaybackPolicy]
         """
-        return self._policy
+        return self._playback_policy
 
-    @policy.setter
-    def policy(self, policy):
-        """Sets the policy of this CreateLiveStreamRequest.
+    @playback_policy.setter
+    def playback_policy(self, playback_policy):
+        """Sets the playback_policy of this CreateLiveStreamRequest.
 
 
-        :param policy: The policy of this CreateLiveStreamRequest.  # noqa: E501
-        :type: PlaybackPolicy
+        :param playback_policy: The playback_policy of this CreateLiveStreamRequest.  # noqa: E501
+        :type: list[PlaybackPolicy]
         """
 
-        self._policy = policy
+        self._playback_policy = playback_policy
 
     @property
     def new_asset_settings(self):
@@ -70,7 +70,7 @@ class CreateLiveStreamRequest(object):
 
 
         :return: The new_asset_settings of this CreateLiveStreamRequest.  # noqa: E501
-        :rtype: NewAssetSettings
+        :rtype: CreateAssetRequest
         """
         return self._new_asset_settings
 
@@ -80,7 +80,7 @@ class CreateLiveStreamRequest(object):
 
 
         :param new_asset_settings: The new_asset_settings of this CreateLiveStreamRequest.  # noqa: E501
-        :type: NewAssetSettings
+        :type: CreateAssetRequest
         """
 
         self._new_asset_settings = new_asset_settings

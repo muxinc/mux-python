@@ -204,7 +204,7 @@ class LiveStreamsApi(object):
         auth_settings = ['accessToken']  # noqa: E501
 
         return self.api_client.call_api(
-            '/video/v1/live-streams/{LIVE_KEY_ID}/playback-ids', 'POST',
+            '/video/v1/live-streams/{LIVE_STREAM_ID}/playback-ids', 'POST',
             path_params,
             query_params,
             header_params,
@@ -392,7 +392,7 @@ class LiveStreamsApi(object):
         auth_settings = ['accessToken']  # noqa: E501
 
         return self.api_client.call_api(
-            '/video/v1/live-streams/{LIVE_KEY_ID}/playback-ids/{PLAYBACK_ID}', 'DELETE',
+            '/video/v1/live-streams/{LIVE_STREAM_ID}/playback-ids/{PLAYBACK_ID}', 'DELETE',
             path_params,
             query_params,
             header_params,

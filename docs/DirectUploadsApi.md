@@ -4,9 +4,9 @@ All URIs are relative to *https://api.mux.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**cancel_direct_upload**](DirectUploadsApi.md#cancel_direct_upload) | **PUT** /video/v1/uploads/{id}/cancel | Cancel a direct upload
+[**cancel_direct_upload**](DirectUploadsApi.md#cancel_direct_upload) | **PUT** /video/v1/uploads/{UPLOAD_ID}/cancel | Cancel a direct upload
 [**create_direct_upload**](DirectUploadsApi.md#create_direct_upload) | **POST** /video/v1/uploads | Create a new direct upload URL
-[**get_direct_upload**](DirectUploadsApi.md#get_direct_upload) | **GET** /video/v1/uploads/{id} | Retrieve a single direct upload&#39;s info
+[**get_direct_upload**](DirectUploadsApi.md#get_direct_upload) | **GET** /video/v1/uploads/{UPLOAD_ID} | Retrieve a single direct upload&#39;s info
 [**list_direct_uploads**](DirectUploadsApi.md#list_direct_uploads) | **GET** /video/v1/uploads | List direct uploads
 
 

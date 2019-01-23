@@ -22,15 +22,17 @@ class Upload(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'id': 'str',
         'timeout': 'int',
         'status': 'str',
-        'new_asset_settings': 'CreateAssetRequest',
+        'new_asset_settings': 'Asset',
         'asset_id': 'str',
         'error': 'UploadError',
         'cors_origin': 'str'
     }
 
     attribute_map = {
+        'id': 'id',
         'timeout': 'timeout',
         'status': 'status',
         'new_asset_settings': 'new_asset_settings',
@@ -39,9 +41,10 @@ class Upload(object):
         'cors_origin': 'cors_origin'
     }
 
-    def __init__(self, timeout=3600, status=None, new_asset_settings=None, asset_id=None, error=None, cors_origin=None):  # noqa: E501
+    def __init__(self, id=None, timeout=3600, status=None, new_asset_settings=None, asset_id=None, error=None, cors_origin=None):  # noqa: E501
         """Upload - a model defined in OpenAPI"""  # noqa: E501
 
+        self._id = None
         self._timeout = None
         self._status = None
         self._new_asset_settings = None
@@ -50,6 +53,8 @@ class Upload(object):
         self._cors_origin = None
         self.discriminator = None
 
+        if id is not None:
+            self.id = id
         if timeout is not None:
             self.timeout = timeout
         if status is not None:
@@ -62,6 +67,27 @@ class Upload(object):
             self.error = error
         if cors_origin is not None:
             self.cors_origin = cors_origin
+
+    @property
+    def id(self):
+        """Gets the id of this Upload.  # noqa: E501
+
+
+        :return: The id of this Upload.  # noqa: E501
+        :rtype: str
+        """
+        return self._id
+
+    @id.setter
+    def id(self, id):
+        """Sets the id of this Upload.
+
+
+        :param id: The id of this Upload.  # noqa: E501
+        :type: str
+        """
+
+        self._id = id
 
     @property
     def timeout(self):
@@ -123,7 +149,7 @@ class Upload(object):
 
 
         :return: The new_asset_settings of this Upload.  # noqa: E501
-        :rtype: CreateAssetRequest
+        :rtype: Asset
         """
         return self._new_asset_settings
 
@@ -133,7 +159,7 @@ class Upload(object):
 
 
         :param new_asset_settings: The new_asset_settings of this Upload.  # noqa: E501
-        :type: CreateAssetRequest
+        :type: Asset
         """
 
         self._new_asset_settings = new_asset_settings
