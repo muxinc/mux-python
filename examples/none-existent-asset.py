@@ -16,3 +16,5 @@ try:
     assets_api.get_asset("HELLO")
 except NotFoundException as e:
     print "Cound not find asset!"
+    print "Error Type: " + e.error_type
+    print "Error Messages: " + ", ".join(e.error_messages)

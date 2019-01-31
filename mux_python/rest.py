@@ -311,11 +311,21 @@ class ApiException(Exception):
             self.reason = http_resp.reason
             self.body = http_resp.data
             self.headers = http_resp.getheaders()
+            # Extract the error details from the response if we can
+            try:
+                error_response = json.loads(http_resp.data)
+                self.error_type = error_response['error']['type']
+                self.error_messages = error_response['error']['messages']
+            except Exception as e:
+                self.error_type = None
+                self.error_messages = None
         else:
             self.status = status
             self.reason = reason
             self.body = None
             self.headers = None
+            self.error_type = None
+            self.error_messages = None
 
     def __str__(self):
         """Custom error messages for exception"""

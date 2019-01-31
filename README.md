@@ -73,7 +73,7 @@ except ApiException as e:
 
 ## Exceptions & Error Handling
 
-All exceptions inherit from `ApiException`, you can catch it as in the example above, or you can catch one of the more specific exceptions below:
+All exceptions inherit from `ApiException`, you can catch it as in the example above, or you can catch one of the more specific exceptions below. You can check the fields `error_type` and error_messages` in all Exceptions to see what error the Mux API reported.
 
 ### NotFoundException
 
