@@ -75,7 +75,7 @@ assert create_asset_playback_id_response != None
 assert create_asset_playback_id_response.data != None
 print "create-asset-playback-id OK ✅"
 
-# ========== get-asset-playback-id ==========d
+# ========== get-asset-playback-id ==========
 playback_id_response = assets_api.get_asset_playback_id(asset_id=create_asset_response.data.id, playback_id=create_asset_playback_id_response.data.id)
 print_debug("Got Playback ID: " + str(playback_id_response))
 assert playback_id_response != None

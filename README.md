@@ -71,6 +71,26 @@ except ApiException as e:
     print("Exception when calling AssetsApi->list_assets: %s\n" % e)
 ```
 
+## Error Handling
+
+All exceptions inherit from `ApiException`, you can catch it as in the example above, or you can catch one of the more specific exceptions below:
+
+### NotFoundException
+
+`NotFoundException` is thrown when a resource is not found. This is useful when trying to get an entity by its ID, for example `get_asset("some-id-here")` in the AssetsApi.
+
+### UnauthorizedException
+
+`UnauthorizedException` is thrown when Mux cannot authenticate your request. [You should check you have configured your credentials correctly.](TODO)
+
+### ServiceException
+
+`ServiceException` is thrown when Mux returns a HTTP 5XX Status Code. If you encounter this reproducibly, please get in touch with [support@mux.com](TODO).
+
+## Documentation
+
+[Be sure to check out the documentation in the `docs` directory.](docs/)
+
 ## Issues
 If you run into problems, [please raise a GitHub issue,](https://github.com/muxinc/mux-python/issues) filling in the issue template. We'll take a look as soon as possible.
 
