@@ -27,6 +27,14 @@ python setup.py install --user
 
 ## Getting Started
 
+### Overview
+
+Mux Python is a lightweight wrapper around the Mux REST API and reflect them accurately. This has a few consequences you should watch out for:
+
+1) For almost all API responses, the object you're looking for will be in the `data` field on the API response object, as in the example below. This is because our APIs follow the [JSON:API](https://jsonapi.org/) standard and we've decided not to hide that in this library.
+
+2) We don't use a lot of object orientation. For example API calls that happen on a single asset don't exist in the asset class, but are API calls in the AssetsApi which require an asset ID.
+
 ### Authentication
 To use the Mux API, you'll need an access token and a secret. [Details on obtaining these can be found here in the Mux documentation.](https://docs.mux.com/docs#section-1-get-an-api-access-token)
 
