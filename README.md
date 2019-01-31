@@ -71,7 +71,7 @@ except ApiException as e:
     print("Exception when calling AssetsApi->list_assets: %s\n" % e)
 ```
 
-## Error Handling
+## Exceptions & Error Handling
 
 All exceptions inherit from `ApiException`, you can catch it as in the example above, or you can catch one of the more specific exceptions below:
 
@@ -81,11 +81,11 @@ All exceptions inherit from `ApiException`, you can catch it as in the example a
 
 ### UnauthorizedException
 
-`UnauthorizedException` is thrown when Mux cannot authenticate your request. [You should check you have configured your credentials correctly.](TODO)
+`UnauthorizedException` is thrown when Mux cannot authenticate your request. [You should check you have configured your credentials correctly.](#authentication)
 
 ### ServiceException
 
-`ServiceException` is thrown when Mux returns a HTTP 5XX Status Code. If you encounter this reproducibly, please get in touch with [support@mux.com](TODO).
+`ServiceException` is thrown when Mux returns a HTTP 5XX Status Code. If you encounter this reproducibly, please get in touch with [support@mux.com](mailto:support@mux.com).
 
 ## Documentation
 
