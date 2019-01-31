@@ -4,7 +4,7 @@ import os
 import sys
 import time
 import mux_python
-from mux_python.rest import ApiException
+from mux_python.rest import NotFoundException
 
 # Exercises all live stream operations:
 #   create-live-stream
@@ -93,6 +93,6 @@ try:
     deleted_live_stream_response = live_api.get_live_stream(create_live_stream_response.data.id)
     print "Should have 404'd when getting deleted live stream ❌ "
     sys.exit(1)
-except ApiException as e:
+except NotFoundException as e:
     assert e != None
     print "delete-live-stream OK ✅"

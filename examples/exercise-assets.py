@@ -4,7 +4,7 @@ import os
 import sys
 import time
 import mux_python
-from mux_python.rest import ApiException
+from mux_python.rest import NotFoundException
 
 # Exercises all asset operations:
 #   get-asset
@@ -107,6 +107,6 @@ try:
     assets_api.get_asset(create_asset_response.data.id)
     print "Should have 404'd when getting deleted asset ❌ "
     sys.exit(1)
-except ApiException as e:
+except NotFoundException as e:
     assert e != None
     print "delete-asset OK ✅"

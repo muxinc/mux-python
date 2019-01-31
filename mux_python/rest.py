@@ -220,6 +220,18 @@ class RESTClientObject(object):
             # log response body
             logger.debug("response body: %s", r.data)
 
+        if r.status == 401:
+            raise UnauthorizedException(http_resp=r)
+
+        if r.status == 403:
+            raise ForbiddenException(http_resp=r)
+
+        if r.status == 404:
+            raise NotFoundException(http_resp=r)
+
+        if 500 <= r.status <= 599:
+            raise ServiceException(http_resp=r)
+
         if not 200 <= r.status <= 299:
             raise ApiException(http_resp=r)
 
@@ -317,3 +329,23 @@ class ApiException(Exception):
             error_message += "HTTP response body: {0}\n".format(self.body)
 
         return error_message
+
+class NotFoundException(ApiException):
+
+    def __init__(self, status=None, reason=None, http_resp=None):
+        ApiException.__init__(self, status, reason, http_resp)
+
+class UnauthorizedException(ApiException):
+
+    def __init__(self, status=None, reason=None, http_resp=None):
+        ApiException.__init__(self, status, reason, http_resp)
+
+class ForbiddenException(ApiException):
+
+    def __init__(self, status=None, reason=None, http_resp=None):
+        ApiException.__init__(self, status, reason, http_resp)
+
+class ServiceException(ApiException):
+
+    def __init__(self, status=None, reason=None, http_resp=None):
+        ApiException.__init__(self, status, reason, http_resp)
