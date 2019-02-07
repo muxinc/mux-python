@@ -29,7 +29,7 @@ python setup.py install --user
 
 ### Overview
 
-Mux Python is a lightweight wrapper around the Mux REST API and reflect them accurately. This has a few consequences you should watch out for:
+Mux Python is a code generated lightweight wrapper around the Mux REST API and reflects them accurately. This has a few consequences you should watch out for:
 
 1) For almost all API responses, the object you're looking for will be in the `data` field on the API response object, as in the example below. This is because we designed our APIs with similar concepts to the [JSON:API](https://jsonapi.org/) standard. This means we'll be able to return more metadata from our API calls (such as related entities) without the need to make breaking changes to our APIs. We've decided not to hide that in this library.
 
