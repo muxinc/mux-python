@@ -4,7 +4,7 @@ import os
 import sys
 import time
 import mux_python
-from mux_python.rest import ApiException
+from mux_python.rest import NotFoundException
 
 # Exercises all url signing key operations:
 #   create-url-signing-key
@@ -54,6 +54,6 @@ try:
     keys_api.get_url_signing_key(create_key_response.data.id)
     print "Should have 404'd when getting deleted signing key ❌ "
     sys.exit(1)
-except ApiException as e:
+except NotFoundException as e:
     assert e != None
     print "delete-url-signing-key OK ✅"
