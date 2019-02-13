@@ -22,7 +22,7 @@ class CreateAssetRequest(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'input': 'InputSettings',
+        'input': 'list[InputSettings]',
         'playback_policy': 'list[PlaybackPolicy]',
         'demo': 'bool',
         'per_title_encode': 'bool',
@@ -69,7 +69,7 @@ class CreateAssetRequest(object):
 
 
         :return: The input of this CreateAssetRequest.  # noqa: E501
-        :rtype: InputSettings
+        :rtype: list[InputSettings]
         """
         return self._input
 
@@ -79,7 +79,7 @@ class CreateAssetRequest(object):
 
 
         :param input: The input of this CreateAssetRequest.  # noqa: E501
-        :type: InputSettings
+        :type: list[InputSettings]
         """
 
         self._input = input
