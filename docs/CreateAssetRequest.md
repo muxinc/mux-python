@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**input** | [**InputSettings**](InputSettings.md) |  | [optional] 
+**input** | [**list[InputSettings]**](InputSettings.md) |  | [optional] 
 **playback_policy** | [**list[PlaybackPolicy]**](PlaybackPolicy.md) |  | [optional] 
 **demo** | **bool** |  | [optional] 
 **per_title_encode** | **bool** |  | [optional] 
