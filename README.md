@@ -1,4 +1,7 @@
+![Mux Python Banner](github-python-sdk.png)
+
 # Mux Python
+
 Official Mux API wrapper for python projects 🐍.
 
 Mux Video is an API-first platform, powered by data and designed by video experts to make beautiful video possible for every development team.
