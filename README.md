@@ -47,15 +47,22 @@ Its up to you to manage your token and secret. In our examples, we read them fro
 Below is a quick example of using mux-python to list the Video assets stored in your Mux account.
 
 Be sure to also checkout the [exmples directory](examples/):
-* [List Assets, Live Streams, Signing Keys, and Uploads.](examples/list-everything.py)
-* [Create an Asset, wait for it to become availiable, and print its playback URL](examples/ingest.py)
-* [Create a new Live Stream and retrieve its Stream key.](examples/create-live-stream.py)
+* [List Assets, Live Streams, Signing Keys, and Uploads.](examples/video/list-everything.py)
+* [Create an Asset, wait for it to become availiable, and print its playback URL](examples/video/ingest.py)
+* [Create a new Live Stream and retrieve its Stream key.](examples/video/create-live-stream.py)
 
 There's also example usage of every API call (also used for testing):
-* [Assets API](examples/exercise-assets.py)
-* [Live Streams API](examples/exercise-live-streams.py)
-* [Signing Keys API](examples/exercise-signing-keys.py)
-* [Uploads API](examples/exercise-uploads.py)
+* [Video](examples/video/)
+  * [Assets API](examples/video/exercise-assets.py)
+  * [Live Streams API](examples/video/exercise-live-streams.py)
+  * [Signing Keys API](examples/video/exercise-signing-keys.py)
+  * [Uploads API](examples/video/exercise-uploads.py)
+* [Data](examples/data/)
+  * [Errors](examples/data/exercise-errors.py)
+  * [Exports](examples/data/exercise-exports.py)
+  * [Filters](examples/data/exercise-filters.py)
+  * [Metrics](examples/data/exercise-metrics.py)
+  * [Video Views](examples/data/exercise-video-views.py)
 
 ```python
 import os
