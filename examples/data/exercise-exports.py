@@ -1,20 +1,26 @@
+# coding: utf-8
+
 import os
+import sys
+import time
 import mux_python
-from mux_python.rest import ApiException
-from pprint import pprint
+from mux_python.rest import NotFoundException
+import logger
+
+# Exercises all export operations:
+#   list-exports
 
 # Authentication Setup
 configuration = mux_python.Configuration()
 configuration.username = os.environ['MUX_TOKEN_ID']
 configuration.password = os.environ['MUX_TOKEN_SECRET']
-configuration.debug = True
 
 # API Client Initialization
 exports_api = mux_python.ExportsApi(mux_python.ApiClient(configuration))
 
 # List Exports
-print("Listing Exports: \n")
-
 list_exports_response = exports_api.list_exports()
-
-pprint(list_exports_response)
+logger.print_debug('Listed Exports:' + str(list_exports_response))
+assert list_exports_response != None
+assert list_exports_response.data != None
+print("list-exports OK ✅")

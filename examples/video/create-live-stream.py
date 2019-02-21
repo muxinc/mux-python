@@ -17,6 +17,6 @@ create_live_stream_request = mux_python.CreateLiveStreamRequest(playback_policy=
 create_live_stream_response = live_api.create_live_stream(create_live_stream_request=create_live_stream_request)
 
 # Give back the RTMP entry point playback endpoint
-print "New Live Stream created!"
-print "RTMP Endpoint: rtmp://live.mux.com/app"
-print "Stream Key: " + create_live_stream_response.data.stream_key
+print("New Live Stream created!")
+print("RTMP Endpoint: rtmp://live.mux.com/app")
+print("Stream Key: " + create_live_stream_response.data.stream_key)
