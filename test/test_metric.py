@@ -12,12 +12,12 @@ from __future__ import absolute_import
 import unittest
 
 import mux_python
-from mux_python.models.metric_value import MetricValue  # noqa: E501
+from mux_python.models.metric import Metric  # noqa: E501
 from mux_python.rest import ApiException
 
 
-class TestMetricValue(unittest.TestCase):
-    """MetricValue unit test stubs"""
+class TestMetric(unittest.TestCase):
+    """Metric unit test stubs"""
 
     def setUp(self):
         pass
@@ -25,10 +25,10 @@ class TestMetricValue(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testMetricValue(self):
-        """Test MetricValue"""
+    def testMetric(self):
+        """Test Metric"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = mux_python.models.metric_value.MetricValue()  # noqa: E501
+        # model = mux_python.models.metric.Metric()  # noqa: E501
         pass
 
 

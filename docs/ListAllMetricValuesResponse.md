@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**list[MetricValue]**](MetricValue.md) |  | [optional] 
+**data** | [**list[Score]**](Score.md) |  | [optional] 
 **total_row_count** | **int** |  | [optional] 
 **timeframe** | **list[str]** |  | [optional] 
 

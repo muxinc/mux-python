@@ -11,7 +11,7 @@ import pprint
 import re  # noqa: F401
 import six
 
-class MetricValue(object):
+class Score(object):
 
 
     """
@@ -27,7 +27,7 @@ class MetricValue(object):
         'name': 'str',
         'value': 'float',
         'metric': 'str',
-        'items': 'list[MetricItem]'
+        'items': 'list[Metric]'
     }
 
     attribute_map = {
@@ -40,7 +40,7 @@ class MetricValue(object):
     }
 
     def __init__(self, watch_time=None, view_count=None, name=None, value=None, metric=None, items=None):  # noqa: E501
-        """MetricValue - a model defined in OpenAPI"""  # noqa: E501
+        """Score - a model defined in OpenAPI"""  # noqa: E501
 
         self._watch_time = None
         self._view_count = None
@@ -65,20 +65,20 @@ class MetricValue(object):
 
     @property
     def watch_time(self):
-        """Gets the watch_time of this MetricValue.  # noqa: E501
+        """Gets the watch_time of this Score.  # noqa: E501
 
 
-        :return: The watch_time of this MetricValue.  # noqa: E501
+        :return: The watch_time of this Score.  # noqa: E501
         :rtype: int
         """
         return self._watch_time
 
     @watch_time.setter
     def watch_time(self, watch_time):
-        """Sets the watch_time of this MetricValue.
+        """Sets the watch_time of this Score.
 
 
-        :param watch_time: The watch_time of this MetricValue.  # noqa: E501
+        :param watch_time: The watch_time of this Score.  # noqa: E501
         :type: int
         """
 
@@ -86,20 +86,20 @@ class MetricValue(object):
 
     @property
     def view_count(self):
-        """Gets the view_count of this MetricValue.  # noqa: E501
+        """Gets the view_count of this Score.  # noqa: E501
 
 
-        :return: The view_count of this MetricValue.  # noqa: E501
+        :return: The view_count of this Score.  # noqa: E501
         :rtype: int
         """
         return self._view_count
 
     @view_count.setter
     def view_count(self, view_count):
-        """Sets the view_count of this MetricValue.
+        """Sets the view_count of this Score.
 
 
-        :param view_count: The view_count of this MetricValue.  # noqa: E501
+        :param view_count: The view_count of this Score.  # noqa: E501
         :type: int
         """
 
@@ -107,20 +107,20 @@ class MetricValue(object):
 
     @property
     def name(self):
-        """Gets the name of this MetricValue.  # noqa: E501
+        """Gets the name of this Score.  # noqa: E501
 
 
-        :return: The name of this MetricValue.  # noqa: E501
+        :return: The name of this Score.  # noqa: E501
         :rtype: str
         """
         return self._name
 
     @name.setter
     def name(self, name):
-        """Sets the name of this MetricValue.
+        """Sets the name of this Score.
 
 
-        :param name: The name of this MetricValue.  # noqa: E501
+        :param name: The name of this Score.  # noqa: E501
         :type: str
         """
 
@@ -128,20 +128,20 @@ class MetricValue(object):
 
     @property
     def value(self):
-        """Gets the value of this MetricValue.  # noqa: E501
+        """Gets the value of this Score.  # noqa: E501
 
 
-        :return: The value of this MetricValue.  # noqa: E501
+        :return: The value of this Score.  # noqa: E501
         :rtype: float
         """
         return self._value
 
     @value.setter
     def value(self, value):
-        """Sets the value of this MetricValue.
+        """Sets the value of this Score.
 
 
-        :param value: The value of this MetricValue.  # noqa: E501
+        :param value: The value of this Score.  # noqa: E501
         :type: float
         """
 
@@ -149,20 +149,20 @@ class MetricValue(object):
 
     @property
     def metric(self):
-        """Gets the metric of this MetricValue.  # noqa: E501
+        """Gets the metric of this Score.  # noqa: E501
 
 
-        :return: The metric of this MetricValue.  # noqa: E501
+        :return: The metric of this Score.  # noqa: E501
         :rtype: str
         """
         return self._metric
 
     @metric.setter
     def metric(self, metric):
-        """Sets the metric of this MetricValue.
+        """Sets the metric of this Score.
 
 
-        :param metric: The metric of this MetricValue.  # noqa: E501
+        :param metric: The metric of this Score.  # noqa: E501
         :type: str
         """
 
@@ -170,21 +170,21 @@ class MetricValue(object):
 
     @property
     def items(self):
-        """Gets the items of this MetricValue.  # noqa: E501
+        """Gets the items of this Score.  # noqa: E501
 
 
-        :return: The items of this MetricValue.  # noqa: E501
-        :rtype: list[MetricItem]
+        :return: The items of this Score.  # noqa: E501
+        :rtype: list[Metric]
         """
         return self._items
 
     @items.setter
     def items(self, items):
-        """Sets the items of this MetricValue.
+        """Sets the items of this Score.
 
 
-        :param items: The items of this MetricValue.  # noqa: E501
-        :type: list[MetricItem]
+        :param items: The items of this Score.  # noqa: E501
+        :type: list[Metric]
         """
 
         self._items = items
@@ -223,7 +223,7 @@ class MetricValue(object):
 
     def __eq__(self, other):
         """Returns true if both objects are equal"""
-        if not isinstance(other, MetricValue):
+        if not isinstance(other, Score):
             return False
 
         return self.__dict__ == other.__dict__

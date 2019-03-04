@@ -22,7 +22,7 @@ class ListAllMetricValuesResponse(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'data': 'list[MetricValue]',
+        'data': 'list[Score]',
         'total_row_count': 'int',
         'timeframe': 'list[str]'
     }
@@ -54,7 +54,7 @@ class ListAllMetricValuesResponse(object):
 
 
         :return: The data of this ListAllMetricValuesResponse.  # noqa: E501
-        :rtype: list[MetricValue]
+        :rtype: list[Score]
         """
         return self._data
 
@@ -64,7 +64,7 @@ class ListAllMetricValuesResponse(object):
 
 
         :param data: The data of this ListAllMetricValuesResponse.  # noqa: E501
-        :type: list[MetricValue]
+        :type: list[Score]
         """
 
         self._data = data

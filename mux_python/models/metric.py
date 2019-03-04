@@ -11,7 +11,7 @@ import pprint
 import re  # noqa: F401
 import six
 
-class MetricItem(object):
+class Metric(object):
 
 
     """
@@ -38,7 +38,7 @@ class MetricItem(object):
     }
 
     def __init__(self, value=None, type=None, name=None, metric=None, measurement=None):  # noqa: E501
-        """MetricItem - a model defined in OpenAPI"""  # noqa: E501
+        """Metric - a model defined in OpenAPI"""  # noqa: E501
 
         self._value = None
         self._type = None
@@ -60,20 +60,20 @@ class MetricItem(object):
 
     @property
     def value(self):
-        """Gets the value of this MetricItem.  # noqa: E501
+        """Gets the value of this Metric.  # noqa: E501
 
 
-        :return: The value of this MetricItem.  # noqa: E501
+        :return: The value of this Metric.  # noqa: E501
         :rtype: float
         """
         return self._value
 
     @value.setter
     def value(self, value):
-        """Sets the value of this MetricItem.
+        """Sets the value of this Metric.
 
 
-        :param value: The value of this MetricItem.  # noqa: E501
+        :param value: The value of this Metric.  # noqa: E501
         :type: float
         """
 
@@ -81,20 +81,20 @@ class MetricItem(object):
 
     @property
     def type(self):
-        """Gets the type of this MetricItem.  # noqa: E501
+        """Gets the type of this Metric.  # noqa: E501
 
 
-        :return: The type of this MetricItem.  # noqa: E501
+        :return: The type of this Metric.  # noqa: E501
         :rtype: str
         """
         return self._type
 
     @type.setter
     def type(self, type):
-        """Sets the type of this MetricItem.
+        """Sets the type of this Metric.
 
 
-        :param type: The type of this MetricItem.  # noqa: E501
+        :param type: The type of this Metric.  # noqa: E501
         :type: str
         """
 
@@ -102,20 +102,20 @@ class MetricItem(object):
 
     @property
     def name(self):
-        """Gets the name of this MetricItem.  # noqa: E501
+        """Gets the name of this Metric.  # noqa: E501
 
 
-        :return: The name of this MetricItem.  # noqa: E501
+        :return: The name of this Metric.  # noqa: E501
         :rtype: str
         """
         return self._name
 
     @name.setter
     def name(self, name):
-        """Sets the name of this MetricItem.
+        """Sets the name of this Metric.
 
 
-        :param name: The name of this MetricItem.  # noqa: E501
+        :param name: The name of this Metric.  # noqa: E501
         :type: str
         """
 
@@ -123,20 +123,20 @@ class MetricItem(object):
 
     @property
     def metric(self):
-        """Gets the metric of this MetricItem.  # noqa: E501
+        """Gets the metric of this Metric.  # noqa: E501
 
 
-        :return: The metric of this MetricItem.  # noqa: E501
+        :return: The metric of this Metric.  # noqa: E501
         :rtype: str
         """
         return self._metric
 
     @metric.setter
     def metric(self, metric):
-        """Sets the metric of this MetricItem.
+        """Sets the metric of this Metric.
 
 
-        :param metric: The metric of this MetricItem.  # noqa: E501
+        :param metric: The metric of this Metric.  # noqa: E501
         :type: str
         """
 
@@ -144,20 +144,20 @@ class MetricItem(object):
 
     @property
     def measurement(self):
-        """Gets the measurement of this MetricItem.  # noqa: E501
+        """Gets the measurement of this Metric.  # noqa: E501
 
 
-        :return: The measurement of this MetricItem.  # noqa: E501
+        :return: The measurement of this Metric.  # noqa: E501
         :rtype: str
         """
         return self._measurement
 
     @measurement.setter
     def measurement(self, measurement):
-        """Sets the measurement of this MetricItem.
+        """Sets the measurement of this Metric.
 
 
-        :param measurement: The measurement of this MetricItem.  # noqa: E501
+        :param measurement: The measurement of this Metric.  # noqa: E501
         :type: str
         """
 
@@ -197,7 +197,7 @@ class MetricItem(object):
 
     def __eq__(self, other):
         """Returns true if both objects are equal"""
-        if not isinstance(other, MetricItem):
+        if not isinstance(other, Metric):
             return False
 
         return self.__dict__ == other.__dict__
