@@ -5,7 +5,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **total_watch_time** | **int** |  | [optional] 
 **total_views** | **int** |  | [optional] 
-**total_row_count** | **int** |  | [optional] 
 **negative_impact_score** | **int** |  | [optional] 
 **metric** | **int** |  | [optional] 
 **filter_value** | **str** |  | [optional] 

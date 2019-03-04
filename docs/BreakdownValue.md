@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **views** | **int** |  | [optional] 
-**value** | **int** |  | [optional] 
+**value** | **float** |  | [optional] 
 **total_watch_time** | **int** |  | [optional] 
 **negative_impact** | **int** |  | [optional] 
 **field** | **str** |  | [optional] 

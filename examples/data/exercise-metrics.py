@@ -44,7 +44,7 @@ assert list_insights_response.data != None
 print("list-insights OK ✅")
 
 # Get Metric Timeseries Data
-get_metric_timeseries_data_response = metrics_api.get_metric_timeseries_data(metric_id='video_startup_time')
+get_metric_timeseries_data_response = metrics_api.get_metric_timeseries_data(metric_id='video_startup_time',  timeframe=['7:days'])
 logger.print_debug('Get Metric Timeseries Data Response: ' + str(get_metric_timeseries_data_response))
 assert get_metric_timeseries_data_response != None
 assert get_metric_timeseries_data_response.data != None

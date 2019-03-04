@@ -24,7 +24,6 @@ class Insight(object):
     openapi_types = {
         'total_watch_time': 'int',
         'total_views': 'int',
-        'total_row_count': 'int',
         'negative_impact_score': 'int',
         'metric': 'int',
         'filter_value': 'str',
@@ -34,19 +33,17 @@ class Insight(object):
     attribute_map = {
         'total_watch_time': 'total_watch_time',
         'total_views': 'total_views',
-        'total_row_count': 'total_row_count',
         'negative_impact_score': 'negative_impact_score',
         'metric': 'metric',
         'filter_value': 'filter_value',
         'filter_column': 'filter_column'
     }
 
-    def __init__(self, total_watch_time=None, total_views=None, total_row_count=None, negative_impact_score=None, metric=None, filter_value=None, filter_column=None):  # noqa: E501
+    def __init__(self, total_watch_time=None, total_views=None, negative_impact_score=None, metric=None, filter_value=None, filter_column=None):  # noqa: E501
         """Insight - a model defined in OpenAPI"""  # noqa: E501
 
         self._total_watch_time = None
         self._total_views = None
-        self._total_row_count = None
         self._negative_impact_score = None
         self._metric = None
         self._filter_value = None
@@ -57,8 +54,6 @@ class Insight(object):
             self.total_watch_time = total_watch_time
         if total_views is not None:
             self.total_views = total_views
-        if total_row_count is not None:
-            self.total_row_count = total_row_count
         if negative_impact_score is not None:
             self.negative_impact_score = negative_impact_score
         if metric is not None:
@@ -109,27 +104,6 @@ class Insight(object):
         """
 
         self._total_views = total_views
-
-    @property
-    def total_row_count(self):
-        """Gets the total_row_count of this Insight.  # noqa: E501
-
-
-        :return: The total_row_count of this Insight.  # noqa: E501
-        :rtype: int
-        """
-        return self._total_row_count
-
-    @total_row_count.setter
-    def total_row_count(self, total_row_count):
-        """Sets the total_row_count of this Insight.
-
-
-        :param total_row_count: The total_row_count of this Insight.  # noqa: E501
-        :type: int
-        """
-
-        self._total_row_count = total_row_count
 
     @property
     def negative_impact_score(self):

@@ -23,7 +23,7 @@ class BreakdownValue(object):
     """
     openapi_types = {
         'views': 'int',
-        'value': 'int',
+        'value': 'float',
         'total_watch_time': 'int',
         'negative_impact': 'int',
         'field': 'str'
@@ -85,7 +85,7 @@ class BreakdownValue(object):
 
 
         :return: The value of this BreakdownValue.  # noqa: E501
-        :rtype: int
+        :rtype: float
         """
         return self._value
 
@@ -95,7 +95,7 @@ class BreakdownValue(object):
 
 
         :param value: The value of this BreakdownValue.  # noqa: E501
-        :type: int
+        :type: float
         """
 
         self._value = value

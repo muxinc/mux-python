@@ -5,7 +5,7 @@ import sys
 import time
 import mux_python
 from mux_python.rest import NotFoundException
-from common import logger
+import logger
 
 # Exercises all export operations:
 #   list-filters
