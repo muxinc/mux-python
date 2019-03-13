@@ -28,7 +28,8 @@ class Upload(object):
         'new_asset_settings': 'Asset',
         'asset_id': 'str',
         'error': 'UploadError',
-        'cors_origin': 'str'
+        'cors_origin': 'str',
+        'url': 'str'
     }
 
     attribute_map = {
@@ -38,10 +39,11 @@ class Upload(object):
         'new_asset_settings': 'new_asset_settings',
         'asset_id': 'asset_id',
         'error': 'error',
-        'cors_origin': 'cors_origin'
+        'cors_origin': 'cors_origin',
+        'url': 'url'
     }
 
-    def __init__(self, id=None, timeout=3600, status=None, new_asset_settings=None, asset_id=None, error=None, cors_origin=None):  # noqa: E501
+    def __init__(self, id=None, timeout=3600, status=None, new_asset_settings=None, asset_id=None, error=None, cors_origin=None, url=None):  # noqa: E501
         """Upload - a model defined in OpenAPI"""  # noqa: E501
 
         self._id = None
@@ -51,6 +53,7 @@ class Upload(object):
         self._asset_id = None
         self._error = None
         self._cors_origin = None
+        self._url = None
         self.discriminator = None
 
         if id is not None:
@@ -67,6 +70,8 @@ class Upload(object):
             self.error = error
         if cors_origin is not None:
             self.cors_origin = cors_origin
+        if url is not None:
+            self.url = url
 
     @property
     def id(self):
@@ -230,6 +235,29 @@ class Upload(object):
         """
 
         self._cors_origin = cors_origin
+
+    @property
+    def url(self):
+        """Gets the url of this Upload.  # noqa: E501
+
+        The URL to upload the associated source media to.  # noqa: E501
+
+        :return: The url of this Upload.  # noqa: E501
+        :rtype: str
+        """
+        return self._url
+
+    @url.setter
+    def url(self, url):
+        """Sets the url of this Upload.
+
+        The URL to upload the associated source media to.  # noqa: E501
+
+        :param url: The url of this Upload.  # noqa: E501
+        :type: str
+        """
+
+        self._url = url
 
     def to_dict(self):
         """Returns the model properties as a dict"""
