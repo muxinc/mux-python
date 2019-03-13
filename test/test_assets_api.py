@@ -74,13 +74,6 @@ class TestAssetsApi(unittest.TestCase):
         """
         pass
 
-    def test_list_asset_playback_ids(self):
-        """Test case for list_asset_playback_ids
-
-        List an asset's playback IDs  # noqa: E501
-        """
-        pass
-
     def test_list_assets(self):
         """Test case for list_assets
 

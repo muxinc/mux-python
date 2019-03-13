@@ -38,7 +38,8 @@ class Asset(object):
         'is_live': 'bool',
         'passthrough': 'str',
         'live_stream_id': 'str',
-        'master_access': 'AssetMasterAccess',
+        'master': 'AssetMaster',
+        'master_access': 'str',
         'mp4_support': 'str',
         'static_renditions': 'AssetStaticRenditions'
     }
@@ -60,12 +61,13 @@ class Asset(object):
         'is_live': 'is_live',
         'passthrough': 'passthrough',
         'live_stream_id': 'live_stream_id',
+        'master': 'master',
         'master_access': 'master_access',
         'mp4_support': 'mp4_support',
         'static_renditions': 'static_renditions'
     }
 
-    def __init__(self, id=None, created_at=None, deleted_at=None, status=None, duration=None, max_stored_resolution=None, max_stored_frame_rate=None, aspect_ratio=None, playback_ids=None, tracks=None, demo=None, errors=None, per_title_encode=None, is_live=None, passthrough=None, live_stream_id=None, master_access=None, mp4_support='none', static_renditions=None):  # noqa: E501
+    def __init__(self, id=None, created_at=None, deleted_at=None, status=None, duration=None, max_stored_resolution=None, max_stored_frame_rate=None, aspect_ratio=None, playback_ids=None, tracks=None, demo=None, errors=None, per_title_encode=None, is_live=None, passthrough=None, live_stream_id=None, master=None, master_access='none', mp4_support='none', static_renditions=None):  # noqa: E501
         """Asset - a model defined in OpenAPI"""  # noqa: E501
 
         self._id = None
@@ -84,6 +86,7 @@ class Asset(object):
         self._is_live = None
         self._passthrough = None
         self._live_stream_id = None
+        self._master = None
         self._master_access = None
         self._mp4_support = None
         self._static_renditions = None
@@ -121,6 +124,8 @@ class Asset(object):
             self.passthrough = passthrough
         if live_stream_id is not None:
             self.live_stream_id = live_stream_id
+        if master is not None:
+            self.master = master
         if master_access is not None:
             self.master_access = master_access
         if mp4_support is not None:
@@ -465,12 +470,33 @@ class Asset(object):
         self._live_stream_id = live_stream_id
 
     @property
+    def master(self):
+        """Gets the master of this Asset.  # noqa: E501
+
+
+        :return: The master of this Asset.  # noqa: E501
+        :rtype: AssetMaster
+        """
+        return self._master
+
+    @master.setter
+    def master(self, master):
+        """Sets the master of this Asset.
+
+
+        :param master: The master of this Asset.  # noqa: E501
+        :type: AssetMaster
+        """
+
+        self._master = master
+
+    @property
     def master_access(self):
         """Gets the master_access of this Asset.  # noqa: E501
 
 
         :return: The master_access of this Asset.  # noqa: E501
-        :rtype: AssetMasterAccess
+        :rtype: str
         """
         return self._master_access
 
@@ -480,8 +506,14 @@ class Asset(object):
 
 
         :param master_access: The master_access of this Asset.  # noqa: E501
-        :type: AssetMasterAccess
+        :type: str
         """
+        allowed_values = ["temporary", "none"]  # noqa: E501
+        if master_access not in allowed_values:
+            raise ValueError(
+                "Invalid value for `master_access` ({0}), must be one of {1}"  # noqa: E501
+                .format(master_access, allowed_values)
+            )
 
         self._master_access = master_access
 

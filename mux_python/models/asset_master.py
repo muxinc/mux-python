@@ -11,7 +11,7 @@ import pprint
 import re  # noqa: F401
 import six
 
-class AssetMasterAccess(object):
+class AssetMaster(object):
 
 
     """
@@ -32,7 +32,7 @@ class AssetMasterAccess(object):
     }
 
     def __init__(self, status=None, url=None):  # noqa: E501
-        """AssetMasterAccess - a model defined in OpenAPI"""  # noqa: E501
+        """AssetMaster - a model defined in OpenAPI"""  # noqa: E501
 
         self._status = None
         self._url = None
@@ -45,20 +45,20 @@ class AssetMasterAccess(object):
 
     @property
     def status(self):
-        """Gets the status of this AssetMasterAccess.  # noqa: E501
+        """Gets the status of this AssetMaster.  # noqa: E501
 
 
-        :return: The status of this AssetMasterAccess.  # noqa: E501
+        :return: The status of this AssetMaster.  # noqa: E501
         :rtype: str
         """
         return self._status
 
     @status.setter
     def status(self, status):
-        """Sets the status of this AssetMasterAccess.
+        """Sets the status of this AssetMaster.
 
 
-        :param status: The status of this AssetMasterAccess.  # noqa: E501
+        :param status: The status of this AssetMaster.  # noqa: E501
         :type: str
         """
 
@@ -66,20 +66,20 @@ class AssetMasterAccess(object):
 
     @property
     def url(self):
-        """Gets the url of this AssetMasterAccess.  # noqa: E501
+        """Gets the url of this AssetMaster.  # noqa: E501
 
 
-        :return: The url of this AssetMasterAccess.  # noqa: E501
+        :return: The url of this AssetMaster.  # noqa: E501
         :rtype: str
         """
         return self._url
 
     @url.setter
     def url(self, url):
-        """Sets the url of this AssetMasterAccess.
+        """Sets the url of this AssetMaster.
 
 
-        :param url: The url of this AssetMasterAccess.  # noqa: E501
+        :param url: The url of this AssetMaster.  # noqa: E501
         :type: str
         """
 
@@ -119,7 +119,7 @@ class AssetMasterAccess(object):
 
     def __eq__(self, other):
         """Returns true if both objects are equal"""
-        if not isinstance(other, AssetMasterAccess):
+        if not isinstance(other, AssetMaster):
             return False
 
         return self.__dict__ == other.__dict__
