@@ -19,7 +19,8 @@ Name | Type | Description | Notes
 **is_live** | **bool** |  | [optional] 
 **passthrough** | **str** |  | [optional] 
 **live_stream_id** | **str** |  | [optional] 
-**master_access** | [**AssetMasterAccess**](AssetMasterAccess.md) |  | [optional] 
+**master** | [**AssetMaster**](AssetMaster.md) |  | [optional] 
+**master_access** | **str** |  | [optional] [default to 'none']
 **mp4_support** | **str** |  | [optional] [default to 'none']
 **static_renditions** | [**AssetStaticRenditions**](AssetStaticRenditions.md) |  | [optional] 
 

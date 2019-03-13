@@ -11,7 +11,7 @@ NOTE: This class is auto generated. Do not edit the class manually.
 
 from __future__ import absolute_import
 
-__version__ = "1.0.0"
+__version__ = "1.0.1"
 
 # import apis into sdk package
 from mux_python.api.assets_api import AssetsApi
@@ -25,7 +25,7 @@ from mux_python.configuration import Configuration
 # import models into sdk package
 from mux_python.models.asset import Asset
 from mux_python.models.asset_errors import AssetErrors
-from mux_python.models.asset_master_access import AssetMasterAccess
+from mux_python.models.asset_master import AssetMaster
 from mux_python.models.asset_response import AssetResponse
 from mux_python.models.asset_static_renditions import AssetStaticRenditions
 from mux_python.models.asset_static_renditions_files import AssetStaticRenditionsFiles

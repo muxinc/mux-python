@@ -12,12 +12,12 @@ from __future__ import absolute_import
 import unittest
 
 import mux_python
-from mux_python.models.new_asset_settings import NewAssetSettings  # noqa: E501
+from mux_python.models.asset_master import AssetMaster  # noqa: E501
 from mux_python.rest import ApiException
 
 
-class TestNewAssetSettings(unittest.TestCase):
-    """NewAssetSettings unit test stubs"""
+class TestAssetMaster(unittest.TestCase):
+    """AssetMaster unit test stubs"""
 
     def setUp(self):
         pass
@@ -25,10 +25,10 @@ class TestNewAssetSettings(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testNewAssetSettings(self):
-        """Test NewAssetSettings"""
+    def testAssetMaster(self):
+        """Test AssetMaster"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = mux_python.models.new_asset_settings.NewAssetSettings()  # noqa: E501
+        # model = mux_python.models.asset_master.AssetMaster()  # noqa: E501
         pass
 
 
