@@ -23,39 +23,39 @@ class AssetsApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def create_asset(self, **kwargs):  # noqa: E501
+    def create_asset(self, create_asset_request, **kwargs):  # noqa: E501
         """Create an asset  # noqa: E501
 
         Create a new Mux Video asset.   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_asset(async_req=True)
+        >>> thread = api.create_asset(create_asset_request, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param CreateAssetRequest create_asset_request:
+        :param CreateAssetRequest create_asset_request: (required)
         :return: AssetResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.create_asset_with_http_info(**kwargs)  # noqa: E501
+            return self.create_asset_with_http_info(create_asset_request, **kwargs)  # noqa: E501
         else:
-            (data) = self.create_asset_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.create_asset_with_http_info(create_asset_request, **kwargs)  # noqa: E501
             return data
 
-    def create_asset_with_http_info(self, **kwargs):  # noqa: E501
+    def create_asset_with_http_info(self, create_asset_request, **kwargs):  # noqa: E501
         """Create an asset  # noqa: E501
 
         Create a new Mux Video asset.   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_asset_with_http_info(async_req=True)
+        >>> thread = api.create_asset_with_http_info(create_asset_request, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param CreateAssetRequest create_asset_request:
+        :param CreateAssetRequest create_asset_request: (required)
         :return: AssetResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -77,6 +77,10 @@ class AssetsApi(object):
                 )
             local_var_params[key] = val
         del local_var_params['kwargs']
+        # verify the required parameter 'create_asset_request' is set
+        if ('create_asset_request' not in local_var_params or
+                local_var_params['create_asset_request'] is None):
+            raise ValueError("Missing the required parameter `create_asset_request` when calling `create_asset`")  # noqa: E501
 
         collection_formats = {}
 
@@ -119,39 +123,39 @@ class AssetsApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def create_asset_playback_id(self, asset_id, **kwargs):  # noqa: E501
+    def create_asset_playback_id(self, asset_id, create_playback_id_request, **kwargs):  # noqa: E501
         """Create a playback ID  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_asset_playback_id(asset_id, async_req=True)
+        >>> thread = api.create_asset_playback_id(asset_id, create_playback_id_request, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
         :param str asset_id: The asset ID. (required)
-        :param CreatePlaybackIDRequest create_playback_id_request:
+        :param CreatePlaybackIDRequest create_playback_id_request: (required)
         :return: CreatePlaybackIDResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.create_asset_playback_id_with_http_info(asset_id, **kwargs)  # noqa: E501
+            return self.create_asset_playback_id_with_http_info(asset_id, create_playback_id_request, **kwargs)  # noqa: E501
         else:
-            (data) = self.create_asset_playback_id_with_http_info(asset_id, **kwargs)  # noqa: E501
+            (data) = self.create_asset_playback_id_with_http_info(asset_id, create_playback_id_request, **kwargs)  # noqa: E501
             return data
 
-    def create_asset_playback_id_with_http_info(self, asset_id, **kwargs):  # noqa: E501
+    def create_asset_playback_id_with_http_info(self, asset_id, create_playback_id_request, **kwargs):  # noqa: E501
         """Create a playback ID  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_asset_playback_id_with_http_info(asset_id, async_req=True)
+        >>> thread = api.create_asset_playback_id_with_http_info(asset_id, create_playback_id_request, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
         :param str asset_id: The asset ID. (required)
-        :param CreatePlaybackIDRequest create_playback_id_request:
+        :param CreatePlaybackIDRequest create_playback_id_request: (required)
         :return: CreatePlaybackIDResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -177,6 +181,10 @@ class AssetsApi(object):
         if ('asset_id' not in local_var_params or
                 local_var_params['asset_id'] is None):
             raise ValueError("Missing the required parameter `asset_id` when calling `create_asset_playback_id`")  # noqa: E501
+        # verify the required parameter 'create_playback_id_request' is set
+        if ('create_playback_id_request' not in local_var_params or
+                local_var_params['create_playback_id_request'] is None):
+            raise ValueError("Missing the required parameter `create_playback_id_request` when calling `create_asset_playback_id`")  # noqa: E501
 
         collection_formats = {}
 

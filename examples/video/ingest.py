@@ -15,7 +15,7 @@ assets_api = mux_python.AssetsApi(mux_python.ApiClient(configuration))
 input_settings = [mux_python.InputSettings(url='https://storage.googleapis.com/muxdemofiles/mux-video-intro.mp4')]
 create_asset_request = mux_python.CreateAssetRequest(input=input_settings, playback_policy=[mux_python.PlaybackPolicy.PUBLIC])
 
-create_asset_response = assets_api.create_asset(create_asset_request=create_asset_request)
+create_asset_response = assets_api.create_asset(create_asset_request)
 print("Created Asset ID: " + create_asset_response.data.id)
 
 # Wait for the asset to become ready, and then print its playback URL
