@@ -19,7 +19,7 @@ configuration.password = os.environ['MUX_TOKEN_SECRET']
 # API Client Initialization
 filters_api = mux_python.FiltersApi(mux_python.ApiClient(configuration))
 
-# List Filters
+# ========== list-filters ==========
 list_filters_response = filters_api.list_filters()
 logger.print_debug('List Filters Response: ' + str(list_filters_response))
 assert list_filters_response != None
@@ -28,7 +28,7 @@ assert list_filters_response.data.basic != None
 assert list_filters_response.data.advanced != None
 print("list-filters OK ✅")
 
-# List Filter Values
+# ========== list-filter-values ==========
 list_filter_values_response = filters_api.list_filter_values('browser', timeframe=['7:days'])
 logger.print_debug('List Filters Values Response: ' + str(list_filter_values_response))
 assert list_filter_values_response != None
