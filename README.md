@@ -2,9 +2,11 @@
 
 # Mux Python
 
-Official Mux API wrapper for python projects 🐍.
+Official Mux API wrapper for python projects, supporting both Mux Data and Mux Video.
 
-Mux Video is an API-first platform, powered by data and designed by video experts to make beautiful video possible for every development team.
+[Mux Video](https://mux.com/video) is an API-first platform, powered by data and designed by video experts to make beautiful video possible for every development team.
+
+[Mux Data](https://mux.com/data) is a platform for monitoring your video streaming performance with just a few lines of code. Get in-depth quality of service analytics on web, mobile, and OTT devices.
 
 Not familiar with Mux? Check out https://mux.com/ for more information.
 
@@ -47,15 +49,22 @@ Its up to you to manage your token and secret. In our examples, we read them fro
 Below is a quick example of using mux-python to list the Video assets stored in your Mux account.
 
 Be sure to also checkout the [exmples directory](examples/):
-* [List Assets, Live Streams, Signing Keys, and Uploads.](examples/list-everything.py)
-* [Create an Asset, wait for it to become availiable, and print its playback URL](examples/ingest.py)
-* [Create a new Live Stream and retrieve its Stream key.](examples/create-live-stream.py)
+* [List Assets, Live Streams, Signing Keys, and Uploads.](examples/video/list-everything.py)
+* [Create an Asset, wait for it to become availiable, and print its playback URL](examples/video/ingest.py)
+* [Create a new Live Stream and retrieve its Stream key.](examples/video/create-live-stream.py)
 
 There's also example usage of every API call (also used for testing):
-* [Assets API](examples/exercise-assets.py)
-* [Live Streams API](examples/exercise-live-streams.py)
-* [Signing Keys API](examples/exercise-signing-keys.py)
-* [Uploads API](examples/exercise-uploads.py)
+* [Video](examples/video/)
+  * [Assets](examples/video/exercise-assets.py)
+  * [Live Streams](examples/video/exercise-live-streams.py)
+  * [Signing Keys](examples/video/exercise-signing-keys.py)
+  * [Uploads](examples/video/exercise-uploads.py)
+* [Data](examples/data/)
+  * [Errors](examples/data/exercise-errors.py)
+  * [Exports](examples/data/exercise-exports.py)
+  * [Filters](examples/data/exercise-filters.py)
+  * [Metrics](examples/data/exercise-metrics.py)
+  * [Video Views](examples/data/exercise-video-views.py)
 
 ```python
 import os

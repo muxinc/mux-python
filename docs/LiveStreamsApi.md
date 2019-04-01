@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 
 # **create_live_stream**
-> LiveStreamResponse create_live_stream(create_live_stream_request=create_live_stream_request)
+> LiveStreamResponse create_live_stream(create_live_stream_request)
 
 Create a live stream
 
@@ -35,11 +35,11 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = mux_python.LiveStreamsApi(mux_python.ApiClient(configuration))
-create_live_stream_request = mux_python.CreateLiveStreamRequest() # CreateLiveStreamRequest |  (optional)
+create_live_stream_request = mux_python.CreateLiveStreamRequest() # CreateLiveStreamRequest | 
 
 try:
     # Create a live stream
-    api_response = api_instance.create_live_stream(create_live_stream_request=create_live_stream_request)
+    api_response = api_instance.create_live_stream(create_live_stream_request)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling LiveStreamsApi->create_live_stream: %s\n" % e)
@@ -49,7 +49,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **create_live_stream_request** | [**CreateLiveStreamRequest**](CreateLiveStreamRequest.md)|  | [optional] 
+ **create_live_stream_request** | [**CreateLiveStreamRequest**](CreateLiveStreamRequest.md)|  | 
 
 ### Return type
 
@@ -67,7 +67,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_live_stream_playback_id**
-> CreatePlaybackIDResponse create_live_stream_playback_id(live_stream_id, create_playback_id_request=create_playback_id_request)
+> CreatePlaybackIDResponse create_live_stream_playback_id(live_stream_id, create_playback_id_request)
 
 Create a live stream playback ID
 
@@ -88,11 +88,11 @@ configuration.password = 'YOUR_PASSWORD'
 # create an instance of the API class
 api_instance = mux_python.LiveStreamsApi(mux_python.ApiClient(configuration))
 live_stream_id = 'live_stream_id_example' # str | The live stream ID
-create_playback_id_request = mux_python.CreatePlaybackIDRequest() # CreatePlaybackIDRequest |  (optional)
+create_playback_id_request = mux_python.CreatePlaybackIDRequest() # CreatePlaybackIDRequest | 
 
 try:
     # Create a live stream playback ID
-    api_response = api_instance.create_live_stream_playback_id(live_stream_id, create_playback_id_request=create_playback_id_request)
+    api_response = api_instance.create_live_stream_playback_id(live_stream_id, create_playback_id_request)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling LiveStreamsApi->create_live_stream_playback_id: %s\n" % e)
@@ -103,7 +103,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **live_stream_id** | **str**| The live stream ID | 
- **create_playback_id_request** | [**CreatePlaybackIDRequest**](CreatePlaybackIDRequest.md)|  | [optional] 
+ **create_playback_id_request** | [**CreatePlaybackIDRequest**](CreatePlaybackIDRequest.md)|  | 
 
 ### Return type
 

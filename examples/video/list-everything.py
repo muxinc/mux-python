@@ -50,6 +50,6 @@ print("Listing URL Signing Keys: \n")
 try:
     list_url_signing_keys_response = url_signing_keys_api.list_url_signing_keys()
     for key in list_url_signing_keys_response.data:
-        print('Signing Key ID: ' + key.id)
+        print('Signing Key ID: ' + key.id + "\n")
 except ApiException as e:
     print("Exception when calling URLSigningKeysApi->list_url_signing_keys: %s\n" % e)

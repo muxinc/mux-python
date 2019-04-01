@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 
 # **create_asset**
-> AssetResponse create_asset(create_asset_request=create_asset_request)
+> AssetResponse create_asset(create_asset_request)
 
 Create an asset
 
@@ -38,11 +38,11 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = mux_python.AssetsApi(mux_python.ApiClient(configuration))
-create_asset_request = mux_python.CreateAssetRequest() # CreateAssetRequest |  (optional)
+create_asset_request = mux_python.CreateAssetRequest() # CreateAssetRequest | 
 
 try:
     # Create an asset
-    api_response = api_instance.create_asset(create_asset_request=create_asset_request)
+    api_response = api_instance.create_asset(create_asset_request)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AssetsApi->create_asset: %s\n" % e)
@@ -52,7 +52,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **create_asset_request** | [**CreateAssetRequest**](CreateAssetRequest.md)|  | [optional] 
+ **create_asset_request** | [**CreateAssetRequest**](CreateAssetRequest.md)|  | 
 
 ### Return type
 
@@ -70,7 +70,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_asset_playback_id**
-> CreatePlaybackIDResponse create_asset_playback_id(asset_id, create_playback_id_request=create_playback_id_request)
+> CreatePlaybackIDResponse create_asset_playback_id(asset_id, create_playback_id_request)
 
 Create a playback ID
 
@@ -91,11 +91,11 @@ configuration.password = 'YOUR_PASSWORD'
 # create an instance of the API class
 api_instance = mux_python.AssetsApi(mux_python.ApiClient(configuration))
 asset_id = 'asset_id_example' # str | The asset ID.
-create_playback_id_request = mux_python.CreatePlaybackIDRequest() # CreatePlaybackIDRequest |  (optional)
+create_playback_id_request = mux_python.CreatePlaybackIDRequest() # CreatePlaybackIDRequest | 
 
 try:
     # Create a playback ID
-    api_response = api_instance.create_asset_playback_id(asset_id, create_playback_id_request=create_playback_id_request)
+    api_response = api_instance.create_asset_playback_id(asset_id, create_playback_id_request)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AssetsApi->create_asset_playback_id: %s\n" % e)
@@ -106,7 +106,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **asset_id** | **str**| The asset ID. | 
- **create_playback_id_request** | [**CreatePlaybackIDRequest**](CreatePlaybackIDRequest.md)|  | [optional] 
+ **create_playback_id_request** | [**CreatePlaybackIDRequest**](CreatePlaybackIDRequest.md)|  | 
 
 ### Return type
 

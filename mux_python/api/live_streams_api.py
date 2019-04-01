@@ -23,37 +23,37 @@ class LiveStreamsApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def create_live_stream(self, **kwargs):  # noqa: E501
+    def create_live_stream(self, create_live_stream_request, **kwargs):  # noqa: E501
         """Create a live stream  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_live_stream(async_req=True)
+        >>> thread = api.create_live_stream(create_live_stream_request, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param CreateLiveStreamRequest create_live_stream_request:
+        :param CreateLiveStreamRequest create_live_stream_request: (required)
         :return: LiveStreamResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.create_live_stream_with_http_info(**kwargs)  # noqa: E501
+            return self.create_live_stream_with_http_info(create_live_stream_request, **kwargs)  # noqa: E501
         else:
-            (data) = self.create_live_stream_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.create_live_stream_with_http_info(create_live_stream_request, **kwargs)  # noqa: E501
             return data
 
-    def create_live_stream_with_http_info(self, **kwargs):  # noqa: E501
+    def create_live_stream_with_http_info(self, create_live_stream_request, **kwargs):  # noqa: E501
         """Create a live stream  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_live_stream_with_http_info(async_req=True)
+        >>> thread = api.create_live_stream_with_http_info(create_live_stream_request, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param CreateLiveStreamRequest create_live_stream_request:
+        :param CreateLiveStreamRequest create_live_stream_request: (required)
         :return: LiveStreamResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -75,6 +75,10 @@ class LiveStreamsApi(object):
                 )
             local_var_params[key] = val
         del local_var_params['kwargs']
+        # verify the required parameter 'create_live_stream_request' is set
+        if ('create_live_stream_request' not in local_var_params or
+                local_var_params['create_live_stream_request'] is None):
+            raise ValueError("Missing the required parameter `create_live_stream_request` when calling `create_live_stream`")  # noqa: E501
 
         collection_formats = {}
 
@@ -117,39 +121,39 @@ class LiveStreamsApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def create_live_stream_playback_id(self, live_stream_id, **kwargs):  # noqa: E501
+    def create_live_stream_playback_id(self, live_stream_id, create_playback_id_request, **kwargs):  # noqa: E501
         """Create a live stream playback ID  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_live_stream_playback_id(live_stream_id, async_req=True)
+        >>> thread = api.create_live_stream_playback_id(live_stream_id, create_playback_id_request, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
         :param str live_stream_id: The live stream ID (required)
-        :param CreatePlaybackIDRequest create_playback_id_request:
+        :param CreatePlaybackIDRequest create_playback_id_request: (required)
         :return: CreatePlaybackIDResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.create_live_stream_playback_id_with_http_info(live_stream_id, **kwargs)  # noqa: E501
+            return self.create_live_stream_playback_id_with_http_info(live_stream_id, create_playback_id_request, **kwargs)  # noqa: E501
         else:
-            (data) = self.create_live_stream_playback_id_with_http_info(live_stream_id, **kwargs)  # noqa: E501
+            (data) = self.create_live_stream_playback_id_with_http_info(live_stream_id, create_playback_id_request, **kwargs)  # noqa: E501
             return data
 
-    def create_live_stream_playback_id_with_http_info(self, live_stream_id, **kwargs):  # noqa: E501
+    def create_live_stream_playback_id_with_http_info(self, live_stream_id, create_playback_id_request, **kwargs):  # noqa: E501
         """Create a live stream playback ID  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_live_stream_playback_id_with_http_info(live_stream_id, async_req=True)
+        >>> thread = api.create_live_stream_playback_id_with_http_info(live_stream_id, create_playback_id_request, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
         :param str live_stream_id: The live stream ID (required)
-        :param CreatePlaybackIDRequest create_playback_id_request:
+        :param CreatePlaybackIDRequest create_playback_id_request: (required)
         :return: CreatePlaybackIDResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -175,6 +179,10 @@ class LiveStreamsApi(object):
         if ('live_stream_id' not in local_var_params or
                 local_var_params['live_stream_id'] is None):
             raise ValueError("Missing the required parameter `live_stream_id` when calling `create_live_stream_playback_id`")  # noqa: E501
+        # verify the required parameter 'create_playback_id_request' is set
+        if ('create_playback_id_request' not in local_var_params or
+                local_var_params['create_playback_id_request'] is None):
+            raise ValueError("Missing the required parameter `create_playback_id_request` when calling `create_live_stream_playback_id`")  # noqa: E501
 
         collection_formats = {}
 
