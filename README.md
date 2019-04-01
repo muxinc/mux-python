@@ -4,9 +4,9 @@
 
 Official Mux API wrapper for python projects, supporting both Mux Data and Mux Video.
 
-Mux Video is an API-first platform, powered by data and designed by video experts to make beautiful video possible for every development team.
+[Mux Video](https://mux.com/video) is an API-first platform, powered by data and designed by video experts to make beautiful video possible for every development team.
 
-Mux Data is a platform for monitoring your video streaming performance with just a few lines of code. Get in-depth quality of service analytics on web, mobile, and OTT devices.
+[Mux Data](https://mux.com/data) is a platform for monitoring your video streaming performance with just a few lines of code. Get in-depth quality of service analytics on web, mobile, and OTT devices.
 
 Not familiar with Mux? Check out https://mux.com/ for more information.
 
