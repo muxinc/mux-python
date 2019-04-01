@@ -2,9 +2,11 @@
 
 # Mux Python
 
-Official Mux API wrapper for python projects 🐍.
+Official Mux API wrapper for python projects, supporting both Mux Data and Mux Video.
 
 Mux Video is an API-first platform, powered by data and designed by video experts to make beautiful video possible for every development team.
+
+Mux Data is a platform for monitoring your video streaming performance with just a few lines of code. Get in-depth quality of service analytics on web, mobile, and OTT devices.
 
 Not familiar with Mux? Check out https://mux.com/ for more information.
 
@@ -53,10 +55,10 @@ Be sure to also checkout the [exmples directory](examples/):
 
 There's also example usage of every API call (also used for testing):
 * [Video](examples/video/)
-  * [Assets API](examples/video/exercise-assets.py)
-  * [Live Streams API](examples/video/exercise-live-streams.py)
-  * [Signing Keys API](examples/video/exercise-signing-keys.py)
-  * [Uploads API](examples/video/exercise-uploads.py)
+  * [Assets](examples/video/exercise-assets.py)
+  * [Live Streams](examples/video/exercise-live-streams.py)
+  * [Signing Keys](examples/video/exercise-signing-keys.py)
+  * [Uploads](examples/video/exercise-uploads.py)
 * [Data](examples/data/)
   * [Errors](examples/data/exercise-errors.py)
   * [Exports](examples/data/exercise-exports.py)
