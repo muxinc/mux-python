@@ -7,20 +7,19 @@ import mux_python
 from mux_python.rest import NotFoundException
 import logger
 
-# Exercises all asset operations:
+# Exercises all error operations:
 #   list-errors
 
 # Authentication Setup
 configuration = mux_python.Configuration()
 configuration.username = os.environ['MUX_TOKEN_ID']
 configuration.password = os.environ['MUX_TOKEN_SECRET']
-configuration.debug = True
 
 # API Client Initialization
 errors_api = mux_python.ErrorsApi(mux_python.ApiClient(configuration))
 
 # ========== list-errors ==========
-list_errors_response = errors_api.list_errors(filters=['browser:Firefox'], timeframe=['7:days'])
+list_errors_response = errors_api.list_errors(filters=['browser:Chrome'], timeframe=['7:days'])
 logger.print_debug('List Errors Response: ' + str(list_errors_response))
 assert list_errors_response != None
 assert list_errors_response.data != None
