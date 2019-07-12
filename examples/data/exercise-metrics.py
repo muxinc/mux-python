@@ -7,7 +7,7 @@ import mux_python
 from mux_python.rest import NotFoundException
 import logger
 
-# Exercises all asset operations:
+# Exercises all metrics operations:
 #   list-breakdown-values
 #   get-overall-values
 #   list-insights

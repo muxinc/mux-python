@@ -23,25 +23,35 @@ class CreateLiveStreamRequest(object):
     """
     openapi_types = {
         'playback_policy': 'list[PlaybackPolicy]',
-        'new_asset_settings': 'CreateAssetRequest'
+        'new_asset_settings': 'CreateAssetRequest',
+        'reconnect_window': 'float',
+        'passthrough': 'str'
     }
 
     attribute_map = {
         'playback_policy': 'playback_policy',
-        'new_asset_settings': 'new_asset_settings'
+        'new_asset_settings': 'new_asset_settings',
+        'reconnect_window': 'reconnect_window',
+        'passthrough': 'passthrough'
     }
 
-    def __init__(self, playback_policy=None, new_asset_settings=None):  # noqa: E501
+    def __init__(self, playback_policy=None, new_asset_settings=None, reconnect_window=60, passthrough=None):  # noqa: E501
         """CreateLiveStreamRequest - a model defined in OpenAPI"""  # noqa: E501
 
         self._playback_policy = None
         self._new_asset_settings = None
+        self._reconnect_window = None
+        self._passthrough = None
         self.discriminator = None
 
         if playback_policy is not None:
             self.playback_policy = playback_policy
         if new_asset_settings is not None:
             self.new_asset_settings = new_asset_settings
+        if reconnect_window is not None:
+            self.reconnect_window = reconnect_window
+        if passthrough is not None:
+            self.passthrough = passthrough
 
     @property
     def playback_policy(self):
@@ -84,6 +94,54 @@ class CreateLiveStreamRequest(object):
         """
 
         self._new_asset_settings = new_asset_settings
+
+    @property
+    def reconnect_window(self):
+        """Gets the reconnect_window of this CreateLiveStreamRequest.  # noqa: E501
+
+        When live streaming software disconnects from Mux, either intentionally or due to a drop in the network, the Reconnect Window is the time in seconds that Mux should wait for the streaming software to reconnect before considering the live stream finished and completing the recorded asset. Default: 60 seconds  # noqa: E501
+
+        :return: The reconnect_window of this CreateLiveStreamRequest.  # noqa: E501
+        :rtype: float
+        """
+        return self._reconnect_window
+
+    @reconnect_window.setter
+    def reconnect_window(self, reconnect_window):
+        """Sets the reconnect_window of this CreateLiveStreamRequest.
+
+        When live streaming software disconnects from Mux, either intentionally or due to a drop in the network, the Reconnect Window is the time in seconds that Mux should wait for the streaming software to reconnect before considering the live stream finished and completing the recorded asset. Default: 60 seconds  # noqa: E501
+
+        :param reconnect_window: The reconnect_window of this CreateLiveStreamRequest.  # noqa: E501
+        :type: float
+        """
+        if reconnect_window is not None and reconnect_window > 300:  # noqa: E501
+            raise ValueError("Invalid value for `reconnect_window`, must be a value less than or equal to `300`")  # noqa: E501
+        if reconnect_window is not None and reconnect_window < 0.1:  # noqa: E501
+            raise ValueError("Invalid value for `reconnect_window`, must be a value greater than or equal to `0.1`")  # noqa: E501
+
+        self._reconnect_window = reconnect_window
+
+    @property
+    def passthrough(self):
+        """Gets the passthrough of this CreateLiveStreamRequest.  # noqa: E501
+
+
+        :return: The passthrough of this CreateLiveStreamRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._passthrough
+
+    @passthrough.setter
+    def passthrough(self, passthrough):
+        """Sets the passthrough of this CreateLiveStreamRequest.
+
+
+        :param passthrough: The passthrough of this CreateLiveStreamRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._passthrough = passthrough
 
     def to_dict(self):
         """Returns the model properties as a dict"""

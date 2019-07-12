@@ -10,7 +10,7 @@ NOTE: This class is auto generated. Do not edit the class manually.
 from setuptools import setup, find_packages  # noqa: H301
 
 NAME = "mux_python"
-VERSION = "1.2.0"
+VERSION = "1.2.1"
 # To install the library, run the following
 #
 # python setup.py install
