@@ -23,7 +23,7 @@ class VideoViewResponse(object):
     """
     openapi_types = {
         'data': 'VideoView',
-        'timeframe': 'list[str]'
+        'timeframe': 'list[int]'
     }
 
     attribute_map = {
@@ -70,7 +70,7 @@ class VideoViewResponse(object):
 
 
         :return: The timeframe of this VideoViewResponse.  # noqa: E501
-        :rtype: list[str]
+        :rtype: list[int]
         """
         return self._timeframe
 
@@ -80,7 +80,7 @@ class VideoViewResponse(object):
 
 
         :param timeframe: The timeframe of this VideoViewResponse.  # noqa: E501
-        :type: list[str]
+        :type: list[int]
         """
 
         self._timeframe = timeframe

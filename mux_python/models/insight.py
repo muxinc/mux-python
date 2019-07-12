@@ -24,8 +24,8 @@ class Insight(object):
     openapi_types = {
         'total_watch_time': 'int',
         'total_views': 'int',
-        'negative_impact_score': 'int',
-        'metric': 'int',
+        'negative_impact_score': 'float',
+        'metric': 'float',
         'filter_value': 'str',
         'filter_column': 'str'
     }
@@ -111,7 +111,7 @@ class Insight(object):
 
 
         :return: The negative_impact_score of this Insight.  # noqa: E501
-        :rtype: int
+        :rtype: float
         """
         return self._negative_impact_score
 
@@ -121,7 +121,7 @@ class Insight(object):
 
 
         :param negative_impact_score: The negative_impact_score of this Insight.  # noqa: E501
-        :type: int
+        :type: float
         """
 
         self._negative_impact_score = negative_impact_score
@@ -132,7 +132,7 @@ class Insight(object):
 
 
         :return: The metric of this Insight.  # noqa: E501
-        :rtype: int
+        :rtype: float
         """
         return self._metric
 
@@ -142,7 +142,7 @@ class Insight(object):
 
 
         :param metric: The metric of this Insight.  # noqa: E501
-        :type: int
+        :type: float
         """
 
         self._metric = metric

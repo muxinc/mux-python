@@ -24,7 +24,7 @@ class ListErrorsResponse(object):
     openapi_types = {
         'data': 'list[Error]',
         'total_row_count': 'int',
-        'timeframe': 'list[str]'
+        'timeframe': 'list[int]'
     }
 
     attribute_map = {
@@ -96,7 +96,7 @@ class ListErrorsResponse(object):
 
 
         :return: The timeframe of this ListErrorsResponse.  # noqa: E501
-        :rtype: list[str]
+        :rtype: list[int]
         """
         return self._timeframe
 
@@ -106,7 +106,7 @@ class ListErrorsResponse(object):
 
 
         :param timeframe: The timeframe of this ListErrorsResponse.  # noqa: E501
-        :type: list[str]
+        :type: list[int]
         """
 
         self._timeframe = timeframe
