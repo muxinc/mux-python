@@ -25,23 +25,26 @@ class CreateLiveStreamRequest(object):
         'playback_policy': 'list[PlaybackPolicy]',
         'new_asset_settings': 'CreateAssetRequest',
         'reconnect_window': 'float',
-        'passthrough': 'str'
+        'passthrough': 'str',
+        'reduced_latency': 'bool'
     }
 
     attribute_map = {
         'playback_policy': 'playback_policy',
         'new_asset_settings': 'new_asset_settings',
         'reconnect_window': 'reconnect_window',
-        'passthrough': 'passthrough'
+        'passthrough': 'passthrough',
+        'reduced_latency': 'reduced_latency'
     }
 
-    def __init__(self, playback_policy=None, new_asset_settings=None, reconnect_window=60, passthrough=None):  # noqa: E501
+    def __init__(self, playback_policy=None, new_asset_settings=None, reconnect_window=60, passthrough=None, reduced_latency=None):  # noqa: E501
         """CreateLiveStreamRequest - a model defined in OpenAPI"""  # noqa: E501
 
         self._playback_policy = None
         self._new_asset_settings = None
         self._reconnect_window = None
         self._passthrough = None
+        self._reduced_latency = None
         self.discriminator = None
 
         if playback_policy is not None:
@@ -52,6 +55,8 @@ class CreateLiveStreamRequest(object):
             self.reconnect_window = reconnect_window
         if passthrough is not None:
             self.passthrough = passthrough
+        if reduced_latency is not None:
+            self.reduced_latency = reduced_latency
 
     @property
     def playback_policy(self):
@@ -142,6 +147,29 @@ class CreateLiveStreamRequest(object):
         """
 
         self._passthrough = passthrough
+
+    @property
+    def reduced_latency(self):
+        """Gets the reduced_latency of this CreateLiveStreamRequest.  # noqa: E501
+
+        Latency is the time from when the streamer does something in real life to when you see it happen in the player. Set this if you want lower latency for your live stream. Note: Reconnect windows are incompatible with Reduced Latency and will always be set to zero (0) seconds. Read more here: https://mux.com/blog/reduced-latency-for-mux-live-streaming-now-available/  # noqa: E501
+
+        :return: The reduced_latency of this CreateLiveStreamRequest.  # noqa: E501
+        :rtype: bool
+        """
+        return self._reduced_latency
+
+    @reduced_latency.setter
+    def reduced_latency(self, reduced_latency):
+        """Sets the reduced_latency of this CreateLiveStreamRequest.
+
+        Latency is the time from when the streamer does something in real life to when you see it happen in the player. Set this if you want lower latency for your live stream. Note: Reconnect windows are incompatible with Reduced Latency and will always be set to zero (0) seconds. Read more here: https://mux.com/blog/reduced-latency-for-mux-live-streaming-now-available/  # noqa: E501
+
+        :param reduced_latency: The reduced_latency of this CreateLiveStreamRequest.  # noqa: E501
+        :type: bool
+        """
+
+        self._reduced_latency = reduced_latency
 
     def to_dict(self):
         """Returns the model properties as a dict"""

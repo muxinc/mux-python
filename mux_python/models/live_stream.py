@@ -31,7 +31,8 @@ class LiveStream(object):
         'playback_ids': 'list[PlaybackID]',
         'new_asset_settings': 'Asset',
         'passthrough': 'str',
-        'reconnect_window': 'float'
+        'reconnect_window': 'float',
+        'reduced_latency': 'bool'
     }
 
     attribute_map = {
@@ -44,10 +45,11 @@ class LiveStream(object):
         'playback_ids': 'playback_ids',
         'new_asset_settings': 'new_asset_settings',
         'passthrough': 'passthrough',
-        'reconnect_window': 'reconnect_window'
+        'reconnect_window': 'reconnect_window',
+        'reduced_latency': 'reduced_latency'
     }
 
-    def __init__(self, id=None, created_at=None, stream_key=None, active_asset_id=None, recent_asset_ids=None, status=None, playback_ids=None, new_asset_settings=None, passthrough=None, reconnect_window=None):  # noqa: E501
+    def __init__(self, id=None, created_at=None, stream_key=None, active_asset_id=None, recent_asset_ids=None, status=None, playback_ids=None, new_asset_settings=None, passthrough=None, reconnect_window=None, reduced_latency=None):  # noqa: E501
         """LiveStream - a model defined in OpenAPI"""  # noqa: E501
 
         self._id = None
@@ -60,6 +62,7 @@ class LiveStream(object):
         self._new_asset_settings = None
         self._passthrough = None
         self._reconnect_window = None
+        self._reduced_latency = None
         self.discriminator = None
 
         if id is not None:
@@ -82,6 +85,8 @@ class LiveStream(object):
             self.passthrough = passthrough
         if reconnect_window is not None:
             self.reconnect_window = reconnect_window
+        if reduced_latency is not None:
+            self.reduced_latency = reduced_latency
 
     @property
     def id(self):
@@ -292,6 +297,27 @@ class LiveStream(object):
         """
 
         self._reconnect_window = reconnect_window
+
+    @property
+    def reduced_latency(self):
+        """Gets the reduced_latency of this LiveStream.  # noqa: E501
+
+
+        :return: The reduced_latency of this LiveStream.  # noqa: E501
+        :rtype: bool
+        """
+        return self._reduced_latency
+
+    @reduced_latency.setter
+    def reduced_latency(self, reduced_latency):
+        """Sets the reduced_latency of this LiveStream.
+
+
+        :param reduced_latency: The reduced_latency of this LiveStream.  # noqa: E501
+        :type: bool
+        """
+
+        self._reduced_latency = reduced_latency
 
     def to_dict(self):
         """Returns the model properties as a dict"""
