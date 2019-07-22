@@ -24,7 +24,7 @@ setup(
     name=NAME,
     version=VERSION,
     description="Official Mux API wrapper for python projects 🐍.",
-    author_email="sdks@mux.com}",
+    author_email="sdks@mux.com",
     url="",
     keywords=["Mux Video", "Video", "Live Stream", "VOD", "Streaming"],
     install_requires=REQUIRES,
