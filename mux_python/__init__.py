@@ -11,7 +11,7 @@ NOTE: This class is auto generated. Do not edit the class manually.
 
 from __future__ import absolute_import
 
-__version__ = "1.2.2"
+__version__ = "1.3.0"
 
 # import apis into sdk package
 from mux_python.api.assets_api import AssetsApi
@@ -19,6 +19,7 @@ from mux_python.api.direct_uploads_api import DirectUploadsApi
 from mux_python.api.errors_api import ErrorsApi
 from mux_python.api.exports_api import ExportsApi
 from mux_python.api.filters_api import FiltersApi
+from mux_python.api.incidents_api import IncidentsApi
 from mux_python.api.live_streams_api import LiveStreamsApi
 from mux_python.api.metrics_api import MetricsApi
 from mux_python.api.url_signing_keys_api import URLSigningKeysApi
@@ -47,6 +48,11 @@ from mux_python.models.get_asset_input_info_response import GetAssetInputInfoRes
 from mux_python.models.get_asset_playback_id_response import GetAssetPlaybackIDResponse
 from mux_python.models.get_metric_timeseries_data_response import GetMetricTimeseriesDataResponse
 from mux_python.models.get_overall_values_response import GetOverallValuesResponse
+from mux_python.models.incident import Incident
+from mux_python.models.incident_breakdown import IncidentBreakdown
+from mux_python.models.incident_notification import IncidentNotification
+from mux_python.models.incident_notification_rule import IncidentNotificationRule
+from mux_python.models.incident_response import IncidentResponse
 from mux_python.models.input_file import InputFile
 from mux_python.models.input_info import InputInfo
 from mux_python.models.input_settings import InputSettings
@@ -61,14 +67,17 @@ from mux_python.models.list_exports_response import ListExportsResponse
 from mux_python.models.list_filter_values_response import ListFilterValuesResponse
 from mux_python.models.list_filters_response import ListFiltersResponse
 from mux_python.models.list_filters_response_data import ListFiltersResponseData
+from mux_python.models.list_incidents_response import ListIncidentsResponse
 from mux_python.models.list_insights_response import ListInsightsResponse
 from mux_python.models.list_live_streams_response import ListLiveStreamsResponse
+from mux_python.models.list_related_incidents_response import ListRelatedIncidentsResponse
 from mux_python.models.list_signing_keys_response import ListSigningKeysResponse
 from mux_python.models.list_uploads_response import ListUploadsResponse
 from mux_python.models.list_video_views_response import ListVideoViewsResponse
 from mux_python.models.live_stream import LiveStream
 from mux_python.models.live_stream_response import LiveStreamResponse
 from mux_python.models.metric import Metric
+from mux_python.models.notification_rule import NotificationRule
 from mux_python.models.overall_values import OverallValues
 from mux_python.models.playback_id import PlaybackID
 from mux_python.models.playback_policy import PlaybackPolicy
