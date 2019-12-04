@@ -39,6 +39,13 @@ class TestLiveStreamsApi(unittest.TestCase):
         """
         pass
 
+    def test_create_live_stream_simulcast_target(self):
+        """Test case for create_live_stream_simulcast_target
+
+        Create a live stream simulcast target  # noqa: E501
+        """
+        pass
+
     def test_delete_live_stream(self):
         """Test case for delete_live_stream
 
@@ -53,10 +60,24 @@ class TestLiveStreamsApi(unittest.TestCase):
         """
         pass
 
+    def test_delete_live_stream_simulcast_target(self):
+        """Test case for delete_live_stream_simulcast_target
+
+        Delete a Live Stream Simulcast Target  # noqa: E501
+        """
+        pass
+
     def test_get_live_stream(self):
         """Test case for get_live_stream
 
         Retrieve a live stream  # noqa: E501
+        """
+        pass
+
+    def test_get_live_stream_simulcast_target(self):
+        """Test case for get_live_stream_simulcast_target
+
+        Retrieve a Live Stream Simulcast Target  # noqa: E501
         """
         pass
 

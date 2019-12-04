@@ -227,6 +227,114 @@ class LiveStreamsApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def create_live_stream_simulcast_target(self, live_stream_id, create_simulcast_target_request, **kwargs):  # noqa: E501
+        """Create a live stream simulcast target  # noqa: E501
+
+        Create a simulcast target for the parent live stream. Simulcast target can only be created when the parent live stream is in idle state. Only one simulcast target can be created at a time with this API.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.create_live_stream_simulcast_target(live_stream_id, create_simulcast_target_request, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str live_stream_id: The live stream ID (required)
+        :param CreateSimulcastTargetRequest create_simulcast_target_request: (required)
+        :return: SimulcastTargetResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.create_live_stream_simulcast_target_with_http_info(live_stream_id, create_simulcast_target_request, **kwargs)  # noqa: E501
+        else:
+            (data) = self.create_live_stream_simulcast_target_with_http_info(live_stream_id, create_simulcast_target_request, **kwargs)  # noqa: E501
+            return data
+
+    def create_live_stream_simulcast_target_with_http_info(self, live_stream_id, create_simulcast_target_request, **kwargs):  # noqa: E501
+        """Create a live stream simulcast target  # noqa: E501
+
+        Create a simulcast target for the parent live stream. Simulcast target can only be created when the parent live stream is in idle state. Only one simulcast target can be created at a time with this API.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.create_live_stream_simulcast_target_with_http_info(live_stream_id, create_simulcast_target_request, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str live_stream_id: The live stream ID (required)
+        :param CreateSimulcastTargetRequest create_simulcast_target_request: (required)
+        :return: SimulcastTargetResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        local_var_params = locals()
+
+        all_params = ['live_stream_id', 'create_simulcast_target_request']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        for key, val in six.iteritems(local_var_params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method create_live_stream_simulcast_target" % key
+                )
+            local_var_params[key] = val
+        del local_var_params['kwargs']
+        # verify the required parameter 'live_stream_id' is set
+        if ('live_stream_id' not in local_var_params or
+                local_var_params['live_stream_id'] is None):
+            raise ValueError("Missing the required parameter `live_stream_id` when calling `create_live_stream_simulcast_target`")  # noqa: E501
+        # verify the required parameter 'create_simulcast_target_request' is set
+        if ('create_simulcast_target_request' not in local_var_params or
+                local_var_params['create_simulcast_target_request'] is None):
+            raise ValueError("Missing the required parameter `create_simulcast_target_request` when calling `create_live_stream_simulcast_target`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'live_stream_id' in local_var_params:
+            path_params['LIVE_STREAM_ID'] = local_var_params['live_stream_id']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'create_simulcast_target_request' in local_var_params:
+            body_params = local_var_params['create_simulcast_target_request']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['accessToken']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/video/v1/live-streams/{LIVE_STREAM_ID}/simulcast-targets', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='SimulcastTargetResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get('async_req'),
+            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
+            _preload_content=local_var_params.get('_preload_content', True),
+            _request_timeout=local_var_params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def delete_live_stream(self, live_stream_id, **kwargs):  # noqa: E501
         """Delete a live stream  # noqa: E501
 
@@ -415,6 +523,106 @@ class LiveStreamsApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def delete_live_stream_simulcast_target(self, live_stream_id, simulcast_target_id, **kwargs):  # noqa: E501
+        """Delete a Live Stream Simulcast Target  # noqa: E501
+
+        Delete the simulcast target using the simulcast target ID returned when creating the simulcast target. Simulcast Target can only be deleted when the parent live stream is in idle state.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.delete_live_stream_simulcast_target(live_stream_id, simulcast_target_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str live_stream_id: The live stream ID (required)
+        :param str simulcast_target_id: The ID of the simulcast target. (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.delete_live_stream_simulcast_target_with_http_info(live_stream_id, simulcast_target_id, **kwargs)  # noqa: E501
+        else:
+            (data) = self.delete_live_stream_simulcast_target_with_http_info(live_stream_id, simulcast_target_id, **kwargs)  # noqa: E501
+            return data
+
+    def delete_live_stream_simulcast_target_with_http_info(self, live_stream_id, simulcast_target_id, **kwargs):  # noqa: E501
+        """Delete a Live Stream Simulcast Target  # noqa: E501
+
+        Delete the simulcast target using the simulcast target ID returned when creating the simulcast target. Simulcast Target can only be deleted when the parent live stream is in idle state.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.delete_live_stream_simulcast_target_with_http_info(live_stream_id, simulcast_target_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str live_stream_id: The live stream ID (required)
+        :param str simulcast_target_id: The ID of the simulcast target. (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        local_var_params = locals()
+
+        all_params = ['live_stream_id', 'simulcast_target_id']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        for key, val in six.iteritems(local_var_params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_live_stream_simulcast_target" % key
+                )
+            local_var_params[key] = val
+        del local_var_params['kwargs']
+        # verify the required parameter 'live_stream_id' is set
+        if ('live_stream_id' not in local_var_params or
+                local_var_params['live_stream_id'] is None):
+            raise ValueError("Missing the required parameter `live_stream_id` when calling `delete_live_stream_simulcast_target`")  # noqa: E501
+        # verify the required parameter 'simulcast_target_id' is set
+        if ('simulcast_target_id' not in local_var_params or
+                local_var_params['simulcast_target_id'] is None):
+            raise ValueError("Missing the required parameter `simulcast_target_id` when calling `delete_live_stream_simulcast_target`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'live_stream_id' in local_var_params:
+            path_params['LIVE_STREAM_ID'] = local_var_params['live_stream_id']  # noqa: E501
+        if 'simulcast_target_id' in local_var_params:
+            path_params['SIMULCAST_TARGET_ID'] = local_var_params['simulcast_target_id']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # Authentication setting
+        auth_settings = ['accessToken']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/video/v1/live-streams/{LIVE_STREAM_ID}/simulcast-targets/{SIMULCAST_TARGET_ID}', 'DELETE',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=None,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get('async_req'),
+            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
+            _preload_content=local_var_params.get('_preload_content', True),
+            _request_timeout=local_var_params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def get_live_stream(self, live_stream_id, **kwargs):  # noqa: E501
         """Retrieve a live stream  # noqa: E501
 
@@ -504,6 +712,110 @@ class LiveStreamsApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='LiveStreamResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get('async_req'),
+            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
+            _preload_content=local_var_params.get('_preload_content', True),
+            _request_timeout=local_var_params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def get_live_stream_simulcast_target(self, live_stream_id, simulcast_target_id, **kwargs):  # noqa: E501
+        """Retrieve a Live Stream Simulcast Target  # noqa: E501
+
+        Retrieves the details of the simulcast target created for the parent live stream. Supply the unique live stream ID and simulcast target ID that was returned in the response of create simulcast target request, and Mux will return the corresponding information.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_live_stream_simulcast_target(live_stream_id, simulcast_target_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str live_stream_id: The live stream ID (required)
+        :param str simulcast_target_id: The ID of the simulcast target. (required)
+        :return: SimulcastTargetResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.get_live_stream_simulcast_target_with_http_info(live_stream_id, simulcast_target_id, **kwargs)  # noqa: E501
+        else:
+            (data) = self.get_live_stream_simulcast_target_with_http_info(live_stream_id, simulcast_target_id, **kwargs)  # noqa: E501
+            return data
+
+    def get_live_stream_simulcast_target_with_http_info(self, live_stream_id, simulcast_target_id, **kwargs):  # noqa: E501
+        """Retrieve a Live Stream Simulcast Target  # noqa: E501
+
+        Retrieves the details of the simulcast target created for the parent live stream. Supply the unique live stream ID and simulcast target ID that was returned in the response of create simulcast target request, and Mux will return the corresponding information.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_live_stream_simulcast_target_with_http_info(live_stream_id, simulcast_target_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str live_stream_id: The live stream ID (required)
+        :param str simulcast_target_id: The ID of the simulcast target. (required)
+        :return: SimulcastTargetResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        local_var_params = locals()
+
+        all_params = ['live_stream_id', 'simulcast_target_id']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        for key, val in six.iteritems(local_var_params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_live_stream_simulcast_target" % key
+                )
+            local_var_params[key] = val
+        del local_var_params['kwargs']
+        # verify the required parameter 'live_stream_id' is set
+        if ('live_stream_id' not in local_var_params or
+                local_var_params['live_stream_id'] is None):
+            raise ValueError("Missing the required parameter `live_stream_id` when calling `get_live_stream_simulcast_target`")  # noqa: E501
+        # verify the required parameter 'simulcast_target_id' is set
+        if ('simulcast_target_id' not in local_var_params or
+                local_var_params['simulcast_target_id'] is None):
+            raise ValueError("Missing the required parameter `simulcast_target_id` when calling `get_live_stream_simulcast_target`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'live_stream_id' in local_var_params:
+            path_params['LIVE_STREAM_ID'] = local_var_params['live_stream_id']  # noqa: E501
+        if 'simulcast_target_id' in local_var_params:
+            path_params['SIMULCAST_TARGET_ID'] = local_var_params['simulcast_target_id']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['accessToken']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/video/v1/live-streams/{LIVE_STREAM_ID}/simulcast-targets/{SIMULCAST_TARGET_ID}', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='SimulcastTargetResponse',  # noqa: E501
             auth_settings=auth_settings,
             async_req=local_var_params.get('async_req'),
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501

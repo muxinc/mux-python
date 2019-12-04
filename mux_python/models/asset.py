@@ -41,6 +41,7 @@ class Asset(object):
         'master': 'AssetMaster',
         'master_access': 'str',
         'mp4_support': 'str',
+        'normalize_audio': 'bool',
         'static_renditions': 'AssetStaticRenditions'
     }
 
@@ -64,10 +65,11 @@ class Asset(object):
         'master': 'master',
         'master_access': 'master_access',
         'mp4_support': 'mp4_support',
+        'normalize_audio': 'normalize_audio',
         'static_renditions': 'static_renditions'
     }
 
-    def __init__(self, id=None, created_at=None, deleted_at=None, status=None, duration=None, max_stored_resolution=None, max_stored_frame_rate=None, aspect_ratio=None, playback_ids=None, tracks=None, demo=None, errors=None, per_title_encode=None, is_live=None, passthrough=None, live_stream_id=None, master=None, master_access='none', mp4_support='none', static_renditions=None):  # noqa: E501
+    def __init__(self, id=None, created_at=None, deleted_at=None, status=None, duration=None, max_stored_resolution=None, max_stored_frame_rate=None, aspect_ratio=None, playback_ids=None, tracks=None, demo=None, errors=None, per_title_encode=None, is_live=None, passthrough=None, live_stream_id=None, master=None, master_access='none', mp4_support='none', normalize_audio=False, static_renditions=None):  # noqa: E501
         """Asset - a model defined in OpenAPI"""  # noqa: E501
 
         self._id = None
@@ -89,6 +91,7 @@ class Asset(object):
         self._master = None
         self._master_access = None
         self._mp4_support = None
+        self._normalize_audio = None
         self._static_renditions = None
         self.discriminator = None
 
@@ -130,6 +133,8 @@ class Asset(object):
             self.master_access = master_access
         if mp4_support is not None:
             self.mp4_support = mp4_support
+        if normalize_audio is not None:
+            self.normalize_audio = normalize_audio
         if static_renditions is not None:
             self.static_renditions = static_renditions
 
@@ -543,6 +548,27 @@ class Asset(object):
             )
 
         self._mp4_support = mp4_support
+
+    @property
+    def normalize_audio(self):
+        """Gets the normalize_audio of this Asset.  # noqa: E501
+
+
+        :return: The normalize_audio of this Asset.  # noqa: E501
+        :rtype: bool
+        """
+        return self._normalize_audio
+
+    @normalize_audio.setter
+    def normalize_audio(self, normalize_audio):
+        """Sets the normalize_audio of this Asset.
+
+
+        :param normalize_audio: The normalize_audio of this Asset.  # noqa: E501
+        :type: bool
+        """
+
+        self._normalize_audio = normalize_audio
 
     @property
     def static_renditions(self):

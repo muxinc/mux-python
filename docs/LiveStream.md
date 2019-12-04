@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **passthrough** | **str** |  | [optional] 
 **reconnect_window** | **float** |  | [optional] 
 **reduced_latency** | **bool** |  | [optional] 
+**simulcast_targets** | [**list[SimulcastTarget]**](SimulcastTarget.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

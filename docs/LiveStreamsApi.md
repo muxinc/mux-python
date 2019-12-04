@@ -6,9 +6,12 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**create_live_stream**](LiveStreamsApi.md#create_live_stream) | **POST** /video/v1/live-streams | Create a live stream
 [**create_live_stream_playback_id**](LiveStreamsApi.md#create_live_stream_playback_id) | **POST** /video/v1/live-streams/{LIVE_STREAM_ID}/playback-ids | Create a live stream playback ID
+[**create_live_stream_simulcast_target**](LiveStreamsApi.md#create_live_stream_simulcast_target) | **POST** /video/v1/live-streams/{LIVE_STREAM_ID}/simulcast-targets | Create a live stream simulcast target
 [**delete_live_stream**](LiveStreamsApi.md#delete_live_stream) | **DELETE** /video/v1/live-streams/{LIVE_STREAM_ID} | Delete a live stream
 [**delete_live_stream_playback_id**](LiveStreamsApi.md#delete_live_stream_playback_id) | **DELETE** /video/v1/live-streams/{LIVE_STREAM_ID}/playback-ids/{PLAYBACK_ID} | Delete a live stream playback ID
+[**delete_live_stream_simulcast_target**](LiveStreamsApi.md#delete_live_stream_simulcast_target) | **DELETE** /video/v1/live-streams/{LIVE_STREAM_ID}/simulcast-targets/{SIMULCAST_TARGET_ID} | Delete a Live Stream Simulcast Target
 [**get_live_stream**](LiveStreamsApi.md#get_live_stream) | **GET** /video/v1/live-streams/{LIVE_STREAM_ID} | Retrieve a live stream
+[**get_live_stream_simulcast_target**](LiveStreamsApi.md#get_live_stream_simulcast_target) | **GET** /video/v1/live-streams/{LIVE_STREAM_ID}/simulcast-targets/{SIMULCAST_TARGET_ID} | Retrieve a Live Stream Simulcast Target
 [**list_live_streams**](LiveStreamsApi.md#list_live_streams) | **GET** /video/v1/live-streams | List live streams
 [**reset_stream_key**](LiveStreamsApi.md#reset_stream_key) | **POST** /video/v1/live-streams/{LIVE_STREAM_ID}/reset-stream-key | Reset a live stream’s stream key
 [**signal_live_stream_complete**](LiveStreamsApi.md#signal_live_stream_complete) | **PUT** /video/v1/live-streams/{LIVE_STREAM_ID}/complete | Signal a live stream is finished
@@ -108,6 +111,62 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**CreatePlaybackIDResponse**](CreatePlaybackIDResponse.md)
+
+### Authorization
+
+[accessToken](../README.md#accessToken)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **create_live_stream_simulcast_target**
+> SimulcastTargetResponse create_live_stream_simulcast_target(live_stream_id, create_simulcast_target_request)
+
+Create a live stream simulcast target
+
+Create a simulcast target for the parent live stream. Simulcast target can only be created when the parent live stream is in idle state. Only one simulcast target can be created at a time with this API.
+
+### Example
+
+* Basic Authentication (accessToken): 
+```python
+from __future__ import print_function
+import time
+import mux_python
+from mux_python.rest import ApiException
+from pprint import pprint
+configuration = mux_python.Configuration()
+# Configure HTTP basic authorization: accessToken
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+
+# create an instance of the API class
+api_instance = mux_python.LiveStreamsApi(mux_python.ApiClient(configuration))
+live_stream_id = 'live_stream_id_example' # str | The live stream ID
+create_simulcast_target_request = mux_python.CreateSimulcastTargetRequest() # CreateSimulcastTargetRequest | 
+
+try:
+    # Create a live stream simulcast target
+    api_response = api_instance.create_live_stream_simulcast_target(live_stream_id, create_simulcast_target_request)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling LiveStreamsApi->create_live_stream_simulcast_target: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **live_stream_id** | **str**| The live stream ID | 
+ **create_simulcast_target_request** | [**CreateSimulcastTargetRequest**](CreateSimulcastTargetRequest.md)|  | 
+
+### Return type
+
+[**SimulcastTargetResponse**](SimulcastTargetResponse.md)
 
 ### Authorization
 
@@ -224,6 +283,61 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **delete_live_stream_simulcast_target**
+> delete_live_stream_simulcast_target(live_stream_id, simulcast_target_id)
+
+Delete a Live Stream Simulcast Target
+
+Delete the simulcast target using the simulcast target ID returned when creating the simulcast target. Simulcast Target can only be deleted when the parent live stream is in idle state.
+
+### Example
+
+* Basic Authentication (accessToken): 
+```python
+from __future__ import print_function
+import time
+import mux_python
+from mux_python.rest import ApiException
+from pprint import pprint
+configuration = mux_python.Configuration()
+# Configure HTTP basic authorization: accessToken
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+
+# create an instance of the API class
+api_instance = mux_python.LiveStreamsApi(mux_python.ApiClient(configuration))
+live_stream_id = 'live_stream_id_example' # str | The live stream ID
+simulcast_target_id = 'simulcast_target_id_example' # str | The ID of the simulcast target.
+
+try:
+    # Delete a Live Stream Simulcast Target
+    api_instance.delete_live_stream_simulcast_target(live_stream_id, simulcast_target_id)
+except ApiException as e:
+    print("Exception when calling LiveStreamsApi->delete_live_stream_simulcast_target: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **live_stream_id** | **str**| The live stream ID | 
+ **simulcast_target_id** | **str**| The ID of the simulcast target. | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[accessToken](../README.md#accessToken)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **get_live_stream**
 > LiveStreamResponse get_live_stream(live_stream_id)
 
@@ -266,6 +380,62 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**LiveStreamResponse**](LiveStreamResponse.md)
+
+### Authorization
+
+[accessToken](../README.md#accessToken)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_live_stream_simulcast_target**
+> SimulcastTargetResponse get_live_stream_simulcast_target(live_stream_id, simulcast_target_id)
+
+Retrieve a Live Stream Simulcast Target
+
+Retrieves the details of the simulcast target created for the parent live stream. Supply the unique live stream ID and simulcast target ID that was returned in the response of create simulcast target request, and Mux will return the corresponding information.
+
+### Example
+
+* Basic Authentication (accessToken): 
+```python
+from __future__ import print_function
+import time
+import mux_python
+from mux_python.rest import ApiException
+from pprint import pprint
+configuration = mux_python.Configuration()
+# Configure HTTP basic authorization: accessToken
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+
+# create an instance of the API class
+api_instance = mux_python.LiveStreamsApi(mux_python.ApiClient(configuration))
+live_stream_id = 'live_stream_id_example' # str | The live stream ID
+simulcast_target_id = 'simulcast_target_id_example' # str | The ID of the simulcast target.
+
+try:
+    # Retrieve a Live Stream Simulcast Target
+    api_response = api_instance.get_live_stream_simulcast_target(live_stream_id, simulcast_target_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling LiveStreamsApi->get_live_stream_simulcast_target: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **live_stream_id** | **str**| The live stream ID | 
+ **simulcast_target_id** | **str**| The ID of the simulcast target. | 
+
+### Return type
+
+[**SimulcastTargetResponse**](SimulcastTargetResponse.md)
 
 ### Authorization
 
