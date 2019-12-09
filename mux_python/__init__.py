@@ -11,7 +11,7 @@ NOTE: This class is auto generated. Do not edit the class manually.
 
 from __future__ import absolute_import
 
-__version__ = "1.2.2"
+__version__ = "1.3.0"
 
 # import apis into sdk package
 from mux_python.api.assets_api import AssetsApi
@@ -25,9 +25,11 @@ from mux_python.api.metrics_api import MetricsApi
 from mux_python.api.url_signing_keys_api import URLSigningKeysApi
 from mux_python.api.video_views_api import VideoViewsApi
 
+
 # import ApiClient
 from mux_python.api_client import ApiClient
 from mux_python.configuration import Configuration
+
 # import models into sdk package
 from mux_python.models.abridged_video_view import AbridgedVideoView
 from mux_python.models.asset import Asset
@@ -90,3 +92,11 @@ from mux_python.models.upload_response import UploadResponse
 from mux_python.models.video_view import VideoView
 from mux_python.models.video_view_event import VideoViewEvent
 from mux_python.models.video_view_response import VideoViewResponse
+
+
+# import exceptions into sdk package
+from mux_python.rest import NotFoundException
+from mux_python.rest import ApiException
+from mux_python.rest import UnauthorizedException
+from mux_python.rest import ForbiddenException
+from mux_python.rest import ServiceException
