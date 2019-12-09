@@ -22,6 +22,7 @@ Name | Type | Description | Notes
 **master** | [**AssetMaster**](AssetMaster.md) |  | [optional] 
 **master_access** | **str** |  | [optional] [default to 'none']
 **mp4_support** | **str** |  | [optional] [default to 'none']
+**normalize_audio** | **bool** |  | [optional] [default to False]
 **static_renditions** | [**AssetStaticRenditions**](AssetStaticRenditions.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

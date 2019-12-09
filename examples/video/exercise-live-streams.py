@@ -51,6 +51,31 @@ assert live_stream_response.data != None
 assert live_stream_response.data.id == create_live_stream_response.data.id
 print("get-live-stream OK ✅")
 
+# ========== create-live-stream-simulcast-target ==========
+create_simulcast_target = mux_python.CreateSimulcastTargetRequest(url='rtmp://thisisthelastone.omg', passthrough='mux', stream_key='imnottellingyou')
+target = live_api.create_live_stream_simulcast_target(create_live_stream_response.data.id, create_simulcast_target)
+assert target != None
+assert target.data != None
+assert target.data.id != None
+print("create-live-stream-simulcast-target OK ✅")
+
+# ========== get-live-stream-simulcast-target ==========
+get_target = live_api.get_live_stream_simulcast_target(create_live_stream_response.data.id, target.data.id)
+assert get_target != None
+assert get_target.data != None
+assert get_target.data.id != None
+assert get_target.data.id == target.data.id
+print("get-live-stream-simulcast-target OK ✅")
+
+# ========== delete-live-stream-simulcast-target ==========
+live_api.delete_live_stream_simulcast_target(create_live_stream_response.data.id, target.data.id)
+no_target = live_api.get_live_stream(create_live_stream_response.data.id)
+assert no_target != None
+assert no_target.data != None
+assert no_target.data.id != None
+assert no_target.data.simulcast_targets == None
+print("delete-live-stream-simulcast-target OK ✅")
+
 # ========== create-live-stream-playback-id ==========
 create_playback_id_request = mux_python.CreatePlaybackIDRequest(policy=mux_python.PlaybackPolicy.SIGNED)
 create_playback_id_response = live_api.create_live_stream_playback_id(create_live_stream_response.data.id, create_playback_id_request)

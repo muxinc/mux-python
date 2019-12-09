@@ -32,7 +32,8 @@ class LiveStream(object):
         'new_asset_settings': 'Asset',
         'passthrough': 'str',
         'reconnect_window': 'float',
-        'reduced_latency': 'bool'
+        'reduced_latency': 'bool',
+        'simulcast_targets': 'list[SimulcastTarget]'
     }
 
     attribute_map = {
@@ -46,10 +47,11 @@ class LiveStream(object):
         'new_asset_settings': 'new_asset_settings',
         'passthrough': 'passthrough',
         'reconnect_window': 'reconnect_window',
-        'reduced_latency': 'reduced_latency'
+        'reduced_latency': 'reduced_latency',
+        'simulcast_targets': 'simulcast_targets'
     }
 
-    def __init__(self, id=None, created_at=None, stream_key=None, active_asset_id=None, recent_asset_ids=None, status=None, playback_ids=None, new_asset_settings=None, passthrough=None, reconnect_window=None, reduced_latency=None):  # noqa: E501
+    def __init__(self, id=None, created_at=None, stream_key=None, active_asset_id=None, recent_asset_ids=None, status=None, playback_ids=None, new_asset_settings=None, passthrough=None, reconnect_window=None, reduced_latency=None, simulcast_targets=None):  # noqa: E501
         """LiveStream - a model defined in OpenAPI"""  # noqa: E501
 
         self._id = None
@@ -63,6 +65,7 @@ class LiveStream(object):
         self._passthrough = None
         self._reconnect_window = None
         self._reduced_latency = None
+        self._simulcast_targets = None
         self.discriminator = None
 
         if id is not None:
@@ -87,6 +90,8 @@ class LiveStream(object):
             self.reconnect_window = reconnect_window
         if reduced_latency is not None:
             self.reduced_latency = reduced_latency
+        if simulcast_targets is not None:
+            self.simulcast_targets = simulcast_targets
 
     @property
     def id(self):
@@ -318,6 +323,27 @@ class LiveStream(object):
         """
 
         self._reduced_latency = reduced_latency
+
+    @property
+    def simulcast_targets(self):
+        """Gets the simulcast_targets of this LiveStream.  # noqa: E501
+
+
+        :return: The simulcast_targets of this LiveStream.  # noqa: E501
+        :rtype: list[SimulcastTarget]
+        """
+        return self._simulcast_targets
+
+    @simulcast_targets.setter
+    def simulcast_targets(self, simulcast_targets):
+        """Sets the simulcast_targets of this LiveStream.
+
+
+        :param simulcast_targets: The simulcast_targets of this LiveStream.  # noqa: E501
+        :type: list[SimulcastTarget]
+        """
+
+        self._simulcast_targets = simulcast_targets
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -27,7 +27,9 @@ class CreateAssetRequest(object):
         'demo': 'bool',
         'per_title_encode': 'bool',
         'passthrough': 'str',
-        'mp4_support': 'str'
+        'mp4_support': 'str',
+        'normalize_audio': 'bool',
+        'master_access': 'str'
     }
 
     attribute_map = {
@@ -36,10 +38,12 @@ class CreateAssetRequest(object):
         'demo': 'demo',
         'per_title_encode': 'per_title_encode',
         'passthrough': 'passthrough',
-        'mp4_support': 'mp4_support'
+        'mp4_support': 'mp4_support',
+        'normalize_audio': 'normalize_audio',
+        'master_access': 'master_access'
     }
 
-    def __init__(self, input=None, playback_policy=None, demo=None, per_title_encode=None, passthrough=None, mp4_support=None):  # noqa: E501
+    def __init__(self, input=None, playback_policy=None, demo=None, per_title_encode=None, passthrough=None, mp4_support=None, normalize_audio=False, master_access=None):  # noqa: E501
         """CreateAssetRequest - a model defined in OpenAPI"""  # noqa: E501
 
         self._input = None
@@ -48,6 +52,8 @@ class CreateAssetRequest(object):
         self._per_title_encode = None
         self._passthrough = None
         self._mp4_support = None
+        self._normalize_audio = None
+        self._master_access = None
         self.discriminator = None
 
         if input is not None:
@@ -62,6 +68,10 @@ class CreateAssetRequest(object):
             self.passthrough = passthrough
         if mp4_support is not None:
             self.mp4_support = mp4_support
+        if normalize_audio is not None:
+            self.normalize_audio = normalize_audio
+        if master_access is not None:
+            self.master_access = master_access
 
     @property
     def input(self):
@@ -194,6 +204,56 @@ class CreateAssetRequest(object):
             )
 
         self._mp4_support = mp4_support
+
+    @property
+    def normalize_audio(self):
+        """Gets the normalize_audio of this CreateAssetRequest.  # noqa: E501
+
+        Normalize the audio track loudness level. This parameter is only applicable to on-demand (not live) assets.  # noqa: E501
+
+        :return: The normalize_audio of this CreateAssetRequest.  # noqa: E501
+        :rtype: bool
+        """
+        return self._normalize_audio
+
+    @normalize_audio.setter
+    def normalize_audio(self, normalize_audio):
+        """Sets the normalize_audio of this CreateAssetRequest.
+
+        Normalize the audio track loudness level. This parameter is only applicable to on-demand (not live) assets.  # noqa: E501
+
+        :param normalize_audio: The normalize_audio of this CreateAssetRequest.  # noqa: E501
+        :type: bool
+        """
+
+        self._normalize_audio = normalize_audio
+
+    @property
+    def master_access(self):
+        """Gets the master_access of this CreateAssetRequest.  # noqa: E501
+
+
+        :return: The master_access of this CreateAssetRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._master_access
+
+    @master_access.setter
+    def master_access(self, master_access):
+        """Sets the master_access of this CreateAssetRequest.
+
+
+        :param master_access: The master_access of this CreateAssetRequest.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["none", "temporary"]  # noqa: E501
+        if master_access not in allowed_values:
+            raise ValueError(
+                "Invalid value for `master_access` ({0}), must be one of {1}"  # noqa: E501
+                .format(master_access, allowed_values)
+            )
+
+        self._master_access = master_access
 
     def to_dict(self):
         """Returns the model properties as a dict"""

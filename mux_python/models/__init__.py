@@ -23,7 +23,9 @@ from mux_python.models.create_asset_request import CreateAssetRequest
 from mux_python.models.create_live_stream_request import CreateLiveStreamRequest
 from mux_python.models.create_playback_id_request import CreatePlaybackIDRequest
 from mux_python.models.create_playback_id_response import CreatePlaybackIDResponse
+from mux_python.models.create_simulcast_target_request import CreateSimulcastTargetRequest
 from mux_python.models.create_upload_request import CreateUploadRequest
+from mux_python.models.delivery_report import DeliveryReport
 from mux_python.models.error import Error
 from mux_python.models.filter_value import FilterValue
 from mux_python.models.get_asset_input_info_response import GetAssetInputInfoResponse
@@ -39,6 +41,7 @@ from mux_python.models.insight import Insight
 from mux_python.models.list_all_metric_values_response import ListAllMetricValuesResponse
 from mux_python.models.list_assets_response import ListAssetsResponse
 from mux_python.models.list_breakdown_values_response import ListBreakdownValuesResponse
+from mux_python.models.list_delivery_usage_response import ListDeliveryUsageResponse
 from mux_python.models.list_errors_response import ListErrorsResponse
 from mux_python.models.list_exports_response import ListExportsResponse
 from mux_python.models.list_filter_values_response import ListFilterValuesResponse
@@ -59,6 +62,8 @@ from mux_python.models.score import Score
 from mux_python.models.signal_live_stream_complete_response import SignalLiveStreamCompleteResponse
 from mux_python.models.signing_key import SigningKey
 from mux_python.models.signing_key_response import SigningKeyResponse
+from mux_python.models.simulcast_target import SimulcastTarget
+from mux_python.models.simulcast_target_response import SimulcastTargetResponse
 from mux_python.models.track import Track
 from mux_python.models.update_asset_mp4_support_request import UpdateAssetMP4SupportRequest
 from mux_python.models.upload import Upload

@@ -37,7 +37,7 @@ class CreateLiveStreamRequest(object):
         'reduced_latency': 'reduced_latency'
     }
 
-    def __init__(self, playback_policy=None, new_asset_settings=None, reconnect_window=60, passthrough=None, reduced_latency=None):  # noqa: E501
+    def __init__(self, playback_policy=None, new_asset_settings=None, reconnect_window=None, passthrough=None, reduced_latency=None):  # noqa: E501
         """CreateLiveStreamRequest - a model defined in OpenAPI"""  # noqa: E501
 
         self._playback_policy = None
@@ -104,7 +104,7 @@ class CreateLiveStreamRequest(object):
     def reconnect_window(self):
         """Gets the reconnect_window of this CreateLiveStreamRequest.  # noqa: E501
 
-        When live streaming software disconnects from Mux, either intentionally or due to a drop in the network, the Reconnect Window is the time in seconds that Mux should wait for the streaming software to reconnect before considering the live stream finished and completing the recorded asset. Default: 60 seconds  # noqa: E501
+        When live streaming software disconnects from Mux, either intentionally or due to a drop in the network, the Reconnect Window is the time in seconds that Mux should wait for the streaming software to reconnect before considering the live stream finished and completing the recorded asset. Defaults to 60 seconds on the API if not specified.  # noqa: E501
 
         :return: The reconnect_window of this CreateLiveStreamRequest.  # noqa: E501
         :rtype: float
@@ -115,7 +115,7 @@ class CreateLiveStreamRequest(object):
     def reconnect_window(self, reconnect_window):
         """Sets the reconnect_window of this CreateLiveStreamRequest.
 
-        When live streaming software disconnects from Mux, either intentionally or due to a drop in the network, the Reconnect Window is the time in seconds that Mux should wait for the streaming software to reconnect before considering the live stream finished and completing the recorded asset. Default: 60 seconds  # noqa: E501
+        When live streaming software disconnects from Mux, either intentionally or due to a drop in the network, the Reconnect Window is the time in seconds that Mux should wait for the streaming software to reconnect before considering the live stream finished and completing the recorded asset. Defaults to 60 seconds on the API if not specified.  # noqa: E501
 
         :param reconnect_window: The reconnect_window of this CreateLiveStreamRequest.  # noqa: E501
         :type: float
