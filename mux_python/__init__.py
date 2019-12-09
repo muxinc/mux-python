@@ -92,11 +92,3 @@ from mux_python.models.upload_response import UploadResponse
 from mux_python.models.video_view import VideoView
 from mux_python.models.video_view_event import VideoViewEvent
 from mux_python.models.video_view_response import VideoViewResponse
-
-
-# import exceptions into sdk package
-from mux_python.rest import NotFoundException
-from mux_python.rest import ApiException
-from mux_python.rest import UnauthorizedException
-from mux_python.rest import ForbiddenException
-from mux_python.rest import ServiceException
