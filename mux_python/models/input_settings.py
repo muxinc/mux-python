@@ -160,7 +160,7 @@ class InputSettings(object):
         :param text_type: The text_type of this InputSettings.  # noqa: E501
         :type: str
         """
-        allowed_values = ["caption", "chapters", "descriptions", "metadata", "subtitles"]  # noqa: E501
+        allowed_values = ["subtitles"]  # noqa: E501
         if text_type not in allowed_values:
             raise ValueError(
                 "Invalid value for `text_type` ({0}), must be one of {1}"  # noqa: E501
