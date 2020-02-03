@@ -16,6 +16,7 @@ import logger
 #   create-asset-playback-id
 #   get-asset-playback-id
 #   create-asset-track
+#   delete-asset-track
 #   delete-asset-playback-id
 #   update-asset-mp4-support
 
