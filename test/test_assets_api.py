@@ -39,6 +39,13 @@ class TestAssetsApi(unittest.TestCase):
         """
         pass
 
+    def test_create_asset_track(self):
+        """Test case for create_asset_track
+
+        Create an asset track  # noqa: E501
+        """
+        pass
+
     def test_delete_asset(self):
         """Test case for delete_asset
 
@@ -50,6 +57,13 @@ class TestAssetsApi(unittest.TestCase):
         """Test case for delete_asset_playback_id
 
         Delete a playback ID  # noqa: E501
+        """
+        pass
+
+    def test_delete_asset_track(self):
+        """Test case for delete_asset_track
+
+        Delete an asset track  # noqa: E501
         """
         pass
 

@@ -72,7 +72,7 @@ class ApiClient(object):
             self.default_headers[header_name] = header_value
         self.cookie = cookie
         # Set default User-Agent.
-        self.user_agent = 'Mux Python | 1.3.0'
+        self.user_agent = 'Mux Python | 1.4.0'
 
     def __del__(self):
         if self._pool:
