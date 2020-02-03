@@ -7,11 +7,7 @@ import mux_python
 from mux_python.rest import NotFoundException
 import logger
 
-# Exercises all url signing key operations:
-#   create-url-signing-key
-#   list-url-signing-keys
-#   get-url-signing-key
-#   delete-url-signing-key
+# Exercises all url signing key operations.
 
 # Authentication Setup
 configuration = mux_python.Configuration()

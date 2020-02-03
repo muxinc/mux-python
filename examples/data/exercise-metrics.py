@@ -7,12 +7,7 @@ import mux_python
 from mux_python.rest import NotFoundException
 import logger
 
-# Exercises all metrics operations:
-#   list-breakdown-values
-#   get-overall-values
-#   list-insights
-#   get-metric-timeseries-data
-#   list-all-metric-values
+# Exercises all metrics operations.
 
 # Authentication Setup
 configuration = mux_python.Configuration()

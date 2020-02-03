@@ -7,15 +7,7 @@ import mux_python
 from mux_python.rest import NotFoundException
 import logger
 
-# Exercises all live stream operations:
-#   create-live-stream
-#   list-live-streams
-#   get-live-stream
-#   delete-live-stream
-#   create-live-stream-playback-id
-#   delete-live-stream-playback-id
-#   reset-stream-key
-#   signal-live-stream-complete
+# Exercises all live stream operations.
 
 # Authentication Setup
 configuration = mux_python.Configuration()

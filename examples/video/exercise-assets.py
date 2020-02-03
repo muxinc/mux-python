@@ -7,18 +7,7 @@ import mux_python
 from mux_python.rest import NotFoundException
 import logger
 
-# Exercises all asset operations:
-#   get-asset
-#   delete-asset
-#   create-asset
-#   list-assets
-#   get-asset-input-info
-#   create-asset-playback-id
-#   get-asset-playback-id
-#   create-asset-track
-#   delete-asset-track
-#   delete-asset-playback-id
-#   update-asset-mp4-support
+# Exercises all asset operations.
 
 # Authentication Setup
 configuration = mux_python.Configuration()
