@@ -11,7 +11,7 @@ NOTE: This class is auto generated. Do not edit the class manually.
 
 from __future__ import absolute_import
 
-__version__ = "1.3.0"
+__version__ = "1.4.0"
 
 # import apis into sdk package
 from mux_python.api.assets_api import AssetsApi
@@ -44,6 +44,8 @@ from mux_python.models.create_live_stream_request import CreateLiveStreamRequest
 from mux_python.models.create_playback_id_request import CreatePlaybackIDRequest
 from mux_python.models.create_playback_id_response import CreatePlaybackIDResponse
 from mux_python.models.create_simulcast_target_request import CreateSimulcastTargetRequest
+from mux_python.models.create_track_request import CreateTrackRequest
+from mux_python.models.create_track_response import CreateTrackResponse
 from mux_python.models.create_upload_request import CreateUploadRequest
 from mux_python.models.delivery_report import DeliveryReport
 from mux_python.models.error import Error

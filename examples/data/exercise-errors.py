@@ -7,8 +7,7 @@ import mux_python
 from mux_python.rest import NotFoundException
 import logger
 
-# Exercises all error operations:
-#   list-errors
+# Exercises all error operations.
 
 # Authentication Setup
 configuration = mux_python.Configuration()

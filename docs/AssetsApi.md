@@ -6,8 +6,10 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**create_asset**](AssetsApi.md#create_asset) | **POST** /video/v1/assets | Create an asset
 [**create_asset_playback_id**](AssetsApi.md#create_asset_playback_id) | **POST** /video/v1/assets/{ASSET_ID}/playback-ids | Create a playback ID
+[**create_asset_track**](AssetsApi.md#create_asset_track) | **POST** /video/v1/assets/{ASSET_ID}/tracks | Create an asset track
 [**delete_asset**](AssetsApi.md#delete_asset) | **DELETE** /video/v1/assets/{ASSET_ID} | Delete an asset
 [**delete_asset_playback_id**](AssetsApi.md#delete_asset_playback_id) | **DELETE** /video/v1/assets/{ASSET_ID}/playback-ids/{PLAYBACK_ID} | Delete a playback ID
+[**delete_asset_track**](AssetsApi.md#delete_asset_track) | **DELETE** /video/v1/assets/{ASSET_ID}/tracks/{TRACK_ID} | Delete an asset track
 [**get_asset**](AssetsApi.md#get_asset) | **GET** /video/v1/assets/{ASSET_ID} | Retrieve an asset
 [**get_asset_input_info**](AssetsApi.md#get_asset_input_info) | **GET** /video/v1/assets/{ASSET_ID}/input-info | Retrieve asset input info
 [**get_asset_playback_id**](AssetsApi.md#get_asset_playback_id) | **GET** /video/v1/assets/{ASSET_ID}/playback-ids/{PLAYBACK_ID} | Retrieve a playback ID
@@ -123,6 +125,60 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **create_asset_track**
+> CreateTrackResponse create_asset_track(asset_id, create_track_request)
+
+Create an asset track
+
+### Example
+
+* Basic Authentication (accessToken): 
+```python
+from __future__ import print_function
+import time
+import mux_python
+from mux_python.rest import ApiException
+from pprint import pprint
+configuration = mux_python.Configuration()
+# Configure HTTP basic authorization: accessToken
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+
+# create an instance of the API class
+api_instance = mux_python.AssetsApi(mux_python.ApiClient(configuration))
+asset_id = 'asset_id_example' # str | The asset ID.
+create_track_request = mux_python.CreateTrackRequest() # CreateTrackRequest | 
+
+try:
+    # Create an asset track
+    api_response = api_instance.create_asset_track(asset_id, create_track_request)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AssetsApi->create_asset_track: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **asset_id** | **str**| The asset ID. | 
+ **create_track_request** | [**CreateTrackRequest**](CreateTrackRequest.md)|  | 
+
+### Return type
+
+[**CreateTrackResponse**](CreateTrackResponse.md)
+
+### Authorization
+
+[accessToken](../README.md#accessToken)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **delete_asset**
 > delete_asset(asset_id)
 
@@ -211,6 +267,59 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **asset_id** | **str**| The asset ID. | 
  **playback_id** | **str**| The live stream&#39;s playback ID. | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[accessToken](../README.md#accessToken)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **delete_asset_track**
+> delete_asset_track(asset_id, track_id)
+
+Delete an asset track
+
+### Example
+
+* Basic Authentication (accessToken): 
+```python
+from __future__ import print_function
+import time
+import mux_python
+from mux_python.rest import ApiException
+from pprint import pprint
+configuration = mux_python.Configuration()
+# Configure HTTP basic authorization: accessToken
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+
+# create an instance of the API class
+api_instance = mux_python.AssetsApi(mux_python.ApiClient(configuration))
+asset_id = 'asset_id_example' # str | The asset ID.
+track_id = 'track_id_example' # str | The track ID.
+
+try:
+    # Delete an asset track
+    api_instance.delete_asset_track(asset_id, track_id)
+except ApiException as e:
+    print("Exception when calling AssetsApi->delete_asset_track: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **asset_id** | **str**| The asset ID. | 
+ **track_id** | **str**| The track ID. | 
 
 ### Return type
 

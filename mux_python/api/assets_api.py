@@ -229,6 +229,112 @@ class AssetsApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def create_asset_track(self, asset_id, create_track_request, **kwargs):  # noqa: E501
+        """Create an asset track  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.create_asset_track(asset_id, create_track_request, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str asset_id: The asset ID. (required)
+        :param CreateTrackRequest create_track_request: (required)
+        :return: CreateTrackResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.create_asset_track_with_http_info(asset_id, create_track_request, **kwargs)  # noqa: E501
+        else:
+            (data) = self.create_asset_track_with_http_info(asset_id, create_track_request, **kwargs)  # noqa: E501
+            return data
+
+    def create_asset_track_with_http_info(self, asset_id, create_track_request, **kwargs):  # noqa: E501
+        """Create an asset track  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.create_asset_track_with_http_info(asset_id, create_track_request, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str asset_id: The asset ID. (required)
+        :param CreateTrackRequest create_track_request: (required)
+        :return: CreateTrackResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        local_var_params = locals()
+
+        all_params = ['asset_id', 'create_track_request']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        for key, val in six.iteritems(local_var_params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method create_asset_track" % key
+                )
+            local_var_params[key] = val
+        del local_var_params['kwargs']
+        # verify the required parameter 'asset_id' is set
+        if ('asset_id' not in local_var_params or
+                local_var_params['asset_id'] is None):
+            raise ValueError("Missing the required parameter `asset_id` when calling `create_asset_track`")  # noqa: E501
+        # verify the required parameter 'create_track_request' is set
+        if ('create_track_request' not in local_var_params or
+                local_var_params['create_track_request'] is None):
+            raise ValueError("Missing the required parameter `create_track_request` when calling `create_asset_track`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'asset_id' in local_var_params:
+            path_params['ASSET_ID'] = local_var_params['asset_id']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'create_track_request' in local_var_params:
+            body_params = local_var_params['create_track_request']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['accessToken']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/video/v1/assets/{ASSET_ID}/tracks', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='CreateTrackResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get('async_req'),
+            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
+            _preload_content=local_var_params.get('_preload_content', True),
+            _request_timeout=local_var_params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def delete_asset(self, asset_id, **kwargs):  # noqa: E501
         """Delete an asset  # noqa: E501
 
@@ -403,6 +509,104 @@ class AssetsApi(object):
 
         return self.api_client.call_api(
             '/video/v1/assets/{ASSET_ID}/playback-ids/{PLAYBACK_ID}', 'DELETE',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=None,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get('async_req'),
+            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
+            _preload_content=local_var_params.get('_preload_content', True),
+            _request_timeout=local_var_params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def delete_asset_track(self, asset_id, track_id, **kwargs):  # noqa: E501
+        """Delete an asset track  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.delete_asset_track(asset_id, track_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str asset_id: The asset ID. (required)
+        :param str track_id: The track ID. (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.delete_asset_track_with_http_info(asset_id, track_id, **kwargs)  # noqa: E501
+        else:
+            (data) = self.delete_asset_track_with_http_info(asset_id, track_id, **kwargs)  # noqa: E501
+            return data
+
+    def delete_asset_track_with_http_info(self, asset_id, track_id, **kwargs):  # noqa: E501
+        """Delete an asset track  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.delete_asset_track_with_http_info(asset_id, track_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str asset_id: The asset ID. (required)
+        :param str track_id: The track ID. (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        local_var_params = locals()
+
+        all_params = ['asset_id', 'track_id']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        for key, val in six.iteritems(local_var_params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_asset_track" % key
+                )
+            local_var_params[key] = val
+        del local_var_params['kwargs']
+        # verify the required parameter 'asset_id' is set
+        if ('asset_id' not in local_var_params or
+                local_var_params['asset_id'] is None):
+            raise ValueError("Missing the required parameter `asset_id` when calling `delete_asset_track`")  # noqa: E501
+        # verify the required parameter 'track_id' is set
+        if ('track_id' not in local_var_params or
+                local_var_params['track_id'] is None):
+            raise ValueError("Missing the required parameter `track_id` when calling `delete_asset_track`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'asset_id' in local_var_params:
+            path_params['ASSET_ID'] = local_var_params['asset_id']  # noqa: E501
+        if 'track_id' in local_var_params:
+            path_params['TRACK_ID'] = local_var_params['track_id']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # Authentication setting
+        auth_settings = ['accessToken']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/video/v1/assets/{ASSET_ID}/tracks/{TRACK_ID}', 'DELETE',
             path_params,
             query_params,
             header_params,

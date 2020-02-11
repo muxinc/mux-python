@@ -30,9 +30,7 @@ class InputTrack(object):
         'frame_rate': 'float',
         'sample_rate': 'int',
         'sample_size': 'int',
-        'channels': 'int',
-        'text_track_type': 'str',
-        'language': 'str'
+        'channels': 'int'
     }
 
     attribute_map = {
@@ -44,12 +42,10 @@ class InputTrack(object):
         'frame_rate': 'frame_rate',
         'sample_rate': 'sample_rate',
         'sample_size': 'sample_size',
-        'channels': 'channels',
-        'text_track_type': 'text_track_type',
-        'language': 'language'
+        'channels': 'channels'
     }
 
-    def __init__(self, type=None, duration=None, encoding=None, width=None, height=None, frame_rate=None, sample_rate=None, sample_size=None, channels=None, text_track_type=None, language=None):  # noqa: E501
+    def __init__(self, type=None, duration=None, encoding=None, width=None, height=None, frame_rate=None, sample_rate=None, sample_size=None, channels=None):  # noqa: E501
         """InputTrack - a model defined in OpenAPI"""  # noqa: E501
 
         self._type = None
@@ -61,8 +57,6 @@ class InputTrack(object):
         self._sample_rate = None
         self._sample_size = None
         self._channels = None
-        self._text_track_type = None
-        self._language = None
         self.discriminator = None
 
         if type is not None:
@@ -83,10 +77,6 @@ class InputTrack(object):
             self.sample_size = sample_size
         if channels is not None:
             self.channels = channels
-        if text_track_type is not None:
-            self.text_track_type = text_track_type
-        if language is not None:
-            self.language = language
 
     @property
     def type(self):
@@ -276,48 +266,6 @@ class InputTrack(object):
         """
 
         self._channels = channels
-
-    @property
-    def text_track_type(self):
-        """Gets the text_track_type of this InputTrack.  # noqa: E501
-
-
-        :return: The text_track_type of this InputTrack.  # noqa: E501
-        :rtype: str
-        """
-        return self._text_track_type
-
-    @text_track_type.setter
-    def text_track_type(self, text_track_type):
-        """Sets the text_track_type of this InputTrack.
-
-
-        :param text_track_type: The text_track_type of this InputTrack.  # noqa: E501
-        :type: str
-        """
-
-        self._text_track_type = text_track_type
-
-    @property
-    def language(self):
-        """Gets the language of this InputTrack.  # noqa: E501
-
-
-        :return: The language of this InputTrack.  # noqa: E501
-        :rtype: str
-        """
-        return self._language
-
-    @language.setter
-    def language(self, language):
-        """Sets the language of this InputTrack.
-
-
-        :param language: The language of this InputTrack.  # noqa: E501
-        :type: str
-        """
-
-        self._language = language
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -7,11 +7,7 @@ import mux_python
 from mux_python.rest import ApiException
 import logger
 
-# Exercises all direct upload operations:
-# create-direct-upload
-# list-direct-uploads
-# get-direct-upload
-# cancel-direct-upload
+# Exercises all direct upload operations.
 
 # Authentication Setup
 configuration = mux_python.Configuration()

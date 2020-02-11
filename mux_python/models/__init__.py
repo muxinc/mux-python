@@ -24,6 +24,8 @@ from mux_python.models.create_live_stream_request import CreateLiveStreamRequest
 from mux_python.models.create_playback_id_request import CreatePlaybackIDRequest
 from mux_python.models.create_playback_id_response import CreatePlaybackIDResponse
 from mux_python.models.create_simulcast_target_request import CreateSimulcastTargetRequest
+from mux_python.models.create_track_request import CreateTrackRequest
+from mux_python.models.create_track_response import CreateTrackResponse
 from mux_python.models.create_upload_request import CreateUploadRequest
 from mux_python.models.delivery_report import DeliveryReport
 from mux_python.models.error import Error

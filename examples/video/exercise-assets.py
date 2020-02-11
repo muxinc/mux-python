@@ -7,16 +7,7 @@ import mux_python
 from mux_python.rest import NotFoundException
 import logger
 
-# Exercises all asset operations:
-#   get-asset
-#   delete-asset
-#   create-asset
-#   list-assets
-#   get-asset-input-info
-#   create-asset-playback-id
-#   get-asset-playback-id
-#   delete-asset-playback-id
-#   update-asset-mp4-support
+# Exercises all asset operations.
 
 # Authentication Setup
 configuration = mux_python.Configuration()
@@ -27,7 +18,8 @@ configuration.password = os.environ['MUX_TOKEN_SECRET']
 assets_api = mux_python.AssetsApi(mux_python.ApiClient(configuration))
 
 # ========== create-asset ==========
-input_settings = [mux_python.InputSettings(url='https://storage.googleapis.com/muxdemofiles/mux-video-intro.mp4')]
+add_captions = mux_python.CreateTrackRequest(url="https://tears-of-steel-subtitles.s3.amazonaws.com/tears-fr.vtt", type="text", text_type="subtitles", language_code="fr", closed_captions=False, name="French")
+input_settings = [mux_python.InputSettings(url='https://storage.googleapis.com/muxdemofiles/mux-video-intro.mp4'), add_captions]
 create_asset_request = mux_python.CreateAssetRequest(input=input_settings)
 create_asset_response = assets_api.create_asset(create_asset_request)
 logger.print_debug("Created Asset: " + str(create_asset_response))
@@ -89,6 +81,23 @@ assert asset_response_mp4.data != None
 assert asset_response_mp4.data.id == create_asset_response.data.id
 assert asset_response_mp4.data.mp4_support == "standard"
 print("update-asset-mp4-support OK ✅")
+
+# ========== create-asset-track ==========
+add_captions = mux_python.CreateTrackRequest(url="https://tears-of-steel-subtitles.s3.amazonaws.com/tears-en.vtt", type="text", text_type="subtitles", language_code="en", closed_captions=False, name="English")
+caption_track = assets_api.create_asset_track(create_asset_response.data.id, add_captions)
+assert caption_track != None
+assert caption_track.data != None
+assert caption_track.data.id != None
+assert caption_track.data.name == 'English'
+asset_with_2_captions = assets_api.get_asset(create_asset_response.data.id)
+assert len(asset_with_2_captions.data.tracks) == 4 # Audio, Video, French that we ingested with the asset, and the English we added here!
+print("create-asset-track OK ✅")
+
+# ========== delete-asset-track ==========
+assets_api.delete_asset_track(create_asset_response.data.id, caption_track.data.id)
+asset_no_captions = assets_api.get_asset(create_asset_response.data.id)
+assert len(asset_no_captions.data.tracks) == 3 # Audio, Video, French that we ingested with the asset
+print("delete-asset-track OK ✅")
 
 # ========== delete-asset-playback-id ==========
 assets_api.delete_asset_playback_id(create_asset_response.data.id, create_asset_playback_id_response.data.id)

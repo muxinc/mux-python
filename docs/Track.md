@@ -11,8 +11,11 @@ Name | Type | Description | Notes
 **max_frame_rate** | **float** |  | [optional] 
 **max_channels** | **int** |  | [optional] 
 **max_channel_layout** | **str** |  | [optional] 
-**text_track_type** | **str** |  | [optional] 
-**language** | **str** |  | [optional] 
+**text_type** | **str** |  | [optional] 
+**language_code** | **str** |  | [optional] 
+**name** | **str** |  | [optional] 
+**closed_captions** | **bool** |  | [optional] 
+**passthrough** | **str** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
