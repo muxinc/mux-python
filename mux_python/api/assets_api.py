@@ -1009,6 +1009,114 @@ class AssetsApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def update_asset_master_access(self, asset_id, update_asset_master_access_request, **kwargs):  # noqa: E501
+        """Update master access  # noqa: E501
+
+        Allows you add temporary access to the master (highest-quality) version of the asset in MP4 format. A URL will be created that can be used to download the master version for 24 hours. After 24 hours Master Access will revert to \"none\". This master version is not optimized for web and not meant to be streamed, only downloaded for purposes like archiving or editing the video offline.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.update_asset_master_access(asset_id, update_asset_master_access_request, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str asset_id: The asset ID. (required)
+        :param UpdateAssetMasterAccessRequest update_asset_master_access_request: (required)
+        :return: AssetResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.update_asset_master_access_with_http_info(asset_id, update_asset_master_access_request, **kwargs)  # noqa: E501
+        else:
+            (data) = self.update_asset_master_access_with_http_info(asset_id, update_asset_master_access_request, **kwargs)  # noqa: E501
+            return data
+
+    def update_asset_master_access_with_http_info(self, asset_id, update_asset_master_access_request, **kwargs):  # noqa: E501
+        """Update master access  # noqa: E501
+
+        Allows you add temporary access to the master (highest-quality) version of the asset in MP4 format. A URL will be created that can be used to download the master version for 24 hours. After 24 hours Master Access will revert to \"none\". This master version is not optimized for web and not meant to be streamed, only downloaded for purposes like archiving or editing the video offline.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.update_asset_master_access_with_http_info(asset_id, update_asset_master_access_request, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str asset_id: The asset ID. (required)
+        :param UpdateAssetMasterAccessRequest update_asset_master_access_request: (required)
+        :return: AssetResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        local_var_params = locals()
+
+        all_params = ['asset_id', 'update_asset_master_access_request']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        for key, val in six.iteritems(local_var_params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method update_asset_master_access" % key
+                )
+            local_var_params[key] = val
+        del local_var_params['kwargs']
+        # verify the required parameter 'asset_id' is set
+        if ('asset_id' not in local_var_params or
+                local_var_params['asset_id'] is None):
+            raise ValueError("Missing the required parameter `asset_id` when calling `update_asset_master_access`")  # noqa: E501
+        # verify the required parameter 'update_asset_master_access_request' is set
+        if ('update_asset_master_access_request' not in local_var_params or
+                local_var_params['update_asset_master_access_request'] is None):
+            raise ValueError("Missing the required parameter `update_asset_master_access_request` when calling `update_asset_master_access`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'asset_id' in local_var_params:
+            path_params['ASSET_ID'] = local_var_params['asset_id']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'update_asset_master_access_request' in local_var_params:
+            body_params = local_var_params['update_asset_master_access_request']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['accessToken']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/video/v1/assets/{ASSET_ID}/master-access', 'PUT',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='AssetResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get('async_req'),
+            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
+            _preload_content=local_var_params.get('_preload_content', True),
+            _request_timeout=local_var_params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def update_asset_mp4_support(self, asset_id, update_asset_mp4_support_request, **kwargs):  # noqa: E501
         """Update MP4 support  # noqa: E501
 

@@ -11,7 +11,7 @@ NOTE: This class is auto generated. Do not edit the class manually.
 
 from __future__ import absolute_import
 
-__version__ = "1.5.0"
+__version__ = "1.6.0"
 
 # import apis into sdk package
 from mux_python.api.assets_api import AssetsApi
@@ -88,6 +88,7 @@ from mux_python.models.simulcast_target import SimulcastTarget
 from mux_python.models.simulcast_target_response import SimulcastTargetResponse
 from mux_python.models.track import Track
 from mux_python.models.update_asset_mp4_support_request import UpdateAssetMP4SupportRequest
+from mux_python.models.update_asset_master_access_request import UpdateAssetMasterAccessRequest
 from mux_python.models.upload import Upload
 from mux_python.models.upload_error import UploadError
 from mux_python.models.upload_response import UploadResponse
