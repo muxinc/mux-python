@@ -95,6 +95,13 @@ class TestAssetsApi(unittest.TestCase):
         """
         pass
 
+    def test_update_asset_master_access(self):
+        """Test case for update_asset_master_access
+
+        Update master access  # noqa: E501
+        """
+        pass
+
     def test_update_asset_mp4_support(self):
         """Test case for update_asset_mp4_support
 

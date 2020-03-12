@@ -82,6 +82,16 @@ assert asset_response_mp4.data.id == create_asset_response.data.id
 assert asset_response_mp4.data.mp4_support == "standard"
 print("update-asset-mp4-support OK ✅")
 
+# ========== update-asset-master-access ==========
+update_asset_master_access_request = mux_python.UpdateAssetMasterAccessRequest(master_access="temporary")
+asset_response_master = assets_api.update_asset_master_access(create_asset_response.data.id, update_asset_master_access_request)
+logger.print_debug("Added Master Acccess: " + str(asset_response_master))
+assert asset_response_master != None
+assert asset_response_master.data != None
+assert asset_response_master.data.id == create_asset_response.data.id
+assert asset_response_master.data.master_access == "temporary"
+print("update-asset-master-access OK ✅")
+
 # ========== create-asset-track ==========
 add_captions = mux_python.CreateTrackRequest(url="https://tears-of-steel-subtitles.s3.amazonaws.com/tears-en.vtt", type="text", text_type="subtitles", language_code="en", closed_captions=False, name="English")
 caption_track = assets_api.create_asset_track(create_asset_response.data.id, add_captions)
