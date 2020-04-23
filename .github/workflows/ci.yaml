@@ -21,8 +21,8 @@ jobs:
           python-version: '3.x'
       - name: Install Python Dependencies
         run: python setup.py install
-      # - name: Run Integration Tests
-      #   env:
-      #     MUX_TOKEN_ID: ${{ secrets.MUX_TOKEN_ID }}
-      #     MUX_TOKEN_SECRET: ${{ secrets.MUX_TOKEN_SECRET }}
-      #   run: bash test.sh
+      - name: Run Integration Tests
+        env:
+          MUX_TOKEN_ID: ${{ secrets.MUX_TOKEN_ID }}
+          MUX_TOKEN_SECRET: ${{ secrets.MUX_TOKEN_SECRET }}
+        run: python examples/video/exercise-assets.py
