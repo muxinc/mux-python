@@ -24,5 +24,5 @@ DATA_TESTS=./examples/data/exercise*
 for f in $DATA_TESTS
 do
   echo "========== Running $f =========="
-    python -I lib $f
+    python $f
 done
