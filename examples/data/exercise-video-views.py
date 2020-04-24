@@ -18,7 +18,7 @@ configuration.password = os.environ['MUX_TOKEN_SECRET']
 video_views_api = mux_python.VideoViewsApi(mux_python.ApiClient(configuration))
 
 # ========== list-video-views ==========
-list_video_views_response = video_views_api.list_video_views(filters=['country:GB', 'browser:Chrome'], timeframe=['7:days'])
+list_video_views_response = video_views_api.list_video_views(filters=['country:US', 'browser:Safari'], timeframe=['7:days'])
 logger.print_debug('List Video Views Response ' + str(list_video_views_response))
 assert list_video_views_response != None
 assert list_video_views_response.data != None
