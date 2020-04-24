@@ -1,12 +1,10 @@
 name: Integration Test
 
-# on:
-#   push:
-#     branches:
-#       - master
-#   pull_request:
-
-on: push
+on:
+  push:
+    branches:
+      - master
+  pull_request:
 
 jobs:
   build:
