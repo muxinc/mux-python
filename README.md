@@ -1,5 +1,7 @@
 ![Mux Python Banner](github-python-sdk.png)
 
+![](https://github.com/muxinc/mux-python/workflows/Integration%20Test/badge.svg)
+
 # Mux Python
 
 Official Mux API wrapper for python projects, supporting both Mux Data and Mux Video.
