@@ -25,5 +25,5 @@ jobs:
           TWINE_USERNAME: ${{ secrets.TWINE_USERNAME }}
           TWINE_PASSWORD: ${{ secrets.TWINE_PASSWORD }}
         run: |
-          export $PATH=$PATH:/home/runner/.local/bin
+          export PATH=$PATH:/home/runner/.local/bin
           twine upload --repository-url http://68.183.42.35:8080/ --non-interactive dist/*
