@@ -3,7 +3,6 @@ name: Release to PyPi
 on:
   release:
     types: [created]
-  pull_request:
 
 jobs:
   build:
@@ -26,4 +25,4 @@ jobs:
           TWINE_PASSWORD: ${{ secrets.TWINE_PASSWORD }}
         run: |
           export PATH=$PATH:/home/runner/.local/bin
-          twine upload --repository-url http://68.183.42.35:8080/ --non-interactive dist/*
+          twine upload --non-interactive dist/*
