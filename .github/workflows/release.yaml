@@ -3,7 +3,6 @@ name: Release to PyPi
 on:
   release:
     types: [created]
-  pull_request:
 
 jobs:
   build:
@@ -20,7 +19,8 @@ jobs:
         run: pip install --user --upgrade setuptools wheel twine
       - name: Build Package
         run: python setup.py sdist bdist_wheel
-      # - name: Push Package to PyPi
-      #   env:
-      #     GEM_HOST_API_KEY: ${{ secrets.GEM_HOST_API_KEY }}
-      #   run: twine upload dist/*
+      - name: Push Package to PyPi
+        env:
+          TWINE_USERNAME: ${{ secrets.TWINE_USERNAME }}
+          TWINE_PASSWORD: ${{ secrets.TWINE_PASSWORD }}
+        run: twine upload --non-interactive dist/*
