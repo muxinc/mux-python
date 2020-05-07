@@ -1,0 +1,28 @@
+name: Release to PyPi
+
+on:
+  release:
+    types: [created]
+
+jobs:
+  build:
+    name: Release to PyPi
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+      - name: Install Python 3.x
+        uses: actions/setup-python@v1
+        with:
+          python-version: '3.x'
+      - name: Install packaging dependencies
+        run: pip install --user --upgrade setuptools wheel twine
+      - name: Build Package
+        run: python setup.py sdist bdist_wheel
+      - name: Push Package to PyPi
+        env:
+          TWINE_USERNAME: ${{ secrets.TWINE_USERNAME }}
+          TWINE_PASSWORD: ${{ secrets.TWINE_PASSWORD }}
+        run: |
+          export PATH=$PATH:/home/runner/.local/bin
+          twine upload --non-interactive dist/*
