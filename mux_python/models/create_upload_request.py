@@ -24,21 +24,24 @@ class CreateUploadRequest(object):
     openapi_types = {
         'timeout': 'int',
         'cors_origin': 'str',
-        'new_asset_settings': 'CreateAssetRequest'
+        'new_asset_settings': 'CreateAssetRequest',
+        'test': 'bool'
     }
 
     attribute_map = {
         'timeout': 'timeout',
         'cors_origin': 'cors_origin',
-        'new_asset_settings': 'new_asset_settings'
+        'new_asset_settings': 'new_asset_settings',
+        'test': 'test'
     }
 
-    def __init__(self, timeout=3600, cors_origin=None, new_asset_settings=None):  # noqa: E501
+    def __init__(self, timeout=3600, cors_origin=None, new_asset_settings=None, test=None):  # noqa: E501
         """CreateUploadRequest - a model defined in OpenAPI"""  # noqa: E501
 
         self._timeout = None
         self._cors_origin = None
         self._new_asset_settings = None
+        self._test = None
         self.discriminator = None
 
         if timeout is not None:
@@ -46,6 +49,8 @@ class CreateUploadRequest(object):
         if cors_origin is not None:
             self.cors_origin = cors_origin
         self.new_asset_settings = new_asset_settings
+        if test is not None:
+            self.test = test
 
     @property
     def timeout(self):
@@ -119,6 +124,27 @@ class CreateUploadRequest(object):
             raise ValueError("Invalid value for `new_asset_settings`, must not be `None`")  # noqa: E501
 
         self._new_asset_settings = new_asset_settings
+
+    @property
+    def test(self):
+        """Gets the test of this CreateUploadRequest.  # noqa: E501
+
+
+        :return: The test of this CreateUploadRequest.  # noqa: E501
+        :rtype: bool
+        """
+        return self._test
+
+    @test.setter
+    def test(self, test):
+        """Sets the test of this CreateUploadRequest.
+
+
+        :param test: The test of this CreateUploadRequest.  # noqa: E501
+        :type: bool
+        """
+
+        self._test = test
 
     def to_dict(self):
         """Returns the model properties as a dict"""

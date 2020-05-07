@@ -10,7 +10,7 @@ NOTE: This class is auto generated. Do not edit the class manually.
 from setuptools import setup, find_packages  # noqa: H301
 
 NAME = "mux_python"
-VERSION = "1.6.0"
+VERSION = "1.7.0"
 # To install the library, run the following
 #
 # python setup.py install
@@ -26,8 +26,8 @@ setup(
     description="Official Mux API wrapper for python projects 🐍.",
     author_email="sdks@mux.com",
     url="https://github.com/muxinc/mux-python",
-    download_url="https://github.com/muxinc/mux-python/archive/1.6.0.tar.gz",
-    keywords=["Mux Video", "Video", "Live Stream", "VOD", "Streaming"],
+    download_url="https://github.com/muxinc/mux-python/archive/1.7.0.tar.gz",
+    keywords=["Mux API", "Video", "Live Stream", "VOD", "Streaming"],
     install_requires=REQUIRES,
     packages=find_packages(),
     include_package_data=True,

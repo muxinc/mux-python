@@ -26,7 +26,8 @@ class CreateLiveStreamRequest(object):
         'new_asset_settings': 'CreateAssetRequest',
         'reconnect_window': 'float',
         'passthrough': 'str',
-        'reduced_latency': 'bool'
+        'reduced_latency': 'bool',
+        'test': 'bool'
     }
 
     attribute_map = {
@@ -34,10 +35,11 @@ class CreateLiveStreamRequest(object):
         'new_asset_settings': 'new_asset_settings',
         'reconnect_window': 'reconnect_window',
         'passthrough': 'passthrough',
-        'reduced_latency': 'reduced_latency'
+        'reduced_latency': 'reduced_latency',
+        'test': 'test'
     }
 
-    def __init__(self, playback_policy=None, new_asset_settings=None, reconnect_window=None, passthrough=None, reduced_latency=None):  # noqa: E501
+    def __init__(self, playback_policy=None, new_asset_settings=None, reconnect_window=None, passthrough=None, reduced_latency=None, test=None):  # noqa: E501
         """CreateLiveStreamRequest - a model defined in OpenAPI"""  # noqa: E501
 
         self._playback_policy = None
@@ -45,6 +47,7 @@ class CreateLiveStreamRequest(object):
         self._reconnect_window = None
         self._passthrough = None
         self._reduced_latency = None
+        self._test = None
         self.discriminator = None
 
         if playback_policy is not None:
@@ -57,6 +60,8 @@ class CreateLiveStreamRequest(object):
             self.passthrough = passthrough
         if reduced_latency is not None:
             self.reduced_latency = reduced_latency
+        if test is not None:
+            self.test = test
 
     @property
     def playback_policy(self):
@@ -170,6 +175,27 @@ class CreateLiveStreamRequest(object):
         """
 
         self._reduced_latency = reduced_latency
+
+    @property
+    def test(self):
+        """Gets the test of this CreateLiveStreamRequest.  # noqa: E501
+
+
+        :return: The test of this CreateLiveStreamRequest.  # noqa: E501
+        :rtype: bool
+        """
+        return self._test
+
+    @test.setter
+    def test(self, test):
+        """Sets the test of this CreateLiveStreamRequest.
+
+
+        :param test: The test of this CreateLiveStreamRequest.  # noqa: E501
+        :type: bool
+        """
+
+        self._test = test
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -32,7 +32,6 @@ class Asset(object):
         'aspect_ratio': 'str',
         'playback_ids': 'list[PlaybackID]',
         'tracks': 'list[Track]',
-        'demo': 'bool',
         'errors': 'AssetErrors',
         'per_title_encode': 'bool',
         'is_live': 'bool',
@@ -42,7 +41,8 @@ class Asset(object):
         'master_access': 'str',
         'mp4_support': 'str',
         'normalize_audio': 'bool',
-        'static_renditions': 'AssetStaticRenditions'
+        'static_renditions': 'AssetStaticRenditions',
+        'test': 'bool'
     }
 
     attribute_map = {
@@ -56,7 +56,6 @@ class Asset(object):
         'aspect_ratio': 'aspect_ratio',
         'playback_ids': 'playback_ids',
         'tracks': 'tracks',
-        'demo': 'demo',
         'errors': 'errors',
         'per_title_encode': 'per_title_encode',
         'is_live': 'is_live',
@@ -66,10 +65,11 @@ class Asset(object):
         'master_access': 'master_access',
         'mp4_support': 'mp4_support',
         'normalize_audio': 'normalize_audio',
-        'static_renditions': 'static_renditions'
+        'static_renditions': 'static_renditions',
+        'test': 'test'
     }
 
-    def __init__(self, id=None, created_at=None, deleted_at=None, status=None, duration=None, max_stored_resolution=None, max_stored_frame_rate=None, aspect_ratio=None, playback_ids=None, tracks=None, demo=None, errors=None, per_title_encode=None, is_live=None, passthrough=None, live_stream_id=None, master=None, master_access='none', mp4_support='none', normalize_audio=False, static_renditions=None):  # noqa: E501
+    def __init__(self, id=None, created_at=None, deleted_at=None, status=None, duration=None, max_stored_resolution=None, max_stored_frame_rate=None, aspect_ratio=None, playback_ids=None, tracks=None, errors=None, per_title_encode=None, is_live=None, passthrough=None, live_stream_id=None, master=None, master_access='none', mp4_support='none', normalize_audio=False, static_renditions=None, test=None):  # noqa: E501
         """Asset - a model defined in OpenAPI"""  # noqa: E501
 
         self._id = None
@@ -82,7 +82,6 @@ class Asset(object):
         self._aspect_ratio = None
         self._playback_ids = None
         self._tracks = None
-        self._demo = None
         self._errors = None
         self._per_title_encode = None
         self._is_live = None
@@ -93,6 +92,7 @@ class Asset(object):
         self._mp4_support = None
         self._normalize_audio = None
         self._static_renditions = None
+        self._test = None
         self.discriminator = None
 
         if id is not None:
@@ -115,8 +115,6 @@ class Asset(object):
             self.playback_ids = playback_ids
         if tracks is not None:
             self.tracks = tracks
-        if demo is not None:
-            self.demo = demo
         if errors is not None:
             self.errors = errors
         if per_title_encode is not None:
@@ -137,6 +135,8 @@ class Asset(object):
             self.normalize_audio = normalize_audio
         if static_renditions is not None:
             self.static_renditions = static_renditions
+        if test is not None:
+            self.test = test
 
     @property
     def id(self):
@@ -347,27 +347,6 @@ class Asset(object):
         """
 
         self._tracks = tracks
-
-    @property
-    def demo(self):
-        """Gets the demo of this Asset.  # noqa: E501
-
-
-        :return: The demo of this Asset.  # noqa: E501
-        :rtype: bool
-        """
-        return self._demo
-
-    @demo.setter
-    def demo(self, demo):
-        """Sets the demo of this Asset.
-
-
-        :param demo: The demo of this Asset.  # noqa: E501
-        :type: bool
-        """
-
-        self._demo = demo
 
     @property
     def errors(self):
@@ -590,6 +569,27 @@ class Asset(object):
         """
 
         self._static_renditions = static_renditions
+
+    @property
+    def test(self):
+        """Gets the test of this Asset.  # noqa: E501
+
+
+        :return: The test of this Asset.  # noqa: E501
+        :rtype: bool
+        """
+        return self._test
+
+    @test.setter
+    def test(self, test):
+        """Sets the test of this Asset.
+
+
+        :param test: The test of this Asset.  # noqa: E501
+        :type: bool
+        """
+
+        self._test = test
 
     def to_dict(self):
         """Returns the model properties as a dict"""

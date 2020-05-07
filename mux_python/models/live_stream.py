@@ -33,7 +33,8 @@ class LiveStream(object):
         'passthrough': 'str',
         'reconnect_window': 'float',
         'reduced_latency': 'bool',
-        'simulcast_targets': 'list[SimulcastTarget]'
+        'simulcast_targets': 'list[SimulcastTarget]',
+        'test': 'bool'
     }
 
     attribute_map = {
@@ -48,10 +49,11 @@ class LiveStream(object):
         'passthrough': 'passthrough',
         'reconnect_window': 'reconnect_window',
         'reduced_latency': 'reduced_latency',
-        'simulcast_targets': 'simulcast_targets'
+        'simulcast_targets': 'simulcast_targets',
+        'test': 'test'
     }
 
-    def __init__(self, id=None, created_at=None, stream_key=None, active_asset_id=None, recent_asset_ids=None, status=None, playback_ids=None, new_asset_settings=None, passthrough=None, reconnect_window=None, reduced_latency=None, simulcast_targets=None):  # noqa: E501
+    def __init__(self, id=None, created_at=None, stream_key=None, active_asset_id=None, recent_asset_ids=None, status=None, playback_ids=None, new_asset_settings=None, passthrough=None, reconnect_window=None, reduced_latency=None, simulcast_targets=None, test=None):  # noqa: E501
         """LiveStream - a model defined in OpenAPI"""  # noqa: E501
 
         self._id = None
@@ -66,6 +68,7 @@ class LiveStream(object):
         self._reconnect_window = None
         self._reduced_latency = None
         self._simulcast_targets = None
+        self._test = None
         self.discriminator = None
 
         if id is not None:
@@ -92,6 +95,8 @@ class LiveStream(object):
             self.reduced_latency = reduced_latency
         if simulcast_targets is not None:
             self.simulcast_targets = simulcast_targets
+        if test is not None:
+            self.test = test
 
     @property
     def id(self):
@@ -344,6 +349,27 @@ class LiveStream(object):
         """
 
         self._simulcast_targets = simulcast_targets
+
+    @property
+    def test(self):
+        """Gets the test of this LiveStream.  # noqa: E501
+
+
+        :return: The test of this LiveStream.  # noqa: E501
+        :rtype: bool
+        """
+        return self._test
+
+    @test.setter
+    def test(self, test):
+        """Sets the test of this LiveStream.
+
+
+        :param test: The test of this LiveStream.  # noqa: E501
+        :type: bool
+        """
+
+        self._test = test
 
     def to_dict(self):
         """Returns the model properties as a dict"""
