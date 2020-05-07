@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **error** | [**UploadError**](UploadError.md) |  | [optional] 
 **cors_origin** | **str** | If the upload URL will be used in a browser, you must specify the origin in order for the signed URL to have the correct CORS headers. | [optional] 
 **url** | **str** | The URL to upload the associated source media to. | [optional] 
+**test** | **bool** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -24,44 +24,42 @@ class CreateAssetRequest(object):
     openapi_types = {
         'input': 'list[InputSettings]',
         'playback_policy': 'list[PlaybackPolicy]',
-        'demo': 'bool',
         'per_title_encode': 'bool',
         'passthrough': 'str',
         'mp4_support': 'str',
         'normalize_audio': 'bool',
-        'master_access': 'str'
+        'master_access': 'str',
+        'test': 'bool'
     }
 
     attribute_map = {
         'input': 'input',
         'playback_policy': 'playback_policy',
-        'demo': 'demo',
         'per_title_encode': 'per_title_encode',
         'passthrough': 'passthrough',
         'mp4_support': 'mp4_support',
         'normalize_audio': 'normalize_audio',
-        'master_access': 'master_access'
+        'master_access': 'master_access',
+        'test': 'test'
     }
 
-    def __init__(self, input=None, playback_policy=None, demo=None, per_title_encode=None, passthrough=None, mp4_support=None, normalize_audio=False, master_access=None):  # noqa: E501
+    def __init__(self, input=None, playback_policy=None, per_title_encode=None, passthrough=None, mp4_support=None, normalize_audio=False, master_access=None, test=None):  # noqa: E501
         """CreateAssetRequest - a model defined in OpenAPI"""  # noqa: E501
 
         self._input = None
         self._playback_policy = None
-        self._demo = None
         self._per_title_encode = None
         self._passthrough = None
         self._mp4_support = None
         self._normalize_audio = None
         self._master_access = None
+        self._test = None
         self.discriminator = None
 
         if input is not None:
             self.input = input
         if playback_policy is not None:
             self.playback_policy = playback_policy
-        if demo is not None:
-            self.demo = demo
         if per_title_encode is not None:
             self.per_title_encode = per_title_encode
         if passthrough is not None:
@@ -72,6 +70,8 @@ class CreateAssetRequest(object):
             self.normalize_audio = normalize_audio
         if master_access is not None:
             self.master_access = master_access
+        if test is not None:
+            self.test = test
 
     @property
     def input(self):
@@ -114,27 +114,6 @@ class CreateAssetRequest(object):
         """
 
         self._playback_policy = playback_policy
-
-    @property
-    def demo(self):
-        """Gets the demo of this CreateAssetRequest.  # noqa: E501
-
-
-        :return: The demo of this CreateAssetRequest.  # noqa: E501
-        :rtype: bool
-        """
-        return self._demo
-
-    @demo.setter
-    def demo(self, demo):
-        """Sets the demo of this CreateAssetRequest.
-
-
-        :param demo: The demo of this CreateAssetRequest.  # noqa: E501
-        :type: bool
-        """
-
-        self._demo = demo
 
     @property
     def per_title_encode(self):
@@ -254,6 +233,27 @@ class CreateAssetRequest(object):
             )
 
         self._master_access = master_access
+
+    @property
+    def test(self):
+        """Gets the test of this CreateAssetRequest.  # noqa: E501
+
+
+        :return: The test of this CreateAssetRequest.  # noqa: E501
+        :rtype: bool
+        """
+        return self._test
+
+    @test.setter
+    def test(self, test):
+        """Sets the test of this CreateAssetRequest.
+
+
+        :param test: The test of this CreateAssetRequest.  # noqa: E501
+        :type: bool
+        """
+
+        self._test = test
 
     def to_dict(self):
         """Returns the model properties as a dict"""

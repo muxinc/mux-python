@@ -86,6 +86,12 @@ class InputSettingsOverlaySettings(object):
         :param vertical_align: The vertical_align of this InputSettingsOverlaySettings.  # noqa: E501
         :type: str
         """
+        allowed_values = ["top", "middle", "bottom"]  # noqa: E501
+        if vertical_align not in allowed_values:
+            raise ValueError(
+                "Invalid value for `vertical_align` ({0}), must be one of {1}"  # noqa: E501
+                .format(vertical_align, allowed_values)
+            )
 
         self._vertical_align = vertical_align
 
@@ -128,6 +134,12 @@ class InputSettingsOverlaySettings(object):
         :param horizontal_align: The horizontal_align of this InputSettingsOverlaySettings.  # noqa: E501
         :type: str
         """
+        allowed_values = ["left", "center", "right"]  # noqa: E501
+        if horizontal_align not in allowed_values:
+            raise ValueError(
+                "Invalid value for `horizontal_align` ({0}), must be one of {1}"  # noqa: E501
+                .format(horizontal_align, allowed_values)
+            )
 
         self._horizontal_align = horizontal_align
 

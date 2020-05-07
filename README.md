@@ -12,9 +12,13 @@ Official Mux API wrapper for python projects, supporting both Mux Data and Mux V
 
 Not familiar with Mux? Check out https://mux.com/ for more information.
 
-## Requirements.
+## Requirements
 
 Python 2.7 or 3.4+
+
+### Compatibility with Ubuntu 14.04
+
+Mux uses cross signed TLS root certificates, which may not be compatible with Ubuntu 14.04 LTS [as documented in this issue](https://github.com/certifi/python-certifi/issues/26). We suggest upgrading to a later LTS operating system if you encounter this issue.
 
 ## Installation
 

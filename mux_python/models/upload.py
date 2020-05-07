@@ -29,7 +29,8 @@ class Upload(object):
         'asset_id': 'str',
         'error': 'UploadError',
         'cors_origin': 'str',
-        'url': 'str'
+        'url': 'str',
+        'test': 'bool'
     }
 
     attribute_map = {
@@ -40,10 +41,11 @@ class Upload(object):
         'asset_id': 'asset_id',
         'error': 'error',
         'cors_origin': 'cors_origin',
-        'url': 'url'
+        'url': 'url',
+        'test': 'test'
     }
 
-    def __init__(self, id=None, timeout=3600, status=None, new_asset_settings=None, asset_id=None, error=None, cors_origin=None, url=None):  # noqa: E501
+    def __init__(self, id=None, timeout=3600, status=None, new_asset_settings=None, asset_id=None, error=None, cors_origin=None, url=None, test=None):  # noqa: E501
         """Upload - a model defined in OpenAPI"""  # noqa: E501
 
         self._id = None
@@ -54,6 +56,7 @@ class Upload(object):
         self._error = None
         self._cors_origin = None
         self._url = None
+        self._test = None
         self.discriminator = None
 
         if id is not None:
@@ -72,6 +75,8 @@ class Upload(object):
             self.cors_origin = cors_origin
         if url is not None:
             self.url = url
+        if test is not None:
+            self.test = test
 
     @property
     def id(self):
@@ -258,6 +263,27 @@ class Upload(object):
         """
 
         self._url = url
+
+    @property
+    def test(self):
+        """Gets the test of this Upload.  # noqa: E501
+
+
+        :return: The test of this Upload.  # noqa: E501
+        :rtype: bool
+        """
+        return self._test
+
+    @test.setter
+    def test(self, test):
+        """Sets the test of this Upload.
+
+
+        :param test: The test of this Upload.  # noqa: E501
+        :type: bool
+        """
+
+        self._test = test
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -13,7 +13,6 @@ Name | Type | Description | Notes
 **aspect_ratio** | **str** |  | [optional] 
 **playback_ids** | [**list[PlaybackID]**](PlaybackID.md) |  | [optional] 
 **tracks** | [**list[Track]**](Track.md) |  | [optional] 
-**demo** | **bool** |  | [optional] 
 **errors** | [**AssetErrors**](AssetErrors.md) |  | [optional] 
 **per_title_encode** | **bool** |  | [optional] 
 **is_live** | **bool** |  | [optional] 
@@ -24,6 +23,7 @@ Name | Type | Description | Notes
 **mp4_support** | **str** |  | [optional] [default to 'none']
 **normalize_audio** | **bool** |  | [optional] [default to False]
 **static_renditions** | [**AssetStaticRenditions**](AssetStaticRenditions.md) |  | [optional] 
+**test** | **bool** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
