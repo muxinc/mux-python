@@ -21,12 +21,12 @@ print("Created Asset ID: " + create_asset_response.data.id)
 # Wait for the asset to become ready, and then print its playback URL
 if create_asset_response.data.status != 'ready':
 
-    print "Waiting for asset to become ready..."
+    print("Waiting for asset to become ready...")
     while True:
         asset_response = assets_api.get_asset(create_asset_response.data.id)
         if asset_response.data.status != 'ready':
             print("Asset still not ready. Status was: " + asset_response.data.status)
             time.sleep(1)
         else:
-            print "Asset Ready! Playback URL: https://stream.mux.com/" + asset_response.data.playback_ids[0].id + ".m3u8"
+            print("Asset Ready! Playback URL: https://stream.mux.com/" + asset_response.data.playback_ids[0].id + ".m3u8")
             break
