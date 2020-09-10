@@ -27,7 +27,8 @@ class CreateLiveStreamRequest(object):
         'reconnect_window': 'float',
         'passthrough': 'str',
         'reduced_latency': 'bool',
-        'test': 'bool'
+        'test': 'bool',
+        'simulcast_targets': 'list[CreateSimulcastTargetRequest]'
     }
 
     attribute_map = {
@@ -36,10 +37,11 @@ class CreateLiveStreamRequest(object):
         'reconnect_window': 'reconnect_window',
         'passthrough': 'passthrough',
         'reduced_latency': 'reduced_latency',
-        'test': 'test'
+        'test': 'test',
+        'simulcast_targets': 'simulcast_targets'
     }
 
-    def __init__(self, playback_policy=None, new_asset_settings=None, reconnect_window=None, passthrough=None, reduced_latency=None, test=None):  # noqa: E501
+    def __init__(self, playback_policy=None, new_asset_settings=None, reconnect_window=None, passthrough=None, reduced_latency=None, test=None, simulcast_targets=None):  # noqa: E501
         """CreateLiveStreamRequest - a model defined in OpenAPI"""  # noqa: E501
 
         self._playback_policy = None
@@ -48,6 +50,7 @@ class CreateLiveStreamRequest(object):
         self._passthrough = None
         self._reduced_latency = None
         self._test = None
+        self._simulcast_targets = None
         self.discriminator = None
 
         if playback_policy is not None:
@@ -62,6 +65,8 @@ class CreateLiveStreamRequest(object):
             self.reduced_latency = reduced_latency
         if test is not None:
             self.test = test
+        if simulcast_targets is not None:
+            self.simulcast_targets = simulcast_targets
 
     @property
     def playback_policy(self):
@@ -196,6 +201,27 @@ class CreateLiveStreamRequest(object):
         """
 
         self._test = test
+
+    @property
+    def simulcast_targets(self):
+        """Gets the simulcast_targets of this CreateLiveStreamRequest.  # noqa: E501
+
+
+        :return: The simulcast_targets of this CreateLiveStreamRequest.  # noqa: E501
+        :rtype: list[CreateSimulcastTargetRequest]
+        """
+        return self._simulcast_targets
+
+    @simulcast_targets.setter
+    def simulcast_targets(self, simulcast_targets):
+        """Sets the simulcast_targets of this CreateLiveStreamRequest.
+
+
+        :param simulcast_targets: The simulcast_targets of this CreateLiveStreamRequest.  # noqa: E501
+        :type: list[CreateSimulcastTargetRequest]
+        """
+
+        self._simulcast_targets = simulcast_targets
 
     def to_dict(self):
         """Returns the model properties as a dict"""

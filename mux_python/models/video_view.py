@@ -30,22 +30,22 @@ class VideoView(object):
         'preroll_requested': 'bool',
         'page_type': 'str',
         'startup_score': 'str',
-        'view_seek_duration': 'str',
+        'view_seek_duration': 'int',
         'country_name': 'str',
         'player_source_height': 'int',
         'longitude': 'str',
-        'buffering_count': 'str',
-        'video_duration': 'str',
+        'buffering_count': 'int',
+        'video_duration': 'int',
         'player_source_type': 'str',
         'city': 'str',
         'view_id': 'str',
         'platform_description': 'str',
-        'video_startup_preroll_request_time': 'str',
+        'video_startup_preroll_request_time': 'int',
         'viewer_device_name': 'str',
         'video_series': 'str',
         'viewer_application_name': 'str',
         'updated_at': 'str',
-        'view_total_content_playback_time': 'str',
+        'view_total_content_playback_time': 'int',
         'cdn': 'str',
         'player_instance_id': 'str',
         'video_language': 'str',
@@ -56,8 +56,8 @@ class VideoView(object):
         'playback_score': 'str',
         'page_url': 'str',
         'metro': 'str',
-        'view_max_request_latency': 'str',
-        'requests_for_first_preroll': 'str',
+        'view_max_request_latency': 'int',
+        'requests_for_first_preroll': 'int',
         'view_total_downscaling': 'str',
         'latitude': 'str',
         'player_source_host_name': 'str',
@@ -67,7 +67,7 @@ class VideoView(object):
         'player_language': 'str',
         'page_load_time': 'int',
         'viewer_device_category': 'str',
-        'video_startup_preroll_load_time': 'str',
+        'video_startup_preroll_load_time': 'int',
         'player_version': 'str',
         'watch_time': 'int',
         'player_source_stream_type': 'str',
@@ -77,14 +77,14 @@ class VideoView(object):
         'experiment_name': 'str',
         'viewer_os_version': 'str',
         'player_preload': 'bool',
-        'buffering_duration': 'str',
+        'buffering_duration': 'int',
         'player_view_count': 'int',
         'player_software': 'str',
-        'player_load_time': 'str',
+        'player_load_time': 'int',
         'platform_summary': 'str',
         'video_encoding_variant': 'str',
         'player_width': 'int',
-        'view_seek_count': 'str',
+        'view_seek_count': 'int',
         'viewer_experience_score': 'str',
         'view_error_id': 'int',
         'video_variant_name': 'str',
@@ -96,7 +96,7 @@ class VideoView(object):
         'events': 'list[VideoViewEvent]',
         'player_name': 'str',
         'view_start': 'str',
-        'view_average_request_throughput': 'str',
+        'view_average_request_throughput': 'int',
         'video_producer': 'str',
         'error_type_id': 'int',
         'mux_viewer_id': 'str',
@@ -107,7 +107,7 @@ class VideoView(object):
         'video_content_type': 'str',
         'viewer_os_family': 'str',
         'player_poster': 'str',
-        'view_average_request_latency': 'str',
+        'view_average_request_latency': 'int',
         'video_variant_id': 'str',
         'player_source_duration': 'int',
         'player_source_url': 'str',
@@ -116,7 +116,7 @@ class VideoView(object):
         'id': 'str',
         'short_time': 'str',
         'rebuffer_percentage': 'str',
-        'time_to_first_frame': 'str',
+        'time_to_first_frame': 'int',
         'viewer_user_id': 'str',
         'video_stream_type': 'str',
         'player_startup_time': 'int',
@@ -130,8 +130,10 @@ class VideoView(object):
         'player_autoplay': 'bool',
         'player_height': 'int',
         'asn': 'int',
+        'asn_name': 'str',
         'quality_score': 'str',
-        'player_software_version': 'str'
+        'player_software_version': 'str',
+        'player_mux_plugin_name': 'str'
     }
 
     attribute_map = {
@@ -243,11 +245,13 @@ class VideoView(object):
         'player_autoplay': 'player_autoplay',
         'player_height': 'player_height',
         'asn': 'asn',
+        'asn_name': 'asn_name',
         'quality_score': 'quality_score',
-        'player_software_version': 'player_software_version'
+        'player_software_version': 'player_software_version',
+        'player_mux_plugin_name': 'player_mux_plugin_name'
     }
 
-    def __init__(self, view_total_upscaling=None, preroll_ad_asset_hostname=None, player_source_domain=None, region=None, viewer_user_agent=None, preroll_requested=None, page_type=None, startup_score=None, view_seek_duration=None, country_name=None, player_source_height=None, longitude=None, buffering_count=None, video_duration=None, player_source_type=None, city=None, view_id=None, platform_description=None, video_startup_preroll_request_time=None, viewer_device_name=None, video_series=None, viewer_application_name=None, updated_at=None, view_total_content_playback_time=None, cdn=None, player_instance_id=None, video_language=None, player_source_width=None, player_error_message=None, player_mux_plugin_version=None, watched=None, playback_score=None, page_url=None, metro=None, view_max_request_latency=None, requests_for_first_preroll=None, view_total_downscaling=None, latitude=None, player_source_host_name=None, inserted_at=None, view_end=None, mux_embed_version=None, player_language=None, page_load_time=None, viewer_device_category=None, video_startup_preroll_load_time=None, player_version=None, watch_time=None, player_source_stream_type=None, preroll_ad_tag_hostname=None, viewer_device_manufacturer=None, rebuffering_score=None, experiment_name=None, viewer_os_version=None, player_preload=None, buffering_duration=None, player_view_count=None, player_software=None, player_load_time=None, platform_summary=None, video_encoding_variant=None, player_width=None, view_seek_count=None, viewer_experience_score=None, view_error_id=None, video_variant_name=None, preroll_played=None, viewer_application_engine=None, viewer_os_architecture=None, player_error_code=None, buffering_rate=None, events=None, player_name=None, view_start=None, view_average_request_throughput=None, video_producer=None, error_type_id=None, mux_viewer_id=None, video_id=None, continent_code=None, session_id=None, exit_before_video_start=None, video_content_type=None, viewer_os_family=None, player_poster=None, view_average_request_latency=None, video_variant_id=None, player_source_duration=None, player_source_url=None, mux_api_version=None, video_title=None, id=None, short_time=None, rebuffer_percentage=None, time_to_first_frame=None, viewer_user_id=None, video_stream_type=None, player_startup_time=None, viewer_application_version=None, view_max_downscale_percentage=None, view_max_upscale_percentage=None, country_code=None, used_fullscreen=None, isp=None, property_id=None, player_autoplay=None, player_height=None, asn=None, quality_score=None, player_software_version=None):  # noqa: E501
+    def __init__(self, view_total_upscaling=None, preroll_ad_asset_hostname=None, player_source_domain=None, region=None, viewer_user_agent=None, preroll_requested=None, page_type=None, startup_score=None, view_seek_duration=None, country_name=None, player_source_height=None, longitude=None, buffering_count=None, video_duration=None, player_source_type=None, city=None, view_id=None, platform_description=None, video_startup_preroll_request_time=None, viewer_device_name=None, video_series=None, viewer_application_name=None, updated_at=None, view_total_content_playback_time=None, cdn=None, player_instance_id=None, video_language=None, player_source_width=None, player_error_message=None, player_mux_plugin_version=None, watched=None, playback_score=None, page_url=None, metro=None, view_max_request_latency=None, requests_for_first_preroll=None, view_total_downscaling=None, latitude=None, player_source_host_name=None, inserted_at=None, view_end=None, mux_embed_version=None, player_language=None, page_load_time=None, viewer_device_category=None, video_startup_preroll_load_time=None, player_version=None, watch_time=None, player_source_stream_type=None, preroll_ad_tag_hostname=None, viewer_device_manufacturer=None, rebuffering_score=None, experiment_name=None, viewer_os_version=None, player_preload=None, buffering_duration=None, player_view_count=None, player_software=None, player_load_time=None, platform_summary=None, video_encoding_variant=None, player_width=None, view_seek_count=None, viewer_experience_score=None, view_error_id=None, video_variant_name=None, preroll_played=None, viewer_application_engine=None, viewer_os_architecture=None, player_error_code=None, buffering_rate=None, events=None, player_name=None, view_start=None, view_average_request_throughput=None, video_producer=None, error_type_id=None, mux_viewer_id=None, video_id=None, continent_code=None, session_id=None, exit_before_video_start=None, video_content_type=None, viewer_os_family=None, player_poster=None, view_average_request_latency=None, video_variant_id=None, player_source_duration=None, player_source_url=None, mux_api_version=None, video_title=None, id=None, short_time=None, rebuffer_percentage=None, time_to_first_frame=None, viewer_user_id=None, video_stream_type=None, player_startup_time=None, viewer_application_version=None, view_max_downscale_percentage=None, view_max_upscale_percentage=None, country_code=None, used_fullscreen=None, isp=None, property_id=None, player_autoplay=None, player_height=None, asn=None, asn_name=None, quality_score=None, player_software_version=None, player_mux_plugin_name=None):  # noqa: E501
         """VideoView - a model defined in OpenAPI"""  # noqa: E501
 
         self._view_total_upscaling = None
@@ -358,8 +362,10 @@ class VideoView(object):
         self._player_autoplay = None
         self._player_height = None
         self._asn = None
+        self._asn_name = None
         self._quality_score = None
         self._player_software_version = None
+        self._player_mux_plugin_name = None
         self.discriminator = None
 
         if view_total_upscaling is not None:
@@ -578,10 +584,14 @@ class VideoView(object):
             self.player_height = player_height
         if asn is not None:
             self.asn = asn
+        if asn_name is not None:
+            self.asn_name = asn_name
         if quality_score is not None:
             self.quality_score = quality_score
         if player_software_version is not None:
             self.player_software_version = player_software_version
+        if player_mux_plugin_name is not None:
+            self.player_mux_plugin_name = player_mux_plugin_name
 
     @property
     def view_total_upscaling(self):
@@ -757,7 +767,7 @@ class VideoView(object):
 
 
         :return: The view_seek_duration of this VideoView.  # noqa: E501
-        :rtype: str
+        :rtype: int
         """
         return self._view_seek_duration
 
@@ -767,7 +777,7 @@ class VideoView(object):
 
 
         :param view_seek_duration: The view_seek_duration of this VideoView.  # noqa: E501
-        :type: str
+        :type: int
         """
 
         self._view_seek_duration = view_seek_duration
@@ -841,7 +851,7 @@ class VideoView(object):
 
 
         :return: The buffering_count of this VideoView.  # noqa: E501
-        :rtype: str
+        :rtype: int
         """
         return self._buffering_count
 
@@ -851,7 +861,7 @@ class VideoView(object):
 
 
         :param buffering_count: The buffering_count of this VideoView.  # noqa: E501
-        :type: str
+        :type: int
         """
 
         self._buffering_count = buffering_count
@@ -862,7 +872,7 @@ class VideoView(object):
 
 
         :return: The video_duration of this VideoView.  # noqa: E501
-        :rtype: str
+        :rtype: int
         """
         return self._video_duration
 
@@ -872,7 +882,7 @@ class VideoView(object):
 
 
         :param video_duration: The video_duration of this VideoView.  # noqa: E501
-        :type: str
+        :type: int
         """
 
         self._video_duration = video_duration
@@ -967,7 +977,7 @@ class VideoView(object):
 
 
         :return: The video_startup_preroll_request_time of this VideoView.  # noqa: E501
-        :rtype: str
+        :rtype: int
         """
         return self._video_startup_preroll_request_time
 
@@ -977,7 +987,7 @@ class VideoView(object):
 
 
         :param video_startup_preroll_request_time: The video_startup_preroll_request_time of this VideoView.  # noqa: E501
-        :type: str
+        :type: int
         """
 
         self._video_startup_preroll_request_time = video_startup_preroll_request_time
@@ -1072,7 +1082,7 @@ class VideoView(object):
 
 
         :return: The view_total_content_playback_time of this VideoView.  # noqa: E501
-        :rtype: str
+        :rtype: int
         """
         return self._view_total_content_playback_time
 
@@ -1082,7 +1092,7 @@ class VideoView(object):
 
 
         :param view_total_content_playback_time: The view_total_content_playback_time of this VideoView.  # noqa: E501
-        :type: str
+        :type: int
         """
 
         self._view_total_content_playback_time = view_total_content_playback_time
@@ -1303,7 +1313,7 @@ class VideoView(object):
 
 
         :return: The view_max_request_latency of this VideoView.  # noqa: E501
-        :rtype: str
+        :rtype: int
         """
         return self._view_max_request_latency
 
@@ -1313,7 +1323,7 @@ class VideoView(object):
 
 
         :param view_max_request_latency: The view_max_request_latency of this VideoView.  # noqa: E501
-        :type: str
+        :type: int
         """
 
         self._view_max_request_latency = view_max_request_latency
@@ -1324,7 +1334,7 @@ class VideoView(object):
 
 
         :return: The requests_for_first_preroll of this VideoView.  # noqa: E501
-        :rtype: str
+        :rtype: int
         """
         return self._requests_for_first_preroll
 
@@ -1334,7 +1344,7 @@ class VideoView(object):
 
 
         :param requests_for_first_preroll: The requests_for_first_preroll of this VideoView.  # noqa: E501
-        :type: str
+        :type: int
         """
 
         self._requests_for_first_preroll = requests_for_first_preroll
@@ -1534,7 +1544,7 @@ class VideoView(object):
 
 
         :return: The video_startup_preroll_load_time of this VideoView.  # noqa: E501
-        :rtype: str
+        :rtype: int
         """
         return self._video_startup_preroll_load_time
 
@@ -1544,7 +1554,7 @@ class VideoView(object):
 
 
         :param video_startup_preroll_load_time: The video_startup_preroll_load_time of this VideoView.  # noqa: E501
-        :type: str
+        :type: int
         """
 
         self._video_startup_preroll_load_time = video_startup_preroll_load_time
@@ -1744,7 +1754,7 @@ class VideoView(object):
 
 
         :return: The buffering_duration of this VideoView.  # noqa: E501
-        :rtype: str
+        :rtype: int
         """
         return self._buffering_duration
 
@@ -1754,7 +1764,7 @@ class VideoView(object):
 
 
         :param buffering_duration: The buffering_duration of this VideoView.  # noqa: E501
-        :type: str
+        :type: int
         """
 
         self._buffering_duration = buffering_duration
@@ -1807,7 +1817,7 @@ class VideoView(object):
 
 
         :return: The player_load_time of this VideoView.  # noqa: E501
-        :rtype: str
+        :rtype: int
         """
         return self._player_load_time
 
@@ -1817,7 +1827,7 @@ class VideoView(object):
 
 
         :param player_load_time: The player_load_time of this VideoView.  # noqa: E501
-        :type: str
+        :type: int
         """
 
         self._player_load_time = player_load_time
@@ -1891,7 +1901,7 @@ class VideoView(object):
 
 
         :return: The view_seek_count of this VideoView.  # noqa: E501
-        :rtype: str
+        :rtype: int
         """
         return self._view_seek_count
 
@@ -1901,7 +1911,7 @@ class VideoView(object):
 
 
         :param view_seek_count: The view_seek_count of this VideoView.  # noqa: E501
-        :type: str
+        :type: int
         """
 
         self._view_seek_count = view_seek_count
@@ -2143,7 +2153,7 @@ class VideoView(object):
 
 
         :return: The view_average_request_throughput of this VideoView.  # noqa: E501
-        :rtype: str
+        :rtype: int
         """
         return self._view_average_request_throughput
 
@@ -2153,7 +2163,7 @@ class VideoView(object):
 
 
         :param view_average_request_throughput: The view_average_request_throughput of this VideoView.  # noqa: E501
-        :type: str
+        :type: int
         """
 
         self._view_average_request_throughput = view_average_request_throughput
@@ -2374,7 +2384,7 @@ class VideoView(object):
 
 
         :return: The view_average_request_latency of this VideoView.  # noqa: E501
-        :rtype: str
+        :rtype: int
         """
         return self._view_average_request_latency
 
@@ -2384,7 +2394,7 @@ class VideoView(object):
 
 
         :param view_average_request_latency: The view_average_request_latency of this VideoView.  # noqa: E501
-        :type: str
+        :type: int
         """
 
         self._view_average_request_latency = view_average_request_latency
@@ -2563,7 +2573,7 @@ class VideoView(object):
 
 
         :return: The time_to_first_frame of this VideoView.  # noqa: E501
-        :rtype: str
+        :rtype: int
         """
         return self._time_to_first_frame
 
@@ -2573,7 +2583,7 @@ class VideoView(object):
 
 
         :param time_to_first_frame: The time_to_first_frame of this VideoView.  # noqa: E501
-        :type: str
+        :type: int
         """
 
         self._time_to_first_frame = time_to_first_frame
@@ -2852,6 +2862,27 @@ class VideoView(object):
         self._asn = asn
 
     @property
+    def asn_name(self):
+        """Gets the asn_name of this VideoView.  # noqa: E501
+
+
+        :return: The asn_name of this VideoView.  # noqa: E501
+        :rtype: str
+        """
+        return self._asn_name
+
+    @asn_name.setter
+    def asn_name(self, asn_name):
+        """Sets the asn_name of this VideoView.
+
+
+        :param asn_name: The asn_name of this VideoView.  # noqa: E501
+        :type: str
+        """
+
+        self._asn_name = asn_name
+
+    @property
     def quality_score(self):
         """Gets the quality_score of this VideoView.  # noqa: E501
 
@@ -2892,6 +2923,27 @@ class VideoView(object):
         """
 
         self._player_software_version = player_software_version
+
+    @property
+    def player_mux_plugin_name(self):
+        """Gets the player_mux_plugin_name of this VideoView.  # noqa: E501
+
+
+        :return: The player_mux_plugin_name of this VideoView.  # noqa: E501
+        :rtype: str
+        """
+        return self._player_mux_plugin_name
+
+    @player_mux_plugin_name.setter
+    def player_mux_plugin_name(self, player_mux_plugin_name):
+        """Sets the player_mux_plugin_name of this VideoView.
+
+
+        :param player_mux_plugin_name: The player_mux_plugin_name of this VideoView.  # noqa: E501
+        :type: str
+        """
+
+        self._player_mux_plugin_name = player_mux_plugin_name
 
     def to_dict(self):
         """Returns the model properties as a dict"""
