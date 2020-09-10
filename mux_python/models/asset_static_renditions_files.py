@@ -81,7 +81,7 @@ class AssetStaticRenditionsFiles(object):
         :param name: The name of this AssetStaticRenditionsFiles.  # noqa: E501
         :type: str
         """
-        allowed_values = ["low.mp4", "medium.mp4", "high.mp4"]  # noqa: E501
+        allowed_values = ["low.mp4", "medium.mp4", "high.mp4", "audio.m4a"]  # noqa: E501
         if name not in allowed_values:
             raise ValueError(
                 "Invalid value for `name` ({0}), must be one of {1}"  # noqa: E501
@@ -110,7 +110,7 @@ class AssetStaticRenditionsFiles(object):
         :param ext: The ext of this AssetStaticRenditionsFiles.  # noqa: E501
         :type: str
         """
-        allowed_values = ["mp4"]  # noqa: E501
+        allowed_values = ["mp4", "m4a"]  # noqa: E501
         if ext not in allowed_values:
             raise ValueError(
                 "Invalid value for `ext` ({0}), must be one of {1}"  # noqa: E501

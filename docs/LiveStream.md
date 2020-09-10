@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **recent_asset_ids** | **list[str]** |  | [optional] 
 **status** | **str** |  | [optional] 
 **playback_ids** | [**list[PlaybackID]**](PlaybackID.md) |  | [optional] 
-**new_asset_settings** | [**Asset**](Asset.md) |  | [optional] 
+**new_asset_settings** | [**CreateAssetRequest**](CreateAssetRequest.md) |  | [optional] 
 **passthrough** | **str** |  | [optional] 
 **reconnect_window** | **float** |  | [optional] 
 **reduced_latency** | **bool** |  | [optional] 
