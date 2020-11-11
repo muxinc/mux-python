@@ -100,6 +100,26 @@ except ApiException as e:
     sys.exit(1)
 print("signal-live-stream-complete OK ✅")
 
+# ========== disable-live-stream ==========
+try:
+    live_api.disable_live_stream(create_live_stream_response.data.id)
+except ApiException as e:
+    print("Should not have errored when disabling live stream ❌ ")
+    sys.exit(1)
+disabled_live_stream = live_api.get_live_stream(create_live_stream_response.data.id)
+assert disabled_live_stream.data.status == 'disabled'
+print("disable-live-stream OK ✅")
+
+# ========== enable-live-stream ==========
+try:
+    live_api.enable_live_stream(create_live_stream_response.data.id)
+except ApiException as e:
+    print("Should not have errored when enabling live stream ❌ ")
+    sys.exit(1)
+enabled_live_stream = live_api.get_live_stream(create_live_stream_response.data.id)
+assert enabled_live_stream.data.status == 'idle'
+print("enable-live-stream OK ✅")
+
 # ========== delete-live-stream ==========
 live_api.delete_live_stream(create_live_stream_response.data.id)
 logger.print_debug("Deleted Live Stream (void response) ")
