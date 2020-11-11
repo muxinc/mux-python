@@ -10,6 +10,8 @@ Method | HTTP request | Description
 [**delete_live_stream**](LiveStreamsApi.md#delete_live_stream) | **DELETE** /video/v1/live-streams/{LIVE_STREAM_ID} | Delete a live stream
 [**delete_live_stream_playback_id**](LiveStreamsApi.md#delete_live_stream_playback_id) | **DELETE** /video/v1/live-streams/{LIVE_STREAM_ID}/playback-ids/{PLAYBACK_ID} | Delete a live stream playback ID
 [**delete_live_stream_simulcast_target**](LiveStreamsApi.md#delete_live_stream_simulcast_target) | **DELETE** /video/v1/live-streams/{LIVE_STREAM_ID}/simulcast-targets/{SIMULCAST_TARGET_ID} | Delete a Live Stream Simulcast Target
+[**disable_live_stream**](LiveStreamsApi.md#disable_live_stream) | **PUT** /video/v1/live-streams/{LIVE_STREAM_ID}/disable | Disable a live stream
+[**enable_live_stream**](LiveStreamsApi.md#enable_live_stream) | **PUT** /video/v1/live-streams/{LIVE_STREAM_ID}/enable | Enable a live stream
 [**get_live_stream**](LiveStreamsApi.md#get_live_stream) | **GET** /video/v1/live-streams/{LIVE_STREAM_ID} | Retrieve a live stream
 [**get_live_stream_simulcast_target**](LiveStreamsApi.md#get_live_stream_simulcast_target) | **GET** /video/v1/live-streams/{LIVE_STREAM_ID}/simulcast-targets/{SIMULCAST_TARGET_ID} | Retrieve a Live Stream Simulcast Target
 [**list_live_streams**](LiveStreamsApi.md#list_live_streams) | **GET** /video/v1/live-streams | List live streams
@@ -335,6 +337,114 @@ void (empty response body)
 
  - **Content-Type**: Not defined
  - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **disable_live_stream**
+> DisableLiveStreamResponse disable_live_stream(live_stream_id)
+
+Disable a live stream
+
+Disables a live stream, making it reject incoming RTMP streams until re-enabled.
+
+### Example
+
+* Basic Authentication (accessToken): 
+```python
+from __future__ import print_function
+import time
+import mux_python
+from mux_python.rest import ApiException
+from pprint import pprint
+configuration = mux_python.Configuration()
+# Configure HTTP basic authorization: accessToken
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+
+# create an instance of the API class
+api_instance = mux_python.LiveStreamsApi(mux_python.ApiClient(configuration))
+live_stream_id = 'live_stream_id_example' # str | The live stream ID
+
+try:
+    # Disable a live stream
+    api_response = api_instance.disable_live_stream(live_stream_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling LiveStreamsApi->disable_live_stream: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **live_stream_id** | **str**| The live stream ID | 
+
+### Return type
+
+[**DisableLiveStreamResponse**](DisableLiveStreamResponse.md)
+
+### Authorization
+
+[accessToken](../README.md#accessToken)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **enable_live_stream**
+> EnableLiveStreamResponse enable_live_stream(live_stream_id)
+
+Enable a live stream
+
+Enables a live stream, allowing it to accept an incoming RTMP stream.
+
+### Example
+
+* Basic Authentication (accessToken): 
+```python
+from __future__ import print_function
+import time
+import mux_python
+from mux_python.rest import ApiException
+from pprint import pprint
+configuration = mux_python.Configuration()
+# Configure HTTP basic authorization: accessToken
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+
+# create an instance of the API class
+api_instance = mux_python.LiveStreamsApi(mux_python.ApiClient(configuration))
+live_stream_id = 'live_stream_id_example' # str | The live stream ID
+
+try:
+    # Enable a live stream
+    api_response = api_instance.enable_live_stream(live_stream_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling LiveStreamsApi->enable_live_stream: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **live_stream_id** | **str**| The live stream ID | 
+
+### Return type
+
+[**EnableLiveStreamResponse**](EnableLiveStreamResponse.md)
+
+### Authorization
+
+[accessToken](../README.md#accessToken)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

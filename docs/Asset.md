@@ -23,6 +23,8 @@ Name | Type | Description | Notes
 **mp4_support** | **str** |  | [optional] [default to 'none']
 **normalize_audio** | **bool** |  | [optional] [default to False]
 **static_renditions** | [**AssetStaticRenditions**](AssetStaticRenditions.md) |  | [optional] 
+**recording_times** | [**list[AssetRecordingTimes]**](AssetRecordingTimes.md) | An array of individual live stream recording sessions. A recording session is created on each encoder connection during the live stream | [optional] 
+**non_standard_input_reasons** | [**AssetNonStandardInputReasons**](AssetNonStandardInputReasons.md) |  | [optional] 
 **test** | **bool** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

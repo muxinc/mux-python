@@ -67,6 +67,20 @@ class TestLiveStreamsApi(unittest.TestCase):
         """
         pass
 
+    def test_disable_live_stream(self):
+        """Test case for disable_live_stream
+
+        Disable a live stream  # noqa: E501
+        """
+        pass
+
+    def test_enable_live_stream(self):
+        """Test case for enable_live_stream
+
+        Enable a live stream  # noqa: E501
+        """
+        pass
+
     def test_get_live_stream(self):
         """Test case for get_live_stream
 

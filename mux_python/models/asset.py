@@ -42,6 +42,8 @@ class Asset(object):
         'mp4_support': 'str',
         'normalize_audio': 'bool',
         'static_renditions': 'AssetStaticRenditions',
+        'recording_times': 'list[AssetRecordingTimes]',
+        'non_standard_input_reasons': 'AssetNonStandardInputReasons',
         'test': 'bool'
     }
 
@@ -66,10 +68,12 @@ class Asset(object):
         'mp4_support': 'mp4_support',
         'normalize_audio': 'normalize_audio',
         'static_renditions': 'static_renditions',
+        'recording_times': 'recording_times',
+        'non_standard_input_reasons': 'non_standard_input_reasons',
         'test': 'test'
     }
 
-    def __init__(self, id=None, created_at=None, deleted_at=None, status=None, duration=None, max_stored_resolution=None, max_stored_frame_rate=None, aspect_ratio=None, playback_ids=None, tracks=None, errors=None, per_title_encode=None, is_live=None, passthrough=None, live_stream_id=None, master=None, master_access='none', mp4_support='none', normalize_audio=False, static_renditions=None, test=None):  # noqa: E501
+    def __init__(self, id=None, created_at=None, deleted_at=None, status=None, duration=None, max_stored_resolution=None, max_stored_frame_rate=None, aspect_ratio=None, playback_ids=None, tracks=None, errors=None, per_title_encode=None, is_live=None, passthrough=None, live_stream_id=None, master=None, master_access='none', mp4_support='none', normalize_audio=False, static_renditions=None, recording_times=None, non_standard_input_reasons=None, test=None):  # noqa: E501
         """Asset - a model defined in OpenAPI"""  # noqa: E501
 
         self._id = None
@@ -92,6 +96,8 @@ class Asset(object):
         self._mp4_support = None
         self._normalize_audio = None
         self._static_renditions = None
+        self._recording_times = None
+        self._non_standard_input_reasons = None
         self._test = None
         self.discriminator = None
 
@@ -135,6 +141,10 @@ class Asset(object):
             self.normalize_audio = normalize_audio
         if static_renditions is not None:
             self.static_renditions = static_renditions
+        if recording_times is not None:
+            self.recording_times = recording_times
+        if non_standard_input_reasons is not None:
+            self.non_standard_input_reasons = non_standard_input_reasons
         if test is not None:
             self.test = test
 
@@ -569,6 +579,50 @@ class Asset(object):
         """
 
         self._static_renditions = static_renditions
+
+    @property
+    def recording_times(self):
+        """Gets the recording_times of this Asset.  # noqa: E501
+
+        An array of individual live stream recording sessions. A recording session is created on each encoder connection during the live stream  # noqa: E501
+
+        :return: The recording_times of this Asset.  # noqa: E501
+        :rtype: list[AssetRecordingTimes]
+        """
+        return self._recording_times
+
+    @recording_times.setter
+    def recording_times(self, recording_times):
+        """Sets the recording_times of this Asset.
+
+        An array of individual live stream recording sessions. A recording session is created on each encoder connection during the live stream  # noqa: E501
+
+        :param recording_times: The recording_times of this Asset.  # noqa: E501
+        :type: list[AssetRecordingTimes]
+        """
+
+        self._recording_times = recording_times
+
+    @property
+    def non_standard_input_reasons(self):
+        """Gets the non_standard_input_reasons of this Asset.  # noqa: E501
+
+
+        :return: The non_standard_input_reasons of this Asset.  # noqa: E501
+        :rtype: AssetNonStandardInputReasons
+        """
+        return self._non_standard_input_reasons
+
+    @non_standard_input_reasons.setter
+    def non_standard_input_reasons(self, non_standard_input_reasons):
+        """Sets the non_standard_input_reasons of this Asset.
+
+
+        :param non_standard_input_reasons: The non_standard_input_reasons of this Asset.  # noqa: E501
+        :type: AssetNonStandardInputReasons
+        """
+
+        self._non_standard_input_reasons = non_standard_input_reasons
 
     @property
     def test(self):

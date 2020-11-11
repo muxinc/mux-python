@@ -11,7 +11,7 @@ NOTE: This class is auto generated. Do not edit the class manually.
 
 from __future__ import absolute_import
 
-__version__ = "1.8.0"
+__version__ = "1.9.0"
 
 # import apis into sdk package
 from mux_python.api.assets_api import AssetsApi
@@ -35,6 +35,8 @@ from mux_python.models.abridged_video_view import AbridgedVideoView
 from mux_python.models.asset import Asset
 from mux_python.models.asset_errors import AssetErrors
 from mux_python.models.asset_master import AssetMaster
+from mux_python.models.asset_non_standard_input_reasons import AssetNonStandardInputReasons
+from mux_python.models.asset_recording_times import AssetRecordingTimes
 from mux_python.models.asset_response import AssetResponse
 from mux_python.models.asset_static_renditions import AssetStaticRenditions
 from mux_python.models.asset_static_renditions_files import AssetStaticRenditionsFiles
@@ -48,6 +50,8 @@ from mux_python.models.create_track_request import CreateTrackRequest
 from mux_python.models.create_track_response import CreateTrackResponse
 from mux_python.models.create_upload_request import CreateUploadRequest
 from mux_python.models.delivery_report import DeliveryReport
+from mux_python.models.disable_live_stream_response import DisableLiveStreamResponse
+from mux_python.models.enable_live_stream_response import EnableLiveStreamResponse
 from mux_python.models.error import Error
 from mux_python.models.filter_value import FilterValue
 from mux_python.models.get_asset_input_info_response import GetAssetInputInfoResponse
