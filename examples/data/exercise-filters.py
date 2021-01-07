@@ -7,8 +7,6 @@ import mux_python
 from mux_python.rest import NotFoundException
 import logger
 
-# Exercises all export operations.
-
 # Authentication Setup
 configuration = mux_python.Configuration()
 configuration.username = os.environ['MUX_TOKEN_ID']
