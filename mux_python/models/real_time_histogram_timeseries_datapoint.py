@@ -24,8 +24,8 @@ class RealTimeHistogramTimeseriesDatapoint(object):
     openapi_types = {
         'timestamp': 'str',
         'sum': 'int',
-        'p95': 'int',
-        'median': 'int',
+        'p95': 'float',
+        'median': 'float',
         'max_percentage': 'float',
         'bucket_values': 'list[RealTimeHistogramTimeseriesBucketValues]',
         'average': 'float'
@@ -116,7 +116,7 @@ class RealTimeHistogramTimeseriesDatapoint(object):
 
 
         :return: The p95 of this RealTimeHistogramTimeseriesDatapoint.  # noqa: E501
-        :rtype: int
+        :rtype: float
         """
         return self._p95
 
@@ -126,7 +126,7 @@ class RealTimeHistogramTimeseriesDatapoint(object):
 
 
         :param p95: The p95 of this RealTimeHistogramTimeseriesDatapoint.  # noqa: E501
-        :type: int
+        :type: float
         """
 
         self._p95 = p95
@@ -137,7 +137,7 @@ class RealTimeHistogramTimeseriesDatapoint(object):
 
 
         :return: The median of this RealTimeHistogramTimeseriesDatapoint.  # noqa: E501
-        :rtype: int
+        :rtype: float
         """
         return self._median
 
@@ -147,7 +147,7 @@ class RealTimeHistogramTimeseriesDatapoint(object):
 
 
         :param median: The median of this RealTimeHistogramTimeseriesDatapoint.  # noqa: E501
-        :type: int
+        :type: float
         """
 
         self._median = median

@@ -5,8 +5,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **timestamp** | **str** |  | [optional] 
 **sum** | **int** |  | [optional] 
-**p95** | **int** |  | [optional] 
-**median** | **int** |  | [optional] 
+**p95** | **float** |  | [optional] 
+**median** | **float** |  | [optional] 
 **max_percentage** | **float** |  | [optional] 
 **bucket_values** | [**list[RealTimeHistogramTimeseriesBucketValues]**](RealTimeHistogramTimeseriesBucketValues.md) |  | [optional] 
 **average** | **float** |  | [optional] 
