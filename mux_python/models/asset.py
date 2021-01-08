@@ -271,6 +271,12 @@ class Asset(object):
         :param max_stored_resolution: The max_stored_resolution of this Asset.  # noqa: E501
         :type: str
         """
+        allowed_values = ["Audio only", "SD", "HD", "FHD", "UHD"]  # noqa: E501
+        if max_stored_resolution not in allowed_values:
+            raise ValueError(
+                "Invalid value for `max_stored_resolution` ({0}), must be one of {1}"  # noqa: E501
+                .format(max_stored_resolution, allowed_values)
+            )
 
         self._max_stored_resolution = max_stored_resolution
 
