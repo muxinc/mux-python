@@ -2,7 +2,9 @@ name: Release to PyPi
 
 on:
   release:
-    types: [created]
+    # `created` does not fire on draft releases. `published` fires
+    # when a draft release is published. having both reduces footguns.
+    types: [created, published]
 
 jobs:
   build:
@@ -15,6 +17,15 @@ jobs:
         uses: actions/setup-python@v1
         with:
           python-version: '3.x'
+      #
+      - name: Install Python Dependencies
+        run: python setup.py install
+      - name: Run Integration Tests
+        env:
+          MUX_TOKEN_ID: ${{ secrets.MUX_TOKEN_ID }}
+          MUX_TOKEN_SECRET: ${{ secrets.MUX_TOKEN_SECRET }}
+        run: bash test.sh
+      #
       - name: Install packaging dependencies
         run: pip install --user --upgrade setuptools wheel twine
       - name: Build Package
