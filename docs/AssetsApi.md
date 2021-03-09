@@ -41,7 +41,7 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = mux_python.AssetsApi(mux_python.ApiClient(configuration))
-create_asset_request = mux_python.CreateAssetRequest() # CreateAssetRequest | 
+create_asset_request = {"input":"https://muxed.s3.amazonaws.com/leds.mp4","playback_policy":["public"]} # CreateAssetRequest | 
 
 try:
     # Create an asset
@@ -94,7 +94,7 @@ configuration.password = 'YOUR_PASSWORD'
 # create an instance of the API class
 api_instance = mux_python.AssetsApi(mux_python.ApiClient(configuration))
 asset_id = 'asset_id_example' # str | The asset ID.
-create_playback_id_request = mux_python.CreatePlaybackIDRequest() # CreatePlaybackIDRequest | 
+create_playback_id_request = {"policy":"public"} # CreatePlaybackIDRequest | 
 
 try:
     # Create a playback ID
@@ -148,7 +148,7 @@ configuration.password = 'YOUR_PASSWORD'
 # create an instance of the API class
 api_instance = mux_python.AssetsApi(mux_python.ApiClient(configuration))
 asset_id = 'asset_id_example' # str | The asset ID.
-create_track_request = mux_python.CreateTrackRequest() # CreateTrackRequest | 
+create_track_request = {"url":"https://example.com/myVideo_en.srt","type":"text","text_type":"subtitles","language_code":"en-US","name":"English","closed_captions":true,"passthrough":"English"} # CreateTrackRequest | 
 
 try:
     # Create an asset track
@@ -184,6 +184,8 @@ Name | Type | Description  | Notes
 > delete_asset(asset_id)
 
 Delete an asset
+
+Deletes a video asset and all its data 
 
 ### Example
 
@@ -504,6 +506,8 @@ Name | Type | Description  | Notes
 
 List assets
 
+List all Mux assets. 
+
 ### Example
 
 * Basic Authentication (accessToken): 
@@ -577,7 +581,7 @@ configuration.password = 'YOUR_PASSWORD'
 # create an instance of the API class
 api_instance = mux_python.AssetsApi(mux_python.ApiClient(configuration))
 asset_id = 'asset_id_example' # str | The asset ID.
-update_asset_master_access_request = mux_python.UpdateAssetMasterAccessRequest() # UpdateAssetMasterAccessRequest | 
+update_asset_master_access_request = {"master_access":"temporary"} # UpdateAssetMasterAccessRequest | 
 
 try:
     # Update master access
@@ -633,7 +637,7 @@ configuration.password = 'YOUR_PASSWORD'
 # create an instance of the API class
 api_instance = mux_python.AssetsApi(mux_python.ApiClient(configuration))
 asset_id = 'asset_id_example' # str | The asset ID.
-update_asset_mp4_support_request = mux_python.UpdateAssetMP4SupportRequest() # UpdateAssetMP4SupportRequest | 
+update_asset_mp4_support_request = {"mp4_support":"standard"} # UpdateAssetMP4SupportRequest | 
 
 try:
     # Update MP4 support

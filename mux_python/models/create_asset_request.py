@@ -77,6 +77,7 @@ class CreateAssetRequest(object):
     def input(self):
         """Gets the input of this CreateAssetRequest.  # noqa: E501
 
+        An array of objects that each describe an input file to be used to create the asset. As a shortcut, input can also be a string URL for a file when only one input file is used. See `input[].url` for requirements.  # noqa: E501
 
         :return: The input of this CreateAssetRequest.  # noqa: E501
         :rtype: list[InputSettings]
@@ -87,6 +88,7 @@ class CreateAssetRequest(object):
     def input(self, input):
         """Sets the input of this CreateAssetRequest.
 
+        An array of objects that each describe an input file to be used to create the asset. As a shortcut, input can also be a string URL for a file when only one input file is used. See `input[].url` for requirements.  # noqa: E501
 
         :param input: The input of this CreateAssetRequest.  # noqa: E501
         :type: list[InputSettings]
@@ -98,6 +100,7 @@ class CreateAssetRequest(object):
     def playback_policy(self):
         """Gets the playback_policy of this CreateAssetRequest.  # noqa: E501
 
+        An array of playback policy names that you want applied to this asset and available through `playback_ids`. Options include: `\"public\"` (anyone with the playback URL can stream the asset). And `\"signed\"` (an additional access token is required to play the asset). If no playback_policy is set, the asset will have no playback IDs and will therefore not be playable. For simplicity, a single string name can be used in place of the array in the case of only one playback policy.  # noqa: E501
 
         :return: The playback_policy of this CreateAssetRequest.  # noqa: E501
         :rtype: list[PlaybackPolicy]
@@ -108,6 +111,7 @@ class CreateAssetRequest(object):
     def playback_policy(self, playback_policy):
         """Sets the playback_policy of this CreateAssetRequest.
 
+        An array of playback policy names that you want applied to this asset and available through `playback_ids`. Options include: `\"public\"` (anyone with the playback URL can stream the asset). And `\"signed\"` (an additional access token is required to play the asset). If no playback_policy is set, the asset will have no playback IDs and will therefore not be playable. For simplicity, a single string name can be used in place of the array in the case of only one playback policy.  # noqa: E501
 
         :param playback_policy: The playback_policy of this CreateAssetRequest.  # noqa: E501
         :type: list[PlaybackPolicy]
@@ -140,6 +144,7 @@ class CreateAssetRequest(object):
     def passthrough(self):
         """Gets the passthrough of this CreateAssetRequest.  # noqa: E501
 
+        Arbitrary metadata that will be included in the asset details and related webhooks. Can be used to store your own ID for a video along with the asset. **Max: 255 characters**.  # noqa: E501
 
         :return: The passthrough of this CreateAssetRequest.  # noqa: E501
         :rtype: str
@@ -150,6 +155,7 @@ class CreateAssetRequest(object):
     def passthrough(self, passthrough):
         """Sets the passthrough of this CreateAssetRequest.
 
+        Arbitrary metadata that will be included in the asset details and related webhooks. Can be used to store your own ID for a video along with the asset. **Max: 255 characters**.  # noqa: E501
 
         :param passthrough: The passthrough of this CreateAssetRequest.  # noqa: E501
         :type: str
@@ -161,6 +167,7 @@ class CreateAssetRequest(object):
     def mp4_support(self):
         """Gets the mp4_support of this CreateAssetRequest.  # noqa: E501
 
+        Specify what level (if any) of support for mp4 playback. In most cases you should use our default HLS-based streaming playback ({playback_id}.m3u8) which can automatically adjust to viewers' connection speeds, but an mp4 can be useful for some legacy devices or downloading for offline playback. See the [Download your vidoes guide](/guides/video/download-your-videos) for more information.  # noqa: E501
 
         :return: The mp4_support of this CreateAssetRequest.  # noqa: E501
         :rtype: str
@@ -171,6 +178,7 @@ class CreateAssetRequest(object):
     def mp4_support(self, mp4_support):
         """Sets the mp4_support of this CreateAssetRequest.
 
+        Specify what level (if any) of support for mp4 playback. In most cases you should use our default HLS-based streaming playback ({playback_id}.m3u8) which can automatically adjust to viewers' connection speeds, but an mp4 can be useful for some legacy devices or downloading for offline playback. See the [Download your vidoes guide](/guides/video/download-your-videos) for more information.  # noqa: E501
 
         :param mp4_support: The mp4_support of this CreateAssetRequest.  # noqa: E501
         :type: str
@@ -211,6 +219,7 @@ class CreateAssetRequest(object):
     def master_access(self):
         """Gets the master_access of this CreateAssetRequest.  # noqa: E501
 
+        Specify what level (if any) of support for master access. Master access can be enabled temporarily for your asset to be downloaded. See the [Download your vidoes guide](/guides/video/download-your-videos) for more information.  # noqa: E501
 
         :return: The master_access of this CreateAssetRequest.  # noqa: E501
         :rtype: str
@@ -221,6 +230,7 @@ class CreateAssetRequest(object):
     def master_access(self, master_access):
         """Sets the master_access of this CreateAssetRequest.
 
+        Specify what level (if any) of support for master access. Master access can be enabled temporarily for your asset to be downloaded. See the [Download your vidoes guide](/guides/video/download-your-videos) for more information.  # noqa: E501
 
         :param master_access: The master_access of this CreateAssetRequest.  # noqa: E501
         :type: str
@@ -238,6 +248,7 @@ class CreateAssetRequest(object):
     def test(self):
         """Gets the test of this CreateAssetRequest.  # noqa: E501
 
+        Marks the asset as a test asset when the value is set to true. A Test asset can help evaluate the Mux Video APIs without incurring any cost. There is no limit on number of test assets created. Test asset are watermarked with the Mux logo, limited to 10 seconds, deleted after 24 hrs.  # noqa: E501
 
         :return: The test of this CreateAssetRequest.  # noqa: E501
         :rtype: bool
@@ -248,6 +259,7 @@ class CreateAssetRequest(object):
     def test(self, test):
         """Sets the test of this CreateAssetRequest.
 
+        Marks the asset as a test asset when the value is set to true. A Test asset can help evaluate the Mux Video APIs without incurring any cost. There is no limit on number of test assets created. Test asset are watermarked with the Mux logo, limited to 10 seconds, deleted after 24 hrs.  # noqa: E501
 
         :param test: The test of this CreateAssetRequest.  # noqa: E501
         :type: bool

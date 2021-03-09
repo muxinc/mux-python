@@ -40,7 +40,7 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = mux_python.LiveStreamsApi(mux_python.ApiClient(configuration))
-create_live_stream_request = mux_python.CreateLiveStreamRequest() # CreateLiveStreamRequest | 
+create_live_stream_request = {"playback_policy":"public","new_asset_settings":{"playback_policy":"public"}} # CreateLiveStreamRequest | 
 
 try:
     # Create a live stream
@@ -93,7 +93,7 @@ configuration.password = 'YOUR_PASSWORD'
 # create an instance of the API class
 api_instance = mux_python.LiveStreamsApi(mux_python.ApiClient(configuration))
 live_stream_id = 'live_stream_id_example' # str | The live stream ID
-create_playback_id_request = mux_python.CreatePlaybackIDRequest() # CreatePlaybackIDRequest | 
+create_playback_id_request = {"policy":"signed"} # CreatePlaybackIDRequest | 
 
 try:
     # Create a live stream playback ID
@@ -149,7 +149,7 @@ configuration.password = 'YOUR_PASSWORD'
 # create an instance of the API class
 api_instance = mux_python.LiveStreamsApi(mux_python.ApiClient(configuration))
 live_stream_id = 'live_stream_id_example' # str | The live stream ID
-create_simulcast_target_request = mux_python.CreateSimulcastTargetRequest() # CreateSimulcastTargetRequest | 
+create_simulcast_target_request = {"url":"rtmp://live.example.com/app","stream_key":"abcdefgh","passthrough":"Example"} # CreateSimulcastTargetRequest | 
 
 try:
     # Create a live stream simulcast target

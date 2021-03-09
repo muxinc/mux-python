@@ -77,6 +77,7 @@ class InputSettings(object):
     def url(self):
         """Gets the url of this InputSettings.  # noqa: E501
 
+        The web address of the subtitle text track file that Mux should download and use to create the track. Mux supports [SubRip Text (SRT)](https://en.wikipedia.org/wiki/SubRip) and [Web Video Text Tracks](https://www.w3.org/TR/webvtt1/) format for ingesting Subtitles and Closed Captions.  # noqa: E501
 
         :return: The url of this InputSettings.  # noqa: E501
         :rtype: str
@@ -87,6 +88,7 @@ class InputSettings(object):
     def url(self, url):
         """Sets the url of this InputSettings.
 
+        The web address of the subtitle text track file that Mux should download and use to create the track. Mux supports [SubRip Text (SRT)](https://en.wikipedia.org/wiki/SubRip) and [Web Video Text Tracks](https://www.w3.org/TR/webvtt1/) format for ingesting Subtitles and Closed Captions.  # noqa: E501
 
         :param url: The url of this InputSettings.  # noqa: E501
         :type: str
@@ -119,6 +121,7 @@ class InputSettings(object):
     def type(self):
         """Gets the type of this InputSettings.  # noqa: E501
 
+        This parameter is required for the `text` track type.  # noqa: E501
 
         :return: The type of this InputSettings.  # noqa: E501
         :rtype: str
@@ -129,6 +132,7 @@ class InputSettings(object):
     def type(self, type):
         """Sets the type of this InputSettings.
 
+        This parameter is required for the `text` track type.  # noqa: E501
 
         :param type: The type of this InputSettings.  # noqa: E501
         :type: str
@@ -146,6 +150,7 @@ class InputSettings(object):
     def text_type(self):
         """Gets the text_type of this InputSettings.  # noqa: E501
 
+        Type of text track. This parameter only supports subtitles value. For more information on Subtitles / Closed Captions, [see this blog post](https://mux.com/blog/subtitles-captions-webvtt-hls-and-those-magic-flags/). This parameter is required for `text` track type.  # noqa: E501
 
         :return: The text_type of this InputSettings.  # noqa: E501
         :rtype: str
@@ -156,6 +161,7 @@ class InputSettings(object):
     def text_type(self, text_type):
         """Sets the text_type of this InputSettings.
 
+        Type of text track. This parameter only supports subtitles value. For more information on Subtitles / Closed Captions, [see this blog post](https://mux.com/blog/subtitles-captions-webvtt-hls-and-those-magic-flags/). This parameter is required for `text` track type.  # noqa: E501
 
         :param text_type: The text_type of this InputSettings.  # noqa: E501
         :type: str
@@ -173,6 +179,7 @@ class InputSettings(object):
     def language_code(self):
         """Gets the language_code of this InputSettings.  # noqa: E501
 
+        The language code value must be a valid [BCP 47](https://tools.ietf.org/html/bcp47) specification compliant value. For example, en for English or en-US for the US version of English. This parameter is required for text type and subtitles text type track.  # noqa: E501
 
         :return: The language_code of this InputSettings.  # noqa: E501
         :rtype: str
@@ -183,6 +190,7 @@ class InputSettings(object):
     def language_code(self, language_code):
         """Sets the language_code of this InputSettings.
 
+        The language code value must be a valid [BCP 47](https://tools.ietf.org/html/bcp47) specification compliant value. For example, en for English or en-US for the US version of English. This parameter is required for text type and subtitles text type track.  # noqa: E501
 
         :param language_code: The language_code of this InputSettings.  # noqa: E501
         :type: str
@@ -194,6 +202,7 @@ class InputSettings(object):
     def name(self):
         """Gets the name of this InputSettings.  # noqa: E501
 
+        The name of the track containing a human-readable description. This value must be unique across all text type and subtitles `text` type tracks. The hls manifest will associate a subtitle text track with this value. For example, the value should be \"English\" for subtitles text track with language_code as en. This optional parameter should be used only for `text` type and subtitles `text` type track. If this parameter is not included, Mux will auto-populate based on the `input[].language_code` value.  # noqa: E501
 
         :return: The name of this InputSettings.  # noqa: E501
         :rtype: str
@@ -204,6 +213,7 @@ class InputSettings(object):
     def name(self, name):
         """Sets the name of this InputSettings.
 
+        The name of the track containing a human-readable description. This value must be unique across all text type and subtitles `text` type tracks. The hls manifest will associate a subtitle text track with this value. For example, the value should be \"English\" for subtitles text track with language_code as en. This optional parameter should be used only for `text` type and subtitles `text` type track. If this parameter is not included, Mux will auto-populate based on the `input[].language_code` value.  # noqa: E501
 
         :param name: The name of this InputSettings.  # noqa: E501
         :type: str
@@ -215,6 +225,7 @@ class InputSettings(object):
     def closed_captions(self):
         """Gets the closed_captions of this InputSettings.  # noqa: E501
 
+        Indicates the track provides Subtitles for the Deaf or Hard-of-hearing (SDH). This optional parameter should be used for `text` type and subtitles `text` type tracks.  # noqa: E501
 
         :return: The closed_captions of this InputSettings.  # noqa: E501
         :rtype: bool
@@ -225,6 +236,7 @@ class InputSettings(object):
     def closed_captions(self, closed_captions):
         """Sets the closed_captions of this InputSettings.
 
+        Indicates the track provides Subtitles for the Deaf or Hard-of-hearing (SDH). This optional parameter should be used for `text` type and subtitles `text` type tracks.  # noqa: E501
 
         :param closed_captions: The closed_captions of this InputSettings.  # noqa: E501
         :type: bool
@@ -236,6 +248,7 @@ class InputSettings(object):
     def passthrough(self):
         """Gets the passthrough of this InputSettings.  # noqa: E501
 
+        This optional parameter should be used for `text` type and subtitles `text` type tracks.  # noqa: E501
 
         :return: The passthrough of this InputSettings.  # noqa: E501
         :rtype: str
@@ -246,6 +259,7 @@ class InputSettings(object):
     def passthrough(self, passthrough):
         """Sets the passthrough of this InputSettings.
 
+        This optional parameter should be used for `text` type and subtitles `text` type tracks.  # noqa: E501
 
         :param passthrough: The passthrough of this InputSettings.  # noqa: E501
         :type: str
