@@ -85,7 +85,7 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = mux_python.DirectUploadsApi(mux_python.ApiClient(configuration))
-create_upload_request = {"cors_origin":"https://example.com/","new_asset_settings":{"playback_policy":["public"],"mp4_support":"standard"}} # CreateUploadRequest | 
+create_upload_request = mux_python.CreateUploadRequest() # CreateUploadRequest | 
 
 try:
     # Create a new direct upload URL
