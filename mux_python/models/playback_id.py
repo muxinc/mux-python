@@ -47,6 +47,7 @@ class PlaybackID(object):
     def id(self):
         """Gets the id of this PlaybackID.  # noqa: E501
 
+        Unique identifier for the PlaybackID  # noqa: E501
 
         :return: The id of this PlaybackID.  # noqa: E501
         :rtype: str
@@ -57,6 +58,7 @@ class PlaybackID(object):
     def id(self, id):
         """Sets the id of this PlaybackID.
 
+        Unique identifier for the PlaybackID  # noqa: E501
 
         :param id: The id of this PlaybackID.  # noqa: E501
         :type: str

@@ -47,7 +47,7 @@ class AssetRecordingTimes(object):
     def started_at(self):
         """Gets the started_at of this AssetRecordingTimes.  # noqa: E501
 
-        The time at which the recording for the live stream started. The time value is Unix epoch time represented in ISO 8601 format  # noqa: E501
+        The time at which the recording for the live stream started. The time value is Unix epoch time represented in ISO 8601 format.  # noqa: E501
 
         :return: The started_at of this AssetRecordingTimes.  # noqa: E501
         :rtype: datetime
@@ -58,7 +58,7 @@ class AssetRecordingTimes(object):
     def started_at(self, started_at):
         """Sets the started_at of this AssetRecordingTimes.
 
-        The time at which the recording for the live stream started. The time value is Unix epoch time represented in ISO 8601 format  # noqa: E501
+        The time at which the recording for the live stream started. The time value is Unix epoch time represented in ISO 8601 format.  # noqa: E501
 
         :param started_at: The started_at of this AssetRecordingTimes.  # noqa: E501
         :type: datetime
@@ -70,7 +70,7 @@ class AssetRecordingTimes(object):
     def duration(self):
         """Gets the duration of this AssetRecordingTimes.  # noqa: E501
 
-        The duration of the live stream recorded. The time value is in seconds  # noqa: E501
+        The duration of the live stream recorded. The time value is in seconds.  # noqa: E501
 
         :return: The duration of this AssetRecordingTimes.  # noqa: E501
         :rtype: float
@@ -81,7 +81,7 @@ class AssetRecordingTimes(object):
     def duration(self, duration):
         """Sets the duration of this AssetRecordingTimes.
 
-        The duration of the live stream recorded. The time value is in seconds  # noqa: E501
+        The duration of the live stream recorded. The time value is in seconds.  # noqa: E501
 
         :param duration: The duration of this AssetRecordingTimes.  # noqa: E501
         :type: float

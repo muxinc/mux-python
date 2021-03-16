@@ -102,6 +102,7 @@ class Track(object):
     def id(self):
         """Gets the id of this Track.  # noqa: E501
 
+        Unique identifier for the Track  # noqa: E501
 
         :return: The id of this Track.  # noqa: E501
         :rtype: str
@@ -112,6 +113,7 @@ class Track(object):
     def id(self, id):
         """Sets the id of this Track.
 
+        Unique identifier for the Track  # noqa: E501
 
         :param id: The id of this Track.  # noqa: E501
         :type: str
@@ -123,6 +125,7 @@ class Track(object):
     def type(self):
         """Gets the type of this Track.  # noqa: E501
 
+        The type of track  # noqa: E501
 
         :return: The type of this Track.  # noqa: E501
         :rtype: str
@@ -133,6 +136,7 @@ class Track(object):
     def type(self, type):
         """Sets the type of this Track.
 
+        The type of track  # noqa: E501
 
         :param type: The type of this Track.  # noqa: E501
         :type: str
@@ -150,6 +154,7 @@ class Track(object):
     def duration(self):
         """Gets the duration of this Track.  # noqa: E501
 
+        The duration in seconds of the track media. This parameter is not set for the `text` type track. This field is optional and may not be set. The top level `duration` field of an asset will always be set.  # noqa: E501
 
         :return: The duration of this Track.  # noqa: E501
         :rtype: float
@@ -160,6 +165,7 @@ class Track(object):
     def duration(self, duration):
         """Sets the duration of this Track.
 
+        The duration in seconds of the track media. This parameter is not set for the `text` type track. This field is optional and may not be set. The top level `duration` field of an asset will always be set.  # noqa: E501
 
         :param duration: The duration of this Track.  # noqa: E501
         :type: float
@@ -171,6 +177,7 @@ class Track(object):
     def max_width(self):
         """Gets the max_width of this Track.  # noqa: E501
 
+        The maximum width in pixels available for the track. Only set for the `video` type track.  # noqa: E501
 
         :return: The max_width of this Track.  # noqa: E501
         :rtype: int
@@ -181,6 +188,7 @@ class Track(object):
     def max_width(self, max_width):
         """Sets the max_width of this Track.
 
+        The maximum width in pixels available for the track. Only set for the `video` type track.  # noqa: E501
 
         :param max_width: The max_width of this Track.  # noqa: E501
         :type: int
@@ -192,6 +200,7 @@ class Track(object):
     def max_height(self):
         """Gets the max_height of this Track.  # noqa: E501
 
+        The maximum height in pixels available for the track. Only set for the `video` type track.  # noqa: E501
 
         :return: The max_height of this Track.  # noqa: E501
         :rtype: int
@@ -202,6 +211,7 @@ class Track(object):
     def max_height(self, max_height):
         """Sets the max_height of this Track.
 
+        The maximum height in pixels available for the track. Only set for the `video` type track.  # noqa: E501
 
         :param max_height: The max_height of this Track.  # noqa: E501
         :type: int
@@ -213,6 +223,7 @@ class Track(object):
     def max_frame_rate(self):
         """Gets the max_frame_rate of this Track.  # noqa: E501
 
+        The maximum frame rate available for the track. Only set for the `video` type track. This field may return `-1` if the frame rate of the input cannot be reliably determined.  # noqa: E501
 
         :return: The max_frame_rate of this Track.  # noqa: E501
         :rtype: float
@@ -223,6 +234,7 @@ class Track(object):
     def max_frame_rate(self, max_frame_rate):
         """Sets the max_frame_rate of this Track.
 
+        The maximum frame rate available for the track. Only set for the `video` type track. This field may return `-1` if the frame rate of the input cannot be reliably determined.  # noqa: E501
 
         :param max_frame_rate: The max_frame_rate of this Track.  # noqa: E501
         :type: float
@@ -234,6 +246,7 @@ class Track(object):
     def max_channels(self):
         """Gets the max_channels of this Track.  # noqa: E501
 
+        The maximum number of audio channels the track supports. Only set for the `audio` type track.  # noqa: E501
 
         :return: The max_channels of this Track.  # noqa: E501
         :rtype: int
@@ -244,6 +257,7 @@ class Track(object):
     def max_channels(self, max_channels):
         """Sets the max_channels of this Track.
 
+        The maximum number of audio channels the track supports. Only set for the `audio` type track.  # noqa: E501
 
         :param max_channels: The max_channels of this Track.  # noqa: E501
         :type: int
@@ -255,6 +269,7 @@ class Track(object):
     def max_channel_layout(self):
         """Gets the max_channel_layout of this Track.  # noqa: E501
 
+        Only set for the `audio` type track.  # noqa: E501
 
         :return: The max_channel_layout of this Track.  # noqa: E501
         :rtype: str
@@ -265,10 +280,17 @@ class Track(object):
     def max_channel_layout(self, max_channel_layout):
         """Sets the max_channel_layout of this Track.
 
+        Only set for the `audio` type track.  # noqa: E501
 
         :param max_channel_layout: The max_channel_layout of this Track.  # noqa: E501
         :type: str
         """
+        allowed_values = ["mono", "stereo", "5.2", "7.1"]  # noqa: E501
+        if max_channel_layout not in allowed_values:
+            raise ValueError(
+                "Invalid value for `max_channel_layout` ({0}), must be one of {1}"  # noqa: E501
+                .format(max_channel_layout, allowed_values)
+            )
 
         self._max_channel_layout = max_channel_layout
 
@@ -276,6 +298,7 @@ class Track(object):
     def text_type(self):
         """Gets the text_type of this Track.  # noqa: E501
 
+        This parameter is set only for the `text` type track.  # noqa: E501
 
         :return: The text_type of this Track.  # noqa: E501
         :rtype: str
@@ -286,6 +309,7 @@ class Track(object):
     def text_type(self, text_type):
         """Sets the text_type of this Track.
 
+        This parameter is set only for the `text` type track.  # noqa: E501
 
         :param text_type: The text_type of this Track.  # noqa: E501
         :type: str
@@ -303,6 +327,7 @@ class Track(object):
     def language_code(self):
         """Gets the language_code of this Track.  # noqa: E501
 
+        The language code value represents [BCP 47](https://tools.ietf.org/html/bcp47) specification compliant value. For example, `en` for English or `en-US` for the US version of English. This parameter is set for `text` type and `subtitles` text type track.  # noqa: E501
 
         :return: The language_code of this Track.  # noqa: E501
         :rtype: str
@@ -313,6 +338,7 @@ class Track(object):
     def language_code(self, language_code):
         """Sets the language_code of this Track.
 
+        The language code value represents [BCP 47](https://tools.ietf.org/html/bcp47) specification compliant value. For example, `en` for English or `en-US` for the US version of English. This parameter is set for `text` type and `subtitles` text type track.  # noqa: E501
 
         :param language_code: The language_code of this Track.  # noqa: E501
         :type: str
@@ -324,6 +350,7 @@ class Track(object):
     def name(self):
         """Gets the name of this Track.  # noqa: E501
 
+        The name of the track containing a human-readable description. The hls manifest will associate a subtitle text track with this value. For example, the value is \"English\" for subtitles text track for the `language_code` value of `en-US`. This parameter is set for the `text` type and `subtitles` text type track.  # noqa: E501
 
         :return: The name of this Track.  # noqa: E501
         :rtype: str
@@ -334,6 +361,7 @@ class Track(object):
     def name(self, name):
         """Sets the name of this Track.
 
+        The name of the track containing a human-readable description. The hls manifest will associate a subtitle text track with this value. For example, the value is \"English\" for subtitles text track for the `language_code` value of `en-US`. This parameter is set for the `text` type and `subtitles` text type track.  # noqa: E501
 
         :param name: The name of this Track.  # noqa: E501
         :type: str
@@ -345,6 +373,7 @@ class Track(object):
     def closed_captions(self):
         """Gets the closed_captions of this Track.  # noqa: E501
 
+        Indicates the track provides Subtitles for the Deaf or Hard-of-hearing (SDH). This parameter is set for the `text` type and `subtitles` text type track.  # noqa: E501
 
         :return: The closed_captions of this Track.  # noqa: E501
         :rtype: bool
@@ -355,6 +384,7 @@ class Track(object):
     def closed_captions(self, closed_captions):
         """Sets the closed_captions of this Track.
 
+        Indicates the track provides Subtitles for the Deaf or Hard-of-hearing (SDH). This parameter is set for the `text` type and `subtitles` text type track.  # noqa: E501
 
         :param closed_captions: The closed_captions of this Track.  # noqa: E501
         :type: bool
@@ -366,6 +396,7 @@ class Track(object):
     def passthrough(self):
         """Gets the passthrough of this Track.  # noqa: E501
 
+        Arbitrary metadata set for the track either when creating the asset or track. This parameter is set for `text` type and `subtitles` text type track. Max 255 characters.  # noqa: E501
 
         :return: The passthrough of this Track.  # noqa: E501
         :rtype: str
@@ -376,6 +407,7 @@ class Track(object):
     def passthrough(self, passthrough):
         """Sets the passthrough of this Track.
 
+        Arbitrary metadata set for the track either when creating the asset or track. This parameter is set for `text` type and `subtitles` text type track. Max 255 characters.  # noqa: E501
 
         :param passthrough: The passthrough of this Track.  # noqa: E501
         :type: str
