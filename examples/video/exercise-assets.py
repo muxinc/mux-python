@@ -57,6 +57,14 @@ if create_asset_response.data.status != 'ready':
 print("get-asset OK ✅")
 print("get-asset-input-info OK ✅")
 
+# ========== clipping ==========
+clip_input_settings = [mux_python.InputSettings(url='mux://assets/' + create_asset_response.data.id, start_time=0, end_time=5)]
+clip_request = mux_python.CreateAssetRequest(input=clip_input_settings)
+clip_response = assets_api.create_asset(clip_request)
+assert clip_response != None
+assert clip_response.data.id != None
+print("clipping OK ✅")
+
 # ========== create-asset-playback-id ==========
 create_playback_id_request = mux_python.CreatePlaybackIDRequest(policy=mux_python.PlaybackPolicy.PUBLIC)
 create_asset_playback_id_response = assets_api.create_asset_playback_id(create_asset_response.data.id, create_playback_id_request)
