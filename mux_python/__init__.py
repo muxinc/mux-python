@@ -11,7 +11,7 @@ NOTE: This class is auto generated. Do not edit the class manually.
 
 from __future__ import absolute_import
 
-__version__ = "1.11.0"
+__version__ = "1.12.0"
 
 # import apis into sdk package
 from mux_python.api.assets_api import AssetsApi
