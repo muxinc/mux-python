@@ -338,6 +338,7 @@ class AssetsApi(object):
     def delete_asset(self, asset_id, **kwargs):  # noqa: E501
         """Delete an asset  # noqa: E501
 
+        Deletes a video asset and all its data   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.delete_asset(asset_id, async_req=True)
@@ -359,6 +360,7 @@ class AssetsApi(object):
     def delete_asset_with_http_info(self, asset_id, **kwargs):  # noqa: E501
         """Delete an asset  # noqa: E501
 
+        Deletes a video asset and all its data   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.delete_asset_with_http_info(asset_id, async_req=True)
@@ -918,6 +920,7 @@ class AssetsApi(object):
     def list_assets(self, **kwargs):  # noqa: E501
         """List assets  # noqa: E501
 
+        List all Mux assets.   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.list_assets(async_req=True)
@@ -940,6 +943,7 @@ class AssetsApi(object):
     def list_assets_with_http_info(self, **kwargs):  # noqa: E501
         """List assets  # noqa: E501
 
+        List all Mux assets.   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.list_assets_with_http_info(async_req=True)

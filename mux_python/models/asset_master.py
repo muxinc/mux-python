@@ -61,6 +61,12 @@ class AssetMaster(object):
         :param status: The status of this AssetMaster.  # noqa: E501
         :type: str
         """
+        allowed_values = ["ready", "preparing", "errored"]  # noqa: E501
+        if status not in allowed_values:
+            raise ValueError(
+                "Invalid value for `status` ({0}), must be one of {1}"  # noqa: E501
+                .format(status, allowed_values)
+            )
 
         self._status = status
 

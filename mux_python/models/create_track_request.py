@@ -149,6 +149,7 @@ class CreateTrackRequest(object):
     def language_code(self):
         """Gets the language_code of this CreateTrackRequest.  # noqa: E501
 
+        The language code value must be a valid BCP 47 specification compliant value. For example, en for English or en-US for the US version of English.  # noqa: E501
 
         :return: The language_code of this CreateTrackRequest.  # noqa: E501
         :rtype: str
@@ -159,6 +160,7 @@ class CreateTrackRequest(object):
     def language_code(self, language_code):
         """Sets the language_code of this CreateTrackRequest.
 
+        The language code value must be a valid BCP 47 specification compliant value. For example, en for English or en-US for the US version of English.  # noqa: E501
 
         :param language_code: The language_code of this CreateTrackRequest.  # noqa: E501
         :type: str
@@ -172,6 +174,7 @@ class CreateTrackRequest(object):
     def name(self):
         """Gets the name of this CreateTrackRequest.  # noqa: E501
 
+        The name of the track containing a human-readable description. This value must be unqiue across all the text type and subtitles text type tracks. HLS manifest will associate subtitle text track with this value. For example, set the value to \"English\" for subtitles text track with language_code as en-US. If this parameter is not included, Mux will auto-populate based on the language_code value.  # noqa: E501
 
         :return: The name of this CreateTrackRequest.  # noqa: E501
         :rtype: str
@@ -182,6 +185,7 @@ class CreateTrackRequest(object):
     def name(self, name):
         """Sets the name of this CreateTrackRequest.
 
+        The name of the track containing a human-readable description. This value must be unqiue across all the text type and subtitles text type tracks. HLS manifest will associate subtitle text track with this value. For example, set the value to \"English\" for subtitles text track with language_code as en-US. If this parameter is not included, Mux will auto-populate based on the language_code value.  # noqa: E501
 
         :param name: The name of this CreateTrackRequest.  # noqa: E501
         :type: str
@@ -193,6 +197,7 @@ class CreateTrackRequest(object):
     def closed_captions(self):
         """Gets the closed_captions of this CreateTrackRequest.  # noqa: E501
 
+        Indicates the track provides Subtitles for the Deaf or Hard-of-hearing (SDH).  # noqa: E501
 
         :return: The closed_captions of this CreateTrackRequest.  # noqa: E501
         :rtype: bool
@@ -203,6 +208,7 @@ class CreateTrackRequest(object):
     def closed_captions(self, closed_captions):
         """Sets the closed_captions of this CreateTrackRequest.
 
+        Indicates the track provides Subtitles for the Deaf or Hard-of-hearing (SDH).  # noqa: E501
 
         :param closed_captions: The closed_captions of this CreateTrackRequest.  # noqa: E501
         :type: bool
@@ -214,6 +220,7 @@ class CreateTrackRequest(object):
     def passthrough(self):
         """Gets the passthrough of this CreateTrackRequest.  # noqa: E501
 
+        Arbitrary metadata set for the track either when creating the asset or track.  # noqa: E501
 
         :return: The passthrough of this CreateTrackRequest.  # noqa: E501
         :rtype: str
@@ -224,6 +231,7 @@ class CreateTrackRequest(object):
     def passthrough(self, passthrough):
         """Sets the passthrough of this CreateTrackRequest.
 
+        Arbitrary metadata set for the track either when creating the asset or track.  # noqa: E501
 
         :param passthrough: The passthrough of this CreateTrackRequest.  # noqa: E501
         :type: str

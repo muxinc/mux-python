@@ -11,7 +11,7 @@ import pprint
 import re  # noqa: F401
 import six
 
-class PlaybackID(object):
+class GetAssetOrLiveStreamIdResponseData(object):
 
 
     """
@@ -23,44 +23,49 @@ class PlaybackID(object):
     """
     openapi_types = {
         'id': 'str',
-        'policy': 'PlaybackPolicy'
+        'policy': 'PlaybackPolicy',
+        'object': 'GetAssetOrLiveStreamIdResponseDataObject'
     }
 
     attribute_map = {
         'id': 'id',
-        'policy': 'policy'
+        'policy': 'policy',
+        'object': 'object'
     }
 
-    def __init__(self, id=None, policy=None):  # noqa: E501
-        """PlaybackID - a model defined in OpenAPI"""  # noqa: E501
+    def __init__(self, id=None, policy=None, object=None):  # noqa: E501
+        """GetAssetOrLiveStreamIdResponseData - a model defined in OpenAPI"""  # noqa: E501
 
         self._id = None
         self._policy = None
+        self._object = None
         self.discriminator = None
 
         if id is not None:
             self.id = id
         if policy is not None:
             self.policy = policy
+        if object is not None:
+            self.object = object
 
     @property
     def id(self):
-        """Gets the id of this PlaybackID.  # noqa: E501
+        """Gets the id of this GetAssetOrLiveStreamIdResponseData.  # noqa: E501
 
-        Unique identifier for the PlaybackID  # noqa: E501
+        The Playback ID used to retrieve the corresponding asset or the live stream ID  # noqa: E501
 
-        :return: The id of this PlaybackID.  # noqa: E501
+        :return: The id of this GetAssetOrLiveStreamIdResponseData.  # noqa: E501
         :rtype: str
         """
         return self._id
 
     @id.setter
     def id(self, id):
-        """Sets the id of this PlaybackID.
+        """Sets the id of this GetAssetOrLiveStreamIdResponseData.
 
-        Unique identifier for the PlaybackID  # noqa: E501
+        The Playback ID used to retrieve the corresponding asset or the live stream ID  # noqa: E501
 
-        :param id: The id of this PlaybackID.  # noqa: E501
+        :param id: The id of this GetAssetOrLiveStreamIdResponseData.  # noqa: E501
         :type: str
         """
 
@@ -68,24 +73,45 @@ class PlaybackID(object):
 
     @property
     def policy(self):
-        """Gets the policy of this PlaybackID.  # noqa: E501
+        """Gets the policy of this GetAssetOrLiveStreamIdResponseData.  # noqa: E501
 
 
-        :return: The policy of this PlaybackID.  # noqa: E501
+        :return: The policy of this GetAssetOrLiveStreamIdResponseData.  # noqa: E501
         :rtype: PlaybackPolicy
         """
         return self._policy
 
     @policy.setter
     def policy(self, policy):
-        """Sets the policy of this PlaybackID.
+        """Sets the policy of this GetAssetOrLiveStreamIdResponseData.
 
 
-        :param policy: The policy of this PlaybackID.  # noqa: E501
+        :param policy: The policy of this GetAssetOrLiveStreamIdResponseData.  # noqa: E501
         :type: PlaybackPolicy
         """
 
         self._policy = policy
+
+    @property
+    def object(self):
+        """Gets the object of this GetAssetOrLiveStreamIdResponseData.  # noqa: E501
+
+
+        :return: The object of this GetAssetOrLiveStreamIdResponseData.  # noqa: E501
+        :rtype: GetAssetOrLiveStreamIdResponseDataObject
+        """
+        return self._object
+
+    @object.setter
+    def object(self, object):
+        """Sets the object of this GetAssetOrLiveStreamIdResponseData.
+
+
+        :param object: The object of this GetAssetOrLiveStreamIdResponseData.  # noqa: E501
+        :type: GetAssetOrLiveStreamIdResponseDataObject
+        """
+
+        self._object = object
 
     def to_dict(self):
         """Returns the model properties as a dict"""
@@ -121,7 +147,7 @@ class PlaybackID(object):
 
     def __eq__(self, other):
         """Returns true if both objects are equal"""
-        if not isinstance(other, PlaybackID):
+        if not isinstance(other, GetAssetOrLiveStreamIdResponseData):
             return False
 
         return self.__dict__ == other.__dict__

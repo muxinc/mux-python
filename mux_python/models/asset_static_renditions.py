@@ -47,7 +47,7 @@ class AssetStaticRenditions(object):
     def status(self):
         """Gets the status of this AssetStaticRenditions.  # noqa: E501
 
-        * `ready`: All MP4s are downloadable * `preparing`: We are preparing the MP4s * `disabled`: MP4 support was not requested or has been removed * `errored`: There was a Mux internal error that prevented the MP4s from being created   # noqa: E501
+        Indicates the status of downloadable MP4 versions of this asset.  # noqa: E501
 
         :return: The status of this AssetStaticRenditions.  # noqa: E501
         :rtype: str
@@ -58,7 +58,7 @@ class AssetStaticRenditions(object):
     def status(self, status):
         """Sets the status of this AssetStaticRenditions.
 
-        * `ready`: All MP4s are downloadable * `preparing`: We are preparing the MP4s * `disabled`: MP4 support was not requested or has been removed * `errored`: There was a Mux internal error that prevented the MP4s from being created   # noqa: E501
+        Indicates the status of downloadable MP4 versions of this asset.  # noqa: E501
 
         :param status: The status of this AssetStaticRenditions.  # noqa: E501
         :type: str

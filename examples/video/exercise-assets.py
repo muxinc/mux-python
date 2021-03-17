@@ -16,6 +16,7 @@ configuration.password = os.environ['MUX_TOKEN_SECRET']
 
 # API Client Initialization
 assets_api = mux_python.AssetsApi(mux_python.ApiClient(configuration))
+playback_ids_api = mux_python.PlaybackIDApi(mux_python.ApiClient(configuration))
 
 # ========== create-asset ==========
 add_captions = mux_python.CreateTrackRequest(url="https://tears-of-steel-subtitles.s3.amazonaws.com/tears-fr.vtt", type="text", text_type="subtitles", language_code="fr", closed_captions=False, name="French")
@@ -56,6 +57,14 @@ if create_asset_response.data.status != 'ready':
 print("get-asset OK ✅")
 print("get-asset-input-info OK ✅")
 
+# ========== clipping ==========
+clip_input_settings = [mux_python.InputSettings(url='mux://assets/' + create_asset_response.data.id, start_time=0, end_time=5)]
+clip_request = mux_python.CreateAssetRequest(input=clip_input_settings)
+clip_response = assets_api.create_asset(clip_request)
+assert clip_response != None
+assert clip_response.data.id != None
+print("clipping OK ✅")
+
 # ========== create-asset-playback-id ==========
 create_playback_id_request = mux_python.CreatePlaybackIDRequest(policy=mux_python.PlaybackPolicy.PUBLIC)
 create_asset_playback_id_response = assets_api.create_asset_playback_id(create_asset_response.data.id, create_playback_id_request)
@@ -71,6 +80,13 @@ assert playback_id_response != None
 assert playback_id_response.data != None
 assert playback_id_response.data.id == create_asset_playback_id_response.data.id
 print("get-asset-playback-id OK ✅")
+
+# ========== get-asset-or-livestream-id ==========
+playback_id = playback_id_response.data.id
+get_playback_id_resp = playback_ids_api.get_asset_or_livestream_id(playback_id).data
+assert get_playback_id_resp.object.id == create_asset_response.data.id
+assert get_playback_id_resp.object.type == "asset"
+print("get-asset-or-livestream-id OK ✅")
 
 # ========== update-asset-mp4-support ==========
 update_asset_mp4_support_request = mux_python.UpdateAssetMP4SupportRequest(mp4_support="standard")

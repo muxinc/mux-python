@@ -1,10 +1,10 @@
-# AssetStaticRenditions
+# GetAssetOrLiveStreamIdResponseDataObject
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**status** | **str** | Indicates the status of downloadable MP4 versions of this asset. | [optional] [default to 'disabled']
-**files** | [**list[AssetStaticRenditionsFiles]**](AssetStaticRenditionsFiles.md) |  | [optional] 
+**id** | **str** | The identifier of the object. | [optional] 
+**type** | **str** | Identifies the object type associated with the playback ID. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

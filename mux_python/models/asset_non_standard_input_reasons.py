@@ -82,7 +82,7 @@ class AssetNonStandardInputReasons(object):
     def video_codec(self):
         """Gets the video_codec of this AssetNonStandardInputReasons.  # noqa: E501
 
-        The video codec used on the input file  # noqa: E501
+        The video codec used on the input file.  # noqa: E501
 
         :return: The video_codec of this AssetNonStandardInputReasons.  # noqa: E501
         :rtype: str
@@ -93,7 +93,7 @@ class AssetNonStandardInputReasons(object):
     def video_codec(self, video_codec):
         """Sets the video_codec of this AssetNonStandardInputReasons.
 
-        The video codec used on the input file  # noqa: E501
+        The video codec used on the input file.  # noqa: E501
 
         :param video_codec: The video_codec of this AssetNonStandardInputReasons.  # noqa: E501
         :type: str
@@ -105,7 +105,7 @@ class AssetNonStandardInputReasons(object):
     def audio_codec(self):
         """Gets the audio_codec of this AssetNonStandardInputReasons.  # noqa: E501
 
-        The audio codec used on the input file  # noqa: E501
+        The audio codec used on the input file.  # noqa: E501
 
         :return: The audio_codec of this AssetNonStandardInputReasons.  # noqa: E501
         :rtype: str
@@ -116,7 +116,7 @@ class AssetNonStandardInputReasons(object):
     def audio_codec(self, audio_codec):
         """Sets the audio_codec of this AssetNonStandardInputReasons.
 
-        The audio codec used on the input file  # noqa: E501
+        The audio codec used on the input file.  # noqa: E501
 
         :param audio_codec: The audio_codec of this AssetNonStandardInputReasons.  # noqa: E501
         :type: str
@@ -128,7 +128,7 @@ class AssetNonStandardInputReasons(object):
     def video_gop_size(self):
         """Gets the video_gop_size of this AssetNonStandardInputReasons.  # noqa: E501
 
-        The video key frame Interval (also called as Group of Picture or GOP) of the input file  # noqa: E501
+        The video key frame Interval (also called as Group of Picture or GOP) of the input file.  # noqa: E501
 
         :return: The video_gop_size of this AssetNonStandardInputReasons.  # noqa: E501
         :rtype: str
@@ -139,7 +139,7 @@ class AssetNonStandardInputReasons(object):
     def video_gop_size(self, video_gop_size):
         """Sets the video_gop_size of this AssetNonStandardInputReasons.
 
-        The video key frame Interval (also called as Group of Picture or GOP) of the input file  # noqa: E501
+        The video key frame Interval (also called as Group of Picture or GOP) of the input file.  # noqa: E501
 
         :param video_gop_size: The video_gop_size of this AssetNonStandardInputReasons.  # noqa: E501
         :type: str
@@ -157,7 +157,7 @@ class AssetNonStandardInputReasons(object):
     def video_frame_rate(self):
         """Gets the video_frame_rate of this AssetNonStandardInputReasons.  # noqa: E501
 
-        The video frame rate of the input file  # noqa: E501
+        The video frame rate of the input file.  # noqa: E501
 
         :return: The video_frame_rate of this AssetNonStandardInputReasons.  # noqa: E501
         :rtype: str
@@ -168,7 +168,7 @@ class AssetNonStandardInputReasons(object):
     def video_frame_rate(self, video_frame_rate):
         """Sets the video_frame_rate of this AssetNonStandardInputReasons.
 
-        The video frame rate of the input file  # noqa: E501
+        The video frame rate of the input file.  # noqa: E501
 
         :param video_frame_rate: The video_frame_rate of this AssetNonStandardInputReasons.  # noqa: E501
         :type: str
@@ -180,7 +180,7 @@ class AssetNonStandardInputReasons(object):
     def video_resolution(self):
         """Gets the video_resolution of this AssetNonStandardInputReasons.  # noqa: E501
 
-        The video resolution of the input file  # noqa: E501
+        The video resolution of the input file.  # noqa: E501
 
         :return: The video_resolution of this AssetNonStandardInputReasons.  # noqa: E501
         :rtype: str
@@ -191,7 +191,7 @@ class AssetNonStandardInputReasons(object):
     def video_resolution(self, video_resolution):
         """Sets the video_resolution of this AssetNonStandardInputReasons.
 
-        The video resolution of the input file  # noqa: E501
+        The video resolution of the input file.  # noqa: E501
 
         :param video_resolution: The video_resolution of this AssetNonStandardInputReasons.  # noqa: E501
         :type: str
@@ -203,7 +203,7 @@ class AssetNonStandardInputReasons(object):
     def pixel_aspect_ratio(self):
         """Gets the pixel_aspect_ratio of this AssetNonStandardInputReasons.  # noqa: E501
 
-        The video pixel aspect ratio of the input file  # noqa: E501
+        The video pixel aspect ratio of the input file.  # noqa: E501
 
         :return: The pixel_aspect_ratio of this AssetNonStandardInputReasons.  # noqa: E501
         :rtype: str
@@ -214,7 +214,7 @@ class AssetNonStandardInputReasons(object):
     def pixel_aspect_ratio(self, pixel_aspect_ratio):
         """Sets the pixel_aspect_ratio of this AssetNonStandardInputReasons.
 
-        The video pixel aspect ratio of the input file  # noqa: E501
+        The video pixel aspect ratio of the input file.  # noqa: E501
 
         :param pixel_aspect_ratio: The pixel_aspect_ratio of this AssetNonStandardInputReasons.  # noqa: E501
         :type: str
@@ -226,7 +226,7 @@ class AssetNonStandardInputReasons(object):
     def video_edit_list(self):
         """Gets the video_edit_list of this AssetNonStandardInputReasons.  # noqa: E501
 
-        Video Edit List reason indicates that the input file's video track contains a complex Edit Decision List  # noqa: E501
+        Video Edit List reason indicates that the input file's video track contains a complex Edit Decision List.  # noqa: E501
 
         :return: The video_edit_list of this AssetNonStandardInputReasons.  # noqa: E501
         :rtype: str
@@ -237,7 +237,7 @@ class AssetNonStandardInputReasons(object):
     def video_edit_list(self, video_edit_list):
         """Sets the video_edit_list of this AssetNonStandardInputReasons.
 
-        Video Edit List reason indicates that the input file's video track contains a complex Edit Decision List  # noqa: E501
+        Video Edit List reason indicates that the input file's video track contains a complex Edit Decision List.  # noqa: E501
 
         :param video_edit_list: The video_edit_list of this AssetNonStandardInputReasons.  # noqa: E501
         :type: str
@@ -255,7 +255,7 @@ class AssetNonStandardInputReasons(object):
     def audio_edit_list(self):
         """Gets the audio_edit_list of this AssetNonStandardInputReasons.  # noqa: E501
 
-        Audio Edit List reason indicates that the input file's audio track contains a complex Edit Decision List  # noqa: E501
+        Audio Edit List reason indicates that the input file's audio track contains a complex Edit Decision List.  # noqa: E501
 
         :return: The audio_edit_list of this AssetNonStandardInputReasons.  # noqa: E501
         :rtype: str
@@ -266,7 +266,7 @@ class AssetNonStandardInputReasons(object):
     def audio_edit_list(self, audio_edit_list):
         """Sets the audio_edit_list of this AssetNonStandardInputReasons.
 
-        Audio Edit List reason indicates that the input file's audio track contains a complex Edit Decision List  # noqa: E501
+        Audio Edit List reason indicates that the input file's audio track contains a complex Edit Decision List.  # noqa: E501
 
         :param audio_edit_list: The audio_edit_list of this AssetNonStandardInputReasons.  # noqa: E501
         :type: str
@@ -284,7 +284,7 @@ class AssetNonStandardInputReasons(object):
     def unexpected_media_file_parameters(self):
         """Gets the unexpected_media_file_parameters of this AssetNonStandardInputReasons.  # noqa: E501
 
-        A catch-all reason when the input file in created with non-standard encoding parameters  # noqa: E501
+        A catch-all reason when the input file in created with non-standard encoding parameters.  # noqa: E501
 
         :return: The unexpected_media_file_parameters of this AssetNonStandardInputReasons.  # noqa: E501
         :rtype: str
@@ -295,7 +295,7 @@ class AssetNonStandardInputReasons(object):
     def unexpected_media_file_parameters(self, unexpected_media_file_parameters):
         """Sets the unexpected_media_file_parameters of this AssetNonStandardInputReasons.
 
-        A catch-all reason when the input file in created with non-standard encoding parameters  # noqa: E501
+        A catch-all reason when the input file in created with non-standard encoding parameters.  # noqa: E501
 
         :param unexpected_media_file_parameters: The unexpected_media_file_parameters of this AssetNonStandardInputReasons.  # noqa: E501
         :type: str

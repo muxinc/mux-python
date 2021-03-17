@@ -1,6 +1,8 @@
 #!/bin/bash
 set -euo pipefail
 
+export PYTHONPATH="$(realpath $(dirname $0))"
+
 if [ -z "${MUX_TOKEN_ID:-}" ]
 then
       echo "MUX_TOKEN_ID not set"

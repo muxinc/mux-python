@@ -47,6 +47,7 @@ class AssetErrors(object):
     def type(self):
         """Gets the type of this AssetErrors.  # noqa: E501
 
+        The type of error that occurred for this asset.  # noqa: E501
 
         :return: The type of this AssetErrors.  # noqa: E501
         :rtype: str
@@ -57,6 +58,7 @@ class AssetErrors(object):
     def type(self, type):
         """Sets the type of this AssetErrors.
 
+        The type of error that occurred for this asset.  # noqa: E501
 
         :param type: The type of this AssetErrors.  # noqa: E501
         :type: str
@@ -68,6 +70,7 @@ class AssetErrors(object):
     def messages(self):
         """Gets the messages of this AssetErrors.  # noqa: E501
 
+        Error messages with more details.  # noqa: E501
 
         :return: The messages of this AssetErrors.  # noqa: E501
         :rtype: list[str]
@@ -78,6 +81,7 @@ class AssetErrors(object):
     def messages(self, messages):
         """Sets the messages of this AssetErrors.
 
+        Error messages with more details.  # noqa: E501
 
         :param messages: The messages of this AssetErrors.  # noqa: E501
         :type: list[str]

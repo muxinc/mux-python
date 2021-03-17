@@ -185,6 +185,8 @@ Name | Type | Description  | Notes
 
 Delete an asset
 
+Deletes a video asset and all its data 
+
 ### Example
 
 * Basic Authentication (accessToken): 
@@ -503,6 +505,8 @@ Name | Type | Description  | Notes
 > ListAssetsResponse list_assets(limit=limit, page=page)
 
 List assets
+
+List all Mux assets. 
 
 ### Example
 

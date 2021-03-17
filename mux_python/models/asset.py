@@ -40,6 +40,7 @@ class Asset(object):
         'master': 'AssetMaster',
         'master_access': 'str',
         'mp4_support': 'str',
+        'source_asset_id': 'str',
         'normalize_audio': 'bool',
         'static_renditions': 'AssetStaticRenditions',
         'recording_times': 'list[AssetRecordingTimes]',
@@ -66,6 +67,7 @@ class Asset(object):
         'master': 'master',
         'master_access': 'master_access',
         'mp4_support': 'mp4_support',
+        'source_asset_id': 'source_asset_id',
         'normalize_audio': 'normalize_audio',
         'static_renditions': 'static_renditions',
         'recording_times': 'recording_times',
@@ -73,7 +75,7 @@ class Asset(object):
         'test': 'test'
     }
 
-    def __init__(self, id=None, created_at=None, deleted_at=None, status=None, duration=None, max_stored_resolution=None, max_stored_frame_rate=None, aspect_ratio=None, playback_ids=None, tracks=None, errors=None, per_title_encode=None, is_live=None, passthrough=None, live_stream_id=None, master=None, master_access='none', mp4_support='none', normalize_audio=False, static_renditions=None, recording_times=None, non_standard_input_reasons=None, test=None):  # noqa: E501
+    def __init__(self, id=None, created_at=None, deleted_at=None, status=None, duration=None, max_stored_resolution=None, max_stored_frame_rate=None, aspect_ratio=None, playback_ids=None, tracks=None, errors=None, per_title_encode=None, is_live=None, passthrough=None, live_stream_id=None, master=None, master_access='none', mp4_support='none', source_asset_id=None, normalize_audio=False, static_renditions=None, recording_times=None, non_standard_input_reasons=None, test=None):  # noqa: E501
         """Asset - a model defined in OpenAPI"""  # noqa: E501
 
         self._id = None
@@ -94,6 +96,7 @@ class Asset(object):
         self._master = None
         self._master_access = None
         self._mp4_support = None
+        self._source_asset_id = None
         self._normalize_audio = None
         self._static_renditions = None
         self._recording_times = None
@@ -137,6 +140,8 @@ class Asset(object):
             self.master_access = master_access
         if mp4_support is not None:
             self.mp4_support = mp4_support
+        if source_asset_id is not None:
+            self.source_asset_id = source_asset_id
         if normalize_audio is not None:
             self.normalize_audio = normalize_audio
         if static_renditions is not None:
@@ -152,6 +157,7 @@ class Asset(object):
     def id(self):
         """Gets the id of this Asset.  # noqa: E501
 
+        Unique identifier for the Asset.  # noqa: E501
 
         :return: The id of this Asset.  # noqa: E501
         :rtype: str
@@ -162,6 +168,7 @@ class Asset(object):
     def id(self, id):
         """Sets the id of this Asset.
 
+        Unique identifier for the Asset.  # noqa: E501
 
         :param id: The id of this Asset.  # noqa: E501
         :type: str
@@ -173,6 +180,7 @@ class Asset(object):
     def created_at(self):
         """Gets the created_at of this Asset.  # noqa: E501
 
+        Time at which the object was created. Measured in seconds since the Unix epoch.  # noqa: E501
 
         :return: The created_at of this Asset.  # noqa: E501
         :rtype: str
@@ -183,6 +191,7 @@ class Asset(object):
     def created_at(self, created_at):
         """Sets the created_at of this Asset.
 
+        Time at which the object was created. Measured in seconds since the Unix epoch.  # noqa: E501
 
         :param created_at: The created_at of this Asset.  # noqa: E501
         :type: str
@@ -215,6 +224,7 @@ class Asset(object):
     def status(self):
         """Gets the status of this Asset.  # noqa: E501
 
+        The status of the asset.  # noqa: E501
 
         :return: The status of this Asset.  # noqa: E501
         :rtype: str
@@ -225,10 +235,17 @@ class Asset(object):
     def status(self, status):
         """Sets the status of this Asset.
 
+        The status of the asset.  # noqa: E501
 
         :param status: The status of this Asset.  # noqa: E501
         :type: str
         """
+        allowed_values = ["preparing", "ready", "errored"]  # noqa: E501
+        if status not in allowed_values:
+            raise ValueError(
+                "Invalid value for `status` ({0}), must be one of {1}"  # noqa: E501
+                .format(status, allowed_values)
+            )
 
         self._status = status
 
@@ -236,6 +253,7 @@ class Asset(object):
     def duration(self):
         """Gets the duration of this Asset.  # noqa: E501
 
+        The duration of the asset in seconds (max duration for a single asset is 24 hours).  # noqa: E501
 
         :return: The duration of this Asset.  # noqa: E501
         :rtype: float
@@ -246,6 +264,7 @@ class Asset(object):
     def duration(self, duration):
         """Sets the duration of this Asset.
 
+        The duration of the asset in seconds (max duration for a single asset is 24 hours).  # noqa: E501
 
         :param duration: The duration of this Asset.  # noqa: E501
         :type: float
@@ -257,6 +276,7 @@ class Asset(object):
     def max_stored_resolution(self):
         """Gets the max_stored_resolution of this Asset.  # noqa: E501
 
+        The maximum resolution that has been stored for the asset. The asset may be delivered at lower resolutions depending on the device and bandwidth, however it cannot be delivered at a higher value than is stored.  # noqa: E501
 
         :return: The max_stored_resolution of this Asset.  # noqa: E501
         :rtype: str
@@ -267,6 +287,7 @@ class Asset(object):
     def max_stored_resolution(self, max_stored_resolution):
         """Sets the max_stored_resolution of this Asset.
 
+        The maximum resolution that has been stored for the asset. The asset may be delivered at lower resolutions depending on the device and bandwidth, however it cannot be delivered at a higher value than is stored.  # noqa: E501
 
         :param max_stored_resolution: The max_stored_resolution of this Asset.  # noqa: E501
         :type: str
@@ -284,6 +305,7 @@ class Asset(object):
     def max_stored_frame_rate(self):
         """Gets the max_stored_frame_rate of this Asset.  # noqa: E501
 
+        The maximum frame rate that has been stored for the asset. The asset may be delivered at lower frame rates depending on the device and bandwidth, however it cannot be delivered at a higher value than is stored. This field may return -1 if the frame rate of the input cannot be reliably determined.   # noqa: E501
 
         :return: The max_stored_frame_rate of this Asset.  # noqa: E501
         :rtype: float
@@ -294,6 +316,7 @@ class Asset(object):
     def max_stored_frame_rate(self, max_stored_frame_rate):
         """Sets the max_stored_frame_rate of this Asset.
 
+        The maximum frame rate that has been stored for the asset. The asset may be delivered at lower frame rates depending on the device and bandwidth, however it cannot be delivered at a higher value than is stored. This field may return -1 if the frame rate of the input cannot be reliably determined.   # noqa: E501
 
         :param max_stored_frame_rate: The max_stored_frame_rate of this Asset.  # noqa: E501
         :type: float
@@ -305,6 +328,7 @@ class Asset(object):
     def aspect_ratio(self):
         """Gets the aspect_ratio of this Asset.  # noqa: E501
 
+        The aspect ratio of the asset in the form of `width:height`, for example `16:9`.  # noqa: E501
 
         :return: The aspect_ratio of this Asset.  # noqa: E501
         :rtype: str
@@ -315,6 +339,7 @@ class Asset(object):
     def aspect_ratio(self, aspect_ratio):
         """Sets the aspect_ratio of this Asset.
 
+        The aspect ratio of the asset in the form of `width:height`, for example `16:9`.  # noqa: E501
 
         :param aspect_ratio: The aspect_ratio of this Asset.  # noqa: E501
         :type: str
@@ -410,6 +435,7 @@ class Asset(object):
     def is_live(self):
         """Gets the is_live of this Asset.  # noqa: E501
 
+        Whether the asset is created from a live stream and the live stream is currently `active` and not in `idle` state.  # noqa: E501
 
         :return: The is_live of this Asset.  # noqa: E501
         :rtype: bool
@@ -420,6 +446,7 @@ class Asset(object):
     def is_live(self, is_live):
         """Sets the is_live of this Asset.
 
+        Whether the asset is created from a live stream and the live stream is currently `active` and not in `idle` state.  # noqa: E501
 
         :param is_live: The is_live of this Asset.  # noqa: E501
         :type: bool
@@ -431,6 +458,7 @@ class Asset(object):
     def passthrough(self):
         """Gets the passthrough of this Asset.  # noqa: E501
 
+        Arbitrary metadata set for the asset. Max 255 characters.  # noqa: E501
 
         :return: The passthrough of this Asset.  # noqa: E501
         :rtype: str
@@ -441,6 +469,7 @@ class Asset(object):
     def passthrough(self, passthrough):
         """Sets the passthrough of this Asset.
 
+        Arbitrary metadata set for the asset. Max 255 characters.  # noqa: E501
 
         :param passthrough: The passthrough of this Asset.  # noqa: E501
         :type: str
@@ -452,6 +481,7 @@ class Asset(object):
     def live_stream_id(self):
         """Gets the live_stream_id of this Asset.  # noqa: E501
 
+        Unique identifier for the live stream. This is an optional parameter added when the asset is created from a live stream.  # noqa: E501
 
         :return: The live_stream_id of this Asset.  # noqa: E501
         :rtype: str
@@ -462,6 +492,7 @@ class Asset(object):
     def live_stream_id(self, live_stream_id):
         """Sets the live_stream_id of this Asset.
 
+        Unique identifier for the live stream. This is an optional parameter added when the asset is created from a live stream.  # noqa: E501
 
         :param live_stream_id: The live_stream_id of this Asset.  # noqa: E501
         :type: str
@@ -545,9 +576,33 @@ class Asset(object):
         self._mp4_support = mp4_support
 
     @property
+    def source_asset_id(self):
+        """Gets the source_asset_id of this Asset.  # noqa: E501
+
+        Asset Identifier of the video used as the source for creating the clip.  # noqa: E501
+
+        :return: The source_asset_id of this Asset.  # noqa: E501
+        :rtype: str
+        """
+        return self._source_asset_id
+
+    @source_asset_id.setter
+    def source_asset_id(self, source_asset_id):
+        """Sets the source_asset_id of this Asset.
+
+        Asset Identifier of the video used as the source for creating the clip.  # noqa: E501
+
+        :param source_asset_id: The source_asset_id of this Asset.  # noqa: E501
+        :type: str
+        """
+
+        self._source_asset_id = source_asset_id
+
+    @property
     def normalize_audio(self):
         """Gets the normalize_audio of this Asset.  # noqa: E501
 
+        Normalize the audio track loudness level. This parameter is only applicable to on-demand (not live) assets.  # noqa: E501
 
         :return: The normalize_audio of this Asset.  # noqa: E501
         :rtype: bool
@@ -558,6 +613,7 @@ class Asset(object):
     def normalize_audio(self, normalize_audio):
         """Sets the normalize_audio of this Asset.
 
+        Normalize the audio track loudness level. This parameter is only applicable to on-demand (not live) assets.  # noqa: E501
 
         :param normalize_audio: The normalize_audio of this Asset.  # noqa: E501
         :type: bool
@@ -634,6 +690,7 @@ class Asset(object):
     def test(self):
         """Gets the test of this Asset.  # noqa: E501
 
+        Indicates this asset is a test asset if the value is `true`. A Test asset can help evaluate the Mux Video APIs without incurring any cost. There is no limit on number of test assets created. Test assets are watermarked with the Mux logo, limited to 10 seconds, and deleted after 24 hrs.  # noqa: E501
 
         :return: The test of this Asset.  # noqa: E501
         :rtype: bool
@@ -644,6 +701,7 @@ class Asset(object):
     def test(self, test):
         """Sets the test of this Asset.
 
+        Indicates this asset is a test asset if the value is `true`. A Test asset can help evaluate the Mux Video APIs without incurring any cost. There is no limit on number of test assets created. Test assets are watermarked with the Mux logo, limited to 10 seconds, and deleted after 24 hrs.  # noqa: E501
 
         :param test: The test of this Asset.  # noqa: E501
         :type: bool

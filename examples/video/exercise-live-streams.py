@@ -16,6 +16,7 @@ configuration.password = os.environ['MUX_TOKEN_SECRET']
 
 # API Client Initialization
 live_api = mux_python.LiveStreamsApi(mux_python.ApiClient(configuration))
+playback_ids_api = mux_python.PlaybackIDApi(mux_python.ApiClient(configuration))
 
 # ========== create-live-stream ==========
 new_asset_settings = mux_python.CreateAssetRequest(playback_policy=[mux_python.PlaybackPolicy.PUBLIC])
@@ -42,6 +43,13 @@ assert live_stream_response != None
 assert live_stream_response.data != None
 assert live_stream_response.data.id == create_live_stream_response.data.id
 print("get-live-stream OK ✅")
+
+# ========== get-asset-or-livestream-id ==========
+playback_id = create_live_stream_response.data.playback_ids[0].id
+get_playback_id_resp = playback_ids_api.get_asset_or_livestream_id(playback_id).data
+assert get_playback_id_resp.object.id == create_live_stream_response.data.id
+assert get_playback_id_resp.object.type == "live_stream"
+print("get-asset-or-livestream-id OK ✅")
 
 # ========== create-live-stream-simulcast-target ==========
 create_simulcast_target = mux_python.CreateSimulcastTargetRequest(url='rtmp://thisisthelastone.omg', passthrough='mux', stream_key='imnottellingyou')

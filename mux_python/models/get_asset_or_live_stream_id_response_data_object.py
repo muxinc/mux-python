@@ -11,7 +11,7 @@ import pprint
 import re  # noqa: F401
 import six
 
-class PlaybackID(object):
+class GetAssetOrLiveStreamIdResponseDataObject(object):
 
 
     """
@@ -23,69 +23,77 @@ class PlaybackID(object):
     """
     openapi_types = {
         'id': 'str',
-        'policy': 'PlaybackPolicy'
+        'type': 'str'
     }
 
     attribute_map = {
         'id': 'id',
-        'policy': 'policy'
+        'type': 'type'
     }
 
-    def __init__(self, id=None, policy=None):  # noqa: E501
-        """PlaybackID - a model defined in OpenAPI"""  # noqa: E501
+    def __init__(self, id=None, type=None):  # noqa: E501
+        """GetAssetOrLiveStreamIdResponseDataObject - a model defined in OpenAPI"""  # noqa: E501
 
         self._id = None
-        self._policy = None
+        self._type = None
         self.discriminator = None
 
         if id is not None:
             self.id = id
-        if policy is not None:
-            self.policy = policy
+        if type is not None:
+            self.type = type
 
     @property
     def id(self):
-        """Gets the id of this PlaybackID.  # noqa: E501
+        """Gets the id of this GetAssetOrLiveStreamIdResponseDataObject.  # noqa: E501
 
-        Unique identifier for the PlaybackID  # noqa: E501
+        The identifier of the object.  # noqa: E501
 
-        :return: The id of this PlaybackID.  # noqa: E501
+        :return: The id of this GetAssetOrLiveStreamIdResponseDataObject.  # noqa: E501
         :rtype: str
         """
         return self._id
 
     @id.setter
     def id(self, id):
-        """Sets the id of this PlaybackID.
+        """Sets the id of this GetAssetOrLiveStreamIdResponseDataObject.
 
-        Unique identifier for the PlaybackID  # noqa: E501
+        The identifier of the object.  # noqa: E501
 
-        :param id: The id of this PlaybackID.  # noqa: E501
+        :param id: The id of this GetAssetOrLiveStreamIdResponseDataObject.  # noqa: E501
         :type: str
         """
 
         self._id = id
 
     @property
-    def policy(self):
-        """Gets the policy of this PlaybackID.  # noqa: E501
+    def type(self):
+        """Gets the type of this GetAssetOrLiveStreamIdResponseDataObject.  # noqa: E501
 
+        Identifies the object type associated with the playback ID.  # noqa: E501
 
-        :return: The policy of this PlaybackID.  # noqa: E501
-        :rtype: PlaybackPolicy
+        :return: The type of this GetAssetOrLiveStreamIdResponseDataObject.  # noqa: E501
+        :rtype: str
         """
-        return self._policy
+        return self._type
 
-    @policy.setter
-    def policy(self, policy):
-        """Sets the policy of this PlaybackID.
+    @type.setter
+    def type(self, type):
+        """Sets the type of this GetAssetOrLiveStreamIdResponseDataObject.
 
+        Identifies the object type associated with the playback ID.  # noqa: E501
 
-        :param policy: The policy of this PlaybackID.  # noqa: E501
-        :type: PlaybackPolicy
+        :param type: The type of this GetAssetOrLiveStreamIdResponseDataObject.  # noqa: E501
+        :type: str
         """
+        allowed_values = ["asset", "live_stream"]  # noqa: E501
+        if type not in allowed_values:
+            raise ValueError(
+                "Invalid value for `type` ({0}), must be one of {1}"  # noqa: E501
+                .format(type, allowed_values)
+            )
 
-        self._policy = policy
+        self._type = type
 
     def to_dict(self):
         """Returns the model properties as a dict"""
@@ -121,7 +129,7 @@ class PlaybackID(object):
 
     def __eq__(self, other):
         """Returns true if both objects are equal"""
-        if not isinstance(other, PlaybackID):
+        if not isinstance(other, GetAssetOrLiveStreamIdResponseDataObject):
             return False
 
         return self.__dict__ == other.__dict__
