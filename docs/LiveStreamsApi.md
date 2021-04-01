@@ -26,28 +26,42 @@ Create a live stream
 
 ### Example
 
-* Basic Authentication (accessToken): 
+* Basic Authentication (accessToken):
 ```python
 from __future__ import print_function
 import time
 import mux_python
 from mux_python.rest import ApiException
 from pprint import pprint
-configuration = mux_python.Configuration()
+# Defining the host is optional and defaults to https://api.mux.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = mux_python.Configuration(
+    host = "https://api.mux.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure HTTP basic authorization: accessToken
-configuration.username = 'YOUR_USERNAME'
-configuration.password = 'YOUR_PASSWORD'
+configuration = mux_python.Configuration(
+    username = 'YOUR_USERNAME',
+    password = 'YOUR_PASSWORD'
+)
 
-# create an instance of the API class
-api_instance = mux_python.LiveStreamsApi(mux_python.ApiClient(configuration))
-create_live_stream_request = mux_python.CreateLiveStreamRequest() # CreateLiveStreamRequest | 
+# Enter a context with an instance of the API client
+with mux_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = mux_python.LiveStreamsApi(api_client)
+    create_live_stream_request = {"playback_policy":"public","new_asset_settings":{"playback_policy":"public"}} # CreateLiveStreamRequest | 
 
-try:
-    # Create a live stream
-    api_response = api_instance.create_live_stream(create_live_stream_request)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling LiveStreamsApi->create_live_stream: %s\n" % e)
+    try:
+        # Create a live stream
+        api_response = api_instance.create_live_stream(create_live_stream_request)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling LiveStreamsApi->create_live_stream: %s\n" % e)
 ```
 
 ### Parameters
@@ -69,6 +83,11 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | Created |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_live_stream_playback_id**
@@ -78,29 +97,43 @@ Create a live stream playback ID
 
 ### Example
 
-* Basic Authentication (accessToken): 
+* Basic Authentication (accessToken):
 ```python
 from __future__ import print_function
 import time
 import mux_python
 from mux_python.rest import ApiException
 from pprint import pprint
-configuration = mux_python.Configuration()
+# Defining the host is optional and defaults to https://api.mux.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = mux_python.Configuration(
+    host = "https://api.mux.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure HTTP basic authorization: accessToken
-configuration.username = 'YOUR_USERNAME'
-configuration.password = 'YOUR_PASSWORD'
+configuration = mux_python.Configuration(
+    username = 'YOUR_USERNAME',
+    password = 'YOUR_PASSWORD'
+)
 
-# create an instance of the API class
-api_instance = mux_python.LiveStreamsApi(mux_python.ApiClient(configuration))
-live_stream_id = 'live_stream_id_example' # str | The live stream ID
-create_playback_id_request =mux_python.CreatePlaybackIDRequest() # CreatePlaybackIDRequest | 
+# Enter a context with an instance of the API client
+with mux_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = mux_python.LiveStreamsApi(api_client)
+    live_stream_id = 'live_stream_id_example' # str | The live stream ID
+create_playback_id_request = {"policy":"signed"} # CreatePlaybackIDRequest | 
 
-try:
-    # Create a live stream playback ID
-    api_response = api_instance.create_live_stream_playback_id(live_stream_id, create_playback_id_request)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling LiveStreamsApi->create_live_stream_playback_id: %s\n" % e)
+    try:
+        # Create a live stream playback ID
+        api_response = api_instance.create_live_stream_playback_id(live_stream_id, create_playback_id_request)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling LiveStreamsApi->create_live_stream_playback_id: %s\n" % e)
 ```
 
 ### Parameters
@@ -123,6 +156,11 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | Created |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_live_stream_simulcast_target**
@@ -134,29 +172,43 @@ Create a simulcast target for the parent live stream. Simulcast target can only 
 
 ### Example
 
-* Basic Authentication (accessToken): 
+* Basic Authentication (accessToken):
 ```python
 from __future__ import print_function
 import time
 import mux_python
 from mux_python.rest import ApiException
 from pprint import pprint
-configuration = mux_python.Configuration()
+# Defining the host is optional and defaults to https://api.mux.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = mux_python.Configuration(
+    host = "https://api.mux.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure HTTP basic authorization: accessToken
-configuration.username = 'YOUR_USERNAME'
-configuration.password = 'YOUR_PASSWORD'
+configuration = mux_python.Configuration(
+    username = 'YOUR_USERNAME',
+    password = 'YOUR_PASSWORD'
+)
 
-# create an instance of the API class
-api_instance = mux_python.LiveStreamsApi(mux_python.ApiClient(configuration))
-live_stream_id = 'live_stream_id_example' # str | The live stream ID
-create_simulcast_target_request = mux_python.CreateSimulcastTargetRequest() # CreateSimulcastTargetRequest | 
+# Enter a context with an instance of the API client
+with mux_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = mux_python.LiveStreamsApi(api_client)
+    live_stream_id = 'live_stream_id_example' # str | The live stream ID
+create_simulcast_target_request = {"url":"rtmp://live.example.com/app","stream_key":"abcdefgh","passthrough":"Example"} # CreateSimulcastTargetRequest | 
 
-try:
-    # Create a live stream simulcast target
-    api_response = api_instance.create_live_stream_simulcast_target(live_stream_id, create_simulcast_target_request)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling LiveStreamsApi->create_live_stream_simulcast_target: %s\n" % e)
+    try:
+        # Create a live stream simulcast target
+        api_response = api_instance.create_live_stream_simulcast_target(live_stream_id, create_simulcast_target_request)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling LiveStreamsApi->create_live_stream_simulcast_target: %s\n" % e)
 ```
 
 ### Parameters
@@ -179,6 +231,11 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | Created |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_live_stream**
@@ -188,27 +245,41 @@ Delete a live stream
 
 ### Example
 
-* Basic Authentication (accessToken): 
+* Basic Authentication (accessToken):
 ```python
 from __future__ import print_function
 import time
 import mux_python
 from mux_python.rest import ApiException
 from pprint import pprint
-configuration = mux_python.Configuration()
+# Defining the host is optional and defaults to https://api.mux.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = mux_python.Configuration(
+    host = "https://api.mux.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure HTTP basic authorization: accessToken
-configuration.username = 'YOUR_USERNAME'
-configuration.password = 'YOUR_PASSWORD'
+configuration = mux_python.Configuration(
+    username = 'YOUR_USERNAME',
+    password = 'YOUR_PASSWORD'
+)
 
-# create an instance of the API class
-api_instance = mux_python.LiveStreamsApi(mux_python.ApiClient(configuration))
-live_stream_id = 'live_stream_id_example' # str | The live stream ID
+# Enter a context with an instance of the API client
+with mux_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = mux_python.LiveStreamsApi(api_client)
+    live_stream_id = 'live_stream_id_example' # str | The live stream ID
 
-try:
-    # Delete a live stream
-    api_instance.delete_live_stream(live_stream_id)
-except ApiException as e:
-    print("Exception when calling LiveStreamsApi->delete_live_stream: %s\n" % e)
+    try:
+        # Delete a live stream
+        api_instance.delete_live_stream(live_stream_id)
+    except ApiException as e:
+        print("Exception when calling LiveStreamsApi->delete_live_stream: %s\n" % e)
 ```
 
 ### Parameters
@@ -230,6 +301,11 @@ void (empty response body)
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | No Content |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_live_stream_playback_id**
@@ -239,28 +315,42 @@ Delete a live stream playback ID
 
 ### Example
 
-* Basic Authentication (accessToken): 
+* Basic Authentication (accessToken):
 ```python
 from __future__ import print_function
 import time
 import mux_python
 from mux_python.rest import ApiException
 from pprint import pprint
-configuration = mux_python.Configuration()
-# Configure HTTP basic authorization: accessToken
-configuration.username = 'YOUR_USERNAME'
-configuration.password = 'YOUR_PASSWORD'
+# Defining the host is optional and defaults to https://api.mux.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = mux_python.Configuration(
+    host = "https://api.mux.com"
+)
 
-# create an instance of the API class
-api_instance = mux_python.LiveStreamsApi(mux_python.ApiClient(configuration))
-live_stream_id = 'live_stream_id_example' # str | The live stream ID
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: accessToken
+configuration = mux_python.Configuration(
+    username = 'YOUR_USERNAME',
+    password = 'YOUR_PASSWORD'
+)
+
+# Enter a context with an instance of the API client
+with mux_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = mux_python.LiveStreamsApi(api_client)
+    live_stream_id = 'live_stream_id_example' # str | The live stream ID
 playback_id = 'playback_id_example' # str | The live stream's playback ID.
 
-try:
-    # Delete a live stream playback ID
-    api_instance.delete_live_stream_playback_id(live_stream_id, playback_id)
-except ApiException as e:
-    print("Exception when calling LiveStreamsApi->delete_live_stream_playback_id: %s\n" % e)
+    try:
+        # Delete a live stream playback ID
+        api_instance.delete_live_stream_playback_id(live_stream_id, playback_id)
+    except ApiException as e:
+        print("Exception when calling LiveStreamsApi->delete_live_stream_playback_id: %s\n" % e)
 ```
 
 ### Parameters
@@ -283,6 +373,11 @@ void (empty response body)
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | No Content |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_live_stream_simulcast_target**
@@ -294,28 +389,42 @@ Delete the simulcast target using the simulcast target ID returned when creating
 
 ### Example
 
-* Basic Authentication (accessToken): 
+* Basic Authentication (accessToken):
 ```python
 from __future__ import print_function
 import time
 import mux_python
 from mux_python.rest import ApiException
 from pprint import pprint
-configuration = mux_python.Configuration()
-# Configure HTTP basic authorization: accessToken
-configuration.username = 'YOUR_USERNAME'
-configuration.password = 'YOUR_PASSWORD'
+# Defining the host is optional and defaults to https://api.mux.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = mux_python.Configuration(
+    host = "https://api.mux.com"
+)
 
-# create an instance of the API class
-api_instance = mux_python.LiveStreamsApi(mux_python.ApiClient(configuration))
-live_stream_id = 'live_stream_id_example' # str | The live stream ID
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: accessToken
+configuration = mux_python.Configuration(
+    username = 'YOUR_USERNAME',
+    password = 'YOUR_PASSWORD'
+)
+
+# Enter a context with an instance of the API client
+with mux_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = mux_python.LiveStreamsApi(api_client)
+    live_stream_id = 'live_stream_id_example' # str | The live stream ID
 simulcast_target_id = 'simulcast_target_id_example' # str | The ID of the simulcast target.
 
-try:
-    # Delete a Live Stream Simulcast Target
-    api_instance.delete_live_stream_simulcast_target(live_stream_id, simulcast_target_id)
-except ApiException as e:
-    print("Exception when calling LiveStreamsApi->delete_live_stream_simulcast_target: %s\n" % e)
+    try:
+        # Delete a Live Stream Simulcast Target
+        api_instance.delete_live_stream_simulcast_target(live_stream_id, simulcast_target_id)
+    except ApiException as e:
+        print("Exception when calling LiveStreamsApi->delete_live_stream_simulcast_target: %s\n" % e)
 ```
 
 ### Parameters
@@ -338,6 +447,11 @@ void (empty response body)
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | No Content |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **disable_live_stream**
@@ -345,32 +459,46 @@ void (empty response body)
 
 Disable a live stream
 
-Disables a live stream, making it reject incoming RTMP streams until re-enabled.
+Disables a live stream, making it reject incoming RTMP streams until re-enabled. The API also ends the live stream recording immediately when active. Ending the live stream recording adds the `EXT-X-ENDLIST` tag to the HLS manifest which notifies the player that this live stream is over.  Mux also closes the encoder connection immediately. Any attempt from the encoder to re-establish connection will fail till the live stream is re-enabled. 
 
 ### Example
 
-* Basic Authentication (accessToken): 
+* Basic Authentication (accessToken):
 ```python
 from __future__ import print_function
 import time
 import mux_python
 from mux_python.rest import ApiException
 from pprint import pprint
-configuration = mux_python.Configuration()
+# Defining the host is optional and defaults to https://api.mux.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = mux_python.Configuration(
+    host = "https://api.mux.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure HTTP basic authorization: accessToken
-configuration.username = 'YOUR_USERNAME'
-configuration.password = 'YOUR_PASSWORD'
+configuration = mux_python.Configuration(
+    username = 'YOUR_USERNAME',
+    password = 'YOUR_PASSWORD'
+)
 
-# create an instance of the API class
-api_instance = mux_python.LiveStreamsApi(mux_python.ApiClient(configuration))
-live_stream_id = 'live_stream_id_example' # str | The live stream ID
+# Enter a context with an instance of the API client
+with mux_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = mux_python.LiveStreamsApi(api_client)
+    live_stream_id = 'live_stream_id_example' # str | The live stream ID
 
-try:
-    # Disable a live stream
-    api_response = api_instance.disable_live_stream(live_stream_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling LiveStreamsApi->disable_live_stream: %s\n" % e)
+    try:
+        # Disable a live stream
+        api_response = api_instance.disable_live_stream(live_stream_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling LiveStreamsApi->disable_live_stream: %s\n" % e)
 ```
 
 ### Parameters
@@ -392,6 +520,11 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **enable_live_stream**
@@ -403,28 +536,42 @@ Enables a live stream, allowing it to accept an incoming RTMP stream.
 
 ### Example
 
-* Basic Authentication (accessToken): 
+* Basic Authentication (accessToken):
 ```python
 from __future__ import print_function
 import time
 import mux_python
 from mux_python.rest import ApiException
 from pprint import pprint
-configuration = mux_python.Configuration()
+# Defining the host is optional and defaults to https://api.mux.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = mux_python.Configuration(
+    host = "https://api.mux.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure HTTP basic authorization: accessToken
-configuration.username = 'YOUR_USERNAME'
-configuration.password = 'YOUR_PASSWORD'
+configuration = mux_python.Configuration(
+    username = 'YOUR_USERNAME',
+    password = 'YOUR_PASSWORD'
+)
 
-# create an instance of the API class
-api_instance = mux_python.LiveStreamsApi(mux_python.ApiClient(configuration))
-live_stream_id = 'live_stream_id_example' # str | The live stream ID
+# Enter a context with an instance of the API client
+with mux_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = mux_python.LiveStreamsApi(api_client)
+    live_stream_id = 'live_stream_id_example' # str | The live stream ID
 
-try:
-    # Enable a live stream
-    api_response = api_instance.enable_live_stream(live_stream_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling LiveStreamsApi->enable_live_stream: %s\n" % e)
+    try:
+        # Enable a live stream
+        api_response = api_instance.enable_live_stream(live_stream_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling LiveStreamsApi->enable_live_stream: %s\n" % e)
 ```
 
 ### Parameters
@@ -446,6 +593,11 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_live_stream**
@@ -457,28 +609,42 @@ Retrieves the details of a live stream that has previously been created. Supply 
 
 ### Example
 
-* Basic Authentication (accessToken): 
+* Basic Authentication (accessToken):
 ```python
 from __future__ import print_function
 import time
 import mux_python
 from mux_python.rest import ApiException
 from pprint import pprint
-configuration = mux_python.Configuration()
+# Defining the host is optional and defaults to https://api.mux.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = mux_python.Configuration(
+    host = "https://api.mux.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure HTTP basic authorization: accessToken
-configuration.username = 'YOUR_USERNAME'
-configuration.password = 'YOUR_PASSWORD'
+configuration = mux_python.Configuration(
+    username = 'YOUR_USERNAME',
+    password = 'YOUR_PASSWORD'
+)
 
-# create an instance of the API class
-api_instance = mux_python.LiveStreamsApi(mux_python.ApiClient(configuration))
-live_stream_id = 'live_stream_id_example' # str | The live stream ID
+# Enter a context with an instance of the API client
+with mux_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = mux_python.LiveStreamsApi(api_client)
+    live_stream_id = 'live_stream_id_example' # str | The live stream ID
 
-try:
-    # Retrieve a live stream
-    api_response = api_instance.get_live_stream(live_stream_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling LiveStreamsApi->get_live_stream: %s\n" % e)
+    try:
+        # Retrieve a live stream
+        api_response = api_instance.get_live_stream(live_stream_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling LiveStreamsApi->get_live_stream: %s\n" % e)
 ```
 
 ### Parameters
@@ -500,6 +666,11 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_live_stream_simulcast_target**
@@ -511,29 +682,43 @@ Retrieves the details of the simulcast target created for the parent live stream
 
 ### Example
 
-* Basic Authentication (accessToken): 
+* Basic Authentication (accessToken):
 ```python
 from __future__ import print_function
 import time
 import mux_python
 from mux_python.rest import ApiException
 from pprint import pprint
-configuration = mux_python.Configuration()
-# Configure HTTP basic authorization: accessToken
-configuration.username = 'YOUR_USERNAME'
-configuration.password = 'YOUR_PASSWORD'
+# Defining the host is optional and defaults to https://api.mux.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = mux_python.Configuration(
+    host = "https://api.mux.com"
+)
 
-# create an instance of the API class
-api_instance = mux_python.LiveStreamsApi(mux_python.ApiClient(configuration))
-live_stream_id = 'live_stream_id_example' # str | The live stream ID
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: accessToken
+configuration = mux_python.Configuration(
+    username = 'YOUR_USERNAME',
+    password = 'YOUR_PASSWORD'
+)
+
+# Enter a context with an instance of the API client
+with mux_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = mux_python.LiveStreamsApi(api_client)
+    live_stream_id = 'live_stream_id_example' # str | The live stream ID
 simulcast_target_id = 'simulcast_target_id_example' # str | The ID of the simulcast target.
 
-try:
-    # Retrieve a Live Stream Simulcast Target
-    api_response = api_instance.get_live_stream_simulcast_target(live_stream_id, simulcast_target_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling LiveStreamsApi->get_live_stream_simulcast_target: %s\n" % e)
+    try:
+        # Retrieve a Live Stream Simulcast Target
+        api_response = api_instance.get_live_stream_simulcast_target(live_stream_id, simulcast_target_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling LiveStreamsApi->get_live_stream_simulcast_target: %s\n" % e)
 ```
 
 ### Parameters
@@ -556,6 +741,11 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_live_streams**
@@ -565,29 +755,43 @@ List live streams
 
 ### Example
 
-* Basic Authentication (accessToken): 
+* Basic Authentication (accessToken):
 ```python
 from __future__ import print_function
 import time
 import mux_python
 from mux_python.rest import ApiException
 from pprint import pprint
-configuration = mux_python.Configuration()
-# Configure HTTP basic authorization: accessToken
-configuration.username = 'YOUR_USERNAME'
-configuration.password = 'YOUR_PASSWORD'
+# Defining the host is optional and defaults to https://api.mux.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = mux_python.Configuration(
+    host = "https://api.mux.com"
+)
 
-# create an instance of the API class
-api_instance = mux_python.LiveStreamsApi(mux_python.ApiClient(configuration))
-limit = 25 # int | Number of items to include in the response (optional) (default to 25)
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: accessToken
+configuration = mux_python.Configuration(
+    username = 'YOUR_USERNAME',
+    password = 'YOUR_PASSWORD'
+)
+
+# Enter a context with an instance of the API client
+with mux_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = mux_python.LiveStreamsApi(api_client)
+    limit = 25 # int | Number of items to include in the response (optional) (default to 25)
 page = 1 # int | Offset by this many pages, of the size of `limit` (optional) (default to 1)
 
-try:
-    # List live streams
-    api_response = api_instance.list_live_streams(limit=limit, page=page)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling LiveStreamsApi->list_live_streams: %s\n" % e)
+    try:
+        # List live streams
+        api_response = api_instance.list_live_streams(limit=limit, page=page)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling LiveStreamsApi->list_live_streams: %s\n" % e)
 ```
 
 ### Parameters
@@ -610,6 +814,11 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **reset_stream_key**
@@ -621,28 +830,42 @@ Reset a live stream key if you want to immediately stop the current stream key f
 
 ### Example
 
-* Basic Authentication (accessToken): 
+* Basic Authentication (accessToken):
 ```python
 from __future__ import print_function
 import time
 import mux_python
 from mux_python.rest import ApiException
 from pprint import pprint
-configuration = mux_python.Configuration()
+# Defining the host is optional and defaults to https://api.mux.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = mux_python.Configuration(
+    host = "https://api.mux.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure HTTP basic authorization: accessToken
-configuration.username = 'YOUR_USERNAME'
-configuration.password = 'YOUR_PASSWORD'
+configuration = mux_python.Configuration(
+    username = 'YOUR_USERNAME',
+    password = 'YOUR_PASSWORD'
+)
 
-# create an instance of the API class
-api_instance = mux_python.LiveStreamsApi(mux_python.ApiClient(configuration))
-live_stream_id = 'live_stream_id_example' # str | The live stream ID
+# Enter a context with an instance of the API client
+with mux_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = mux_python.LiveStreamsApi(api_client)
+    live_stream_id = 'live_stream_id_example' # str | The live stream ID
 
-try:
-    # Reset a live stream’s stream key
-    api_response = api_instance.reset_stream_key(live_stream_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling LiveStreamsApi->reset_stream_key: %s\n" % e)
+    try:
+        # Reset a live stream’s stream key
+        api_response = api_instance.reset_stream_key(live_stream_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling LiveStreamsApi->reset_stream_key: %s\n" % e)
 ```
 
 ### Parameters
@@ -664,6 +887,11 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | Created |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **signal_live_stream_complete**
@@ -671,32 +899,46 @@ Name | Type | Description  | Notes
 
 Signal a live stream is finished
 
-(Optional) Make the recorded asset available immediately instead of waiting for the reconnect_window.
+(Optional) End the live stream recording immediately instead of waiting for the reconnect_window. `EXT-X-ENDLIST` tag is added to the HLS manifest which notifies the player that this live stream is over.  Mux does not close the encoder connection immediately. Encoders are often configured to re-establish connections immediately which would result in a new recorded asset. For this reason, Mux waits for 60s before closing the connection with the encoder. This 60s timeframe is meant to give encoder operators a chance to disconnect from their end. 
 
 ### Example
 
-* Basic Authentication (accessToken): 
+* Basic Authentication (accessToken):
 ```python
 from __future__ import print_function
 import time
 import mux_python
 from mux_python.rest import ApiException
 from pprint import pprint
-configuration = mux_python.Configuration()
+# Defining the host is optional and defaults to https://api.mux.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = mux_python.Configuration(
+    host = "https://api.mux.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure HTTP basic authorization: accessToken
-configuration.username = 'YOUR_USERNAME'
-configuration.password = 'YOUR_PASSWORD'
+configuration = mux_python.Configuration(
+    username = 'YOUR_USERNAME',
+    password = 'YOUR_PASSWORD'
+)
 
-# create an instance of the API class
-api_instance = mux_python.LiveStreamsApi(mux_python.ApiClient(configuration))
-live_stream_id = 'live_stream_id_example' # str | The live stream ID
+# Enter a context with an instance of the API client
+with mux_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = mux_python.LiveStreamsApi(api_client)
+    live_stream_id = 'live_stream_id_example' # str | The live stream ID
 
-try:
-    # Signal a live stream is finished
-    api_response = api_instance.signal_live_stream_complete(live_stream_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling LiveStreamsApi->signal_live_stream_complete: %s\n" % e)
+    try:
+        # Signal a live stream is finished
+        api_response = api_instance.signal_live_stream_complete(live_stream_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling LiveStreamsApi->signal_live_stream_complete: %s\n" % e)
 ```
 
 ### Parameters
@@ -717,6 +959,11 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
