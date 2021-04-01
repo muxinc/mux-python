@@ -25,3 +25,4 @@
 
 git_push.sh
 .travis.yml
+.github-ci.yml
