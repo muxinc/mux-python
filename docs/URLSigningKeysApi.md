@@ -19,27 +19,41 @@ Creates a new signing key pair. When creating a new signing key, the API will ge
 
 ### Example
 
-* Basic Authentication (accessToken): 
+* Basic Authentication (accessToken):
 ```python
 from __future__ import print_function
 import time
 import mux_python
 from mux_python.rest import ApiException
 from pprint import pprint
-configuration = mux_python.Configuration()
+# Defining the host is optional and defaults to https://api.mux.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = mux_python.Configuration(
+    host = "https://api.mux.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure HTTP basic authorization: accessToken
-configuration.username = 'YOUR_USERNAME'
-configuration.password = 'YOUR_PASSWORD'
+configuration = mux_python.Configuration(
+    username = 'YOUR_USERNAME',
+    password = 'YOUR_PASSWORD'
+)
 
-# create an instance of the API class
-api_instance = mux_python.URLSigningKeysApi(mux_python.ApiClient(configuration))
-
-try:
-    # Create a URL signing key
-    api_response = api_instance.create_url_signing_key()
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling URLSigningKeysApi->create_url_signing_key: %s\n" % e)
+# Enter a context with an instance of the API client
+with mux_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = mux_python.URLSigningKeysApi(api_client)
+    
+    try:
+        # Create a URL signing key
+        api_response = api_instance.create_url_signing_key()
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling URLSigningKeysApi->create_url_signing_key: %s\n" % e)
 ```
 
 ### Parameters
@@ -58,6 +72,11 @@ This endpoint does not need any parameter.
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | Created |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_url_signing_key**
@@ -69,27 +88,41 @@ Deletes an existing signing key. Use with caution, as this will invalidate any e
 
 ### Example
 
-* Basic Authentication (accessToken): 
+* Basic Authentication (accessToken):
 ```python
 from __future__ import print_function
 import time
 import mux_python
 from mux_python.rest import ApiException
 from pprint import pprint
-configuration = mux_python.Configuration()
+# Defining the host is optional and defaults to https://api.mux.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = mux_python.Configuration(
+    host = "https://api.mux.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure HTTP basic authorization: accessToken
-configuration.username = 'YOUR_USERNAME'
-configuration.password = 'YOUR_PASSWORD'
+configuration = mux_python.Configuration(
+    username = 'YOUR_USERNAME',
+    password = 'YOUR_PASSWORD'
+)
 
-# create an instance of the API class
-api_instance = mux_python.URLSigningKeysApi(mux_python.ApiClient(configuration))
-signing_key_id = 'signing_key_id_example' # str | The ID of the signing key.
+# Enter a context with an instance of the API client
+with mux_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = mux_python.URLSigningKeysApi(api_client)
+    signing_key_id = 'signing_key_id_example' # str | The ID of the signing key.
 
-try:
-    # Delete a URL signing key
-    api_instance.delete_url_signing_key(signing_key_id)
-except ApiException as e:
-    print("Exception when calling URLSigningKeysApi->delete_url_signing_key: %s\n" % e)
+    try:
+        # Delete a URL signing key
+        api_instance.delete_url_signing_key(signing_key_id)
+    except ApiException as e:
+        print("Exception when calling URLSigningKeysApi->delete_url_signing_key: %s\n" % e)
 ```
 
 ### Parameters
@@ -111,6 +144,11 @@ void (empty response body)
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | No Content |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_url_signing_key**
@@ -122,28 +160,42 @@ Retrieves the details of a URL signing key that has previously been created. Sup
 
 ### Example
 
-* Basic Authentication (accessToken): 
+* Basic Authentication (accessToken):
 ```python
 from __future__ import print_function
 import time
 import mux_python
 from mux_python.rest import ApiException
 from pprint import pprint
-configuration = mux_python.Configuration()
+# Defining the host is optional and defaults to https://api.mux.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = mux_python.Configuration(
+    host = "https://api.mux.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure HTTP basic authorization: accessToken
-configuration.username = 'YOUR_USERNAME'
-configuration.password = 'YOUR_PASSWORD'
+configuration = mux_python.Configuration(
+    username = 'YOUR_USERNAME',
+    password = 'YOUR_PASSWORD'
+)
 
-# create an instance of the API class
-api_instance = mux_python.URLSigningKeysApi(mux_python.ApiClient(configuration))
-signing_key_id = 'signing_key_id_example' # str | The ID of the signing key.
+# Enter a context with an instance of the API client
+with mux_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = mux_python.URLSigningKeysApi(api_client)
+    signing_key_id = 'signing_key_id_example' # str | The ID of the signing key.
 
-try:
-    # Retrieve a URL signing key
-    api_response = api_instance.get_url_signing_key(signing_key_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling URLSigningKeysApi->get_url_signing_key: %s\n" % e)
+    try:
+        # Retrieve a URL signing key
+        api_response = api_instance.get_url_signing_key(signing_key_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling URLSigningKeysApi->get_url_signing_key: %s\n" % e)
 ```
 
 ### Parameters
@@ -165,6 +217,11 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_url_signing_keys**
@@ -176,29 +233,43 @@ Returns a list of URL signing keys.
 
 ### Example
 
-* Basic Authentication (accessToken): 
+* Basic Authentication (accessToken):
 ```python
 from __future__ import print_function
 import time
 import mux_python
 from mux_python.rest import ApiException
 from pprint import pprint
-configuration = mux_python.Configuration()
-# Configure HTTP basic authorization: accessToken
-configuration.username = 'YOUR_USERNAME'
-configuration.password = 'YOUR_PASSWORD'
+# Defining the host is optional and defaults to https://api.mux.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = mux_python.Configuration(
+    host = "https://api.mux.com"
+)
 
-# create an instance of the API class
-api_instance = mux_python.URLSigningKeysApi(mux_python.ApiClient(configuration))
-limit = 25 # int | Number of items to include in the response (optional) (default to 25)
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: accessToken
+configuration = mux_python.Configuration(
+    username = 'YOUR_USERNAME',
+    password = 'YOUR_PASSWORD'
+)
+
+# Enter a context with an instance of the API client
+with mux_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = mux_python.URLSigningKeysApi(api_client)
+    limit = 25 # int | Number of items to include in the response (optional) (default to 25)
 page = 1 # int | Offset by this many pages, of the size of `limit` (optional) (default to 1)
 
-try:
-    # List URL signing keys
-    api_response = api_instance.list_url_signing_keys(limit=limit, page=page)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling URLSigningKeysApi->list_url_signing_keys: %s\n" % e)
+    try:
+        # List URL signing keys
+        api_response = api_instance.list_url_signing_keys(limit=limit, page=page)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling URLSigningKeysApi->list_url_signing_keys: %s\n" % e)
 ```
 
 ### Parameters
@@ -220,6 +291,11 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
