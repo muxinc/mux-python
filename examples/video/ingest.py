@@ -12,7 +12,7 @@ configuration.password = os.environ['MUX_TOKEN_SECRET_DEV']
 assets_api = mux_python.AssetsApi(mux_python.ApiClient(configuration))
 
 # Create an asset
-input_settings = [mux_python.InputSettings(url='https://storage.googleapis.com/muxdemofiles/mux-video-intro.mp4')]
+input_settings = [mux_python.InputSettings(url='https://stream.new/v/G4xk7RWsrQQy7YaP7Pz8xW1ujWLnL7oVo02YV9trnFvw')]
 create_asset_request = mux_python.CreateAssetRequest(input=input_settings, playback_policy=[mux_python.PlaybackPolicy.PUBLIC], mp4_support="standard")
 
 create_asset_response = assets_api.create_asset(create_asset_request)
