@@ -19,8 +19,8 @@ assets_api = mux_python.AssetsApi(mux_python.ApiClient(configuration))
 playback_ids_api = mux_python.PlaybackIDApi(mux_python.ApiClient(configuration))
 
 # ========== create-asset ==========
-add_captions = mux_python.CreateTrackRequest(url="https://tears-of-steel-subtitles.s3.amazonaws.com/tears-fr.vtt", type="text", text_type="subtitles", language_code="fr", closed_captions=False, name="French")
-input_settings = [mux_python.InputSettings(url='https://storage.googleapis.com/muxdemofiles/mux-video-intro.mp4'), add_captions]
+#add_captions = mux_python.CreateTrackRequest(url="https://tears-of-steel-subtitles.s3.amazonaws.com/tears-fr.vtt", type="text", text_type="subtitles", language_code="fr", closed_captions=False, name="French")
+input_settings = [mux_python.InputSettings(url='https://storage.googleapis.com/muxdemofiles/mux-video-intro.mp4')]
 create_asset_request = mux_python.CreateAssetRequest(input=input_settings)
 create_asset_response = assets_api.create_asset(create_asset_request)
 logger.print_debug("Created Asset: " + str(create_asset_response))
