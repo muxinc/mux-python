@@ -1,5 +1,6 @@
 # GetAssetOrLiveStreamIdResponseDataObject
 
+Describes the Asset or LiveStream object associated with the playback ID.
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

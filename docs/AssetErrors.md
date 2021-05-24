@@ -1,5 +1,6 @@
 # AssetErrors
 
+Object that describes any errors that happened when processing this asset.
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

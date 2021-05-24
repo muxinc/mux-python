@@ -18,28 +18,42 @@ Returns the details of an incident
 
 ### Example
 
-* Basic Authentication (accessToken): 
+* Basic Authentication (accessToken):
 ```python
 from __future__ import print_function
 import time
 import mux_python
 from mux_python.rest import ApiException
 from pprint import pprint
-configuration = mux_python.Configuration()
+# Defining the host is optional and defaults to https://api.mux.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = mux_python.Configuration(
+    host = "https://api.mux.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure HTTP basic authorization: accessToken
-configuration.username = 'YOUR_USERNAME'
-configuration.password = 'YOUR_PASSWORD'
+configuration = mux_python.Configuration(
+    username = 'YOUR_USERNAME',
+    password = 'YOUR_PASSWORD'
+)
 
-# create an instance of the API class
-api_instance = mux_python.IncidentsApi(mux_python.ApiClient(configuration))
-incident_id = abcd1234 # str | ID of the Incident
+# Enter a context with an instance of the API client
+with mux_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = mux_python.IncidentsApi(api_client)
+    incident_id = 'abcd1234' # str | ID of the Incident
 
-try:
-    # Get an Incident
-    api_response = api_instance.get_incident(incident_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling IncidentsApi->get_incident: %s\n" % e)
+    try:
+        # Get an Incident
+        api_response = api_instance.get_incident(incident_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling IncidentsApi->get_incident: %s\n" % e)
 ```
 
 ### Parameters
@@ -61,6 +75,11 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_incidents**
@@ -72,33 +91,47 @@ Returns a list of incidents
 
 ### Example
 
-* Basic Authentication (accessToken): 
+* Basic Authentication (accessToken):
 ```python
 from __future__ import print_function
 import time
 import mux_python
 from mux_python.rest import ApiException
 from pprint import pprint
-configuration = mux_python.Configuration()
-# Configure HTTP basic authorization: accessToken
-configuration.username = 'YOUR_USERNAME'
-configuration.password = 'YOUR_PASSWORD'
+# Defining the host is optional and defaults to https://api.mux.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = mux_python.Configuration(
+    host = "https://api.mux.com"
+)
 
-# create an instance of the API class
-api_instance = mux_python.IncidentsApi(mux_python.ApiClient(configuration))
-limit = 25 # int | Number of items to include in the response (optional) (default to 25)
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: accessToken
+configuration = mux_python.Configuration(
+    username = 'YOUR_USERNAME',
+    password = 'YOUR_PASSWORD'
+)
+
+# Enter a context with an instance of the API client
+with mux_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = mux_python.IncidentsApi(api_client)
+    limit = 25 # int | Number of items to include in the response (optional) (default to 25)
 page = 1 # int | Offset by this many pages, of the size of `limit` (optional) (default to 1)
 order_by = 'order_by_example' # str | Value to order the results by (optional)
 order_direction = 'order_direction_example' # str | Sort order. (optional)
 status = 'status_example' # str | Status to filter incidents by (optional)
 severity = 'severity_example' # str | Severity to filter incidents by (optional)
 
-try:
-    # List Incidents
-    api_response = api_instance.list_incidents(limit=limit, page=page, order_by=order_by, order_direction=order_direction, status=status, severity=severity)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling IncidentsApi->list_incidents: %s\n" % e)
+    try:
+        # List Incidents
+        api_response = api_instance.list_incidents(limit=limit, page=page, order_by=order_by, order_direction=order_direction, status=status, severity=severity)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling IncidentsApi->list_incidents: %s\n" % e)
 ```
 
 ### Parameters
@@ -125,6 +158,11 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_related_incidents**
@@ -136,32 +174,46 @@ Returns all the incidents that seem related to a specific incident
 
 ### Example
 
-* Basic Authentication (accessToken): 
+* Basic Authentication (accessToken):
 ```python
 from __future__ import print_function
 import time
 import mux_python
 from mux_python.rest import ApiException
 from pprint import pprint
-configuration = mux_python.Configuration()
-# Configure HTTP basic authorization: accessToken
-configuration.username = 'YOUR_USERNAME'
-configuration.password = 'YOUR_PASSWORD'
+# Defining the host is optional and defaults to https://api.mux.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = mux_python.Configuration(
+    host = "https://api.mux.com"
+)
 
-# create an instance of the API class
-api_instance = mux_python.IncidentsApi(mux_python.ApiClient(configuration))
-incident_id = abcd1234 # str | ID of the Incident
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: accessToken
+configuration = mux_python.Configuration(
+    username = 'YOUR_USERNAME',
+    password = 'YOUR_PASSWORD'
+)
+
+# Enter a context with an instance of the API client
+with mux_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = mux_python.IncidentsApi(api_client)
+    incident_id = 'abcd1234' # str | ID of the Incident
 limit = 25 # int | Number of items to include in the response (optional) (default to 25)
 page = 1 # int | Offset by this many pages, of the size of `limit` (optional) (default to 1)
 order_by = 'order_by_example' # str | Value to order the results by (optional)
 order_direction = 'order_direction_example' # str | Sort order. (optional)
 
-try:
-    # List Related Incidents
-    api_response = api_instance.list_related_incidents(incident_id, limit=limit, page=page, order_by=order_by, order_direction=order_direction)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling IncidentsApi->list_related_incidents: %s\n" % e)
+    try:
+        # List Related Incidents
+        api_response = api_instance.list_related_incidents(incident_id, limit=limit, page=page, order_by=order_by, order_direction=order_direction)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling IncidentsApi->list_related_incidents: %s\n" % e)
 ```
 
 ### Parameters
@@ -186,6 +238,11 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

@@ -27,28 +27,42 @@ Create a new Mux Video asset.
 
 ### Example
 
-* Basic Authentication (accessToken): 
+* Basic Authentication (accessToken):
 ```python
 from __future__ import print_function
 import time
 import mux_python
 from mux_python.rest import ApiException
 from pprint import pprint
-configuration = mux_python.Configuration()
+# Defining the host is optional and defaults to https://api.mux.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = mux_python.Configuration(
+    host = "https://api.mux.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure HTTP basic authorization: accessToken
-configuration.username = 'YOUR_USERNAME'
-configuration.password = 'YOUR_PASSWORD'
+configuration = mux_python.Configuration(
+    username = 'YOUR_USERNAME',
+    password = 'YOUR_PASSWORD'
+)
 
-# create an instance of the API class
-api_instance = mux_python.AssetsApi(mux_python.ApiClient(configuration))
-create_asset_request = mux_python.CreateAssetRequest() # CreateAssetRequest | 
+# Enter a context with an instance of the API client
+with mux_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = mux_python.AssetsApi(api_client)
+    create_asset_request = {"input":"https://muxed.s3.amazonaws.com/leds.mp4","playback_policy":["public"]} # CreateAssetRequest | 
 
-try:
-    # Create an asset
-    api_response = api_instance.create_asset(create_asset_request)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AssetsApi->create_asset: %s\n" % e)
+    try:
+        # Create an asset
+        api_response = api_instance.create_asset(create_asset_request)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling AssetsApi->create_asset: %s\n" % e)
 ```
 
 ### Parameters
@@ -70,6 +84,11 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | Asset Created |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_asset_playback_id**
@@ -79,29 +98,43 @@ Create a playback ID
 
 ### Example
 
-* Basic Authentication (accessToken): 
+* Basic Authentication (accessToken):
 ```python
 from __future__ import print_function
 import time
 import mux_python
 from mux_python.rest import ApiException
 from pprint import pprint
-configuration = mux_python.Configuration()
+# Defining the host is optional and defaults to https://api.mux.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = mux_python.Configuration(
+    host = "https://api.mux.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure HTTP basic authorization: accessToken
-configuration.username = 'YOUR_USERNAME'
-configuration.password = 'YOUR_PASSWORD'
+configuration = mux_python.Configuration(
+    username = 'YOUR_USERNAME',
+    password = 'YOUR_PASSWORD'
+)
 
-# create an instance of the API class
-api_instance = mux_python.AssetsApi(mux_python.ApiClient(configuration))
-asset_id = 'asset_id_example' # str | The asset ID.
-create_playback_id_request = mux_python.CreatePlaybackIDRequest() # CreatePlaybackIDRequest | 
+# Enter a context with an instance of the API client
+with mux_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = mux_python.AssetsApi(api_client)
+    asset_id = 'asset_id_example' # str | The asset ID.
+create_playback_id_request = {"policy":"public"} # CreatePlaybackIDRequest | 
 
-try:
-    # Create a playback ID
-    api_response = api_instance.create_asset_playback_id(asset_id, create_playback_id_request)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AssetsApi->create_asset_playback_id: %s\n" % e)
+    try:
+        # Create a playback ID
+        api_response = api_instance.create_asset_playback_id(asset_id, create_playback_id_request)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling AssetsApi->create_asset_playback_id: %s\n" % e)
 ```
 
 ### Parameters
@@ -124,6 +157,11 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | Created |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_asset_track**
@@ -133,29 +171,43 @@ Create an asset track
 
 ### Example
 
-* Basic Authentication (accessToken): 
+* Basic Authentication (accessToken):
 ```python
 from __future__ import print_function
 import time
 import mux_python
 from mux_python.rest import ApiException
 from pprint import pprint
-configuration = mux_python.Configuration()
+# Defining the host is optional and defaults to https://api.mux.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = mux_python.Configuration(
+    host = "https://api.mux.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure HTTP basic authorization: accessToken
-configuration.username = 'YOUR_USERNAME'
-configuration.password = 'YOUR_PASSWORD'
+configuration = mux_python.Configuration(
+    username = 'YOUR_USERNAME',
+    password = 'YOUR_PASSWORD'
+)
 
-# create an instance of the API class
-api_instance = mux_python.AssetsApi(mux_python.ApiClient(configuration))
-asset_id = 'asset_id_example' # str | The asset ID.
-create_track_request = mux_python.CreateTrackRequest() # CreateTrackRequest | 
+# Enter a context with an instance of the API client
+with mux_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = mux_python.AssetsApi(api_client)
+    asset_id = 'asset_id_example' # str | The asset ID.
+create_track_request = {"url":"https://example.com/myVideo_en.srt","type":"text","text_type":"subtitles","language_code":"en-US","name":"English","closed_captions":true,"passthrough":"English"} # CreateTrackRequest | 
 
-try:
-    # Create an asset track
-    api_response = api_instance.create_asset_track(asset_id, create_track_request)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AssetsApi->create_asset_track: %s\n" % e)
+    try:
+        # Create an asset track
+        api_response = api_instance.create_asset_track(asset_id, create_track_request)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling AssetsApi->create_asset_track: %s\n" % e)
 ```
 
 ### Parameters
@@ -178,6 +230,11 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | Created |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_asset**
@@ -189,27 +246,41 @@ Deletes a video asset and all its data
 
 ### Example
 
-* Basic Authentication (accessToken): 
+* Basic Authentication (accessToken):
 ```python
 from __future__ import print_function
 import time
 import mux_python
 from mux_python.rest import ApiException
 from pprint import pprint
-configuration = mux_python.Configuration()
+# Defining the host is optional and defaults to https://api.mux.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = mux_python.Configuration(
+    host = "https://api.mux.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure HTTP basic authorization: accessToken
-configuration.username = 'YOUR_USERNAME'
-configuration.password = 'YOUR_PASSWORD'
+configuration = mux_python.Configuration(
+    username = 'YOUR_USERNAME',
+    password = 'YOUR_PASSWORD'
+)
 
-# create an instance of the API class
-api_instance = mux_python.AssetsApi(mux_python.ApiClient(configuration))
-asset_id = 'asset_id_example' # str | The asset ID.
+# Enter a context with an instance of the API client
+with mux_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = mux_python.AssetsApi(api_client)
+    asset_id = 'asset_id_example' # str | The asset ID.
 
-try:
-    # Delete an asset
-    api_instance.delete_asset(asset_id)
-except ApiException as e:
-    print("Exception when calling AssetsApi->delete_asset: %s\n" % e)
+    try:
+        # Delete an asset
+        api_instance.delete_asset(asset_id)
+    except ApiException as e:
+        print("Exception when calling AssetsApi->delete_asset: %s\n" % e)
 ```
 
 ### Parameters
@@ -231,6 +302,11 @@ void (empty response body)
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | No Content |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_asset_playback_id**
@@ -240,28 +316,42 @@ Delete a playback ID
 
 ### Example
 
-* Basic Authentication (accessToken): 
+* Basic Authentication (accessToken):
 ```python
 from __future__ import print_function
 import time
 import mux_python
 from mux_python.rest import ApiException
 from pprint import pprint
-configuration = mux_python.Configuration()
-# Configure HTTP basic authorization: accessToken
-configuration.username = 'YOUR_USERNAME'
-configuration.password = 'YOUR_PASSWORD'
+# Defining the host is optional and defaults to https://api.mux.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = mux_python.Configuration(
+    host = "https://api.mux.com"
+)
 
-# create an instance of the API class
-api_instance = mux_python.AssetsApi(mux_python.ApiClient(configuration))
-asset_id = 'asset_id_example' # str | The asset ID.
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: accessToken
+configuration = mux_python.Configuration(
+    username = 'YOUR_USERNAME',
+    password = 'YOUR_PASSWORD'
+)
+
+# Enter a context with an instance of the API client
+with mux_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = mux_python.AssetsApi(api_client)
+    asset_id = 'asset_id_example' # str | The asset ID.
 playback_id = 'playback_id_example' # str | The live stream's playback ID.
 
-try:
-    # Delete a playback ID
-    api_instance.delete_asset_playback_id(asset_id, playback_id)
-except ApiException as e:
-    print("Exception when calling AssetsApi->delete_asset_playback_id: %s\n" % e)
+    try:
+        # Delete a playback ID
+        api_instance.delete_asset_playback_id(asset_id, playback_id)
+    except ApiException as e:
+        print("Exception when calling AssetsApi->delete_asset_playback_id: %s\n" % e)
 ```
 
 ### Parameters
@@ -284,6 +374,11 @@ void (empty response body)
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | No Content |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_asset_track**
@@ -293,28 +388,42 @@ Delete an asset track
 
 ### Example
 
-* Basic Authentication (accessToken): 
+* Basic Authentication (accessToken):
 ```python
 from __future__ import print_function
 import time
 import mux_python
 from mux_python.rest import ApiException
 from pprint import pprint
-configuration = mux_python.Configuration()
-# Configure HTTP basic authorization: accessToken
-configuration.username = 'YOUR_USERNAME'
-configuration.password = 'YOUR_PASSWORD'
+# Defining the host is optional and defaults to https://api.mux.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = mux_python.Configuration(
+    host = "https://api.mux.com"
+)
 
-# create an instance of the API class
-api_instance = mux_python.AssetsApi(mux_python.ApiClient(configuration))
-asset_id = 'asset_id_example' # str | The asset ID.
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: accessToken
+configuration = mux_python.Configuration(
+    username = 'YOUR_USERNAME',
+    password = 'YOUR_PASSWORD'
+)
+
+# Enter a context with an instance of the API client
+with mux_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = mux_python.AssetsApi(api_client)
+    asset_id = 'asset_id_example' # str | The asset ID.
 track_id = 'track_id_example' # str | The track ID.
 
-try:
-    # Delete an asset track
-    api_instance.delete_asset_track(asset_id, track_id)
-except ApiException as e:
-    print("Exception when calling AssetsApi->delete_asset_track: %s\n" % e)
+    try:
+        # Delete an asset track
+        api_instance.delete_asset_track(asset_id, track_id)
+    except ApiException as e:
+        print("Exception when calling AssetsApi->delete_asset_track: %s\n" % e)
 ```
 
 ### Parameters
@@ -337,6 +446,11 @@ void (empty response body)
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | No Content |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_asset**
@@ -348,28 +462,42 @@ Retrieves the details of an asset that has previously been created. Supply the u
 
 ### Example
 
-* Basic Authentication (accessToken): 
+* Basic Authentication (accessToken):
 ```python
 from __future__ import print_function
 import time
 import mux_python
 from mux_python.rest import ApiException
 from pprint import pprint
-configuration = mux_python.Configuration()
+# Defining the host is optional and defaults to https://api.mux.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = mux_python.Configuration(
+    host = "https://api.mux.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure HTTP basic authorization: accessToken
-configuration.username = 'YOUR_USERNAME'
-configuration.password = 'YOUR_PASSWORD'
+configuration = mux_python.Configuration(
+    username = 'YOUR_USERNAME',
+    password = 'YOUR_PASSWORD'
+)
 
-# create an instance of the API class
-api_instance = mux_python.AssetsApi(mux_python.ApiClient(configuration))
-asset_id = 'asset_id_example' # str | The asset ID.
+# Enter a context with an instance of the API client
+with mux_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = mux_python.AssetsApi(api_client)
+    asset_id = 'asset_id_example' # str | The asset ID.
 
-try:
-    # Retrieve an asset
-    api_response = api_instance.get_asset(asset_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AssetsApi->get_asset: %s\n" % e)
+    try:
+        # Retrieve an asset
+        api_response = api_instance.get_asset(asset_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling AssetsApi->get_asset: %s\n" % e)
 ```
 
 ### Parameters
@@ -391,6 +519,11 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_asset_input_info**
@@ -402,28 +535,42 @@ Returns a list of the input objects that were used to create the asset along wit
 
 ### Example
 
-* Basic Authentication (accessToken): 
+* Basic Authentication (accessToken):
 ```python
 from __future__ import print_function
 import time
 import mux_python
 from mux_python.rest import ApiException
 from pprint import pprint
-configuration = mux_python.Configuration()
+# Defining the host is optional and defaults to https://api.mux.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = mux_python.Configuration(
+    host = "https://api.mux.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure HTTP basic authorization: accessToken
-configuration.username = 'YOUR_USERNAME'
-configuration.password = 'YOUR_PASSWORD'
+configuration = mux_python.Configuration(
+    username = 'YOUR_USERNAME',
+    password = 'YOUR_PASSWORD'
+)
 
-# create an instance of the API class
-api_instance = mux_python.AssetsApi(mux_python.ApiClient(configuration))
-asset_id = 'asset_id_example' # str | The asset ID.
+# Enter a context with an instance of the API client
+with mux_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = mux_python.AssetsApi(api_client)
+    asset_id = 'asset_id_example' # str | The asset ID.
 
-try:
-    # Retrieve asset input info
-    api_response = api_instance.get_asset_input_info(asset_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AssetsApi->get_asset_input_info: %s\n" % e)
+    try:
+        # Retrieve asset input info
+        api_response = api_instance.get_asset_input_info(asset_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling AssetsApi->get_asset_input_info: %s\n" % e)
 ```
 
 ### Parameters
@@ -445,6 +592,11 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_asset_playback_id**
@@ -454,29 +606,43 @@ Retrieve a playback ID
 
 ### Example
 
-* Basic Authentication (accessToken): 
+* Basic Authentication (accessToken):
 ```python
 from __future__ import print_function
 import time
 import mux_python
 from mux_python.rest import ApiException
 from pprint import pprint
-configuration = mux_python.Configuration()
-# Configure HTTP basic authorization: accessToken
-configuration.username = 'YOUR_USERNAME'
-configuration.password = 'YOUR_PASSWORD'
+# Defining the host is optional and defaults to https://api.mux.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = mux_python.Configuration(
+    host = "https://api.mux.com"
+)
 
-# create an instance of the API class
-api_instance = mux_python.AssetsApi(mux_python.ApiClient(configuration))
-asset_id = 'asset_id_example' # str | The asset ID.
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: accessToken
+configuration = mux_python.Configuration(
+    username = 'YOUR_USERNAME',
+    password = 'YOUR_PASSWORD'
+)
+
+# Enter a context with an instance of the API client
+with mux_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = mux_python.AssetsApi(api_client)
+    asset_id = 'asset_id_example' # str | The asset ID.
 playback_id = 'playback_id_example' # str | The live stream's playback ID.
 
-try:
-    # Retrieve a playback ID
-    api_response = api_instance.get_asset_playback_id(asset_id, playback_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AssetsApi->get_asset_playback_id: %s\n" % e)
+    try:
+        # Retrieve a playback ID
+        api_response = api_instance.get_asset_playback_id(asset_id, playback_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling AssetsApi->get_asset_playback_id: %s\n" % e)
 ```
 
 ### Parameters
@@ -499,6 +665,11 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_assets**
@@ -510,29 +681,43 @@ List all Mux assets.
 
 ### Example
 
-* Basic Authentication (accessToken): 
+* Basic Authentication (accessToken):
 ```python
 from __future__ import print_function
 import time
 import mux_python
 from mux_python.rest import ApiException
 from pprint import pprint
-configuration = mux_python.Configuration()
-# Configure HTTP basic authorization: accessToken
-configuration.username = 'YOUR_USERNAME'
-configuration.password = 'YOUR_PASSWORD'
+# Defining the host is optional and defaults to https://api.mux.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = mux_python.Configuration(
+    host = "https://api.mux.com"
+)
 
-# create an instance of the API class
-api_instance = mux_python.AssetsApi(mux_python.ApiClient(configuration))
-limit = 25 # int | Number of items to include in the response (optional) (default to 25)
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: accessToken
+configuration = mux_python.Configuration(
+    username = 'YOUR_USERNAME',
+    password = 'YOUR_PASSWORD'
+)
+
+# Enter a context with an instance of the API client
+with mux_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = mux_python.AssetsApi(api_client)
+    limit = 25 # int | Number of items to include in the response (optional) (default to 25)
 page = 1 # int | Offset by this many pages, of the size of `limit` (optional) (default to 1)
 
-try:
-    # List assets
-    api_response = api_instance.list_assets(limit=limit, page=page)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AssetsApi->list_assets: %s\n" % e)
+    try:
+        # List assets
+        api_response = api_instance.list_assets(limit=limit, page=page)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling AssetsApi->list_assets: %s\n" % e)
 ```
 
 ### Parameters
@@ -555,6 +740,11 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_asset_master_access**
@@ -562,33 +752,47 @@ Name | Type | Description  | Notes
 
 Update master access
 
-Allows you add temporary access to the master (highest-quality) version of the asset in MP4 format. A URL will be created that can be used to download the master version for 24 hours. After 24 hours Master Access will revert to \"none\". This master version is not optimized for web and not meant to be streamed, only downloaded for purposes like archiving or editing the video offline.
+Allows you to add temporary access to the master (highest-quality) version of the asset in MP4 format. A URL will be created that can be used to download the master version for 24 hours. After 24 hours Master Access will revert to \"none\". This master version is not optimized for web and not meant to be streamed, only downloaded for purposes like archiving or editing the video offline.
 
 ### Example
 
-* Basic Authentication (accessToken): 
+* Basic Authentication (accessToken):
 ```python
 from __future__ import print_function
 import time
 import mux_python
 from mux_python.rest import ApiException
 from pprint import pprint
-configuration = mux_python.Configuration()
+# Defining the host is optional and defaults to https://api.mux.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = mux_python.Configuration(
+    host = "https://api.mux.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure HTTP basic authorization: accessToken
-configuration.username = 'YOUR_USERNAME'
-configuration.password = 'YOUR_PASSWORD'
+configuration = mux_python.Configuration(
+    username = 'YOUR_USERNAME',
+    password = 'YOUR_PASSWORD'
+)
 
-# create an instance of the API class
-api_instance = mux_python.AssetsApi(mux_python.ApiClient(configuration))
-asset_id = 'asset_id_example' # str | The asset ID.
-update_asset_master_access_request = mux_python.UpdateAssetMasterAccessRequest() # UpdateAssetMasterAccessRequest | 
+# Enter a context with an instance of the API client
+with mux_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = mux_python.AssetsApi(api_client)
+    asset_id = 'asset_id_example' # str | The asset ID.
+update_asset_master_access_request = {"master_access":"temporary"} # UpdateAssetMasterAccessRequest | 
 
-try:
-    # Update master access
-    api_response = api_instance.update_asset_master_access(asset_id, update_asset_master_access_request)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AssetsApi->update_asset_master_access: %s\n" % e)
+    try:
+        # Update master access
+        api_response = api_instance.update_asset_master_access(asset_id, update_asset_master_access_request)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling AssetsApi->update_asset_master_access: %s\n" % e)
 ```
 
 ### Parameters
@@ -611,6 +815,11 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_asset_mp4_support**
@@ -618,33 +827,47 @@ Name | Type | Description  | Notes
 
 Update MP4 support
 
-Allows you add or remove mp4 support for assets that were created without it. Currently there are two values supported in this request, `standard` and `none`. `none` means that an asset *does not* have mp4 support, so submitting a request with `mp4_support` set to `none` will delete the mp4 assets from the asset in question.
+Allows you to add or remove mp4 support for assets that were created without it. Currently there are two values supported in this request, `standard` and `none`. `none` means that an asset *does not* have mp4 support, so submitting a request with `mp4_support` set to `none` will delete the mp4 assets from the asset in question.
 
 ### Example
 
-* Basic Authentication (accessToken): 
+* Basic Authentication (accessToken):
 ```python
 from __future__ import print_function
 import time
 import mux_python
 from mux_python.rest import ApiException
 from pprint import pprint
-configuration = mux_python.Configuration()
+# Defining the host is optional and defaults to https://api.mux.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = mux_python.Configuration(
+    host = "https://api.mux.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure HTTP basic authorization: accessToken
-configuration.username = 'YOUR_USERNAME'
-configuration.password = 'YOUR_PASSWORD'
+configuration = mux_python.Configuration(
+    username = 'YOUR_USERNAME',
+    password = 'YOUR_PASSWORD'
+)
 
-# create an instance of the API class
-api_instance = mux_python.AssetsApi(mux_python.ApiClient(configuration))
-asset_id = 'asset_id_example' # str | The asset ID.
-update_asset_mp4_support_request = mux_python.UpdateAssetMP4SupportRequest() # UpdateAssetMP4SupportRequest | 
+# Enter a context with an instance of the API client
+with mux_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = mux_python.AssetsApi(api_client)
+    asset_id = 'asset_id_example' # str | The asset ID.
+update_asset_mp4_support_request = {"mp4_support":"standard"} # UpdateAssetMP4SupportRequest | 
 
-try:
-    # Update MP4 support
-    api_response = api_instance.update_asset_mp4_support(asset_id, update_asset_mp4_support_request)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AssetsApi->update_asset_mp4_support: %s\n" % e)
+    try:
+        # Update MP4 support
+        api_response = api_instance.update_asset_mp4_support(asset_id, update_asset_mp4_support_request)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling AssetsApi->update_asset_mp4_support: %s\n" % e)
 ```
 
 ### Parameters
@@ -666,6 +889,11 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

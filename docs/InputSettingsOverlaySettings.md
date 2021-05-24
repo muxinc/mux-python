@@ -1,5 +1,6 @@
 # InputSettingsOverlaySettings
 
+An object that describes how the image file referenced in url should be placed over the video (i.e. watermarking).
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
