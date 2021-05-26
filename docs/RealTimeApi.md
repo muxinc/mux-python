@@ -95,7 +95,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_realtime_histogram_timeseries**
-> GetRealTimeHistogramTimeseriesResponse get_realtime_histogram_timeseries(realtime_metric_id, filters=filters)
+> GetRealTimeHistogramTimeseriesResponse get_realtime_histogram_timeseries(realtime_histogram_metric_id, filters=filters)
 
 Get Real-Time Histogram Timeseries
 
@@ -131,12 +131,12 @@ configuration = mux_python.Configuration(
 with mux_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = mux_python.RealTimeApi(api_client)
-    realtime_metric_id = 'current-concurrent-viewers' # str | ID of the Realtime Metric
+    realtime_histogram_metric_id = 'video-startup-time' # str | ID of the Realtime Histogram Metric
 filters = ['filters_example'] # list[str] | Filter key:value pairs. Must be provided as an array query string parameter (e.g. filters[]=operating_system:windows&filters[]=country:US). Possible filter names are the same as returned by the List Filters endpoint.  (optional)
 
     try:
         # Get Real-Time Histogram Timeseries
-        api_response = api_instance.get_realtime_histogram_timeseries(realtime_metric_id, filters=filters)
+        api_response = api_instance.get_realtime_histogram_timeseries(realtime_histogram_metric_id, filters=filters)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling RealTimeApi->get_realtime_histogram_timeseries: %s\n" % e)
@@ -146,7 +146,7 @@ filters = ['filters_example'] # list[str] | Filter key:value pairs. Must be prov
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **realtime_metric_id** | **str**| ID of the Realtime Metric | 
+ **realtime_histogram_metric_id** | **str**| ID of the Realtime Histogram Metric | 
  **filters** | [**list[str]**](str.md)| Filter key:value pairs. Must be provided as an array query string parameter (e.g. filters[]&#x3D;operating_system:windows&amp;filters[]&#x3D;country:US). Possible filter names are the same as returned by the List Filters endpoint.  | [optional] 
 
 ### Return type

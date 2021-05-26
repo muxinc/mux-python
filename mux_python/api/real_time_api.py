@@ -207,18 +207,18 @@ class RealTimeApi(object):
             collection_formats=collection_formats,
             _request_auth=local_var_params.get('_request_auth'))
 
-    def get_realtime_histogram_timeseries(self, realtime_metric_id, **kwargs):  # noqa: E501
+    def get_realtime_histogram_timeseries(self, realtime_histogram_metric_id, **kwargs):  # noqa: E501
         """Get Real-Time Histogram Timeseries  # noqa: E501
 
         Gets histogram timeseries information for a specific metric.   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.get_realtime_histogram_timeseries(realtime_metric_id, async_req=True)
+        >>> thread = api.get_realtime_histogram_timeseries(realtime_histogram_metric_id, async_req=True)
         >>> result = thread.get()
 
-        :param realtime_metric_id: ID of the Realtime Metric (required)
-        :type realtime_metric_id: str
+        :param realtime_histogram_metric_id: ID of the Realtime Histogram Metric (required)
+        :type realtime_histogram_metric_id: str
         :param filters: Filter key:value pairs. Must be provided as an array query string parameter (e.g. filters[]=operating_system:windows&filters[]=country:US). Possible filter names are the same as returned by the List Filters endpoint. 
         :type filters: list[str]
         :param async_req: Whether to execute the request asynchronously.
@@ -237,20 +237,20 @@ class RealTimeApi(object):
         :rtype: GetRealTimeHistogramTimeseriesResponse
         """
         kwargs['_return_http_data_only'] = True
-        return self.get_realtime_histogram_timeseries_with_http_info(realtime_metric_id, **kwargs)  # noqa: E501
+        return self.get_realtime_histogram_timeseries_with_http_info(realtime_histogram_metric_id, **kwargs)  # noqa: E501
 
-    def get_realtime_histogram_timeseries_with_http_info(self, realtime_metric_id, **kwargs):  # noqa: E501
+    def get_realtime_histogram_timeseries_with_http_info(self, realtime_histogram_metric_id, **kwargs):  # noqa: E501
         """Get Real-Time Histogram Timeseries  # noqa: E501
 
         Gets histogram timeseries information for a specific metric.   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.get_realtime_histogram_timeseries_with_http_info(realtime_metric_id, async_req=True)
+        >>> thread = api.get_realtime_histogram_timeseries_with_http_info(realtime_histogram_metric_id, async_req=True)
         >>> result = thread.get()
 
-        :param realtime_metric_id: ID of the Realtime Metric (required)
-        :type realtime_metric_id: str
+        :param realtime_histogram_metric_id: ID of the Realtime Histogram Metric (required)
+        :type realtime_histogram_metric_id: str
         :param filters: Filter key:value pairs. Must be provided as an array query string parameter (e.g. filters[]=operating_system:windows&filters[]=country:US). Possible filter names are the same as returned by the List Filters endpoint. 
         :type filters: list[str]
         :param async_req: Whether to execute the request asynchronously.
@@ -279,7 +279,7 @@ class RealTimeApi(object):
         local_var_params = locals()
 
         all_params = [
-            'realtime_metric_id',
+            'realtime_histogram_metric_id',
             'filters'
         ]
         all_params.extend(
@@ -300,16 +300,16 @@ class RealTimeApi(object):
                 )
             local_var_params[key] = val
         del local_var_params['kwargs']
-        # verify the required parameter 'realtime_metric_id' is set
-        if self.api_client.client_side_validation and ('realtime_metric_id' not in local_var_params or  # noqa: E501
-                                                        local_var_params['realtime_metric_id'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `realtime_metric_id` when calling `get_realtime_histogram_timeseries`")  # noqa: E501
+        # verify the required parameter 'realtime_histogram_metric_id' is set
+        if self.api_client.client_side_validation and ('realtime_histogram_metric_id' not in local_var_params or  # noqa: E501
+                                                        local_var_params['realtime_histogram_metric_id'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `realtime_histogram_metric_id` when calling `get_realtime_histogram_timeseries`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'realtime_metric_id' in local_var_params:
-            path_params['REALTIME_METRIC_ID'] = local_var_params['realtime_metric_id']  # noqa: E501
+        if 'realtime_histogram_metric_id' in local_var_params:
+            path_params['REALTIME_HISTOGRAM_METRIC_ID'] = local_var_params['realtime_histogram_metric_id']  # noqa: E501
 
         query_params = []
         if 'filters' in local_var_params and local_var_params['filters'] is not None:  # noqa: E501
