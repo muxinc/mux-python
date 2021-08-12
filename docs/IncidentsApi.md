@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 Get an Incident
 
-Returns the details of an incident 
+Returns the details of an incident.
 
 ### Example
 
@@ -87,7 +87,7 @@ Name | Type | Description  | Notes
 
 List Incidents
 
-Returns a list of incidents 
+Returns a list of incidents.
 
 ### Example
 
@@ -170,7 +170,7 @@ Name | Type | Description  | Notes
 
 List Related Incidents
 
-Returns all the incidents that seem related to a specific incident 
+Returns all the incidents that seem related to a specific incident.
 
 ### Example
 

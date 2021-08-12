@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 Retrieve an Asset or Live Stream ID
 
-Retrieves the Identifier of the Asset or Live Stream associated with the Playback ID. 
+Retrieves the Identifier of the Asset or Live Stream associated with the Playback ID.
 
 ### Example
 

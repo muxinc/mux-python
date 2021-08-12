@@ -115,6 +115,14 @@ Name | Type | Description | Notes
 **quality_score** | **str** |  | [optional] 
 **player_software_version** | **str** |  | [optional] 
 **player_mux_plugin_name** | **str** |  | [optional] 
+**sub_property_id** | **str** |  | [optional] 
+**player_remote_played** | **bool** |  | [optional] 
+**view_max_playhead_position** | **str** |  | [optional] 
+**view_playing_time** | **str** |  | [optional] 
+**view_session_id** | **str** |  | [optional] 
+**viewer_connection_type** | **str** |  | [optional] 
+**viewer_device_model** | **str** |  | [optional] 
+**weighted_average_bitrate** | **int** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

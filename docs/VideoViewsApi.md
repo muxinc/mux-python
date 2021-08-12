@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 Get a Video View
 
-Returns the details of a video view 
+Returns the details of a video view.
 
 ### Example
 
@@ -86,7 +86,7 @@ Name | Type | Description  | Notes
 
 List Video Views
 
-Returns a list of video views 
+Returns a list of video views.
 
 ### Example
 

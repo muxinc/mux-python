@@ -54,7 +54,7 @@ Its up to you to manage your token and secret. In our examples, we read them fro
 ### Example Usage
 Below is a quick example of using mux-python to list the Video assets stored in your Mux account.
 
-Be sure to also checkout the [examples directory](examples/):
+Be sure to also checkout the [exmples directory](examples/):
 * [List Assets, Live Streams, Signing Keys, and Uploads.](examples/video/list-everything.py)
 * [Create an Asset, wait for it to become availiable, and print its playback URL](examples/video/ingest.py)
 * [Create a new Live Stream and retrieve its Stream key.](examples/video/create-live-stream.py)

@@ -29,6 +29,8 @@ docs/DisableLiveStreamResponse.md
 docs/EnableLiveStreamResponse.md
 docs/Error.md
 docs/ErrorsApi.md
+docs/ExportDate.md
+docs/ExportFile.md
 docs/ExportsApi.md
 docs/FilterValue.md
 docs/FiltersApi.md
@@ -75,6 +77,7 @@ docs/ListRealTimeMetricsResponse.md
 docs/ListRelatedIncidentsResponse.md
 docs/ListSigningKeysResponse.md
 docs/ListUploadsResponse.md
+docs/ListVideoViewExportsResponse.md
 docs/ListVideoViewsResponse.md
 docs/LiveStream.md
 docs/LiveStreamResponse.md
@@ -152,6 +155,8 @@ mux_python/models/dimension_value.py
 mux_python/models/disable_live_stream_response.py
 mux_python/models/enable_live_stream_response.py
 mux_python/models/error.py
+mux_python/models/export_date.py
+mux_python/models/export_file.py
 mux_python/models/filter_value.py
 mux_python/models/get_asset_input_info_response.py
 mux_python/models/get_asset_or_live_stream_id_response.py
@@ -195,6 +200,7 @@ mux_python/models/list_real_time_metrics_response.py
 mux_python/models/list_related_incidents_response.py
 mux_python/models/list_signing_keys_response.py
 mux_python/models/list_uploads_response.py
+mux_python/models/list_video_view_exports_response.py
 mux_python/models/list_video_views_response.py
 mux_python/models/live_stream.py
 mux_python/models/live_stream_response.py
@@ -229,4 +235,7 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
+test/test_export_date.py
+test/test_export_file.py
+test/test_list_video_view_exports_response.py
 tox.ini
