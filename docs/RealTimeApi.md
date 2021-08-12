@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 Get Real-Time Breakdown
 
-Gets breakdown information for a specific dimension and metric along with the number of concurrent viewers and negative impact score. 
+Gets breakdown information for a specific dimension and metric along with the number of concurrent viewers and negative impact score.
 
 ### Example
 
@@ -99,7 +99,7 @@ Name | Type | Description  | Notes
 
 Get Real-Time Histogram Timeseries
 
-Gets histogram timeseries information for a specific metric. 
+Gets histogram timeseries information for a specific metric.
 
 ### Example
 
@@ -174,7 +174,7 @@ Name | Type | Description  | Notes
 
 Get Real-Time Timeseries
 
-Gets Time series information for a specific metric along with the number of concurrent viewers. 
+Gets Time series information for a specific metric along with the number of concurrent viewers.
 
 ### Example
 
@@ -249,7 +249,7 @@ Name | Type | Description  | Notes
 
 List Real-Time Dimensions
 
-Lists availiable real-time dimensions 
+Lists availiable real-time dimensions.
 
 ### Example
 
@@ -318,7 +318,7 @@ This endpoint does not need any parameter.
 
 List Real-Time Metrics
 
-Lists availiable real-time metrics. 
+Lists availiable real-time metrics.
 
 ### Example
 

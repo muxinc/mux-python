@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 List Errors
 
-Returns a list of errors 
+Returns a list of errors.
 
 ### Example
 
