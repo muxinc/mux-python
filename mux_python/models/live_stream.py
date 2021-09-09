@@ -46,6 +46,7 @@ class LiveStream(object):
         'audio_only': 'bool',
         'reconnect_window': 'float',
         'reduced_latency': 'bool',
+        'low_latency': 'bool',
         'simulcast_targets': 'list[SimulcastTarget]',
         'test': 'bool'
     }
@@ -63,11 +64,12 @@ class LiveStream(object):
         'audio_only': 'audio_only',
         'reconnect_window': 'reconnect_window',
         'reduced_latency': 'reduced_latency',
+        'low_latency': 'low_latency',
         'simulcast_targets': 'simulcast_targets',
         'test': 'test'
     }
 
-    def __init__(self, id=None, created_at=None, stream_key=None, active_asset_id=None, recent_asset_ids=None, status=None, playback_ids=None, new_asset_settings=None, passthrough=None, audio_only=None, reconnect_window=60, reduced_latency=None, simulcast_targets=None, test=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, id=None, created_at=None, stream_key=None, active_asset_id=None, recent_asset_ids=None, status=None, playback_ids=None, new_asset_settings=None, passthrough=None, audio_only=None, reconnect_window=60, reduced_latency=None, low_latency=None, simulcast_targets=None, test=None, local_vars_configuration=None):  # noqa: E501
         """LiveStream - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
@@ -85,6 +87,7 @@ class LiveStream(object):
         self._audio_only = None
         self._reconnect_window = None
         self._reduced_latency = None
+        self._low_latency = None
         self._simulcast_targets = None
         self._test = None
         self.discriminator = None
@@ -113,6 +116,8 @@ class LiveStream(object):
             self.reconnect_window = reconnect_window
         if reduced_latency is not None:
             self.reduced_latency = reduced_latency
+        if low_latency is not None:
+            self.low_latency = low_latency
         if simulcast_targets is not None:
             self.simulcast_targets = simulcast_targets
         if test is not None:
@@ -397,6 +402,29 @@ class LiveStream(object):
         """
 
         self._reduced_latency = reduced_latency
+
+    @property
+    def low_latency(self):
+        """Gets the low_latency of this LiveStream.  # noqa: E501
+
+        Latency is the time from when the streamer does something in real life to when you see it happen in the player. Setting this option will enable compatibility with the LL-HLS specification for low-latency streaming. This typically has lower latency than Reduced Latency streams, and cannot be combined with Reduced Latency. Note: Reconnect windows are incompatible with Low Latency and will always be set to zero (0) seconds.  # noqa: E501
+
+        :return: The low_latency of this LiveStream.  # noqa: E501
+        :rtype: bool
+        """
+        return self._low_latency
+
+    @low_latency.setter
+    def low_latency(self, low_latency):
+        """Sets the low_latency of this LiveStream.
+
+        Latency is the time from when the streamer does something in real life to when you see it happen in the player. Setting this option will enable compatibility with the LL-HLS specification for low-latency streaming. This typically has lower latency than Reduced Latency streams, and cannot be combined with Reduced Latency. Note: Reconnect windows are incompatible with Low Latency and will always be set to zero (0) seconds.  # noqa: E501
+
+        :param low_latency: The low_latency of this LiveStream.  # noqa: E501
+        :type low_latency: bool
+        """
+
+        self._low_latency = low_latency
 
     @property
     def simulcast_targets(self):

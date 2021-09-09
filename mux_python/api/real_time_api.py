@@ -497,7 +497,7 @@ class RealTimeApi(object):
     def list_realtime_dimensions(self, **kwargs):  # noqa: E501
         """List Real-Time Dimensions  # noqa: E501
 
-        Lists availiable real-time dimensions.  # noqa: E501
+        Lists available real-time dimensions.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -525,7 +525,7 @@ class RealTimeApi(object):
     def list_realtime_dimensions_with_http_info(self, **kwargs):  # noqa: E501
         """List Real-Time Dimensions  # noqa: E501
 
-        Lists availiable real-time dimensions.  # noqa: E501
+        Lists available real-time dimensions.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -621,7 +621,7 @@ class RealTimeApi(object):
     def list_realtime_metrics(self, **kwargs):  # noqa: E501
         """List Real-Time Metrics  # noqa: E501
 
-        Lists availiable real-time metrics.  # noqa: E501
+        Lists available real-time metrics.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -649,7 +649,7 @@ class RealTimeApi(object):
     def list_realtime_metrics_with_http_info(self, **kwargs):  # noqa: E501
         """List Real-Time Metrics  # noqa: E501
 
-        Lists availiable real-time metrics.  # noqa: E501
+        Lists available real-time metrics.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 

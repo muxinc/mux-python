@@ -386,6 +386,8 @@ void (empty response body)
 
 Delete an asset track
 
+Removes a text track from an asset. Audio and video tracks on assets cannot be removed.
+
 ### Example
 
 * Basic Authentication (accessToken):

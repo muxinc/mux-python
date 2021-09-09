@@ -742,6 +742,7 @@ class AssetsApi(object):
     def delete_asset_track(self, asset_id, track_id, **kwargs):  # noqa: E501
         """Delete an asset track  # noqa: E501
 
+        Removes a text track from an asset. Audio and video tracks on assets cannot be removed.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -773,6 +774,7 @@ class AssetsApi(object):
     def delete_asset_track_with_http_info(self, asset_id, track_id, **kwargs):  # noqa: E501
         """Delete an asset track  # noqa: E501
 
+        Removes a text track from an asset. Audio and video tracks on assets cannot be removed.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 

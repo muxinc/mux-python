@@ -235,7 +235,4 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_export_date.py
-test/test_export_file.py
-test/test_list_video_view_exports_response.py
 tox.ini
