@@ -38,7 +38,7 @@ class RealTimeBreakdownValue(object):
         'negative_impact': 'int',
         'metric_value': 'float',
         'display_value': 'str',
-        'concurent_viewers': 'int'
+        'concurrent_viewers': 'int'
     }
 
     attribute_map = {
@@ -46,10 +46,10 @@ class RealTimeBreakdownValue(object):
         'negative_impact': 'negative_impact',
         'metric_value': 'metric_value',
         'display_value': 'display_value',
-        'concurent_viewers': 'concurent_viewers'
+        'concurrent_viewers': 'concurrent_viewers'
     }
 
-    def __init__(self, value=None, negative_impact=None, metric_value=None, display_value=None, concurent_viewers=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, value=None, negative_impact=None, metric_value=None, display_value=None, concurrent_viewers=None, local_vars_configuration=None):  # noqa: E501
         """RealTimeBreakdownValue - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
@@ -59,7 +59,7 @@ class RealTimeBreakdownValue(object):
         self._negative_impact = None
         self._metric_value = None
         self._display_value = None
-        self._concurent_viewers = None
+        self._concurrent_viewers = None
         self.discriminator = None
 
         if value is not None:
@@ -70,8 +70,8 @@ class RealTimeBreakdownValue(object):
             self.metric_value = metric_value
         if display_value is not None:
             self.display_value = display_value
-        if concurent_viewers is not None:
-            self.concurent_viewers = concurent_viewers
+        if concurrent_viewers is not None:
+            self.concurrent_viewers = concurrent_viewers
 
     @property
     def value(self):
@@ -158,25 +158,25 @@ class RealTimeBreakdownValue(object):
         self._display_value = display_value
 
     @property
-    def concurent_viewers(self):
-        """Gets the concurent_viewers of this RealTimeBreakdownValue.  # noqa: E501
+    def concurrent_viewers(self):
+        """Gets the concurrent_viewers of this RealTimeBreakdownValue.  # noqa: E501
 
 
-        :return: The concurent_viewers of this RealTimeBreakdownValue.  # noqa: E501
+        :return: The concurrent_viewers of this RealTimeBreakdownValue.  # noqa: E501
         :rtype: int
         """
-        return self._concurent_viewers
+        return self._concurrent_viewers
 
-    @concurent_viewers.setter
-    def concurent_viewers(self, concurent_viewers):
-        """Sets the concurent_viewers of this RealTimeBreakdownValue.
+    @concurrent_viewers.setter
+    def concurrent_viewers(self, concurrent_viewers):
+        """Sets the concurrent_viewers of this RealTimeBreakdownValue.
 
 
-        :param concurent_viewers: The concurent_viewers of this RealTimeBreakdownValue.  # noqa: E501
-        :type concurent_viewers: int
+        :param concurrent_viewers: The concurrent_viewers of this RealTimeBreakdownValue.  # noqa: E501
+        :type concurrent_viewers: int
         """
 
-        self._concurent_viewers = concurent_viewers
+        self._concurrent_viewers = concurrent_viewers
 
     def to_dict(self, serialize=False):
         """Returns the model properties as a dict"""

@@ -36,16 +36,16 @@ class RealTimeTimeseriesDatapoint(object):
     openapi_types = {
         'value': 'float',
         'date': 'str',
-        'concurent_viewers': 'int'
+        'concurrent_viewers': 'int'
     }
 
     attribute_map = {
         'value': 'value',
         'date': 'date',
-        'concurent_viewers': 'concurent_viewers'
+        'concurrent_viewers': 'concurrent_viewers'
     }
 
-    def __init__(self, value=None, date=None, concurent_viewers=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, value=None, date=None, concurrent_viewers=None, local_vars_configuration=None):  # noqa: E501
         """RealTimeTimeseriesDatapoint - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
@@ -53,15 +53,15 @@ class RealTimeTimeseriesDatapoint(object):
 
         self._value = None
         self._date = None
-        self._concurent_viewers = None
+        self._concurrent_viewers = None
         self.discriminator = None
 
         if value is not None:
             self.value = value
         if date is not None:
             self.date = date
-        if concurent_viewers is not None:
-            self.concurent_viewers = concurent_viewers
+        if concurrent_viewers is not None:
+            self.concurrent_viewers = concurrent_viewers
 
     @property
     def value(self):
@@ -106,25 +106,25 @@ class RealTimeTimeseriesDatapoint(object):
         self._date = date
 
     @property
-    def concurent_viewers(self):
-        """Gets the concurent_viewers of this RealTimeTimeseriesDatapoint.  # noqa: E501
+    def concurrent_viewers(self):
+        """Gets the concurrent_viewers of this RealTimeTimeseriesDatapoint.  # noqa: E501
 
 
-        :return: The concurent_viewers of this RealTimeTimeseriesDatapoint.  # noqa: E501
+        :return: The concurrent_viewers of this RealTimeTimeseriesDatapoint.  # noqa: E501
         :rtype: int
         """
-        return self._concurent_viewers
+        return self._concurrent_viewers
 
-    @concurent_viewers.setter
-    def concurent_viewers(self, concurent_viewers):
-        """Sets the concurent_viewers of this RealTimeTimeseriesDatapoint.
+    @concurrent_viewers.setter
+    def concurrent_viewers(self, concurrent_viewers):
+        """Sets the concurrent_viewers of this RealTimeTimeseriesDatapoint.
 
 
-        :param concurent_viewers: The concurent_viewers of this RealTimeTimeseriesDatapoint.  # noqa: E501
-        :type concurent_viewers: int
+        :param concurrent_viewers: The concurrent_viewers of this RealTimeTimeseriesDatapoint.  # noqa: E501
+        :type concurrent_viewers: int
         """
 
-        self._concurent_viewers = concurent_viewers
+        self._concurrent_viewers = concurrent_viewers
 
     def to_dict(self, serialize=False):
         """Returns the model properties as a dict"""
