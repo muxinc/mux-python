@@ -1282,6 +1282,150 @@ class LiveStreamsApi(object):
             collection_formats=collection_formats,
             _request_auth=local_var_params.get('_request_auth'))
 
+    def get_live_stream_playback_id(self, live_stream_id, playback_id, **kwargs):  # noqa: E501
+        """Retrieve a live stream playback ID  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.get_live_stream_playback_id(live_stream_id, playback_id, async_req=True)
+        >>> result = thread.get()
+
+        :param live_stream_id: The live stream ID (required)
+        :type live_stream_id: str
+        :param playback_id: The live stream's playback ID. (required)
+        :type playback_id: str
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :type _preload_content: bool, optional
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: Returns the result object.
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :rtype: GetLiveStreamPlaybackIDResponse
+        """
+        kwargs['_return_http_data_only'] = True
+        return self.get_live_stream_playback_id_with_http_info(live_stream_id, playback_id, **kwargs)  # noqa: E501
+
+    def get_live_stream_playback_id_with_http_info(self, live_stream_id, playback_id, **kwargs):  # noqa: E501
+        """Retrieve a live stream playback ID  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.get_live_stream_playback_id_with_http_info(live_stream_id, playback_id, async_req=True)
+        >>> result = thread.get()
+
+        :param live_stream_id: The live stream ID (required)
+        :type live_stream_id: str
+        :param playback_id: The live stream's playback ID. (required)
+        :type playback_id: str
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :type _return_http_data_only: bool, optional
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :type _preload_content: bool, optional
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the authentication
+                              in the spec for a single request.
+        :type _request_auth: dict, optional
+        :return: Returns the result object.
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :rtype: tuple(GetLiveStreamPlaybackIDResponse, status_code(int), headers(HTTPHeaderDict))
+        """
+
+        local_var_params = locals()
+
+        all_params = [
+            'live_stream_id',
+            'playback_id'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout',
+                '_request_auth'
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params['kwargs']):
+            if key not in all_params:
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_live_stream_playback_id" % key
+                )
+            local_var_params[key] = val
+        del local_var_params['kwargs']
+        # verify the required parameter 'live_stream_id' is set
+        if self.api_client.client_side_validation and ('live_stream_id' not in local_var_params or  # noqa: E501
+                                                        local_var_params['live_stream_id'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `live_stream_id` when calling `get_live_stream_playback_id`")  # noqa: E501
+        # verify the required parameter 'playback_id' is set
+        if self.api_client.client_side_validation and ('playback_id' not in local_var_params or  # noqa: E501
+                                                        local_var_params['playback_id'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `playback_id` when calling `get_live_stream_playback_id`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'live_stream_id' in local_var_params:
+            path_params['LIVE_STREAM_ID'] = local_var_params['live_stream_id']  # noqa: E501
+        if 'playback_id' in local_var_params:
+            path_params['PLAYBACK_ID'] = local_var_params['playback_id']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['accessToken']  # noqa: E501
+        
+        response_types_map = {
+            200: "GetLiveStreamPlaybackIDResponse",
+        }
+
+        return self.api_client.call_api(
+            '/video/v1/live-streams/{LIVE_STREAM_ID}/playback-ids/{PLAYBACK_ID}', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_types_map=response_types_map,
+            auth_settings=auth_settings,
+            async_req=local_var_params.get('async_req'),
+            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
+            _preload_content=local_var_params.get('_preload_content', True),
+            _request_timeout=local_var_params.get('_request_timeout'),
+            collection_formats=collection_formats,
+            _request_auth=local_var_params.get('_request_auth'))
+
     def get_live_stream_simulcast_target(self, live_stream_id, simulcast_target_id, **kwargs):  # noqa: E501
         """Retrieve a Live Stream Simulcast Target  # noqa: E501
 

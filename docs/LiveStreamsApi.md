@@ -13,6 +13,7 @@ Method | HTTP request | Description
 [**disable_live_stream**](LiveStreamsApi.md#disable_live_stream) | **PUT** /video/v1/live-streams/{LIVE_STREAM_ID}/disable | Disable a live stream
 [**enable_live_stream**](LiveStreamsApi.md#enable_live_stream) | **PUT** /video/v1/live-streams/{LIVE_STREAM_ID}/enable | Enable a live stream
 [**get_live_stream**](LiveStreamsApi.md#get_live_stream) | **GET** /video/v1/live-streams/{LIVE_STREAM_ID} | Retrieve a live stream
+[**get_live_stream_playback_id**](LiveStreamsApi.md#get_live_stream_playback_id) | **GET** /video/v1/live-streams/{LIVE_STREAM_ID}/playback-ids/{PLAYBACK_ID} | Retrieve a live stream playback ID
 [**get_live_stream_simulcast_target**](LiveStreamsApi.md#get_live_stream_simulcast_target) | **GET** /video/v1/live-streams/{LIVE_STREAM_ID}/simulcast-targets/{SIMULCAST_TARGET_ID} | Retrieve a Live Stream Simulcast Target
 [**list_live_streams**](LiveStreamsApi.md#list_live_streams) | **GET** /video/v1/live-streams | List live streams
 [**reset_stream_key**](LiveStreamsApi.md#reset_stream_key) | **POST** /video/v1/live-streams/{LIVE_STREAM_ID}/reset-stream-key | Reset a live stream’s stream key
@@ -656,6 +657,79 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**LiveStreamResponse**](LiveStreamResponse.md)
+
+### Authorization
+
+[accessToken](../README.md#accessToken)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_live_stream_playback_id**
+> GetLiveStreamPlaybackIDResponse get_live_stream_playback_id(live_stream_id, playback_id)
+
+Retrieve a live stream playback ID
+
+### Example
+
+* Basic Authentication (accessToken):
+```python
+from __future__ import print_function
+import time
+import mux_python
+from mux_python.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.mux.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = mux_python.Configuration(
+    host = "https://api.mux.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: accessToken
+configuration = mux_python.Configuration(
+    username = 'YOUR_USERNAME',
+    password = 'YOUR_PASSWORD'
+)
+
+# Enter a context with an instance of the API client
+with mux_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = mux_python.LiveStreamsApi(api_client)
+    live_stream_id = 'live_stream_id_example' # str | The live stream ID
+playback_id = 'playback_id_example' # str | The live stream's playback ID.
+
+    try:
+        # Retrieve a live stream playback ID
+        api_response = api_instance.get_live_stream_playback_id(live_stream_id, playback_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling LiveStreamsApi->get_live_stream_playback_id: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **live_stream_id** | **str**| The live stream ID | 
+ **playback_id** | **str**| The live stream&#39;s playback ID. | 
+
+### Return type
+
+[**GetLiveStreamPlaybackIDResponse**](GetLiveStreamPlaybackIDResponse.md)
 
 ### Authorization
 

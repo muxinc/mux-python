@@ -39,6 +39,7 @@ docs/GetAssetOrLiveStreamIdResponse.md
 docs/GetAssetOrLiveStreamIdResponseData.md
 docs/GetAssetOrLiveStreamIdResponseDataObject.md
 docs/GetAssetPlaybackIDResponse.md
+docs/GetLiveStreamPlaybackIDResponse.md
 docs/GetMetricTimeseriesDataResponse.md
 docs/GetOverallValuesResponse.md
 docs/GetRealTimeBreakdownResponse.md
@@ -163,6 +164,7 @@ mux_python/models/get_asset_or_live_stream_id_response.py
 mux_python/models/get_asset_or_live_stream_id_response_data.py
 mux_python/models/get_asset_or_live_stream_id_response_data_object.py
 mux_python/models/get_asset_playback_id_response.py
+mux_python/models/get_live_stream_playback_id_response.py
 mux_python/models/get_metric_timeseries_data_response.py
 mux_python/models/get_overall_values_response.py
 mux_python/models/get_real_time_breakdown_response.py
@@ -235,4 +237,5 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
+test/test_get_live_stream_playback_id_response.py
 tox.ini

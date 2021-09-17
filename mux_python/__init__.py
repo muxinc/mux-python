@@ -15,7 +15,7 @@
 
 from __future__ import absolute_import
 
-__version__ = "2.1.1"
+__version__ = "2.2.0"
 
 # import apis into sdk package
 from mux_python.api.assets_api import AssetsApi
@@ -74,6 +74,7 @@ from mux_python.models.get_asset_or_live_stream_id_response import GetAssetOrLiv
 from mux_python.models.get_asset_or_live_stream_id_response_data import GetAssetOrLiveStreamIdResponseData
 from mux_python.models.get_asset_or_live_stream_id_response_data_object import GetAssetOrLiveStreamIdResponseDataObject
 from mux_python.models.get_asset_playback_id_response import GetAssetPlaybackIDResponse
+from mux_python.models.get_live_stream_playback_id_response import GetLiveStreamPlaybackIDResponse
 from mux_python.models.get_metric_timeseries_data_response import GetMetricTimeseriesDataResponse
 from mux_python.models.get_overall_values_response import GetOverallValuesResponse
 from mux_python.models.get_real_time_breakdown_response import GetRealTimeBreakdownResponse
