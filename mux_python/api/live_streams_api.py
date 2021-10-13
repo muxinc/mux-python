@@ -1830,7 +1830,7 @@ class LiveStreamsApi(object):
         auth_settings = ['accessToken']  # noqa: E501
         
         response_types_map = {
-            201: "LiveStreamResponse",
+            200: "LiveStreamResponse",
         }
 
         return self.api_client.call_api(

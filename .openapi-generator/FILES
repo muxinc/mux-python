@@ -241,6 +241,4 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_live_stream_embedded_subtitle_settings.py
-test/test_update_live_stream_embedded_subtitles_request.py
 tox.ini

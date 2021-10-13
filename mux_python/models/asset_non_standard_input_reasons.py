@@ -39,6 +39,7 @@ class AssetNonStandardInputReasons(object):
         'video_gop_size': 'str',
         'video_frame_rate': 'str',
         'video_resolution': 'str',
+        'video_bitrate': 'str',
         'pixel_aspect_ratio': 'str',
         'video_edit_list': 'str',
         'audio_edit_list': 'str',
@@ -51,13 +52,14 @@ class AssetNonStandardInputReasons(object):
         'video_gop_size': 'video_gop_size',
         'video_frame_rate': 'video_frame_rate',
         'video_resolution': 'video_resolution',
+        'video_bitrate': 'video_bitrate',
         'pixel_aspect_ratio': 'pixel_aspect_ratio',
         'video_edit_list': 'video_edit_list',
         'audio_edit_list': 'audio_edit_list',
         'unexpected_media_file_parameters': 'unexpected_media_file_parameters'
     }
 
-    def __init__(self, video_codec=None, audio_codec=None, video_gop_size=None, video_frame_rate=None, video_resolution=None, pixel_aspect_ratio=None, video_edit_list=None, audio_edit_list=None, unexpected_media_file_parameters=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, video_codec=None, audio_codec=None, video_gop_size=None, video_frame_rate=None, video_resolution=None, video_bitrate=None, pixel_aspect_ratio=None, video_edit_list=None, audio_edit_list=None, unexpected_media_file_parameters=None, local_vars_configuration=None):  # noqa: E501
         """AssetNonStandardInputReasons - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
@@ -68,6 +70,7 @@ class AssetNonStandardInputReasons(object):
         self._video_gop_size = None
         self._video_frame_rate = None
         self._video_resolution = None
+        self._video_bitrate = None
         self._pixel_aspect_ratio = None
         self._video_edit_list = None
         self._audio_edit_list = None
@@ -84,6 +87,8 @@ class AssetNonStandardInputReasons(object):
             self.video_frame_rate = video_frame_rate
         if video_resolution is not None:
             self.video_resolution = video_resolution
+        if video_bitrate is not None:
+            self.video_bitrate = video_bitrate
         if pixel_aspect_ratio is not None:
             self.pixel_aspect_ratio = pixel_aspect_ratio
         if video_edit_list is not None:
@@ -213,6 +218,35 @@ class AssetNonStandardInputReasons(object):
         """
 
         self._video_resolution = video_resolution
+
+    @property
+    def video_bitrate(self):
+        """Gets the video_bitrate of this AssetNonStandardInputReasons.  # noqa: E501
+
+        The video bitrate of the input file is `high`. This parameter is present when the average bitrate of any key frame interval (also known as Group of Pictures or GOP) is higher than what's considered standard which typically is 16 Mbps.  # noqa: E501
+
+        :return: The video_bitrate of this AssetNonStandardInputReasons.  # noqa: E501
+        :rtype: str
+        """
+        return self._video_bitrate
+
+    @video_bitrate.setter
+    def video_bitrate(self, video_bitrate):
+        """Sets the video_bitrate of this AssetNonStandardInputReasons.
+
+        The video bitrate of the input file is `high`. This parameter is present when the average bitrate of any key frame interval (also known as Group of Pictures or GOP) is higher than what's considered standard which typically is 16 Mbps.  # noqa: E501
+
+        :param video_bitrate: The video_bitrate of this AssetNonStandardInputReasons.  # noqa: E501
+        :type video_bitrate: str
+        """
+        allowed_values = ["high"]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and video_bitrate not in allowed_values:  # noqa: E501
+            raise ValueError(
+                "Invalid value for `video_bitrate` ({0}), must be one of {1}"  # noqa: E501
+                .format(video_bitrate, allowed_values)
+            )
+
+        self._video_bitrate = video_bitrate
 
     @property
     def pixel_aspect_ratio(self):
