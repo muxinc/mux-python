@@ -87,6 +87,7 @@ from mux_python.models.list_uploads_response import ListUploadsResponse
 from mux_python.models.list_video_view_exports_response import ListVideoViewExportsResponse
 from mux_python.models.list_video_views_response import ListVideoViewsResponse
 from mux_python.models.live_stream import LiveStream
+from mux_python.models.live_stream_embedded_subtitle_settings import LiveStreamEmbeddedSubtitleSettings
 from mux_python.models.live_stream_response import LiveStreamResponse
 from mux_python.models.metric import Metric
 from mux_python.models.notification_rule import NotificationRule
@@ -107,6 +108,7 @@ from mux_python.models.simulcast_target_response import SimulcastTargetResponse
 from mux_python.models.track import Track
 from mux_python.models.update_asset_mp4_support_request import UpdateAssetMP4SupportRequest
 from mux_python.models.update_asset_master_access_request import UpdateAssetMasterAccessRequest
+from mux_python.models.update_live_stream_embedded_subtitles_request import UpdateLiveStreamEmbeddedSubtitlesRequest
 from mux_python.models.upload import Upload
 from mux_python.models.upload_error import UploadError
 from mux_python.models.upload_response import UploadResponse

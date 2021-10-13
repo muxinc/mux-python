@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 Lists values for a specific filter
 
-Deprecated: The API has been replaced by the list-dimension-values API call.  Lists the values for a filter along with a total count of related views. 
+The API has been replaced by the list-dimension-values API call.  Lists the values for a filter along with a total count of related views. 
 
 ### Example
 
@@ -94,7 +94,7 @@ Name | Type | Description  | Notes
 
 List Filters
 
-Deprecated: The API has been replaced by the list-dimensions API call.  Lists all the filters broken out into basic and advanced. 
+The API has been replaced by the list-dimensions API call.  Lists all the filters broken out into basic and advanced. 
 
 ### Example
 

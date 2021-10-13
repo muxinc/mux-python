@@ -39,6 +39,7 @@ class CreateLiveStreamRequest(object):
         'reconnect_window': 'float',
         'passthrough': 'str',
         'audio_only': 'bool',
+        'embedded_subtitles': 'list[LiveStreamEmbeddedSubtitleSettings]',
         'reduced_latency': 'bool',
         'low_latency': 'bool',
         'test': 'bool',
@@ -51,13 +52,14 @@ class CreateLiveStreamRequest(object):
         'reconnect_window': 'reconnect_window',
         'passthrough': 'passthrough',
         'audio_only': 'audio_only',
+        'embedded_subtitles': 'embedded_subtitles',
         'reduced_latency': 'reduced_latency',
         'low_latency': 'low_latency',
         'test': 'test',
         'simulcast_targets': 'simulcast_targets'
     }
 
-    def __init__(self, playback_policy=None, new_asset_settings=None, reconnect_window=None, passthrough=None, audio_only=None, reduced_latency=None, low_latency=None, test=None, simulcast_targets=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, playback_policy=None, new_asset_settings=None, reconnect_window=None, passthrough=None, audio_only=None, embedded_subtitles=None, reduced_latency=None, low_latency=None, test=None, simulcast_targets=None, local_vars_configuration=None):  # noqa: E501
         """CreateLiveStreamRequest - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
@@ -68,6 +70,7 @@ class CreateLiveStreamRequest(object):
         self._reconnect_window = None
         self._passthrough = None
         self._audio_only = None
+        self._embedded_subtitles = None
         self._reduced_latency = None
         self._low_latency = None
         self._test = None
@@ -84,6 +87,8 @@ class CreateLiveStreamRequest(object):
             self.passthrough = passthrough
         if audio_only is not None:
             self.audio_only = audio_only
+        if embedded_subtitles is not None:
+            self.embedded_subtitles = embedded_subtitles
         if reduced_latency is not None:
             self.reduced_latency = reduced_latency
         if low_latency is not None:
@@ -207,6 +212,29 @@ class CreateLiveStreamRequest(object):
         """
 
         self._audio_only = audio_only
+
+    @property
+    def embedded_subtitles(self):
+        """Gets the embedded_subtitles of this CreateLiveStreamRequest.  # noqa: E501
+
+        Describe the subtitle contents of the incoming live stream.  # noqa: E501
+
+        :return: The embedded_subtitles of this CreateLiveStreamRequest.  # noqa: E501
+        :rtype: list[LiveStreamEmbeddedSubtitleSettings]
+        """
+        return self._embedded_subtitles
+
+    @embedded_subtitles.setter
+    def embedded_subtitles(self, embedded_subtitles):
+        """Sets the embedded_subtitles of this CreateLiveStreamRequest.
+
+        Describe the subtitle contents of the incoming live stream.  # noqa: E501
+
+        :param embedded_subtitles: The embedded_subtitles of this CreateLiveStreamRequest.  # noqa: E501
+        :type embedded_subtitles: list[LiveStreamEmbeddedSubtitleSettings]
+        """
+
+        self._embedded_subtitles = embedded_subtitles
 
     @property
     def reduced_latency(self):

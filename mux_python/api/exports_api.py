@@ -40,7 +40,7 @@ class ExportsApi(object):
     def list_exports(self, **kwargs):  # noqa: E501
         """List property video view export links  # noqa: E501
 
-        Deprecated: The API has been replaced by the list-exports-views API call.  Lists the available video view exports along with URLs to retrieve them.   # noqa: E501
+        The API has been replaced by the list-exports-views API call.  Lists the available video view exports along with URLs to retrieve them.   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -68,7 +68,7 @@ class ExportsApi(object):
     def list_exports_with_http_info(self, **kwargs):  # noqa: E501
         """List property video view export links  # noqa: E501
 
-        Deprecated: The API has been replaced by the list-exports-views API call.  Lists the available video view exports along with URLs to retrieve them.   # noqa: E501
+        The API has been replaced by the list-exports-views API call.  Lists the available video view exports along with URLs to retrieve them.   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 

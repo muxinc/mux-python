@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 List property video view export links
 
-Deprecated: The API has been replaced by the list-exports-views API call.  Lists the available video view exports along with URLs to retrieve them. 
+The API has been replaced by the list-exports-views API call.  Lists the available video view exports along with URLs to retrieve them. 
 
 ### Example
 

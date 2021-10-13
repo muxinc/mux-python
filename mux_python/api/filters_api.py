@@ -40,7 +40,7 @@ class FiltersApi(object):
     def list_filter_values(self, filter_id, **kwargs):  # noqa: E501
         """Lists values for a specific filter  # noqa: E501
 
-        Deprecated: The API has been replaced by the list-dimension-values API call.  Lists the values for a filter along with a total count of related views.   # noqa: E501
+        The API has been replaced by the list-dimension-values API call.  Lists the values for a filter along with a total count of related views.   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -78,7 +78,7 @@ class FiltersApi(object):
     def list_filter_values_with_http_info(self, filter_id, **kwargs):  # noqa: E501
         """Lists values for a specific filter  # noqa: E501
 
-        Deprecated: The API has been replaced by the list-dimension-values API call.  Lists the values for a filter along with a total count of related views.   # noqa: E501
+        The API has been replaced by the list-dimension-values API call.  Lists the values for a filter along with a total count of related views.   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -205,7 +205,7 @@ class FiltersApi(object):
     def list_filters(self, **kwargs):  # noqa: E501
         """List Filters  # noqa: E501
 
-        Deprecated: The API has been replaced by the list-dimensions API call.  Lists all the filters broken out into basic and advanced.   # noqa: E501
+        The API has been replaced by the list-dimensions API call.  Lists all the filters broken out into basic and advanced.   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -233,7 +233,7 @@ class FiltersApi(object):
     def list_filters_with_http_info(self, **kwargs):  # noqa: E501
         """List Filters  # noqa: E501
 
-        Deprecated: The API has been replaced by the list-dimensions API call.  Lists all the filters broken out into basic and advanced.   # noqa: E501
+        The API has been replaced by the list-dimensions API call.  Lists all the filters broken out into basic and advanced.   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
