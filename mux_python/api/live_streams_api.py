@@ -1988,7 +1988,7 @@ class LiveStreamsApi(object):
     def update_live_stream_embedded_subtitles(self, live_stream_id, update_live_stream_embedded_subtitles_request, **kwargs):  # noqa: E501
         """Update a live stream's embedded subtitles  # noqa: E501
 
-        Configures a live stream to receive embedded subtitles including captions and translations.  # noqa: E501
+        Configures a live stream to receive embedded closed captions. The resulting Asset's subtitle text track will have `closed_captions: true` set.   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -2020,7 +2020,7 @@ class LiveStreamsApi(object):
     def update_live_stream_embedded_subtitles_with_http_info(self, live_stream_id, update_live_stream_embedded_subtitles_request, **kwargs):  # noqa: E501
         """Update a live stream's embedded subtitles  # noqa: E501
 
-        Configures a live stream to receive embedded subtitles including captions and translations.  # noqa: E501
+        Configures a live stream to receive embedded closed captions. The resulting Asset's subtitle text track will have `closed_captions: true` set.   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 

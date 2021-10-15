@@ -217,7 +217,7 @@ class CreateLiveStreamRequest(object):
     def embedded_subtitles(self):
         """Gets the embedded_subtitles of this CreateLiveStreamRequest.  # noqa: E501
 
-        Describe the subtitle contents of the incoming live stream.  # noqa: E501
+        Describe the embedded closed caption contents of the incoming live stream.  # noqa: E501
 
         :return: The embedded_subtitles of this CreateLiveStreamRequest.  # noqa: E501
         :rtype: list[LiveStreamEmbeddedSubtitleSettings]
@@ -228,7 +228,7 @@ class CreateLiveStreamRequest(object):
     def embedded_subtitles(self, embedded_subtitles):
         """Sets the embedded_subtitles of this CreateLiveStreamRequest.
 
-        Describe the subtitle contents of the incoming live stream.  # noqa: E501
+        Describe the embedded closed caption contents of the incoming live stream.  # noqa: E501
 
         :param embedded_subtitles: The embedded_subtitles of this CreateLiveStreamRequest.  # noqa: E501
         :type embedded_subtitles: list[LiveStreamEmbeddedSubtitleSettings]

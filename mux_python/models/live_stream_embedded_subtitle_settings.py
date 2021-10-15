@@ -72,7 +72,7 @@ class LiveStreamEmbeddedSubtitleSettings(object):
     def name(self):
         """Gets the name of this LiveStreamEmbeddedSubtitleSettings.  # noqa: E501
 
-        A name for this live stream subtitle track.  # noqa: E501
+        A name for this live stream closed caption track.  # noqa: E501
 
         :return: The name of this LiveStreamEmbeddedSubtitleSettings.  # noqa: E501
         :rtype: str
@@ -83,7 +83,7 @@ class LiveStreamEmbeddedSubtitleSettings(object):
     def name(self, name):
         """Sets the name of this LiveStreamEmbeddedSubtitleSettings.
 
-        A name for this live stream subtitle track.  # noqa: E501
+        A name for this live stream closed caption track.  # noqa: E501
 
         :param name: The name of this LiveStreamEmbeddedSubtitleSettings.  # noqa: E501
         :type name: str
@@ -95,7 +95,7 @@ class LiveStreamEmbeddedSubtitleSettings(object):
     def passthrough(self):
         """Gets the passthrough of this LiveStreamEmbeddedSubtitleSettings.  # noqa: E501
 
-        Arbitrary metadata set for the live stream subtitle track. Max 255 characters.  # noqa: E501
+        Arbitrary metadata set for the live stream closed caption track. Max 255 characters.  # noqa: E501
 
         :return: The passthrough of this LiveStreamEmbeddedSubtitleSettings.  # noqa: E501
         :rtype: str
@@ -106,7 +106,7 @@ class LiveStreamEmbeddedSubtitleSettings(object):
     def passthrough(self, passthrough):
         """Sets the passthrough of this LiveStreamEmbeddedSubtitleSettings.
 
-        Arbitrary metadata set for the live stream subtitle track. Max 255 characters.  # noqa: E501
+        Arbitrary metadata set for the live stream closed caption track. Max 255 characters.  # noqa: E501
 
         :param passthrough: The passthrough of this LiveStreamEmbeddedSubtitleSettings.  # noqa: E501
         :type passthrough: str
@@ -118,7 +118,7 @@ class LiveStreamEmbeddedSubtitleSettings(object):
     def language_code(self):
         """Gets the language_code of this LiveStreamEmbeddedSubtitleSettings.  # noqa: E501
 
-        The language of the subtitle stream. Value must be BCP 47 compliant.  # noqa: E501
+        The language of the closed caption stream. Value must be BCP 47 compliant.  # noqa: E501
 
         :return: The language_code of this LiveStreamEmbeddedSubtitleSettings.  # noqa: E501
         :rtype: str
@@ -129,7 +129,7 @@ class LiveStreamEmbeddedSubtitleSettings(object):
     def language_code(self, language_code):
         """Sets the language_code of this LiveStreamEmbeddedSubtitleSettings.
 
-        The language of the subtitle stream. Value must be BCP 47 compliant.  # noqa: E501
+        The language of the closed caption stream. Value must be BCP 47 compliant.  # noqa: E501
 
         :param language_code: The language_code of this LiveStreamEmbeddedSubtitleSettings.  # noqa: E501
         :type language_code: str
