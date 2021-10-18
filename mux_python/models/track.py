@@ -300,12 +300,6 @@ class Track(object):
         :param max_channel_layout: The max_channel_layout of this Track.  # noqa: E501
         :type max_channel_layout: str
         """
-        allowed_values = ["mono", "stereo", "5.2", "7.1"]  # noqa: E501
-        if self.local_vars_configuration.client_side_validation and max_channel_layout not in allowed_values:  # noqa: E501
-            raise ValueError(
-                "Invalid value for `max_channel_layout` ({0}), must be one of {1}"  # noqa: E501
-                .format(max_channel_layout, allowed_values)
-            )
 
         self._max_channel_layout = max_channel_layout
 
