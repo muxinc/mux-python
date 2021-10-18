@@ -120,6 +120,7 @@ assert len(asset_with_2_captions.data.tracks) == 4 # Audio, Video, French that w
 print("create-asset-track OK ✅")
 
 # ========== delete-asset-track ==========
+time.sleep(5)
 assets_api.delete_asset_track(create_asset_response.data.id, caption_track.data.id)
 asset_no_captions = assets_api.get_asset(create_asset_response.data.id)
 assert len(asset_no_captions.data.tracks) == 3 # Audio, Video, French that we ingested with the asset

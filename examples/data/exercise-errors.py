@@ -22,5 +22,4 @@ list_errors_response = errors_api.list_errors(filters=['browser:Safari'], timefr
 logger.print_debug('List Errors Response: ' + str(list_errors_response))
 assert list_errors_response != None
 assert list_errors_response.data != None
-assert list_errors_response.data[0].id != None
 print("list-errors OK ✅")
