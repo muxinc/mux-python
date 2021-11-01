@@ -57,7 +57,7 @@ class MetricsApi(object):
         :type measurement: str
         :param order_direction: Sort order.
         :type order_direction: str
-        :param group_by: Time granularity to group results by. If this value is omitted, a default granularity is chosen based on the supplied timeframe.
+        :param group_by: Time granularity to group results by. If this value is omitted, a default granularity is chosen based on the timeframe. For timeframes of 6 hours or less, the default granularity is `ten_minutes`. Between 6 hours and 15 hours inclusive, the default granularity is `hour`. The granularity of timeframes that exceed 15 hours is `day`. This default behaviour is subject to change; it is strongly suggested that you explicitly specify the granularity. 
         :type group_by: str
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
@@ -97,7 +97,7 @@ class MetricsApi(object):
         :type measurement: str
         :param order_direction: Sort order.
         :type order_direction: str
-        :param group_by: Time granularity to group results by. If this value is omitted, a default granularity is chosen based on the supplied timeframe.
+        :param group_by: Time granularity to group results by. If this value is omitted, a default granularity is chosen based on the timeframe. For timeframes of 6 hours or less, the default granularity is `ten_minutes`. Between 6 hours and 15 hours inclusive, the default granularity is `hour`. The granularity of timeframes that exceed 15 hours is `day`. This default behaviour is subject to change; it is strongly suggested that you explicitly specify the granularity. 
         :type group_by: str
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
