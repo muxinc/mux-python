@@ -15,7 +15,7 @@
 
 from __future__ import absolute_import
 
-__version__ = "3.0.0"
+__version__ = "3.2.0"
 
 # import apis into sdk package
 from mux_python.api.assets_api import AssetsApi
@@ -29,6 +29,7 @@ from mux_python.api.incidents_api import IncidentsApi
 from mux_python.api.live_streams_api import LiveStreamsApi
 from mux_python.api.metrics_api import MetricsApi
 from mux_python.api.playback_id_api import PlaybackIDApi
+from mux_python.api.playback_restrictions_api import PlaybackRestrictionsApi
 from mux_python.api.real_time_api import RealTimeApi
 from mux_python.api.url_signing_keys_api import URLSigningKeysApi
 from mux_python.api.video_views_api import VideoViewsApi
@@ -57,6 +58,7 @@ from mux_python.models.create_asset_request import CreateAssetRequest
 from mux_python.models.create_live_stream_request import CreateLiveStreamRequest
 from mux_python.models.create_playback_id_request import CreatePlaybackIDRequest
 from mux_python.models.create_playback_id_response import CreatePlaybackIDResponse
+from mux_python.models.create_playback_restriction_request import CreatePlaybackRestrictionRequest
 from mux_python.models.create_simulcast_target_request import CreateSimulcastTargetRequest
 from mux_python.models.create_track_request import CreateTrackRequest
 from mux_python.models.create_track_response import CreateTrackResponse
@@ -122,11 +124,14 @@ from mux_python.models.notification_rule import NotificationRule
 from mux_python.models.overall_values import OverallValues
 from mux_python.models.playback_id import PlaybackID
 from mux_python.models.playback_policy import PlaybackPolicy
+from mux_python.models.playback_restriction import PlaybackRestriction
+from mux_python.models.playback_restriction_response import PlaybackRestrictionResponse
 from mux_python.models.real_time_breakdown_value import RealTimeBreakdownValue
 from mux_python.models.real_time_histogram_timeseries_bucket import RealTimeHistogramTimeseriesBucket
 from mux_python.models.real_time_histogram_timeseries_bucket_values import RealTimeHistogramTimeseriesBucketValues
 from mux_python.models.real_time_histogram_timeseries_datapoint import RealTimeHistogramTimeseriesDatapoint
 from mux_python.models.real_time_timeseries_datapoint import RealTimeTimeseriesDatapoint
+from mux_python.models.referrer_domain_restriction import ReferrerDomainRestriction
 from mux_python.models.score import Score
 from mux_python.models.signal_live_stream_complete_response import SignalLiveStreamCompleteResponse
 from mux_python.models.signing_key import SigningKey
@@ -136,7 +141,10 @@ from mux_python.models.simulcast_target_response import SimulcastTargetResponse
 from mux_python.models.track import Track
 from mux_python.models.update_asset_mp4_support_request import UpdateAssetMP4SupportRequest
 from mux_python.models.update_asset_master_access_request import UpdateAssetMasterAccessRequest
+from mux_python.models.update_asset_request import UpdateAssetRequest
 from mux_python.models.update_live_stream_embedded_subtitles_request import UpdateLiveStreamEmbeddedSubtitlesRequest
+from mux_python.models.update_live_stream_request import UpdateLiveStreamRequest
+from mux_python.models.update_referrer_domain_restriction_request import UpdateReferrerDomainRestrictionRequest
 from mux_python.models.upload import Upload
 from mux_python.models.upload_error import UploadError
 from mux_python.models.upload_response import UploadResponse

@@ -44,10 +44,12 @@ class LiveStream(object):
         'new_asset_settings': 'CreateAssetRequest',
         'passthrough': 'str',
         'audio_only': 'bool',
+        'embedded_subtitles': 'list[LiveStreamEmbeddedSubtitleSettings]',
         'reconnect_window': 'float',
         'reduced_latency': 'bool',
         'low_latency': 'bool',
         'simulcast_targets': 'list[SimulcastTarget]',
+        'latency_mode': 'str',
         'test': 'bool'
     }
 
@@ -62,14 +64,16 @@ class LiveStream(object):
         'new_asset_settings': 'new_asset_settings',
         'passthrough': 'passthrough',
         'audio_only': 'audio_only',
+        'embedded_subtitles': 'embedded_subtitles',
         'reconnect_window': 'reconnect_window',
         'reduced_latency': 'reduced_latency',
         'low_latency': 'low_latency',
         'simulcast_targets': 'simulcast_targets',
+        'latency_mode': 'latency_mode',
         'test': 'test'
     }
 
-    def __init__(self, id=None, created_at=None, stream_key=None, active_asset_id=None, recent_asset_ids=None, status=None, playback_ids=None, new_asset_settings=None, passthrough=None, audio_only=None, reconnect_window=60, reduced_latency=None, low_latency=None, simulcast_targets=None, test=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, id=None, created_at=None, stream_key=None, active_asset_id=None, recent_asset_ids=None, status=None, playback_ids=None, new_asset_settings=None, passthrough=None, audio_only=None, embedded_subtitles=None, reconnect_window=60, reduced_latency=None, low_latency=None, simulcast_targets=None, latency_mode=None, test=None, local_vars_configuration=None):  # noqa: E501
         """LiveStream - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
@@ -85,10 +89,12 @@ class LiveStream(object):
         self._new_asset_settings = None
         self._passthrough = None
         self._audio_only = None
+        self._embedded_subtitles = None
         self._reconnect_window = None
         self._reduced_latency = None
         self._low_latency = None
         self._simulcast_targets = None
+        self._latency_mode = None
         self._test = None
         self.discriminator = None
 
@@ -112,6 +118,8 @@ class LiveStream(object):
             self.passthrough = passthrough
         if audio_only is not None:
             self.audio_only = audio_only
+        if embedded_subtitles is not None:
+            self.embedded_subtitles = embedded_subtitles
         if reconnect_window is not None:
             self.reconnect_window = reconnect_window
         if reduced_latency is not None:
@@ -120,6 +128,8 @@ class LiveStream(object):
             self.low_latency = low_latency
         if simulcast_targets is not None:
             self.simulcast_targets = simulcast_targets
+        if latency_mode is not None:
+            self.latency_mode = latency_mode
         if test is not None:
             self.test = test
 
@@ -315,7 +325,7 @@ class LiveStream(object):
     def passthrough(self):
         """Gets the passthrough of this LiveStream.  # noqa: E501
 
-        Arbitrary metadata set for the asset. Max 255 characters.  # noqa: E501
+        Arbitrary user-supplied metadata set for the asset. Max 255 characters.  # noqa: E501
 
         :return: The passthrough of this LiveStream.  # noqa: E501
         :rtype: str
@@ -326,7 +336,7 @@ class LiveStream(object):
     def passthrough(self, passthrough):
         """Sets the passthrough of this LiveStream.
 
-        Arbitrary metadata set for the asset. Max 255 characters.  # noqa: E501
+        Arbitrary user-supplied metadata set for the asset. Max 255 characters.  # noqa: E501
 
         :param passthrough: The passthrough of this LiveStream.  # noqa: E501
         :type passthrough: str
@@ -358,6 +368,29 @@ class LiveStream(object):
         self._audio_only = audio_only
 
     @property
+    def embedded_subtitles(self):
+        """Gets the embedded_subtitles of this LiveStream.  # noqa: E501
+
+        Describes the embedded closed caption configuration of the incoming live stream.  # noqa: E501
+
+        :return: The embedded_subtitles of this LiveStream.  # noqa: E501
+        :rtype: list[LiveStreamEmbeddedSubtitleSettings]
+        """
+        return self._embedded_subtitles
+
+    @embedded_subtitles.setter
+    def embedded_subtitles(self, embedded_subtitles):
+        """Sets the embedded_subtitles of this LiveStream.
+
+        Describes the embedded closed caption configuration of the incoming live stream.  # noqa: E501
+
+        :param embedded_subtitles: The embedded_subtitles of this LiveStream.  # noqa: E501
+        :type embedded_subtitles: list[LiveStreamEmbeddedSubtitleSettings]
+        """
+
+        self._embedded_subtitles = embedded_subtitles
+
+    @property
     def reconnect_window(self):
         """Gets the reconnect_window of this LiveStream.  # noqa: E501
 
@@ -384,7 +417,7 @@ class LiveStream(object):
     def reduced_latency(self):
         """Gets the reduced_latency of this LiveStream.  # noqa: E501
 
-        Latency is the time from when the streamer does something in real life to when you see it happen in the player. Set this if you want lower latency for your live stream. **Note**: Reconnect windows are incompatible with Reduced Latency and will always be set to zero (0) seconds. See the [Reduce live stream latency guide](https://docs.mux.com/guides/video/reduce-live-stream-latency) to understand the tradeoffs.  # noqa: E501
+        This field is deprecated. Please use latency_mode instead. Latency is the time from when the streamer transmits a frame of video to when you see it in the player. Set this if you want lower latency for your live stream. **Note**: Reconnect windows are incompatible with Reduced Latency and will always be set to zero (0) seconds. See the [Reduce live stream latency guide](https://docs.mux.com/guides/video/reduce-live-stream-latency) to understand the tradeoffs.  # noqa: E501
 
         :return: The reduced_latency of this LiveStream.  # noqa: E501
         :rtype: bool
@@ -395,7 +428,7 @@ class LiveStream(object):
     def reduced_latency(self, reduced_latency):
         """Sets the reduced_latency of this LiveStream.
 
-        Latency is the time from when the streamer does something in real life to when you see it happen in the player. Set this if you want lower latency for your live stream. **Note**: Reconnect windows are incompatible with Reduced Latency and will always be set to zero (0) seconds. See the [Reduce live stream latency guide](https://docs.mux.com/guides/video/reduce-live-stream-latency) to understand the tradeoffs.  # noqa: E501
+        This field is deprecated. Please use latency_mode instead. Latency is the time from when the streamer transmits a frame of video to when you see it in the player. Set this if you want lower latency for your live stream. **Note**: Reconnect windows are incompatible with Reduced Latency and will always be set to zero (0) seconds. See the [Reduce live stream latency guide](https://docs.mux.com/guides/video/reduce-live-stream-latency) to understand the tradeoffs.  # noqa: E501
 
         :param reduced_latency: The reduced_latency of this LiveStream.  # noqa: E501
         :type reduced_latency: bool
@@ -407,7 +440,7 @@ class LiveStream(object):
     def low_latency(self):
         """Gets the low_latency of this LiveStream.  # noqa: E501
 
-        Latency is the time from when the streamer does something in real life to when you see it happen in the player. Setting this option will enable compatibility with the LL-HLS specification for low-latency streaming. This typically has lower latency than Reduced Latency streams, and cannot be combined with Reduced Latency. Note: Reconnect windows are incompatible with Low Latency and will always be set to zero (0) seconds.  # noqa: E501
+        This field is deprecated. Please use latency_mode instead. Latency is the time from when the streamer transmits a frame of video to when you see it in the player. Setting this option will enable compatibility with the LL-HLS specification for low-latency streaming. This typically has lower latency than Reduced Latency streams, and cannot be combined with Reduced Latency. Note: Reconnect windows are incompatible with Low Latency and will always be set to zero (0) seconds.  # noqa: E501
 
         :return: The low_latency of this LiveStream.  # noqa: E501
         :rtype: bool
@@ -418,7 +451,7 @@ class LiveStream(object):
     def low_latency(self, low_latency):
         """Sets the low_latency of this LiveStream.
 
-        Latency is the time from when the streamer does something in real life to when you see it happen in the player. Setting this option will enable compatibility with the LL-HLS specification for low-latency streaming. This typically has lower latency than Reduced Latency streams, and cannot be combined with Reduced Latency. Note: Reconnect windows are incompatible with Low Latency and will always be set to zero (0) seconds.  # noqa: E501
+        This field is deprecated. Please use latency_mode instead. Latency is the time from when the streamer transmits a frame of video to when you see it in the player. Setting this option will enable compatibility with the LL-HLS specification for low-latency streaming. This typically has lower latency than Reduced Latency streams, and cannot be combined with Reduced Latency. Note: Reconnect windows are incompatible with Low Latency and will always be set to zero (0) seconds.  # noqa: E501
 
         :param low_latency: The low_latency of this LiveStream.  # noqa: E501
         :type low_latency: bool
@@ -448,6 +481,35 @@ class LiveStream(object):
         """
 
         self._simulcast_targets = simulcast_targets
+
+    @property
+    def latency_mode(self):
+        """Gets the latency_mode of this LiveStream.  # noqa: E501
+
+        Latency is the time from when the streamer transmits a frame of video to when you see it in the player. Set this as an alternative to setting low latency or reduced latency flags. The Low Latency value is a beta feature. Note: Reconnect windows are incompatible with Reduced Latency and Low Latency and will always be set to zero (0) seconds. Read more here: https://mux.com/blog/introducing-low-latency-live-streaming/  # noqa: E501
+
+        :return: The latency_mode of this LiveStream.  # noqa: E501
+        :rtype: str
+        """
+        return self._latency_mode
+
+    @latency_mode.setter
+    def latency_mode(self, latency_mode):
+        """Sets the latency_mode of this LiveStream.
+
+        Latency is the time from when the streamer transmits a frame of video to when you see it in the player. Set this as an alternative to setting low latency or reduced latency flags. The Low Latency value is a beta feature. Note: Reconnect windows are incompatible with Reduced Latency and Low Latency and will always be set to zero (0) seconds. Read more here: https://mux.com/blog/introducing-low-latency-live-streaming/  # noqa: E501
+
+        :param latency_mode: The latency_mode of this LiveStream.  # noqa: E501
+        :type latency_mode: str
+        """
+        allowed_values = ["low", "reduced", "standard"]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and latency_mode not in allowed_values:  # noqa: E501
+            raise ValueError(
+                "Invalid value for `latency_mode` ({0}), must be one of {1}"  # noqa: E501
+                .format(latency_mode, allowed_values)
+            )
+
+        self._latency_mode = latency_mode
 
     @property
     def test(self):

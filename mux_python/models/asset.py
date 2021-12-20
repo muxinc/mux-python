@@ -479,7 +479,7 @@ class Asset(object):
     def passthrough(self):
         """Gets the passthrough of this Asset.  # noqa: E501
 
-        Arbitrary metadata set for the asset. Max 255 characters.  # noqa: E501
+        Arbitrary user-supplied metadata set for the asset. Max 255 characters.  # noqa: E501
 
         :return: The passthrough of this Asset.  # noqa: E501
         :rtype: str
@@ -490,7 +490,7 @@ class Asset(object):
     def passthrough(self, passthrough):
         """Sets the passthrough of this Asset.
 
-        Arbitrary metadata set for the asset. Max 255 characters.  # noqa: E501
+        Arbitrary user-supplied metadata set for the asset. Max 255 characters.  # noqa: E501
 
         :param passthrough: The passthrough of this Asset.  # noqa: E501
         :type passthrough: str

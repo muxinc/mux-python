@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **list_delivery_usage**
-> ListDeliveryUsageResponse list_delivery_usage(page=page, limit=limit, asset_id=asset_id, timeframe=timeframe)
+> ListDeliveryUsageResponse list_delivery_usage(page=page, limit=limit, asset_id=asset_id, live_stream_id=live_stream_id, timeframe=timeframe)
 
 List Usage
 
@@ -46,12 +46,13 @@ with mux_python.ApiClient(configuration) as api_client:
     api_instance = mux_python.DeliveryUsageApi(api_client)
     page = 1 # int | Offset by this many pages, of the size of `limit` (optional) (default to 1)
 limit = 100 # int | Number of items to include in the response (optional) (default to 100)
-asset_id = 'asset_id_example' # str | Filter response to return delivery usage for this asset only. (optional)
+asset_id = 'asset_id_example' # str | Filter response to return delivery usage for this asset only. You cannot specify both the `asset_id` and `live_stream_id` parameters together. (optional)
+live_stream_id = 'live_stream_id_example' # str | Filter response to return delivery usage for assets for this live stream. You cannot specify both the `asset_id` and `live_stream_id` parameters together. (optional)
 timeframe = ['timeframe_example'] # list[str] | Time window to get delivery usage information. timeframe[0] indicates the start time, timeframe[1] indicates the end time in seconds since the Unix epoch. Default time window is 1 hour representing usage from 13th to 12th hour from when the request is made. (optional)
 
     try:
         # List Usage
-        api_response = api_instance.list_delivery_usage(page=page, limit=limit, asset_id=asset_id, timeframe=timeframe)
+        api_response = api_instance.list_delivery_usage(page=page, limit=limit, asset_id=asset_id, live_stream_id=live_stream_id, timeframe=timeframe)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling DeliveryUsageApi->list_delivery_usage: %s\n" % e)
@@ -63,7 +64,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **int**| Offset by this many pages, of the size of &#x60;limit&#x60; | [optional] [default to 1]
  **limit** | **int**| Number of items to include in the response | [optional] [default to 100]
- **asset_id** | **str**| Filter response to return delivery usage for this asset only. | [optional] 
+ **asset_id** | **str**| Filter response to return delivery usage for this asset only. You cannot specify both the &#x60;asset_id&#x60; and &#x60;live_stream_id&#x60; parameters together. | [optional] 
+ **live_stream_id** | **str**| Filter response to return delivery usage for assets for this live stream. You cannot specify both the &#x60;asset_id&#x60; and &#x60;live_stream_id&#x60; parameters together. | [optional] 
  **timeframe** | [**list[str]**](str.md)| Time window to get delivery usage information. timeframe[0] indicates the start time, timeframe[1] indicates the end time in seconds since the Unix epoch. Default time window is 1 hour representing usage from 13th to 12th hour from when the request is made. | [optional] 
 
 ### Return type

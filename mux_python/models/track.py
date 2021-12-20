@@ -405,7 +405,7 @@ class Track(object):
     def passthrough(self):
         """Gets the passthrough of this Track.  # noqa: E501
 
-        Arbitrary metadata set for the track either when creating the asset or track. This parameter is set for `text` type and `subtitles` text type track. Max 255 characters.  # noqa: E501
+        Arbitrary user-supplied metadata set for the track either when creating the asset or track. This parameter is set for `text` type and `subtitles` text type track. Max 255 characters.  # noqa: E501
 
         :return: The passthrough of this Track.  # noqa: E501
         :rtype: str
@@ -416,7 +416,7 @@ class Track(object):
     def passthrough(self, passthrough):
         """Sets the passthrough of this Track.
 
-        Arbitrary metadata set for the track either when creating the asset or track. This parameter is set for `text` type and `subtitles` text type track. Max 255 characters.  # noqa: E501
+        Arbitrary user-supplied metadata set for the track either when creating the asset or track. This parameter is set for `text` type and `subtitles` text type track. Max 255 characters.  # noqa: E501
 
         :param passthrough: The passthrough of this Track.  # noqa: E501
         :type passthrough: str

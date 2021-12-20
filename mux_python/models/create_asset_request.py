@@ -159,7 +159,7 @@ class CreateAssetRequest(object):
     def passthrough(self):
         """Gets the passthrough of this CreateAssetRequest.  # noqa: E501
 
-        Arbitrary metadata that will be included in the asset details and related webhooks. Can be used to store your own ID for a video along with the asset. **Max: 255 characters**.  # noqa: E501
+        Arbitrary user-supplied metadata that will be included in the asset details and related webhooks. Can be used to store your own ID for a video along with the asset. **Max: 255 characters**.  # noqa: E501
 
         :return: The passthrough of this CreateAssetRequest.  # noqa: E501
         :rtype: str
@@ -170,7 +170,7 @@ class CreateAssetRequest(object):
     def passthrough(self, passthrough):
         """Sets the passthrough of this CreateAssetRequest.
 
-        Arbitrary metadata that will be included in the asset details and related webhooks. Can be used to store your own ID for a video along with the asset. **Max: 255 characters**.  # noqa: E501
+        Arbitrary user-supplied metadata that will be included in the asset details and related webhooks. Can be used to store your own ID for a video along with the asset. **Max: 255 characters**.  # noqa: E501
 
         :param passthrough: The passthrough of this CreateAssetRequest.  # noqa: E501
         :type passthrough: str

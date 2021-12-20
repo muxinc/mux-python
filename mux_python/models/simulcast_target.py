@@ -100,7 +100,7 @@ class SimulcastTarget(object):
     def passthrough(self):
         """Gets the passthrough of this SimulcastTarget.  # noqa: E501
 
-        Arbitrary Metadata set when creating a simulcast target.  # noqa: E501
+        Arbitrary user-supplied metadata set when creating a simulcast target.  # noqa: E501
 
         :return: The passthrough of this SimulcastTarget.  # noqa: E501
         :rtype: str
@@ -111,7 +111,7 @@ class SimulcastTarget(object):
     def passthrough(self, passthrough):
         """Sets the passthrough of this SimulcastTarget.
 
-        Arbitrary Metadata set when creating a simulcast target.  # noqa: E501
+        Arbitrary user-supplied metadata set when creating a simulcast target.  # noqa: E501
 
         :param passthrough: The passthrough of this SimulcastTarget.  # noqa: E501
         :type passthrough: str

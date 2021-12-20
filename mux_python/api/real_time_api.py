@@ -53,7 +53,7 @@ class RealTimeApi(object):
         :type dimension: str
         :param timestamp: Timestamp to limit results by. This value must be provided as a unix timestamp. Defaults to the current unix timestamp.
         :type timestamp: float
-        :param filters: Filter key:value pairs. Must be provided as an array query string parameter (e.g. filters[]=operating_system:windows&filters[]=country:US). Possible filter names are the same as returned by the List Filters endpoint. 
+        :param filters: Limit the results to rows that match conditions from provided key:value pairs. Must be provided as an array query string parameter.  To exclude rows that match a certain condition, prepend a `!` character to the dimension.  Possible filter names are the same as returned by the List Filters endpoint.  Example:    * `filters[]=operating_system:windows&filters[]=!country:US` 
         :type filters: list[str]
         :param order_by: Value to order the results by
         :type order_by: str
@@ -93,7 +93,7 @@ class RealTimeApi(object):
         :type dimension: str
         :param timestamp: Timestamp to limit results by. This value must be provided as a unix timestamp. Defaults to the current unix timestamp.
         :type timestamp: float
-        :param filters: Filter key:value pairs. Must be provided as an array query string parameter (e.g. filters[]=operating_system:windows&filters[]=country:US). Possible filter names are the same as returned by the List Filters endpoint. 
+        :param filters: Limit the results to rows that match conditions from provided key:value pairs. Must be provided as an array query string parameter.  To exclude rows that match a certain condition, prepend a `!` character to the dimension.  Possible filter names are the same as returned by the List Filters endpoint.  Example:    * `filters[]=operating_system:windows&filters[]=!country:US` 
         :type filters: list[str]
         :param order_by: Value to order the results by
         :type order_by: str
@@ -220,7 +220,7 @@ class RealTimeApi(object):
 
         :param realtime_histogram_metric_id: ID of the Realtime Histogram Metric (required)
         :type realtime_histogram_metric_id: str
-        :param filters: Filter key:value pairs. Must be provided as an array query string parameter (e.g. filters[]=operating_system:windows&filters[]=country:US). Possible filter names are the same as returned by the List Filters endpoint. 
+        :param filters: Limit the results to rows that match conditions from provided key:value pairs. Must be provided as an array query string parameter.  To exclude rows that match a certain condition, prepend a `!` character to the dimension.  Possible filter names are the same as returned by the List Filters endpoint.  Example:    * `filters[]=operating_system:windows&filters[]=!country:US` 
         :type filters: list[str]
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
@@ -252,7 +252,7 @@ class RealTimeApi(object):
 
         :param realtime_histogram_metric_id: ID of the Realtime Histogram Metric (required)
         :type realtime_histogram_metric_id: str
-        :param filters: Filter key:value pairs. Must be provided as an array query string parameter (e.g. filters[]=operating_system:windows&filters[]=country:US). Possible filter names are the same as returned by the List Filters endpoint. 
+        :param filters: Limit the results to rows that match conditions from provided key:value pairs. Must be provided as an array query string parameter.  To exclude rows that match a certain condition, prepend a `!` character to the dimension.  Possible filter names are the same as returned by the List Filters endpoint.  Example:    * `filters[]=operating_system:windows&filters[]=!country:US` 
         :type filters: list[str]
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
@@ -363,7 +363,7 @@ class RealTimeApi(object):
 
         :param realtime_metric_id: ID of the Realtime Metric (required)
         :type realtime_metric_id: str
-        :param filters: Filter key:value pairs. Must be provided as an array query string parameter (e.g. filters[]=operating_system:windows&filters[]=country:US). Possible filter names are the same as returned by the List Filters endpoint. 
+        :param filters: Limit the results to rows that match conditions from provided key:value pairs. Must be provided as an array query string parameter.  To exclude rows that match a certain condition, prepend a `!` character to the dimension.  Possible filter names are the same as returned by the List Filters endpoint.  Example:    * `filters[]=operating_system:windows&filters[]=!country:US` 
         :type filters: list[str]
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
@@ -395,7 +395,7 @@ class RealTimeApi(object):
 
         :param realtime_metric_id: ID of the Realtime Metric (required)
         :type realtime_metric_id: str
-        :param filters: Filter key:value pairs. Must be provided as an array query string parameter (e.g. filters[]=operating_system:windows&filters[]=country:US). Possible filter names are the same as returned by the List Filters endpoint. 
+        :param filters: Limit the results to rows that match conditions from provided key:value pairs. Must be provided as an array query string parameter.  To exclude rows that match a certain condition, prepend a `!` character to the dimension.  Possible filter names are the same as returned by the List Filters endpoint.  Example:    * `filters[]=operating_system:windows&filters[]=!country:US` 
         :type filters: list[str]
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional

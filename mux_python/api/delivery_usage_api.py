@@ -51,8 +51,10 @@ class DeliveryUsageApi(object):
         :type page: int
         :param limit: Number of items to include in the response
         :type limit: int
-        :param asset_id: Filter response to return delivery usage for this asset only.
+        :param asset_id: Filter response to return delivery usage for this asset only. You cannot specify both the `asset_id` and `live_stream_id` parameters together.
         :type asset_id: str
+        :param live_stream_id: Filter response to return delivery usage for assets for this live stream. You cannot specify both the `asset_id` and `live_stream_id` parameters together.
+        :type live_stream_id: str
         :param timeframe: Time window to get delivery usage information. timeframe[0] indicates the start time, timeframe[1] indicates the end time in seconds since the Unix epoch. Default time window is 1 hour representing usage from 13th to 12th hour from when the request is made.
         :type timeframe: list[str]
         :param async_req: Whether to execute the request asynchronously.
@@ -87,8 +89,10 @@ class DeliveryUsageApi(object):
         :type page: int
         :param limit: Number of items to include in the response
         :type limit: int
-        :param asset_id: Filter response to return delivery usage for this asset only.
+        :param asset_id: Filter response to return delivery usage for this asset only. You cannot specify both the `asset_id` and `live_stream_id` parameters together.
         :type asset_id: str
+        :param live_stream_id: Filter response to return delivery usage for assets for this live stream. You cannot specify both the `asset_id` and `live_stream_id` parameters together.
+        :type live_stream_id: str
         :param timeframe: Time window to get delivery usage information. timeframe[0] indicates the start time, timeframe[1] indicates the end time in seconds since the Unix epoch. Default time window is 1 hour representing usage from 13th to 12th hour from when the request is made.
         :type timeframe: list[str]
         :param async_req: Whether to execute the request asynchronously.
@@ -120,6 +124,7 @@ class DeliveryUsageApi(object):
             'page',
             'limit',
             'asset_id',
+            'live_stream_id',
             'timeframe'
         ]
         all_params.extend(
@@ -152,6 +157,8 @@ class DeliveryUsageApi(object):
             query_params.append(('limit', local_var_params['limit']))  # noqa: E501
         if 'asset_id' in local_var_params and local_var_params['asset_id'] is not None:  # noqa: E501
             query_params.append(('asset_id', local_var_params['asset_id']))  # noqa: E501
+        if 'live_stream_id' in local_var_params and local_var_params['live_stream_id'] is not None:  # noqa: E501
+            query_params.append(('live_stream_id', local_var_params['live_stream_id']))  # noqa: E501
         if 'timeframe' in local_var_params and local_var_params['timeframe'] is not None:  # noqa: E501
             query_params.append(('timeframe[]', local_var_params['timeframe']))  # noqa: E501
             collection_formats['timeframe[]'] = 'multi'  # noqa: E501
