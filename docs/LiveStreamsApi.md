@@ -825,7 +825,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_live_streams**
-> ListLiveStreamsResponse list_live_streams(limit=limit, page=page, stream_key=stream_key)
+> ListLiveStreamsResponse list_live_streams(limit=limit, page=page, stream_key=stream_key, status=status)
 
 List live streams
 
@@ -862,10 +862,11 @@ with mux_python.ApiClient(configuration) as api_client:
     limit = 25 # int | Number of items to include in the response (optional) (default to 25)
 page = 1 # int | Offset by this many pages, of the size of `limit` (optional) (default to 1)
 stream_key = 'stream_key_example' # str | Filter response to return live stream for this stream key only (optional)
+status = mux_python.LiveStreamStatus() # LiveStreamStatus | Filter response to return live streams with the specified status only (optional)
 
     try:
         # List live streams
-        api_response = api_instance.list_live_streams(limit=limit, page=page, stream_key=stream_key)
+        api_response = api_instance.list_live_streams(limit=limit, page=page, stream_key=stream_key, status=status)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling LiveStreamsApi->list_live_streams: %s\n" % e)
@@ -878,6 +879,7 @@ Name | Type | Description  | Notes
  **limit** | **int**| Number of items to include in the response | [optional] [default to 25]
  **page** | **int**| Offset by this many pages, of the size of &#x60;limit&#x60; | [optional] [default to 1]
  **stream_key** | **str**| Filter response to return live stream for this stream key only | [optional] 
+ **status** | [**LiveStreamStatus**](.md)| Filter response to return live streams with the specified status only | [optional] 
 
 ### Return type
 

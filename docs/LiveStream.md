@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **stream_key** | **str** | Unique key used for streaming to a Mux RTMP endpoint. This should be considered as sensitive as credentials, anyone with this stream key can begin streaming. | [optional] 
 **active_asset_id** | **str** | The Asset that is currently being created if there is an active broadcast. | [optional] 
 **recent_asset_ids** | **list[str]** | An array of strings with the most recent Assets that were created from this live stream. | [optional] 
-**status** | **str** | &#x60;idle&#x60; indicates that there is no active broadcast. &#x60;active&#x60; indicates that there is an active broadcast and &#x60;disabled&#x60; status indicates that no future RTMP streams can be published. | [optional] 
+**status** | [**LiveStreamStatus**](LiveStreamStatus.md) |  | [optional] 
 **playback_ids** | [**list[PlaybackID]**](PlaybackID.md) | An array of Playback ID objects. Use these to create HLS playback URLs. See [Play your videos](https://docs.mux.com/guides/video/play-your-videos) for more details. | [optional] 
 **new_asset_settings** | [**CreateAssetRequest**](CreateAssetRequest.md) |  | [optional] 
 **passthrough** | **str** | Arbitrary user-supplied metadata set for the asset. Max 255 characters. | [optional] 

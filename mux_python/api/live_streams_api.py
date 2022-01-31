@@ -1587,6 +1587,8 @@ class LiveStreamsApi(object):
         :type page: int
         :param stream_key: Filter response to return live stream for this stream key only
         :type stream_key: str
+        :param status: Filter response to return live streams with the specified status only
+        :type status: LiveStreamStatus
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -1620,6 +1622,8 @@ class LiveStreamsApi(object):
         :type page: int
         :param stream_key: Filter response to return live stream for this stream key only
         :type stream_key: str
+        :param status: Filter response to return live streams with the specified status only
+        :type status: LiveStreamStatus
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _return_http_data_only: response data without head status code
@@ -1648,7 +1652,8 @@ class LiveStreamsApi(object):
         all_params = [
             'limit',
             'page',
-            'stream_key'
+            'stream_key',
+            'status'
         ]
         all_params.extend(
             [
@@ -1680,6 +1685,8 @@ class LiveStreamsApi(object):
             query_params.append(('page', local_var_params['page']))  # noqa: E501
         if 'stream_key' in local_var_params and local_var_params['stream_key'] is not None:  # noqa: E501
             query_params.append(('stream_key', local_var_params['stream_key']))  # noqa: E501
+        if 'status' in local_var_params and local_var_params['status'] is not None:  # noqa: E501
+            query_params.append(('status', local_var_params['status']))  # noqa: E501
 
         header_params = {}
 

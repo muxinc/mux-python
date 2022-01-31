@@ -84,6 +84,7 @@ docs/ListVideoViewsResponse.md
 docs/LiveStream.md
 docs/LiveStreamEmbeddedSubtitleSettings.md
 docs/LiveStreamResponse.md
+docs/LiveStreamStatus.md
 docs/LiveStreamsApi.md
 docs/Metric.md
 docs/MetricsApi.md
@@ -219,6 +220,7 @@ mux_python/models/list_video_views_response.py
 mux_python/models/live_stream.py
 mux_python/models/live_stream_embedded_subtitle_settings.py
 mux_python/models/live_stream_response.py
+mux_python/models/live_stream_status.py
 mux_python/models/metric.py
 mux_python/models/notification_rule.py
 mux_python/models/overall_values.py
@@ -257,12 +259,5 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_create_playback_restriction_request.py
-test/test_playback_restriction.py
-test/test_playback_restriction_response.py
-test/test_playback_restrictions_api.py
-test/test_referrer_domain_restriction.py
-test/test_update_asset_request.py
-test/test_update_live_stream_request.py
-test/test_update_referrer_domain_restriction_request.py
+test/test_live_stream_status.py
 tox.ini

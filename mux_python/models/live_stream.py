@@ -39,7 +39,7 @@ class LiveStream(object):
         'stream_key': 'str',
         'active_asset_id': 'str',
         'recent_asset_ids': 'list[str]',
-        'status': 'str',
+        'status': 'LiveStreamStatus',
         'playback_ids': 'list[PlaybackID]',
         'new_asset_settings': 'CreateAssetRequest',
         'passthrough': 'str',
@@ -252,10 +252,9 @@ class LiveStream(object):
     def status(self):
         """Gets the status of this LiveStream.  # noqa: E501
 
-        `idle` indicates that there is no active broadcast. `active` indicates that there is an active broadcast and `disabled` status indicates that no future RTMP streams can be published.  # noqa: E501
 
         :return: The status of this LiveStream.  # noqa: E501
-        :rtype: str
+        :rtype: LiveStreamStatus
         """
         return self._status
 
@@ -263,17 +262,10 @@ class LiveStream(object):
     def status(self, status):
         """Sets the status of this LiveStream.
 
-        `idle` indicates that there is no active broadcast. `active` indicates that there is an active broadcast and `disabled` status indicates that no future RTMP streams can be published.  # noqa: E501
 
         :param status: The status of this LiveStream.  # noqa: E501
-        :type status: str
+        :type status: LiveStreamStatus
         """
-        allowed_values = ["active", "idle", "disabled"]  # noqa: E501
-        if self.local_vars_configuration.client_side_validation and status not in allowed_values:  # noqa: E501
-            raise ValueError(
-                "Invalid value for `status` ({0}), must be one of {1}"  # noqa: E501
-                .format(status, allowed_values)
-            )
 
         self._status = status
 

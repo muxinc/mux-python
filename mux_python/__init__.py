@@ -15,7 +15,7 @@
 
 from __future__ import absolute_import
 
-__version__ = "3.2.0"
+__version__ = "3.3.0"
 
 # import apis into sdk package
 from mux_python.api.assets_api import AssetsApi
@@ -119,6 +119,7 @@ from mux_python.models.list_video_views_response import ListVideoViewsResponse
 from mux_python.models.live_stream import LiveStream
 from mux_python.models.live_stream_embedded_subtitle_settings import LiveStreamEmbeddedSubtitleSettings
 from mux_python.models.live_stream_response import LiveStreamResponse
+from mux_python.models.live_stream_status import LiveStreamStatus
 from mux_python.models.metric import Metric
 from mux_python.models.notification_rule import NotificationRule
 from mux_python.models.overall_values import OverallValues
