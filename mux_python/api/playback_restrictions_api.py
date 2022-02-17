@@ -62,7 +62,7 @@ class PlaybackRestrictionsApi(object):
         :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
-        :rtype: PlaybackRestriction
+        :rtype: PlaybackRestrictionResponse
         """
         kwargs['_return_http_data_only'] = True
         return self.create_playback_restriction_with_http_info(create_playback_restriction_request, **kwargs)  # noqa: E501
@@ -99,7 +99,7 @@ class PlaybackRestrictionsApi(object):
         :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
-        :rtype: tuple(PlaybackRestriction, status_code(int), headers(HTTPHeaderDict))
+        :rtype: tuple(PlaybackRestrictionResponse, status_code(int), headers(HTTPHeaderDict))
         """
 
         local_var_params = locals()
@@ -156,7 +156,7 @@ class PlaybackRestrictionsApi(object):
         auth_settings = ['accessToken']  # noqa: E501
         
         response_types_map = {
-            201: "PlaybackRestriction",
+            201: "PlaybackRestrictionResponse",
         }
 
         return self.api_client.call_api(
@@ -330,7 +330,7 @@ class PlaybackRestrictionsApi(object):
         :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
-        :rtype: PlaybackRestriction
+        :rtype: PlaybackRestrictionResponse
         """
         kwargs['_return_http_data_only'] = True
         return self.get_playback_restriction_with_http_info(playback_restriction_id, **kwargs)  # noqa: E501
@@ -367,7 +367,7 @@ class PlaybackRestrictionsApi(object):
         :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
-        :rtype: tuple(PlaybackRestriction, status_code(int), headers(HTTPHeaderDict))
+        :rtype: tuple(PlaybackRestrictionResponse, status_code(int), headers(HTTPHeaderDict))
         """
 
         local_var_params = locals()
@@ -420,7 +420,7 @@ class PlaybackRestrictionsApi(object):
         auth_settings = ['accessToken']  # noqa: E501
         
         response_types_map = {
-            200: "PlaybackRestriction",
+            200: "PlaybackRestrictionResponse",
         }
 
         return self.api_client.call_api(
@@ -467,7 +467,7 @@ class PlaybackRestrictionsApi(object):
         :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
-        :rtype: list[PlaybackRestriction]
+        :rtype: ListPlaybackRestrictionsResponse
         """
         kwargs['_return_http_data_only'] = True
         return self.list_playback_restrictions_with_http_info(**kwargs)  # noqa: E501
@@ -506,7 +506,7 @@ class PlaybackRestrictionsApi(object):
         :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
-        :rtype: tuple(list[PlaybackRestriction], status_code(int), headers(HTTPHeaderDict))
+        :rtype: tuple(ListPlaybackRestrictionsResponse, status_code(int), headers(HTTPHeaderDict))
         """
 
         local_var_params = locals()
@@ -558,7 +558,7 @@ class PlaybackRestrictionsApi(object):
         auth_settings = ['accessToken']  # noqa: E501
         
         response_types_map = {
-            200: "list[PlaybackRestriction]",
+            200: "ListPlaybackRestrictionsResponse",
         }
 
         return self.api_client.call_api(
@@ -581,7 +581,7 @@ class PlaybackRestrictionsApi(object):
     def update_referrer_domain_restriction(self, playback_restriction_id, body, **kwargs):  # noqa: E501
         """Update the Referrer Playback Restriction  # noqa: E501
 
-        Allows you to modify the list of domians or change how Mux validates playback requests without the `Referer` HTTP header. The Referrer restriction fully replaces the old list with this new list of domains.  # noqa: E501
+        Allows you to modify the list of domains or change how Mux validates playback requests without the `Referer` HTTP header. The Referrer restriction fully replaces the old list with this new list of domains.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -605,7 +605,7 @@ class PlaybackRestrictionsApi(object):
         :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
-        :rtype: PlaybackRestriction
+        :rtype: PlaybackRestrictionResponse
         """
         kwargs['_return_http_data_only'] = True
         return self.update_referrer_domain_restriction_with_http_info(playback_restriction_id, body, **kwargs)  # noqa: E501
@@ -613,7 +613,7 @@ class PlaybackRestrictionsApi(object):
     def update_referrer_domain_restriction_with_http_info(self, playback_restriction_id, body, **kwargs):  # noqa: E501
         """Update the Referrer Playback Restriction  # noqa: E501
 
-        Allows you to modify the list of domians or change how Mux validates playback requests without the `Referer` HTTP header. The Referrer restriction fully replaces the old list with this new list of domains.  # noqa: E501
+        Allows you to modify the list of domains or change how Mux validates playback requests without the `Referer` HTTP header. The Referrer restriction fully replaces the old list with this new list of domains.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -644,7 +644,7 @@ class PlaybackRestrictionsApi(object):
         :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
-        :rtype: tuple(PlaybackRestriction, status_code(int), headers(HTTPHeaderDict))
+        :rtype: tuple(PlaybackRestrictionResponse, status_code(int), headers(HTTPHeaderDict))
         """
 
         local_var_params = locals()
@@ -708,7 +708,7 @@ class PlaybackRestrictionsApi(object):
         auth_settings = ['accessToken']  # noqa: E501
         
         response_types_map = {
-            200: "PlaybackRestriction",
+            200: "PlaybackRestrictionResponse",
         }
 
         return self.api_client.call_api(

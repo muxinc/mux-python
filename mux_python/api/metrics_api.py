@@ -40,7 +40,7 @@ class MetricsApi(object):
     def get_metric_timeseries_data(self, metric_id, **kwargs):  # noqa: E501
         """Get metric timeseries data  # noqa: E501
 
-        Returns timeseries data for a specific metric.  # noqa: E501
+        Returns timeseries data for a specific metric.  Each interval represented in the data array contains an array with the following values:   * the first element is the interval time   * the second element is the calculated metric value    * the third element is the number of views in the interval that have a valid metric value   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -57,7 +57,7 @@ class MetricsApi(object):
         :type measurement: str
         :param order_direction: Sort order.
         :type order_direction: str
-        :param group_by: Time granularity to group results by. If this value is omitted, a default granularity is chosen based on the timeframe. For timeframes of 6 hours or less, the default granularity is `ten_minutes`. Between 6 hours and 15 hours inclusive, the default granularity is `hour`. The granularity of timeframes that exceed 15 hours is `day`. This default behaviour is subject to change; it is strongly suggested that you explicitly specify the granularity. 
+        :param group_by: Time granularity to group results by. If this value is omitted, a default granularity is chosen based on the timeframe.  For timeframes of 6 hours or less, the default granularity is `ten_minutes`. Between 6 hours and 15 hours inclusive, the default granularity is `hour`. The granularity of timeframes that exceed 15 hours is `day`. This default behaviour is subject to change; it is strongly suggested that you explicitly specify the granularity. 
         :type group_by: str
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
@@ -80,7 +80,7 @@ class MetricsApi(object):
     def get_metric_timeseries_data_with_http_info(self, metric_id, **kwargs):  # noqa: E501
         """Get metric timeseries data  # noqa: E501
 
-        Returns timeseries data for a specific metric.  # noqa: E501
+        Returns timeseries data for a specific metric.  Each interval represented in the data array contains an array with the following values:   * the first element is the interval time   * the second element is the calculated metric value    * the third element is the number of views in the interval that have a valid metric value   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -97,7 +97,7 @@ class MetricsApi(object):
         :type measurement: str
         :param order_direction: Sort order.
         :type order_direction: str
-        :param group_by: Time granularity to group results by. If this value is omitted, a default granularity is chosen based on the timeframe. For timeframes of 6 hours or less, the default granularity is `ten_minutes`. Between 6 hours and 15 hours inclusive, the default granularity is `hour`. The granularity of timeframes that exceed 15 hours is `day`. This default behaviour is subject to change; it is strongly suggested that you explicitly specify the granularity. 
+        :param group_by: Time granularity to group results by. If this value is omitted, a default granularity is chosen based on the timeframe.  For timeframes of 6 hours or less, the default granularity is `ten_minutes`. Between 6 hours and 15 hours inclusive, the default granularity is `hour`. The granularity of timeframes that exceed 15 hours is `day`. This default behaviour is subject to change; it is strongly suggested that you explicitly specify the granularity. 
         :type group_by: str
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional

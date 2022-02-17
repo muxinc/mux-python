@@ -73,6 +73,7 @@ docs/ListFiltersResponseData.md
 docs/ListIncidentsResponse.md
 docs/ListInsightsResponse.md
 docs/ListLiveStreamsResponse.md
+docs/ListPlaybackRestrictionsResponse.md
 docs/ListRealTimeDimensionsResponse.md
 docs/ListRealTimeDimensionsResponseData.md
 docs/ListRealTimeMetricsResponse.md
@@ -209,6 +210,7 @@ mux_python/models/list_filters_response_data.py
 mux_python/models/list_incidents_response.py
 mux_python/models/list_insights_response.py
 mux_python/models/list_live_streams_response.py
+mux_python/models/list_playback_restrictions_response.py
 mux_python/models/list_real_time_dimensions_response.py
 mux_python/models/list_real_time_dimensions_response_data.py
 mux_python/models/list_real_time_metrics_response.py
@@ -259,5 +261,4 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_live_stream_status.py
 tox.ini
