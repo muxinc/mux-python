@@ -176,6 +176,7 @@ class DirectUploadsApi(object):
     def create_direct_upload(self, create_upload_request, **kwargs):  # noqa: E501
         """Create a new direct upload URL  # noqa: E501
 
+        Creates a new direct upload, through which video content can be uploaded for ingest to Mux.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -205,6 +206,7 @@ class DirectUploadsApi(object):
     def create_direct_upload_with_http_info(self, create_upload_request, **kwargs):  # noqa: E501
         """Create a new direct upload URL  # noqa: E501
 
+        Creates a new direct upload, through which video content can be uploaded for ingest to Mux.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -313,6 +315,7 @@ class DirectUploadsApi(object):
     def get_direct_upload(self, upload_id, **kwargs):  # noqa: E501
         """Retrieve a single direct upload's info  # noqa: E501
 
+        Fetches information about a single direct upload in the current environment.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -342,6 +345,7 @@ class DirectUploadsApi(object):
     def get_direct_upload_with_http_info(self, upload_id, **kwargs):  # noqa: E501
         """Retrieve a single direct upload's info  # noqa: E501
 
+        Fetches information about a single direct upload in the current environment.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -446,6 +450,7 @@ class DirectUploadsApi(object):
     def list_direct_uploads(self, **kwargs):  # noqa: E501
         """List direct uploads  # noqa: E501
 
+        Lists currently extant direct uploads in the current environment.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -477,6 +482,7 @@ class DirectUploadsApi(object):
     def list_direct_uploads_with_http_info(self, **kwargs):  # noqa: E501
         """List direct uploads  # noqa: E501
 
+        Lists currently extant direct uploads in the current environment.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 

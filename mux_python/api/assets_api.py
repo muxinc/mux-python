@@ -179,6 +179,7 @@ class AssetsApi(object):
     def create_asset_playback_id(self, asset_id, create_playback_id_request, **kwargs):  # noqa: E501
         """Create a playback ID  # noqa: E501
 
+        Creates a playback ID that can be used to stream the asset to a viewer.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -210,6 +211,7 @@ class AssetsApi(object):
     def create_asset_playback_id_with_http_info(self, asset_id, create_playback_id_request, **kwargs):  # noqa: E501
         """Create a playback ID  # noqa: E501
 
+        Creates a playback ID that can be used to stream the asset to a viewer.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -327,6 +329,7 @@ class AssetsApi(object):
     def create_asset_track(self, asset_id, create_track_request, **kwargs):  # noqa: E501
         """Create an asset track  # noqa: E501
 
+        Adds an asset track (for example, subtitles) to an asset.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -358,6 +361,7 @@ class AssetsApi(object):
     def create_asset_track_with_http_info(self, asset_id, create_track_request, **kwargs):  # noqa: E501
         """Create an asset track  # noqa: E501
 
+        Adds an asset track (for example, subtitles) to an asset.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -604,6 +608,7 @@ class AssetsApi(object):
     def delete_asset_playback_id(self, asset_id, playback_id, **kwargs):  # noqa: E501
         """Delete a playback ID  # noqa: E501
 
+        Deletes a playback ID, rendering it nonfunctional for viewing an asset's video content. Please note that deleting the playback ID removes access to the underlying asset; a viewer who started playback before the playback ID was deleted may be able to watch the entire video for a limited duration.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -635,6 +640,7 @@ class AssetsApi(object):
     def delete_asset_playback_id_with_http_info(self, asset_id, playback_id, **kwargs):  # noqa: E501
         """Delete a playback ID  # noqa: E501
 
+        Deletes a playback ID, rendering it nonfunctional for viewing an asset's video content. Please note that deleting the playback ID removes access to the underlying asset; a viewer who started playback before the playback ID was deleted may be able to watch the entire video for a limited duration.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -1152,6 +1158,7 @@ class AssetsApi(object):
     def get_asset_playback_id(self, asset_id, playback_id, **kwargs):  # noqa: E501
         """Retrieve a playback ID  # noqa: E501
 
+        Retrieves information about the specified playback ID.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -1183,6 +1190,7 @@ class AssetsApi(object):
     def get_asset_playback_id_with_http_info(self, asset_id, playback_id, **kwargs):  # noqa: E501
         """Retrieve a playback ID  # noqa: E501
 
+        Retrieves information about the specified playback ID.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 

@@ -56,7 +56,7 @@ configuration = mux_python.Configuration(
 with mux_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = mux_python.AssetsApi(api_client)
-    create_asset_request = {"input":"https://muxed.s3.amazonaws.com/leds.mp4","playback_policy":["public"]} # CreateAssetRequest | 
+    create_asset_request = {"input":[{"url":"https://muxed.s3.amazonaws.com/leds.mp4"}],"playback_policy":["public"]} # CreateAssetRequest | 
 
     try:
         # Create an asset
@@ -96,6 +96,8 @@ Name | Type | Description  | Notes
 > CreatePlaybackIDResponse create_asset_playback_id(asset_id, create_playback_id_request)
 
 Create a playback ID
+
+Creates a playback ID that can be used to stream the asset to a viewer.
 
 ### Example
 
@@ -169,6 +171,8 @@ Name | Type | Description  | Notes
 > CreateTrackResponse create_asset_track(asset_id, create_track_request)
 
 Create an asset track
+
+Adds an asset track (for example, subtitles) to an asset.
 
 ### Example
 
@@ -314,6 +318,8 @@ void (empty response body)
 > delete_asset_playback_id(asset_id, playback_id)
 
 Delete a playback ID
+
+Deletes a playback ID, rendering it nonfunctional for viewing an asset's video content. Please note that deleting the playback ID removes access to the underlying asset; a viewer who started playback before the playback ID was deleted may be able to watch the entire video for a limited duration.
 
 ### Example
 
@@ -606,6 +612,8 @@ Name | Type | Description  | Notes
 > GetAssetPlaybackIDResponse get_asset_playback_id(asset_id, playback_id)
 
 Retrieve a playback ID
+
+Retrieves information about the specified playback ID.
 
 ### Example
 

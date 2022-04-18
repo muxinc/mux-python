@@ -36,16 +36,18 @@ class UpdateLiveStreamRequest(object):
     openapi_types = {
         'passthrough': 'str',
         'latency_mode': 'str',
-        'reconnect_window': 'float'
+        'reconnect_window': 'float',
+        'max_continuous_duration': 'int'
     }
 
     attribute_map = {
         'passthrough': 'passthrough',
         'latency_mode': 'latency_mode',
-        'reconnect_window': 'reconnect_window'
+        'reconnect_window': 'reconnect_window',
+        'max_continuous_duration': 'max_continuous_duration'
     }
 
-    def __init__(self, passthrough=None, latency_mode=None, reconnect_window=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, passthrough=None, latency_mode=None, reconnect_window=None, max_continuous_duration=43200, local_vars_configuration=None):  # noqa: E501
         """UpdateLiveStreamRequest - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
@@ -54,6 +56,7 @@ class UpdateLiveStreamRequest(object):
         self._passthrough = None
         self._latency_mode = None
         self._reconnect_window = None
+        self._max_continuous_duration = None
         self.discriminator = None
 
         if passthrough is not None:
@@ -62,6 +65,8 @@ class UpdateLiveStreamRequest(object):
             self.latency_mode = latency_mode
         if reconnect_window is not None:
             self.reconnect_window = reconnect_window
+        if max_continuous_duration is not None:
+            self.max_continuous_duration = max_continuous_duration
 
     @property
     def passthrough(self):
@@ -143,6 +148,35 @@ class UpdateLiveStreamRequest(object):
             raise ValueError("Invalid value for `reconnect_window`, must be a value greater than or equal to `0.1`")  # noqa: E501
 
         self._reconnect_window = reconnect_window
+
+    @property
+    def max_continuous_duration(self):
+        """Gets the max_continuous_duration of this UpdateLiveStreamRequest.  # noqa: E501
+
+        The time in seconds a live stream may be continuously active before being disconnected. Defaults to 12 hours.  # noqa: E501
+
+        :return: The max_continuous_duration of this UpdateLiveStreamRequest.  # noqa: E501
+        :rtype: int
+        """
+        return self._max_continuous_duration
+
+    @max_continuous_duration.setter
+    def max_continuous_duration(self, max_continuous_duration):
+        """Sets the max_continuous_duration of this UpdateLiveStreamRequest.
+
+        The time in seconds a live stream may be continuously active before being disconnected. Defaults to 12 hours.  # noqa: E501
+
+        :param max_continuous_duration: The max_continuous_duration of this UpdateLiveStreamRequest.  # noqa: E501
+        :type max_continuous_duration: int
+        """
+        if (self.local_vars_configuration.client_side_validation and
+                max_continuous_duration is not None and max_continuous_duration > 43200):  # noqa: E501
+            raise ValueError("Invalid value for `max_continuous_duration`, must be a value less than or equal to `43200`")  # noqa: E501
+        if (self.local_vars_configuration.client_side_validation and
+                max_continuous_duration is not None and max_continuous_duration < 60):  # noqa: E501
+            raise ValueError("Invalid value for `max_continuous_duration`, must be a value greater than or equal to `60`")  # noqa: E501
+
+        self._max_continuous_duration = max_continuous_duration
 
     def to_dict(self, serialize=False):
         """Returns the model properties as a dict"""

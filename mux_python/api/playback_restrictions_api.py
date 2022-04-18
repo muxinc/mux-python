@@ -578,20 +578,20 @@ class PlaybackRestrictionsApi(object):
             collection_formats=collection_formats,
             _request_auth=local_var_params.get('_request_auth'))
 
-    def update_referrer_domain_restriction(self, playback_restriction_id, body, **kwargs):  # noqa: E501
+    def update_referrer_domain_restriction(self, playback_restriction_id, update_referrer_domain_restriction_request, **kwargs):  # noqa: E501
         """Update the Referrer Playback Restriction  # noqa: E501
 
         Allows you to modify the list of domains or change how Mux validates playback requests without the `Referer` HTTP header. The Referrer restriction fully replaces the old list with this new list of domains.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.update_referrer_domain_restriction(playback_restriction_id, body, async_req=True)
+        >>> thread = api.update_referrer_domain_restriction(playback_restriction_id, update_referrer_domain_restriction_request, async_req=True)
         >>> result = thread.get()
 
         :param playback_restriction_id: ID of the Playback Restriction. (required)
         :type playback_restriction_id: str
-        :param body: (required)
-        :type body: ReferrerDomainRestriction
+        :param update_referrer_domain_restriction_request: (required)
+        :type update_referrer_domain_restriction_request: UpdateReferrerDomainRestrictionRequest
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -608,22 +608,22 @@ class PlaybackRestrictionsApi(object):
         :rtype: PlaybackRestrictionResponse
         """
         kwargs['_return_http_data_only'] = True
-        return self.update_referrer_domain_restriction_with_http_info(playback_restriction_id, body, **kwargs)  # noqa: E501
+        return self.update_referrer_domain_restriction_with_http_info(playback_restriction_id, update_referrer_domain_restriction_request, **kwargs)  # noqa: E501
 
-    def update_referrer_domain_restriction_with_http_info(self, playback_restriction_id, body, **kwargs):  # noqa: E501
+    def update_referrer_domain_restriction_with_http_info(self, playback_restriction_id, update_referrer_domain_restriction_request, **kwargs):  # noqa: E501
         """Update the Referrer Playback Restriction  # noqa: E501
 
         Allows you to modify the list of domains or change how Mux validates playback requests without the `Referer` HTTP header. The Referrer restriction fully replaces the old list with this new list of domains.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.update_referrer_domain_restriction_with_http_info(playback_restriction_id, body, async_req=True)
+        >>> thread = api.update_referrer_domain_restriction_with_http_info(playback_restriction_id, update_referrer_domain_restriction_request, async_req=True)
         >>> result = thread.get()
 
         :param playback_restriction_id: ID of the Playback Restriction. (required)
         :type playback_restriction_id: str
-        :param body: (required)
-        :type body: ReferrerDomainRestriction
+        :param update_referrer_domain_restriction_request: (required)
+        :type update_referrer_domain_restriction_request: UpdateReferrerDomainRestrictionRequest
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _return_http_data_only: response data without head status code
@@ -651,7 +651,7 @@ class PlaybackRestrictionsApi(object):
 
         all_params = [
             'playback_restriction_id',
-            'body'
+            'update_referrer_domain_restriction_request'
         ]
         all_params.extend(
             [
@@ -675,10 +675,10 @@ class PlaybackRestrictionsApi(object):
         if self.api_client.client_side_validation and ('playback_restriction_id' not in local_var_params or  # noqa: E501
                                                         local_var_params['playback_restriction_id'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `playback_restriction_id` when calling `update_referrer_domain_restriction`")  # noqa: E501
-        # verify the required parameter 'body' is set
-        if self.api_client.client_side_validation and ('body' not in local_var_params or  # noqa: E501
-                                                        local_var_params['body'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `body` when calling `update_referrer_domain_restriction`")  # noqa: E501
+        # verify the required parameter 'update_referrer_domain_restriction_request' is set
+        if self.api_client.client_side_validation and ('update_referrer_domain_restriction_request' not in local_var_params or  # noqa: E501
+                                                        local_var_params['update_referrer_domain_restriction_request'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `update_referrer_domain_restriction_request` when calling `update_referrer_domain_restriction`")  # noqa: E501
 
         collection_formats = {}
 
@@ -694,8 +694,8 @@ class PlaybackRestrictionsApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'body' in local_var_params:
-            body_params = local_var_params['body']
+        if 'update_referrer_domain_restriction_request' in local_var_params:
+            body_params = local_var_params['update_referrer_domain_restriction_request']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
             ['application/json'])  # noqa: E501

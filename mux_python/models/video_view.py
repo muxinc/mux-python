@@ -407,246 +407,143 @@ class VideoView(object):
         self._weighted_average_bitrate = None
         self.discriminator = None
 
-        if view_total_upscaling is not None:
-            self.view_total_upscaling = view_total_upscaling
-        if preroll_ad_asset_hostname is not None:
-            self.preroll_ad_asset_hostname = preroll_ad_asset_hostname
-        if player_source_domain is not None:
-            self.player_source_domain = player_source_domain
-        if region is not None:
-            self.region = region
-        if viewer_user_agent is not None:
-            self.viewer_user_agent = viewer_user_agent
-        if preroll_requested is not None:
-            self.preroll_requested = preroll_requested
-        if page_type is not None:
-            self.page_type = page_type
-        if startup_score is not None:
-            self.startup_score = startup_score
-        if view_seek_duration is not None:
-            self.view_seek_duration = view_seek_duration
-        if country_name is not None:
-            self.country_name = country_name
-        if player_source_height is not None:
-            self.player_source_height = player_source_height
-        if longitude is not None:
-            self.longitude = longitude
-        if buffering_count is not None:
-            self.buffering_count = buffering_count
-        if video_duration is not None:
-            self.video_duration = video_duration
-        if player_source_type is not None:
-            self.player_source_type = player_source_type
-        if city is not None:
-            self.city = city
+        self.view_total_upscaling = view_total_upscaling
+        self.preroll_ad_asset_hostname = preroll_ad_asset_hostname
+        self.player_source_domain = player_source_domain
+        self.region = region
+        self.viewer_user_agent = viewer_user_agent
+        self.preroll_requested = preroll_requested
+        self.page_type = page_type
+        self.startup_score = startup_score
+        self.view_seek_duration = view_seek_duration
+        self.country_name = country_name
+        self.player_source_height = player_source_height
+        self.longitude = longitude
+        self.buffering_count = buffering_count
+        self.video_duration = video_duration
+        self.player_source_type = player_source_type
+        self.city = city
         if view_id is not None:
             self.view_id = view_id
-        if platform_description is not None:
-            self.platform_description = platform_description
-        if video_startup_preroll_request_time is not None:
-            self.video_startup_preroll_request_time = video_startup_preroll_request_time
-        if viewer_device_name is not None:
-            self.viewer_device_name = viewer_device_name
-        if video_series is not None:
-            self.video_series = video_series
-        if viewer_application_name is not None:
-            self.viewer_application_name = viewer_application_name
+        self.platform_description = platform_description
+        self.video_startup_preroll_request_time = video_startup_preroll_request_time
+        self.viewer_device_name = viewer_device_name
+        self.video_series = video_series
+        self.viewer_application_name = viewer_application_name
         if updated_at is not None:
             self.updated_at = updated_at
-        if view_total_content_playback_time is not None:
-            self.view_total_content_playback_time = view_total_content_playback_time
-        if cdn is not None:
-            self.cdn = cdn
-        if player_instance_id is not None:
-            self.player_instance_id = player_instance_id
-        if video_language is not None:
-            self.video_language = video_language
-        if player_source_width is not None:
-            self.player_source_width = player_source_width
-        if player_error_message is not None:
-            self.player_error_message = player_error_message
-        if player_mux_plugin_version is not None:
-            self.player_mux_plugin_version = player_mux_plugin_version
+        self.view_total_content_playback_time = view_total_content_playback_time
+        self.cdn = cdn
+        self.player_instance_id = player_instance_id
+        self.video_language = video_language
+        self.player_source_width = player_source_width
+        self.player_error_message = player_error_message
+        self.player_mux_plugin_version = player_mux_plugin_version
         if watched is not None:
             self.watched = watched
-        if playback_score is not None:
-            self.playback_score = playback_score
-        if page_url is not None:
-            self.page_url = page_url
-        if metro is not None:
-            self.metro = metro
-        if view_max_request_latency is not None:
-            self.view_max_request_latency = view_max_request_latency
-        if requests_for_first_preroll is not None:
-            self.requests_for_first_preroll = requests_for_first_preroll
-        if view_total_downscaling is not None:
-            self.view_total_downscaling = view_total_downscaling
-        if latitude is not None:
-            self.latitude = latitude
-        if player_source_host_name is not None:
-            self.player_source_host_name = player_source_host_name
+        self.playback_score = playback_score
+        self.page_url = page_url
+        self.metro = metro
+        self.view_max_request_latency = view_max_request_latency
+        self.requests_for_first_preroll = requests_for_first_preroll
+        self.view_total_downscaling = view_total_downscaling
+        self.latitude = latitude
+        self.player_source_host_name = player_source_host_name
         if inserted_at is not None:
             self.inserted_at = inserted_at
         if view_end is not None:
             self.view_end = view_end
-        if mux_embed_version is not None:
-            self.mux_embed_version = mux_embed_version
-        if player_language is not None:
-            self.player_language = player_language
-        if page_load_time is not None:
-            self.page_load_time = page_load_time
-        if viewer_device_category is not None:
-            self.viewer_device_category = viewer_device_category
-        if video_startup_preroll_load_time is not None:
-            self.video_startup_preroll_load_time = video_startup_preroll_load_time
-        if player_version is not None:
-            self.player_version = player_version
-        if watch_time is not None:
-            self.watch_time = watch_time
-        if player_source_stream_type is not None:
-            self.player_source_stream_type = player_source_stream_type
-        if preroll_ad_tag_hostname is not None:
-            self.preroll_ad_tag_hostname = preroll_ad_tag_hostname
-        if viewer_device_manufacturer is not None:
-            self.viewer_device_manufacturer = viewer_device_manufacturer
-        if rebuffering_score is not None:
-            self.rebuffering_score = rebuffering_score
-        if experiment_name is not None:
-            self.experiment_name = experiment_name
-        if viewer_os_version is not None:
-            self.viewer_os_version = viewer_os_version
+        self.mux_embed_version = mux_embed_version
+        self.player_language = player_language
+        self.page_load_time = page_load_time
+        self.viewer_device_category = viewer_device_category
+        self.video_startup_preroll_load_time = video_startup_preroll_load_time
+        self.player_version = player_version
+        self.watch_time = watch_time
+        self.player_source_stream_type = player_source_stream_type
+        self.preroll_ad_tag_hostname = preroll_ad_tag_hostname
+        self.viewer_device_manufacturer = viewer_device_manufacturer
+        self.rebuffering_score = rebuffering_score
+        self.experiment_name = experiment_name
+        self.viewer_os_version = viewer_os_version
         if player_preload is not None:
             self.player_preload = player_preload
-        if buffering_duration is not None:
-            self.buffering_duration = buffering_duration
-        if player_view_count is not None:
-            self.player_view_count = player_view_count
-        if player_software is not None:
-            self.player_software = player_software
-        if player_load_time is not None:
-            self.player_load_time = player_load_time
-        if platform_summary is not None:
-            self.platform_summary = platform_summary
-        if video_encoding_variant is not None:
-            self.video_encoding_variant = video_encoding_variant
-        if player_width is not None:
-            self.player_width = player_width
-        if view_seek_count is not None:
-            self.view_seek_count = view_seek_count
-        if viewer_experience_score is not None:
-            self.viewer_experience_score = viewer_experience_score
-        if view_error_id is not None:
-            self.view_error_id = view_error_id
-        if video_variant_name is not None:
-            self.video_variant_name = video_variant_name
-        if preroll_played is not None:
-            self.preroll_played = preroll_played
-        if viewer_application_engine is not None:
-            self.viewer_application_engine = viewer_application_engine
-        if viewer_os_architecture is not None:
-            self.viewer_os_architecture = viewer_os_architecture
-        if player_error_code is not None:
-            self.player_error_code = player_error_code
-        if buffering_rate is not None:
-            self.buffering_rate = buffering_rate
+        self.buffering_duration = buffering_duration
+        self.player_view_count = player_view_count
+        self.player_software = player_software
+        self.player_load_time = player_load_time
+        self.platform_summary = platform_summary
+        self.video_encoding_variant = video_encoding_variant
+        self.player_width = player_width
+        self.view_seek_count = view_seek_count
+        self.viewer_experience_score = viewer_experience_score
+        self.view_error_id = view_error_id
+        self.video_variant_name = video_variant_name
+        self.preroll_played = preroll_played
+        self.viewer_application_engine = viewer_application_engine
+        self.viewer_os_architecture = viewer_os_architecture
+        self.player_error_code = player_error_code
+        self.buffering_rate = buffering_rate
         if events is not None:
             self.events = events
-        if player_name is not None:
-            self.player_name = player_name
+        self.player_name = player_name
         if view_start is not None:
             self.view_start = view_start
-        if view_average_request_throughput is not None:
-            self.view_average_request_throughput = view_average_request_throughput
-        if video_producer is not None:
-            self.video_producer = video_producer
-        if error_type_id is not None:
-            self.error_type_id = error_type_id
+        self.view_average_request_throughput = view_average_request_throughput
+        self.video_producer = video_producer
+        self.error_type_id = error_type_id
         if mux_viewer_id is not None:
             self.mux_viewer_id = mux_viewer_id
-        if video_id is not None:
-            self.video_id = video_id
-        if continent_code is not None:
-            self.continent_code = continent_code
+        self.video_id = video_id
+        self.continent_code = continent_code
         if session_id is not None:
             self.session_id = session_id
         if exit_before_video_start is not None:
             self.exit_before_video_start = exit_before_video_start
-        if video_content_type is not None:
-            self.video_content_type = video_content_type
-        if viewer_os_family is not None:
-            self.viewer_os_family = viewer_os_family
-        if player_poster is not None:
-            self.player_poster = player_poster
-        if view_average_request_latency is not None:
-            self.view_average_request_latency = view_average_request_latency
-        if video_variant_id is not None:
-            self.video_variant_id = video_variant_id
-        if player_source_duration is not None:
-            self.player_source_duration = player_source_duration
-        if player_source_url is not None:
-            self.player_source_url = player_source_url
+        self.video_content_type = video_content_type
+        self.viewer_os_family = viewer_os_family
+        self.player_poster = player_poster
+        self.view_average_request_latency = view_average_request_latency
+        self.video_variant_id = video_variant_id
+        self.player_source_duration = player_source_duration
+        self.player_source_url = player_source_url
         if mux_api_version is not None:
             self.mux_api_version = mux_api_version
-        if video_title is not None:
-            self.video_title = video_title
+        self.video_title = video_title
         if id is not None:
             self.id = id
         if short_time is not None:
             self.short_time = short_time
-        if rebuffer_percentage is not None:
-            self.rebuffer_percentage = rebuffer_percentage
-        if time_to_first_frame is not None:
-            self.time_to_first_frame = time_to_first_frame
-        if viewer_user_id is not None:
-            self.viewer_user_id = viewer_user_id
-        if video_stream_type is not None:
-            self.video_stream_type = video_stream_type
-        if player_startup_time is not None:
-            self.player_startup_time = player_startup_time
-        if viewer_application_version is not None:
-            self.viewer_application_version = viewer_application_version
-        if view_max_downscale_percentage is not None:
-            self.view_max_downscale_percentage = view_max_downscale_percentage
-        if view_max_upscale_percentage is not None:
-            self.view_max_upscale_percentage = view_max_upscale_percentage
-        if country_code is not None:
-            self.country_code = country_code
+        self.rebuffer_percentage = rebuffer_percentage
+        self.time_to_first_frame = time_to_first_frame
+        self.viewer_user_id = viewer_user_id
+        self.video_stream_type = video_stream_type
+        self.player_startup_time = player_startup_time
+        self.viewer_application_version = viewer_application_version
+        self.view_max_downscale_percentage = view_max_downscale_percentage
+        self.view_max_upscale_percentage = view_max_upscale_percentage
+        self.country_code = country_code
         if used_fullscreen is not None:
             self.used_fullscreen = used_fullscreen
-        if isp is not None:
-            self.isp = isp
+        self.isp = isp
         if property_id is not None:
             self.property_id = property_id
         if player_autoplay is not None:
             self.player_autoplay = player_autoplay
-        if player_height is not None:
-            self.player_height = player_height
-        if asn is not None:
-            self.asn = asn
-        if asn_name is not None:
-            self.asn_name = asn_name
-        if quality_score is not None:
-            self.quality_score = quality_score
-        if player_software_version is not None:
-            self.player_software_version = player_software_version
-        if player_mux_plugin_name is not None:
-            self.player_mux_plugin_name = player_mux_plugin_name
-        if sub_property_id is not None:
-            self.sub_property_id = sub_property_id
-        if player_remote_played is not None:
-            self.player_remote_played = player_remote_played
-        if view_max_playhead_position is not None:
-            self.view_max_playhead_position = view_max_playhead_position
-        if view_playing_time is not None:
-            self.view_playing_time = view_playing_time
-        if view_session_id is not None:
-            self.view_session_id = view_session_id
-        if viewer_connection_type is not None:
-            self.viewer_connection_type = viewer_connection_type
-        if viewer_device_model is not None:
-            self.viewer_device_model = viewer_device_model
-        if weighted_average_bitrate is not None:
-            self.weighted_average_bitrate = weighted_average_bitrate
+        self.player_height = player_height
+        self.asn = asn
+        self.asn_name = asn_name
+        self.quality_score = quality_score
+        self.player_software_version = player_software_version
+        self.player_mux_plugin_name = player_mux_plugin_name
+        self.sub_property_id = sub_property_id
+        self.player_remote_played = player_remote_played
+        self.view_max_playhead_position = view_max_playhead_position
+        self.view_playing_time = view_playing_time
+        self.view_session_id = view_session_id
+        self.viewer_connection_type = viewer_connection_type
+        self.viewer_device_model = viewer_device_model
+        self.weighted_average_bitrate = weighted_average_bitrate
 
     @property
     def view_total_upscaling(self):

@@ -44,7 +44,8 @@ class CreateLiveStreamRequest(object):
         'low_latency': 'bool',
         'latency_mode': 'str',
         'test': 'bool',
-        'simulcast_targets': 'list[CreateSimulcastTargetRequest]'
+        'simulcast_targets': 'list[CreateSimulcastTargetRequest]',
+        'max_continuous_duration': 'int'
     }
 
     attribute_map = {
@@ -58,10 +59,11 @@ class CreateLiveStreamRequest(object):
         'low_latency': 'low_latency',
         'latency_mode': 'latency_mode',
         'test': 'test',
-        'simulcast_targets': 'simulcast_targets'
+        'simulcast_targets': 'simulcast_targets',
+        'max_continuous_duration': 'max_continuous_duration'
     }
 
-    def __init__(self, playback_policy=None, new_asset_settings=None, reconnect_window=None, passthrough=None, audio_only=None, embedded_subtitles=None, reduced_latency=None, low_latency=None, latency_mode=None, test=None, simulcast_targets=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, playback_policy=None, new_asset_settings=None, reconnect_window=None, passthrough=None, audio_only=None, embedded_subtitles=None, reduced_latency=None, low_latency=None, latency_mode=None, test=None, simulcast_targets=None, max_continuous_duration=43200, local_vars_configuration=None):  # noqa: E501
         """CreateLiveStreamRequest - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
@@ -78,6 +80,7 @@ class CreateLiveStreamRequest(object):
         self._latency_mode = None
         self._test = None
         self._simulcast_targets = None
+        self._max_continuous_duration = None
         self.discriminator = None
 
         if playback_policy is not None:
@@ -102,6 +105,8 @@ class CreateLiveStreamRequest(object):
             self.test = test
         if simulcast_targets is not None:
             self.simulcast_targets = simulcast_targets
+        if max_continuous_duration is not None:
+            self.max_continuous_duration = max_continuous_duration
 
     @property
     def playback_policy(self):
@@ -359,6 +364,35 @@ class CreateLiveStreamRequest(object):
         """
 
         self._simulcast_targets = simulcast_targets
+
+    @property
+    def max_continuous_duration(self):
+        """Gets the max_continuous_duration of this CreateLiveStreamRequest.  # noqa: E501
+
+        The time in seconds a live stream may be continuously active before being disconnected. Defaults to 12 hours.  # noqa: E501
+
+        :return: The max_continuous_duration of this CreateLiveStreamRequest.  # noqa: E501
+        :rtype: int
+        """
+        return self._max_continuous_duration
+
+    @max_continuous_duration.setter
+    def max_continuous_duration(self, max_continuous_duration):
+        """Sets the max_continuous_duration of this CreateLiveStreamRequest.
+
+        The time in seconds a live stream may be continuously active before being disconnected. Defaults to 12 hours.  # noqa: E501
+
+        :param max_continuous_duration: The max_continuous_duration of this CreateLiveStreamRequest.  # noqa: E501
+        :type max_continuous_duration: int
+        """
+        if (self.local_vars_configuration.client_side_validation and
+                max_continuous_duration is not None and max_continuous_duration > 43200):  # noqa: E501
+            raise ValueError("Invalid value for `max_continuous_duration`, must be a value less than or equal to `43200`")  # noqa: E501
+        if (self.local_vars_configuration.client_side_validation and
+                max_continuous_duration is not None and max_continuous_duration < 60):  # noqa: E501
+            raise ValueError("Invalid value for `max_continuous_duration`, must be a value greater than or equal to `60`")  # noqa: E501
+
+        self._max_continuous_duration = max_continuous_duration
 
     def to_dict(self, serialize=False):
         """Returns the model properties as a dict"""

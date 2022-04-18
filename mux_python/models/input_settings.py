@@ -192,7 +192,7 @@ class InputSettings(object):
     def type(self):
         """Gets the type of this InputSettings.  # noqa: E501
 
-        This parameter is required for the `text` track type.  # noqa: E501
+        This parameter is required for `text` type tracks.  # noqa: E501
 
         :return: The type of this InputSettings.  # noqa: E501
         :rtype: str
@@ -203,7 +203,7 @@ class InputSettings(object):
     def type(self, type):
         """Sets the type of this InputSettings.
 
-        This parameter is required for the `text` track type.  # noqa: E501
+        This parameter is required for `text` type tracks.  # noqa: E501
 
         :param type: The type of this InputSettings.  # noqa: E501
         :type type: str
@@ -221,7 +221,7 @@ class InputSettings(object):
     def text_type(self):
         """Gets the text_type of this InputSettings.  # noqa: E501
 
-        Type of text track. This parameter only supports subtitles value. For more information on Subtitles / Closed Captions, [see this blog post](https://mux.com/blog/subtitles-captions-webvtt-hls-and-those-magic-flags/). This parameter is required for `text` track type.  # noqa: E501
+        Type of text track. This parameter only supports subtitles value. For more information on Subtitles / Closed Captions, [see this blog post](https://mux.com/blog/subtitles-captions-webvtt-hls-and-those-magic-flags/). This parameter is required for `text` type tracks.  # noqa: E501
 
         :return: The text_type of this InputSettings.  # noqa: E501
         :rtype: str
@@ -232,7 +232,7 @@ class InputSettings(object):
     def text_type(self, text_type):
         """Sets the text_type of this InputSettings.
 
-        Type of text track. This parameter only supports subtitles value. For more information on Subtitles / Closed Captions, [see this blog post](https://mux.com/blog/subtitles-captions-webvtt-hls-and-those-magic-flags/). This parameter is required for `text` track type.  # noqa: E501
+        Type of text track. This parameter only supports subtitles value. For more information on Subtitles / Closed Captions, [see this blog post](https://mux.com/blog/subtitles-captions-webvtt-hls-and-those-magic-flags/). This parameter is required for `text` type tracks.  # noqa: E501
 
         :param text_type: The text_type of this InputSettings.  # noqa: E501
         :type text_type: str
@@ -273,7 +273,7 @@ class InputSettings(object):
     def name(self):
         """Gets the name of this InputSettings.  # noqa: E501
 
-        The name of the track containing a human-readable description. This value must be unique across all text type and subtitles `text` type tracks. The hls manifest will associate a subtitle text track with this value. For example, the value should be \"English\" for subtitles text track with language_code as en. This optional parameter should be used only for `text` type and subtitles `text` type track. If this parameter is not included, Mux will auto-populate based on the `input[].language_code` value.  # noqa: E501
+        The name of the track containing a human-readable description. This value must be unique across all text type and subtitles `text` type tracks. The hls manifest will associate a subtitle text track with this value. For example, the value should be \"English\" for subtitles text track with language_code as en. This optional parameter should be used only for `text` type and subtitles `text` type tracks. If this parameter is not included, Mux will auto-populate based on the `input[].language_code` value.  # noqa: E501
 
         :return: The name of this InputSettings.  # noqa: E501
         :rtype: str
@@ -284,7 +284,7 @@ class InputSettings(object):
     def name(self, name):
         """Sets the name of this InputSettings.
 
-        The name of the track containing a human-readable description. This value must be unique across all text type and subtitles `text` type tracks. The hls manifest will associate a subtitle text track with this value. For example, the value should be \"English\" for subtitles text track with language_code as en. This optional parameter should be used only for `text` type and subtitles `text` type track. If this parameter is not included, Mux will auto-populate based on the `input[].language_code` value.  # noqa: E501
+        The name of the track containing a human-readable description. This value must be unique across all text type and subtitles `text` type tracks. The hls manifest will associate a subtitle text track with this value. For example, the value should be \"English\" for subtitles text track with language_code as en. This optional parameter should be used only for `text` type and subtitles `text` type tracks. If this parameter is not included, Mux will auto-populate based on the `input[].language_code` value.  # noqa: E501
 
         :param name: The name of this InputSettings.  # noqa: E501
         :type name: str

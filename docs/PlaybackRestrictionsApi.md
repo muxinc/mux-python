@@ -305,7 +305,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_referrer_domain_restriction**
-> PlaybackRestrictionResponse update_referrer_domain_restriction(playback_restriction_id, body)
+> PlaybackRestrictionResponse update_referrer_domain_restriction(playback_restriction_id, update_referrer_domain_restriction_request)
 
 Update the Referrer Playback Restriction
 
@@ -342,11 +342,11 @@ with mux_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = mux_python.PlaybackRestrictionsApi(api_client)
     playback_restriction_id = 'playback_restriction_id_example' # str | ID of the Playback Restriction.
-body = {"allowed_domains":["*.example.com"],"allow_no_referrer":true} # ReferrerDomainRestriction | 
+update_referrer_domain_restriction_request = {"allowed_domains":["*.example.com"],"allow_no_referrer":true} # UpdateReferrerDomainRestrictionRequest | 
 
     try:
         # Update the Referrer Playback Restriction
-        api_response = api_instance.update_referrer_domain_restriction(playback_restriction_id, body)
+        api_response = api_instance.update_referrer_domain_restriction(playback_restriction_id, update_referrer_domain_restriction_request)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling PlaybackRestrictionsApi->update_referrer_domain_restriction: %s\n" % e)
@@ -357,7 +357,7 @@ body = {"allowed_domains":["*.example.com"],"allow_no_referrer":true} # Referrer
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **playback_restriction_id** | **str**| ID of the Playback Restriction. | 
- **body** | **ReferrerDomainRestriction**|  | 
+ **update_referrer_domain_restriction_request** | [**UpdateReferrerDomainRestrictionRequest**](UpdateReferrerDomainRestrictionRequest.md)|  | 
 
 ### Return type
 

@@ -148,7 +148,7 @@ class AssetNonStandardInputReasons(object):
     def video_gop_size(self):
         """Gets the video_gop_size of this AssetNonStandardInputReasons.  # noqa: E501
 
-        The video key frame Interval (also called as Group of Picture or GOP) of the input file is `high`. This parameter is present when the gop is greater than 10 seconds.  # noqa: E501
+        The video key frame Interval (also called as Group of Picture or GOP) of the input file is `high`. This parameter is present when the gop is greater than 20 seconds.  # noqa: E501
 
         :return: The video_gop_size of this AssetNonStandardInputReasons.  # noqa: E501
         :rtype: str
@@ -159,7 +159,7 @@ class AssetNonStandardInputReasons(object):
     def video_gop_size(self, video_gop_size):
         """Sets the video_gop_size of this AssetNonStandardInputReasons.
 
-        The video key frame Interval (also called as Group of Picture or GOP) of the input file is `high`. This parameter is present when the gop is greater than 10 seconds.  # noqa: E501
+        The video key frame Interval (also called as Group of Picture or GOP) of the input file is `high`. This parameter is present when the gop is greater than 20 seconds.  # noqa: E501
 
         :param video_gop_size: The video_gop_size of this AssetNonStandardInputReasons.  # noqa: E501
         :type video_gop_size: str
@@ -177,7 +177,7 @@ class AssetNonStandardInputReasons(object):
     def video_frame_rate(self):
         """Gets the video_frame_rate of this AssetNonStandardInputReasons.  # noqa: E501
 
-        The video frame rate of the input file. Video with average frames per second (fps) less than 10 or greater than 120 is non-standard. A `-1` frame rate value indicates Mux could not determine the frame rate of the video track.  # noqa: E501
+        The video frame rate of the input file. Video with average frames per second (fps) less than 5 or greater than 120 is non-standard. A `-1` frame rate value indicates Mux could not determine the frame rate of the video track.  # noqa: E501
 
         :return: The video_frame_rate of this AssetNonStandardInputReasons.  # noqa: E501
         :rtype: str
@@ -188,7 +188,7 @@ class AssetNonStandardInputReasons(object):
     def video_frame_rate(self, video_frame_rate):
         """Sets the video_frame_rate of this AssetNonStandardInputReasons.
 
-        The video frame rate of the input file. Video with average frames per second (fps) less than 10 or greater than 120 is non-standard. A `-1` frame rate value indicates Mux could not determine the frame rate of the video track.  # noqa: E501
+        The video frame rate of the input file. Video with average frames per second (fps) less than 5 or greater than 120 is non-standard. A `-1` frame rate value indicates Mux could not determine the frame rate of the video track.  # noqa: E501
 
         :param video_frame_rate: The video_frame_rate of this AssetNonStandardInputReasons.  # noqa: E501
         :type video_frame_rate: str

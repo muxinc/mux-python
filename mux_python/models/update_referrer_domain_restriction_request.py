@@ -34,17 +34,75 @@ class UpdateReferrerDomainRestrictionRequest(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'allowed_domains': 'list[str]',
+        'allow_no_referrer': 'bool'
     }
 
     attribute_map = {
+        'allowed_domains': 'allowed_domains',
+        'allow_no_referrer': 'allow_no_referrer'
     }
 
-    def __init__(self, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, allowed_domains=None, allow_no_referrer=False, local_vars_configuration=None):  # noqa: E501
         """UpdateReferrerDomainRestrictionRequest - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
         self.local_vars_configuration = local_vars_configuration
+
+        self._allowed_domains = None
+        self._allow_no_referrer = None
         self.discriminator = None
+
+        if allowed_domains is not None:
+            self.allowed_domains = allowed_domains
+        if allow_no_referrer is not None:
+            self.allow_no_referrer = allow_no_referrer
+
+    @property
+    def allowed_domains(self):
+        """Gets the allowed_domains of this UpdateReferrerDomainRestrictionRequest.  # noqa: E501
+
+        List of domains allowed to play videos. Possible values are   * `[]` Empty Array indicates deny video playback requests for all domains   * `[\"*\"]` A Single Wildcard `*` entry means allow video playback requests from any domain   *  `[\"*.example.com\", \"foo.com\"]` A list of up to 10 domains or valid dns-style wildcards   # noqa: E501
+
+        :return: The allowed_domains of this UpdateReferrerDomainRestrictionRequest.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._allowed_domains
+
+    @allowed_domains.setter
+    def allowed_domains(self, allowed_domains):
+        """Sets the allowed_domains of this UpdateReferrerDomainRestrictionRequest.
+
+        List of domains allowed to play videos. Possible values are   * `[]` Empty Array indicates deny video playback requests for all domains   * `[\"*\"]` A Single Wildcard `*` entry means allow video playback requests from any domain   *  `[\"*.example.com\", \"foo.com\"]` A list of up to 10 domains or valid dns-style wildcards   # noqa: E501
+
+        :param allowed_domains: The allowed_domains of this UpdateReferrerDomainRestrictionRequest.  # noqa: E501
+        :type allowed_domains: list[str]
+        """
+
+        self._allowed_domains = allowed_domains
+
+    @property
+    def allow_no_referrer(self):
+        """Gets the allow_no_referrer of this UpdateReferrerDomainRestrictionRequest.  # noqa: E501
+
+        A boolean to determine whether to allow or deny HTTP requests without `Referer` HTTP request header. Playback requests coming from non-web/native applications like iOS, Android or smart TVs will not have a `Referer` HTTP header. Set this value to `true` to allow these playback requests.  # noqa: E501
+
+        :return: The allow_no_referrer of this UpdateReferrerDomainRestrictionRequest.  # noqa: E501
+        :rtype: bool
+        """
+        return self._allow_no_referrer
+
+    @allow_no_referrer.setter
+    def allow_no_referrer(self, allow_no_referrer):
+        """Sets the allow_no_referrer of this UpdateReferrerDomainRestrictionRequest.
+
+        A boolean to determine whether to allow or deny HTTP requests without `Referer` HTTP request header. Playback requests coming from non-web/native applications like iOS, Android or smart TVs will not have a `Referer` HTTP header. Set this value to `true` to allow these playback requests.  # noqa: E501
+
+        :param allow_no_referrer: The allow_no_referrer of this UpdateReferrerDomainRestrictionRequest.  # noqa: E501
+        :type allow_no_referrer: bool
+        """
+
+        self._allow_no_referrer = allow_no_referrer
 
     def to_dict(self, serialize=False):
         """Returns the model properties as a dict"""

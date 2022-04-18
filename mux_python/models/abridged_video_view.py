@@ -82,22 +82,15 @@ class AbridgedVideoView(object):
 
         if id is not None:
             self.id = id
-        if viewer_os_family is not None:
-            self.viewer_os_family = viewer_os_family
-        if viewer_application_name is not None:
-            self.viewer_application_name = viewer_application_name
-        if video_title is not None:
-            self.video_title = video_title
+        self.viewer_os_family = viewer_os_family
+        self.viewer_application_name = viewer_application_name
+        self.video_title = video_title
         if total_row_count is not None:
             self.total_row_count = total_row_count
-        if player_error_message is not None:
-            self.player_error_message = player_error_message
-        if player_error_code is not None:
-            self.player_error_code = player_error_code
-        if error_type_id is not None:
-            self.error_type_id = error_type_id
-        if country_code is not None:
-            self.country_code = country_code
+        self.player_error_message = player_error_message
+        self.player_error_code = player_error_code
+        self.error_type_id = error_type_id
+        self.country_code = country_code
         if view_start is not None:
             self.view_start = view_start
         if view_end is not None:

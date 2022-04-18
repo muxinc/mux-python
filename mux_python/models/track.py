@@ -46,7 +46,8 @@ class Track(object):
         'language_code': 'str',
         'name': 'str',
         'closed_captions': 'bool',
-        'passthrough': 'str'
+        'passthrough': 'str',
+        'status': 'str'
     }
 
     attribute_map = {
@@ -62,10 +63,11 @@ class Track(object):
         'language_code': 'language_code',
         'name': 'name',
         'closed_captions': 'closed_captions',
-        'passthrough': 'passthrough'
+        'passthrough': 'passthrough',
+        'status': 'status'
     }
 
-    def __init__(self, id=None, type=None, duration=None, max_width=None, max_height=None, max_frame_rate=None, max_channels=None, max_channel_layout=None, text_type=None, language_code=None, name=None, closed_captions=None, passthrough=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, id=None, type=None, duration=None, max_width=None, max_height=None, max_frame_rate=None, max_channels=None, max_channel_layout=None, text_type=None, language_code=None, name=None, closed_captions=None, passthrough=None, status=None, local_vars_configuration=None):  # noqa: E501
         """Track - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
@@ -84,6 +86,7 @@ class Track(object):
         self._name = None
         self._closed_captions = None
         self._passthrough = None
+        self._status = None
         self.discriminator = None
 
         if id is not None:
@@ -112,6 +115,8 @@ class Track(object):
             self.closed_captions = closed_captions
         if passthrough is not None:
             self.passthrough = passthrough
+        if status is not None:
+            self.status = status
 
     @property
     def id(self):
@@ -169,7 +174,7 @@ class Track(object):
     def duration(self):
         """Gets the duration of this Track.  # noqa: E501
 
-        The duration in seconds of the track media. This parameter is not set for the `text` type track. This field is optional and may not be set. The top level `duration` field of an asset will always be set.  # noqa: E501
+        The duration in seconds of the track media. This parameter is not set for `text` type tracks. This field is optional and may not be set. The top level `duration` field of an asset will always be set.  # noqa: E501
 
         :return: The duration of this Track.  # noqa: E501
         :rtype: float
@@ -180,7 +185,7 @@ class Track(object):
     def duration(self, duration):
         """Sets the duration of this Track.
 
-        The duration in seconds of the track media. This parameter is not set for the `text` type track. This field is optional and may not be set. The top level `duration` field of an asset will always be set.  # noqa: E501
+        The duration in seconds of the track media. This parameter is not set for `text` type tracks. This field is optional and may not be set. The top level `duration` field of an asset will always be set.  # noqa: E501
 
         :param duration: The duration of this Track.  # noqa: E501
         :type duration: float
@@ -307,7 +312,7 @@ class Track(object):
     def text_type(self):
         """Gets the text_type of this Track.  # noqa: E501
 
-        This parameter is set only for the `text` type track.  # noqa: E501
+        This parameter is only set for `text` type tracks.  # noqa: E501
 
         :return: The text_type of this Track.  # noqa: E501
         :rtype: str
@@ -318,7 +323,7 @@ class Track(object):
     def text_type(self, text_type):
         """Sets the text_type of this Track.
 
-        This parameter is set only for the `text` type track.  # noqa: E501
+        This parameter is only set for `text` type tracks.  # noqa: E501
 
         :param text_type: The text_type of this Track.  # noqa: E501
         :type text_type: str
@@ -336,7 +341,7 @@ class Track(object):
     def language_code(self):
         """Gets the language_code of this Track.  # noqa: E501
 
-        The language code value represents [BCP 47](https://tools.ietf.org/html/bcp47) specification compliant value. For example, `en` for English or `en-US` for the US version of English. This parameter is set for `text` type and `subtitles` text type track.  # noqa: E501
+        The language code value represents [BCP 47](https://tools.ietf.org/html/bcp47) specification compliant value. For example, `en` for English or `en-US` for the US version of English. This parameter is only set for `text` type and `subtitles` text type tracks.  # noqa: E501
 
         :return: The language_code of this Track.  # noqa: E501
         :rtype: str
@@ -347,7 +352,7 @@ class Track(object):
     def language_code(self, language_code):
         """Sets the language_code of this Track.
 
-        The language code value represents [BCP 47](https://tools.ietf.org/html/bcp47) specification compliant value. For example, `en` for English or `en-US` for the US version of English. This parameter is set for `text` type and `subtitles` text type track.  # noqa: E501
+        The language code value represents [BCP 47](https://tools.ietf.org/html/bcp47) specification compliant value. For example, `en` for English or `en-US` for the US version of English. This parameter is only set for `text` type and `subtitles` text type tracks.  # noqa: E501
 
         :param language_code: The language_code of this Track.  # noqa: E501
         :type language_code: str
@@ -359,7 +364,7 @@ class Track(object):
     def name(self):
         """Gets the name of this Track.  # noqa: E501
 
-        The name of the track containing a human-readable description. The hls manifest will associate a subtitle text track with this value. For example, the value is \"English\" for subtitles text track for the `language_code` value of `en-US`. This parameter is set for the `text` type and `subtitles` text type track.  # noqa: E501
+        The name of the track containing a human-readable description. The hls manifest will associate a subtitle text track with this value. For example, the value is \"English\" for subtitles text track for the `language_code` value of `en-US`. This parameter is only set for `text` type and `subtitles` text type tracks.  # noqa: E501
 
         :return: The name of this Track.  # noqa: E501
         :rtype: str
@@ -370,7 +375,7 @@ class Track(object):
     def name(self, name):
         """Sets the name of this Track.
 
-        The name of the track containing a human-readable description. The hls manifest will associate a subtitle text track with this value. For example, the value is \"English\" for subtitles text track for the `language_code` value of `en-US`. This parameter is set for the `text` type and `subtitles` text type track.  # noqa: E501
+        The name of the track containing a human-readable description. The hls manifest will associate a subtitle text track with this value. For example, the value is \"English\" for subtitles text track for the `language_code` value of `en-US`. This parameter is only set for `text` type and `subtitles` text type tracks.  # noqa: E501
 
         :param name: The name of this Track.  # noqa: E501
         :type name: str
@@ -382,7 +387,7 @@ class Track(object):
     def closed_captions(self):
         """Gets the closed_captions of this Track.  # noqa: E501
 
-        Indicates the track provides Subtitles for the Deaf or Hard-of-hearing (SDH). This parameter is set for the `text` type and `subtitles` text type track.  # noqa: E501
+        Indicates the track provides Subtitles for the Deaf or Hard-of-hearing (SDH). This parameter is only set for `text` type and `subtitles` text type tracks.  # noqa: E501
 
         :return: The closed_captions of this Track.  # noqa: E501
         :rtype: bool
@@ -393,7 +398,7 @@ class Track(object):
     def closed_captions(self, closed_captions):
         """Sets the closed_captions of this Track.
 
-        Indicates the track provides Subtitles for the Deaf or Hard-of-hearing (SDH). This parameter is set for the `text` type and `subtitles` text type track.  # noqa: E501
+        Indicates the track provides Subtitles for the Deaf or Hard-of-hearing (SDH). This parameter is only set for `text` type and `subtitles` text type tracks.  # noqa: E501
 
         :param closed_captions: The closed_captions of this Track.  # noqa: E501
         :type closed_captions: bool
@@ -405,7 +410,7 @@ class Track(object):
     def passthrough(self):
         """Gets the passthrough of this Track.  # noqa: E501
 
-        Arbitrary user-supplied metadata set for the track either when creating the asset or track. This parameter is set for `text` type and `subtitles` text type track. Max 255 characters.  # noqa: E501
+        Arbitrary user-supplied metadata set for the track either when creating the asset or track. This parameter is only set for `text` type tracks. Max 255 characters.  # noqa: E501
 
         :return: The passthrough of this Track.  # noqa: E501
         :rtype: str
@@ -416,13 +421,42 @@ class Track(object):
     def passthrough(self, passthrough):
         """Sets the passthrough of this Track.
 
-        Arbitrary user-supplied metadata set for the track either when creating the asset or track. This parameter is set for `text` type and `subtitles` text type track. Max 255 characters.  # noqa: E501
+        Arbitrary user-supplied metadata set for the track either when creating the asset or track. This parameter is only set for `text` type tracks. Max 255 characters.  # noqa: E501
 
         :param passthrough: The passthrough of this Track.  # noqa: E501
         :type passthrough: str
         """
 
         self._passthrough = passthrough
+
+    @property
+    def status(self):
+        """Gets the status of this Track.  # noqa: E501
+
+        The status of the track. This parameter is only set for `text` type tracks.  # noqa: E501
+
+        :return: The status of this Track.  # noqa: E501
+        :rtype: str
+        """
+        return self._status
+
+    @status.setter
+    def status(self, status):
+        """Sets the status of this Track.
+
+        The status of the track. This parameter is only set for `text` type tracks.  # noqa: E501
+
+        :param status: The status of this Track.  # noqa: E501
+        :type status: str
+        """
+        allowed_values = ["preparing", "ready", "errored"]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and status not in allowed_values:  # noqa: E501
+            raise ValueError(
+                "Invalid value for `status` ({0}), must be one of {1}"  # noqa: E501
+                .format(status, allowed_values)
+            )
+
+        self._status = status
 
     def to_dict(self, serialize=False):
         """Returns the model properties as a dict"""

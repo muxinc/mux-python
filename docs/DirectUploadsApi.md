@@ -89,6 +89,8 @@ Name | Type | Description  | Notes
 
 Create a new direct upload URL
 
+Creates a new direct upload, through which video content can be uploaded for ingest to Mux.
+
 ### Example
 
 * Basic Authentication (accessToken):
@@ -160,6 +162,8 @@ Name | Type | Description  | Notes
 
 Retrieve a single direct upload's info
 
+Fetches information about a single direct upload in the current environment.
+
 ### Example
 
 * Basic Authentication (accessToken):
@@ -230,6 +234,8 @@ Name | Type | Description  | Notes
 > ListUploadsResponse list_direct_uploads(limit=limit, page=page)
 
 List direct uploads
+
+Lists currently extant direct uploads in the current environment.
 
 ### Example
 
