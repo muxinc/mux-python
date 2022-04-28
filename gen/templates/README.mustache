@@ -1,6 +1,14 @@
 ![Mux Python Banner](github-python-sdk.png)
 
-![](https://github.com/muxinc/mux-python/workflows/Integration%20Test/badge.svg)
+<p align="center">
+  <a href="https://pypi.org/project/mux-python/"><img src="https://img.shields.io/pypi/v/mux_python" title="PyPI" /></a>
+  <a href="https://github.com/muxinc/mux-python/workflows/Integration%20Test"><img src="https://github.com/muxinc/mux-python/workflows/Integration%20Test/badge.svg" title="CI" /></a>
+</p>
+<p align="center">
+  <a href="https://pypi.org/project/mux-python">PyPI</a> |
+  <a href="https://docs.mux.com">Mux Docs</a> |
+  <a href="https://docs.mux.com/api-reference">Mux API Reference </a>
+</p>
 
 # Mux Python
 
