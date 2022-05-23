@@ -456,7 +456,7 @@ class Asset(object):
     def is_live(self):
         """Gets the is_live of this Asset.  # noqa: E501
 
-        Whether the asset is created from a live stream and the live stream is currently `active` and not in `idle` state.  # noqa: E501
+        Indicates whether the live stream that created this asset is currently `active` and not in `idle` state. This is an optional parameter added when the asset is created from a live stream.  # noqa: E501
 
         :return: The is_live of this Asset.  # noqa: E501
         :rtype: bool
@@ -467,7 +467,7 @@ class Asset(object):
     def is_live(self, is_live):
         """Sets the is_live of this Asset.
 
-        Whether the asset is created from a live stream and the live stream is currently `active` and not in `idle` state.  # noqa: E501
+        Indicates whether the live stream that created this asset is currently `active` and not in `idle` state. This is an optional parameter added when the asset is created from a live stream.  # noqa: E501
 
         :param is_live: The is_live of this Asset.  # noqa: E501
         :type is_live: bool

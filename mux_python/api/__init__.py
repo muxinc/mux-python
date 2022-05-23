@@ -16,5 +16,6 @@ from mux_python.api.metrics_api import MetricsApi
 from mux_python.api.playback_id_api import PlaybackIDApi
 from mux_python.api.playback_restrictions_api import PlaybackRestrictionsApi
 from mux_python.api.real_time_api import RealTimeApi
+from mux_python.api.spaces_api import SpacesApi
 from mux_python.api.url_signing_keys_api import URLSigningKeysApi
 from mux_python.api.video_views_api import VideoViewsApi

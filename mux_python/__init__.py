@@ -15,7 +15,7 @@
 
 from __future__ import absolute_import
 
-__version__ = "3.4.0"
+__version__ = "3.5.0"
 
 # import apis into sdk package
 from mux_python.api.assets_api import AssetsApi
@@ -31,6 +31,7 @@ from mux_python.api.metrics_api import MetricsApi
 from mux_python.api.playback_id_api import PlaybackIDApi
 from mux_python.api.playback_restrictions_api import PlaybackRestrictionsApi
 from mux_python.api.real_time_api import RealTimeApi
+from mux_python.api.spaces_api import SpacesApi
 from mux_python.api.url_signing_keys_api import URLSigningKeysApi
 from mux_python.api.video_views_api import VideoViewsApi
 
@@ -54,12 +55,19 @@ from mux_python.models.asset_response import AssetResponse
 from mux_python.models.asset_static_renditions import AssetStaticRenditions
 from mux_python.models.asset_static_renditions_files import AssetStaticRenditionsFiles
 from mux_python.models.breakdown_value import BreakdownValue
+from mux_python.models.broadcast import Broadcast
+from mux_python.models.broadcast_layout import BroadcastLayout
+from mux_python.models.broadcast_resolution import BroadcastResolution
+from mux_python.models.broadcast_response import BroadcastResponse
+from mux_python.models.broadcast_status import BroadcastStatus
 from mux_python.models.create_asset_request import CreateAssetRequest
+from mux_python.models.create_broadcast_request import CreateBroadcastRequest
 from mux_python.models.create_live_stream_request import CreateLiveStreamRequest
 from mux_python.models.create_playback_id_request import CreatePlaybackIDRequest
 from mux_python.models.create_playback_id_response import CreatePlaybackIDResponse
 from mux_python.models.create_playback_restriction_request import CreatePlaybackRestrictionRequest
 from mux_python.models.create_simulcast_target_request import CreateSimulcastTargetRequest
+from mux_python.models.create_space_request import CreateSpaceRequest
 from mux_python.models.create_track_request import CreateTrackRequest
 from mux_python.models.create_track_response import CreateTrackResponse
 from mux_python.models.create_upload_request import CreateUploadRequest
@@ -114,6 +122,7 @@ from mux_python.models.list_real_time_dimensions_response_data import ListRealTi
 from mux_python.models.list_real_time_metrics_response import ListRealTimeMetricsResponse
 from mux_python.models.list_related_incidents_response import ListRelatedIncidentsResponse
 from mux_python.models.list_signing_keys_response import ListSigningKeysResponse
+from mux_python.models.list_spaces_response import ListSpacesResponse
 from mux_python.models.list_uploads_response import ListUploadsResponse
 from mux_python.models.list_video_view_exports_response import ListVideoViewExportsResponse
 from mux_python.models.list_video_views_response import ListVideoViewsResponse
@@ -140,6 +149,12 @@ from mux_python.models.signing_key import SigningKey
 from mux_python.models.signing_key_response import SigningKeyResponse
 from mux_python.models.simulcast_target import SimulcastTarget
 from mux_python.models.simulcast_target_response import SimulcastTargetResponse
+from mux_python.models.space import Space
+from mux_python.models.space_response import SpaceResponse
+from mux_python.models.space_status import SpaceStatus
+from mux_python.models.space_type import SpaceType
+from mux_python.models.start_space_broadcast_response import StartSpaceBroadcastResponse
+from mux_python.models.stop_space_broadcast_response import StopSpaceBroadcastResponse
 from mux_python.models.track import Track
 from mux_python.models.update_asset_mp4_support_request import UpdateAssetMP4SupportRequest
 from mux_python.models.update_asset_master_access_request import UpdateAssetMasterAccessRequest

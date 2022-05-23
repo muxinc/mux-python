@@ -112,7 +112,7 @@ class CreateSimulcastTargetRequest(object):
     def url(self):
         """Gets the url of this CreateSimulcastTargetRequest.  # noqa: E501
 
-        RTMP hostname including application name for the third party live streaming service. Example: 'rtmp://live.example.com/app'.  # noqa: E501
+        RTMP hostname including application name for the third party live streaming service. Example: `rtmp://live.example.com/app`.  # noqa: E501
 
         :return: The url of this CreateSimulcastTargetRequest.  # noqa: E501
         :rtype: str
@@ -123,7 +123,7 @@ class CreateSimulcastTargetRequest(object):
     def url(self, url):
         """Sets the url of this CreateSimulcastTargetRequest.
 
-        RTMP hostname including application name for the third party live streaming service. Example: 'rtmp://live.example.com/app'.  # noqa: E501
+        RTMP hostname including application name for the third party live streaming service. Example: `rtmp://live.example.com/app`.  # noqa: E501
 
         :param url: The url of this CreateSimulcastTargetRequest.  # noqa: E501
         :type url: str
