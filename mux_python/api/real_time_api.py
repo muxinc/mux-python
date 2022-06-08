@@ -52,7 +52,7 @@ class RealTimeApi(object):
         :param dimension: Dimension the specified value belongs to
         :type dimension: str
         :param timestamp: Timestamp to limit results by. This value must be provided as a unix timestamp. Defaults to the current unix timestamp.
-        :type timestamp: float
+        :type timestamp: int
         :param filters: Limit the results to rows that match conditions from provided key:value pairs. Must be provided as an array query string parameter.  To exclude rows that match a certain condition, prepend a `!` character to the dimension.  Possible filter names are the same as returned by the List Filters endpoint.  Example:    * `filters[]=operating_system:windows&filters[]=!country:US` 
         :type filters: list[str]
         :param order_by: Value to order the results by
@@ -92,7 +92,7 @@ class RealTimeApi(object):
         :param dimension: Dimension the specified value belongs to
         :type dimension: str
         :param timestamp: Timestamp to limit results by. This value must be provided as a unix timestamp. Defaults to the current unix timestamp.
-        :type timestamp: float
+        :type timestamp: int
         :param filters: Limit the results to rows that match conditions from provided key:value pairs. Must be provided as an array query string parameter.  To exclude rows that match a certain condition, prepend a `!` character to the dimension.  Possible filter names are the same as returned by the List Filters endpoint.  Example:    * `filters[]=operating_system:windows&filters[]=!country:US` 
         :type filters: list[str]
         :param order_by: Value to order the results by

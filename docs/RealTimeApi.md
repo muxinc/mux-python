@@ -50,7 +50,7 @@ with mux_python.ApiClient(configuration) as api_client:
     api_instance = mux_python.RealTimeApi(api_client)
     realtime_metric_id = 'current-concurrent-viewers' # str | ID of the Realtime Metric
 dimension = 'dimension_example' # str | Dimension the specified value belongs to (optional)
-timestamp = 3.4 # float | Timestamp to limit results by. This value must be provided as a unix timestamp. Defaults to the current unix timestamp. (optional)
+timestamp = 56 # int | Timestamp to limit results by. This value must be provided as a unix timestamp. Defaults to the current unix timestamp. (optional)
 filters = ['filters_example'] # list[str] | Limit the results to rows that match conditions from provided key:value pairs. Must be provided as an array query string parameter.  To exclude rows that match a certain condition, prepend a `!` character to the dimension.  Possible filter names are the same as returned by the List Filters endpoint.  Example:    * `filters[]=operating_system:windows&filters[]=!country:US`  (optional)
 order_by = 'order_by_example' # str | Value to order the results by (optional)
 order_direction = 'order_direction_example' # str | Sort order. (optional)
@@ -69,7 +69,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **realtime_metric_id** | **str**| ID of the Realtime Metric | 
  **dimension** | **str**| Dimension the specified value belongs to | [optional] 
- **timestamp** | **float**| Timestamp to limit results by. This value must be provided as a unix timestamp. Defaults to the current unix timestamp. | [optional] 
+ **timestamp** | **int**| Timestamp to limit results by. This value must be provided as a unix timestamp. Defaults to the current unix timestamp. | [optional] 
  **filters** | [**list[str]**](str.md)| Limit the results to rows that match conditions from provided key:value pairs. Must be provided as an array query string parameter.  To exclude rows that match a certain condition, prepend a &#x60;!&#x60; character to the dimension.  Possible filter names are the same as returned by the List Filters endpoint.  Example:    * &#x60;filters[]&#x3D;operating_system:windows&amp;filters[]&#x3D;!country:US&#x60;  | [optional] 
  **order_by** | **str**| Value to order the results by | [optional] 
  **order_direction** | **str**| Sort order. | [optional] 

@@ -1017,7 +1017,7 @@ class SpacesApi(object):
     def start_space_broadcast(self, space_id, broadcast_id, **kwargs):  # noqa: E501
         """Start a space broadcast  # noqa: E501
 
-        Starts broadcasting a space to the associated destination.  # noqa: E501
+        Starts broadcasting a space to the associated destination. Broadcasts can only be started when the space is `active` (when there are participants connected).  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -1049,7 +1049,7 @@ class SpacesApi(object):
     def start_space_broadcast_with_http_info(self, space_id, broadcast_id, **kwargs):  # noqa: E501
         """Start a space broadcast  # noqa: E501
 
-        Starts broadcasting a space to the associated destination.  # noqa: E501
+        Starts broadcasting a space to the associated destination. Broadcasts can only be started when the space is `active` (when there are participants connected).  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
