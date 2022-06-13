@@ -310,7 +310,7 @@ class SpacesApi(object):
         }
 
         return self.api_client.call_api(
-            '/video/v1/spaces/${SPACE_ID}/broadcasts', 'POST',
+            '/video/v1/spaces/{SPACE_ID}/broadcasts', 'POST',
             path_params,
             query_params,
             header_params,
@@ -439,7 +439,7 @@ class SpacesApi(object):
         response_types_map = {}
 
         return self.api_client.call_api(
-            '/video/v1/spaces/${SPACE_ID}', 'DELETE',
+            '/video/v1/spaces/{SPACE_ID}', 'DELETE',
             path_params,
             query_params,
             header_params,
@@ -579,7 +579,7 @@ class SpacesApi(object):
         response_types_map = {}
 
         return self.api_client.call_api(
-            '/video/v1/spaces/${SPACE_ID}/broadcasts/${BROADCAST_ID}', 'DELETE',
+            '/video/v1/spaces/{SPACE_ID}/broadcasts/{BROADCAST_ID}', 'DELETE',
             path_params,
             query_params,
             header_params,
@@ -714,7 +714,7 @@ class SpacesApi(object):
         }
 
         return self.api_client.call_api(
-            '/video/v1/spaces/${SPACE_ID}', 'GET',
+            '/video/v1/spaces/{SPACE_ID}', 'GET',
             path_params,
             query_params,
             header_params,
@@ -860,7 +860,7 @@ class SpacesApi(object):
         }
 
         return self.api_client.call_api(
-            '/video/v1/spaces/${SPACE_ID}/broadcasts/${BROADCAST_ID}', 'GET',
+            '/video/v1/spaces/{SPACE_ID}/broadcasts/{BROADCAST_ID}', 'GET',
             path_params,
             query_params,
             header_params,
@@ -1144,7 +1144,7 @@ class SpacesApi(object):
         }
 
         return self.api_client.call_api(
-            '/video/v1/spaces/${SPACE_ID}/broadcasts/${BROADCAST_ID}/start', 'POST',
+            '/video/v1/spaces/{SPACE_ID}/broadcasts/{BROADCAST_ID}/start', 'POST',
             path_params,
             query_params,
             header_params,
@@ -1290,7 +1290,7 @@ class SpacesApi(object):
         }
 
         return self.api_client.call_api(
-            '/video/v1/spaces/${SPACE_ID}/broadcasts/${BROADCAST_ID}/stop', 'POST',
+            '/video/v1/spaces/{SPACE_ID}/broadcasts/{BROADCAST_ID}/stop', 'POST',
             path_params,
             query_params,
             header_params,
