@@ -15,7 +15,7 @@
 
 from __future__ import absolute_import
 
-__version__ = "3.5.2"
+__version__ = "3.6.0"
 
 # import apis into sdk package
 from mux_python.api.assets_api import AssetsApi
@@ -32,6 +32,7 @@ from mux_python.api.playback_id_api import PlaybackIDApi
 from mux_python.api.playback_restrictions_api import PlaybackRestrictionsApi
 from mux_python.api.real_time_api import RealTimeApi
 from mux_python.api.spaces_api import SpacesApi
+from mux_python.api.transcription_vocabularies_api import TranscriptionVocabulariesApi
 from mux_python.api.url_signing_keys_api import URLSigningKeysApi
 from mux_python.api.video_views_api import VideoViewsApi
 
@@ -70,6 +71,7 @@ from mux_python.models.create_simulcast_target_request import CreateSimulcastTar
 from mux_python.models.create_space_request import CreateSpaceRequest
 from mux_python.models.create_track_request import CreateTrackRequest
 from mux_python.models.create_track_response import CreateTrackResponse
+from mux_python.models.create_transcription_vocabulary_request import CreateTranscriptionVocabularyRequest
 from mux_python.models.create_upload_request import CreateUploadRequest
 from mux_python.models.delivery_report import DeliveryReport
 from mux_python.models.dimension_value import DimensionValue
@@ -123,11 +125,13 @@ from mux_python.models.list_real_time_metrics_response import ListRealTimeMetric
 from mux_python.models.list_related_incidents_response import ListRelatedIncidentsResponse
 from mux_python.models.list_signing_keys_response import ListSigningKeysResponse
 from mux_python.models.list_spaces_response import ListSpacesResponse
+from mux_python.models.list_transcription_vocabularies_response import ListTranscriptionVocabulariesResponse
 from mux_python.models.list_uploads_response import ListUploadsResponse
 from mux_python.models.list_video_view_exports_response import ListVideoViewExportsResponse
 from mux_python.models.list_video_views_response import ListVideoViewsResponse
 from mux_python.models.live_stream import LiveStream
 from mux_python.models.live_stream_embedded_subtitle_settings import LiveStreamEmbeddedSubtitleSettings
+from mux_python.models.live_stream_generated_subtitle_settings import LiveStreamGeneratedSubtitleSettings
 from mux_python.models.live_stream_response import LiveStreamResponse
 from mux_python.models.live_stream_status import LiveStreamStatus
 from mux_python.models.metric import Metric
@@ -156,12 +160,16 @@ from mux_python.models.space_type import SpaceType
 from mux_python.models.start_space_broadcast_response import StartSpaceBroadcastResponse
 from mux_python.models.stop_space_broadcast_response import StopSpaceBroadcastResponse
 from mux_python.models.track import Track
+from mux_python.models.transcription_vocabulary import TranscriptionVocabulary
+from mux_python.models.transcription_vocabulary_response import TranscriptionVocabularyResponse
 from mux_python.models.update_asset_mp4_support_request import UpdateAssetMP4SupportRequest
 from mux_python.models.update_asset_master_access_request import UpdateAssetMasterAccessRequest
 from mux_python.models.update_asset_request import UpdateAssetRequest
 from mux_python.models.update_live_stream_embedded_subtitles_request import UpdateLiveStreamEmbeddedSubtitlesRequest
+from mux_python.models.update_live_stream_generated_subtitles_request import UpdateLiveStreamGeneratedSubtitlesRequest
 from mux_python.models.update_live_stream_request import UpdateLiveStreamRequest
 from mux_python.models.update_referrer_domain_restriction_request import UpdateReferrerDomainRestrictionRequest
+from mux_python.models.update_transcription_vocabulary_request import UpdateTranscriptionVocabularyRequest
 from mux_python.models.upload import Upload
 from mux_python.models.upload_error import UploadError
 from mux_python.models.upload_response import UploadResponse

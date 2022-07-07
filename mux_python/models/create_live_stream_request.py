@@ -40,6 +40,7 @@ class CreateLiveStreamRequest(object):
         'passthrough': 'str',
         'audio_only': 'bool',
         'embedded_subtitles': 'list[LiveStreamEmbeddedSubtitleSettings]',
+        'generated_subtitles': 'list[LiveStreamGeneratedSubtitleSettings]',
         'reduced_latency': 'bool',
         'low_latency': 'bool',
         'latency_mode': 'str',
@@ -55,6 +56,7 @@ class CreateLiveStreamRequest(object):
         'passthrough': 'passthrough',
         'audio_only': 'audio_only',
         'embedded_subtitles': 'embedded_subtitles',
+        'generated_subtitles': 'generated_subtitles',
         'reduced_latency': 'reduced_latency',
         'low_latency': 'low_latency',
         'latency_mode': 'latency_mode',
@@ -63,7 +65,7 @@ class CreateLiveStreamRequest(object):
         'max_continuous_duration': 'max_continuous_duration'
     }
 
-    def __init__(self, playback_policy=None, new_asset_settings=None, reconnect_window=None, passthrough=None, audio_only=None, embedded_subtitles=None, reduced_latency=None, low_latency=None, latency_mode=None, test=None, simulcast_targets=None, max_continuous_duration=43200, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, playback_policy=None, new_asset_settings=None, reconnect_window=None, passthrough=None, audio_only=None, embedded_subtitles=None, generated_subtitles=None, reduced_latency=None, low_latency=None, latency_mode=None, test=None, simulcast_targets=None, max_continuous_duration=43200, local_vars_configuration=None):  # noqa: E501
         """CreateLiveStreamRequest - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
@@ -75,6 +77,7 @@ class CreateLiveStreamRequest(object):
         self._passthrough = None
         self._audio_only = None
         self._embedded_subtitles = None
+        self._generated_subtitles = None
         self._reduced_latency = None
         self._low_latency = None
         self._latency_mode = None
@@ -95,6 +98,8 @@ class CreateLiveStreamRequest(object):
             self.audio_only = audio_only
         if embedded_subtitles is not None:
             self.embedded_subtitles = embedded_subtitles
+        if generated_subtitles is not None:
+            self.generated_subtitles = generated_subtitles
         if reduced_latency is not None:
             self.reduced_latency = reduced_latency
         if low_latency is not None:
@@ -171,8 +176,8 @@ class CreateLiveStreamRequest(object):
         :type reconnect_window: float
         """
         if (self.local_vars_configuration.client_side_validation and
-                reconnect_window is not None and reconnect_window > 300):  # noqa: E501
-            raise ValueError("Invalid value for `reconnect_window`, must be a value less than or equal to `300`")  # noqa: E501
+                reconnect_window is not None and reconnect_window > 1800):  # noqa: E501
+            raise ValueError("Invalid value for `reconnect_window`, must be a value less than or equal to `1800`")  # noqa: E501
         if (self.local_vars_configuration.client_side_validation and
                 reconnect_window is not None and reconnect_window < 0.1):  # noqa: E501
             raise ValueError("Invalid value for `reconnect_window`, must be a value greater than or equal to `0.1`")  # noqa: E501
@@ -245,6 +250,29 @@ class CreateLiveStreamRequest(object):
         """
 
         self._embedded_subtitles = embedded_subtitles
+
+    @property
+    def generated_subtitles(self):
+        """Gets the generated_subtitles of this CreateLiveStreamRequest.  # noqa: E501
+
+        Configure the incoming live stream to include subtitles created with automatic speech recognition. Each Asset created from a live stream with `generated_subtitles` configured will automatically receive two text tracks. The first of these will have a `text_source` value of `generated_live`, and will be available with `ready` status as soon as the stream is live. The second text track will have a `text_source` value of `generated_live_final` and will contain subtitles with improved accuracy, timing, and formatting. However, `generated_live_final` tracks will not be available in `ready` status until the live stream ends. If an Asset has both `generated_live` and `generated_live_final` tracks that are `ready`, then only the `generated_live_final` track will be included during playback.  # noqa: E501
+
+        :return: The generated_subtitles of this CreateLiveStreamRequest.  # noqa: E501
+        :rtype: list[LiveStreamGeneratedSubtitleSettings]
+        """
+        return self._generated_subtitles
+
+    @generated_subtitles.setter
+    def generated_subtitles(self, generated_subtitles):
+        """Sets the generated_subtitles of this CreateLiveStreamRequest.
+
+        Configure the incoming live stream to include subtitles created with automatic speech recognition. Each Asset created from a live stream with `generated_subtitles` configured will automatically receive two text tracks. The first of these will have a `text_source` value of `generated_live`, and will be available with `ready` status as soon as the stream is live. The second text track will have a `text_source` value of `generated_live_final` and will contain subtitles with improved accuracy, timing, and formatting. However, `generated_live_final` tracks will not be available in `ready` status until the live stream ends. If an Asset has both `generated_live` and `generated_live_final` tracks that are `ready`, then only the `generated_live_final` track will be included during playback.  # noqa: E501
+
+        :param generated_subtitles: The generated_subtitles of this CreateLiveStreamRequest.  # noqa: E501
+        :type generated_subtitles: list[LiveStreamGeneratedSubtitleSettings]
+        """
+
+        self._generated_subtitles = generated_subtitles
 
     @property
     def reduced_latency(self):

@@ -153,7 +153,12 @@ class VideoView(object):
         'view_session_id': 'str',
         'viewer_connection_type': 'str',
         'viewer_device_model': 'str',
-        'weighted_average_bitrate': 'int'
+        'weighted_average_bitrate': 'int',
+        'custom_1': 'str',
+        'custom_2': 'str',
+        'custom_3': 'str',
+        'custom_4': 'str',
+        'custom_5': 'str'
     }
 
     attribute_map = {
@@ -276,10 +281,15 @@ class VideoView(object):
         'view_session_id': 'view_session_id',
         'viewer_connection_type': 'viewer_connection_type',
         'viewer_device_model': 'viewer_device_model',
-        'weighted_average_bitrate': 'weighted_average_bitrate'
+        'weighted_average_bitrate': 'weighted_average_bitrate',
+        'custom_1': 'custom_1',
+        'custom_2': 'custom_2',
+        'custom_3': 'custom_3',
+        'custom_4': 'custom_4',
+        'custom_5': 'custom_5'
     }
 
-    def __init__(self, view_total_upscaling=None, preroll_ad_asset_hostname=None, player_source_domain=None, region=None, viewer_user_agent=None, preroll_requested=None, page_type=None, startup_score=None, view_seek_duration=None, country_name=None, player_source_height=None, longitude=None, buffering_count=None, video_duration=None, player_source_type=None, city=None, view_id=None, platform_description=None, video_startup_preroll_request_time=None, viewer_device_name=None, video_series=None, viewer_application_name=None, updated_at=None, view_total_content_playback_time=None, cdn=None, player_instance_id=None, video_language=None, player_source_width=None, player_error_message=None, player_mux_plugin_version=None, watched=None, playback_score=None, page_url=None, metro=None, view_max_request_latency=None, requests_for_first_preroll=None, view_total_downscaling=None, latitude=None, player_source_host_name=None, inserted_at=None, view_end=None, mux_embed_version=None, player_language=None, page_load_time=None, viewer_device_category=None, video_startup_preroll_load_time=None, player_version=None, watch_time=None, player_source_stream_type=None, preroll_ad_tag_hostname=None, viewer_device_manufacturer=None, rebuffering_score=None, experiment_name=None, viewer_os_version=None, player_preload=None, buffering_duration=None, player_view_count=None, player_software=None, player_load_time=None, platform_summary=None, video_encoding_variant=None, player_width=None, view_seek_count=None, viewer_experience_score=None, view_error_id=None, video_variant_name=None, preroll_played=None, viewer_application_engine=None, viewer_os_architecture=None, player_error_code=None, buffering_rate=None, events=None, player_name=None, view_start=None, view_average_request_throughput=None, video_producer=None, error_type_id=None, mux_viewer_id=None, video_id=None, continent_code=None, session_id=None, exit_before_video_start=None, video_content_type=None, viewer_os_family=None, player_poster=None, view_average_request_latency=None, video_variant_id=None, player_source_duration=None, player_source_url=None, mux_api_version=None, video_title=None, id=None, short_time=None, rebuffer_percentage=None, time_to_first_frame=None, viewer_user_id=None, video_stream_type=None, player_startup_time=None, viewer_application_version=None, view_max_downscale_percentage=None, view_max_upscale_percentage=None, country_code=None, used_fullscreen=None, isp=None, property_id=None, player_autoplay=None, player_height=None, asn=None, asn_name=None, quality_score=None, player_software_version=None, player_mux_plugin_name=None, sub_property_id=None, player_remote_played=None, view_max_playhead_position=None, view_playing_time=None, view_session_id=None, viewer_connection_type=None, viewer_device_model=None, weighted_average_bitrate=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, view_total_upscaling=None, preroll_ad_asset_hostname=None, player_source_domain=None, region=None, viewer_user_agent=None, preroll_requested=None, page_type=None, startup_score=None, view_seek_duration=None, country_name=None, player_source_height=None, longitude=None, buffering_count=None, video_duration=None, player_source_type=None, city=None, view_id=None, platform_description=None, video_startup_preroll_request_time=None, viewer_device_name=None, video_series=None, viewer_application_name=None, updated_at=None, view_total_content_playback_time=None, cdn=None, player_instance_id=None, video_language=None, player_source_width=None, player_error_message=None, player_mux_plugin_version=None, watched=None, playback_score=None, page_url=None, metro=None, view_max_request_latency=None, requests_for_first_preroll=None, view_total_downscaling=None, latitude=None, player_source_host_name=None, inserted_at=None, view_end=None, mux_embed_version=None, player_language=None, page_load_time=None, viewer_device_category=None, video_startup_preroll_load_time=None, player_version=None, watch_time=None, player_source_stream_type=None, preroll_ad_tag_hostname=None, viewer_device_manufacturer=None, rebuffering_score=None, experiment_name=None, viewer_os_version=None, player_preload=None, buffering_duration=None, player_view_count=None, player_software=None, player_load_time=None, platform_summary=None, video_encoding_variant=None, player_width=None, view_seek_count=None, viewer_experience_score=None, view_error_id=None, video_variant_name=None, preroll_played=None, viewer_application_engine=None, viewer_os_architecture=None, player_error_code=None, buffering_rate=None, events=None, player_name=None, view_start=None, view_average_request_throughput=None, video_producer=None, error_type_id=None, mux_viewer_id=None, video_id=None, continent_code=None, session_id=None, exit_before_video_start=None, video_content_type=None, viewer_os_family=None, player_poster=None, view_average_request_latency=None, video_variant_id=None, player_source_duration=None, player_source_url=None, mux_api_version=None, video_title=None, id=None, short_time=None, rebuffer_percentage=None, time_to_first_frame=None, viewer_user_id=None, video_stream_type=None, player_startup_time=None, viewer_application_version=None, view_max_downscale_percentage=None, view_max_upscale_percentage=None, country_code=None, used_fullscreen=None, isp=None, property_id=None, player_autoplay=None, player_height=None, asn=None, asn_name=None, quality_score=None, player_software_version=None, player_mux_plugin_name=None, sub_property_id=None, player_remote_played=None, view_max_playhead_position=None, view_playing_time=None, view_session_id=None, viewer_connection_type=None, viewer_device_model=None, weighted_average_bitrate=None, custom_1=None, custom_2=None, custom_3=None, custom_4=None, custom_5=None, local_vars_configuration=None):  # noqa: E501
         """VideoView - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
@@ -405,6 +415,11 @@ class VideoView(object):
         self._viewer_connection_type = None
         self._viewer_device_model = None
         self._weighted_average_bitrate = None
+        self._custom_1 = None
+        self._custom_2 = None
+        self._custom_3 = None
+        self._custom_4 = None
+        self._custom_5 = None
         self.discriminator = None
 
         self.view_total_upscaling = view_total_upscaling
@@ -544,6 +559,11 @@ class VideoView(object):
         self.viewer_connection_type = viewer_connection_type
         self.viewer_device_model = viewer_device_model
         self.weighted_average_bitrate = weighted_average_bitrate
+        self.custom_1 = custom_1
+        self.custom_2 = custom_2
+        self.custom_3 = custom_3
+        self.custom_4 = custom_4
+        self.custom_5 = custom_5
 
     @property
     def view_total_upscaling(self):
@@ -3064,6 +3084,111 @@ class VideoView(object):
         """
 
         self._weighted_average_bitrate = weighted_average_bitrate
+
+    @property
+    def custom_1(self):
+        """Gets the custom_1 of this VideoView.  # noqa: E501
+
+
+        :return: The custom_1 of this VideoView.  # noqa: E501
+        :rtype: str
+        """
+        return self._custom_1
+
+    @custom_1.setter
+    def custom_1(self, custom_1):
+        """Sets the custom_1 of this VideoView.
+
+
+        :param custom_1: The custom_1 of this VideoView.  # noqa: E501
+        :type custom_1: str
+        """
+
+        self._custom_1 = custom_1
+
+    @property
+    def custom_2(self):
+        """Gets the custom_2 of this VideoView.  # noqa: E501
+
+
+        :return: The custom_2 of this VideoView.  # noqa: E501
+        :rtype: str
+        """
+        return self._custom_2
+
+    @custom_2.setter
+    def custom_2(self, custom_2):
+        """Sets the custom_2 of this VideoView.
+
+
+        :param custom_2: The custom_2 of this VideoView.  # noqa: E501
+        :type custom_2: str
+        """
+
+        self._custom_2 = custom_2
+
+    @property
+    def custom_3(self):
+        """Gets the custom_3 of this VideoView.  # noqa: E501
+
+
+        :return: The custom_3 of this VideoView.  # noqa: E501
+        :rtype: str
+        """
+        return self._custom_3
+
+    @custom_3.setter
+    def custom_3(self, custom_3):
+        """Sets the custom_3 of this VideoView.
+
+
+        :param custom_3: The custom_3 of this VideoView.  # noqa: E501
+        :type custom_3: str
+        """
+
+        self._custom_3 = custom_3
+
+    @property
+    def custom_4(self):
+        """Gets the custom_4 of this VideoView.  # noqa: E501
+
+
+        :return: The custom_4 of this VideoView.  # noqa: E501
+        :rtype: str
+        """
+        return self._custom_4
+
+    @custom_4.setter
+    def custom_4(self, custom_4):
+        """Sets the custom_4 of this VideoView.
+
+
+        :param custom_4: The custom_4 of this VideoView.  # noqa: E501
+        :type custom_4: str
+        """
+
+        self._custom_4 = custom_4
+
+    @property
+    def custom_5(self):
+        """Gets the custom_5 of this VideoView.  # noqa: E501
+
+
+        :return: The custom_5 of this VideoView.  # noqa: E501
+        :rtype: str
+        """
+        return self._custom_5
+
+    @custom_5.setter
+    def custom_5(self, custom_5):
+        """Sets the custom_5 of this VideoView.
+
+
+        :param custom_5: The custom_5 of this VideoView.  # noqa: E501
+        :type custom_5: str
+        """
+
+        self._custom_5 = custom_5
 
     def to_dict(self, serialize=False):
         """Returns the model properties as a dict"""

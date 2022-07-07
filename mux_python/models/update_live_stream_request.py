@@ -141,8 +141,8 @@ class UpdateLiveStreamRequest(object):
         :type reconnect_window: float
         """
         if (self.local_vars_configuration.client_side_validation and
-                reconnect_window is not None and reconnect_window > 300):  # noqa: E501
-            raise ValueError("Invalid value for `reconnect_window`, must be a value less than or equal to `300`")  # noqa: E501
+                reconnect_window is not None and reconnect_window > 1800):  # noqa: E501
+            raise ValueError("Invalid value for `reconnect_window`, must be a value less than or equal to `1800`")  # noqa: E501
         if (self.local_vars_configuration.client_side_validation and
                 reconnect_window is not None and reconnect_window < 0.1):  # noqa: E501
             raise ValueError("Invalid value for `reconnect_window`, must be a value greater than or equal to `0.1`")  # noqa: E501

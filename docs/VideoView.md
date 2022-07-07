@@ -123,6 +123,11 @@ Name | Type | Description | Notes
 **viewer_connection_type** | **str** |  | [optional] 
 **viewer_device_model** | **str** |  | [optional] 
 **weighted_average_bitrate** | **int** |  | [optional] 
+**custom_1** | **str** |  | [optional] 
+**custom_2** | **str** |  | [optional] 
+**custom_3** | **str** |  | [optional] 
+**custom_4** | **str** |  | [optional] 
+**custom_5** | **str** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -45,6 +45,7 @@ class LiveStream(object):
         'passthrough': 'str',
         'audio_only': 'bool',
         'embedded_subtitles': 'list[LiveStreamEmbeddedSubtitleSettings]',
+        'generated_subtitles': 'list[LiveStreamGeneratedSubtitleSettings]',
         'reconnect_window': 'float',
         'reduced_latency': 'bool',
         'low_latency': 'bool',
@@ -66,6 +67,7 @@ class LiveStream(object):
         'passthrough': 'passthrough',
         'audio_only': 'audio_only',
         'embedded_subtitles': 'embedded_subtitles',
+        'generated_subtitles': 'generated_subtitles',
         'reconnect_window': 'reconnect_window',
         'reduced_latency': 'reduced_latency',
         'low_latency': 'low_latency',
@@ -75,7 +77,7 @@ class LiveStream(object):
         'max_continuous_duration': 'max_continuous_duration'
     }
 
-    def __init__(self, id=None, created_at=None, stream_key=None, active_asset_id=None, recent_asset_ids=None, status=None, playback_ids=None, new_asset_settings=None, passthrough=None, audio_only=None, embedded_subtitles=None, reconnect_window=60, reduced_latency=None, low_latency=None, simulcast_targets=None, latency_mode=None, test=None, max_continuous_duration=43200, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, id=None, created_at=None, stream_key=None, active_asset_id=None, recent_asset_ids=None, status=None, playback_ids=None, new_asset_settings=None, passthrough=None, audio_only=None, embedded_subtitles=None, generated_subtitles=None, reconnect_window=60, reduced_latency=None, low_latency=None, simulcast_targets=None, latency_mode=None, test=None, max_continuous_duration=43200, local_vars_configuration=None):  # noqa: E501
         """LiveStream - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
@@ -92,6 +94,7 @@ class LiveStream(object):
         self._passthrough = None
         self._audio_only = None
         self._embedded_subtitles = None
+        self._generated_subtitles = None
         self._reconnect_window = None
         self._reduced_latency = None
         self._low_latency = None
@@ -123,6 +126,8 @@ class LiveStream(object):
             self.audio_only = audio_only
         if embedded_subtitles is not None:
             self.embedded_subtitles = embedded_subtitles
+        if generated_subtitles is not None:
+            self.generated_subtitles = generated_subtitles
         if reconnect_window is not None:
             self.reconnect_window = reconnect_window
         if reduced_latency is not None:
@@ -388,10 +393,33 @@ class LiveStream(object):
         self._embedded_subtitles = embedded_subtitles
 
     @property
+    def generated_subtitles(self):
+        """Gets the generated_subtitles of this LiveStream.  # noqa: E501
+
+        Configure the incoming live stream to include subtitles created with automatic speech recognition. Each Asset created from a live stream with `generated_subtitles` configured will automatically receive two text tracks. The first of these will have a `text_source` value of `generated_live`, and will be available with `ready` status as soon as the stream is live. The second text track will have a `text_source` value of `generated_live_final` and will contain subtitles with improved accuracy, timing, and formatting. However, `generated_live_final` tracks will not be available in `ready` status until the live stream ends. If an Asset has both `generated_live` and `generated_live_final` tracks that are `ready`, then only the `generated_live_final` track will be included during playback.  # noqa: E501
+
+        :return: The generated_subtitles of this LiveStream.  # noqa: E501
+        :rtype: list[LiveStreamGeneratedSubtitleSettings]
+        """
+        return self._generated_subtitles
+
+    @generated_subtitles.setter
+    def generated_subtitles(self, generated_subtitles):
+        """Sets the generated_subtitles of this LiveStream.
+
+        Configure the incoming live stream to include subtitles created with automatic speech recognition. Each Asset created from a live stream with `generated_subtitles` configured will automatically receive two text tracks. The first of these will have a `text_source` value of `generated_live`, and will be available with `ready` status as soon as the stream is live. The second text track will have a `text_source` value of `generated_live_final` and will contain subtitles with improved accuracy, timing, and formatting. However, `generated_live_final` tracks will not be available in `ready` status until the live stream ends. If an Asset has both `generated_live` and `generated_live_final` tracks that are `ready`, then only the `generated_live_final` track will be included during playback.  # noqa: E501
+
+        :param generated_subtitles: The generated_subtitles of this LiveStream.  # noqa: E501
+        :type generated_subtitles: list[LiveStreamGeneratedSubtitleSettings]
+        """
+
+        self._generated_subtitles = generated_subtitles
+
+    @property
     def reconnect_window(self):
         """Gets the reconnect_window of this LiveStream.  # noqa: E501
 
-        When live streaming software disconnects from Mux, either intentionally or due to a drop in the network, the Reconnect Window is the time in seconds that Mux should wait for the streaming software to reconnect before considering the live stream finished and completing the recorded asset. **Min**: 0.1s. **Max**: 300s (5 minutes).  # noqa: E501
+        When live streaming software disconnects from Mux, either intentionally or due to a drop in the network, the Reconnect Window is the time in seconds that Mux should wait for the streaming software to reconnect before considering the live stream finished and completing the recorded asset. **Min**: 0.1s. **Max**: 1800s (30 minutes).  # noqa: E501
 
         :return: The reconnect_window of this LiveStream.  # noqa: E501
         :rtype: float
@@ -402,7 +430,7 @@ class LiveStream(object):
     def reconnect_window(self, reconnect_window):
         """Sets the reconnect_window of this LiveStream.
 
-        When live streaming software disconnects from Mux, either intentionally or due to a drop in the network, the Reconnect Window is the time in seconds that Mux should wait for the streaming software to reconnect before considering the live stream finished and completing the recorded asset. **Min**: 0.1s. **Max**: 300s (5 minutes).  # noqa: E501
+        When live streaming software disconnects from Mux, either intentionally or due to a drop in the network, the Reconnect Window is the time in seconds that Mux should wait for the streaming software to reconnect before considering the live stream finished and completing the recorded asset. **Min**: 0.1s. **Max**: 1800s (30 minutes).  # noqa: E501
 
         :param reconnect_window: The reconnect_window of this LiveStream.  # noqa: E501
         :type reconnect_window: float

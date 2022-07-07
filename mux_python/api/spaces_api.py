@@ -179,7 +179,7 @@ class SpacesApi(object):
     def create_space_broadcast(self, space_id, create_broadcast_request, **kwargs):  # noqa: E501
         """Create a space broadcast  # noqa: E501
 
-        Creates a new broadcast. Broadcasts are used to create composited versions of your space, which can be broadcast to live streams.  **Note:** By default only a single broadcast destination can be specified. Contact Mux support if you need more.  # noqa: E501
+        Creates a new broadcast. Broadcasts are used to create composited versions of your space, which can be broadcast to live streams. **Note:** By default only a single broadcast destination can be specified. Contact Mux support if you need more.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -211,7 +211,7 @@ class SpacesApi(object):
     def create_space_broadcast_with_http_info(self, space_id, create_broadcast_request, **kwargs):  # noqa: E501
         """Create a space broadcast  # noqa: E501
 
-        Creates a new broadcast. Broadcasts are used to create composited versions of your space, which can be broadcast to live streams.  **Note:** By default only a single broadcast destination can be specified. Contact Mux support if you need more.  # noqa: E501
+        Creates a new broadcast. Broadcasts are used to create composited versions of your space, which can be broadcast to live streams. **Note:** By default only a single broadcast destination can be specified. Contact Mux support if you need more.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
