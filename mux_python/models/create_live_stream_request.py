@@ -37,6 +37,8 @@ class CreateLiveStreamRequest(object):
         'playback_policy': 'list[PlaybackPolicy]',
         'new_asset_settings': 'CreateAssetRequest',
         'reconnect_window': 'float',
+        'use_slate_for_standard_latency': 'bool',
+        'reconnect_slate_url': 'str',
         'passthrough': 'str',
         'audio_only': 'bool',
         'embedded_subtitles': 'list[LiveStreamEmbeddedSubtitleSettings]',
@@ -53,6 +55,8 @@ class CreateLiveStreamRequest(object):
         'playback_policy': 'playback_policy',
         'new_asset_settings': 'new_asset_settings',
         'reconnect_window': 'reconnect_window',
+        'use_slate_for_standard_latency': 'use_slate_for_standard_latency',
+        'reconnect_slate_url': 'reconnect_slate_url',
         'passthrough': 'passthrough',
         'audio_only': 'audio_only',
         'embedded_subtitles': 'embedded_subtitles',
@@ -65,7 +69,7 @@ class CreateLiveStreamRequest(object):
         'max_continuous_duration': 'max_continuous_duration'
     }
 
-    def __init__(self, playback_policy=None, new_asset_settings=None, reconnect_window=None, passthrough=None, audio_only=None, embedded_subtitles=None, generated_subtitles=None, reduced_latency=None, low_latency=None, latency_mode=None, test=None, simulcast_targets=None, max_continuous_duration=43200, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, playback_policy=None, new_asset_settings=None, reconnect_window=60, use_slate_for_standard_latency=False, reconnect_slate_url=None, passthrough=None, audio_only=None, embedded_subtitles=None, generated_subtitles=None, reduced_latency=None, low_latency=None, latency_mode=None, test=None, simulcast_targets=None, max_continuous_duration=43200, local_vars_configuration=None):  # noqa: E501
         """CreateLiveStreamRequest - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
@@ -74,6 +78,8 @@ class CreateLiveStreamRequest(object):
         self._playback_policy = None
         self._new_asset_settings = None
         self._reconnect_window = None
+        self._use_slate_for_standard_latency = None
+        self._reconnect_slate_url = None
         self._passthrough = None
         self._audio_only = None
         self._embedded_subtitles = None
@@ -92,6 +98,10 @@ class CreateLiveStreamRequest(object):
             self.new_asset_settings = new_asset_settings
         if reconnect_window is not None:
             self.reconnect_window = reconnect_window
+        if use_slate_for_standard_latency is not None:
+            self.use_slate_for_standard_latency = use_slate_for_standard_latency
+        if reconnect_slate_url is not None:
+            self.reconnect_slate_url = reconnect_slate_url
         if passthrough is not None:
             self.passthrough = passthrough
         if audio_only is not None:
@@ -159,7 +169,7 @@ class CreateLiveStreamRequest(object):
     def reconnect_window(self):
         """Gets the reconnect_window of this CreateLiveStreamRequest.  # noqa: E501
 
-        When live streaming software disconnects from Mux, either intentionally or due to a drop in the network, the Reconnect Window is the time in seconds that Mux should wait for the streaming software to reconnect before considering the live stream finished and completing the recorded asset. Defaults to 60 seconds on the API if not specified.  # noqa: E501
+        When live streaming software disconnects from Mux, either intentionally or due to a drop in the network, the Reconnect Window is the time in seconds that Mux should wait for the streaming software to reconnect before considering the live stream finished and completing the recorded asset. Defaults to 60 seconds on the API if not specified.  Reduced and Low Latency streams with a Reconnect Window greater than zero will insert slate media into the recorded asset while waiting for the streaming software to reconnect or when there are brief interruptions in the live stream media. When using a Reconnect Window setting higher than 60 seconds with a Standard Latency stream, we highly recommend enabling slate with the `use_slate_for_standard_latency` option.   # noqa: E501
 
         :return: The reconnect_window of this CreateLiveStreamRequest.  # noqa: E501
         :rtype: float
@@ -170,7 +180,7 @@ class CreateLiveStreamRequest(object):
     def reconnect_window(self, reconnect_window):
         """Sets the reconnect_window of this CreateLiveStreamRequest.
 
-        When live streaming software disconnects from Mux, either intentionally or due to a drop in the network, the Reconnect Window is the time in seconds that Mux should wait for the streaming software to reconnect before considering the live stream finished and completing the recorded asset. Defaults to 60 seconds on the API if not specified.  # noqa: E501
+        When live streaming software disconnects from Mux, either intentionally or due to a drop in the network, the Reconnect Window is the time in seconds that Mux should wait for the streaming software to reconnect before considering the live stream finished and completing the recorded asset. Defaults to 60 seconds on the API if not specified.  Reduced and Low Latency streams with a Reconnect Window greater than zero will insert slate media into the recorded asset while waiting for the streaming software to reconnect or when there are brief interruptions in the live stream media. When using a Reconnect Window setting higher than 60 seconds with a Standard Latency stream, we highly recommend enabling slate with the `use_slate_for_standard_latency` option.   # noqa: E501
 
         :param reconnect_window: The reconnect_window of this CreateLiveStreamRequest.  # noqa: E501
         :type reconnect_window: float
@@ -179,10 +189,56 @@ class CreateLiveStreamRequest(object):
                 reconnect_window is not None and reconnect_window > 1800):  # noqa: E501
             raise ValueError("Invalid value for `reconnect_window`, must be a value less than or equal to `1800`")  # noqa: E501
         if (self.local_vars_configuration.client_side_validation and
-                reconnect_window is not None and reconnect_window < 0.1):  # noqa: E501
-            raise ValueError("Invalid value for `reconnect_window`, must be a value greater than or equal to `0.1`")  # noqa: E501
+                reconnect_window is not None and reconnect_window < 0):  # noqa: E501
+            raise ValueError("Invalid value for `reconnect_window`, must be a value greater than or equal to `0`")  # noqa: E501
 
         self._reconnect_window = reconnect_window
+
+    @property
+    def use_slate_for_standard_latency(self):
+        """Gets the use_slate_for_standard_latency of this CreateLiveStreamRequest.  # noqa: E501
+
+        By default, Standard Latency live streams do not have slate media inserted while waiting for live streaming software to reconnect to Mux.  Setting this to true enables slate insertion on a Standard Latency stream.  # noqa: E501
+
+        :return: The use_slate_for_standard_latency of this CreateLiveStreamRequest.  # noqa: E501
+        :rtype: bool
+        """
+        return self._use_slate_for_standard_latency
+
+    @use_slate_for_standard_latency.setter
+    def use_slate_for_standard_latency(self, use_slate_for_standard_latency):
+        """Sets the use_slate_for_standard_latency of this CreateLiveStreamRequest.
+
+        By default, Standard Latency live streams do not have slate media inserted while waiting for live streaming software to reconnect to Mux.  Setting this to true enables slate insertion on a Standard Latency stream.  # noqa: E501
+
+        :param use_slate_for_standard_latency: The use_slate_for_standard_latency of this CreateLiveStreamRequest.  # noqa: E501
+        :type use_slate_for_standard_latency: bool
+        """
+
+        self._use_slate_for_standard_latency = use_slate_for_standard_latency
+
+    @property
+    def reconnect_slate_url(self):
+        """Gets the reconnect_slate_url of this CreateLiveStreamRequest.  # noqa: E501
+
+        The URL of the image file that Mux should download and use as slate media during interruptions of the live stream media.  This file will be downloaded each time a new recorded asset is created from the live stream.  If this is not set, the default slate media will be used.  # noqa: E501
+
+        :return: The reconnect_slate_url of this CreateLiveStreamRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._reconnect_slate_url
+
+    @reconnect_slate_url.setter
+    def reconnect_slate_url(self, reconnect_slate_url):
+        """Sets the reconnect_slate_url of this CreateLiveStreamRequest.
+
+        The URL of the image file that Mux should download and use as slate media during interruptions of the live stream media.  This file will be downloaded each time a new recorded asset is created from the live stream.  If this is not set, the default slate media will be used.  # noqa: E501
+
+        :param reconnect_slate_url: The reconnect_slate_url of this CreateLiveStreamRequest.  # noqa: E501
+        :type reconnect_slate_url: str
+        """
+
+        self._reconnect_slate_url = reconnect_slate_url
 
     @property
     def passthrough(self):
@@ -278,7 +334,7 @@ class CreateLiveStreamRequest(object):
     def reduced_latency(self):
         """Gets the reduced_latency of this CreateLiveStreamRequest.  # noqa: E501
 
-        This field is deprecated. Please use latency_mode instead. Latency is the time from when the streamer transmits a frame of video to when you see it in the player. Set this if you want lower latency for your live stream. Note: Reconnect windows are incompatible with Reduced Latency and will always be set to zero (0) seconds. Read more here: https://mux.com/blog/reduced-latency-for-mux-live-streaming-now-available/  # noqa: E501
+        This field is deprecated. Please use latency_mode instead. Latency is the time from when the streamer transmits a frame of video to when you see it in the player. Set this if you want lower latency for your live stream. Read more here: https://mux.com/blog/reduced-latency-for-mux-live-streaming-now-available/  # noqa: E501
 
         :return: The reduced_latency of this CreateLiveStreamRequest.  # noqa: E501
         :rtype: bool
@@ -289,7 +345,7 @@ class CreateLiveStreamRequest(object):
     def reduced_latency(self, reduced_latency):
         """Sets the reduced_latency of this CreateLiveStreamRequest.
 
-        This field is deprecated. Please use latency_mode instead. Latency is the time from when the streamer transmits a frame of video to when you see it in the player. Set this if you want lower latency for your live stream. Note: Reconnect windows are incompatible with Reduced Latency and will always be set to zero (0) seconds. Read more here: https://mux.com/blog/reduced-latency-for-mux-live-streaming-now-available/  # noqa: E501
+        This field is deprecated. Please use latency_mode instead. Latency is the time from when the streamer transmits a frame of video to when you see it in the player. Set this if you want lower latency for your live stream. Read more here: https://mux.com/blog/reduced-latency-for-mux-live-streaming-now-available/  # noqa: E501
 
         :param reduced_latency: The reduced_latency of this CreateLiveStreamRequest.  # noqa: E501
         :type reduced_latency: bool
@@ -301,7 +357,7 @@ class CreateLiveStreamRequest(object):
     def low_latency(self):
         """Gets the low_latency of this CreateLiveStreamRequest.  # noqa: E501
 
-        This field is deprecated. Please use latency_mode instead. Latency is the time from when the streamer transmits a frame of video to when you see it in the player. Setting this option will enable compatibility with the LL-HLS specification for low-latency streaming. This typically has lower latency than Reduced Latency streams, and cannot be combined with Reduced Latency. Note: Reconnect windows are incompatible with Low Latency and will always be set to zero (0) seconds.  # noqa: E501
+        This field is deprecated. Please use latency_mode instead. Latency is the time from when the streamer transmits a frame of video to when you see it in the player. Setting this option will enable compatibility with the LL-HLS specification for low-latency streaming. This typically has lower latency than Reduced Latency streams, and cannot be combined with Reduced Latency.  # noqa: E501
 
         :return: The low_latency of this CreateLiveStreamRequest.  # noqa: E501
         :rtype: bool
@@ -312,7 +368,7 @@ class CreateLiveStreamRequest(object):
     def low_latency(self, low_latency):
         """Sets the low_latency of this CreateLiveStreamRequest.
 
-        This field is deprecated. Please use latency_mode instead. Latency is the time from when the streamer transmits a frame of video to when you see it in the player. Setting this option will enable compatibility with the LL-HLS specification for low-latency streaming. This typically has lower latency than Reduced Latency streams, and cannot be combined with Reduced Latency. Note: Reconnect windows are incompatible with Low Latency and will always be set to zero (0) seconds.  # noqa: E501
+        This field is deprecated. Please use latency_mode instead. Latency is the time from when the streamer transmits a frame of video to when you see it in the player. Setting this option will enable compatibility with the LL-HLS specification for low-latency streaming. This typically has lower latency than Reduced Latency streams, and cannot be combined with Reduced Latency.  # noqa: E501
 
         :param low_latency: The low_latency of this CreateLiveStreamRequest.  # noqa: E501
         :type low_latency: bool
@@ -324,7 +380,7 @@ class CreateLiveStreamRequest(object):
     def latency_mode(self):
         """Gets the latency_mode of this CreateLiveStreamRequest.  # noqa: E501
 
-        Latency is the time from when the streamer transmits a frame of video to when you see it in the player. Set this as an alternative to setting low latency or reduced latency flags. The Low Latency value is a beta feature. Note: Reconnect windows are incompatible with Reduced Latency and Low Latency and will always be set to zero (0) seconds. Read more here: https://mux.com/blog/introducing-low-latency-live-streaming/  # noqa: E501
+        Latency is the time from when the streamer transmits a frame of video to when you see it in the player. Set this as an alternative to setting low latency or reduced latency flags. The Low Latency value is a beta feature. Read more here: https://mux.com/blog/introducing-low-latency-live-streaming/  # noqa: E501
 
         :return: The latency_mode of this CreateLiveStreamRequest.  # noqa: E501
         :rtype: str
@@ -335,7 +391,7 @@ class CreateLiveStreamRequest(object):
     def latency_mode(self, latency_mode):
         """Sets the latency_mode of this CreateLiveStreamRequest.
 
-        Latency is the time from when the streamer transmits a frame of video to when you see it in the player. Set this as an alternative to setting low latency or reduced latency flags. The Low Latency value is a beta feature. Note: Reconnect windows are incompatible with Reduced Latency and Low Latency and will always be set to zero (0) seconds. Read more here: https://mux.com/blog/introducing-low-latency-live-streaming/  # noqa: E501
+        Latency is the time from when the streamer transmits a frame of video to when you see it in the player. Set this as an alternative to setting low latency or reduced latency flags. The Low Latency value is a beta feature. Read more here: https://mux.com/blog/introducing-low-latency-live-streaming/  # noqa: E501
 
         :param latency_mode: The latency_mode of this CreateLiveStreamRequest.  # noqa: E501
         :type latency_mode: str
