@@ -307,12 +307,4 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_create_transcription_vocabulary_request.py
-test/test_list_transcription_vocabularies_response.py
-test/test_live_stream_generated_subtitle_settings.py
-test/test_transcription_vocabularies_api.py
-test/test_transcription_vocabulary.py
-test/test_transcription_vocabulary_response.py
-test/test_update_live_stream_generated_subtitles_request.py
-test/test_update_transcription_vocabulary_request.py
 tox.ini

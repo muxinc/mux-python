@@ -35,15 +35,17 @@ class AssetRecordingTimes(object):
     """
     openapi_types = {
         'started_at': 'datetime',
-        'duration': 'float'
+        'duration': 'float',
+        'type': 'str'
     }
 
     attribute_map = {
         'started_at': 'started_at',
-        'duration': 'duration'
+        'duration': 'duration',
+        'type': 'type'
     }
 
-    def __init__(self, started_at=None, duration=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, started_at=None, duration=None, type=None, local_vars_configuration=None):  # noqa: E501
         """AssetRecordingTimes - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
@@ -51,12 +53,15 @@ class AssetRecordingTimes(object):
 
         self._started_at = None
         self._duration = None
+        self._type = None
         self.discriminator = None
 
         if started_at is not None:
             self.started_at = started_at
         if duration is not None:
             self.duration = duration
+        if type is not None:
+            self.type = type
 
     @property
     def started_at(self):
@@ -103,6 +108,35 @@ class AssetRecordingTimes(object):
         """
 
         self._duration = duration
+
+    @property
+    def type(self):
+        """Gets the type of this AssetRecordingTimes.  # noqa: E501
+
+        The type of media represented by the recording session, either `content` for normal stream content or `slate` for slate media inserted during stream interruptions.  # noqa: E501
+
+        :return: The type of this AssetRecordingTimes.  # noqa: E501
+        :rtype: str
+        """
+        return self._type
+
+    @type.setter
+    def type(self, type):
+        """Sets the type of this AssetRecordingTimes.
+
+        The type of media represented by the recording session, either `content` for normal stream content or `slate` for slate media inserted during stream interruptions.  # noqa: E501
+
+        :param type: The type of this AssetRecordingTimes.  # noqa: E501
+        :type type: str
+        """
+        allowed_values = ["content", "slate"]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and type not in allowed_values:  # noqa: E501
+            raise ValueError(
+                "Invalid value for `type` ({0}), must be one of {1}"  # noqa: E501
+                .format(type, allowed_values)
+            )
+
+        self._type = type
 
     def to_dict(self, serialize=False):
         """Returns the model properties as a dict"""
