@@ -11,6 +11,7 @@
 """
 
 
+import os
 from setuptools import setup, find_packages  # noqa: H301
 
 NAME = "mux_python"
@@ -24,18 +25,23 @@ VERSION = "3.7.0"
 
 REQUIRES = ["urllib3 >= 1.25.3", "six >= 1.10", "python-dateutil"]
 
+here = os.path.abspath(os.path.dirname(__file__))
+
+def get_file_text(file_name):
+    with open(os.path.join(here, file_name)) as in_file:
+        return in_file.read()
+
 setup(
     name=NAME,
     version=VERSION,
     description="Mux API",
     author="Mux DevEx",
     author_email="devex@mux.com",
-    url="",
+    url="https://github.com/muxinc/mux-python",
     keywords=["OpenAPI", "OpenAPI-Generator", "Mux API"],
     install_requires=REQUIRES,
     packages=find_packages(exclude=["test", "tests"]),
     include_package_data=True,
-    long_description="""\
-    Mux is how developers build online video. This API encompasses both Mux Video and Mux Data functionality to help you build your video-related projects better and faster than ever before.  # noqa: E501
-    """
+    long_description=get_file_text("README.md"),
+    long_description_content_type="text/markdown",
 )
