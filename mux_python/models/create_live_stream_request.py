@@ -198,7 +198,7 @@ class CreateLiveStreamRequest(object):
     def use_slate_for_standard_latency(self):
         """Gets the use_slate_for_standard_latency of this CreateLiveStreamRequest.  # noqa: E501
 
-        By default, Standard Latency live streams do not have slate media inserted while waiting for live streaming software to reconnect to Mux.  Setting this to true enables slate insertion on a Standard Latency stream.  # noqa: E501
+        By default, Standard Latency live streams do not have slate media inserted while waiting for live streaming software to reconnect to Mux. Setting this to true enables slate insertion on a Standard Latency stream.  # noqa: E501
 
         :return: The use_slate_for_standard_latency of this CreateLiveStreamRequest.  # noqa: E501
         :rtype: bool
@@ -209,7 +209,7 @@ class CreateLiveStreamRequest(object):
     def use_slate_for_standard_latency(self, use_slate_for_standard_latency):
         """Sets the use_slate_for_standard_latency of this CreateLiveStreamRequest.
 
-        By default, Standard Latency live streams do not have slate media inserted while waiting for live streaming software to reconnect to Mux.  Setting this to true enables slate insertion on a Standard Latency stream.  # noqa: E501
+        By default, Standard Latency live streams do not have slate media inserted while waiting for live streaming software to reconnect to Mux. Setting this to true enables slate insertion on a Standard Latency stream.  # noqa: E501
 
         :param use_slate_for_standard_latency: The use_slate_for_standard_latency of this CreateLiveStreamRequest.  # noqa: E501
         :type use_slate_for_standard_latency: bool
@@ -221,7 +221,7 @@ class CreateLiveStreamRequest(object):
     def reconnect_slate_url(self):
         """Gets the reconnect_slate_url of this CreateLiveStreamRequest.  # noqa: E501
 
-        The URL of the image file that Mux should download and use as slate media during interruptions of the live stream media.  This file will be downloaded each time a new recorded asset is created from the live stream.  If this is not set, the default slate media will be used.  # noqa: E501
+        The URL of the image file that Mux should download and use as slate media during interruptions of the live stream media. This file will be downloaded each time a new recorded asset is created from the live stream. If this is not set, the default slate media will be used.  # noqa: E501
 
         :return: The reconnect_slate_url of this CreateLiveStreamRequest.  # noqa: E501
         :rtype: str
@@ -232,7 +232,7 @@ class CreateLiveStreamRequest(object):
     def reconnect_slate_url(self, reconnect_slate_url):
         """Sets the reconnect_slate_url of this CreateLiveStreamRequest.
 
-        The URL of the image file that Mux should download and use as slate media during interruptions of the live stream media.  This file will be downloaded each time a new recorded asset is created from the live stream.  If this is not set, the default slate media will be used.  # noqa: E501
+        The URL of the image file that Mux should download and use as slate media during interruptions of the live stream media. This file will be downloaded each time a new recorded asset is created from the live stream. If this is not set, the default slate media will be used.  # noqa: E501
 
         :param reconnect_slate_url: The reconnect_slate_url of this CreateLiveStreamRequest.  # noqa: E501
         :type reconnect_slate_url: str

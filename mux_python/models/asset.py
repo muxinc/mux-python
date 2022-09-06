@@ -667,7 +667,7 @@ class Asset(object):
     def recording_times(self):
         """Gets the recording_times of this Asset.  # noqa: E501
 
-        An array of individual live stream recording sessions. A recording session is created on each encoder connection during the live stream.  Additionally any time slate media is inserted during brief interruptions in the live stream media or times when the live streaming software disconnects, a recording session representing the slate media will be added with a \"slate\" type.  # noqa: E501
+        An array of individual live stream recording sessions. A recording session is created on each encoder connection during the live stream. Additionally any time slate media is inserted during brief interruptions in the live stream media or times when the live streaming software disconnects, a recording session representing the slate media will be added with a \"slate\" type.  # noqa: E501
 
         :return: The recording_times of this Asset.  # noqa: E501
         :rtype: list[AssetRecordingTimes]
@@ -678,7 +678,7 @@ class Asset(object):
     def recording_times(self, recording_times):
         """Sets the recording_times of this Asset.
 
-        An array of individual live stream recording sessions. A recording session is created on each encoder connection during the live stream.  Additionally any time slate media is inserted during brief interruptions in the live stream media or times when the live streaming software disconnects, a recording session representing the slate media will be added with a \"slate\" type.  # noqa: E501
+        An array of individual live stream recording sessions. A recording session is created on each encoder connection during the live stream. Additionally any time slate media is inserted during brief interruptions in the live stream media or times when the live streaming software disconnects, a recording session representing the slate media will be added with a \"slate\" type.  # noqa: E501
 
         :param recording_times: The recording_times of this Asset.  # noqa: E501
         :type recording_times: list[AssetRecordingTimes]

@@ -175,7 +175,7 @@ class VideoViewsApi(object):
     def list_video_views(self, **kwargs):  # noqa: E501
         """List Video Views  # noqa: E501
 
-        Returns a list of video views.  # noqa: E501
+        Returns a list of video views which match the filters and have a `view_end` within the specified timeframe.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -217,7 +217,7 @@ class VideoViewsApi(object):
     def list_video_views_with_http_info(self, **kwargs):  # noqa: E501
         """List Video Views  # noqa: E501
 
-        Returns a list of video views.  # noqa: E501
+        Returns a list of video views which match the filters and have a `view_end` within the specified timeframe.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
