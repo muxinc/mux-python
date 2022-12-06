@@ -18,7 +18,7 @@ configuration.password = os.environ['MUX_TOKEN_SECRET']
 exports_api = mux_python.ExportsApi(mux_python.ApiClient(configuration))
 
 # ========== list-exports ==========
-list_exports_response = exports_api.list_exports()
+list_exports_response = exports_api.list_exports_views()
 logger.print_debug('Listed Exports:' + str(list_exports_response))
 assert list_exports_response != None
 assert list_exports_response.data != None
