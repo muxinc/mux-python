@@ -1,9 +1,10 @@
-# ListRealTimeMetricsResponse
+# GetMonitoringHistogramTimeseriesResponse
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**list[ListMonitoringDimensionsResponseData]**](ListMonitoringDimensionsResponseData.md) |  | [optional]
+**meta** | [**GetMonitoringHistogramTimeseriesResponseMeta**](GetMonitoringHistogramTimeseriesResponseMeta.md) |  | [optional]
+**data** | [**list[MonitoringHistogramTimeseriesDatapoint]**](MonitoringHistogramTimeseriesDatapoint.md) |  | [optional]
 **total_row_count** | **int** |  | [optional]
 **timeframe** | **list[int]** |  | [optional]
 

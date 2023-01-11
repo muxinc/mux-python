@@ -1,22 +1,22 @@
-# mux_python.RealTimeApi
+# mux_python.MonitoringApi
 
 All URIs are relative to *https://api.mux.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_realtime_breakdown**](RealTimeApi.md#get_realtime_breakdown) | **GET** /data/v1/realtime/metrics/{REALTIME_METRIC_ID}/breakdown | Get Real-Time Breakdown
-[**get_realtime_histogram_timeseries**](RealTimeApi.md#get_realtime_histogram_timeseries) | **GET** /data/v1/realtime/metrics/{REALTIME_HISTOGRAM_METRIC_ID}/histogram-timeseries | Get Real-Time Histogram Timeseries
-[**get_realtime_timeseries**](RealTimeApi.md#get_realtime_timeseries) | **GET** /data/v1/realtime/metrics/{REALTIME_METRIC_ID}/timeseries | Get Real-Time Timeseries
-[**list_realtime_dimensions**](RealTimeApi.md#list_realtime_dimensions) | **GET** /data/v1/realtime/dimensions | List Real-Time Dimensions
-[**list_realtime_metrics**](RealTimeApi.md#list_realtime_metrics) | **GET** /data/v1/realtime/metrics | List Real-Time Metrics
+[**get_monitoring_breakdown**](MonitoringApi.md#get_monitoring_breakdown) | **GET** /data/v1/monitoring/metrics/{MONITORING_METRIC_ID}/breakdown | Get Monitoring Breakdown
+[**get_monitoring_histogram_timeseries**](MonitoringApi.md#get_monitoring_histogram_timeseries) | **GET** /data/v1/monitoring/metrics/{MONITORING_HISTOGRAM_METRIC_ID}/histogram-timeseries | Get Monitoring Histogram Timeseries
+[**get_monitoring_timeseries**](MonitoringApi.md#get_monitoring_timeseries) | **GET** /data/v1/monitoring/metrics/{MONITORING_METRIC_ID}/timeseries | Get Monitoring Timeseries
+[**list_monitoring_dimensions**](MonitoringApi.md#list_monitoring_dimensions) | **GET** /data/v1/monitoring/dimensions | List Monitoring Dimensions
+[**list_monitoring_metrics**](MonitoringApi.md#list_monitoring_metrics) | **GET** /data/v1/monitoring/metrics | List Monitoring Metrics
 
 
-# **get_realtime_breakdown**
-> GetRealTimeBreakdownResponse get_realtime_breakdown(realtime_metric_id, dimension=dimension, timestamp=timestamp, filters=filters, order_by=order_by, order_direction=order_direction)
+# **get_monitoring_breakdown**
+> GetMonitoringBreakdownResponse get_monitoring_breakdown(monitoring_metric_id, dimension=dimension, timestamp=timestamp, filters=filters, order_by=order_by, order_direction=order_direction)
 
-Get Real-Time Breakdown
+Get Monitoring Breakdown
 
-Gets breakdown information for a specific dimension and metric along with the number of concurrent viewers and negative impact score. This API is now deprecated, please use the `Get Monitoring Breakdown` API.
+Gets breakdown information for a specific dimension and metric along with the number of concurrent viewers and negative impact score.
 
 ### Example
 
@@ -47,8 +47,8 @@ configuration = mux_python.Configuration(
 # Enter a context with an instance of the API client
 with mux_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = mux_python.RealTimeApi(api_client)
-    realtime_metric_id = 'current-concurrent-viewers' # str | ID of the Realtime Metric
+    api_instance = mux_python.MonitoringApi(api_client)
+    monitoring_metric_id = 'current-concurrent-viewers' # str | ID of the Monitoring Metric
 dimension = 'dimension_example' # str | Dimension the specified value belongs to (optional)
 timestamp = 56 # int | Timestamp to limit results by. This value must be provided as a unix timestamp. Defaults to the current unix timestamp. (optional)
 filters = ['filters_example'] # list[str] | Limit the results to rows that match conditions from provided key:value pairs. Must be provided as an array query string parameter.  To exclude rows that match a certain condition, prepend a `!` character to the dimension.  Possible filter names are the same as returned by the List Filters endpoint.  Example:    * `filters[]=operating_system:windows&filters[]=!country:US`  (optional)
@@ -56,18 +56,18 @@ order_by = 'order_by_example' # str | Value to order the results by (optional)
 order_direction = 'order_direction_example' # str | Sort order. (optional)
 
     try:
-        # Get Real-Time Breakdown
-        api_response = api_instance.get_realtime_breakdown(realtime_metric_id, dimension=dimension, timestamp=timestamp, filters=filters, order_by=order_by, order_direction=order_direction)
+        # Get Monitoring Breakdown
+        api_response = api_instance.get_monitoring_breakdown(monitoring_metric_id, dimension=dimension, timestamp=timestamp, filters=filters, order_by=order_by, order_direction=order_direction)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling RealTimeApi->get_realtime_breakdown: %s\n" % e)
+        print("Exception when calling MonitoringApi->get_monitoring_breakdown: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **realtime_metric_id** | **str**| ID of the Realtime Metric | 
+ **monitoring_metric_id** | **str**| ID of the Monitoring Metric | 
  **dimension** | **str**| Dimension the specified value belongs to | [optional] 
  **timestamp** | **int**| Timestamp to limit results by. This value must be provided as a unix timestamp. Defaults to the current unix timestamp. | [optional] 
  **filters** | [**list[str]**](str.md)| Limit the results to rows that match conditions from provided key:value pairs. Must be provided as an array query string parameter.  To exclude rows that match a certain condition, prepend a &#x60;!&#x60; character to the dimension.  Possible filter names are the same as returned by the List Filters endpoint.  Example:    * &#x60;filters[]&#x3D;operating_system:windows&amp;filters[]&#x3D;!country:US&#x60;  | [optional] 
@@ -76,7 +76,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetRealTimeBreakdownResponse**](GetRealTimeBreakdownResponse.md)
+[**GetMonitoringBreakdownResponse**](GetMonitoringBreakdownResponse.md)
 
 ### Authorization
 
@@ -94,12 +94,12 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_realtime_histogram_timeseries**
-> GetRealTimeHistogramTimeseriesResponse get_realtime_histogram_timeseries(realtime_histogram_metric_id, filters=filters)
+# **get_monitoring_histogram_timeseries**
+> GetMonitoringHistogramTimeseriesResponse get_monitoring_histogram_timeseries(monitoring_histogram_metric_id, filters=filters)
 
-Get Real-Time Histogram Timeseries
+Get Monitoring Histogram Timeseries
 
-Gets histogram timeseries information for a specific metric. This API is now deprecated, please use the `Get Monitoring Histogram Timeseries` API.
+Gets histogram timeseries information for a specific metric.
 
 ### Example
 
@@ -130,28 +130,28 @@ configuration = mux_python.Configuration(
 # Enter a context with an instance of the API client
 with mux_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = mux_python.RealTimeApi(api_client)
-    realtime_histogram_metric_id = 'video-startup-time' # str | ID of the Realtime Histogram Metric
+    api_instance = mux_python.MonitoringApi(api_client)
+    monitoring_histogram_metric_id = 'video-startup-time' # str | ID of the Monitoring Histogram Metric
 filters = ['filters_example'] # list[str] | Limit the results to rows that match conditions from provided key:value pairs. Must be provided as an array query string parameter.  To exclude rows that match a certain condition, prepend a `!` character to the dimension.  Possible filter names are the same as returned by the List Filters endpoint.  Example:    * `filters[]=operating_system:windows&filters[]=!country:US`  (optional)
 
     try:
-        # Get Real-Time Histogram Timeseries
-        api_response = api_instance.get_realtime_histogram_timeseries(realtime_histogram_metric_id, filters=filters)
+        # Get Monitoring Histogram Timeseries
+        api_response = api_instance.get_monitoring_histogram_timeseries(monitoring_histogram_metric_id, filters=filters)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling RealTimeApi->get_realtime_histogram_timeseries: %s\n" % e)
+        print("Exception when calling MonitoringApi->get_monitoring_histogram_timeseries: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **realtime_histogram_metric_id** | **str**| ID of the Realtime Histogram Metric | 
+ **monitoring_histogram_metric_id** | **str**| ID of the Monitoring Histogram Metric | 
  **filters** | [**list[str]**](str.md)| Limit the results to rows that match conditions from provided key:value pairs. Must be provided as an array query string parameter.  To exclude rows that match a certain condition, prepend a &#x60;!&#x60; character to the dimension.  Possible filter names are the same as returned by the List Filters endpoint.  Example:    * &#x60;filters[]&#x3D;operating_system:windows&amp;filters[]&#x3D;!country:US&#x60;  | [optional] 
 
 ### Return type
 
-[**GetRealTimeHistogramTimeseriesResponse**](GetRealTimeHistogramTimeseriesResponse.md)
+[**GetMonitoringHistogramTimeseriesResponse**](GetMonitoringHistogramTimeseriesResponse.md)
 
 ### Authorization
 
@@ -169,12 +169,12 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_realtime_timeseries**
-> GetRealTimeTimeseriesResponse get_realtime_timeseries(realtime_metric_id, filters=filters)
+# **get_monitoring_timeseries**
+> GetMonitoringTimeseriesResponse get_monitoring_timeseries(monitoring_metric_id, filters=filters)
 
-Get Real-Time Timeseries
+Get Monitoring Timeseries
 
-Gets Time series information for a specific metric along with the number of concurrent viewers. This API is now deprecated, please use the `Get Monitoring Timeseries` API.
+Gets Time series information for a specific metric along with the number of concurrent viewers.
 
 ### Example
 
@@ -205,28 +205,28 @@ configuration = mux_python.Configuration(
 # Enter a context with an instance of the API client
 with mux_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = mux_python.RealTimeApi(api_client)
-    realtime_metric_id = 'current-concurrent-viewers' # str | ID of the Realtime Metric
+    api_instance = mux_python.MonitoringApi(api_client)
+    monitoring_metric_id = 'current-concurrent-viewers' # str | ID of the Monitoring Metric
 filters = ['filters_example'] # list[str] | Limit the results to rows that match conditions from provided key:value pairs. Must be provided as an array query string parameter.  To exclude rows that match a certain condition, prepend a `!` character to the dimension.  Possible filter names are the same as returned by the List Filters endpoint.  Example:    * `filters[]=operating_system:windows&filters[]=!country:US`  (optional)
 
     try:
-        # Get Real-Time Timeseries
-        api_response = api_instance.get_realtime_timeseries(realtime_metric_id, filters=filters)
+        # Get Monitoring Timeseries
+        api_response = api_instance.get_monitoring_timeseries(monitoring_metric_id, filters=filters)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling RealTimeApi->get_realtime_timeseries: %s\n" % e)
+        print("Exception when calling MonitoringApi->get_monitoring_timeseries: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **realtime_metric_id** | **str**| ID of the Realtime Metric | 
+ **monitoring_metric_id** | **str**| ID of the Monitoring Metric | 
  **filters** | [**list[str]**](str.md)| Limit the results to rows that match conditions from provided key:value pairs. Must be provided as an array query string parameter.  To exclude rows that match a certain condition, prepend a &#x60;!&#x60; character to the dimension.  Possible filter names are the same as returned by the List Filters endpoint.  Example:    * &#x60;filters[]&#x3D;operating_system:windows&amp;filters[]&#x3D;!country:US&#x60;  | [optional] 
 
 ### Return type
 
-[**GetRealTimeTimeseriesResponse**](GetRealTimeTimeseriesResponse.md)
+[**GetMonitoringTimeseriesResponse**](GetMonitoringTimeseriesResponse.md)
 
 ### Authorization
 
@@ -244,12 +244,12 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **list_realtime_dimensions**
-> ListRealTimeDimensionsResponse list_realtime_dimensions()
+# **list_monitoring_dimensions**
+> ListMonitoringDimensionsResponse list_monitoring_dimensions()
 
-List Real-Time Dimensions
+List Monitoring Dimensions
 
-Lists available real-time dimensions. This API is now deprecated, please use the `List Monitoring Dimensions` API.
+Lists available monitoring dimensions.
 
 ### Example
 
@@ -280,14 +280,14 @@ configuration = mux_python.Configuration(
 # Enter a context with an instance of the API client
 with mux_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = mux_python.RealTimeApi(api_client)
+    api_instance = mux_python.MonitoringApi(api_client)
     
     try:
-        # List Real-Time Dimensions
-        api_response = api_instance.list_realtime_dimensions()
+        # List Monitoring Dimensions
+        api_response = api_instance.list_monitoring_dimensions()
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling RealTimeApi->list_realtime_dimensions: %s\n" % e)
+        print("Exception when calling MonitoringApi->list_monitoring_dimensions: %s\n" % e)
 ```
 
 ### Parameters
@@ -295,7 +295,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**ListRealTimeDimensionsResponse**](ListRealTimeDimensionsResponse.md)
+[**ListMonitoringDimensionsResponse**](ListMonitoringDimensionsResponse.md)
 
 ### Authorization
 
@@ -313,12 +313,12 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **list_realtime_metrics**
-> ListRealTimeMetricsResponse list_realtime_metrics()
+# **list_monitoring_metrics**
+> ListMonitoringMetricsResponse list_monitoring_metrics()
 
-List Real-Time Metrics
+List Monitoring Metrics
 
-Lists available real-time metrics. This API is now deprecated, please use the `List Monitoring Metrics` API.
+Lists available monitoring metrics.
 
 ### Example
 
@@ -349,14 +349,14 @@ configuration = mux_python.Configuration(
 # Enter a context with an instance of the API client
 with mux_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = mux_python.RealTimeApi(api_client)
+    api_instance = mux_python.MonitoringApi(api_client)
     
     try:
-        # List Real-Time Metrics
-        api_response = api_instance.list_realtime_metrics()
+        # List Monitoring Metrics
+        api_response = api_instance.list_monitoring_metrics()
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling RealTimeApi->list_realtime_metrics: %s\n" % e)
+        print("Exception when calling MonitoringApi->list_monitoring_metrics: %s\n" % e)
 ```
 
 ### Parameters
@@ -364,7 +364,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**ListRealTimeMetricsResponse**](ListRealTimeMetricsResponse.md)
+[**ListMonitoringMetricsResponse**](ListMonitoringMetricsResponse.md)
 
 ### Authorization
 

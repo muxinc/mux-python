@@ -1,4 +1,4 @@
-# ListRealTimeMetricsResponse
+# ListMonitoringDimensionsResponse
 
 ## Properties
 Name | Type | Description | Notes

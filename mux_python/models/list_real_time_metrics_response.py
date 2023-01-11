@@ -34,7 +34,7 @@ class ListRealTimeMetricsResponse(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'data': 'list[ListRealTimeDimensionsResponseData]',
+        'data': 'list[ListMonitoringDimensionsResponseData]',
         'total_row_count': 'int',
         'timeframe': 'list[int]'
     }
@@ -69,7 +69,7 @@ class ListRealTimeMetricsResponse(object):
 
 
         :return: The data of this ListRealTimeMetricsResponse.  # noqa: E501
-        :rtype: list[ListRealTimeDimensionsResponseData]
+        :rtype: list[ListMonitoringDimensionsResponseData]
         """
         return self._data
 
@@ -79,7 +79,7 @@ class ListRealTimeMetricsResponse(object):
 
 
         :param data: The data of this ListRealTimeMetricsResponse.  # noqa: E501
-        :type data: list[ListRealTimeDimensionsResponseData]
+        :type data: list[ListMonitoringDimensionsResponseData]
         """
 
         self._data = data
