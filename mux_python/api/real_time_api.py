@@ -40,7 +40,7 @@ class RealTimeApi(object):
     def get_realtime_breakdown(self, realtime_metric_id, **kwargs):  # noqa: E501
         """Get Real-Time Breakdown  # noqa: E501
 
-        Gets breakdown information for a specific dimension and metric along with the number of concurrent viewers and negative impact score.  # noqa: E501
+        Gets breakdown information for a specific dimension and metric along with the number of concurrent viewers and negative impact score. This API is now deprecated, please use the `Get Monitoring Breakdown` API.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -80,7 +80,7 @@ class RealTimeApi(object):
     def get_realtime_breakdown_with_http_info(self, realtime_metric_id, **kwargs):  # noqa: E501
         """Get Real-Time Breakdown  # noqa: E501
 
-        Gets breakdown information for a specific dimension and metric along with the number of concurrent viewers and negative impact score.  # noqa: E501
+        Gets breakdown information for a specific dimension and metric along with the number of concurrent viewers and negative impact score. This API is now deprecated, please use the `Get Monitoring Breakdown` API.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -211,7 +211,7 @@ class RealTimeApi(object):
     def get_realtime_histogram_timeseries(self, realtime_histogram_metric_id, **kwargs):  # noqa: E501
         """Get Real-Time Histogram Timeseries  # noqa: E501
 
-        Gets histogram timeseries information for a specific metric.  # noqa: E501
+        Gets histogram timeseries information for a specific metric. This API is now deprecated, please use the `Get Monitoring Histogram Timeseries` API.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -243,7 +243,7 @@ class RealTimeApi(object):
     def get_realtime_histogram_timeseries_with_http_info(self, realtime_histogram_metric_id, **kwargs):  # noqa: E501
         """Get Real-Time Histogram Timeseries  # noqa: E501
 
-        Gets histogram timeseries information for a specific metric.  # noqa: E501
+        Gets histogram timeseries information for a specific metric. This API is now deprecated, please use the `Get Monitoring Histogram Timeseries` API.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -354,7 +354,7 @@ class RealTimeApi(object):
     def get_realtime_timeseries(self, realtime_metric_id, **kwargs):  # noqa: E501
         """Get Real-Time Timeseries  # noqa: E501
 
-        Gets Time series information for a specific metric along with the number of concurrent viewers.  # noqa: E501
+        Gets Time series information for a specific metric along with the number of concurrent viewers. This API is now deprecated, please use the `Get Monitoring Timeseries` API.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -386,7 +386,7 @@ class RealTimeApi(object):
     def get_realtime_timeseries_with_http_info(self, realtime_metric_id, **kwargs):  # noqa: E501
         """Get Real-Time Timeseries  # noqa: E501
 
-        Gets Time series information for a specific metric along with the number of concurrent viewers.  # noqa: E501
+        Gets Time series information for a specific metric along with the number of concurrent viewers. This API is now deprecated, please use the `Get Monitoring Timeseries` API.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -497,7 +497,7 @@ class RealTimeApi(object):
     def list_realtime_dimensions(self, **kwargs):  # noqa: E501
         """List Real-Time Dimensions  # noqa: E501
 
-        Lists available real-time dimensions.  # noqa: E501
+        Lists available real-time dimensions. This API is now deprecated, please use the `List Monitoring Dimensions` API.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -525,7 +525,7 @@ class RealTimeApi(object):
     def list_realtime_dimensions_with_http_info(self, **kwargs):  # noqa: E501
         """List Real-Time Dimensions  # noqa: E501
 
-        Lists available real-time dimensions.  # noqa: E501
+        Lists available real-time dimensions. This API is now deprecated, please use the `List Monitoring Dimensions` API.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -621,7 +621,7 @@ class RealTimeApi(object):
     def list_realtime_metrics(self, **kwargs):  # noqa: E501
         """List Real-Time Metrics  # noqa: E501
 
-        Lists available real-time metrics.  # noqa: E501
+        Lists available real-time metrics. This API is now deprecated, please use the `List Monitoring Metrics` API.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -649,7 +649,7 @@ class RealTimeApi(object):
     def list_realtime_metrics_with_http_info(self, **kwargs):  # noqa: E501
         """List Real-Time Metrics  # noqa: E501
 
-        Lists available real-time metrics.  # noqa: E501
+        Lists available real-time metrics. This API is now deprecated, please use the `List Monitoring Metrics` API.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 

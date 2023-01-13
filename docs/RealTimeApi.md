@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 Get Real-Time Breakdown
 
-Gets breakdown information for a specific dimension and metric along with the number of concurrent viewers and negative impact score.
+Gets breakdown information for a specific dimension and metric along with the number of concurrent viewers and negative impact score. This API is now deprecated, please use the `Get Monitoring Breakdown` API.
 
 ### Example
 
@@ -99,7 +99,7 @@ Name | Type | Description  | Notes
 
 Get Real-Time Histogram Timeseries
 
-Gets histogram timeseries information for a specific metric.
+Gets histogram timeseries information for a specific metric. This API is now deprecated, please use the `Get Monitoring Histogram Timeseries` API.
 
 ### Example
 
@@ -174,7 +174,7 @@ Name | Type | Description  | Notes
 
 Get Real-Time Timeseries
 
-Gets Time series information for a specific metric along with the number of concurrent viewers.
+Gets Time series information for a specific metric along with the number of concurrent viewers. This API is now deprecated, please use the `Get Monitoring Timeseries` API.
 
 ### Example
 
@@ -249,7 +249,7 @@ Name | Type | Description  | Notes
 
 List Real-Time Dimensions
 
-Lists available real-time dimensions.
+Lists available real-time dimensions. This API is now deprecated, please use the `List Monitoring Dimensions` API.
 
 ### Example
 
@@ -318,7 +318,7 @@ This endpoint does not need any parameter.
 
 List Real-Time Metrics
 
-Lists available real-time metrics.
+Lists available real-time metrics. This API is now deprecated, please use the `List Monitoring Metrics` API.
 
 ### Example
 

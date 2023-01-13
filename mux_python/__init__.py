@@ -15,7 +15,7 @@
 
 from __future__ import absolute_import
 
-__version__ = "3.7.1"
+__version__ = "3.8.0"
 
 # import apis into sdk package
 from mux_python.api.assets_api import AssetsApi
@@ -28,6 +28,7 @@ from mux_python.api.filters_api import FiltersApi
 from mux_python.api.incidents_api import IncidentsApi
 from mux_python.api.live_streams_api import LiveStreamsApi
 from mux_python.api.metrics_api import MetricsApi
+from mux_python.api.monitoring_api import MonitoringApi
 from mux_python.api.playback_id_api import PlaybackIDApi
 from mux_python.api.playback_restrictions_api import PlaybackRestrictionsApi
 from mux_python.api.real_time_api import RealTimeApi
@@ -88,6 +89,10 @@ from mux_python.models.get_asset_or_live_stream_id_response_data_object import G
 from mux_python.models.get_asset_playback_id_response import GetAssetPlaybackIDResponse
 from mux_python.models.get_live_stream_playback_id_response import GetLiveStreamPlaybackIDResponse
 from mux_python.models.get_metric_timeseries_data_response import GetMetricTimeseriesDataResponse
+from mux_python.models.get_monitoring_breakdown_response import GetMonitoringBreakdownResponse
+from mux_python.models.get_monitoring_histogram_timeseries_response import GetMonitoringHistogramTimeseriesResponse
+from mux_python.models.get_monitoring_histogram_timeseries_response_meta import GetMonitoringHistogramTimeseriesResponseMeta
+from mux_python.models.get_monitoring_timeseries_response import GetMonitoringTimeseriesResponse
 from mux_python.models.get_overall_values_response import GetOverallValuesResponse
 from mux_python.models.get_real_time_breakdown_response import GetRealTimeBreakdownResponse
 from mux_python.models.get_real_time_histogram_timeseries_response import GetRealTimeHistogramTimeseriesResponse
@@ -118,9 +123,11 @@ from mux_python.models.list_filters_response_data import ListFiltersResponseData
 from mux_python.models.list_incidents_response import ListIncidentsResponse
 from mux_python.models.list_insights_response import ListInsightsResponse
 from mux_python.models.list_live_streams_response import ListLiveStreamsResponse
+from mux_python.models.list_monitoring_dimensions_response import ListMonitoringDimensionsResponse
+from mux_python.models.list_monitoring_dimensions_response_data import ListMonitoringDimensionsResponseData
+from mux_python.models.list_monitoring_metrics_response import ListMonitoringMetricsResponse
 from mux_python.models.list_playback_restrictions_response import ListPlaybackRestrictionsResponse
 from mux_python.models.list_real_time_dimensions_response import ListRealTimeDimensionsResponse
-from mux_python.models.list_real_time_dimensions_response_data import ListRealTimeDimensionsResponseData
 from mux_python.models.list_real_time_metrics_response import ListRealTimeMetricsResponse
 from mux_python.models.list_related_incidents_response import ListRelatedIncidentsResponse
 from mux_python.models.list_signing_keys_response import ListSigningKeysResponse
@@ -135,6 +142,11 @@ from mux_python.models.live_stream_generated_subtitle_settings import LiveStream
 from mux_python.models.live_stream_response import LiveStreamResponse
 from mux_python.models.live_stream_status import LiveStreamStatus
 from mux_python.models.metric import Metric
+from mux_python.models.monitoring_breakdown_value import MonitoringBreakdownValue
+from mux_python.models.monitoring_histogram_timeseries_bucket import MonitoringHistogramTimeseriesBucket
+from mux_python.models.monitoring_histogram_timeseries_bucket_values import MonitoringHistogramTimeseriesBucketValues
+from mux_python.models.monitoring_histogram_timeseries_datapoint import MonitoringHistogramTimeseriesDatapoint
+from mux_python.models.monitoring_timeseries_datapoint import MonitoringTimeseriesDatapoint
 from mux_python.models.notification_rule import NotificationRule
 from mux_python.models.overall_values import OverallValues
 from mux_python.models.playback_id import PlaybackID

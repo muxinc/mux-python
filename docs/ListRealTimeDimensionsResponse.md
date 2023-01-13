@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**list[ListRealTimeDimensionsResponseData]**](ListRealTimeDimensionsResponseData.md) |  | [optional]
+**data** | [**list[ListMonitoringDimensionsResponseData]**](ListMonitoringDimensionsResponseData.md) |  | [optional]
 **total_row_count** | **int** |  | [optional]
 **timeframe** | **list[int]** |  | [optional]
 
