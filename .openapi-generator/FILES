@@ -30,6 +30,7 @@ docs/CreateTrackResponse.md
 docs/CreateTranscriptionVocabularyRequest.md
 docs/CreateUploadRequest.md
 docs/DeliveryReport.md
+docs/DeliveryReportDeliveredSecondsByResolution.md
 docs/DeliveryUsageApi.md
 docs/DimensionValue.md
 docs/DimensionsApi.md
@@ -212,6 +213,7 @@ mux_python/models/create_track_response.py
 mux_python/models/create_transcription_vocabulary_request.py
 mux_python/models/create_upload_request.py
 mux_python/models/delivery_report.py
+mux_python/models/delivery_report_delivered_seconds_by_resolution.py
 mux_python/models/dimension_value.py
 mux_python/models/disable_live_stream_response.py
 mux_python/models/enable_live_stream_response.py

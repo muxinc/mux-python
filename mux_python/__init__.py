@@ -15,7 +15,7 @@
 
 from __future__ import absolute_import
 
-__version__ = "3.8.0"
+__version__ = "3.9.0"
 
 # import apis into sdk package
 from mux_python.api.assets_api import AssetsApi
@@ -75,6 +75,7 @@ from mux_python.models.create_track_response import CreateTrackResponse
 from mux_python.models.create_transcription_vocabulary_request import CreateTranscriptionVocabularyRequest
 from mux_python.models.create_upload_request import CreateUploadRequest
 from mux_python.models.delivery_report import DeliveryReport
+from mux_python.models.delivery_report_delivered_seconds_by_resolution import DeliveryReportDeliveredSecondsByResolution
 from mux_python.models.dimension_value import DimensionValue
 from mux_python.models.disable_live_stream_response import DisableLiveStreamResponse
 from mux_python.models.enable_live_stream_response import EnableLiveStreamResponse
