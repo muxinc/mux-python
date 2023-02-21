@@ -333,5 +333,4 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_delivery_report_delivered_seconds_by_resolution.py
 tox.ini
