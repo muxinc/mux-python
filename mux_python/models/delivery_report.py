@@ -44,7 +44,8 @@ class DeliveryReport(object):
         'deleted_at': 'str',
         'asset_state': 'str',
         'asset_duration': 'float',
-        'delivered_seconds': 'float'
+        'delivered_seconds': 'float',
+        'delivered_seconds_by_resolution': 'DeliveryReportDeliveredSecondsByResolution'
     }
 
     attribute_map = {
@@ -55,10 +56,11 @@ class DeliveryReport(object):
         'deleted_at': 'deleted_at',
         'asset_state': 'asset_state',
         'asset_duration': 'asset_duration',
-        'delivered_seconds': 'delivered_seconds'
+        'delivered_seconds': 'delivered_seconds',
+        'delivered_seconds_by_resolution': 'delivered_seconds_by_resolution'
     }
 
-    def __init__(self, live_stream_id=None, asset_id=None, passthrough=None, created_at=None, deleted_at=None, asset_state=None, asset_duration=None, delivered_seconds=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, live_stream_id=None, asset_id=None, passthrough=None, created_at=None, deleted_at=None, asset_state=None, asset_duration=None, delivered_seconds=None, delivered_seconds_by_resolution=None, local_vars_configuration=None):  # noqa: E501
         """DeliveryReport - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
@@ -72,6 +74,7 @@ class DeliveryReport(object):
         self._asset_state = None
         self._asset_duration = None
         self._delivered_seconds = None
+        self._delivered_seconds_by_resolution = None
         self.discriminator = None
 
         if live_stream_id is not None:
@@ -90,6 +93,8 @@ class DeliveryReport(object):
             self.asset_duration = asset_duration
         if delivered_seconds is not None:
             self.delivered_seconds = delivered_seconds
+        if delivered_seconds_by_resolution is not None:
+            self.delivered_seconds_by_resolution = delivered_seconds_by_resolution
 
     @property
     def live_stream_id(self):
@@ -280,6 +285,27 @@ class DeliveryReport(object):
         """
 
         self._delivered_seconds = delivered_seconds
+
+    @property
+    def delivered_seconds_by_resolution(self):
+        """Gets the delivered_seconds_by_resolution of this DeliveryReport.  # noqa: E501
+
+
+        :return: The delivered_seconds_by_resolution of this DeliveryReport.  # noqa: E501
+        :rtype: DeliveryReportDeliveredSecondsByResolution
+        """
+        return self._delivered_seconds_by_resolution
+
+    @delivered_seconds_by_resolution.setter
+    def delivered_seconds_by_resolution(self, delivered_seconds_by_resolution):
+        """Sets the delivered_seconds_by_resolution of this DeliveryReport.
+
+
+        :param delivered_seconds_by_resolution: The delivered_seconds_by_resolution of this DeliveryReport.  # noqa: E501
+        :type delivered_seconds_by_resolution: DeliveryReportDeliveredSecondsByResolution
+        """
+
+        self._delivered_seconds_by_resolution = delivered_seconds_by_resolution
 
     def to_dict(self, serialize=False):
         """Returns the model properties as a dict"""

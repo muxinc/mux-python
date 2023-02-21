@@ -486,7 +486,7 @@ class Track(object):
         :param status: The status of this Track.  # noqa: E501
         :type status: str
         """
-        allowed_values = ["preparing", "ready", "errored"]  # noqa: E501
+        allowed_values = ["preparing", "ready", "errored", "deleted"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and status not in allowed_values:  # noqa: E501
             raise ValueError(
                 "Invalid value for `status` ({0}), must be one of {1}"  # noqa: E501
