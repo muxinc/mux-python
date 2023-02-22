@@ -34,8 +34,9 @@ class BroadcastLayout(object):
     """
     GALLERY = "gallery"
     ACTIVE_SPEAKER = "active-speaker"
+    CROP = "crop"
 
-    allowable_values = [GALLERY, ACTIVE_SPEAKER]  # noqa: E501
+    allowable_values = [GALLERY, ACTIVE_SPEAKER, CROP]  # noqa: E501
 
     """
     Attributes:
