@@ -1,21 +1,21 @@
-# mux_python.URLSigningKeysApi
+# mux_python.SigningKeysApi
 
 All URIs are relative to *https://api.mux.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_url_signing_key**](URLSigningKeysApi.md#create_url_signing_key) | **POST** /video/v1/signing-keys | Create a URL signing key
-[**delete_url_signing_key**](URLSigningKeysApi.md#delete_url_signing_key) | **DELETE** /video/v1/signing-keys/{SIGNING_KEY_ID} | Delete a URL signing key
-[**get_url_signing_key**](URLSigningKeysApi.md#get_url_signing_key) | **GET** /video/v1/signing-keys/{SIGNING_KEY_ID} | Retrieve a URL signing key
-[**list_url_signing_keys**](URLSigningKeysApi.md#list_url_signing_keys) | **GET** /video/v1/signing-keys | List URL signing keys
+[**create_signing_key**](SigningKeysApi.md#create_signing_key) | **POST** /system/v1/signing-keys | Create a signing key
+[**delete_signing_key**](SigningKeysApi.md#delete_signing_key) | **DELETE** /system/v1/signing-keys/{SIGNING_KEY_ID} | Delete a signing key
+[**get_signing_key**](SigningKeysApi.md#get_signing_key) | **GET** /system/v1/signing-keys/{SIGNING_KEY_ID} | Retrieve a signing key
+[**list_signing_keys**](SigningKeysApi.md#list_signing_keys) | **GET** /system/v1/signing-keys | List signing keys
 
 
-# **create_url_signing_key**
-> SigningKeyResponse create_url_signing_key()
+# **create_signing_key**
+> SigningKeyResponse create_signing_key()
 
-Create a URL signing key
+Create a signing key
 
-This route is now deprecated, please use the `Signing Keys` API. Creates a new signing key pair. When creating a new signing key, the API will generate a 2048-bit RSA key-pair and return the private key and a generated key-id; the public key will be stored at Mux to validate signed tokens.  Note: Any new access tokens authenticating this route will be required to have `System` level permissions. 
+Creates a new signing key pair. When creating a new signing key, the API will generate a 2048-bit RSA key-pair and return the private key and a generated key-id; the public key will be stored at Mux to validate signed tokens.
 
 ### Example
 
@@ -46,14 +46,14 @@ configuration = mux_python.Configuration(
 # Enter a context with an instance of the API client
 with mux_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = mux_python.URLSigningKeysApi(api_client)
+    api_instance = mux_python.SigningKeysApi(api_client)
     
     try:
-        # Create a URL signing key
-        api_response = api_instance.create_url_signing_key()
+        # Create a signing key
+        api_response = api_instance.create_signing_key()
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling URLSigningKeysApi->create_url_signing_key: %s\n" % e)
+        print("Exception when calling SigningKeysApi->create_signing_key: %s\n" % e)
 ```
 
 ### Parameters
@@ -79,12 +79,12 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **delete_url_signing_key**
-> delete_url_signing_key(signing_key_id)
+# **delete_signing_key**
+> delete_signing_key(signing_key_id)
 
-Delete a URL signing key
+Delete a signing key
 
-This route is now deprecated, please use the `Signing Keys` API. Deletes an existing signing key. Use with caution, as this will invalidate any existing signatures and no URLs can be signed using the key again.  Note: Any new access tokens authenticating this route will be required to have `System` level permissions. 
+Deletes an existing signing key. Use with caution, as this will invalidate any existing signatures and no JWTs can be signed using the key again.
 
 ### Example
 
@@ -115,14 +115,14 @@ configuration = mux_python.Configuration(
 # Enter a context with an instance of the API client
 with mux_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = mux_python.URLSigningKeysApi(api_client)
+    api_instance = mux_python.SigningKeysApi(api_client)
     signing_key_id = 'signing_key_id_example' # str | The ID of the signing key.
 
     try:
-        # Delete a URL signing key
-        api_instance.delete_url_signing_key(signing_key_id)
+        # Delete a signing key
+        api_instance.delete_signing_key(signing_key_id)
     except ApiException as e:
-        print("Exception when calling URLSigningKeysApi->delete_url_signing_key: %s\n" % e)
+        print("Exception when calling SigningKeysApi->delete_signing_key: %s\n" % e)
 ```
 
 ### Parameters
@@ -151,12 +151,12 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_url_signing_key**
-> SigningKeyResponse get_url_signing_key(signing_key_id)
+# **get_signing_key**
+> SigningKeyResponse get_signing_key(signing_key_id)
 
-Retrieve a URL signing key
+Retrieve a signing key
 
-This route is now deprecated, please use the `Signing Keys` API. Retrieves the details of a URL signing key that has previously been created. Supply the unique signing key ID that was returned from your previous request, and Mux will return the corresponding signing key information. **The private key is not returned in this response.**  Note: Any new access tokens authenticating this route will be required to have `System` level permissions. 
+Retrieves the details of a signing key that has previously been created. Supply the unique signing key ID that was returned from your previous request, and Mux will return the corresponding signing key information. **The private key is not returned in this response.** 
 
 ### Example
 
@@ -187,15 +187,15 @@ configuration = mux_python.Configuration(
 # Enter a context with an instance of the API client
 with mux_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = mux_python.URLSigningKeysApi(api_client)
+    api_instance = mux_python.SigningKeysApi(api_client)
     signing_key_id = 'signing_key_id_example' # str | The ID of the signing key.
 
     try:
-        # Retrieve a URL signing key
-        api_response = api_instance.get_url_signing_key(signing_key_id)
+        # Retrieve a signing key
+        api_response = api_instance.get_signing_key(signing_key_id)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling URLSigningKeysApi->get_url_signing_key: %s\n" % e)
+        print("Exception when calling SigningKeysApi->get_signing_key: %s\n" % e)
 ```
 
 ### Parameters
@@ -224,12 +224,12 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **list_url_signing_keys**
-> ListSigningKeysResponse list_url_signing_keys(limit=limit, page=page)
+# **list_signing_keys**
+> ListSigningKeysResponse list_signing_keys(limit=limit, page=page)
 
-List URL signing keys
+List signing keys
 
-This route is now deprecated, please use the `Signing Keys` API. Returns a list of URL signing keys.  Note: Any new access tokens authenticating this route will be required to have `System` level permissions. 
+Returns a list of signing keys.
 
 ### Example
 
@@ -260,16 +260,16 @@ configuration = mux_python.Configuration(
 # Enter a context with an instance of the API client
 with mux_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = mux_python.URLSigningKeysApi(api_client)
+    api_instance = mux_python.SigningKeysApi(api_client)
     limit = 25 # int | Number of items to include in the response (optional) (default to 25)
 page = 1 # int | Offset by this many pages, of the size of `limit` (optional) (default to 1)
 
     try:
-        # List URL signing keys
-        api_response = api_instance.list_url_signing_keys(limit=limit, page=page)
+        # List signing keys
+        api_response = api_instance.list_signing_keys(limit=limit, page=page)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling URLSigningKeysApi->list_url_signing_keys: %s\n" % e)
+        print("Exception when calling SigningKeysApi->list_signing_keys: %s\n" % e)
 ```
 
 ### Parameters

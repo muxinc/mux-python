@@ -46,7 +46,8 @@ class AssetNonStandardInputReasons(object):
         'pixel_aspect_ratio': 'str',
         'video_edit_list': 'str',
         'audio_edit_list': 'str',
-        'unexpected_media_file_parameters': 'str'
+        'unexpected_media_file_parameters': 'str',
+        'unsupported_pixel_format': 'str'
     }
 
     attribute_map = {
@@ -59,10 +60,11 @@ class AssetNonStandardInputReasons(object):
         'pixel_aspect_ratio': 'pixel_aspect_ratio',
         'video_edit_list': 'video_edit_list',
         'audio_edit_list': 'audio_edit_list',
-        'unexpected_media_file_parameters': 'unexpected_media_file_parameters'
+        'unexpected_media_file_parameters': 'unexpected_media_file_parameters',
+        'unsupported_pixel_format': 'unsupported_pixel_format'
     }
 
-    def __init__(self, video_codec=None, audio_codec=None, video_gop_size=None, video_frame_rate=None, video_resolution=None, video_bitrate=None, pixel_aspect_ratio=None, video_edit_list=None, audio_edit_list=None, unexpected_media_file_parameters=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, video_codec=None, audio_codec=None, video_gop_size=None, video_frame_rate=None, video_resolution=None, video_bitrate=None, pixel_aspect_ratio=None, video_edit_list=None, audio_edit_list=None, unexpected_media_file_parameters=None, unsupported_pixel_format=None, local_vars_configuration=None):  # noqa: E501
         """AssetNonStandardInputReasons - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
@@ -78,6 +80,7 @@ class AssetNonStandardInputReasons(object):
         self._video_edit_list = None
         self._audio_edit_list = None
         self._unexpected_media_file_parameters = None
+        self._unsupported_pixel_format = None
         self.discriminator = None
 
         if video_codec is not None:
@@ -100,6 +103,8 @@ class AssetNonStandardInputReasons(object):
             self.audio_edit_list = audio_edit_list
         if unexpected_media_file_parameters is not None:
             self.unexpected_media_file_parameters = unexpected_media_file_parameters
+        if unsupported_pixel_format is not None:
+            self.unsupported_pixel_format = unsupported_pixel_format
 
     @property
     def video_codec(self):
@@ -360,6 +365,29 @@ class AssetNonStandardInputReasons(object):
             )
 
         self._unexpected_media_file_parameters = unexpected_media_file_parameters
+
+    @property
+    def unsupported_pixel_format(self):
+        """Gets the unsupported_pixel_format of this AssetNonStandardInputReasons.  # noqa: E501
+
+        The video pixel format, as a string, returned by libav. Considered non-standard if not one of yuv420p or yuvj420p.  # noqa: E501
+
+        :return: The unsupported_pixel_format of this AssetNonStandardInputReasons.  # noqa: E501
+        :rtype: str
+        """
+        return self._unsupported_pixel_format
+
+    @unsupported_pixel_format.setter
+    def unsupported_pixel_format(self, unsupported_pixel_format):
+        """Sets the unsupported_pixel_format of this AssetNonStandardInputReasons.
+
+        The video pixel format, as a string, returned by libav. Considered non-standard if not one of yuv420p or yuvj420p.  # noqa: E501
+
+        :param unsupported_pixel_format: The unsupported_pixel_format of this AssetNonStandardInputReasons.  # noqa: E501
+        :type unsupported_pixel_format: str
+        """
+
+        self._unsupported_pixel_format = unsupported_pixel_format
 
     def to_dict(self, serialize=False):
         """Returns the model properties as a dict"""

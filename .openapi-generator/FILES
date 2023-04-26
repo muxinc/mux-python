@@ -132,6 +132,7 @@ docs/Score.md
 docs/SignalLiveStreamCompleteResponse.md
 docs/SigningKey.md
 docs/SigningKeyResponse.md
+docs/SigningKeysApi.md
 docs/SimulcastTarget.md
 docs/SimulcastTargetResponse.md
 docs/Space.md
@@ -177,6 +178,7 @@ mux_python/api/monitoring_api.py
 mux_python/api/playback_id_api.py
 mux_python/api/playback_restrictions_api.py
 mux_python/api/real_time_api.py
+mux_python/api/signing_keys_api.py
 mux_python/api/spaces_api.py
 mux_python/api/transcription_vocabularies_api.py
 mux_python/api/url_signing_keys_api.py
@@ -333,4 +335,5 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
+test/test_signing_keys_api.py
 tox.ini

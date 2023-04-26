@@ -170,7 +170,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_monitoring_timeseries**
-> GetMonitoringTimeseriesResponse get_monitoring_timeseries(monitoring_metric_id, filters=filters)
+> GetMonitoringTimeseriesResponse get_monitoring_timeseries(monitoring_metric_id, filters=filters, timestamp=timestamp)
 
 Get Monitoring Timeseries
 
@@ -208,10 +208,11 @@ with mux_python.ApiClient(configuration) as api_client:
     api_instance = mux_python.MonitoringApi(api_client)
     monitoring_metric_id = 'current-concurrent-viewers' # str | ID of the Monitoring Metric
 filters = ['filters_example'] # list[str] | Limit the results to rows that match conditions from provided key:value pairs. Must be provided as an array query string parameter.  To exclude rows that match a certain condition, prepend a `!` character to the dimension.  Possible filter names are the same as returned by the List Filters endpoint.  Example:    * `filters[]=operating_system:windows&filters[]=!country:US`  (optional)
+timestamp = 56 # int | Timestamp to use as the start of the timeseries data. This value must be provided as a unix timestamp. Defaults to 30 minutes ago. (optional)
 
     try:
         # Get Monitoring Timeseries
-        api_response = api_instance.get_monitoring_timeseries(monitoring_metric_id, filters=filters)
+        api_response = api_instance.get_monitoring_timeseries(monitoring_metric_id, filters=filters, timestamp=timestamp)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling MonitoringApi->get_monitoring_timeseries: %s\n" % e)
@@ -223,6 +224,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **monitoring_metric_id** | **str**| ID of the Monitoring Metric | 
  **filters** | [**list[str]**](str.md)| Limit the results to rows that match conditions from provided key:value pairs. Must be provided as an array query string parameter.  To exclude rows that match a certain condition, prepend a &#x60;!&#x60; character to the dimension.  Possible filter names are the same as returned by the List Filters endpoint.  Example:    * &#x60;filters[]&#x3D;operating_system:windows&amp;filters[]&#x3D;!country:US&#x60;  | [optional] 
+ **timestamp** | **int**| Timestamp to use as the start of the timeseries data. This value must be provided as a unix timestamp. Defaults to 30 minutes ago. | [optional] 
 
 ### Return type
 

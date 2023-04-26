@@ -252,7 +252,7 @@ class LiveStream(object):
     def recent_asset_ids(self):
         """Gets the recent_asset_ids of this LiveStream.  # noqa: E501
 
-        An array of strings with the most recent Assets that were created from this live stream.  # noqa: E501
+        An array of strings with the most recent Asset IDs that were created from this Live Stream. The most recently generated Asset ID is the last entry in the list.  # noqa: E501
 
         :return: The recent_asset_ids of this LiveStream.  # noqa: E501
         :rtype: list[str]
@@ -263,7 +263,7 @@ class LiveStream(object):
     def recent_asset_ids(self, recent_asset_ids):
         """Sets the recent_asset_ids of this LiveStream.
 
-        An array of strings with the most recent Assets that were created from this live stream.  # noqa: E501
+        An array of strings with the most recent Asset IDs that were created from this Live Stream. The most recently generated Asset ID is the last entry in the list.  # noqa: E501
 
         :param recent_asset_ids: The recent_asset_ids of this LiveStream.  # noqa: E501
         :type recent_asset_ids: list[str]
@@ -432,7 +432,7 @@ class LiveStream(object):
     def reconnect_window(self):
         """Gets the reconnect_window of this LiveStream.  # noqa: E501
 
-        When live streaming software disconnects from Mux, either intentionally or due to a drop in the network, the Reconnect Window is the time in seconds that Mux should wait for the streaming software to reconnect before considering the live stream finished and completing the recorded asset. **Max**: 1800s (30 minutes).  Reduced and Low Latency streams with a Reconnect Window greater than zero will insert slate media into the recorded asset while waiting for the streaming software to reconnect or when there are brief interruptions in the live stream media. When using a Reconnect Window setting higher than 60 seconds with a Standard Latency stream, we highly recommend enabling slate with the `use_slate_for_standard_latency` option.   # noqa: E501
+        When live streaming software disconnects from Mux, either intentionally or due to a drop in the network, the Reconnect Window is the time in seconds that Mux should wait for the streaming software to reconnect before considering the live stream finished and completing the recorded asset. **Max**: 1800s (30 minutes).  If not specified directly, Standard Latency streams have a Reconnect Window of 60 seconds; Reduced and Low Latency streams have a default of 0 seconds, or no Reconnect Window. For that reason, we suggest specifying a value other than zero for Reduced and Low Latency streams.  Reduced and Low Latency streams with a Reconnect Window greater than zero will insert slate media into the recorded asset while waiting for the streaming software to reconnect or when there are brief interruptions in the live stream media. When using a Reconnect Window setting higher than 60 seconds with a Standard Latency stream, we highly recommend enabling slate with the `use_slate_for_standard_latency` option.   # noqa: E501
 
         :return: The reconnect_window of this LiveStream.  # noqa: E501
         :rtype: float
@@ -443,7 +443,7 @@ class LiveStream(object):
     def reconnect_window(self, reconnect_window):
         """Sets the reconnect_window of this LiveStream.
 
-        When live streaming software disconnects from Mux, either intentionally or due to a drop in the network, the Reconnect Window is the time in seconds that Mux should wait for the streaming software to reconnect before considering the live stream finished and completing the recorded asset. **Max**: 1800s (30 minutes).  Reduced and Low Latency streams with a Reconnect Window greater than zero will insert slate media into the recorded asset while waiting for the streaming software to reconnect or when there are brief interruptions in the live stream media. When using a Reconnect Window setting higher than 60 seconds with a Standard Latency stream, we highly recommend enabling slate with the `use_slate_for_standard_latency` option.   # noqa: E501
+        When live streaming software disconnects from Mux, either intentionally or due to a drop in the network, the Reconnect Window is the time in seconds that Mux should wait for the streaming software to reconnect before considering the live stream finished and completing the recorded asset. **Max**: 1800s (30 minutes).  If not specified directly, Standard Latency streams have a Reconnect Window of 60 seconds; Reduced and Low Latency streams have a default of 0 seconds, or no Reconnect Window. For that reason, we suggest specifying a value other than zero for Reduced and Low Latency streams.  Reduced and Low Latency streams with a Reconnect Window greater than zero will insert slate media into the recorded asset while waiting for the streaming software to reconnect or when there are brief interruptions in the live stream media. When using a Reconnect Window setting higher than 60 seconds with a Standard Latency stream, we highly recommend enabling slate with the `use_slate_for_standard_latency` option.   # noqa: E501
 
         :param reconnect_window: The reconnect_window of this LiveStream.  # noqa: E501
         :type reconnect_window: float

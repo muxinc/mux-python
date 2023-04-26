@@ -365,6 +365,8 @@ class RealTimeApi(object):
         :type realtime_metric_id: str
         :param filters: Limit the results to rows that match conditions from provided key:value pairs. Must be provided as an array query string parameter.  To exclude rows that match a certain condition, prepend a `!` character to the dimension.  Possible filter names are the same as returned by the List Filters endpoint.  Example:    * `filters[]=operating_system:windows&filters[]=!country:US` 
         :type filters: list[str]
+        :param timestamp: Timestamp to use as the start of the timeseries data. This value must be provided as a unix timestamp. Defaults to 30 minutes ago.
+        :type timestamp: int
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -397,6 +399,8 @@ class RealTimeApi(object):
         :type realtime_metric_id: str
         :param filters: Limit the results to rows that match conditions from provided key:value pairs. Must be provided as an array query string parameter.  To exclude rows that match a certain condition, prepend a `!` character to the dimension.  Possible filter names are the same as returned by the List Filters endpoint.  Example:    * `filters[]=operating_system:windows&filters[]=!country:US` 
         :type filters: list[str]
+        :param timestamp: Timestamp to use as the start of the timeseries data. This value must be provided as a unix timestamp. Defaults to 30 minutes ago.
+        :type timestamp: int
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _return_http_data_only: response data without head status code
@@ -424,7 +428,8 @@ class RealTimeApi(object):
 
         all_params = [
             'realtime_metric_id',
-            'filters'
+            'filters',
+            'timestamp'
         ]
         all_params.extend(
             [
@@ -459,6 +464,8 @@ class RealTimeApi(object):
         if 'filters' in local_var_params and local_var_params['filters'] is not None:  # noqa: E501
             query_params.append(('filters[]', local_var_params['filters']))  # noqa: E501
             collection_formats['filters[]'] = 'multi'  # noqa: E501
+        if 'timestamp' in local_var_params and local_var_params['timestamp'] is not None:  # noqa: E501
+            query_params.append(('timestamp', local_var_params['timestamp']))  # noqa: E501
 
         header_params = {}
 

@@ -128,6 +128,21 @@ Name | Type | Description | Notes
 **custom_3** | **str** |  | [optional]
 **custom_4** | **str** |  | [optional]
 **custom_5** | **str** |  | [optional]
+**custom_6** | **str** |  | [optional]
+**custom_7** | **str** |  | [optional]
+**custom_8** | **str** |  | [optional]
+**custom_9** | **str** |  | [optional]
+**custom_10** | **str** |  | [optional]
+**live_stream_latency** | **int** |  | [optional]
+**asset_id** | **str** |  | [optional]
+**environment_id** | **str** |  | [optional]
+**live_stream_id** | **str** |  | [optional]
+**mux_embed** | **str** |  | [optional]
+**playback_id** | **str** |  | [optional]
+**player_error_context** | **str** |  | [optional]
+**view_drm_type** | **str** |  | [optional]
+**view_dropped_frame_count** | **int** |  | [optional]
+**view_has_ad** | **bool** |  | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -160,7 +160,7 @@ class LiveStreamEmbeddedSubtitleSettings(object):
         :param language_channel: The language_channel of this LiveStreamEmbeddedSubtitleSettings.  # noqa: E501
         :type language_channel: str
         """
-        allowed_values = ["cc1"]  # noqa: E501
+        allowed_values = ["cc1", "cc2", "cc3", "cc4"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and language_channel not in allowed_values:  # noqa: E501
             raise ValueError(
                 "Invalid value for `language_channel` ({0}), must be one of {1}"  # noqa: E501

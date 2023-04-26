@@ -37,28 +37,38 @@ class DeliveryReportDeliveredSecondsByResolution(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'tier_2160p': 'float',
+        'tier_1440p': 'float',
         'tier_1080p': 'float',
         'tier_720p': 'float',
         'tier_audio_only': 'float'
     }
 
     attribute_map = {
+        'tier_2160p': 'tier_2160p',
+        'tier_1440p': 'tier_1440p',
         'tier_1080p': 'tier_1080p',
         'tier_720p': 'tier_720p',
         'tier_audio_only': 'tier_audio_only'
     }
 
-    def __init__(self, tier_1080p=None, tier_720p=None, tier_audio_only=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, tier_2160p=None, tier_1440p=None, tier_1080p=None, tier_720p=None, tier_audio_only=None, local_vars_configuration=None):  # noqa: E501
         """DeliveryReportDeliveredSecondsByResolution - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
         self.local_vars_configuration = local_vars_configuration
 
+        self._tier_2160p = None
+        self._tier_1440p = None
         self._tier_1080p = None
         self._tier_720p = None
         self._tier_audio_only = None
         self.discriminator = None
 
+        if tier_2160p is not None:
+            self.tier_2160p = tier_2160p
+        if tier_1440p is not None:
+            self.tier_1440p = tier_1440p
         if tier_1080p is not None:
             self.tier_1080p = tier_1080p
         if tier_720p is not None:
@@ -67,10 +77,56 @@ class DeliveryReportDeliveredSecondsByResolution(object):
             self.tier_audio_only = tier_audio_only
 
     @property
+    def tier_2160p(self):
+        """Gets the tier_2160p of this DeliveryReportDeliveredSecondsByResolution.  # noqa: E501
+
+        Total number of delivered seconds during this time window that had a resolution larger than the 1440p tier (over 4,194,304 pixels total).  # noqa: E501
+
+        :return: The tier_2160p of this DeliveryReportDeliveredSecondsByResolution.  # noqa: E501
+        :rtype: float
+        """
+        return self._tier_2160p
+
+    @tier_2160p.setter
+    def tier_2160p(self, tier_2160p):
+        """Sets the tier_2160p of this DeliveryReportDeliveredSecondsByResolution.
+
+        Total number of delivered seconds during this time window that had a resolution larger than the 1440p tier (over 4,194,304 pixels total).  # noqa: E501
+
+        :param tier_2160p: The tier_2160p of this DeliveryReportDeliveredSecondsByResolution.  # noqa: E501
+        :type tier_2160p: float
+        """
+
+        self._tier_2160p = tier_2160p
+
+    @property
+    def tier_1440p(self):
+        """Gets the tier_1440p of this DeliveryReportDeliveredSecondsByResolution.  # noqa: E501
+
+        Total number of delivered seconds during this time window that had a resolution larger than the 1080p tier but less than or equal to the 2160p tier (over 2,073,600 and <= 4,194,304 pixels total).  # noqa: E501
+
+        :return: The tier_1440p of this DeliveryReportDeliveredSecondsByResolution.  # noqa: E501
+        :rtype: float
+        """
+        return self._tier_1440p
+
+    @tier_1440p.setter
+    def tier_1440p(self, tier_1440p):
+        """Sets the tier_1440p of this DeliveryReportDeliveredSecondsByResolution.
+
+        Total number of delivered seconds during this time window that had a resolution larger than the 1080p tier but less than or equal to the 2160p tier (over 2,073,600 and <= 4,194,304 pixels total).  # noqa: E501
+
+        :param tier_1440p: The tier_1440p of this DeliveryReportDeliveredSecondsByResolution.  # noqa: E501
+        :type tier_1440p: float
+        """
+
+        self._tier_1440p = tier_1440p
+
+    @property
     def tier_1080p(self):
         """Gets the tier_1080p of this DeliveryReportDeliveredSecondsByResolution.  # noqa: E501
 
-        Total number of delivered seconds during this time window that had a resolution larger than the 720p tier (over 921,600 pixels total).  # noqa: E501
+        Total number of delivered seconds during this time window that had a resolution larger than the 720p tier but less than or equal to the 1440p tier (over 921,600 and <= 2,073,600 pixels total).  # noqa: E501
 
         :return: The tier_1080p of this DeliveryReportDeliveredSecondsByResolution.  # noqa: E501
         :rtype: float
@@ -81,7 +137,7 @@ class DeliveryReportDeliveredSecondsByResolution(object):
     def tier_1080p(self, tier_1080p):
         """Sets the tier_1080p of this DeliveryReportDeliveredSecondsByResolution.
 
-        Total number of delivered seconds during this time window that had a resolution larger than the 720p tier (over 921,600 pixels total).  # noqa: E501
+        Total number of delivered seconds during this time window that had a resolution larger than the 720p tier but less than or equal to the 1440p tier (over 921,600 and <= 2,073,600 pixels total).  # noqa: E501
 
         :param tier_1080p: The tier_1080p of this DeliveryReportDeliveredSecondsByResolution.  # noqa: E501
         :type tier_1080p: float

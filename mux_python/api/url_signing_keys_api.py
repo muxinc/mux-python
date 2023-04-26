@@ -40,7 +40,7 @@ class URLSigningKeysApi(object):
     def create_url_signing_key(self, **kwargs):  # noqa: E501
         """Create a URL signing key  # noqa: E501
 
-        Creates a new signing key pair. When creating a new signing key, the API will generate a 2048-bit RSA key-pair and return the private key and a generated key-id; the public key will be stored at Mux to validate signed tokens.  # noqa: E501
+        This route is now deprecated, please use the `Signing Keys` API. Creates a new signing key pair. When creating a new signing key, the API will generate a 2048-bit RSA key-pair and return the private key and a generated key-id; the public key will be stored at Mux to validate signed tokens.  Note: Any new access tokens authenticating this route will be required to have `System` level permissions.   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -68,7 +68,7 @@ class URLSigningKeysApi(object):
     def create_url_signing_key_with_http_info(self, **kwargs):  # noqa: E501
         """Create a URL signing key  # noqa: E501
 
-        Creates a new signing key pair. When creating a new signing key, the API will generate a 2048-bit RSA key-pair and return the private key and a generated key-id; the public key will be stored at Mux to validate signed tokens.  # noqa: E501
+        This route is now deprecated, please use the `Signing Keys` API. Creates a new signing key pair. When creating a new signing key, the API will generate a 2048-bit RSA key-pair and return the private key and a generated key-id; the public key will be stored at Mux to validate signed tokens.  Note: Any new access tokens authenticating this route will be required to have `System` level permissions.   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -164,7 +164,7 @@ class URLSigningKeysApi(object):
     def delete_url_signing_key(self, signing_key_id, **kwargs):  # noqa: E501
         """Delete a URL signing key  # noqa: E501
 
-        Deletes an existing signing key. Use with caution, as this will invalidate any existing signatures and no URLs can be signed using the key again.  # noqa: E501
+        This route is now deprecated, please use the `Signing Keys` API. Deletes an existing signing key. Use with caution, as this will invalidate any existing signatures and no URLs can be signed using the key again.  Note: Any new access tokens authenticating this route will be required to have `System` level permissions.   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -194,7 +194,7 @@ class URLSigningKeysApi(object):
     def delete_url_signing_key_with_http_info(self, signing_key_id, **kwargs):  # noqa: E501
         """Delete a URL signing key  # noqa: E501
 
-        Deletes an existing signing key. Use with caution, as this will invalidate any existing signatures and no URLs can be signed using the key again.  # noqa: E501
+        This route is now deprecated, please use the `Signing Keys` API. Deletes an existing signing key. Use with caution, as this will invalidate any existing signatures and no URLs can be signed using the key again.  Note: Any new access tokens authenticating this route will be required to have `System` level permissions.   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -293,7 +293,7 @@ class URLSigningKeysApi(object):
     def get_url_signing_key(self, signing_key_id, **kwargs):  # noqa: E501
         """Retrieve a URL signing key  # noqa: E501
 
-        Retrieves the details of a URL signing key that has previously been created. Supply the unique signing key ID that was returned from your previous request, and Mux will return the corresponding signing key information. **The private key is not returned in this response.**   # noqa: E501
+        This route is now deprecated, please use the `Signing Keys` API. Retrieves the details of a URL signing key that has previously been created. Supply the unique signing key ID that was returned from your previous request, and Mux will return the corresponding signing key information. **The private key is not returned in this response.**  Note: Any new access tokens authenticating this route will be required to have `System` level permissions.   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -323,7 +323,7 @@ class URLSigningKeysApi(object):
     def get_url_signing_key_with_http_info(self, signing_key_id, **kwargs):  # noqa: E501
         """Retrieve a URL signing key  # noqa: E501
 
-        Retrieves the details of a URL signing key that has previously been created. Supply the unique signing key ID that was returned from your previous request, and Mux will return the corresponding signing key information. **The private key is not returned in this response.**   # noqa: E501
+        This route is now deprecated, please use the `Signing Keys` API. Retrieves the details of a URL signing key that has previously been created. Supply the unique signing key ID that was returned from your previous request, and Mux will return the corresponding signing key information. **The private key is not returned in this response.**  Note: Any new access tokens authenticating this route will be required to have `System` level permissions.   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -428,7 +428,7 @@ class URLSigningKeysApi(object):
     def list_url_signing_keys(self, **kwargs):  # noqa: E501
         """List URL signing keys  # noqa: E501
 
-        Returns a list of URL signing keys.  # noqa: E501
+        This route is now deprecated, please use the `Signing Keys` API. Returns a list of URL signing keys.  Note: Any new access tokens authenticating this route will be required to have `System` level permissions.   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -460,7 +460,7 @@ class URLSigningKeysApi(object):
     def list_url_signing_keys_with_http_info(self, **kwargs):  # noqa: E501
         """List URL signing keys  # noqa: E501
 
-        Returns a list of URL signing keys.  # noqa: E501
+        This route is now deprecated, please use the `Signing Keys` API. Returns a list of URL signing keys.  Note: Any new access tokens authenticating this route will be required to have `System` level permissions.   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 

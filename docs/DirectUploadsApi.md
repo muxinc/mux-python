@@ -235,7 +235,7 @@ Name | Type | Description  | Notes
 
 List direct uploads
 
-Lists currently extant direct uploads in the current environment.
+Lists direct uploads in the current environment.
 
 ### Example
 
