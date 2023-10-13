@@ -2,5 +2,6 @@
   "!!source": "https://github.com/OpenAPITools/openapi-generator/blob/master/docs/generators/python.md",
   "packageName": "mux_python",
   "projectName": "mux_python",
+  "licenseInfo" : "MIT",
   "packageVersion": "3.10.0"
 }
