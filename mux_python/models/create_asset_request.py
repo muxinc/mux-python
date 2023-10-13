@@ -44,7 +44,9 @@ class CreateAssetRequest(object):
         'mp4_support': 'str',
         'normalize_audio': 'bool',
         'master_access': 'str',
-        'test': 'bool'
+        'test': 'bool',
+        'max_resolution_tier': 'str',
+        'encoding_tier': 'str'
     }
 
     attribute_map = {
@@ -55,10 +57,12 @@ class CreateAssetRequest(object):
         'mp4_support': 'mp4_support',
         'normalize_audio': 'normalize_audio',
         'master_access': 'master_access',
-        'test': 'test'
+        'test': 'test',
+        'max_resolution_tier': 'max_resolution_tier',
+        'encoding_tier': 'encoding_tier'
     }
 
-    def __init__(self, input=None, playback_policy=None, per_title_encode=None, passthrough=None, mp4_support=None, normalize_audio=False, master_access=None, test=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, input=None, playback_policy=None, per_title_encode=None, passthrough=None, mp4_support=None, normalize_audio=False, master_access=None, test=None, max_resolution_tier=None, encoding_tier=None, local_vars_configuration=None):  # noqa: E501
         """CreateAssetRequest - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
@@ -72,6 +76,8 @@ class CreateAssetRequest(object):
         self._normalize_audio = None
         self._master_access = None
         self._test = None
+        self._max_resolution_tier = None
+        self._encoding_tier = None
         self.discriminator = None
 
         if input is not None:
@@ -90,6 +96,10 @@ class CreateAssetRequest(object):
             self.master_access = master_access
         if test is not None:
             self.test = test
+        if max_resolution_tier is not None:
+            self.max_resolution_tier = max_resolution_tier
+        if encoding_tier is not None:
+            self.encoding_tier = encoding_tier
 
     @property
     def input(self):
@@ -284,6 +294,64 @@ class CreateAssetRequest(object):
         """
 
         self._test = test
+
+    @property
+    def max_resolution_tier(self):
+        """Gets the max_resolution_tier of this CreateAssetRequest.  # noqa: E501
+
+        Max resolution tier can be used to control the maximum `resolution_tier` your asset is encoded, stored, and streamed at. If not set, this defaults to `1080p`.  # noqa: E501
+
+        :return: The max_resolution_tier of this CreateAssetRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._max_resolution_tier
+
+    @max_resolution_tier.setter
+    def max_resolution_tier(self, max_resolution_tier):
+        """Sets the max_resolution_tier of this CreateAssetRequest.
+
+        Max resolution tier can be used to control the maximum `resolution_tier` your asset is encoded, stored, and streamed at. If not set, this defaults to `1080p`.  # noqa: E501
+
+        :param max_resolution_tier: The max_resolution_tier of this CreateAssetRequest.  # noqa: E501
+        :type max_resolution_tier: str
+        """
+        allowed_values = ["1080p", "1440p", "2160p"]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and max_resolution_tier not in allowed_values:  # noqa: E501
+            raise ValueError(
+                "Invalid value for `max_resolution_tier` ({0}), must be one of {1}"  # noqa: E501
+                .format(max_resolution_tier, allowed_values)
+            )
+
+        self._max_resolution_tier = max_resolution_tier
+
+    @property
+    def encoding_tier(self):
+        """Gets the encoding_tier of this CreateAssetRequest.  # noqa: E501
+
+        The encoding tier informs the cost, quality, and available platform features for the asset. By default the `smart` encoding tier is used.  # noqa: E501
+
+        :return: The encoding_tier of this CreateAssetRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._encoding_tier
+
+    @encoding_tier.setter
+    def encoding_tier(self, encoding_tier):
+        """Sets the encoding_tier of this CreateAssetRequest.
+
+        The encoding tier informs the cost, quality, and available platform features for the asset. By default the `smart` encoding tier is used.  # noqa: E501
+
+        :param encoding_tier: The encoding_tier of this CreateAssetRequest.  # noqa: E501
+        :type encoding_tier: str
+        """
+        allowed_values = ["smart", "baseline"]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and encoding_tier not in allowed_values:  # noqa: E501
+            raise ValueError(
+                "Invalid value for `encoding_tier` ({0}), must be one of {1}"  # noqa: E501
+                .format(encoding_tier, allowed_values)
+            )
+
+        self._encoding_tier = encoding_tier
 
     def to_dict(self, serialize=False):
         """Returns the model properties as a dict"""

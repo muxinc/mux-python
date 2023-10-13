@@ -15,7 +15,7 @@
 
 from __future__ import absolute_import
 
-__version__ = "3.10.0"
+__version__ = "3.11.0"
 
 # import apis into sdk package
 from mux_python.api.assets_api import AssetsApi
@@ -51,6 +51,7 @@ from mux_python.exceptions import ApiException
 from mux_python.models.abridged_video_view import AbridgedVideoView
 from mux_python.models.asset import Asset
 from mux_python.models.asset_errors import AssetErrors
+from mux_python.models.asset_generated_subtitle_settings import AssetGeneratedSubtitleSettings
 from mux_python.models.asset_master import AssetMaster
 from mux_python.models.asset_non_standard_input_reasons import AssetNonStandardInputReasons
 from mux_python.models.asset_recording_times import AssetRecordingTimes
@@ -92,6 +93,7 @@ from mux_python.models.get_asset_playback_id_response import GetAssetPlaybackIDR
 from mux_python.models.get_live_stream_playback_id_response import GetLiveStreamPlaybackIDResponse
 from mux_python.models.get_metric_timeseries_data_response import GetMetricTimeseriesDataResponse
 from mux_python.models.get_monitoring_breakdown_response import GetMonitoringBreakdownResponse
+from mux_python.models.get_monitoring_breakdown_timeseries_response import GetMonitoringBreakdownTimeseriesResponse
 from mux_python.models.get_monitoring_histogram_timeseries_response import GetMonitoringHistogramTimeseriesResponse
 from mux_python.models.get_monitoring_histogram_timeseries_response_meta import GetMonitoringHistogramTimeseriesResponseMeta
 from mux_python.models.get_monitoring_timeseries_response import GetMonitoringTimeseriesResponse
@@ -144,6 +146,8 @@ from mux_python.models.live_stream_generated_subtitle_settings import LiveStream
 from mux_python.models.live_stream_response import LiveStreamResponse
 from mux_python.models.live_stream_status import LiveStreamStatus
 from mux_python.models.metric import Metric
+from mux_python.models.monitoring_breakdown_timeseries_datapoint import MonitoringBreakdownTimeseriesDatapoint
+from mux_python.models.monitoring_breakdown_timeseries_values import MonitoringBreakdownTimeseriesValues
 from mux_python.models.monitoring_breakdown_value import MonitoringBreakdownValue
 from mux_python.models.monitoring_histogram_timeseries_bucket import MonitoringHistogramTimeseriesBucket
 from mux_python.models.monitoring_histogram_timeseries_bucket_values import MonitoringHistogramTimeseriesBucketValues

@@ -42,6 +42,9 @@ class Asset(object):
         'status': 'str',
         'duration': 'float',
         'max_stored_resolution': 'str',
+        'resolution_tier': 'str',
+        'max_resolution_tier': 'str',
+        'encoding_tier': 'str',
         'max_stored_frame_rate': 'float',
         'aspect_ratio': 'str',
         'playback_ids': 'list[PlaybackID]',
@@ -69,6 +72,9 @@ class Asset(object):
         'status': 'status',
         'duration': 'duration',
         'max_stored_resolution': 'max_stored_resolution',
+        'resolution_tier': 'resolution_tier',
+        'max_resolution_tier': 'max_resolution_tier',
+        'encoding_tier': 'encoding_tier',
         'max_stored_frame_rate': 'max_stored_frame_rate',
         'aspect_ratio': 'aspect_ratio',
         'playback_ids': 'playback_ids',
@@ -90,7 +96,7 @@ class Asset(object):
         'test': 'test'
     }
 
-    def __init__(self, id=None, created_at=None, status=None, duration=None, max_stored_resolution=None, max_stored_frame_rate=None, aspect_ratio=None, playback_ids=None, tracks=None, errors=None, per_title_encode=None, upload_id=None, is_live=None, passthrough=None, live_stream_id=None, master=None, master_access='none', mp4_support='none', source_asset_id=None, normalize_audio=False, static_renditions=None, recording_times=None, non_standard_input_reasons=None, test=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, id=None, created_at=None, status=None, duration=None, max_stored_resolution=None, resolution_tier=None, max_resolution_tier=None, encoding_tier=None, max_stored_frame_rate=None, aspect_ratio=None, playback_ids=None, tracks=None, errors=None, per_title_encode=None, upload_id=None, is_live=None, passthrough=None, live_stream_id=None, master=None, master_access='none', mp4_support='none', source_asset_id=None, normalize_audio=False, static_renditions=None, recording_times=None, non_standard_input_reasons=None, test=None, local_vars_configuration=None):  # noqa: E501
         """Asset - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
@@ -101,6 +107,9 @@ class Asset(object):
         self._status = None
         self._duration = None
         self._max_stored_resolution = None
+        self._resolution_tier = None
+        self._max_resolution_tier = None
+        self._encoding_tier = None
         self._max_stored_frame_rate = None
         self._aspect_ratio = None
         self._playback_ids = None
@@ -132,6 +141,12 @@ class Asset(object):
             self.duration = duration
         if max_stored_resolution is not None:
             self.max_stored_resolution = max_stored_resolution
+        if resolution_tier is not None:
+            self.resolution_tier = resolution_tier
+        if max_resolution_tier is not None:
+            self.max_resolution_tier = max_resolution_tier
+        if encoding_tier is not None:
+            self.encoding_tier = encoding_tier
         if max_stored_frame_rate is not None:
             self.max_stored_frame_rate = max_stored_frame_rate
         if aspect_ratio is not None:
@@ -273,7 +288,7 @@ class Asset(object):
     def max_stored_resolution(self):
         """Gets the max_stored_resolution of this Asset.  # noqa: E501
 
-        The maximum resolution that has been stored for the asset. The asset may be delivered at lower resolutions depending on the device and bandwidth, however it cannot be delivered at a higher value than is stored.  # noqa: E501
+        This field is deprecated. Please use `resolution_tier` instead. The maximum resolution that has been stored for the asset. The asset may be delivered at lower resolutions depending on the device and bandwidth, however it cannot be delivered at a higher value than is stored.  # noqa: E501
 
         :return: The max_stored_resolution of this Asset.  # noqa: E501
         :rtype: str
@@ -284,7 +299,7 @@ class Asset(object):
     def max_stored_resolution(self, max_stored_resolution):
         """Sets the max_stored_resolution of this Asset.
 
-        The maximum resolution that has been stored for the asset. The asset may be delivered at lower resolutions depending on the device and bandwidth, however it cannot be delivered at a higher value than is stored.  # noqa: E501
+        This field is deprecated. Please use `resolution_tier` instead. The maximum resolution that has been stored for the asset. The asset may be delivered at lower resolutions depending on the device and bandwidth, however it cannot be delivered at a higher value than is stored.  # noqa: E501
 
         :param max_stored_resolution: The max_stored_resolution of this Asset.  # noqa: E501
         :type max_stored_resolution: str
@@ -297,6 +312,93 @@ class Asset(object):
             )
 
         self._max_stored_resolution = max_stored_resolution
+
+    @property
+    def resolution_tier(self):
+        """Gets the resolution_tier of this Asset.  # noqa: E501
+
+        The resolution tier that the asset was ingested at, affecting billing for ingest & storage. This field also represents the highest resolution tier that the content can be delivered at, however the actual resolution may be lower depending on the device, bandwidth, and exact resolution of the uploaded asset.  # noqa: E501
+
+        :return: The resolution_tier of this Asset.  # noqa: E501
+        :rtype: str
+        """
+        return self._resolution_tier
+
+    @resolution_tier.setter
+    def resolution_tier(self, resolution_tier):
+        """Sets the resolution_tier of this Asset.
+
+        The resolution tier that the asset was ingested at, affecting billing for ingest & storage. This field also represents the highest resolution tier that the content can be delivered at, however the actual resolution may be lower depending on the device, bandwidth, and exact resolution of the uploaded asset.  # noqa: E501
+
+        :param resolution_tier: The resolution_tier of this Asset.  # noqa: E501
+        :type resolution_tier: str
+        """
+        allowed_values = ["audio-only", "720p", "1080p", "1440p", "2160p"]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and resolution_tier not in allowed_values:  # noqa: E501
+            raise ValueError(
+                "Invalid value for `resolution_tier` ({0}), must be one of {1}"  # noqa: E501
+                .format(resolution_tier, allowed_values)
+            )
+
+        self._resolution_tier = resolution_tier
+
+    @property
+    def max_resolution_tier(self):
+        """Gets the max_resolution_tier of this Asset.  # noqa: E501
+
+        Max resolution tier can be used to control the maximum `resolution_tier` your asset is encoded, stored, and streamed at. If not set, this defaults to `1080p`.  # noqa: E501
+
+        :return: The max_resolution_tier of this Asset.  # noqa: E501
+        :rtype: str
+        """
+        return self._max_resolution_tier
+
+    @max_resolution_tier.setter
+    def max_resolution_tier(self, max_resolution_tier):
+        """Sets the max_resolution_tier of this Asset.
+
+        Max resolution tier can be used to control the maximum `resolution_tier` your asset is encoded, stored, and streamed at. If not set, this defaults to `1080p`.  # noqa: E501
+
+        :param max_resolution_tier: The max_resolution_tier of this Asset.  # noqa: E501
+        :type max_resolution_tier: str
+        """
+        allowed_values = ["1080p", "1440p", "2160p"]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and max_resolution_tier not in allowed_values:  # noqa: E501
+            raise ValueError(
+                "Invalid value for `max_resolution_tier` ({0}), must be one of {1}"  # noqa: E501
+                .format(max_resolution_tier, allowed_values)
+            )
+
+        self._max_resolution_tier = max_resolution_tier
+
+    @property
+    def encoding_tier(self):
+        """Gets the encoding_tier of this Asset.  # noqa: E501
+
+        The encoding tier informs the cost, quality, and available platform features for the asset. By default the `smart` encoding tier is used.  # noqa: E501
+
+        :return: The encoding_tier of this Asset.  # noqa: E501
+        :rtype: str
+        """
+        return self._encoding_tier
+
+    @encoding_tier.setter
+    def encoding_tier(self, encoding_tier):
+        """Sets the encoding_tier of this Asset.
+
+        The encoding tier informs the cost, quality, and available platform features for the asset. By default the `smart` encoding tier is used.  # noqa: E501
+
+        :param encoding_tier: The encoding_tier of this Asset.  # noqa: E501
+        :type encoding_tier: str
+        """
+        allowed_values = ["smart", "baseline"]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and encoding_tier not in allowed_values:  # noqa: E501
+            raise ValueError(
+                "Invalid value for `encoding_tier` ({0}), must be one of {1}"  # noqa: E501
+                .format(encoding_tier, allowed_values)
+            )
+
+        self._encoding_tier = encoding_tier
 
     @property
     def max_stored_frame_rate(self):
