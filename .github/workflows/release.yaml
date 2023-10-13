@@ -30,6 +30,8 @@ jobs:
         run: pip install --user --upgrade setuptools wheel twine
       - name: Build Package
         run: python setup.py sdist bdist_wheel
+      - name: Remove .egg files
+        run: rm dist/*.egg
       - name: Push Package to PyPi
         env:
           TWINE_USERNAME: ${{ secrets.TWINE_USERNAME }}
