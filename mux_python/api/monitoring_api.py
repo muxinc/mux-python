@@ -53,7 +53,7 @@ class MonitoringApi(object):
         :type dimension: str
         :param timestamp: Timestamp to limit results by. This value must be provided as a unix timestamp. Defaults to the current unix timestamp.
         :type timestamp: int
-        :param filters: Limit the results to rows that match conditions from provided key:value pairs. Must be provided as an array query string parameter.  To exclude rows that match a certain condition, prepend a `!` character to the dimension.  Possible filter names are the same as returned by the List Filters endpoint.  Example:    * `filters[]=operating_system:windows&filters[]=!country:US` 
+        :param filters: Limit the results to rows that match conditions from provided key:value pairs. Must be provided as an array query string parameter.  To exclude rows that match a certain condition, prepend a `!` character to the dimension.  Possible filter names are the same as returned by the List Monitoring Dimensions endpoint.  Example:    * `filters[]=operating_system:windows&filters[]=!country:US` 
         :type filters: list[str]
         :param order_by: Value to order the results by
         :type order_by: str
@@ -93,7 +93,7 @@ class MonitoringApi(object):
         :type dimension: str
         :param timestamp: Timestamp to limit results by. This value must be provided as a unix timestamp. Defaults to the current unix timestamp.
         :type timestamp: int
-        :param filters: Limit the results to rows that match conditions from provided key:value pairs. Must be provided as an array query string parameter.  To exclude rows that match a certain condition, prepend a `!` character to the dimension.  Possible filter names are the same as returned by the List Filters endpoint.  Example:    * `filters[]=operating_system:windows&filters[]=!country:US` 
+        :param filters: Limit the results to rows that match conditions from provided key:value pairs. Must be provided as an array query string parameter.  To exclude rows that match a certain condition, prepend a `!` character to the dimension.  Possible filter names are the same as returned by the List Monitoring Dimensions endpoint.  Example:    * `filters[]=operating_system:windows&filters[]=!country:US` 
         :type filters: list[str]
         :param order_by: Value to order the results by
         :type order_by: str
@@ -208,6 +208,185 @@ class MonitoringApi(object):
             collection_formats=collection_formats,
             _request_auth=local_var_params.get('_request_auth'))
 
+    def get_monitoring_breakdown_timeseries(self, monitoring_metric_id, **kwargs):  # noqa: E501
+        """Get Monitoring Breakdown Timeseries  # noqa: E501
+
+        Gets timeseries of breakdown information for a specific dimension and metric. Each datapoint in the response represents 5 seconds worth of data.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.get_monitoring_breakdown_timeseries(monitoring_metric_id, async_req=True)
+        >>> result = thread.get()
+
+        :param monitoring_metric_id: ID of the Monitoring Metric (required)
+        :type monitoring_metric_id: str
+        :param dimension: Dimension the specified value belongs to
+        :type dimension: str
+        :param timeframe: Timeframe window to limit results by. Must be provided as an array query string parameter (e.g. timeframe[]=).  The default for this is the last 60 seconds of available data. Timeframes larger than 10 minutes are not allowed, and must be within the last 24 hours. 
+        :type timeframe: list[str]
+        :param filters: Limit the results to rows that match conditions from provided key:value pairs. Must be provided as an array query string parameter.  To exclude rows that match a certain condition, prepend a `!` character to the dimension.  Possible filter names are the same as returned by the List Monitoring Dimensions endpoint.  Example:    * `filters[]=operating_system:windows&filters[]=!country:US` 
+        :type filters: list[str]
+        :param limit: Number of items to include in each timestamp's `value` list.  The default is 10, and the maximum is 100. 
+        :type limit: int
+        :param order_by: Value to order the results by
+        :type order_by: str
+        :param order_direction: Sort order.
+        :type order_direction: str
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :type _preload_content: bool, optional
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: Returns the result object.
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :rtype: GetMonitoringBreakdownTimeseriesResponse
+        """
+        kwargs['_return_http_data_only'] = True
+        return self.get_monitoring_breakdown_timeseries_with_http_info(monitoring_metric_id, **kwargs)  # noqa: E501
+
+    def get_monitoring_breakdown_timeseries_with_http_info(self, monitoring_metric_id, **kwargs):  # noqa: E501
+        """Get Monitoring Breakdown Timeseries  # noqa: E501
+
+        Gets timeseries of breakdown information for a specific dimension and metric. Each datapoint in the response represents 5 seconds worth of data.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.get_monitoring_breakdown_timeseries_with_http_info(monitoring_metric_id, async_req=True)
+        >>> result = thread.get()
+
+        :param monitoring_metric_id: ID of the Monitoring Metric (required)
+        :type monitoring_metric_id: str
+        :param dimension: Dimension the specified value belongs to
+        :type dimension: str
+        :param timeframe: Timeframe window to limit results by. Must be provided as an array query string parameter (e.g. timeframe[]=).  The default for this is the last 60 seconds of available data. Timeframes larger than 10 minutes are not allowed, and must be within the last 24 hours. 
+        :type timeframe: list[str]
+        :param filters: Limit the results to rows that match conditions from provided key:value pairs. Must be provided as an array query string parameter.  To exclude rows that match a certain condition, prepend a `!` character to the dimension.  Possible filter names are the same as returned by the List Monitoring Dimensions endpoint.  Example:    * `filters[]=operating_system:windows&filters[]=!country:US` 
+        :type filters: list[str]
+        :param limit: Number of items to include in each timestamp's `value` list.  The default is 10, and the maximum is 100. 
+        :type limit: int
+        :param order_by: Value to order the results by
+        :type order_by: str
+        :param order_direction: Sort order.
+        :type order_direction: str
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :type _return_http_data_only: bool, optional
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :type _preload_content: bool, optional
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the authentication
+                              in the spec for a single request.
+        :type _request_auth: dict, optional
+        :return: Returns the result object.
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :rtype: tuple(GetMonitoringBreakdownTimeseriesResponse, status_code(int), headers(HTTPHeaderDict))
+        """
+
+        local_var_params = locals()
+
+        all_params = [
+            'monitoring_metric_id',
+            'dimension',
+            'timeframe',
+            'filters',
+            'limit',
+            'order_by',
+            'order_direction'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout',
+                '_request_auth'
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params['kwargs']):
+            if key not in all_params:
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_monitoring_breakdown_timeseries" % key
+                )
+            local_var_params[key] = val
+        del local_var_params['kwargs']
+        # verify the required parameter 'monitoring_metric_id' is set
+        if self.api_client.client_side_validation and ('monitoring_metric_id' not in local_var_params or  # noqa: E501
+                                                        local_var_params['monitoring_metric_id'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `monitoring_metric_id` when calling `get_monitoring_breakdown_timeseries`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'monitoring_metric_id' in local_var_params:
+            path_params['MONITORING_METRIC_ID'] = local_var_params['monitoring_metric_id']  # noqa: E501
+
+        query_params = []
+        if 'dimension' in local_var_params and local_var_params['dimension'] is not None:  # noqa: E501
+            query_params.append(('dimension', local_var_params['dimension']))  # noqa: E501
+        if 'timeframe' in local_var_params and local_var_params['timeframe'] is not None:  # noqa: E501
+            query_params.append(('timeframe[]', local_var_params['timeframe']))  # noqa: E501
+            collection_formats['timeframe[]'] = 'multi'  # noqa: E501
+        if 'filters' in local_var_params and local_var_params['filters'] is not None:  # noqa: E501
+            query_params.append(('filters[]', local_var_params['filters']))  # noqa: E501
+            collection_formats['filters[]'] = 'multi'  # noqa: E501
+        if 'limit' in local_var_params and local_var_params['limit'] is not None:  # noqa: E501
+            query_params.append(('limit', local_var_params['limit']))  # noqa: E501
+        if 'order_by' in local_var_params and local_var_params['order_by'] is not None:  # noqa: E501
+            query_params.append(('order_by', local_var_params['order_by']))  # noqa: E501
+        if 'order_direction' in local_var_params and local_var_params['order_direction'] is not None:  # noqa: E501
+            query_params.append(('order_direction', local_var_params['order_direction']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['accessToken']  # noqa: E501
+        
+        response_types_map = {
+            200: "GetMonitoringBreakdownTimeseriesResponse",
+        }
+
+        return self.api_client.call_api(
+            '/data/v1/monitoring/metrics/{MONITORING_METRIC_ID}/breakdown-timeseries', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_types_map=response_types_map,
+            auth_settings=auth_settings,
+            async_req=local_var_params.get('async_req'),
+            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
+            _preload_content=local_var_params.get('_preload_content', True),
+            _request_timeout=local_var_params.get('_request_timeout'),
+            collection_formats=collection_formats,
+            _request_auth=local_var_params.get('_request_auth'))
+
     def get_monitoring_histogram_timeseries(self, monitoring_histogram_metric_id, **kwargs):  # noqa: E501
         """Get Monitoring Histogram Timeseries  # noqa: E501
 
@@ -220,7 +399,7 @@ class MonitoringApi(object):
 
         :param monitoring_histogram_metric_id: ID of the Monitoring Histogram Metric (required)
         :type monitoring_histogram_metric_id: str
-        :param filters: Limit the results to rows that match conditions from provided key:value pairs. Must be provided as an array query string parameter.  To exclude rows that match a certain condition, prepend a `!` character to the dimension.  Possible filter names are the same as returned by the List Filters endpoint.  Example:    * `filters[]=operating_system:windows&filters[]=!country:US` 
+        :param filters: Limit the results to rows that match conditions from provided key:value pairs. Must be provided as an array query string parameter.  To exclude rows that match a certain condition, prepend a `!` character to the dimension.  Possible filter names are the same as returned by the List Monitoring Dimensions endpoint.  Example:    * `filters[]=operating_system:windows&filters[]=!country:US` 
         :type filters: list[str]
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
@@ -252,7 +431,7 @@ class MonitoringApi(object):
 
         :param monitoring_histogram_metric_id: ID of the Monitoring Histogram Metric (required)
         :type monitoring_histogram_metric_id: str
-        :param filters: Limit the results to rows that match conditions from provided key:value pairs. Must be provided as an array query string parameter.  To exclude rows that match a certain condition, prepend a `!` character to the dimension.  Possible filter names are the same as returned by the List Filters endpoint.  Example:    * `filters[]=operating_system:windows&filters[]=!country:US` 
+        :param filters: Limit the results to rows that match conditions from provided key:value pairs. Must be provided as an array query string parameter.  To exclude rows that match a certain condition, prepend a `!` character to the dimension.  Possible filter names are the same as returned by the List Monitoring Dimensions endpoint.  Example:    * `filters[]=operating_system:windows&filters[]=!country:US` 
         :type filters: list[str]
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
@@ -363,7 +542,7 @@ class MonitoringApi(object):
 
         :param monitoring_metric_id: ID of the Monitoring Metric (required)
         :type monitoring_metric_id: str
-        :param filters: Limit the results to rows that match conditions from provided key:value pairs. Must be provided as an array query string parameter.  To exclude rows that match a certain condition, prepend a `!` character to the dimension.  Possible filter names are the same as returned by the List Filters endpoint.  Example:    * `filters[]=operating_system:windows&filters[]=!country:US` 
+        :param filters: Limit the results to rows that match conditions from provided key:value pairs. Must be provided as an array query string parameter.  To exclude rows that match a certain condition, prepend a `!` character to the dimension.  Possible filter names are the same as returned by the List Monitoring Dimensions endpoint.  Example:    * `filters[]=operating_system:windows&filters[]=!country:US` 
         :type filters: list[str]
         :param timestamp: Timestamp to use as the start of the timeseries data. This value must be provided as a unix timestamp. Defaults to 30 minutes ago.
         :type timestamp: int
@@ -397,7 +576,7 @@ class MonitoringApi(object):
 
         :param monitoring_metric_id: ID of the Monitoring Metric (required)
         :type monitoring_metric_id: str
-        :param filters: Limit the results to rows that match conditions from provided key:value pairs. Must be provided as an array query string parameter.  To exclude rows that match a certain condition, prepend a `!` character to the dimension.  Possible filter names are the same as returned by the List Filters endpoint.  Example:    * `filters[]=operating_system:windows&filters[]=!country:US` 
+        :param filters: Limit the results to rows that match conditions from provided key:value pairs. Must be provided as an array query string parameter.  To exclude rows that match a certain condition, prepend a `!` character to the dimension.  Possible filter names are the same as returned by the List Monitoring Dimensions endpoint.  Example:    * `filters[]=operating_system:windows&filters[]=!country:US` 
         :type filters: list[str]
         :param timestamp: Timestamp to use as the start of the timeseries data. This value must be provided as a unix timestamp. Defaults to 30 minutes ago.
         :type timestamp: int

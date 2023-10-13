@@ -44,6 +44,7 @@ class DeliveryReport(object):
         'deleted_at': 'str',
         'asset_state': 'str',
         'asset_duration': 'float',
+        'asset_resolution_tier': 'str',
         'delivered_seconds': 'float',
         'delivered_seconds_by_resolution': 'DeliveryReportDeliveredSecondsByResolution'
     }
@@ -56,11 +57,12 @@ class DeliveryReport(object):
         'deleted_at': 'deleted_at',
         'asset_state': 'asset_state',
         'asset_duration': 'asset_duration',
+        'asset_resolution_tier': 'asset_resolution_tier',
         'delivered_seconds': 'delivered_seconds',
         'delivered_seconds_by_resolution': 'delivered_seconds_by_resolution'
     }
 
-    def __init__(self, live_stream_id=None, asset_id=None, passthrough=None, created_at=None, deleted_at=None, asset_state=None, asset_duration=None, delivered_seconds=None, delivered_seconds_by_resolution=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, live_stream_id=None, asset_id=None, passthrough=None, created_at=None, deleted_at=None, asset_state=None, asset_duration=None, asset_resolution_tier=None, delivered_seconds=None, delivered_seconds_by_resolution=None, local_vars_configuration=None):  # noqa: E501
         """DeliveryReport - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
@@ -73,6 +75,7 @@ class DeliveryReport(object):
         self._deleted_at = None
         self._asset_state = None
         self._asset_duration = None
+        self._asset_resolution_tier = None
         self._delivered_seconds = None
         self._delivered_seconds_by_resolution = None
         self.discriminator = None
@@ -91,6 +94,8 @@ class DeliveryReport(object):
             self.asset_state = asset_state
         if asset_duration is not None:
             self.asset_duration = asset_duration
+        if asset_resolution_tier is not None:
+            self.asset_resolution_tier = asset_resolution_tier
         if delivered_seconds is not None:
             self.delivered_seconds = delivered_seconds
         if delivered_seconds_by_resolution is not None:
@@ -262,6 +267,35 @@ class DeliveryReport(object):
         """
 
         self._asset_duration = asset_duration
+
+    @property
+    def asset_resolution_tier(self):
+        """Gets the asset_resolution_tier of this DeliveryReport.  # noqa: E501
+
+        The resolution tier that the asset was ingested at, affecting billing for ingest & storage  # noqa: E501
+
+        :return: The asset_resolution_tier of this DeliveryReport.  # noqa: E501
+        :rtype: str
+        """
+        return self._asset_resolution_tier
+
+    @asset_resolution_tier.setter
+    def asset_resolution_tier(self, asset_resolution_tier):
+        """Sets the asset_resolution_tier of this DeliveryReport.
+
+        The resolution tier that the asset was ingested at, affecting billing for ingest & storage  # noqa: E501
+
+        :param asset_resolution_tier: The asset_resolution_tier of this DeliveryReport.  # noqa: E501
+        :type asset_resolution_tier: str
+        """
+        allowed_values = ["audio-only", "720p", "1080p", "1440p", "2160p"]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and asset_resolution_tier not in allowed_values:  # noqa: E501
+            raise ValueError(
+                "Invalid value for `asset_resolution_tier` ({0}), must be one of {1}"  # noqa: E501
+                .format(asset_resolution_tier, allowed_values)
+            )
+
+        self._asset_resolution_tier = asset_resolution_tier
 
     @property
     def delivered_seconds(self):

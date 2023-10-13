@@ -337,7 +337,7 @@ class CreateLiveStreamRequest(object):
     def reduced_latency(self):
         """Gets the reduced_latency of this CreateLiveStreamRequest.  # noqa: E501
 
-        This field is deprecated. Please use latency_mode instead. Latency is the time from when the streamer transmits a frame of video to when you see it in the player. Set this if you want lower latency for your live stream. Read more here: https://mux.com/blog/reduced-latency-for-mux-live-streaming-now-available/  # noqa: E501
+        This field is deprecated. Please use `latency_mode` instead. Latency is the time from when the streamer transmits a frame of video to when you see it in the player. Set this if you want lower latency for your live stream. Read more here: https://mux.com/blog/reduced-latency-for-mux-live-streaming-now-available/  # noqa: E501
 
         :return: The reduced_latency of this CreateLiveStreamRequest.  # noqa: E501
         :rtype: bool
@@ -348,7 +348,7 @@ class CreateLiveStreamRequest(object):
     def reduced_latency(self, reduced_latency):
         """Sets the reduced_latency of this CreateLiveStreamRequest.
 
-        This field is deprecated. Please use latency_mode instead. Latency is the time from when the streamer transmits a frame of video to when you see it in the player. Set this if you want lower latency for your live stream. Read more here: https://mux.com/blog/reduced-latency-for-mux-live-streaming-now-available/  # noqa: E501
+        This field is deprecated. Please use `latency_mode` instead. Latency is the time from when the streamer transmits a frame of video to when you see it in the player. Set this if you want lower latency for your live stream. Read more here: https://mux.com/blog/reduced-latency-for-mux-live-streaming-now-available/  # noqa: E501
 
         :param reduced_latency: The reduced_latency of this CreateLiveStreamRequest.  # noqa: E501
         :type reduced_latency: bool
@@ -360,7 +360,7 @@ class CreateLiveStreamRequest(object):
     def low_latency(self):
         """Gets the low_latency of this CreateLiveStreamRequest.  # noqa: E501
 
-        This field is deprecated. Please use latency_mode instead. Latency is the time from when the streamer transmits a frame of video to when you see it in the player. Setting this option will enable compatibility with the LL-HLS specification for low-latency streaming. This typically has lower latency than Reduced Latency streams, and cannot be combined with Reduced Latency.  # noqa: E501
+        This field is deprecated. Please use `latency_mode` instead. Latency is the time from when the streamer transmits a frame of video to when you see it in the player. Setting this option will enable compatibility with the LL-HLS specification for low-latency streaming. This typically has lower latency than Reduced Latency streams, and cannot be combined with Reduced Latency.  # noqa: E501
 
         :return: The low_latency of this CreateLiveStreamRequest.  # noqa: E501
         :rtype: bool
@@ -371,7 +371,7 @@ class CreateLiveStreamRequest(object):
     def low_latency(self, low_latency):
         """Sets the low_latency of this CreateLiveStreamRequest.
 
-        This field is deprecated. Please use latency_mode instead. Latency is the time from when the streamer transmits a frame of video to when you see it in the player. Setting this option will enable compatibility with the LL-HLS specification for low-latency streaming. This typically has lower latency than Reduced Latency streams, and cannot be combined with Reduced Latency.  # noqa: E501
+        This field is deprecated. Please use `latency_mode` instead. Latency is the time from when the streamer transmits a frame of video to when you see it in the player. Setting this option will enable compatibility with the LL-HLS specification for low-latency streaming. This typically has lower latency than Reduced Latency streams, and cannot be combined with Reduced Latency.  # noqa: E501
 
         :param low_latency: The low_latency of this CreateLiveStreamRequest.  # noqa: E501
         :type low_latency: bool

@@ -39,6 +39,7 @@ class InputSettings(object):
     openapi_types = {
         'url': 'str',
         'overlay_settings': 'InputSettingsOverlaySettings',
+        'generated_subtitles': 'list[AssetGeneratedSubtitleSettings]',
         'start_time': 'float',
         'end_time': 'float',
         'type': 'str',
@@ -52,6 +53,7 @@ class InputSettings(object):
     attribute_map = {
         'url': 'url',
         'overlay_settings': 'overlay_settings',
+        'generated_subtitles': 'generated_subtitles',
         'start_time': 'start_time',
         'end_time': 'end_time',
         'type': 'type',
@@ -62,7 +64,7 @@ class InputSettings(object):
         'passthrough': 'passthrough'
     }
 
-    def __init__(self, url=None, overlay_settings=None, start_time=None, end_time=None, type=None, text_type=None, language_code=None, name=None, closed_captions=None, passthrough=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, url=None, overlay_settings=None, generated_subtitles=None, start_time=None, end_time=None, type=None, text_type=None, language_code=None, name=None, closed_captions=None, passthrough=None, local_vars_configuration=None):  # noqa: E501
         """InputSettings - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
@@ -70,6 +72,7 @@ class InputSettings(object):
 
         self._url = None
         self._overlay_settings = None
+        self._generated_subtitles = None
         self._start_time = None
         self._end_time = None
         self._type = None
@@ -84,6 +87,8 @@ class InputSettings(object):
             self.url = url
         if overlay_settings is not None:
             self.overlay_settings = overlay_settings
+        if generated_subtitles is not None:
+            self.generated_subtitles = generated_subtitles
         if start_time is not None:
             self.start_time = start_time
         if end_time is not None:
@@ -105,7 +110,7 @@ class InputSettings(object):
     def url(self):
         """Gets the url of this InputSettings.  # noqa: E501
 
-        The URL of the file that Mux should download and use. * For subtitles text tracks, the URL is the location of subtitle/captions file. Mux supports [SubRip Text (SRT)](https://en.wikipedia.org/wiki/SubRip) and [Web Video Text Tracks](https://www.w3.org/TR/webvtt1/) format for ingesting Subtitles and Closed Captions. * For Watermarking or Overlay, the URL is the location of the watermark image. * When creating clips from existing Mux assets, the URL is defined with `mux://assets/{asset_id}` template where `asset_id` is the Asset Identifier for creating the clip from.   # noqa: E501
+        The URL of the file that Mux should download and use. * For the main input file, this should be the URL to the muxed file for Mux to download, for example an MP4, MOV, MKV, or TS file. Mux supports most audio/video file formats and codecs, but for fastest processing, you should [use standard inputs wherever possible](https://docs.mux.com/guides/video/minimize-processing-time). * For `audio` tracks, the URL is the location of the audio file for Mux to download, for example an M4A, WAV, or MP3 file. Mux supports most audio file formats and codecs, but for fastest processing, you should [use standard inputs wherever possible](https://docs.mux.com/guides/video/minimize-processing-time). * For `text` tracks, the URL is the location of subtitle/captions file. Mux supports [SubRip Text (SRT)](https://en.wikipedia.org/wiki/SubRip) and [Web Video Text Tracks](https://www.w3.org/TR/webvtt1/) formats for ingesting Subtitles and Closed Captions. * For Watermarking or Overlay, the URL is the location of the watermark image. * When creating clips from existing Mux assets, the URL is defined with `mux://assets/{asset_id}` template where `asset_id` is the Asset Identifier for creating the clip from. The url property may be omitted on the first input object when providing asset settings for LiveStream and Upload objects, in order to configure settings related to the primary (live stream or direct upload) input.   # noqa: E501
 
         :return: The url of this InputSettings.  # noqa: E501
         :rtype: str
@@ -116,7 +121,7 @@ class InputSettings(object):
     def url(self, url):
         """Sets the url of this InputSettings.
 
-        The URL of the file that Mux should download and use. * For subtitles text tracks, the URL is the location of subtitle/captions file. Mux supports [SubRip Text (SRT)](https://en.wikipedia.org/wiki/SubRip) and [Web Video Text Tracks](https://www.w3.org/TR/webvtt1/) format for ingesting Subtitles and Closed Captions. * For Watermarking or Overlay, the URL is the location of the watermark image. * When creating clips from existing Mux assets, the URL is defined with `mux://assets/{asset_id}` template where `asset_id` is the Asset Identifier for creating the clip from.   # noqa: E501
+        The URL of the file that Mux should download and use. * For the main input file, this should be the URL to the muxed file for Mux to download, for example an MP4, MOV, MKV, or TS file. Mux supports most audio/video file formats and codecs, but for fastest processing, you should [use standard inputs wherever possible](https://docs.mux.com/guides/video/minimize-processing-time). * For `audio` tracks, the URL is the location of the audio file for Mux to download, for example an M4A, WAV, or MP3 file. Mux supports most audio file formats and codecs, but for fastest processing, you should [use standard inputs wherever possible](https://docs.mux.com/guides/video/minimize-processing-time). * For `text` tracks, the URL is the location of subtitle/captions file. Mux supports [SubRip Text (SRT)](https://en.wikipedia.org/wiki/SubRip) and [Web Video Text Tracks](https://www.w3.org/TR/webvtt1/) formats for ingesting Subtitles and Closed Captions. * For Watermarking or Overlay, the URL is the location of the watermark image. * When creating clips from existing Mux assets, the URL is defined with `mux://assets/{asset_id}` template where `asset_id` is the Asset Identifier for creating the clip from. The url property may be omitted on the first input object when providing asset settings for LiveStream and Upload objects, in order to configure settings related to the primary (live stream or direct upload) input.   # noqa: E501
 
         :param url: The url of this InputSettings.  # noqa: E501
         :type url: str
@@ -144,6 +149,29 @@ class InputSettings(object):
         """
 
         self._overlay_settings = overlay_settings
+
+    @property
+    def generated_subtitles(self):
+        """Gets the generated_subtitles of this InputSettings.  # noqa: E501
+
+        Generate subtitle tracks using automatic speech recognition using this configuration. This may only be provided for the first input object (the main input file). For direct uploads, this first input should omit the url parameter, as the main input file is provided via the direct upload. This will create subtitles based on the audio track ingested from that main input file. Note that subtitle generation happens after initial ingest, so the generated tracks will be in the `preparing` state when the asset transitions to `ready`.  # noqa: E501
+
+        :return: The generated_subtitles of this InputSettings.  # noqa: E501
+        :rtype: list[AssetGeneratedSubtitleSettings]
+        """
+        return self._generated_subtitles
+
+    @generated_subtitles.setter
+    def generated_subtitles(self, generated_subtitles):
+        """Sets the generated_subtitles of this InputSettings.
+
+        Generate subtitle tracks using automatic speech recognition using this configuration. This may only be provided for the first input object (the main input file). For direct uploads, this first input should omit the url parameter, as the main input file is provided via the direct upload. This will create subtitles based on the audio track ingested from that main input file. Note that subtitle generation happens after initial ingest, so the generated tracks will be in the `preparing` state when the asset transitions to `ready`.  # noqa: E501
+
+        :param generated_subtitles: The generated_subtitles of this InputSettings.  # noqa: E501
+        :type generated_subtitles: list[AssetGeneratedSubtitleSettings]
+        """
+
+        self._generated_subtitles = generated_subtitles
 
     @property
     def start_time(self):
@@ -253,7 +281,7 @@ class InputSettings(object):
     def language_code(self):
         """Gets the language_code of this InputSettings.  # noqa: E501
 
-        The language code value must be a valid [BCP 47](https://tools.ietf.org/html/bcp47) specification compliant value. For example, en for English or en-US for the US version of English. This parameter is required for text type and subtitles text type track.  # noqa: E501
+        The language code value must be a valid [BCP 47](https://tools.ietf.org/html/bcp47) specification compliant value. For example, `en` for English or `en-US` for the US version of English. This parameter is required for `text` and `audio` track types.  # noqa: E501
 
         :return: The language_code of this InputSettings.  # noqa: E501
         :rtype: str
@@ -264,7 +292,7 @@ class InputSettings(object):
     def language_code(self, language_code):
         """Sets the language_code of this InputSettings.
 
-        The language code value must be a valid [BCP 47](https://tools.ietf.org/html/bcp47) specification compliant value. For example, en for English or en-US for the US version of English. This parameter is required for text type and subtitles text type track.  # noqa: E501
+        The language code value must be a valid [BCP 47](https://tools.ietf.org/html/bcp47) specification compliant value. For example, `en` for English or `en-US` for the US version of English. This parameter is required for `text` and `audio` track types.  # noqa: E501
 
         :param language_code: The language_code of this InputSettings.  # noqa: E501
         :type language_code: str
@@ -276,7 +304,7 @@ class InputSettings(object):
     def name(self):
         """Gets the name of this InputSettings.  # noqa: E501
 
-        The name of the track containing a human-readable description. This value must be unique across all text type and subtitles `text` type tracks. The hls manifest will associate a subtitle text track with this value. For example, the value should be \"English\" for subtitles text track with language_code as en. This optional parameter should be used only for `text` type and subtitles `text` type tracks. If this parameter is not included, Mux will auto-populate based on the `input[].language_code` value.  # noqa: E501
+        The name of the track containing a human-readable description. This value must be unique within each group of `text` or `audio` track types. The HLS manifest will associate a subtitle text track with this value. For example, the value should be \"English\" for a subtitle text track with `language_code` set to `en`. This optional parameter should be used only for `text` and `audio` type tracks. This parameter can be optionally provided for the first video input to denote the name of the muxed audio track if present. If this parameter is not included, Mux will auto-populate based on the `input[].language_code` value.  # noqa: E501
 
         :return: The name of this InputSettings.  # noqa: E501
         :rtype: str
@@ -287,7 +315,7 @@ class InputSettings(object):
     def name(self, name):
         """Sets the name of this InputSettings.
 
-        The name of the track containing a human-readable description. This value must be unique across all text type and subtitles `text` type tracks. The hls manifest will associate a subtitle text track with this value. For example, the value should be \"English\" for subtitles text track with language_code as en. This optional parameter should be used only for `text` type and subtitles `text` type tracks. If this parameter is not included, Mux will auto-populate based on the `input[].language_code` value.  # noqa: E501
+        The name of the track containing a human-readable description. This value must be unique within each group of `text` or `audio` track types. The HLS manifest will associate a subtitle text track with this value. For example, the value should be \"English\" for a subtitle text track with `language_code` set to `en`. This optional parameter should be used only for `text` and `audio` type tracks. This parameter can be optionally provided for the first video input to denote the name of the muxed audio track if present. If this parameter is not included, Mux will auto-populate based on the `input[].language_code` value.  # noqa: E501
 
         :param name: The name of this InputSettings.  # noqa: E501
         :type name: str
@@ -299,7 +327,7 @@ class InputSettings(object):
     def closed_captions(self):
         """Gets the closed_captions of this InputSettings.  # noqa: E501
 
-        Indicates the track provides Subtitles for the Deaf or Hard-of-hearing (SDH). This optional parameter should be used for `text` type and subtitles `text` type tracks.  # noqa: E501
+        Indicates the track provides Subtitles for the Deaf or Hard-of-hearing (SDH). This optional parameter should be used for tracks with `type` of `text` and `text_type` set to `subtitles`.  # noqa: E501
 
         :return: The closed_captions of this InputSettings.  # noqa: E501
         :rtype: bool
@@ -310,7 +338,7 @@ class InputSettings(object):
     def closed_captions(self, closed_captions):
         """Sets the closed_captions of this InputSettings.
 
-        Indicates the track provides Subtitles for the Deaf or Hard-of-hearing (SDH). This optional parameter should be used for `text` type and subtitles `text` type tracks.  # noqa: E501
+        Indicates the track provides Subtitles for the Deaf or Hard-of-hearing (SDH). This optional parameter should be used for tracks with `type` of `text` and `text_type` set to `subtitles`.  # noqa: E501
 
         :param closed_captions: The closed_captions of this InputSettings.  # noqa: E501
         :type closed_captions: bool
@@ -322,7 +350,7 @@ class InputSettings(object):
     def passthrough(self):
         """Gets the passthrough of this InputSettings.  # noqa: E501
 
-        This optional parameter should be used for `text` type and subtitles `text` type tracks.  # noqa: E501
+        This optional parameter should be used tracks with `type` of `text` and `text_type` set to `subtitles`.  # noqa: E501
 
         :return: The passthrough of this InputSettings.  # noqa: E501
         :rtype: str
@@ -333,7 +361,7 @@ class InputSettings(object):
     def passthrough(self, passthrough):
         """Sets the passthrough of this InputSettings.
 
-        This optional parameter should be used for `text` type and subtitles `text` type tracks.  # noqa: E501
+        This optional parameter should be used tracks with `type` of `text` and `text_type` set to `subtitles`.  # noqa: E501
 
         :param passthrough: The passthrough of this InputSettings.  # noqa: E501
         :type passthrough: str

@@ -15,7 +15,7 @@ import os
 from setuptools import setup, find_packages  # noqa: H301
 
 NAME = "mux_python"
-VERSION = "3.10.0"
+VERSION = "3.11.0"
 # To install the library, run the following
 #
 # python setup.py install
@@ -44,4 +44,5 @@ setup(
     include_package_data=True,
     long_description=get_file_text("README.md"),
     long_description_content_type="text/markdown",
-    )
+    license="MIT",
+)

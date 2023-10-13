@@ -329,7 +329,7 @@ class AssetsApi(object):
     def create_asset_track(self, asset_id, create_track_request, **kwargs):  # noqa: E501
         """Create an asset track  # noqa: E501
 
-        Adds an asset track (for example, subtitles) to an asset.  # noqa: E501
+        Adds an asset track (for example, subtitles, or an alternate audio track) to an asset.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -361,7 +361,7 @@ class AssetsApi(object):
     def create_asset_track_with_http_info(self, asset_id, create_track_request, **kwargs):  # noqa: E501
         """Create an asset track  # noqa: E501
 
-        Adds an asset track (for example, subtitles) to an asset.  # noqa: E501
+        Adds an asset track (for example, subtitles, or an alternate audio track) to an asset.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 

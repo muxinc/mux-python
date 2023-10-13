@@ -86,6 +86,7 @@ class CreateTrackRequest(object):
     def url(self):
         """Gets the url of this CreateTrackRequest.  # noqa: E501
 
+        The URL of the file that Mux should download and use. * For `audio` tracks, the URL is the location of the audio file for Mux to download, for example an M4A, WAV, or MP3 file. Mux supports most audio file formats and codecs, but for fastest processing, you should [use standard inputs wherever possible](https://docs.mux.com/guides/video/minimize-processing-time). * For `text` tracks, the URL is the location of subtitle/captions file. Mux supports [SubRip Text (SRT)](https://en.wikipedia.org/wiki/SubRip) and [Web Video Text Tracks](https://www.w3.org/TR/webvtt1/) formats for ingesting Subtitles and Closed Captions.   # noqa: E501
 
         :return: The url of this CreateTrackRequest.  # noqa: E501
         :rtype: str
@@ -96,6 +97,7 @@ class CreateTrackRequest(object):
     def url(self, url):
         """Sets the url of this CreateTrackRequest.
 
+        The URL of the file that Mux should download and use. * For `audio` tracks, the URL is the location of the audio file for Mux to download, for example an M4A, WAV, or MP3 file. Mux supports most audio file formats and codecs, but for fastest processing, you should [use standard inputs wherever possible](https://docs.mux.com/guides/video/minimize-processing-time). * For `text` tracks, the URL is the location of subtitle/captions file. Mux supports [SubRip Text (SRT)](https://en.wikipedia.org/wiki/SubRip) and [Web Video Text Tracks](https://www.w3.org/TR/webvtt1/) formats for ingesting Subtitles and Closed Captions.   # noqa: E501
 
         :param url: The url of this CreateTrackRequest.  # noqa: E501
         :type url: str
@@ -125,7 +127,7 @@ class CreateTrackRequest(object):
         """
         if self.local_vars_configuration.client_side_validation and type is None:  # noqa: E501
             raise ValueError("Invalid value for `type`, must not be `None`")  # noqa: E501
-        allowed_values = ["text"]  # noqa: E501
+        allowed_values = ["text", "audio"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and type not in allowed_values:  # noqa: E501
             raise ValueError(
                 "Invalid value for `type` ({0}), must be one of {1}"  # noqa: E501
@@ -192,7 +194,7 @@ class CreateTrackRequest(object):
     def name(self):
         """Gets the name of this CreateTrackRequest.  # noqa: E501
 
-        The name of the track containing a human-readable description. This value must be unique across all the text type and subtitles text type tracks. HLS manifest will associate subtitle text track with this value. For example, set the value to \"English\" for subtitles text track with language_code as en-US. If this parameter is not included, Mux will auto-populate based on the language_code value.  # noqa: E501
+        The name of the track containing a human-readable description. This value must be unique within each group of `text` or `audio` track types. The HLS manifest will associate the `text` or `audio` track with this value. For example, set the value to \"English\" for subtitles text track with `language_code` as en-US. If this parameter is not included, Mux will auto-populate a value based on the `language_code` value.  # noqa: E501
 
         :return: The name of this CreateTrackRequest.  # noqa: E501
         :rtype: str
@@ -203,7 +205,7 @@ class CreateTrackRequest(object):
     def name(self, name):
         """Sets the name of this CreateTrackRequest.
 
-        The name of the track containing a human-readable description. This value must be unique across all the text type and subtitles text type tracks. HLS manifest will associate subtitle text track with this value. For example, set the value to \"English\" for subtitles text track with language_code as en-US. If this parameter is not included, Mux will auto-populate based on the language_code value.  # noqa: E501
+        The name of the track containing a human-readable description. This value must be unique within each group of `text` or `audio` track types. The HLS manifest will associate the `text` or `audio` track with this value. For example, set the value to \"English\" for subtitles text track with `language_code` as en-US. If this parameter is not included, Mux will auto-populate a value based on the `language_code` value.  # noqa: E501
 
         :param name: The name of this CreateTrackRequest.  # noqa: E501
         :type name: str
