@@ -375,7 +375,7 @@ class Asset(object):
     def encoding_tier(self):
         """Gets the encoding_tier of this Asset.  # noqa: E501
 
-        The encoding tier informs the cost, quality, and available platform features for the asset. By default the `smart` encoding tier is used.  # noqa: E501
+        The encoding tier informs the cost, quality, and available platform features for the asset. By default the `smart` encoding tier is used. [See the guide for more details.](https://docs.mux.com/guides/video/use-encoding-tiers)  # noqa: E501
 
         :return: The encoding_tier of this Asset.  # noqa: E501
         :rtype: str
@@ -386,7 +386,7 @@ class Asset(object):
     def encoding_tier(self, encoding_tier):
         """Sets the encoding_tier of this Asset.
 
-        The encoding tier informs the cost, quality, and available platform features for the asset. By default the `smart` encoding tier is used.  # noqa: E501
+        The encoding tier informs the cost, quality, and available platform features for the asset. By default the `smart` encoding tier is used. [See the guide for more details.](https://docs.mux.com/guides/video/use-encoding-tiers)  # noqa: E501
 
         :param encoding_tier: The encoding_tier of this Asset.  # noqa: E501
         :type encoding_tier: str

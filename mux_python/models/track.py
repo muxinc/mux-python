@@ -365,7 +365,7 @@ class Track(object):
         :param text_source: The text_source of this Track.  # noqa: E501
         :type text_source: str
         """
-        allowed_values = ["uploaded", "embedded", "generated_live", "generated_live_final"]  # noqa: E501
+        allowed_values = ["uploaded", "embedded", "generated_live", "generated_live_final", "generated_vod"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and text_source not in allowed_values:  # noqa: E501
             raise ValueError(
                 "Invalid value for `text_source` ({0}), must be one of {1}"  # noqa: E501

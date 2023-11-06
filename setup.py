@@ -15,7 +15,7 @@ import os
 from setuptools import setup, find_packages  # noqa: H301
 
 NAME = "mux_python"
-VERSION = "3.11.2"
+VERSION = "3.11.3"
 # To install the library, run the following
 #
 # python setup.py install
