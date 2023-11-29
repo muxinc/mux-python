@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **total_watch_time** | **int** |  | [optional]
+**total_playing_time** | **int** |  | [optional]
 **total_views** | **int** |  | [optional]
 **negative_impact_score** | **float** |  | [optional]
 **metric** | **float** |  | [optional]

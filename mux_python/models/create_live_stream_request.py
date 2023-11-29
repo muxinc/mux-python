@@ -383,7 +383,7 @@ class CreateLiveStreamRequest(object):
     def latency_mode(self):
         """Gets the latency_mode of this CreateLiveStreamRequest.  # noqa: E501
 
-        Latency is the time from when the streamer transmits a frame of video to when you see it in the player. Set this as an alternative to setting low latency or reduced latency flags. The Low Latency value is a beta feature. Read more here: https://mux.com/blog/introducing-low-latency-live-streaming/  # noqa: E501
+        Latency is the time from when the streamer transmits a frame of video to when you see it in the player. Set this as an alternative to setting low latency or reduced latency flags.  # noqa: E501
 
         :return: The latency_mode of this CreateLiveStreamRequest.  # noqa: E501
         :rtype: str
@@ -394,7 +394,7 @@ class CreateLiveStreamRequest(object):
     def latency_mode(self, latency_mode):
         """Sets the latency_mode of this CreateLiveStreamRequest.
 
-        Latency is the time from when the streamer transmits a frame of video to when you see it in the player. Set this as an alternative to setting low latency or reduced latency flags. The Low Latency value is a beta feature. Read more here: https://mux.com/blog/introducing-low-latency-live-streaming/  # noqa: E501
+        Latency is the time from when the streamer transmits a frame of video to when you see it in the player. Set this as an alternative to setting low latency or reduced latency flags.  # noqa: E501
 
         :param latency_mode: The latency_mode of this CreateLiveStreamRequest.  # noqa: E501
         :type latency_mode: str

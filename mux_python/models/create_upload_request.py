@@ -66,7 +66,8 @@ class CreateUploadRequest(object):
             self.timeout = timeout
         if cors_origin is not None:
             self.cors_origin = cors_origin
-        self.new_asset_settings = new_asset_settings
+        if new_asset_settings is not None:
+            self.new_asset_settings = new_asset_settings
         if test is not None:
             self.test = test
 
@@ -140,8 +141,6 @@ class CreateUploadRequest(object):
         :param new_asset_settings: The new_asset_settings of this CreateUploadRequest.  # noqa: E501
         :type new_asset_settings: CreateAssetRequest
         """
-        if self.local_vars_configuration.client_side_validation and new_asset_settings is None:  # noqa: E501
-            raise ValueError("Invalid value for `new_asset_settings`, must not be `None`")  # noqa: E501
 
         self._new_asset_settings = new_asset_settings
 

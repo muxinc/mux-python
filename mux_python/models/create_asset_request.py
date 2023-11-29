@@ -195,7 +195,7 @@ class CreateAssetRequest(object):
     def mp4_support(self):
         """Gets the mp4_support of this CreateAssetRequest.  # noqa: E501
 
-        Specify what level (if any) of support for mp4 playback. In most cases you should use our default HLS-based streaming playback ({playback_id}.m3u8) which can automatically adjust to viewers' connection speeds, but an mp4 can be useful for some legacy devices or downloading for offline playback. See the [Download your videos guide](/guides/video/download-your-videos) for more information.  # noqa: E501
+        Specify what level (if any) of support for mp4 playback. In most cases you should use our default HLS-based streaming playback ({playback_id}.m3u8) which can automatically adjust to viewers' connection speeds, but an mp4 can be useful for some legacy devices or downloading for offline playback. See the [Download your videos guide](https://docs.mux.com/guides/enable-static-mp4-renditions) for more information.  # noqa: E501
 
         :return: The mp4_support of this CreateAssetRequest.  # noqa: E501
         :rtype: str
@@ -206,7 +206,7 @@ class CreateAssetRequest(object):
     def mp4_support(self, mp4_support):
         """Sets the mp4_support of this CreateAssetRequest.
 
-        Specify what level (if any) of support for mp4 playback. In most cases you should use our default HLS-based streaming playback ({playback_id}.m3u8) which can automatically adjust to viewers' connection speeds, but an mp4 can be useful for some legacy devices or downloading for offline playback. See the [Download your videos guide](/guides/video/download-your-videos) for more information.  # noqa: E501
+        Specify what level (if any) of support for mp4 playback. In most cases you should use our default HLS-based streaming playback ({playback_id}.m3u8) which can automatically adjust to viewers' connection speeds, but an mp4 can be useful for some legacy devices or downloading for offline playback. See the [Download your videos guide](https://docs.mux.com/guides/enable-static-mp4-renditions) for more information.  # noqa: E501
 
         :param mp4_support: The mp4_support of this CreateAssetRequest.  # noqa: E501
         :type mp4_support: str
@@ -247,7 +247,7 @@ class CreateAssetRequest(object):
     def master_access(self):
         """Gets the master_access of this CreateAssetRequest.  # noqa: E501
 
-        Specify what level (if any) of support for master access. Master access can be enabled temporarily for your asset to be downloaded. See the [Download your videos guide](/guides/video/download-your-videos) for more information.  # noqa: E501
+        Specify what level (if any) of support for master access. Master access can be enabled temporarily for your asset to be downloaded. See the [Download your videos guide](https://docs.mux.com/guides/enable-static-mp4-renditions) for more information.  # noqa: E501
 
         :return: The master_access of this CreateAssetRequest.  # noqa: E501
         :rtype: str
@@ -258,7 +258,7 @@ class CreateAssetRequest(object):
     def master_access(self, master_access):
         """Sets the master_access of this CreateAssetRequest.
 
-        Specify what level (if any) of support for master access. Master access can be enabled temporarily for your asset to be downloaded. See the [Download your videos guide](/guides/video/download-your-videos) for more information.  # noqa: E501
+        Specify what level (if any) of support for master access. Master access can be enabled temporarily for your asset to be downloaded. See the [Download your videos guide](https://docs.mux.com/guides/enable-static-mp4-renditions) for more information.  # noqa: E501
 
         :param master_access: The master_access of this CreateAssetRequest.  # noqa: E501
         :type master_access: str
@@ -328,7 +328,7 @@ class CreateAssetRequest(object):
     def encoding_tier(self):
         """Gets the encoding_tier of this CreateAssetRequest.  # noqa: E501
 
-        The encoding tier informs the cost, quality, and available platform features for the asset. By default the `smart` encoding tier is used. [See the guide for more details.](https://docs.mux.com/guides/video/use-encoding-tiers)  # noqa: E501
+        The encoding tier informs the cost, quality, and available platform features for the asset. By default the `smart` encoding tier is used. [See the guide for more details.](https://docs.mux.com/guides/use-encoding-tiers)  # noqa: E501
 
         :return: The encoding_tier of this CreateAssetRequest.  # noqa: E501
         :rtype: str
@@ -339,7 +339,7 @@ class CreateAssetRequest(object):
     def encoding_tier(self, encoding_tier):
         """Sets the encoding_tier of this CreateAssetRequest.
 
-        The encoding tier informs the cost, quality, and available platform features for the asset. By default the `smart` encoding tier is used. [See the guide for more details.](https://docs.mux.com/guides/video/use-encoding-tiers)  # noqa: E501
+        The encoding tier informs the cost, quality, and available platform features for the asset. By default the `smart` encoding tier is used. [See the guide for more details.](https://docs.mux.com/guides/use-encoding-tiers)  # noqa: E501
 
         :param encoding_tier: The encoding_tier of this CreateAssetRequest.  # noqa: E501
         :type encoding_tier: str

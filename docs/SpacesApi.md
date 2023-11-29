@@ -462,7 +462,7 @@ Name | Type | Description  | Notes
 
 List spaces
 
-List all spaces in the current enviroment.
+List all spaces in the current environment.
 
 ### Example
 

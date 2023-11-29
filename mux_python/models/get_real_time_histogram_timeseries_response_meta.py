@@ -37,24 +37,50 @@ class GetRealTimeHistogramTimeseriesResponseMeta(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'bucket_unit': 'str',
         'buckets': 'list[RealTimeHistogramTimeseriesBucket]'
     }
 
     attribute_map = {
+        'bucket_unit': 'bucket_unit',
         'buckets': 'buckets'
     }
 
-    def __init__(self, buckets=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, bucket_unit=None, buckets=None, local_vars_configuration=None):  # noqa: E501
         """GetRealTimeHistogramTimeseriesResponseMeta - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
         self.local_vars_configuration = local_vars_configuration
 
+        self._bucket_unit = None
         self._buckets = None
         self.discriminator = None
 
+        if bucket_unit is not None:
+            self.bucket_unit = bucket_unit
         if buckets is not None:
             self.buckets = buckets
+
+    @property
+    def bucket_unit(self):
+        """Gets the bucket_unit of this GetRealTimeHistogramTimeseriesResponseMeta.  # noqa: E501
+
+
+        :return: The bucket_unit of this GetRealTimeHistogramTimeseriesResponseMeta.  # noqa: E501
+        :rtype: str
+        """
+        return self._bucket_unit
+
+    @bucket_unit.setter
+    def bucket_unit(self, bucket_unit):
+        """Sets the bucket_unit of this GetRealTimeHistogramTimeseriesResponseMeta.
+
+
+        :param bucket_unit: The bucket_unit of this GetRealTimeHistogramTimeseriesResponseMeta.  # noqa: E501
+        :type bucket_unit: str
+        """
+
+        self._bucket_unit = bucket_unit
 
     @property
     def buckets(self):

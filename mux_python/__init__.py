@@ -15,7 +15,7 @@
 
 from __future__ import absolute_import
 
-__version__ = "3.11.4"
+__version__ = "3.11.5"
 
 # import apis into sdk package
 from mux_python.api.assets_api import AssetsApi
@@ -37,6 +37,7 @@ from mux_python.api.spaces_api import SpacesApi
 from mux_python.api.transcription_vocabularies_api import TranscriptionVocabulariesApi
 from mux_python.api.url_signing_keys_api import URLSigningKeysApi
 from mux_python.api.video_views_api import VideoViewsApi
+from mux_python.api.web_inputs_api import WebInputsApi
 
 # import ApiClient
 from mux_python.api_client import ApiClient
@@ -76,6 +77,7 @@ from mux_python.models.create_track_request import CreateTrackRequest
 from mux_python.models.create_track_response import CreateTrackResponse
 from mux_python.models.create_transcription_vocabulary_request import CreateTranscriptionVocabularyRequest
 from mux_python.models.create_upload_request import CreateUploadRequest
+from mux_python.models.create_web_input_request import CreateWebInputRequest
 from mux_python.models.delivery_report import DeliveryReport
 from mux_python.models.delivery_report_delivered_seconds_by_resolution import DeliveryReportDeliveredSecondsByResolution
 from mux_python.models.dimension_value import DimensionValue
@@ -113,9 +115,11 @@ from mux_python.models.input_settings import InputSettings
 from mux_python.models.input_settings_overlay_settings import InputSettingsOverlaySettings
 from mux_python.models.input_track import InputTrack
 from mux_python.models.insight import Insight
+from mux_python.models.launch_web_input_response import LaunchWebInputResponse
 from mux_python.models.list_all_metric_values_response import ListAllMetricValuesResponse
 from mux_python.models.list_assets_response import ListAssetsResponse
 from mux_python.models.list_breakdown_values_response import ListBreakdownValuesResponse
+from mux_python.models.list_breakdown_values_response_meta import ListBreakdownValuesResponseMeta
 from mux_python.models.list_delivery_usage_response import ListDeliveryUsageResponse
 from mux_python.models.list_dimension_values_response import ListDimensionValuesResponse
 from mux_python.models.list_dimensions_response import ListDimensionsResponse
@@ -140,6 +144,7 @@ from mux_python.models.list_transcription_vocabularies_response import ListTrans
 from mux_python.models.list_uploads_response import ListUploadsResponse
 from mux_python.models.list_video_view_exports_response import ListVideoViewExportsResponse
 from mux_python.models.list_video_views_response import ListVideoViewsResponse
+from mux_python.models.list_web_inputs_response import ListWebInputsResponse
 from mux_python.models.live_stream import LiveStream
 from mux_python.models.live_stream_embedded_subtitle_settings import LiveStreamEmbeddedSubtitleSettings
 from mux_python.models.live_stream_generated_subtitle_settings import LiveStreamGeneratedSubtitleSettings
@@ -165,7 +170,9 @@ from mux_python.models.real_time_histogram_timeseries_bucket_values import RealT
 from mux_python.models.real_time_histogram_timeseries_datapoint import RealTimeHistogramTimeseriesDatapoint
 from mux_python.models.real_time_timeseries_datapoint import RealTimeTimeseriesDatapoint
 from mux_python.models.referrer_domain_restriction import ReferrerDomainRestriction
+from mux_python.models.reload_web_input_response import ReloadWebInputResponse
 from mux_python.models.score import Score
+from mux_python.models.shutdown_web_input_response import ShutdownWebInputResponse
 from mux_python.models.signal_live_stream_complete_response import SignalLiveStreamCompleteResponse
 from mux_python.models.signing_key import SigningKey
 from mux_python.models.signing_key_response import SigningKeyResponse
@@ -188,10 +195,13 @@ from mux_python.models.update_live_stream_generated_subtitles_request import Upd
 from mux_python.models.update_live_stream_request import UpdateLiveStreamRequest
 from mux_python.models.update_referrer_domain_restriction_request import UpdateReferrerDomainRestrictionRequest
 from mux_python.models.update_transcription_vocabulary_request import UpdateTranscriptionVocabularyRequest
+from mux_python.models.update_web_input_url_request import UpdateWebInputUrlRequest
 from mux_python.models.upload import Upload
 from mux_python.models.upload_error import UploadError
 from mux_python.models.upload_response import UploadResponse
 from mux_python.models.video_view import VideoView
 from mux_python.models.video_view_event import VideoViewEvent
 from mux_python.models.video_view_response import VideoViewResponse
+from mux_python.models.web_input import WebInput
+from mux_python.models.web_input_response import WebInputResponse
 

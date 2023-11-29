@@ -59,8 +59,7 @@ class MonitoringTimeseriesDatapoint(object):
         self._concurrent_viewers = None
         self.discriminator = None
 
-        if value is not None:
-            self.value = value
+        self.value = value
         if date is not None:
             self.date = date
         if concurrent_viewers is not None:

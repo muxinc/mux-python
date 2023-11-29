@@ -375,7 +375,7 @@ class Asset(object):
     def encoding_tier(self):
         """Gets the encoding_tier of this Asset.  # noqa: E501
 
-        The encoding tier informs the cost, quality, and available platform features for the asset. By default the `smart` encoding tier is used. [See the guide for more details.](https://docs.mux.com/guides/video/use-encoding-tiers)  # noqa: E501
+        The encoding tier informs the cost, quality, and available platform features for the asset. By default the `smart` encoding tier is used. [See the guide for more details.](https://docs.mux.com/guides/use-encoding-tiers)  # noqa: E501
 
         :return: The encoding_tier of this Asset.  # noqa: E501
         :rtype: str
@@ -386,7 +386,7 @@ class Asset(object):
     def encoding_tier(self, encoding_tier):
         """Sets the encoding_tier of this Asset.
 
-        The encoding tier informs the cost, quality, and available platform features for the asset. By default the `smart` encoding tier is used. [See the guide for more details.](https://docs.mux.com/guides/video/use-encoding-tiers)  # noqa: E501
+        The encoding tier informs the cost, quality, and available platform features for the asset. By default the `smart` encoding tier is used. [See the guide for more details.](https://docs.mux.com/guides/use-encoding-tiers)  # noqa: E501
 
         :param encoding_tier: The encoding_tier of this Asset.  # noqa: E501
         :type encoding_tier: str
@@ -450,7 +450,7 @@ class Asset(object):
     def playback_ids(self):
         """Gets the playback_ids of this Asset.  # noqa: E501
 
-        An array of Playback ID objects. Use these to create HLS playback URLs. See [Play your videos](https://docs.mux.com/guides/video/play-your-videos) for more details.  # noqa: E501
+        An array of Playback ID objects. Use these to create HLS playback URLs. See [Play your videos](https://docs.mux.com/guides/play-your-videos) for more details.  # noqa: E501
 
         :return: The playback_ids of this Asset.  # noqa: E501
         :rtype: list[PlaybackID]
@@ -461,7 +461,7 @@ class Asset(object):
     def playback_ids(self, playback_ids):
         """Sets the playback_ids of this Asset.
 
-        An array of Playback ID objects. Use these to create HLS playback URLs. See [Play your videos](https://docs.mux.com/guides/video/play-your-videos) for more details.  # noqa: E501
+        An array of Playback ID objects. Use these to create HLS playback URLs. See [Play your videos](https://docs.mux.com/guides/play-your-videos) for more details.  # noqa: E501
 
         :param playback_ids: The playback_ids of this Asset.  # noqa: E501
         :type playback_ids: list[PlaybackID]

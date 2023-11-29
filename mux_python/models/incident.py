@@ -125,18 +125,15 @@ class Incident(object):
             self.sample_size_unit = sample_size_unit
         if sample_size is not None:
             self.sample_size = sample_size
-        if resolved_at is not None:
-            self.resolved_at = resolved_at
+        self.resolved_at = resolved_at
         if notifications is not None:
             self.notifications = notifications
         if notification_rules is not None:
             self.notification_rules = notification_rules
         if measurement is not None:
             self.measurement = measurement
-        if measured_value_on_close is not None:
-            self.measured_value_on_close = measured_value_on_close
-        if measured_value is not None:
-            self.measured_value = measured_value
+        self.measured_value_on_close = measured_value_on_close
+        self.measured_value = measured_value
         if incident_key is not None:
             self.incident_key = incident_key
         if impact is not None:

@@ -38,15 +38,17 @@ class VideoViewResponse(object):
     """
     openapi_types = {
         'data': 'VideoView',
-        'timeframe': 'list[int]'
+        'timeframe': 'list[int]',
+        'total_row_count': 'int'
     }
 
     attribute_map = {
         'data': 'data',
-        'timeframe': 'timeframe'
+        'timeframe': 'timeframe',
+        'total_row_count': 'total_row_count'
     }
 
-    def __init__(self, data=None, timeframe=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, data=None, timeframe=None, total_row_count=None, local_vars_configuration=None):  # noqa: E501
         """VideoViewResponse - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
@@ -54,12 +56,14 @@ class VideoViewResponse(object):
 
         self._data = None
         self._timeframe = None
+        self._total_row_count = None
         self.discriminator = None
 
         if data is not None:
             self.data = data
         if timeframe is not None:
             self.timeframe = timeframe
+        self.total_row_count = total_row_count
 
     @property
     def data(self):
@@ -102,6 +106,27 @@ class VideoViewResponse(object):
         """
 
         self._timeframe = timeframe
+
+    @property
+    def total_row_count(self):
+        """Gets the total_row_count of this VideoViewResponse.  # noqa: E501
+
+
+        :return: The total_row_count of this VideoViewResponse.  # noqa: E501
+        :rtype: int
+        """
+        return self._total_row_count
+
+    @total_row_count.setter
+    def total_row_count(self, total_row_count):
+        """Sets the total_row_count of this VideoViewResponse.
+
+
+        :param total_row_count: The total_row_count of this VideoViewResponse.  # noqa: E501
+        :type total_row_count: int
+        """
+
+        self._total_row_count = total_row_count
 
     def to_dict(self, serialize=False):
         """Returns the model properties as a dict"""
