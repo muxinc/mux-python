@@ -363,14 +363,4 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_create_web_input_request.py
-test/test_launch_web_input_response.py
-test/test_list_breakdown_values_response_meta.py
-test/test_list_web_inputs_response.py
-test/test_reload_web_input_response.py
-test/test_shutdown_web_input_response.py
-test/test_update_web_input_url_request.py
-test/test_web_input.py
-test/test_web_input_response.py
-test/test_web_inputs_api.py
 tox.ini
