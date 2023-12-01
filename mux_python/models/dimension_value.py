@@ -56,8 +56,7 @@ class DimensionValue(object):
         self._total_count = None
         self.discriminator = None
 
-        if value is not None:
-            self.value = value
+        self.value = value
         if total_count is not None:
             self.total_count = total_count
 

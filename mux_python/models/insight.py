@@ -38,6 +38,7 @@ class Insight(object):
     """
     openapi_types = {
         'total_watch_time': 'int',
+        'total_playing_time': 'int',
         'total_views': 'int',
         'negative_impact_score': 'float',
         'metric': 'float',
@@ -47,6 +48,7 @@ class Insight(object):
 
     attribute_map = {
         'total_watch_time': 'total_watch_time',
+        'total_playing_time': 'total_playing_time',
         'total_views': 'total_views',
         'negative_impact_score': 'negative_impact_score',
         'metric': 'metric',
@@ -54,13 +56,14 @@ class Insight(object):
         'filter_column': 'filter_column'
     }
 
-    def __init__(self, total_watch_time=None, total_views=None, negative_impact_score=None, metric=None, filter_value=None, filter_column=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, total_watch_time=None, total_playing_time=None, total_views=None, negative_impact_score=None, metric=None, filter_value=None, filter_column=None, local_vars_configuration=None):  # noqa: E501
         """Insight - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
         self.local_vars_configuration = local_vars_configuration
 
         self._total_watch_time = None
+        self._total_playing_time = None
         self._total_views = None
         self._negative_impact_score = None
         self._metric = None
@@ -68,16 +71,15 @@ class Insight(object):
         self._filter_column = None
         self.discriminator = None
 
-        if total_watch_time is not None:
-            self.total_watch_time = total_watch_time
+        self.total_watch_time = total_watch_time
+        self.total_playing_time = total_playing_time
         if total_views is not None:
             self.total_views = total_views
         if negative_impact_score is not None:
             self.negative_impact_score = negative_impact_score
         if metric is not None:
             self.metric = metric
-        if filter_value is not None:
-            self.filter_value = filter_value
+        self.filter_value = filter_value
         if filter_column is not None:
             self.filter_column = filter_column
 
@@ -101,6 +103,27 @@ class Insight(object):
         """
 
         self._total_watch_time = total_watch_time
+
+    @property
+    def total_playing_time(self):
+        """Gets the total_playing_time of this Insight.  # noqa: E501
+
+
+        :return: The total_playing_time of this Insight.  # noqa: E501
+        :rtype: int
+        """
+        return self._total_playing_time
+
+    @total_playing_time.setter
+    def total_playing_time(self, total_playing_time):
+        """Sets the total_playing_time of this Insight.
+
+
+        :param total_playing_time: The total_playing_time of this Insight.  # noqa: E501
+        :type total_playing_time: int
+        """
+
+        self._total_playing_time = total_playing_time
 
     @property
     def total_views(self):

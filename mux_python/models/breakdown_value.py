@@ -40,6 +40,7 @@ class BreakdownValue(object):
         'views': 'int',
         'value': 'float',
         'total_watch_time': 'int',
+        'total_playing_time': 'int',
         'negative_impact': 'int',
         'field': 'str'
     }
@@ -48,11 +49,12 @@ class BreakdownValue(object):
         'views': 'views',
         'value': 'value',
         'total_watch_time': 'total_watch_time',
+        'total_playing_time': 'total_playing_time',
         'negative_impact': 'negative_impact',
         'field': 'field'
     }
 
-    def __init__(self, views=None, value=None, total_watch_time=None, negative_impact=None, field=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, views=None, value=None, total_watch_time=None, total_playing_time=None, negative_impact=None, field=None, local_vars_configuration=None):  # noqa: E501
         """BreakdownValue - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
@@ -61,6 +63,7 @@ class BreakdownValue(object):
         self._views = None
         self._value = None
         self._total_watch_time = None
+        self._total_playing_time = None
         self._negative_impact = None
         self._field = None
         self.discriminator = None
@@ -69,12 +72,11 @@ class BreakdownValue(object):
             self.views = views
         if value is not None:
             self.value = value
-        if total_watch_time is not None:
-            self.total_watch_time = total_watch_time
+        self.total_watch_time = total_watch_time
+        self.total_playing_time = total_playing_time
         if negative_impact is not None:
             self.negative_impact = negative_impact
-        if field is not None:
-            self.field = field
+        self.field = field
 
     @property
     def views(self):
@@ -138,6 +140,27 @@ class BreakdownValue(object):
         """
 
         self._total_watch_time = total_watch_time
+
+    @property
+    def total_playing_time(self):
+        """Gets the total_playing_time of this BreakdownValue.  # noqa: E501
+
+
+        :return: The total_playing_time of this BreakdownValue.  # noqa: E501
+        :rtype: int
+        """
+        return self._total_playing_time
+
+    @total_playing_time.setter
+    def total_playing_time(self, total_playing_time):
+        """Sets the total_playing_time of this BreakdownValue.
+
+
+        :param total_playing_time: The total_playing_time of this BreakdownValue.  # noqa: E501
+        :type total_playing_time: int
+        """
+
+        self._total_playing_time = total_playing_time
 
     @property
     def negative_impact(self):

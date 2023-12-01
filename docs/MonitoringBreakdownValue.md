@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **metric_value** | **float** |  | [optional]
 **display_value** | **str** |  | [optional]
 **concurrent_viewers** | **int** |  | [optional]
+**starting_up_viewers** | **int** |  | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -39,8 +39,13 @@ class Score(object):
     openapi_types = {
         'watch_time': 'int',
         'view_count': 'int',
+        'unique_viewers': 'int',
+        'started_views': 'int',
+        'total_playing_time': 'int',
         'name': 'str',
+        'ended_views': 'int',
         'value': 'float',
+        'type': 'str',
         'metric': 'str',
         'items': 'list[Metric]'
     }
@@ -48,13 +53,18 @@ class Score(object):
     attribute_map = {
         'watch_time': 'watch_time',
         'view_count': 'view_count',
+        'unique_viewers': 'unique_viewers',
+        'started_views': 'started_views',
+        'total_playing_time': 'total_playing_time',
         'name': 'name',
+        'ended_views': 'ended_views',
         'value': 'value',
+        'type': 'type',
         'metric': 'metric',
         'items': 'items'
     }
 
-    def __init__(self, watch_time=None, view_count=None, name=None, value=None, metric=None, items=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, watch_time=None, view_count=None, unique_viewers=None, started_views=None, total_playing_time=None, name=None, ended_views=None, value=None, type=None, metric=None, items=None, local_vars_configuration=None):  # noqa: E501
         """Score - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
@@ -62,20 +72,33 @@ class Score(object):
 
         self._watch_time = None
         self._view_count = None
+        self._unique_viewers = None
+        self._started_views = None
+        self._total_playing_time = None
         self._name = None
+        self._ended_views = None
         self._value = None
+        self._type = None
         self._metric = None
         self._items = None
         self.discriminator = None
 
-        if watch_time is not None:
-            self.watch_time = watch_time
+        self.watch_time = watch_time
         if view_count is not None:
             self.view_count = view_count
+        if unique_viewers is not None:
+            self.unique_viewers = unique_viewers
+        if started_views is not None:
+            self.started_views = started_views
+        self.total_playing_time = total_playing_time
         if name is not None:
             self.name = name
+        if ended_views is not None:
+            self.ended_views = ended_views
         if value is not None:
             self.value = value
+        if type is not None:
+            self.type = type
         if metric is not None:
             self.metric = metric
         if items is not None:
@@ -124,6 +147,69 @@ class Score(object):
         self._view_count = view_count
 
     @property
+    def unique_viewers(self):
+        """Gets the unique_viewers of this Score.  # noqa: E501
+
+
+        :return: The unique_viewers of this Score.  # noqa: E501
+        :rtype: int
+        """
+        return self._unique_viewers
+
+    @unique_viewers.setter
+    def unique_viewers(self, unique_viewers):
+        """Sets the unique_viewers of this Score.
+
+
+        :param unique_viewers: The unique_viewers of this Score.  # noqa: E501
+        :type unique_viewers: int
+        """
+
+        self._unique_viewers = unique_viewers
+
+    @property
+    def started_views(self):
+        """Gets the started_views of this Score.  # noqa: E501
+
+
+        :return: The started_views of this Score.  # noqa: E501
+        :rtype: int
+        """
+        return self._started_views
+
+    @started_views.setter
+    def started_views(self, started_views):
+        """Sets the started_views of this Score.
+
+
+        :param started_views: The started_views of this Score.  # noqa: E501
+        :type started_views: int
+        """
+
+        self._started_views = started_views
+
+    @property
+    def total_playing_time(self):
+        """Gets the total_playing_time of this Score.  # noqa: E501
+
+
+        :return: The total_playing_time of this Score.  # noqa: E501
+        :rtype: int
+        """
+        return self._total_playing_time
+
+    @total_playing_time.setter
+    def total_playing_time(self, total_playing_time):
+        """Sets the total_playing_time of this Score.
+
+
+        :param total_playing_time: The total_playing_time of this Score.  # noqa: E501
+        :type total_playing_time: int
+        """
+
+        self._total_playing_time = total_playing_time
+
+    @property
     def name(self):
         """Gets the name of this Score.  # noqa: E501
 
@@ -145,6 +231,27 @@ class Score(object):
         self._name = name
 
     @property
+    def ended_views(self):
+        """Gets the ended_views of this Score.  # noqa: E501
+
+
+        :return: The ended_views of this Score.  # noqa: E501
+        :rtype: int
+        """
+        return self._ended_views
+
+    @ended_views.setter
+    def ended_views(self, ended_views):
+        """Sets the ended_views of this Score.
+
+
+        :param ended_views: The ended_views of this Score.  # noqa: E501
+        :type ended_views: int
+        """
+
+        self._ended_views = ended_views
+
+    @property
     def value(self):
         """Gets the value of this Score.  # noqa: E501
 
@@ -164,6 +271,27 @@ class Score(object):
         """
 
         self._value = value
+
+    @property
+    def type(self):
+        """Gets the type of this Score.  # noqa: E501
+
+
+        :return: The type of this Score.  # noqa: E501
+        :rtype: str
+        """
+        return self._type
+
+    @type.setter
+    def type(self, type):
+        """Sets the type of this Score.
+
+
+        :param type: The type of this Score.  # noqa: E501
+        :type type: str
+        """
+
+        self._type = type
 
     @property
     def metric(self):

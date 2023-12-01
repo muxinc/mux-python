@@ -75,16 +75,13 @@ class RealTimeHistogramTimeseriesDatapoint(object):
             self.timestamp = timestamp
         if sum is not None:
             self.sum = sum
-        if p95 is not None:
-            self.p95 = p95
-        if median is not None:
-            self.median = median
+        self.p95 = p95
+        self.median = median
         if max_percentage is not None:
             self.max_percentage = max_percentage
         if bucket_values is not None:
             self.bucket_values = bucket_values
-        if average is not None:
-            self.average = average
+        self.average = average
 
     @property
     def timestamp(self):

@@ -63,7 +63,8 @@ class CreateSimulcastTargetRequest(object):
             self.passthrough = passthrough
         if stream_key is not None:
             self.stream_key = stream_key
-        self.url = url
+        if url is not None:
+            self.url = url
 
     @property
     def passthrough(self):
@@ -131,8 +132,6 @@ class CreateSimulcastTargetRequest(object):
         :param url: The url of this CreateSimulcastTargetRequest.  # noqa: E501
         :type url: str
         """
-        if self.local_vars_configuration.client_side_validation and url is None:  # noqa: E501
-            raise ValueError("Invalid value for `url`, must not be `None`")  # noqa: E501
 
         self._url = url
 

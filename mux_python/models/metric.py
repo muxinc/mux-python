@@ -65,8 +65,7 @@ class Metric(object):
         self._measurement = None
         self.discriminator = None
 
-        if value is not None:
-            self.value = value
+        self.value = value
         if type is not None:
             self.type = type
         if name is not None:

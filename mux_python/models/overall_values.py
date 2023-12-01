@@ -40,6 +40,7 @@ class OverallValues(object):
         'value': 'float',
         'total_watch_time': 'int',
         'total_views': 'int',
+        'total_playing_time': 'int',
         'global_value': 'float'
     }
 
@@ -47,10 +48,11 @@ class OverallValues(object):
         'value': 'value',
         'total_watch_time': 'total_watch_time',
         'total_views': 'total_views',
+        'total_playing_time': 'total_playing_time',
         'global_value': 'global_value'
     }
 
-    def __init__(self, value=None, total_watch_time=None, total_views=None, global_value=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, value=None, total_watch_time=None, total_views=None, total_playing_time=None, global_value=None, local_vars_configuration=None):  # noqa: E501
         """OverallValues - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
@@ -59,17 +61,17 @@ class OverallValues(object):
         self._value = None
         self._total_watch_time = None
         self._total_views = None
+        self._total_playing_time = None
         self._global_value = None
         self.discriminator = None
 
         if value is not None:
             self.value = value
-        if total_watch_time is not None:
-            self.total_watch_time = total_watch_time
+        self.total_watch_time = total_watch_time
         if total_views is not None:
             self.total_views = total_views
-        if global_value is not None:
-            self.global_value = global_value
+        self.total_playing_time = total_playing_time
+        self.global_value = global_value
 
     @property
     def value(self):
@@ -133,6 +135,27 @@ class OverallValues(object):
         """
 
         self._total_views = total_views
+
+    @property
+    def total_playing_time(self):
+        """Gets the total_playing_time of this OverallValues.  # noqa: E501
+
+
+        :return: The total_playing_time of this OverallValues.  # noqa: E501
+        :rtype: int
+        """
+        return self._total_playing_time
+
+    @total_playing_time.setter
+    def total_playing_time(self, total_playing_time):
+        """Sets the total_playing_time of this OverallValues.
+
+
+        :param total_playing_time: The total_playing_time of this OverallValues.  # noqa: E501
+        :type total_playing_time: int
+        """
+
+        self._total_playing_time = total_playing_time
 
     @property
     def global_value(self):

@@ -22,3 +22,4 @@ from mux_python.api.spaces_api import SpacesApi
 from mux_python.api.transcription_vocabularies_api import TranscriptionVocabulariesApi
 from mux_python.api.url_signing_keys_api import URLSigningKeysApi
 from mux_python.api.video_views_api import VideoViewsApi
+from mux_python.api.web_inputs_api import WebInputsApi

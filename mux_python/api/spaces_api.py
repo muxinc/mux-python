@@ -879,7 +879,7 @@ class SpacesApi(object):
     def list_spaces(self, **kwargs):  # noqa: E501
         """List spaces  # noqa: E501
 
-        List all spaces in the current enviroment.  # noqa: E501
+        List all spaces in the current environment.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -911,7 +911,7 @@ class SpacesApi(object):
     def list_spaces_with_http_info(self, **kwargs):  # noqa: E501
         """List spaces  # noqa: E501
 
-        List all spaces in the current enviroment.  # noqa: E501
+        List all spaces in the current environment.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 

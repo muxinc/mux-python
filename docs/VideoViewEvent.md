@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **playback_time** | **int** |  | [optional]
 **name** | **str** |  | [optional]
 **event_time** | **int** |  | [optional]
+**details** | **dict(str, object)** |  | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

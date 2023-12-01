@@ -144,6 +144,8 @@ Name | Type | Description | Notes
 **view_dropped_frame_count** | **int** |  | [optional]
 **view_has_ad** | **bool** |  | [optional]
 **video_startup_failure** | **bool** |  | [optional]
+**long_resume** | **bool** |  | [optional]
+**long_rebuffering** | **bool** |  | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

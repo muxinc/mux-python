@@ -39,16 +39,18 @@ class GetOverallValuesResponse(object):
     openapi_types = {
         'data': 'OverallValues',
         'total_row_count': 'int',
-        'timeframe': 'list[int]'
+        'timeframe': 'list[int]',
+        'meta': 'ListBreakdownValuesResponseMeta'
     }
 
     attribute_map = {
         'data': 'data',
         'total_row_count': 'total_row_count',
-        'timeframe': 'timeframe'
+        'timeframe': 'timeframe',
+        'meta': 'meta'
     }
 
-    def __init__(self, data=None, total_row_count=None, timeframe=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, data=None, total_row_count=None, timeframe=None, meta=None, local_vars_configuration=None):  # noqa: E501
         """GetOverallValuesResponse - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
@@ -57,14 +59,16 @@ class GetOverallValuesResponse(object):
         self._data = None
         self._total_row_count = None
         self._timeframe = None
+        self._meta = None
         self.discriminator = None
 
         if data is not None:
             self.data = data
-        if total_row_count is not None:
-            self.total_row_count = total_row_count
+        self.total_row_count = total_row_count
         if timeframe is not None:
             self.timeframe = timeframe
+        if meta is not None:
+            self.meta = meta
 
     @property
     def data(self):
@@ -128,6 +132,27 @@ class GetOverallValuesResponse(object):
         """
 
         self._timeframe = timeframe
+
+    @property
+    def meta(self):
+        """Gets the meta of this GetOverallValuesResponse.  # noqa: E501
+
+
+        :return: The meta of this GetOverallValuesResponse.  # noqa: E501
+        :rtype: ListBreakdownValuesResponseMeta
+        """
+        return self._meta
+
+    @meta.setter
+    def meta(self, meta):
+        """Sets the meta of this GetOverallValuesResponse.
+
+
+        :param meta: The meta of this GetOverallValuesResponse.  # noqa: E501
+        :type meta: ListBreakdownValuesResponseMeta
+        """
+
+        self._meta = meta
 
     def to_dict(self, serialize=False):
         """Returns the model properties as a dict"""

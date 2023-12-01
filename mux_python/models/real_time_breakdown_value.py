@@ -41,7 +41,8 @@ class RealTimeBreakdownValue(object):
         'negative_impact': 'int',
         'metric_value': 'float',
         'display_value': 'str',
-        'concurrent_viewers': 'int'
+        'concurrent_viewers': 'int',
+        'starting_up_viewers': 'int'
     }
 
     attribute_map = {
@@ -49,10 +50,11 @@ class RealTimeBreakdownValue(object):
         'negative_impact': 'negative_impact',
         'metric_value': 'metric_value',
         'display_value': 'display_value',
-        'concurrent_viewers': 'concurrent_viewers'
+        'concurrent_viewers': 'concurrent_viewers',
+        'starting_up_viewers': 'starting_up_viewers'
     }
 
-    def __init__(self, value=None, negative_impact=None, metric_value=None, display_value=None, concurrent_viewers=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, value=None, negative_impact=None, metric_value=None, display_value=None, concurrent_viewers=None, starting_up_viewers=None, local_vars_configuration=None):  # noqa: E501
         """RealTimeBreakdownValue - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
@@ -63,18 +65,19 @@ class RealTimeBreakdownValue(object):
         self._metric_value = None
         self._display_value = None
         self._concurrent_viewers = None
+        self._starting_up_viewers = None
         self.discriminator = None
 
-        if value is not None:
-            self.value = value
+        self.value = value
         if negative_impact is not None:
             self.negative_impact = negative_impact
-        if metric_value is not None:
-            self.metric_value = metric_value
+        self.metric_value = metric_value
         if display_value is not None:
             self.display_value = display_value
         if concurrent_viewers is not None:
             self.concurrent_viewers = concurrent_viewers
+        if starting_up_viewers is not None:
+            self.starting_up_viewers = starting_up_viewers
 
     @property
     def value(self):
@@ -180,6 +183,27 @@ class RealTimeBreakdownValue(object):
         """
 
         self._concurrent_viewers = concurrent_viewers
+
+    @property
+    def starting_up_viewers(self):
+        """Gets the starting_up_viewers of this RealTimeBreakdownValue.  # noqa: E501
+
+
+        :return: The starting_up_viewers of this RealTimeBreakdownValue.  # noqa: E501
+        :rtype: int
+        """
+        return self._starting_up_viewers
+
+    @starting_up_viewers.setter
+    def starting_up_viewers(self, starting_up_viewers):
+        """Sets the starting_up_viewers of this RealTimeBreakdownValue.
+
+
+        :param starting_up_viewers: The starting_up_viewers of this RealTimeBreakdownValue.  # noqa: E501
+        :type starting_up_viewers: int
+        """
+
+        self._starting_up_viewers = starting_up_viewers
 
     def to_dict(self, serialize=False):
         """Returns the model properties as a dict"""

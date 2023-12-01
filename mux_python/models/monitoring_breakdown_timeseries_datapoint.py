@@ -59,10 +59,8 @@ class MonitoringBreakdownTimeseriesDatapoint(object):
         self._concurrent_viewers = None
         self.discriminator = None
 
-        if value is not None:
-            self.value = value
-        if metric_value is not None:
-            self.metric_value = metric_value
+        self.value = value
+        self.metric_value = metric_value
         if concurrent_viewers is not None:
             self.concurrent_viewers = concurrent_viewers
 

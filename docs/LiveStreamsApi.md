@@ -1248,7 +1248,7 @@ with mux_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = mux_python.LiveStreamsApi(api_client)
     live_stream_id = 'live_stream_id_example' # str | The live stream ID
-update_live_stream_generated_subtitles_request = {"generated_subtitles":[{"name":"English CC (ASR)","language":"en","passthrough":"Example"}]} # UpdateLiveStreamGeneratedSubtitlesRequest | 
+update_live_stream_generated_subtitles_request = {"generated_subtitles":[{"name":"English CC (ASR)","language_code":"en","passthrough":"Example"}]} # UpdateLiveStreamGeneratedSubtitlesRequest | 
 
     try:
         # Update a live stream's generated subtitles

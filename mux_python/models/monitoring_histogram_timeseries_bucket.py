@@ -58,8 +58,7 @@ class MonitoringHistogramTimeseriesBucket(object):
 
         if start is not None:
             self.start = start
-        if end is not None:
-            self.end = end
+        self.end = end
 
     @property
     def start(self):

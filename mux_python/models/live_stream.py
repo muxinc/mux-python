@@ -296,7 +296,7 @@ class LiveStream(object):
     def playback_ids(self):
         """Gets the playback_ids of this LiveStream.  # noqa: E501
 
-        An array of Playback ID objects. Use these to create HLS playback URLs. See [Play your videos](https://docs.mux.com/guides/video/play-your-videos) for more details.  # noqa: E501
+        An array of Playback ID objects. Use these to create HLS playback URLs. See [Play your videos](https://docs.mux.com/guides/play-your-videos) for more details.  # noqa: E501
 
         :return: The playback_ids of this LiveStream.  # noqa: E501
         :rtype: list[PlaybackID]
@@ -307,7 +307,7 @@ class LiveStream(object):
     def playback_ids(self, playback_ids):
         """Sets the playback_ids of this LiveStream.
 
-        An array of Playback ID objects. Use these to create HLS playback URLs. See [Play your videos](https://docs.mux.com/guides/video/play-your-videos) for more details.  # noqa: E501
+        An array of Playback ID objects. Use these to create HLS playback URLs. See [Play your videos](https://docs.mux.com/guides/play-your-videos) for more details.  # noqa: E501
 
         :param playback_ids: The playback_ids of this LiveStream.  # noqa: E501
         :type playback_ids: list[PlaybackID]
@@ -507,7 +507,7 @@ class LiveStream(object):
     def reduced_latency(self):
         """Gets the reduced_latency of this LiveStream.  # noqa: E501
 
-        This field is deprecated. Please use `latency_mode` instead. Latency is the time from when the streamer transmits a frame of video to when you see it in the player. Set this if you want lower latency for your live stream. See the [Reduce live stream latency guide](https://docs.mux.com/guides/video/reduce-live-stream-latency) to understand the tradeoffs.  # noqa: E501
+        This field is deprecated. Please use `latency_mode` instead. Latency is the time from when the streamer transmits a frame of video to when you see it in the player. Set this if you want lower latency for your live stream. See the [Reduce live stream latency guide](https://docs.mux.com/guides/reduce-live-stream-latency) to understand the tradeoffs.  # noqa: E501
 
         :return: The reduced_latency of this LiveStream.  # noqa: E501
         :rtype: bool
@@ -518,7 +518,7 @@ class LiveStream(object):
     def reduced_latency(self, reduced_latency):
         """Sets the reduced_latency of this LiveStream.
 
-        This field is deprecated. Please use `latency_mode` instead. Latency is the time from when the streamer transmits a frame of video to when you see it in the player. Set this if you want lower latency for your live stream. See the [Reduce live stream latency guide](https://docs.mux.com/guides/video/reduce-live-stream-latency) to understand the tradeoffs.  # noqa: E501
+        This field is deprecated. Please use `latency_mode` instead. Latency is the time from when the streamer transmits a frame of video to when you see it in the player. Set this if you want lower latency for your live stream. See the [Reduce live stream latency guide](https://docs.mux.com/guides/reduce-live-stream-latency) to understand the tradeoffs.  # noqa: E501
 
         :param reduced_latency: The reduced_latency of this LiveStream.  # noqa: E501
         :type reduced_latency: bool
@@ -553,7 +553,7 @@ class LiveStream(object):
     def simulcast_targets(self):
         """Gets the simulcast_targets of this LiveStream.  # noqa: E501
 
-        Each Simulcast Target contains configuration details to broadcast (or \"restream\") a live stream to a third-party streaming service. [See the Stream live to 3rd party platforms guide](https://docs.mux.com/guides/video/stream-live-to-3rd-party-platforms).  # noqa: E501
+        Each Simulcast Target contains configuration details to broadcast (or \"restream\") a live stream to a third-party streaming service. [See the Stream live to 3rd party platforms guide](https://docs.mux.com/guides/stream-live-to-3rd-party-platforms).  # noqa: E501
 
         :return: The simulcast_targets of this LiveStream.  # noqa: E501
         :rtype: list[SimulcastTarget]
@@ -564,7 +564,7 @@ class LiveStream(object):
     def simulcast_targets(self, simulcast_targets):
         """Sets the simulcast_targets of this LiveStream.
 
-        Each Simulcast Target contains configuration details to broadcast (or \"restream\") a live stream to a third-party streaming service. [See the Stream live to 3rd party platforms guide](https://docs.mux.com/guides/video/stream-live-to-3rd-party-platforms).  # noqa: E501
+        Each Simulcast Target contains configuration details to broadcast (or \"restream\") a live stream to a third-party streaming service. [See the Stream live to 3rd party platforms guide](https://docs.mux.com/guides/stream-live-to-3rd-party-platforms).  # noqa: E501
 
         :param simulcast_targets: The simulcast_targets of this LiveStream.  # noqa: E501
         :type simulcast_targets: list[SimulcastTarget]
@@ -576,7 +576,7 @@ class LiveStream(object):
     def latency_mode(self):
         """Gets the latency_mode of this LiveStream.  # noqa: E501
 
-        Latency is the time from when the streamer transmits a frame of video to when you see it in the player. Set this as an alternative to setting low latency or reduced latency flags. The Low Latency value is a beta feature. Read more here: https://mux.com/blog/introducing-low-latency-live-streaming/  # noqa: E501
+        Latency is the time from when the streamer transmits a frame of video to when you see it in the player. Set this as an alternative to setting low latency or reduced latency flags.  # noqa: E501
 
         :return: The latency_mode of this LiveStream.  # noqa: E501
         :rtype: str
@@ -587,7 +587,7 @@ class LiveStream(object):
     def latency_mode(self, latency_mode):
         """Sets the latency_mode of this LiveStream.
 
-        Latency is the time from when the streamer transmits a frame of video to when you see it in the player. Set this as an alternative to setting low latency or reduced latency flags. The Low Latency value is a beta feature. Read more here: https://mux.com/blog/introducing-low-latency-live-streaming/  # noqa: E501
+        Latency is the time from when the streamer transmits a frame of video to when you see it in the player. Set this as an alternative to setting low latency or reduced latency flags.  # noqa: E501
 
         :param latency_mode: The latency_mode of this LiveStream.  # noqa: E501
         :type latency_mode: str

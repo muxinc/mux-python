@@ -38,26 +38,30 @@ class IncidentResponse(object):
     """
     openapi_types = {
         'data': 'Incident',
+        'total_row_count': 'int',
         'timeframe': 'list[int]'
     }
 
     attribute_map = {
         'data': 'data',
+        'total_row_count': 'total_row_count',
         'timeframe': 'timeframe'
     }
 
-    def __init__(self, data=None, timeframe=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, data=None, total_row_count=None, timeframe=None, local_vars_configuration=None):  # noqa: E501
         """IncidentResponse - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
         self.local_vars_configuration = local_vars_configuration
 
         self._data = None
+        self._total_row_count = None
         self._timeframe = None
         self.discriminator = None
 
         if data is not None:
             self.data = data
+        self.total_row_count = total_row_count
         if timeframe is not None:
             self.timeframe = timeframe
 
@@ -81,6 +85,27 @@ class IncidentResponse(object):
         """
 
         self._data = data
+
+    @property
+    def total_row_count(self):
+        """Gets the total_row_count of this IncidentResponse.  # noqa: E501
+
+
+        :return: The total_row_count of this IncidentResponse.  # noqa: E501
+        :rtype: int
+        """
+        return self._total_row_count
+
+    @total_row_count.setter
+    def total_row_count(self, total_row_count):
+        """Sets the total_row_count of this IncidentResponse.
+
+
+        :param total_row_count: The total_row_count of this IncidentResponse.  # noqa: E501
+        :type total_row_count: int
+        """
+
+        self._total_row_count = total_row_count
 
     @property
     def timeframe(self):

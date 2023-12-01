@@ -40,17 +40,19 @@ class VideoViewEvent(object):
         'viewer_time': 'int',
         'playback_time': 'int',
         'name': 'str',
-        'event_time': 'int'
+        'event_time': 'int',
+        'details': 'dict(str, object)'
     }
 
     attribute_map = {
         'viewer_time': 'viewer_time',
         'playback_time': 'playback_time',
         'name': 'name',
-        'event_time': 'event_time'
+        'event_time': 'event_time',
+        'details': 'details'
     }
 
-    def __init__(self, viewer_time=None, playback_time=None, name=None, event_time=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, viewer_time=None, playback_time=None, name=None, event_time=None, details=None, local_vars_configuration=None):  # noqa: E501
         """VideoViewEvent - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
@@ -60,6 +62,7 @@ class VideoViewEvent(object):
         self._playback_time = None
         self._name = None
         self._event_time = None
+        self._details = None
         self.discriminator = None
 
         if viewer_time is not None:
@@ -70,6 +73,8 @@ class VideoViewEvent(object):
             self.name = name
         if event_time is not None:
             self.event_time = event_time
+        if details is not None:
+            self.details = details
 
     @property
     def viewer_time(self):
@@ -154,6 +159,27 @@ class VideoViewEvent(object):
         """
 
         self._event_time = event_time
+
+    @property
+    def details(self):
+        """Gets the details of this VideoViewEvent.  # noqa: E501
+
+
+        :return: The details of this VideoViewEvent.  # noqa: E501
+        :rtype: dict(str, object)
+        """
+        return self._details
+
+    @details.setter
+    def details(self, details):
+        """Sets the details of this VideoViewEvent.
+
+
+        :param details: The details of this VideoViewEvent.  # noqa: E501
+        :type details: dict(str, object)
+        """
+
+        self._details = details
 
     def to_dict(self, serialize=False):
         """Returns the model properties as a dict"""

@@ -61,8 +61,7 @@ class GetMonitoringTimeseriesResponse(object):
 
         if data is not None:
             self.data = data
-        if total_row_count is not None:
-            self.total_row_count = total_row_count
+        self.total_row_count = total_row_count
         if timeframe is not None:
             self.timeframe = timeframe
 

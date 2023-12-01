@@ -78,18 +78,14 @@ class Error(object):
             self.id = id
         if percentage is not None:
             self.percentage = percentage
-        if notes is not None:
-            self.notes = notes
-        if message is not None:
-            self.message = message
+        self.notes = notes
+        self.message = message
         if last_seen is not None:
             self.last_seen = last_seen
-        if description is not None:
-            self.description = description
+        self.description = description
         if count is not None:
             self.count = count
-        if code is not None:
-            self.code = code
+        self.code = code
 
     @property
     def id(self):
@@ -233,7 +229,7 @@ class Error(object):
     def count(self):
         """Gets the count of this Error.  # noqa: E501
 
-        The total number of views that experiend this error.  # noqa: E501
+        The total number of views that experienced this error.  # noqa: E501
 
         :return: The count of this Error.  # noqa: E501
         :rtype: int
@@ -244,7 +240,7 @@ class Error(object):
     def count(self, count):
         """Sets the count of this Error.
 
-        The total number of views that experiend this error.  # noqa: E501
+        The total number of views that experienced this error.  # noqa: E501
 
         :param count: The count of this Error.  # noqa: E501
         :type count: int
