@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **get_metric_timeseries_data**
-> GetMetricTimeseriesDataResponse get_metric_timeseries_data(metric_id, timeframe=timeframe, filters=filters, measurement=measurement, order_direction=order_direction, group_by=group_by)
+> GetMetricTimeseriesDataResponse get_metric_timeseries_data(metric_id, timeframe=timeframe, filters=filters, metric_filters=metric_filters, measurement=measurement, order_direction=order_direction, group_by=group_by)
 
 Get metric timeseries data
 
@@ -51,13 +51,14 @@ with mux_python.ApiClient(configuration) as api_client:
     metric_id = 'video_startup_time' # str | ID of the Metric
 timeframe = ['timeframe_example'] # list[str] | Timeframe window to limit results by. Must be provided as an array query string parameter (e.g. timeframe[]=).  Accepted formats are...    * array of epoch timestamps e.g. `timeframe[]=1498867200&timeframe[]=1498953600`   * duration string e.g. `timeframe[]=24:hours or timeframe[]=7:days`  (optional)
 filters = ['filters_example'] # list[str] | Limit the results to rows that match conditions from provided key:value pairs. Must be provided as an array query string parameter.  To exclude rows that match a certain condition, prepend a `!` character to the dimension.  Possible filter names are the same as returned by the List Filters endpoint.  Example:    * `filters[]=operating_system:windows&filters[]=!country:US`  (optional)
+metric_filters = ['metric_filters_example'] # list[str] | Limit the results to rows that match inequality conditions from provided metric comparison clauses. Must be provided as an array query string parameter.  Possible filterable metrics are the same as the set of metric ids, with the exceptions of `exits_before_video_start`, `unique_viewers`, `video_startup_failure_percentage`, and `views`.  Example:    * `metric_filters[]=aggregate_startup_time>=1000`  (optional)
 measurement = 'measurement_example' # str | Measurement for the provided metric. If omitted, the default for the metric will be used. (optional)
 order_direction = 'order_direction_example' # str | Sort order. (optional)
 group_by = 'group_by_example' # str | Time granularity to group results by. If this value is omitted, a default granularity is chosen based on the timeframe.  For timeframes of less than 90 minutes, the default granularity is `minute`. Between 90 minutes and 6 hours, the default granularity is `ten_minutes`. Between 6 hours and 15 days inclusive, the default granularity is `hour`. The granularity of timeframes that exceed 15 days is `day`. This default behavior is subject to change; it is strongly suggested that you explicitly specify the granularity.  (optional)
 
     try:
         # Get metric timeseries data
-        api_response = api_instance.get_metric_timeseries_data(metric_id, timeframe=timeframe, filters=filters, measurement=measurement, order_direction=order_direction, group_by=group_by)
+        api_response = api_instance.get_metric_timeseries_data(metric_id, timeframe=timeframe, filters=filters, metric_filters=metric_filters, measurement=measurement, order_direction=order_direction, group_by=group_by)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling MetricsApi->get_metric_timeseries_data: %s\n" % e)
@@ -70,6 +71,7 @@ Name | Type | Description  | Notes
  **metric_id** | **str**| ID of the Metric | 
  **timeframe** | [**list[str]**](str.md)| Timeframe window to limit results by. Must be provided as an array query string parameter (e.g. timeframe[]&#x3D;).  Accepted formats are...    * array of epoch timestamps e.g. &#x60;timeframe[]&#x3D;1498867200&amp;timeframe[]&#x3D;1498953600&#x60;   * duration string e.g. &#x60;timeframe[]&#x3D;24:hours or timeframe[]&#x3D;7:days&#x60;  | [optional] 
  **filters** | [**list[str]**](str.md)| Limit the results to rows that match conditions from provided key:value pairs. Must be provided as an array query string parameter.  To exclude rows that match a certain condition, prepend a &#x60;!&#x60; character to the dimension.  Possible filter names are the same as returned by the List Filters endpoint.  Example:    * &#x60;filters[]&#x3D;operating_system:windows&amp;filters[]&#x3D;!country:US&#x60;  | [optional] 
+ **metric_filters** | [**list[str]**](str.md)| Limit the results to rows that match inequality conditions from provided metric comparison clauses. Must be provided as an array query string parameter.  Possible filterable metrics are the same as the set of metric ids, with the exceptions of &#x60;exits_before_video_start&#x60;, &#x60;unique_viewers&#x60;, &#x60;video_startup_failure_percentage&#x60;, and &#x60;views&#x60;.  Example:    * &#x60;metric_filters[]&#x3D;aggregate_startup_time&gt;&#x3D;1000&#x60;  | [optional] 
  **measurement** | **str**| Measurement for the provided metric. If omitted, the default for the metric will be used. | [optional] 
  **order_direction** | **str**| Sort order. | [optional] 
  **group_by** | **str**| Time granularity to group results by. If this value is omitted, a default granularity is chosen based on the timeframe.  For timeframes of less than 90 minutes, the default granularity is &#x60;minute&#x60;. Between 90 minutes and 6 hours, the default granularity is &#x60;ten_minutes&#x60;. Between 6 hours and 15 days inclusive, the default granularity is &#x60;hour&#x60;. The granularity of timeframes that exceed 15 days is &#x60;day&#x60;. This default behavior is subject to change; it is strongly suggested that you explicitly specify the granularity.  | [optional] 
@@ -95,7 +97,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_overall_values**
-> GetOverallValuesResponse get_overall_values(metric_id, timeframe=timeframe, filters=filters, measurement=measurement)
+> GetOverallValuesResponse get_overall_values(metric_id, timeframe=timeframe, filters=filters, metric_filters=metric_filters, measurement=measurement)
 
 Get Overall values
 
@@ -134,11 +136,12 @@ with mux_python.ApiClient(configuration) as api_client:
     metric_id = 'video_startup_time' # str | ID of the Metric
 timeframe = ['timeframe_example'] # list[str] | Timeframe window to limit results by. Must be provided as an array query string parameter (e.g. timeframe[]=).  Accepted formats are...    * array of epoch timestamps e.g. `timeframe[]=1498867200&timeframe[]=1498953600`   * duration string e.g. `timeframe[]=24:hours or timeframe[]=7:days`  (optional)
 filters = ['filters_example'] # list[str] | Limit the results to rows that match conditions from provided key:value pairs. Must be provided as an array query string parameter.  To exclude rows that match a certain condition, prepend a `!` character to the dimension.  Possible filter names are the same as returned by the List Filters endpoint.  Example:    * `filters[]=operating_system:windows&filters[]=!country:US`  (optional)
+metric_filters = ['metric_filters_example'] # list[str] | Limit the results to rows that match inequality conditions from provided metric comparison clauses. Must be provided as an array query string parameter.  Possible filterable metrics are the same as the set of metric ids, with the exceptions of `exits_before_video_start`, `unique_viewers`, `video_startup_failure_percentage`, and `views`.  Example:    * `metric_filters[]=aggregate_startup_time>=1000`  (optional)
 measurement = 'measurement_example' # str | Measurement for the provided metric. If omitted, the default for the metric will be used. (optional)
 
     try:
         # Get Overall values
-        api_response = api_instance.get_overall_values(metric_id, timeframe=timeframe, filters=filters, measurement=measurement)
+        api_response = api_instance.get_overall_values(metric_id, timeframe=timeframe, filters=filters, metric_filters=metric_filters, measurement=measurement)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling MetricsApi->get_overall_values: %s\n" % e)
@@ -151,6 +154,7 @@ Name | Type | Description  | Notes
  **metric_id** | **str**| ID of the Metric | 
  **timeframe** | [**list[str]**](str.md)| Timeframe window to limit results by. Must be provided as an array query string parameter (e.g. timeframe[]&#x3D;).  Accepted formats are...    * array of epoch timestamps e.g. &#x60;timeframe[]&#x3D;1498867200&amp;timeframe[]&#x3D;1498953600&#x60;   * duration string e.g. &#x60;timeframe[]&#x3D;24:hours or timeframe[]&#x3D;7:days&#x60;  | [optional] 
  **filters** | [**list[str]**](str.md)| Limit the results to rows that match conditions from provided key:value pairs. Must be provided as an array query string parameter.  To exclude rows that match a certain condition, prepend a &#x60;!&#x60; character to the dimension.  Possible filter names are the same as returned by the List Filters endpoint.  Example:    * &#x60;filters[]&#x3D;operating_system:windows&amp;filters[]&#x3D;!country:US&#x60;  | [optional] 
+ **metric_filters** | [**list[str]**](str.md)| Limit the results to rows that match inequality conditions from provided metric comparison clauses. Must be provided as an array query string parameter.  Possible filterable metrics are the same as the set of metric ids, with the exceptions of &#x60;exits_before_video_start&#x60;, &#x60;unique_viewers&#x60;, &#x60;video_startup_failure_percentage&#x60;, and &#x60;views&#x60;.  Example:    * &#x60;metric_filters[]&#x3D;aggregate_startup_time&gt;&#x3D;1000&#x60;  | [optional] 
  **measurement** | **str**| Measurement for the provided metric. If omitted, the default for the metric will be used. | [optional] 
 
 ### Return type
@@ -174,7 +178,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_all_metric_values**
-> ListAllMetricValuesResponse list_all_metric_values(timeframe=timeframe, filters=filters, dimension=dimension, value=value)
+> ListAllMetricValuesResponse list_all_metric_values(timeframe=timeframe, filters=filters, metric_filters=metric_filters, dimension=dimension, value=value)
 
 List all metric values
 
@@ -212,12 +216,13 @@ with mux_python.ApiClient(configuration) as api_client:
     api_instance = mux_python.MetricsApi(api_client)
     timeframe = ['timeframe_example'] # list[str] | Timeframe window to limit results by. Must be provided as an array query string parameter (e.g. timeframe[]=).  Accepted formats are...    * array of epoch timestamps e.g. `timeframe[]=1498867200&timeframe[]=1498953600`   * duration string e.g. `timeframe[]=24:hours or timeframe[]=7:days`  (optional)
 filters = ['filters_example'] # list[str] | Limit the results to rows that match conditions from provided key:value pairs. Must be provided as an array query string parameter.  To exclude rows that match a certain condition, prepend a `!` character to the dimension.  Possible filter names are the same as returned by the List Filters endpoint.  Example:    * `filters[]=operating_system:windows&filters[]=!country:US`  (optional)
+metric_filters = ['metric_filters_example'] # list[str] | Limit the results to rows that match inequality conditions from provided metric comparison clauses. Must be provided as an array query string parameter.  Possible filterable metrics are the same as the set of metric ids, with the exceptions of `exits_before_video_start`, `unique_viewers`, `video_startup_failure_percentage`, and `views`.  Example:    * `metric_filters[]=aggregate_startup_time>=1000`  (optional)
 dimension = 'dimension_example' # str | Dimension the specified value belongs to (optional)
 value = 'value_example' # str | Value to show all available metrics for (optional)
 
     try:
         # List all metric values
-        api_response = api_instance.list_all_metric_values(timeframe=timeframe, filters=filters, dimension=dimension, value=value)
+        api_response = api_instance.list_all_metric_values(timeframe=timeframe, filters=filters, metric_filters=metric_filters, dimension=dimension, value=value)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling MetricsApi->list_all_metric_values: %s\n" % e)
@@ -229,6 +234,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **timeframe** | [**list[str]**](str.md)| Timeframe window to limit results by. Must be provided as an array query string parameter (e.g. timeframe[]&#x3D;).  Accepted formats are...    * array of epoch timestamps e.g. &#x60;timeframe[]&#x3D;1498867200&amp;timeframe[]&#x3D;1498953600&#x60;   * duration string e.g. &#x60;timeframe[]&#x3D;24:hours or timeframe[]&#x3D;7:days&#x60;  | [optional] 
  **filters** | [**list[str]**](str.md)| Limit the results to rows that match conditions from provided key:value pairs. Must be provided as an array query string parameter.  To exclude rows that match a certain condition, prepend a &#x60;!&#x60; character to the dimension.  Possible filter names are the same as returned by the List Filters endpoint.  Example:    * &#x60;filters[]&#x3D;operating_system:windows&amp;filters[]&#x3D;!country:US&#x60;  | [optional] 
+ **metric_filters** | [**list[str]**](str.md)| Limit the results to rows that match inequality conditions from provided metric comparison clauses. Must be provided as an array query string parameter.  Possible filterable metrics are the same as the set of metric ids, with the exceptions of &#x60;exits_before_video_start&#x60;, &#x60;unique_viewers&#x60;, &#x60;video_startup_failure_percentage&#x60;, and &#x60;views&#x60;.  Example:    * &#x60;metric_filters[]&#x3D;aggregate_startup_time&gt;&#x3D;1000&#x60;  | [optional] 
  **dimension** | **str**| Dimension the specified value belongs to | [optional] 
  **value** | **str**| Value to show all available metrics for | [optional] 
 
@@ -253,7 +259,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_breakdown_values**
-> ListBreakdownValuesResponse list_breakdown_values(metric_id, group_by=group_by, measurement=measurement, filters=filters, limit=limit, page=page, order_by=order_by, order_direction=order_direction, timeframe=timeframe)
+> ListBreakdownValuesResponse list_breakdown_values(metric_id, group_by=group_by, measurement=measurement, filters=filters, metric_filters=metric_filters, limit=limit, page=page, order_by=order_by, order_direction=order_direction, timeframe=timeframe)
 
 List breakdown values
 
@@ -293,6 +299,7 @@ with mux_python.ApiClient(configuration) as api_client:
 group_by = 'group_by_example' # str | Breakdown value to group the results by (optional)
 measurement = 'measurement_example' # str | Measurement for the provided metric. If omitted, the default for the metric will be used. (optional)
 filters = ['filters_example'] # list[str] | Limit the results to rows that match conditions from provided key:value pairs. Must be provided as an array query string parameter.  To exclude rows that match a certain condition, prepend a `!` character to the dimension.  Possible filter names are the same as returned by the List Filters endpoint.  Example:    * `filters[]=operating_system:windows&filters[]=!country:US`  (optional)
+metric_filters = ['metric_filters_example'] # list[str] | Limit the results to rows that match inequality conditions from provided metric comparison clauses. Must be provided as an array query string parameter.  Possible filterable metrics are the same as the set of metric ids, with the exceptions of `exits_before_video_start`, `unique_viewers`, `video_startup_failure_percentage`, and `views`.  Example:    * `metric_filters[]=aggregate_startup_time>=1000`  (optional)
 limit = 25 # int | Number of items to include in the response (optional) (default to 25)
 page = 1 # int | Offset by this many pages, of the size of `limit` (optional) (default to 1)
 order_by = 'order_by_example' # str | Value to order the results by (optional)
@@ -301,7 +308,7 @@ timeframe = ['timeframe_example'] # list[str] | Timeframe window to limit result
 
     try:
         # List breakdown values
-        api_response = api_instance.list_breakdown_values(metric_id, group_by=group_by, measurement=measurement, filters=filters, limit=limit, page=page, order_by=order_by, order_direction=order_direction, timeframe=timeframe)
+        api_response = api_instance.list_breakdown_values(metric_id, group_by=group_by, measurement=measurement, filters=filters, metric_filters=metric_filters, limit=limit, page=page, order_by=order_by, order_direction=order_direction, timeframe=timeframe)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling MetricsApi->list_breakdown_values: %s\n" % e)
@@ -315,6 +322,7 @@ Name | Type | Description  | Notes
  **group_by** | **str**| Breakdown value to group the results by | [optional] 
  **measurement** | **str**| Measurement for the provided metric. If omitted, the default for the metric will be used. | [optional] 
  **filters** | [**list[str]**](str.md)| Limit the results to rows that match conditions from provided key:value pairs. Must be provided as an array query string parameter.  To exclude rows that match a certain condition, prepend a &#x60;!&#x60; character to the dimension.  Possible filter names are the same as returned by the List Filters endpoint.  Example:    * &#x60;filters[]&#x3D;operating_system:windows&amp;filters[]&#x3D;!country:US&#x60;  | [optional] 
+ **metric_filters** | [**list[str]**](str.md)| Limit the results to rows that match inequality conditions from provided metric comparison clauses. Must be provided as an array query string parameter.  Possible filterable metrics are the same as the set of metric ids, with the exceptions of &#x60;exits_before_video_start&#x60;, &#x60;unique_viewers&#x60;, &#x60;video_startup_failure_percentage&#x60;, and &#x60;views&#x60;.  Example:    * &#x60;metric_filters[]&#x3D;aggregate_startup_time&gt;&#x3D;1000&#x60;  | [optional] 
  **limit** | **int**| Number of items to include in the response | [optional] [default to 25]
  **page** | **int**| Offset by this many pages, of the size of &#x60;limit&#x60; | [optional] [default to 1]
  **order_by** | **str**| Value to order the results by | [optional] 
@@ -342,7 +350,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_insights**
-> ListInsightsResponse list_insights(metric_id, measurement=measurement, order_direction=order_direction, timeframe=timeframe)
+> ListInsightsResponse list_insights(metric_id, measurement=measurement, order_direction=order_direction, timeframe=timeframe, filters=filters, metric_filters=metric_filters)
 
 List Insights
 
@@ -382,10 +390,12 @@ with mux_python.ApiClient(configuration) as api_client:
 measurement = 'measurement_example' # str | Measurement for the provided metric. If omitted, the default for the metric will be used. (optional)
 order_direction = 'order_direction_example' # str | Sort order. (optional)
 timeframe = ['timeframe_example'] # list[str] | Timeframe window to limit results by. Must be provided as an array query string parameter (e.g. timeframe[]=).  Accepted formats are...    * array of epoch timestamps e.g. `timeframe[]=1498867200&timeframe[]=1498953600`   * duration string e.g. `timeframe[]=24:hours or timeframe[]=7:days`  (optional)
+filters = ['filters_example'] # list[str] | Limit the results to rows that match conditions from provided key:value pairs. Must be provided as an array query string parameter.  To exclude rows that match a certain condition, prepend a `!` character to the dimension.  Possible filter names are the same as returned by the List Filters endpoint.  Example:    * `filters[]=operating_system:windows&filters[]=!country:US`  (optional)
+metric_filters = ['metric_filters_example'] # list[str] | Limit the results to rows that match inequality conditions from provided metric comparison clauses. Must be provided as an array query string parameter.  Possible filterable metrics are the same as the set of metric ids, with the exceptions of `exits_before_video_start`, `unique_viewers`, `video_startup_failure_percentage`, and `views`.  Example:    * `metric_filters[]=aggregate_startup_time>=1000`  (optional)
 
     try:
         # List Insights
-        api_response = api_instance.list_insights(metric_id, measurement=measurement, order_direction=order_direction, timeframe=timeframe)
+        api_response = api_instance.list_insights(metric_id, measurement=measurement, order_direction=order_direction, timeframe=timeframe, filters=filters, metric_filters=metric_filters)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling MetricsApi->list_insights: %s\n" % e)
@@ -399,6 +409,8 @@ Name | Type | Description  | Notes
  **measurement** | **str**| Measurement for the provided metric. If omitted, the default for the metric will be used. | [optional] 
  **order_direction** | **str**| Sort order. | [optional] 
  **timeframe** | [**list[str]**](str.md)| Timeframe window to limit results by. Must be provided as an array query string parameter (e.g. timeframe[]&#x3D;).  Accepted formats are...    * array of epoch timestamps e.g. &#x60;timeframe[]&#x3D;1498867200&amp;timeframe[]&#x3D;1498953600&#x60;   * duration string e.g. &#x60;timeframe[]&#x3D;24:hours or timeframe[]&#x3D;7:days&#x60;  | [optional] 
+ **filters** | [**list[str]**](str.md)| Limit the results to rows that match conditions from provided key:value pairs. Must be provided as an array query string parameter.  To exclude rows that match a certain condition, prepend a &#x60;!&#x60; character to the dimension.  Possible filter names are the same as returned by the List Filters endpoint.  Example:    * &#x60;filters[]&#x3D;operating_system:windows&amp;filters[]&#x3D;!country:US&#x60;  | [optional] 
+ **metric_filters** | [**list[str]**](str.md)| Limit the results to rows that match inequality conditions from provided metric comparison clauses. Must be provided as an array query string parameter.  Possible filterable metrics are the same as the set of metric ids, with the exceptions of &#x60;exits_before_video_start&#x60;, &#x60;unique_viewers&#x60;, &#x60;video_startup_failure_percentage&#x60;, and &#x60;views&#x60;.  Example:    * &#x60;metric_filters[]&#x3D;aggregate_startup_time&gt;&#x3D;1000&#x60;  | [optional] 
 
 ### Return type
 

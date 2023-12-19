@@ -51,7 +51,8 @@ class Track(object):
         'name': 'str',
         'closed_captions': 'bool',
         'passthrough': 'str',
-        'status': 'str'
+        'status': 'str',
+        'primary': 'bool'
     }
 
     attribute_map = {
@@ -69,10 +70,11 @@ class Track(object):
         'name': 'name',
         'closed_captions': 'closed_captions',
         'passthrough': 'passthrough',
-        'status': 'status'
+        'status': 'status',
+        'primary': 'primary'
     }
 
-    def __init__(self, id=None, type=None, duration=None, max_width=None, max_height=None, max_frame_rate=None, max_channels=None, max_channel_layout=None, text_type=None, text_source=None, language_code=None, name=None, closed_captions=None, passthrough=None, status=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, id=None, type=None, duration=None, max_width=None, max_height=None, max_frame_rate=None, max_channels=None, max_channel_layout=None, text_type=None, text_source=None, language_code=None, name=None, closed_captions=None, passthrough=None, status=None, primary=None, local_vars_configuration=None):  # noqa: E501
         """Track - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
@@ -93,6 +95,7 @@ class Track(object):
         self._closed_captions = None
         self._passthrough = None
         self._status = None
+        self._primary = None
         self.discriminator = None
 
         if id is not None:
@@ -125,6 +128,8 @@ class Track(object):
             self.passthrough = passthrough
         if status is not None:
             self.status = status
+        if primary is not None:
+            self.primary = primary
 
     @property
     def id(self):
@@ -494,6 +499,29 @@ class Track(object):
             )
 
         self._status = status
+
+    @property
+    def primary(self):
+        """Gets the primary of this Track.  # noqa: E501
+
+        For an audio track, indicates that this is the primary audio track, ingested from the main input for this asset. The primary audio track cannot be deleted.  # noqa: E501
+
+        :return: The primary of this Track.  # noqa: E501
+        :rtype: bool
+        """
+        return self._primary
+
+    @primary.setter
+    def primary(self, primary):
+        """Sets the primary of this Track.
+
+        For an audio track, indicates that this is the primary audio track, ingested from the main input for this asset. The primary audio track cannot be deleted.  # noqa: E501
+
+        :param primary: The primary of this Track.  # noqa: E501
+        :type primary: bool
+        """
+
+        self._primary = primary
 
     def to_dict(self, serialize=False):
         """Returns the model properties as a dict"""

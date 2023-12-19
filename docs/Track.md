@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **closed_captions** | **bool** | Indicates the track provides Subtitles for the Deaf or Hard-of-hearing (SDH). This parameter is only set tracks where &#x60;type&#x60; is &#x60;text&#x60; and &#x60;text_type&#x60; is &#x60;subtitles&#x60;. | [optional]
 **passthrough** | **str** | Arbitrary user-supplied metadata set for the track either when creating the asset or track. This parameter is only set for &#x60;text&#x60; type tracks. Max 255 characters. | [optional]
 **status** | **str** | The status of the track. This parameter is only set for &#x60;text&#x60; type tracks. | [optional]
+**primary** | **bool** | For an audio track, indicates that this is the primary audio track, ingested from the main input for this asset. The primary audio track cannot be deleted. | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

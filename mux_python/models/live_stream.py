@@ -57,7 +57,8 @@ class LiveStream(object):
         'simulcast_targets': 'list[SimulcastTarget]',
         'latency_mode': 'str',
         'test': 'bool',
-        'max_continuous_duration': 'int'
+        'max_continuous_duration': 'int',
+        'srt_passphrase': 'str'
     }
 
     attribute_map = {
@@ -81,10 +82,11 @@ class LiveStream(object):
         'simulcast_targets': 'simulcast_targets',
         'latency_mode': 'latency_mode',
         'test': 'test',
-        'max_continuous_duration': 'max_continuous_duration'
+        'max_continuous_duration': 'max_continuous_duration',
+        'srt_passphrase': 'srt_passphrase'
     }
 
-    def __init__(self, id=None, created_at=None, stream_key=None, active_asset_id=None, recent_asset_ids=None, status=None, playback_ids=None, new_asset_settings=None, passthrough=None, audio_only=None, embedded_subtitles=None, generated_subtitles=None, reconnect_window=60, use_slate_for_standard_latency=False, reconnect_slate_url=None, reduced_latency=None, low_latency=None, simulcast_targets=None, latency_mode=None, test=None, max_continuous_duration=43200, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, id=None, created_at=None, stream_key=None, active_asset_id=None, recent_asset_ids=None, status=None, playback_ids=None, new_asset_settings=None, passthrough=None, audio_only=None, embedded_subtitles=None, generated_subtitles=None, reconnect_window=60, use_slate_for_standard_latency=False, reconnect_slate_url=None, reduced_latency=None, low_latency=None, simulcast_targets=None, latency_mode=None, test=None, max_continuous_duration=43200, srt_passphrase=None, local_vars_configuration=None):  # noqa: E501
         """LiveStream - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
@@ -111,6 +113,7 @@ class LiveStream(object):
         self._latency_mode = None
         self._test = None
         self._max_continuous_duration = None
+        self._srt_passphrase = None
         self.discriminator = None
 
         if id is not None:
@@ -155,6 +158,8 @@ class LiveStream(object):
             self.test = test
         if max_continuous_duration is not None:
             self.max_continuous_duration = max_continuous_duration
+        if srt_passphrase is not None:
+            self.srt_passphrase = srt_passphrase
 
     @property
     def id(self):
@@ -652,6 +657,29 @@ class LiveStream(object):
             raise ValueError("Invalid value for `max_continuous_duration`, must be a value greater than or equal to `60`")  # noqa: E501
 
         self._max_continuous_duration = max_continuous_duration
+
+    @property
+    def srt_passphrase(self):
+        """Gets the srt_passphrase of this LiveStream.  # noqa: E501
+
+        Unique key used for encrypting a stream to a Mux SRT endpoint.  # noqa: E501
+
+        :return: The srt_passphrase of this LiveStream.  # noqa: E501
+        :rtype: str
+        """
+        return self._srt_passphrase
+
+    @srt_passphrase.setter
+    def srt_passphrase(self, srt_passphrase):
+        """Sets the srt_passphrase of this LiveStream.
+
+        Unique key used for encrypting a stream to a Mux SRT endpoint.  # noqa: E501
+
+        :param srt_passphrase: The srt_passphrase of this LiveStream.  # noqa: E501
+        :type srt_passphrase: str
+        """
+
+        self._srt_passphrase = srt_passphrase
 
     def to_dict(self, serialize=False):
         """Returns the model properties as a dict"""

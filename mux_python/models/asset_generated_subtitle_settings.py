@@ -132,7 +132,7 @@ class AssetGeneratedSubtitleSettings(object):
         :param language_code: The language_code of this AssetGeneratedSubtitleSettings.  # noqa: E501
         :type language_code: str
         """
-        allowed_values = ["en", "en-US"]  # noqa: E501
+        allowed_values = ["en", "es", "it", "pt", "de", "fr", "pl", "ru", "nl", "ca", "tr", "sv", "uk", "no", "fi", "sk", "el", "cs", "hr", "da", "ro", "bg"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and language_code not in allowed_values:  # noqa: E501
             raise ValueError(
                 "Invalid value for `language_code` ({0}), must be one of {1}"  # noqa: E501
