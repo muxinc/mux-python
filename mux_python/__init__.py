@@ -15,7 +15,7 @@
 
 from __future__ import absolute_import
 
-__version__ = "3.12.0"
+__version__ = "3.13.0"
 
 # import apis into sdk package
 from mux_python.api.assets_api import AssetsApi

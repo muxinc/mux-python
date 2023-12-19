@@ -65,7 +65,7 @@ class ReferrerDomainRestriction(object):
     def allowed_domains(self):
         """Gets the allowed_domains of this ReferrerDomainRestriction.  # noqa: E501
 
-        List of domains allowed to play videos. Possible values are   * `[]` Empty Array indicates deny video playback requests for all domains   * `[\"*\"]` A Single Wildcard `*` entry means allow video playback requests from any domain   *  `[\"*.example.com\", \"foo.com\"]` A list of up to 10 domains or valid dns-style wildcards   # noqa: E501
+        List of domains allowed to play videos. Possible values are   * `[]` Empty Array indicates deny video playback requests for all domains   * `[\"*\"]` A Single Wildcard `*` entry means allow video playback requests from any domain   * `[\"*.example.com\", \"foo.com\"]` A list of up to 10 domains or valid dns-style wildcards   # noqa: E501
 
         :return: The allowed_domains of this ReferrerDomainRestriction.  # noqa: E501
         :rtype: list[str]
@@ -76,7 +76,7 @@ class ReferrerDomainRestriction(object):
     def allowed_domains(self, allowed_domains):
         """Sets the allowed_domains of this ReferrerDomainRestriction.
 
-        List of domains allowed to play videos. Possible values are   * `[]` Empty Array indicates deny video playback requests for all domains   * `[\"*\"]` A Single Wildcard `*` entry means allow video playback requests from any domain   *  `[\"*.example.com\", \"foo.com\"]` A list of up to 10 domains or valid dns-style wildcards   # noqa: E501
+        List of domains allowed to play videos. Possible values are   * `[]` Empty Array indicates deny video playback requests for all domains   * `[\"*\"]` A Single Wildcard `*` entry means allow video playback requests from any domain   * `[\"*.example.com\", \"foo.com\"]` A list of up to 10 domains or valid dns-style wildcards   # noqa: E501
 
         :param allowed_domains: The allowed_domains of this ReferrerDomainRestriction.  # noqa: E501
         :type allowed_domains: list[str]

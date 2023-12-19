@@ -156,7 +156,7 @@ class VideoView(object):
         'view_session_id': 'str',
         'viewer_connection_type': 'str',
         'viewer_device_model': 'str',
-        'weighted_average_bitrate': 'int',
+        'weighted_average_bitrate': 'float',
         'custom_1': 'str',
         'custom_2': 'str',
         'custom_3': 'str',
@@ -178,6 +178,17 @@ class VideoView(object):
         'view_dropped_frame_count': 'int',
         'view_has_ad': 'bool',
         'video_startup_failure': 'bool',
+        'ad_attempt_count': 'int',
+        'ad_break_count': 'int',
+        'ad_break_error_count': 'int',
+        'ad_break_error_percentage': 'str',
+        'ad_error_count': 'int',
+        'ad_error_percentage': 'str',
+        'ad_impression_count': 'int',
+        'ad_startup_error_count': 'int',
+        'ad_startup_error_percentage': 'str',
+        'ad_exit_before_start_count': 'int',
+        'ad_exit_before_start_percentage': 'str',
         'long_resume': 'bool',
         'long_rebuffering': 'bool'
     }
@@ -324,11 +335,22 @@ class VideoView(object):
         'view_dropped_frame_count': 'view_dropped_frame_count',
         'view_has_ad': 'view_has_ad',
         'video_startup_failure': 'video_startup_failure',
+        'ad_attempt_count': 'ad_attempt_count',
+        'ad_break_count': 'ad_break_count',
+        'ad_break_error_count': 'ad_break_error_count',
+        'ad_break_error_percentage': 'ad_break_error_percentage',
+        'ad_error_count': 'ad_error_count',
+        'ad_error_percentage': 'ad_error_percentage',
+        'ad_impression_count': 'ad_impression_count',
+        'ad_startup_error_count': 'ad_startup_error_count',
+        'ad_startup_error_percentage': 'ad_startup_error_percentage',
+        'ad_exit_before_start_count': 'ad_exit_before_start_count',
+        'ad_exit_before_start_percentage': 'ad_exit_before_start_percentage',
         'long_resume': 'long_resume',
         'long_rebuffering': 'long_rebuffering'
     }
 
-    def __init__(self, view_total_upscaling=None, preroll_ad_asset_hostname=None, player_source_domain=None, region=None, viewer_user_agent=None, preroll_requested=None, page_type=None, startup_score=None, view_seek_duration=None, country_name=None, player_source_height=None, longitude=None, buffering_count=None, video_duration=None, player_source_type=None, city=None, view_id=None, platform_description=None, video_startup_preroll_request_time=None, viewer_device_name=None, video_series=None, viewer_application_name=None, updated_at=None, view_total_content_playback_time=None, cdn=None, player_instance_id=None, video_language=None, player_source_width=None, player_error_message=None, player_mux_plugin_version=None, watched=None, playback_score=None, page_url=None, metro=None, view_max_request_latency=None, requests_for_first_preroll=None, view_total_downscaling=None, latitude=None, player_source_host_name=None, inserted_at=None, view_end=None, mux_embed_version=None, player_language=None, page_load_time=None, viewer_device_category=None, video_startup_preroll_load_time=None, player_version=None, watch_time=None, player_source_stream_type=None, preroll_ad_tag_hostname=None, viewer_device_manufacturer=None, rebuffering_score=None, experiment_name=None, viewer_os_version=None, player_preload=None, buffering_duration=None, player_view_count=None, player_software=None, player_load_time=None, platform_summary=None, video_encoding_variant=None, player_width=None, view_seek_count=None, viewer_experience_score=None, view_error_id=None, video_variant_name=None, preroll_played=None, viewer_application_engine=None, viewer_os_architecture=None, player_error_code=None, buffering_rate=None, events=None, player_name=None, view_start=None, view_average_request_throughput=None, video_producer=None, error_type_id=None, mux_viewer_id=None, video_id=None, continent_code=None, session_id=None, exit_before_video_start=None, video_content_type=None, viewer_os_family=None, player_poster=None, view_average_request_latency=None, video_variant_id=None, player_source_duration=None, player_source_url=None, mux_api_version=None, video_title=None, id=None, short_time=None, rebuffer_percentage=None, time_to_first_frame=None, viewer_user_id=None, video_stream_type=None, player_startup_time=None, viewer_application_version=None, view_max_downscale_percentage=None, view_max_upscale_percentage=None, country_code=None, used_fullscreen=None, isp=None, property_id=None, player_autoplay=None, player_height=None, asn=None, asn_name=None, quality_score=None, player_software_version=None, player_mux_plugin_name=None, sub_property_id=None, player_remote_played=None, view_max_playhead_position=None, view_playing_time=None, view_session_id=None, viewer_connection_type=None, viewer_device_model=None, weighted_average_bitrate=None, custom_1=None, custom_2=None, custom_3=None, custom_4=None, custom_5=None, custom_6=None, custom_7=None, custom_8=None, custom_9=None, custom_10=None, live_stream_latency=None, asset_id=None, environment_id=None, live_stream_id=None, mux_embed=None, playback_id=None, player_error_context=None, view_drm_type=None, view_dropped_frame_count=None, view_has_ad=None, video_startup_failure=None, long_resume=None, long_rebuffering=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, view_total_upscaling=None, preroll_ad_asset_hostname=None, player_source_domain=None, region=None, viewer_user_agent=None, preroll_requested=None, page_type=None, startup_score=None, view_seek_duration=None, country_name=None, player_source_height=None, longitude=None, buffering_count=None, video_duration=None, player_source_type=None, city=None, view_id=None, platform_description=None, video_startup_preroll_request_time=None, viewer_device_name=None, video_series=None, viewer_application_name=None, updated_at=None, view_total_content_playback_time=None, cdn=None, player_instance_id=None, video_language=None, player_source_width=None, player_error_message=None, player_mux_plugin_version=None, watched=None, playback_score=None, page_url=None, metro=None, view_max_request_latency=None, requests_for_first_preroll=None, view_total_downscaling=None, latitude=None, player_source_host_name=None, inserted_at=None, view_end=None, mux_embed_version=None, player_language=None, page_load_time=None, viewer_device_category=None, video_startup_preroll_load_time=None, player_version=None, watch_time=None, player_source_stream_type=None, preroll_ad_tag_hostname=None, viewer_device_manufacturer=None, rebuffering_score=None, experiment_name=None, viewer_os_version=None, player_preload=None, buffering_duration=None, player_view_count=None, player_software=None, player_load_time=None, platform_summary=None, video_encoding_variant=None, player_width=None, view_seek_count=None, viewer_experience_score=None, view_error_id=None, video_variant_name=None, preroll_played=None, viewer_application_engine=None, viewer_os_architecture=None, player_error_code=None, buffering_rate=None, events=None, player_name=None, view_start=None, view_average_request_throughput=None, video_producer=None, error_type_id=None, mux_viewer_id=None, video_id=None, continent_code=None, session_id=None, exit_before_video_start=None, video_content_type=None, viewer_os_family=None, player_poster=None, view_average_request_latency=None, video_variant_id=None, player_source_duration=None, player_source_url=None, mux_api_version=None, video_title=None, id=None, short_time=None, rebuffer_percentage=None, time_to_first_frame=None, viewer_user_id=None, video_stream_type=None, player_startup_time=None, viewer_application_version=None, view_max_downscale_percentage=None, view_max_upscale_percentage=None, country_code=None, used_fullscreen=None, isp=None, property_id=None, player_autoplay=None, player_height=None, asn=None, asn_name=None, quality_score=None, player_software_version=None, player_mux_plugin_name=None, sub_property_id=None, player_remote_played=None, view_max_playhead_position=None, view_playing_time=None, view_session_id=None, viewer_connection_type=None, viewer_device_model=None, weighted_average_bitrate=None, custom_1=None, custom_2=None, custom_3=None, custom_4=None, custom_5=None, custom_6=None, custom_7=None, custom_8=None, custom_9=None, custom_10=None, live_stream_latency=None, asset_id=None, environment_id=None, live_stream_id=None, mux_embed=None, playback_id=None, player_error_context=None, view_drm_type=None, view_dropped_frame_count=None, view_has_ad=None, video_startup_failure=None, ad_attempt_count=None, ad_break_count=None, ad_break_error_count=None, ad_break_error_percentage=None, ad_error_count=None, ad_error_percentage=None, ad_impression_count=None, ad_startup_error_count=None, ad_startup_error_percentage=None, ad_exit_before_start_count=None, ad_exit_before_start_percentage=None, long_resume=None, long_rebuffering=None, local_vars_configuration=None):  # noqa: E501
         """VideoView - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
@@ -475,6 +497,17 @@ class VideoView(object):
         self._view_dropped_frame_count = None
         self._view_has_ad = None
         self._video_startup_failure = None
+        self._ad_attempt_count = None
+        self._ad_break_count = None
+        self._ad_break_error_count = None
+        self._ad_break_error_percentage = None
+        self._ad_error_count = None
+        self._ad_error_percentage = None
+        self._ad_impression_count = None
+        self._ad_startup_error_count = None
+        self._ad_startup_error_percentage = None
+        self._ad_exit_before_start_count = None
+        self._ad_exit_before_start_percentage = None
         self._long_resume = None
         self._long_rebuffering = None
         self.discriminator = None
@@ -640,6 +673,17 @@ class VideoView(object):
             self.view_has_ad = view_has_ad
         if video_startup_failure is not None:
             self.video_startup_failure = video_startup_failure
+        self.ad_attempt_count = ad_attempt_count
+        self.ad_break_count = ad_break_count
+        self.ad_break_error_count = ad_break_error_count
+        self.ad_break_error_percentage = ad_break_error_percentage
+        self.ad_error_count = ad_error_count
+        self.ad_error_percentage = ad_error_percentage
+        self.ad_impression_count = ad_impression_count
+        self.ad_startup_error_count = ad_startup_error_count
+        self.ad_startup_error_percentage = ad_startup_error_percentage
+        self.ad_exit_before_start_count = ad_exit_before_start_count
+        self.ad_exit_before_start_percentage = ad_exit_before_start_percentage
         if long_resume is not None:
             self.long_resume = long_resume
         if long_rebuffering is not None:
@@ -3150,7 +3194,7 @@ class VideoView(object):
 
 
         :return: The weighted_average_bitrate of this VideoView.  # noqa: E501
-        :rtype: int
+        :rtype: float
         """
         return self._weighted_average_bitrate
 
@@ -3160,7 +3204,7 @@ class VideoView(object):
 
 
         :param weighted_average_bitrate: The weighted_average_bitrate of this VideoView.  # noqa: E501
-        :type weighted_average_bitrate: int
+        :type weighted_average_bitrate: float
         """
 
         self._weighted_average_bitrate = weighted_average_bitrate
@@ -3605,6 +3649,237 @@ class VideoView(object):
         """
 
         self._video_startup_failure = video_startup_failure
+
+    @property
+    def ad_attempt_count(self):
+        """Gets the ad_attempt_count of this VideoView.  # noqa: E501
+
+
+        :return: The ad_attempt_count of this VideoView.  # noqa: E501
+        :rtype: int
+        """
+        return self._ad_attempt_count
+
+    @ad_attempt_count.setter
+    def ad_attempt_count(self, ad_attempt_count):
+        """Sets the ad_attempt_count of this VideoView.
+
+
+        :param ad_attempt_count: The ad_attempt_count of this VideoView.  # noqa: E501
+        :type ad_attempt_count: int
+        """
+
+        self._ad_attempt_count = ad_attempt_count
+
+    @property
+    def ad_break_count(self):
+        """Gets the ad_break_count of this VideoView.  # noqa: E501
+
+
+        :return: The ad_break_count of this VideoView.  # noqa: E501
+        :rtype: int
+        """
+        return self._ad_break_count
+
+    @ad_break_count.setter
+    def ad_break_count(self, ad_break_count):
+        """Sets the ad_break_count of this VideoView.
+
+
+        :param ad_break_count: The ad_break_count of this VideoView.  # noqa: E501
+        :type ad_break_count: int
+        """
+
+        self._ad_break_count = ad_break_count
+
+    @property
+    def ad_break_error_count(self):
+        """Gets the ad_break_error_count of this VideoView.  # noqa: E501
+
+
+        :return: The ad_break_error_count of this VideoView.  # noqa: E501
+        :rtype: int
+        """
+        return self._ad_break_error_count
+
+    @ad_break_error_count.setter
+    def ad_break_error_count(self, ad_break_error_count):
+        """Sets the ad_break_error_count of this VideoView.
+
+
+        :param ad_break_error_count: The ad_break_error_count of this VideoView.  # noqa: E501
+        :type ad_break_error_count: int
+        """
+
+        self._ad_break_error_count = ad_break_error_count
+
+    @property
+    def ad_break_error_percentage(self):
+        """Gets the ad_break_error_percentage of this VideoView.  # noqa: E501
+
+
+        :return: The ad_break_error_percentage of this VideoView.  # noqa: E501
+        :rtype: str
+        """
+        return self._ad_break_error_percentage
+
+    @ad_break_error_percentage.setter
+    def ad_break_error_percentage(self, ad_break_error_percentage):
+        """Sets the ad_break_error_percentage of this VideoView.
+
+
+        :param ad_break_error_percentage: The ad_break_error_percentage of this VideoView.  # noqa: E501
+        :type ad_break_error_percentage: str
+        """
+
+        self._ad_break_error_percentage = ad_break_error_percentage
+
+    @property
+    def ad_error_count(self):
+        """Gets the ad_error_count of this VideoView.  # noqa: E501
+
+
+        :return: The ad_error_count of this VideoView.  # noqa: E501
+        :rtype: int
+        """
+        return self._ad_error_count
+
+    @ad_error_count.setter
+    def ad_error_count(self, ad_error_count):
+        """Sets the ad_error_count of this VideoView.
+
+
+        :param ad_error_count: The ad_error_count of this VideoView.  # noqa: E501
+        :type ad_error_count: int
+        """
+
+        self._ad_error_count = ad_error_count
+
+    @property
+    def ad_error_percentage(self):
+        """Gets the ad_error_percentage of this VideoView.  # noqa: E501
+
+
+        :return: The ad_error_percentage of this VideoView.  # noqa: E501
+        :rtype: str
+        """
+        return self._ad_error_percentage
+
+    @ad_error_percentage.setter
+    def ad_error_percentage(self, ad_error_percentage):
+        """Sets the ad_error_percentage of this VideoView.
+
+
+        :param ad_error_percentage: The ad_error_percentage of this VideoView.  # noqa: E501
+        :type ad_error_percentage: str
+        """
+
+        self._ad_error_percentage = ad_error_percentage
+
+    @property
+    def ad_impression_count(self):
+        """Gets the ad_impression_count of this VideoView.  # noqa: E501
+
+
+        :return: The ad_impression_count of this VideoView.  # noqa: E501
+        :rtype: int
+        """
+        return self._ad_impression_count
+
+    @ad_impression_count.setter
+    def ad_impression_count(self, ad_impression_count):
+        """Sets the ad_impression_count of this VideoView.
+
+
+        :param ad_impression_count: The ad_impression_count of this VideoView.  # noqa: E501
+        :type ad_impression_count: int
+        """
+
+        self._ad_impression_count = ad_impression_count
+
+    @property
+    def ad_startup_error_count(self):
+        """Gets the ad_startup_error_count of this VideoView.  # noqa: E501
+
+
+        :return: The ad_startup_error_count of this VideoView.  # noqa: E501
+        :rtype: int
+        """
+        return self._ad_startup_error_count
+
+    @ad_startup_error_count.setter
+    def ad_startup_error_count(self, ad_startup_error_count):
+        """Sets the ad_startup_error_count of this VideoView.
+
+
+        :param ad_startup_error_count: The ad_startup_error_count of this VideoView.  # noqa: E501
+        :type ad_startup_error_count: int
+        """
+
+        self._ad_startup_error_count = ad_startup_error_count
+
+    @property
+    def ad_startup_error_percentage(self):
+        """Gets the ad_startup_error_percentage of this VideoView.  # noqa: E501
+
+
+        :return: The ad_startup_error_percentage of this VideoView.  # noqa: E501
+        :rtype: str
+        """
+        return self._ad_startup_error_percentage
+
+    @ad_startup_error_percentage.setter
+    def ad_startup_error_percentage(self, ad_startup_error_percentage):
+        """Sets the ad_startup_error_percentage of this VideoView.
+
+
+        :param ad_startup_error_percentage: The ad_startup_error_percentage of this VideoView.  # noqa: E501
+        :type ad_startup_error_percentage: str
+        """
+
+        self._ad_startup_error_percentage = ad_startup_error_percentage
+
+    @property
+    def ad_exit_before_start_count(self):
+        """Gets the ad_exit_before_start_count of this VideoView.  # noqa: E501
+
+
+        :return: The ad_exit_before_start_count of this VideoView.  # noqa: E501
+        :rtype: int
+        """
+        return self._ad_exit_before_start_count
+
+    @ad_exit_before_start_count.setter
+    def ad_exit_before_start_count(self, ad_exit_before_start_count):
+        """Sets the ad_exit_before_start_count of this VideoView.
+
+
+        :param ad_exit_before_start_count: The ad_exit_before_start_count of this VideoView.  # noqa: E501
+        :type ad_exit_before_start_count: int
+        """
+
+        self._ad_exit_before_start_count = ad_exit_before_start_count
+
+    @property
+    def ad_exit_before_start_percentage(self):
+        """Gets the ad_exit_before_start_percentage of this VideoView.  # noqa: E501
+
+
+        :return: The ad_exit_before_start_percentage of this VideoView.  # noqa: E501
+        :rtype: str
+        """
+        return self._ad_exit_before_start_percentage
+
+    @ad_exit_before_start_percentage.setter
+    def ad_exit_before_start_percentage(self, ad_exit_before_start_percentage):
+        """Sets the ad_exit_before_start_percentage of this VideoView.
+
+
+        :param ad_exit_before_start_percentage: The ad_exit_before_start_percentage of this VideoView.  # noqa: E501
+        :type ad_exit_before_start_percentage: str
+        """
+
+        self._ad_exit_before_start_percentage = ad_exit_before_start_percentage
 
     @property
     def long_resume(self):

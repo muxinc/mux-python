@@ -55,6 +55,8 @@ class DimensionsApi(object):
         :type page: int
         :param filters: Limit the results to rows that match conditions from provided key:value pairs. Must be provided as an array query string parameter.  To exclude rows that match a certain condition, prepend a `!` character to the dimension.  Possible filter names are the same as returned by the List Filters endpoint.  Example:    * `filters[]=operating_system:windows&filters[]=!country:US` 
         :type filters: list[str]
+        :param metric_filters: Limit the results to rows that match inequality conditions from provided metric comparison clauses. Must be provided as an array query string parameter.  Possible filterable metrics are the same as the set of metric ids, with the exceptions of `exits_before_video_start`, `unique_viewers`, `video_startup_failure_percentage`, and `views`.  Example:    * `metric_filters[]=aggregate_startup_time>=1000` 
+        :type metric_filters: list[str]
         :param timeframe: Timeframe window to limit results by. Must be provided as an array query string parameter (e.g. timeframe[]=).  Accepted formats are...    * array of epoch timestamps e.g. `timeframe[]=1498867200&timeframe[]=1498953600`   * duration string e.g. `timeframe[]=24:hours or timeframe[]=7:days` 
         :type timeframe: list[str]
         :param async_req: Whether to execute the request asynchronously.
@@ -93,6 +95,8 @@ class DimensionsApi(object):
         :type page: int
         :param filters: Limit the results to rows that match conditions from provided key:value pairs. Must be provided as an array query string parameter.  To exclude rows that match a certain condition, prepend a `!` character to the dimension.  Possible filter names are the same as returned by the List Filters endpoint.  Example:    * `filters[]=operating_system:windows&filters[]=!country:US` 
         :type filters: list[str]
+        :param metric_filters: Limit the results to rows that match inequality conditions from provided metric comparison clauses. Must be provided as an array query string parameter.  Possible filterable metrics are the same as the set of metric ids, with the exceptions of `exits_before_video_start`, `unique_viewers`, `video_startup_failure_percentage`, and `views`.  Example:    * `metric_filters[]=aggregate_startup_time>=1000` 
+        :type metric_filters: list[str]
         :param timeframe: Timeframe window to limit results by. Must be provided as an array query string parameter (e.g. timeframe[]=).  Accepted formats are...    * array of epoch timestamps e.g. `timeframe[]=1498867200&timeframe[]=1498953600`   * duration string e.g. `timeframe[]=24:hours or timeframe[]=7:days` 
         :type timeframe: list[str]
         :param async_req: Whether to execute the request asynchronously.
@@ -125,6 +129,7 @@ class DimensionsApi(object):
             'limit',
             'page',
             'filters',
+            'metric_filters',
             'timeframe'
         ]
         all_params.extend(
@@ -164,6 +169,9 @@ class DimensionsApi(object):
         if 'filters' in local_var_params and local_var_params['filters'] is not None:  # noqa: E501
             query_params.append(('filters[]', local_var_params['filters']))  # noqa: E501
             collection_formats['filters[]'] = 'multi'  # noqa: E501
+        if 'metric_filters' in local_var_params and local_var_params['metric_filters'] is not None:  # noqa: E501
+            query_params.append(('metric_filters[]', local_var_params['metric_filters']))  # noqa: E501
+            collection_formats['metric_filters[]'] = 'multi'  # noqa: E501
         if 'timeframe' in local_var_params and local_var_params['timeframe'] is not None:  # noqa: E501
             query_params.append(('timeframe[]', local_var_params['timeframe']))  # noqa: E501
             collection_formats['timeframe[]'] = 'multi'  # noqa: E501
