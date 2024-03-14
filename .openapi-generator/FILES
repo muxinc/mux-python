@@ -46,6 +46,8 @@ docs/ExportFile.md
 docs/ExportsApi.md
 docs/FilterValue.md
 docs/FiltersApi.md
+docs/GenerateTrackSubtitlesRequest.md
+docs/GenerateTrackSubtitlesResponse.md
 docs/GetAssetInputInfoResponse.md
 docs/GetAssetOrLiveStreamIdResponse.md
 docs/GetAssetOrLiveStreamIdResponseData.md
@@ -240,6 +242,8 @@ mux_python/models/error.py
 mux_python/models/export_date.py
 mux_python/models/export_file.py
 mux_python/models/filter_value.py
+mux_python/models/generate_track_subtitles_request.py
+mux_python/models/generate_track_subtitles_response.py
 mux_python/models/get_asset_input_info_response.py
 mux_python/models/get_asset_or_live_stream_id_response.py
 mux_python/models/get_asset_or_live_stream_id_response_data.py
@@ -363,4 +367,6 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
+test/test_generate_track_subtitles_request.py
+test/test_generate_track_subtitles_response.py
 tox.ini

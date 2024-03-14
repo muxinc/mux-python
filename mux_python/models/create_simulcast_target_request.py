@@ -93,7 +93,7 @@ class CreateSimulcastTargetRequest(object):
     def stream_key(self):
         """Gets the stream_key of this CreateSimulcastTargetRequest.  # noqa: E501
 
-        Stream Key represents a stream identifier on the third party live streaming service to send the parent live stream to.  # noqa: E501
+        Stream Key represents a stream identifier on the third party live streaming service to send the parent live stream to. Only used for RTMP(s) simulcast destinations.  # noqa: E501
 
         :return: The stream_key of this CreateSimulcastTargetRequest.  # noqa: E501
         :rtype: str
@@ -104,7 +104,7 @@ class CreateSimulcastTargetRequest(object):
     def stream_key(self, stream_key):
         """Sets the stream_key of this CreateSimulcastTargetRequest.
 
-        Stream Key represents a stream identifier on the third party live streaming service to send the parent live stream to.  # noqa: E501
+        Stream Key represents a stream identifier on the third party live streaming service to send the parent live stream to. Only used for RTMP(s) simulcast destinations.  # noqa: E501
 
         :param stream_key: The stream_key of this CreateSimulcastTargetRequest.  # noqa: E501
         :type stream_key: str
@@ -116,7 +116,7 @@ class CreateSimulcastTargetRequest(object):
     def url(self):
         """Gets the url of this CreateSimulcastTargetRequest.  # noqa: E501
 
-        RTMP hostname including application name for the third party live streaming service. Example: `rtmp://live.example.com/app`.  # noqa: E501
+        The RTMP(s) or SRT endpoint for a simulcast destination. * For RTMP(s) destinations, this should include the application name for the third party live streaming service, for example: `rtmp://live.example.com/app`. * For SRT destinations, this should be a fully formed SRT connection string, for example: `srt://srt-live.example.com:1234?streamid={stream_key}&passphrase={srt_passphrase}`.  Note: SRT simulcast targets can only be used when an source is connected over SRT.   # noqa: E501
 
         :return: The url of this CreateSimulcastTargetRequest.  # noqa: E501
         :rtype: str
@@ -127,7 +127,7 @@ class CreateSimulcastTargetRequest(object):
     def url(self, url):
         """Sets the url of this CreateSimulcastTargetRequest.
 
-        RTMP hostname including application name for the third party live streaming service. Example: `rtmp://live.example.com/app`.  # noqa: E501
+        The RTMP(s) or SRT endpoint for a simulcast destination. * For RTMP(s) destinations, this should include the application name for the third party live streaming service, for example: `rtmp://live.example.com/app`. * For SRT destinations, this should be a fully formed SRT connection string, for example: `srt://srt-live.example.com:1234?streamid={stream_key}&passphrase={srt_passphrase}`.  Note: SRT simulcast targets can only be used when an source is connected over SRT.   # noqa: E501
 
         :param url: The url of this CreateSimulcastTargetRequest.  # noqa: E501
         :type url: str

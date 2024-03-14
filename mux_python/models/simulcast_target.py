@@ -41,7 +41,8 @@ class SimulcastTarget(object):
         'passthrough': 'str',
         'status': 'str',
         'stream_key': 'str',
-        'url': 'str'
+        'url': 'str',
+        'error_severity': 'str'
     }
 
     attribute_map = {
@@ -49,10 +50,11 @@ class SimulcastTarget(object):
         'passthrough': 'passthrough',
         'status': 'status',
         'stream_key': 'stream_key',
-        'url': 'url'
+        'url': 'url',
+        'error_severity': 'error_severity'
     }
 
-    def __init__(self, id=None, passthrough=None, status=None, stream_key=None, url=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, id=None, passthrough=None, status=None, stream_key=None, url=None, error_severity=None, local_vars_configuration=None):  # noqa: E501
         """SimulcastTarget - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
@@ -63,6 +65,7 @@ class SimulcastTarget(object):
         self._status = None
         self._stream_key = None
         self._url = None
+        self._error_severity = None
         self.discriminator = None
 
         if id is not None:
@@ -75,6 +78,8 @@ class SimulcastTarget(object):
             self.stream_key = stream_key
         if url is not None:
             self.url = url
+        if error_severity is not None:
+            self.error_severity = error_severity
 
     @property
     def id(self):
@@ -126,7 +131,7 @@ class SimulcastTarget(object):
     def status(self):
         """Gets the status of this SimulcastTarget.  # noqa: E501
 
-        The current status of the simulcast target. See Statuses below for detailed description.   * `idle`: Default status. When the parent live stream is in disconnected status, simulcast targets will be idle state.   * `starting`: The simulcast target transitions into this state when the parent live stream transition into connected state.   * `broadcasting`: The simulcast target has successfully connected to the third party live streaming service and is pushing video to that service.   * `errored`: The simulcast target encountered an error either while attempting to connect to the third party live streaming service, or mid-broadcasting. Compared to other errored statuses in the Mux Video API, a simulcast may transition back into the broadcasting state if a connection with the service can be re-established.   # noqa: E501
+        The current status of the simulcast target. See Statuses below for detailed description.   * `idle`: Default status. When the parent live stream is in disconnected status, simulcast targets will be idle state.   * `starting`: The simulcast target transitions into this state when the parent live stream transition into connected state.   * `broadcasting`: The simulcast target has successfully connected to the third party live streaming service and is pushing video to that service.   * `errored`: The simulcast target encountered an error either while attempting to connect to the third party live streaming service, or mid-broadcasting. When a simulcast target has this status it will have an `error_severity` field with more details about the error.   # noqa: E501
 
         :return: The status of this SimulcastTarget.  # noqa: E501
         :rtype: str
@@ -137,7 +142,7 @@ class SimulcastTarget(object):
     def status(self, status):
         """Sets the status of this SimulcastTarget.
 
-        The current status of the simulcast target. See Statuses below for detailed description.   * `idle`: Default status. When the parent live stream is in disconnected status, simulcast targets will be idle state.   * `starting`: The simulcast target transitions into this state when the parent live stream transition into connected state.   * `broadcasting`: The simulcast target has successfully connected to the third party live streaming service and is pushing video to that service.   * `errored`: The simulcast target encountered an error either while attempting to connect to the third party live streaming service, or mid-broadcasting. Compared to other errored statuses in the Mux Video API, a simulcast may transition back into the broadcasting state if a connection with the service can be re-established.   # noqa: E501
+        The current status of the simulcast target. See Statuses below for detailed description.   * `idle`: Default status. When the parent live stream is in disconnected status, simulcast targets will be idle state.   * `starting`: The simulcast target transitions into this state when the parent live stream transition into connected state.   * `broadcasting`: The simulcast target has successfully connected to the third party live streaming service and is pushing video to that service.   * `errored`: The simulcast target encountered an error either while attempting to connect to the third party live streaming service, or mid-broadcasting. When a simulcast target has this status it will have an `error_severity` field with more details about the error.   # noqa: E501
 
         :param status: The status of this SimulcastTarget.  # noqa: E501
         :type status: str
@@ -155,7 +160,7 @@ class SimulcastTarget(object):
     def stream_key(self):
         """Gets the stream_key of this SimulcastTarget.  # noqa: E501
 
-        Stream Key represents an stream identifier for the third party live streaming service to simulcast the parent live stream too.  # noqa: E501
+        Stream Key represents a stream identifier on the third party live streaming service to send the parent live stream to. Only used for RTMP(s) simulcast destinations.  # noqa: E501
 
         :return: The stream_key of this SimulcastTarget.  # noqa: E501
         :rtype: str
@@ -166,7 +171,7 @@ class SimulcastTarget(object):
     def stream_key(self, stream_key):
         """Sets the stream_key of this SimulcastTarget.
 
-        Stream Key represents an stream identifier for the third party live streaming service to simulcast the parent live stream too.  # noqa: E501
+        Stream Key represents a stream identifier on the third party live streaming service to send the parent live stream to. Only used for RTMP(s) simulcast destinations.  # noqa: E501
 
         :param stream_key: The stream_key of this SimulcastTarget.  # noqa: E501
         :type stream_key: str
@@ -178,7 +183,7 @@ class SimulcastTarget(object):
     def url(self):
         """Gets the url of this SimulcastTarget.  # noqa: E501
 
-        RTMP hostname including the application name for the third party live streaming service.  # noqa: E501
+        The RTMP(s) or SRT endpoint for a simulcast destination. * For RTMP(s) destinations, this should include the application name for the third party live streaming service, for example: `rtmp://live.example.com/app`. * For SRT destinations, this should be a fully formed SRT connection string, for example: `srt://srt-live.example.com:1234?streamid={stream_key}&passphrase={srt_passphrase}`.  Note: SRT simulcast targets can only be used when an source is connected over SRT.   # noqa: E501
 
         :return: The url of this SimulcastTarget.  # noqa: E501
         :rtype: str
@@ -189,13 +194,42 @@ class SimulcastTarget(object):
     def url(self, url):
         """Sets the url of this SimulcastTarget.
 
-        RTMP hostname including the application name for the third party live streaming service.  # noqa: E501
+        The RTMP(s) or SRT endpoint for a simulcast destination. * For RTMP(s) destinations, this should include the application name for the third party live streaming service, for example: `rtmp://live.example.com/app`. * For SRT destinations, this should be a fully formed SRT connection string, for example: `srt://srt-live.example.com:1234?streamid={stream_key}&passphrase={srt_passphrase}`.  Note: SRT simulcast targets can only be used when an source is connected over SRT.   # noqa: E501
 
         :param url: The url of this SimulcastTarget.  # noqa: E501
         :type url: str
         """
 
         self._url = url
+
+    @property
+    def error_severity(self):
+        """Gets the error_severity of this SimulcastTarget.  # noqa: E501
+
+        The severity of the error encountered by the simulcast target. This field is only set when the simulcast target is in the `errored` status. See the values of severities below and their descriptions.   * `normal`: The simulcast target encountered an error either while attempting to connect to the third party live streaming service, or mid-broadcasting. A simulcast may transition back into the broadcasting state if a connection with the service can be re-established.   * `fatal`: The simulcast target is incompatible with the current input to the parent live stream. No further attempts to this simulcast target will be made for the current live stream asset.   # noqa: E501
+
+        :return: The error_severity of this SimulcastTarget.  # noqa: E501
+        :rtype: str
+        """
+        return self._error_severity
+
+    @error_severity.setter
+    def error_severity(self, error_severity):
+        """Sets the error_severity of this SimulcastTarget.
+
+        The severity of the error encountered by the simulcast target. This field is only set when the simulcast target is in the `errored` status. See the values of severities below and their descriptions.   * `normal`: The simulcast target encountered an error either while attempting to connect to the third party live streaming service, or mid-broadcasting. A simulcast may transition back into the broadcasting state if a connection with the service can be re-established.   * `fatal`: The simulcast target is incompatible with the current input to the parent live stream. No further attempts to this simulcast target will be made for the current live stream asset.   # noqa: E501
+
+        :param error_severity: The error_severity of this SimulcastTarget.  # noqa: E501
+        :type error_severity: str
+        """
+        allowed_values = ["normal", "fatal"]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and error_severity not in allowed_values:  # noqa: E501
+            raise ValueError(
+                "Invalid value for `error_severity` ({0}), must be one of {1}"  # noqa: E501
+                .format(error_severity, allowed_values)
+            )
+
+        self._error_severity = error_severity
 
     def to_dict(self, serialize=False):
         """Returns the model properties as a dict"""

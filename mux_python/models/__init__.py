@@ -53,6 +53,8 @@ from mux_python.models.error import Error
 from mux_python.models.export_date import ExportDate
 from mux_python.models.export_file import ExportFile
 from mux_python.models.filter_value import FilterValue
+from mux_python.models.generate_track_subtitles_request import GenerateTrackSubtitlesRequest
+from mux_python.models.generate_track_subtitles_response import GenerateTrackSubtitlesResponse
 from mux_python.models.get_asset_input_info_response import GetAssetInputInfoResponse
 from mux_python.models.get_asset_or_live_stream_id_response import GetAssetOrLiveStreamIdResponse
 from mux_python.models.get_asset_or_live_stream_id_response_data import GetAssetOrLiveStreamIdResponseData

@@ -38,7 +38,7 @@ class PlaybackIDApi(object):
         self.api_client = api_client
 
     def get_asset_or_livestream_id(self, playback_id, **kwargs):  # noqa: E501
-        """Retrieve an Asset or Live Stream ID  # noqa: E501
+        """Retrieve an asset or live stream ID  # noqa: E501
 
         Retrieves the Identifier of the Asset or Live Stream associated with the Playback ID.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -68,7 +68,7 @@ class PlaybackIDApi(object):
         return self.get_asset_or_livestream_id_with_http_info(playback_id, **kwargs)  # noqa: E501
 
     def get_asset_or_livestream_id_with_http_info(self, playback_id, **kwargs):  # noqa: E501
-        """Retrieve an Asset or Live Stream ID  # noqa: E501
+        """Retrieve an asset or live stream ID  # noqa: E501
 
         Retrieves the Identifier of the Asset or Live Stream associated with the Playback ID.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an

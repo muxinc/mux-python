@@ -58,7 +58,8 @@ class LiveStream(object):
         'latency_mode': 'str',
         'test': 'bool',
         'max_continuous_duration': 'int',
-        'srt_passphrase': 'str'
+        'srt_passphrase': 'str',
+        'active_ingest_protocol': 'str'
     }
 
     attribute_map = {
@@ -83,10 +84,11 @@ class LiveStream(object):
         'latency_mode': 'latency_mode',
         'test': 'test',
         'max_continuous_duration': 'max_continuous_duration',
-        'srt_passphrase': 'srt_passphrase'
+        'srt_passphrase': 'srt_passphrase',
+        'active_ingest_protocol': 'active_ingest_protocol'
     }
 
-    def __init__(self, id=None, created_at=None, stream_key=None, active_asset_id=None, recent_asset_ids=None, status=None, playback_ids=None, new_asset_settings=None, passthrough=None, audio_only=None, embedded_subtitles=None, generated_subtitles=None, reconnect_window=60, use_slate_for_standard_latency=False, reconnect_slate_url=None, reduced_latency=None, low_latency=None, simulcast_targets=None, latency_mode=None, test=None, max_continuous_duration=43200, srt_passphrase=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, id=None, created_at=None, stream_key=None, active_asset_id=None, recent_asset_ids=None, status=None, playback_ids=None, new_asset_settings=None, passthrough=None, audio_only=None, embedded_subtitles=None, generated_subtitles=None, reconnect_window=60, use_slate_for_standard_latency=False, reconnect_slate_url=None, reduced_latency=None, low_latency=None, simulcast_targets=None, latency_mode=None, test=None, max_continuous_duration=43200, srt_passphrase=None, active_ingest_protocol=None, local_vars_configuration=None):  # noqa: E501
         """LiveStream - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
@@ -114,6 +116,7 @@ class LiveStream(object):
         self._test = None
         self._max_continuous_duration = None
         self._srt_passphrase = None
+        self._active_ingest_protocol = None
         self.discriminator = None
 
         if id is not None:
@@ -160,6 +163,8 @@ class LiveStream(object):
             self.max_continuous_duration = max_continuous_duration
         if srt_passphrase is not None:
             self.srt_passphrase = srt_passphrase
+        if active_ingest_protocol is not None:
+            self.active_ingest_protocol = active_ingest_protocol
 
     @property
     def id(self):
@@ -680,6 +685,35 @@ class LiveStream(object):
         """
 
         self._srt_passphrase = srt_passphrase
+
+    @property
+    def active_ingest_protocol(self):
+        """Gets the active_ingest_protocol of this LiveStream.  # noqa: E501
+
+        The protocol used for the active ingest stream. This is only set when the live stream is active.  # noqa: E501
+
+        :return: The active_ingest_protocol of this LiveStream.  # noqa: E501
+        :rtype: str
+        """
+        return self._active_ingest_protocol
+
+    @active_ingest_protocol.setter
+    def active_ingest_protocol(self, active_ingest_protocol):
+        """Sets the active_ingest_protocol of this LiveStream.
+
+        The protocol used for the active ingest stream. This is only set when the live stream is active.  # noqa: E501
+
+        :param active_ingest_protocol: The active_ingest_protocol of this LiveStream.  # noqa: E501
+        :type active_ingest_protocol: str
+        """
+        allowed_values = ["rtmp", "srt"]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and active_ingest_protocol not in allowed_values:  # noqa: E501
+            raise ValueError(
+                "Invalid value for `active_ingest_protocol` ({0}), must be one of {1}"  # noqa: E501
+                .format(active_ingest_protocol, allowed_values)
+            )
+
+        self._active_ingest_protocol = active_ingest_protocol
 
     def to_dict(self, serialize=False):
         """Returns the model properties as a dict"""

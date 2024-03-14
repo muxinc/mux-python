@@ -157,6 +157,9 @@ Name | Type | Description | Notes
 **ad_exit_before_start_percentage** | **str** |  | [optional]
 **long_resume** | **bool** |  | [optional]
 **long_rebuffering** | **bool** |  | [optional]
+**playback_failure_error_type_id** | **int** |  | [optional]
+**playback_business_exception_error_type_id** | **int** |  | [optional]
+**video_startup_business_exception_error_type_id** | **int** |  | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -154,7 +154,7 @@ class InputSettings(object):
     def generated_subtitles(self):
         """Gets the generated_subtitles of this InputSettings.  # noqa: E501
 
-        Generate subtitle tracks using automatic speech recognition using this configuration. This may only be provided for the first input object (the main input file). For direct uploads, this first input should omit the url parameter, as the main input file is provided via the direct upload. This will create subtitles based on the audio track ingested from that main input file. Note that subtitle generation happens after initial ingest, so the generated tracks will be in the `preparing` state when the asset transitions to `ready`.  # noqa: E501
+        Generate subtitle tracks using automatic speech recognition with this configuration. This may only be provided for the first input object (the main input file). For direct uploads, this first input should omit the url parameter, as the main input file is provided via the direct upload. This will create subtitles based on the audio track ingested from that main input file. Note that subtitle generation happens after initial ingest, so the generated tracks will be in the `preparing` state when the asset transitions to `ready`.  # noqa: E501
 
         :return: The generated_subtitles of this InputSettings.  # noqa: E501
         :rtype: list[AssetGeneratedSubtitleSettings]
@@ -165,7 +165,7 @@ class InputSettings(object):
     def generated_subtitles(self, generated_subtitles):
         """Sets the generated_subtitles of this InputSettings.
 
-        Generate subtitle tracks using automatic speech recognition using this configuration. This may only be provided for the first input object (the main input file). For direct uploads, this first input should omit the url parameter, as the main input file is provided via the direct upload. This will create subtitles based on the audio track ingested from that main input file. Note that subtitle generation happens after initial ingest, so the generated tracks will be in the `preparing` state when the asset transitions to `ready`.  # noqa: E501
+        Generate subtitle tracks using automatic speech recognition with this configuration. This may only be provided for the first input object (the main input file). For direct uploads, this first input should omit the url parameter, as the main input file is provided via the direct upload. This will create subtitles based on the audio track ingested from that main input file. Note that subtitle generation happens after initial ingest, so the generated tracks will be in the `preparing` state when the asset transitions to `ready`.  # noqa: E501
 
         :param generated_subtitles: The generated_subtitles of this InputSettings.  # noqa: E501
         :type generated_subtitles: list[AssetGeneratedSubtitleSettings]
