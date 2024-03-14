@@ -39,16 +39,18 @@ class MonitoringBreakdownTimeseriesDatapoint(object):
     openapi_types = {
         'value': 'str',
         'metric_value': 'float',
-        'concurrent_viewers': 'int'
+        'concurrent_viewers': 'int',
+        'starting_up_viewers': 'int'
     }
 
     attribute_map = {
         'value': 'value',
         'metric_value': 'metric_value',
-        'concurrent_viewers': 'concurrent_viewers'
+        'concurrent_viewers': 'concurrent_viewers',
+        'starting_up_viewers': 'starting_up_viewers'
     }
 
-    def __init__(self, value=None, metric_value=None, concurrent_viewers=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, value=None, metric_value=None, concurrent_viewers=None, starting_up_viewers=None, local_vars_configuration=None):  # noqa: E501
         """MonitoringBreakdownTimeseriesDatapoint - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
@@ -57,12 +59,15 @@ class MonitoringBreakdownTimeseriesDatapoint(object):
         self._value = None
         self._metric_value = None
         self._concurrent_viewers = None
+        self._starting_up_viewers = None
         self.discriminator = None
 
         self.value = value
         self.metric_value = metric_value
         if concurrent_viewers is not None:
             self.concurrent_viewers = concurrent_viewers
+        if starting_up_viewers is not None:
+            self.starting_up_viewers = starting_up_viewers
 
     @property
     def value(self):
@@ -126,6 +131,27 @@ class MonitoringBreakdownTimeseriesDatapoint(object):
         """
 
         self._concurrent_viewers = concurrent_viewers
+
+    @property
+    def starting_up_viewers(self):
+        """Gets the starting_up_viewers of this MonitoringBreakdownTimeseriesDatapoint.  # noqa: E501
+
+
+        :return: The starting_up_viewers of this MonitoringBreakdownTimeseriesDatapoint.  # noqa: E501
+        :rtype: int
+        """
+        return self._starting_up_viewers
+
+    @starting_up_viewers.setter
+    def starting_up_viewers(self, starting_up_viewers):
+        """Sets the starting_up_viewers of this MonitoringBreakdownTimeseriesDatapoint.
+
+
+        :param starting_up_viewers: The starting_up_viewers of this MonitoringBreakdownTimeseriesDatapoint.  # noqa: E501
+        :type starting_up_viewers: int
+        """
+
+        self._starting_up_viewers = starting_up_viewers
 
     def to_dict(self, serialize=False):
         """Returns the model properties as a dict"""

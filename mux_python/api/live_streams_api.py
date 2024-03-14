@@ -746,7 +746,7 @@ class LiveStreamsApi(object):
             _request_auth=local_var_params.get('_request_auth'))
 
     def delete_live_stream_simulcast_target(self, live_stream_id, simulcast_target_id, **kwargs):  # noqa: E501
-        """Delete a Live Stream Simulcast Target  # noqa: E501
+        """Delete a live stream simulcast target  # noqa: E501
 
         Delete the simulcast target using the simulcast target ID returned when creating the simulcast target. Simulcast Target can only be deleted when the parent live stream is in idle state.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -778,7 +778,7 @@ class LiveStreamsApi(object):
         return self.delete_live_stream_simulcast_target_with_http_info(live_stream_id, simulcast_target_id, **kwargs)  # noqa: E501
 
     def delete_live_stream_simulcast_target_with_http_info(self, live_stream_id, simulcast_target_id, **kwargs):  # noqa: E501
-        """Delete a Live Stream Simulcast Target  # noqa: E501
+        """Delete a live stream simulcast target  # noqa: E501
 
         Delete the simulcast target using the simulcast target ID returned when creating the simulcast target. Simulcast Target can only be deleted when the parent live stream is in idle state.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1437,7 +1437,7 @@ class LiveStreamsApi(object):
             _request_auth=local_var_params.get('_request_auth'))
 
     def get_live_stream_simulcast_target(self, live_stream_id, simulcast_target_id, **kwargs):  # noqa: E501
-        """Retrieve a Live Stream Simulcast Target  # noqa: E501
+        """Retrieve a live stream simulcast target  # noqa: E501
 
         Retrieves the details of the simulcast target created for the parent live stream. Supply the unique live stream ID and simulcast target ID that was returned in the response of create simulcast target request, and Mux will return the corresponding information.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1469,7 +1469,7 @@ class LiveStreamsApi(object):
         return self.get_live_stream_simulcast_target_with_http_info(live_stream_id, simulcast_target_id, **kwargs)  # noqa: E501
 
     def get_live_stream_simulcast_target_with_http_info(self, live_stream_id, simulcast_target_id, **kwargs):  # noqa: E501
-        """Retrieve a Live Stream Simulcast Target  # noqa: E501
+        """Retrieve a live stream simulcast target  # noqa: E501
 
         Retrieves the details of the simulcast target created for the parent live stream. Supply the unique live stream ID and simulcast target ID that was returned in the response of create simulcast target request, and Mux will return the corresponding information.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an

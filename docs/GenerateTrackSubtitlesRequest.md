@@ -1,12 +1,9 @@
-# MonitoringBreakdownTimeseriesDatapoint
+# GenerateTrackSubtitlesRequest
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**value** | **str** |  | [optional]
-**metric_value** | **float** |  | [optional]
-**concurrent_viewers** | **int** |  | [optional]
-**starting_up_viewers** | **int** |  | [optional]
+**generated_subtitles** | [**list[AssetGeneratedSubtitleSettings]**](AssetGeneratedSubtitleSettings.md) | Generate subtitle tracks using automatic speech recognition with this configuration. | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

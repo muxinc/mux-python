@@ -44,7 +44,8 @@ class Error(object):
         'last_seen': 'str',
         'description': 'str',
         'count': 'int',
-        'code': 'int'
+        'code': 'int',
+        'player_error_code': 'str'
     }
 
     attribute_map = {
@@ -55,10 +56,11 @@ class Error(object):
         'last_seen': 'last_seen',
         'description': 'description',
         'count': 'count',
-        'code': 'code'
+        'code': 'code',
+        'player_error_code': 'player_error_code'
     }
 
-    def __init__(self, id=None, percentage=None, notes=None, message=None, last_seen=None, description=None, count=None, code=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, id=None, percentage=None, notes=None, message=None, last_seen=None, description=None, count=None, code=None, player_error_code=None, local_vars_configuration=None):  # noqa: E501
         """Error - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
@@ -72,6 +74,7 @@ class Error(object):
         self._description = None
         self._count = None
         self._code = None
+        self._player_error_code = None
         self.discriminator = None
 
         if id is not None:
@@ -86,6 +89,7 @@ class Error(object):
         if count is not None:
             self.count = count
         self.code = code
+        self.player_error_code = player_error_code
 
     @property
     def id(self):
@@ -270,6 +274,29 @@ class Error(object):
         """
 
         self._code = code
+
+    @property
+    def player_error_code(self):
+        """Gets the player_error_code of this Error.  # noqa: E501
+
+        The string version of the error code  # noqa: E501
+
+        :return: The player_error_code of this Error.  # noqa: E501
+        :rtype: str
+        """
+        return self._player_error_code
+
+    @player_error_code.setter
+    def player_error_code(self, player_error_code):
+        """Sets the player_error_code of this Error.
+
+        The string version of the error code  # noqa: E501
+
+        :param player_error_code: The player_error_code of this Error.  # noqa: E501
+        :type player_error_code: str
+        """
+
+        self._player_error_code = player_error_code
 
     def to_dict(self, serialize=False):
         """Returns the model properties as a dict"""

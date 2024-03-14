@@ -63,7 +63,8 @@ class Asset(object):
         'static_renditions': 'AssetStaticRenditions',
         'recording_times': 'list[AssetRecordingTimes]',
         'non_standard_input_reasons': 'AssetNonStandardInputReasons',
-        'test': 'bool'
+        'test': 'bool',
+        'ingest_type': 'str'
     }
 
     attribute_map = {
@@ -93,10 +94,11 @@ class Asset(object):
         'static_renditions': 'static_renditions',
         'recording_times': 'recording_times',
         'non_standard_input_reasons': 'non_standard_input_reasons',
-        'test': 'test'
+        'test': 'test',
+        'ingest_type': 'ingest_type'
     }
 
-    def __init__(self, id=None, created_at=None, status=None, duration=None, max_stored_resolution=None, resolution_tier=None, max_resolution_tier=None, encoding_tier=None, max_stored_frame_rate=None, aspect_ratio=None, playback_ids=None, tracks=None, errors=None, per_title_encode=None, upload_id=None, is_live=None, passthrough=None, live_stream_id=None, master=None, master_access='none', mp4_support='none', source_asset_id=None, normalize_audio=False, static_renditions=None, recording_times=None, non_standard_input_reasons=None, test=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, id=None, created_at=None, status=None, duration=None, max_stored_resolution=None, resolution_tier=None, max_resolution_tier=None, encoding_tier=None, max_stored_frame_rate=None, aspect_ratio=None, playback_ids=None, tracks=None, errors=None, per_title_encode=None, upload_id=None, is_live=None, passthrough=None, live_stream_id=None, master=None, master_access='none', mp4_support='none', source_asset_id=None, normalize_audio=False, static_renditions=None, recording_times=None, non_standard_input_reasons=None, test=None, ingest_type=None, local_vars_configuration=None):  # noqa: E501
         """Asset - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
@@ -129,6 +131,7 @@ class Asset(object):
         self._recording_times = None
         self._non_standard_input_reasons = None
         self._test = None
+        self._ingest_type = None
         self.discriminator = None
 
         if id is not None:
@@ -185,6 +188,8 @@ class Asset(object):
             self.non_standard_input_reasons = non_standard_input_reasons
         if test is not None:
             self.test = test
+        if ingest_type is not None:
+            self.ingest_type = ingest_type
 
     @property
     def id(self):
@@ -834,6 +839,35 @@ class Asset(object):
         """
 
         self._test = test
+
+    @property
+    def ingest_type(self):
+        """Gets the ingest_type of this Asset.  # noqa: E501
+
+        The type of ingest used to create the asset.  # noqa: E501
+
+        :return: The ingest_type of this Asset.  # noqa: E501
+        :rtype: str
+        """
+        return self._ingest_type
+
+    @ingest_type.setter
+    def ingest_type(self, ingest_type):
+        """Sets the ingest_type of this Asset.
+
+        The type of ingest used to create the asset.  # noqa: E501
+
+        :param ingest_type: The ingest_type of this Asset.  # noqa: E501
+        :type ingest_type: str
+        """
+        allowed_values = ["on_demand_url", "on_demand_direct_upload", "on_demand_clip", "live_rtmp", "live_srt"]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and ingest_type not in allowed_values:  # noqa: E501
+            raise ValueError(
+                "Invalid value for `ingest_type` ({0}), must be one of {1}"  # noqa: E501
+                .format(ingest_type, allowed_values)
+            )
+
+        self._ingest_type = ingest_type
 
     def to_dict(self, serialize=False):
         """Returns the model properties as a dict"""

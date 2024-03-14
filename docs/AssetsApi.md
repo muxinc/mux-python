@@ -10,11 +10,12 @@ Method | HTTP request | Description
 [**delete_asset**](AssetsApi.md#delete_asset) | **DELETE** /video/v1/assets/{ASSET_ID} | Delete an asset
 [**delete_asset_playback_id**](AssetsApi.md#delete_asset_playback_id) | **DELETE** /video/v1/assets/{ASSET_ID}/playback-ids/{PLAYBACK_ID} | Delete a playback ID
 [**delete_asset_track**](AssetsApi.md#delete_asset_track) | **DELETE** /video/v1/assets/{ASSET_ID}/tracks/{TRACK_ID} | Delete an asset track
+[**generate_asset_track_subtitles**](AssetsApi.md#generate_asset_track_subtitles) | **POST** /video/v1/assets/{ASSET_ID}/tracks/{TRACK_ID}/generate-subtitles | Generate track subtitles
 [**get_asset**](AssetsApi.md#get_asset) | **GET** /video/v1/assets/{ASSET_ID} | Retrieve an asset
 [**get_asset_input_info**](AssetsApi.md#get_asset_input_info) | **GET** /video/v1/assets/{ASSET_ID}/input-info | Retrieve asset input info
 [**get_asset_playback_id**](AssetsApi.md#get_asset_playback_id) | **GET** /video/v1/assets/{ASSET_ID}/playback-ids/{PLAYBACK_ID} | Retrieve a playback ID
 [**list_assets**](AssetsApi.md#list_assets) | **GET** /video/v1/assets | List assets
-[**update_asset**](AssetsApi.md#update_asset) | **PATCH** /video/v1/assets/{ASSET_ID} | Update an Asset
+[**update_asset**](AssetsApi.md#update_asset) | **PATCH** /video/v1/assets/{ASSET_ID} | Update an asset
 [**update_asset_master_access**](AssetsApi.md#update_asset_master_access) | **PUT** /video/v1/assets/{ASSET_ID}/master-access | Update master access
 [**update_asset_mp4_support**](AssetsApi.md#update_asset_mp4_support) | **PUT** /video/v1/assets/{ASSET_ID}/mp4-support | Update MP4 support
 
@@ -56,7 +57,7 @@ configuration = mux_python.Configuration(
 with mux_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = mux_python.AssetsApi(api_client)
-    create_asset_request = {"input":[{"url":"https://muxed.s3.amazonaws.com/leds.mp4"}],"playback_policy":["public"]} # CreateAssetRequest | 
+    create_asset_request = {"input":[{"url":"https://muxed.s3.amazonaws.com/leds.mp4"}],"playback_policy":["public"],"encoding_tier":"baseline"} # CreateAssetRequest | 
 
     try:
         # Create an asset
@@ -462,6 +463,83 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **generate_asset_track_subtitles**
+> GenerateTrackSubtitlesResponse generate_asset_track_subtitles(asset_id, track_id, generate_track_subtitles_request)
+
+Generate track subtitles
+
+Generates subtitles (captions) for a given audio track. This API can be used for up to 7 days after an asset is created.
+
+### Example
+
+* Basic Authentication (accessToken):
+```python
+from __future__ import print_function
+import time
+import mux_python
+from mux_python.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.mux.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = mux_python.Configuration(
+    host = "https://api.mux.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: accessToken
+configuration = mux_python.Configuration(
+    username = 'YOUR_USERNAME',
+    password = 'YOUR_PASSWORD'
+)
+
+# Enter a context with an instance of the API client
+with mux_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = mux_python.AssetsApi(api_client)
+    asset_id = 'asset_id_example' # str | The asset ID.
+track_id = 'track_id_example' # str | The track ID.
+generate_track_subtitles_request = {"generated_subtitles":[{"language_code":"en","name":"English (generated)","passthrough":"English (generated)"}]} # GenerateTrackSubtitlesRequest | 
+
+    try:
+        # Generate track subtitles
+        api_response = api_instance.generate_asset_track_subtitles(asset_id, track_id, generate_track_subtitles_request)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling AssetsApi->generate_asset_track_subtitles: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **asset_id** | **str**| The asset ID. | 
+ **track_id** | **str**| The track ID. | 
+ **generate_track_subtitles_request** | [**GenerateTrackSubtitlesRequest**](GenerateTrackSubtitlesRequest.md)|  | 
+
+### Return type
+
+[**GenerateTrackSubtitlesResponse**](GenerateTrackSubtitlesResponse.md)
+
+### Authorization
+
+[accessToken](../README.md#accessToken)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | Created |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **get_asset**
 > AssetResponse get_asset(asset_id)
 
@@ -765,7 +843,7 @@ Name | Type | Description  | Notes
 # **update_asset**
 > AssetResponse update_asset(asset_id, update_asset_request)
 
-Update an Asset
+Update an asset
 
 Updates the details of an already-created Asset with the provided Asset ID. This currently supports only the `passthrough` field.
 
@@ -803,7 +881,7 @@ with mux_python.ApiClient(configuration) as api_client:
 update_asset_request = {"passthrough":"Example"} # UpdateAssetRequest | 
 
     try:
-        # Update an Asset
+        # Update an asset
         api_response = api_instance.update_asset(asset_id, update_asset_request)
         pprint(api_response)
     except ApiException as e:

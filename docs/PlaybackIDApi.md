@@ -4,13 +4,13 @@ All URIs are relative to *https://api.mux.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_asset_or_livestream_id**](PlaybackIDApi.md#get_asset_or_livestream_id) | **GET** /video/v1/playback-ids/{PLAYBACK_ID} | Retrieve an Asset or Live Stream ID
+[**get_asset_or_livestream_id**](PlaybackIDApi.md#get_asset_or_livestream_id) | **GET** /video/v1/playback-ids/{PLAYBACK_ID} | Retrieve an asset or live stream ID
 
 
 # **get_asset_or_livestream_id**
 > GetAssetOrLiveStreamIdResponse get_asset_or_livestream_id(playback_id)
 
-Retrieve an Asset or Live Stream ID
+Retrieve an asset or live stream ID
 
 Retrieves the Identifier of the Asset or Live Stream associated with the Playback ID.
 
@@ -47,7 +47,7 @@ with mux_python.ApiClient(configuration) as api_client:
     playback_id = 'playback_id_example' # str | The live stream's playback ID.
 
     try:
-        # Retrieve an Asset or Live Stream ID
+        # Retrieve an asset or live stream ID
         api_response = api_instance.get_asset_or_livestream_id(playback_id)
         pprint(api_response)
     except ApiException as e:
