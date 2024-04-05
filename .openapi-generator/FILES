@@ -367,6 +367,4 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_generate_track_subtitles_request.py
-test/test_generate_track_subtitles_response.py
 tox.ini

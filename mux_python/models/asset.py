@@ -697,7 +697,7 @@ class Asset(object):
         :param mp4_support: The mp4_support of this Asset.  # noqa: E501
         :type mp4_support: str
         """
-        allowed_values = ["standard", "none"]  # noqa: E501
+        allowed_values = ["standard", "none", "capped-1080p", "audio-only", "audio-only,capped-1080p"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and mp4_support not in allowed_values:  # noqa: E501
             raise ValueError(
                 "Invalid value for `mp4_support` ({0}), must be one of {1}"  # noqa: E501
