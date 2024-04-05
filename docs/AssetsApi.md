@@ -995,7 +995,7 @@ Name | Type | Description  | Notes
 
 Update MP4 support
 
-Allows you to add or remove mp4 support for assets that were created without it. Currently there are two values supported in this request, `standard` and `none`. `none` means that an asset *does not* have mp4 support, so submitting a request with `mp4_support` set to `none` will delete the mp4 assets from the asset in question.
+Allows you to add or remove mp4 support for assets that were created without it. The values supported are `capped-1080p`, `audio-only`, `audio-only,capped-1080p`, `standard`(deprecated),  and `none`. `none` means that an asset *does not* have mp4 support, so submitting a request with `mp4_support` set to `none` will delete the mp4 assets from the asset in question.
 
 ### Example
 
@@ -1028,7 +1028,7 @@ with mux_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = mux_python.AssetsApi(api_client)
     asset_id = 'asset_id_example' # str | The asset ID.
-update_asset_mp4_support_request = {"mp4_support":"standard"} # UpdateAssetMP4SupportRequest | 
+update_asset_mp4_support_request = {"mp4_support":"capped-1080p"} # UpdateAssetMP4SupportRequest | 
 
     try:
         # Update MP4 support

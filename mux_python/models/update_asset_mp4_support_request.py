@@ -60,7 +60,7 @@ class UpdateAssetMP4SupportRequest(object):
     def mp4_support(self):
         """Gets the mp4_support of this UpdateAssetMP4SupportRequest.  # noqa: E501
 
-        String value for the level of mp4 support  # noqa: E501
+        Specify what level of support for mp4 playback.  * The `capped-1080p` option produces a single MP4 file, called `capped-1080p.mp4`, with the video resolution capped at 1080p. This option produces an `audio.m4a` file for an audio-only asset. * The `audio-only` option produces a single M4A file, called `audio.m4a` for a video or an audio-only asset. MP4 generation will error when this option is specified for a video-only asset. * The `audio-only,capped-1080p` option produces both the `audio.m4a` and `capped-1080p.mp4` files. Only the `capped-1080p.mp4` file is produced for a video-only asset, while only the `audio.m4a` file is produced for an audio-only asset.  The `standard`(deprecated) option produces up to three MP4 files with different levels of resolution (`high.mp4`, `medium.mp4`, `low.mp4`, or `audio.m4a` for an audio-only asset).  `none` will delete the MP4s from the asset in question.   # noqa: E501
 
         :return: The mp4_support of this UpdateAssetMP4SupportRequest.  # noqa: E501
         :rtype: str
@@ -71,12 +71,12 @@ class UpdateAssetMP4SupportRequest(object):
     def mp4_support(self, mp4_support):
         """Sets the mp4_support of this UpdateAssetMP4SupportRequest.
 
-        String value for the level of mp4 support  # noqa: E501
+        Specify what level of support for mp4 playback.  * The `capped-1080p` option produces a single MP4 file, called `capped-1080p.mp4`, with the video resolution capped at 1080p. This option produces an `audio.m4a` file for an audio-only asset. * The `audio-only` option produces a single M4A file, called `audio.m4a` for a video or an audio-only asset. MP4 generation will error when this option is specified for a video-only asset. * The `audio-only,capped-1080p` option produces both the `audio.m4a` and `capped-1080p.mp4` files. Only the `capped-1080p.mp4` file is produced for a video-only asset, while only the `audio.m4a` file is produced for an audio-only asset.  The `standard`(deprecated) option produces up to three MP4 files with different levels of resolution (`high.mp4`, `medium.mp4`, `low.mp4`, or `audio.m4a` for an audio-only asset).  `none` will delete the MP4s from the asset in question.   # noqa: E501
 
         :param mp4_support: The mp4_support of this UpdateAssetMP4SupportRequest.  # noqa: E501
         :type mp4_support: str
         """
-        allowed_values = ["standard", "none"]  # noqa: E501
+        allowed_values = ["standard", "none", "capped-1080p", "audio-only", "audio-only,capped-1080p"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and mp4_support not in allowed_values:  # noqa: E501
             raise ValueError(
                 "Invalid value for `mp4_support` ({0}), must be one of {1}"  # noqa: E501

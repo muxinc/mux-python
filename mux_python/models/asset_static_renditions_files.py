@@ -99,7 +99,7 @@ class AssetStaticRenditionsFiles(object):
         :param name: The name of this AssetStaticRenditionsFiles.  # noqa: E501
         :type name: str
         """
-        allowed_values = ["low.mp4", "medium.mp4", "high.mp4", "audio.m4a"]  # noqa: E501
+        allowed_values = ["low.mp4", "medium.mp4", "high.mp4", "audio.m4a", "capped-1080p.mp4"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and name not in allowed_values:  # noqa: E501
             raise ValueError(
                 "Invalid value for `name` ({0}), must be one of {1}"  # noqa: E501
