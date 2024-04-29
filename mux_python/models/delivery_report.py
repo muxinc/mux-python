@@ -45,6 +45,7 @@ class DeliveryReport(object):
         'asset_state': 'str',
         'asset_duration': 'float',
         'asset_resolution_tier': 'str',
+        'asset_encoding_tier': 'str',
         'delivered_seconds': 'float',
         'delivered_seconds_by_resolution': 'DeliveryReportDeliveredSecondsByResolution'
     }
@@ -58,11 +59,12 @@ class DeliveryReport(object):
         'asset_state': 'asset_state',
         'asset_duration': 'asset_duration',
         'asset_resolution_tier': 'asset_resolution_tier',
+        'asset_encoding_tier': 'asset_encoding_tier',
         'delivered_seconds': 'delivered_seconds',
         'delivered_seconds_by_resolution': 'delivered_seconds_by_resolution'
     }
 
-    def __init__(self, live_stream_id=None, asset_id=None, passthrough=None, created_at=None, deleted_at=None, asset_state=None, asset_duration=None, asset_resolution_tier=None, delivered_seconds=None, delivered_seconds_by_resolution=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, live_stream_id=None, asset_id=None, passthrough=None, created_at=None, deleted_at=None, asset_state=None, asset_duration=None, asset_resolution_tier=None, asset_encoding_tier=None, delivered_seconds=None, delivered_seconds_by_resolution=None, local_vars_configuration=None):  # noqa: E501
         """DeliveryReport - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
@@ -76,6 +78,7 @@ class DeliveryReport(object):
         self._asset_state = None
         self._asset_duration = None
         self._asset_resolution_tier = None
+        self._asset_encoding_tier = None
         self._delivered_seconds = None
         self._delivered_seconds_by_resolution = None
         self.discriminator = None
@@ -96,6 +99,8 @@ class DeliveryReport(object):
             self.asset_duration = asset_duration
         if asset_resolution_tier is not None:
             self.asset_resolution_tier = asset_resolution_tier
+        if asset_encoding_tier is not None:
+            self.asset_encoding_tier = asset_encoding_tier
         if delivered_seconds is not None:
             self.delivered_seconds = delivered_seconds
         if delivered_seconds_by_resolution is not None:
@@ -296,6 +301,35 @@ class DeliveryReport(object):
             )
 
         self._asset_resolution_tier = asset_resolution_tier
+
+    @property
+    def asset_encoding_tier(self):
+        """Gets the asset_encoding_tier of this DeliveryReport.  # noqa: E501
+
+        The encoding tier that the asset was ingested at. [See the encoding tiers guide for more details.](https://docs.mux.com/guides/use-encoding-tiers)  # noqa: E501
+
+        :return: The asset_encoding_tier of this DeliveryReport.  # noqa: E501
+        :rtype: str
+        """
+        return self._asset_encoding_tier
+
+    @asset_encoding_tier.setter
+    def asset_encoding_tier(self, asset_encoding_tier):
+        """Sets the asset_encoding_tier of this DeliveryReport.
+
+        The encoding tier that the asset was ingested at. [See the encoding tiers guide for more details.](https://docs.mux.com/guides/use-encoding-tiers)  # noqa: E501
+
+        :param asset_encoding_tier: The asset_encoding_tier of this DeliveryReport.  # noqa: E501
+        :type asset_encoding_tier: str
+        """
+        allowed_values = ["smart", "baseline"]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and asset_encoding_tier not in allowed_values:  # noqa: E501
+            raise ValueError(
+                "Invalid value for `asset_encoding_tier` ({0}), must be one of {1}"  # noqa: E501
+                .format(asset_encoding_tier, allowed_values)
+            )
+
+        self._asset_encoding_tier = asset_encoding_tier
 
     @property
     def delivered_seconds(self):

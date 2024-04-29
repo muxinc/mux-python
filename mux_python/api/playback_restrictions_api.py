@@ -727,3 +727,153 @@ class PlaybackRestrictionsApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats,
             _request_auth=local_var_params.get('_request_auth'))
+
+    def update_user_agent_restriction(self, playback_restriction_id, update_user_agent_restriction_request, **kwargs):  # noqa: E501
+        """Update the User Agent Restriction  # noqa: E501
+
+        Allows you to modify how Mux validates playback requests with different user agents.  Please see [Using User-Agent HTTP header for validation](https://docs.mux.com/guides/secure-video-playback#using-user-agent-http-header-for-validation) for more details on this feature.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.update_user_agent_restriction(playback_restriction_id, update_user_agent_restriction_request, async_req=True)
+        >>> result = thread.get()
+
+        :param playback_restriction_id: ID of the Playback Restriction. (required)
+        :type playback_restriction_id: str
+        :param update_user_agent_restriction_request: (required)
+        :type update_user_agent_restriction_request: UpdateUserAgentRestrictionRequest
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :type _preload_content: bool, optional
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: Returns the result object.
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :rtype: PlaybackRestrictionResponse
+        """
+        kwargs['_return_http_data_only'] = True
+        return self.update_user_agent_restriction_with_http_info(playback_restriction_id, update_user_agent_restriction_request, **kwargs)  # noqa: E501
+
+    def update_user_agent_restriction_with_http_info(self, playback_restriction_id, update_user_agent_restriction_request, **kwargs):  # noqa: E501
+        """Update the User Agent Restriction  # noqa: E501
+
+        Allows you to modify how Mux validates playback requests with different user agents.  Please see [Using User-Agent HTTP header for validation](https://docs.mux.com/guides/secure-video-playback#using-user-agent-http-header-for-validation) for more details on this feature.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.update_user_agent_restriction_with_http_info(playback_restriction_id, update_user_agent_restriction_request, async_req=True)
+        >>> result = thread.get()
+
+        :param playback_restriction_id: ID of the Playback Restriction. (required)
+        :type playback_restriction_id: str
+        :param update_user_agent_restriction_request: (required)
+        :type update_user_agent_restriction_request: UpdateUserAgentRestrictionRequest
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :type _return_http_data_only: bool, optional
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :type _preload_content: bool, optional
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the authentication
+                              in the spec for a single request.
+        :type _request_auth: dict, optional
+        :return: Returns the result object.
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :rtype: tuple(PlaybackRestrictionResponse, status_code(int), headers(HTTPHeaderDict))
+        """
+
+        local_var_params = locals()
+
+        all_params = [
+            'playback_restriction_id',
+            'update_user_agent_restriction_request'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout',
+                '_request_auth'
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params['kwargs']):
+            if key not in all_params:
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method update_user_agent_restriction" % key
+                )
+            local_var_params[key] = val
+        del local_var_params['kwargs']
+        # verify the required parameter 'playback_restriction_id' is set
+        if self.api_client.client_side_validation and ('playback_restriction_id' not in local_var_params or  # noqa: E501
+                                                        local_var_params['playback_restriction_id'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `playback_restriction_id` when calling `update_user_agent_restriction`")  # noqa: E501
+        # verify the required parameter 'update_user_agent_restriction_request' is set
+        if self.api_client.client_side_validation and ('update_user_agent_restriction_request' not in local_var_params or  # noqa: E501
+                                                        local_var_params['update_user_agent_restriction_request'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `update_user_agent_restriction_request` when calling `update_user_agent_restriction`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'playback_restriction_id' in local_var_params:
+            path_params['PLAYBACK_RESTRICTION_ID'] = local_var_params['playback_restriction_id']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'update_user_agent_restriction_request' in local_var_params:
+            body_params = local_var_params['update_user_agent_restriction_request']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['accessToken']  # noqa: E501
+        
+        response_types_map = {
+            200: "PlaybackRestrictionResponse",
+        }
+
+        return self.api_client.call_api(
+            '/video/v1/playback-restrictions/{PLAYBACK_RESTRICTION_ID}/user_agent', 'PUT',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_types_map=response_types_map,
+            auth_settings=auth_settings,
+            async_req=local_var_params.get('async_req'),
+            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
+            _preload_content=local_var_params.get('_preload_content', True),
+            _request_timeout=local_var_params.get('_request_timeout'),
+            collection_formats=collection_formats,
+            _request_auth=local_var_params.get('_request_auth'))
