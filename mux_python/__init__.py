@@ -15,7 +15,7 @@
 
 from __future__ import absolute_import
 
-__version__ = "3.15.0"
+__version__ = "3.16.0"
 
 # import apis into sdk package
 from mux_python.api.assets_api import AssetsApi
@@ -194,13 +194,17 @@ from mux_python.models.update_asset_master_access_request import UpdateAssetMast
 from mux_python.models.update_asset_request import UpdateAssetRequest
 from mux_python.models.update_live_stream_embedded_subtitles_request import UpdateLiveStreamEmbeddedSubtitlesRequest
 from mux_python.models.update_live_stream_generated_subtitles_request import UpdateLiveStreamGeneratedSubtitlesRequest
+from mux_python.models.update_live_stream_new_asset_settings import UpdateLiveStreamNewAssetSettings
 from mux_python.models.update_live_stream_request import UpdateLiveStreamRequest
 from mux_python.models.update_referrer_domain_restriction_request import UpdateReferrerDomainRestrictionRequest
 from mux_python.models.update_transcription_vocabulary_request import UpdateTranscriptionVocabularyRequest
+from mux_python.models.update_user_agent_restriction_request import UpdateUserAgentRestrictionRequest
 from mux_python.models.update_web_input_url_request import UpdateWebInputUrlRequest
 from mux_python.models.upload import Upload
 from mux_python.models.upload_error import UploadError
 from mux_python.models.upload_response import UploadResponse
+from mux_python.models.user_agent_restriction_request import UserAgentRestrictionRequest
+from mux_python.models.user_agent_restriction_settings import UserAgentRestrictionSettings
 from mux_python.models.video_view import VideoView
 from mux_python.models.video_view_event import VideoViewEvent
 from mux_python.models.video_view_response import VideoViewResponse

@@ -40,17 +40,19 @@ class PlaybackRestriction(object):
         'id': 'str',
         'created_at': 'str',
         'updated_at': 'str',
-        'referrer': 'ReferrerDomainRestriction'
+        'referrer': 'ReferrerDomainRestriction',
+        'user_agent': 'UserAgentRestrictionSettings'
     }
 
     attribute_map = {
         'id': 'id',
         'created_at': 'created_at',
         'updated_at': 'updated_at',
-        'referrer': 'referrer'
+        'referrer': 'referrer',
+        'user_agent': 'user_agent'
     }
 
-    def __init__(self, id=None, created_at=None, updated_at=None, referrer=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, id=None, created_at=None, updated_at=None, referrer=None, user_agent=None, local_vars_configuration=None):  # noqa: E501
         """PlaybackRestriction - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
@@ -60,6 +62,7 @@ class PlaybackRestriction(object):
         self._created_at = None
         self._updated_at = None
         self._referrer = None
+        self._user_agent = None
         self.discriminator = None
 
         if id is not None:
@@ -70,6 +73,8 @@ class PlaybackRestriction(object):
             self.updated_at = updated_at
         if referrer is not None:
             self.referrer = referrer
+        if user_agent is not None:
+            self.user_agent = user_agent
 
     @property
     def id(self):
@@ -160,6 +165,27 @@ class PlaybackRestriction(object):
         """
 
         self._referrer = referrer
+
+    @property
+    def user_agent(self):
+        """Gets the user_agent of this PlaybackRestriction.  # noqa: E501
+
+
+        :return: The user_agent of this PlaybackRestriction.  # noqa: E501
+        :rtype: UserAgentRestrictionSettings
+        """
+        return self._user_agent
+
+    @user_agent.setter
+    def user_agent(self, user_agent):
+        """Sets the user_agent of this PlaybackRestriction.
+
+
+        :param user_agent: The user_agent of this PlaybackRestriction.  # noqa: E501
+        :type user_agent: UserAgentRestrictionSettings
+        """
+
+        self._user_agent = user_agent
 
     def to_dict(self, serialize=False):
         """Returns the model properties as a dict"""

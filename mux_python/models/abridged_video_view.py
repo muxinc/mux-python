@@ -49,7 +49,8 @@ class AbridgedVideoView(object):
         'view_start': 'str',
         'view_end': 'str',
         'viewer_experience_score': 'float',
-        'watch_time': 'int'
+        'watch_time': 'int',
+        'playback_failure': 'bool'
     }
 
     attribute_map = {
@@ -65,10 +66,11 @@ class AbridgedVideoView(object):
         'view_start': 'view_start',
         'view_end': 'view_end',
         'viewer_experience_score': 'viewer_experience_score',
-        'watch_time': 'watch_time'
+        'watch_time': 'watch_time',
+        'playback_failure': 'playback_failure'
     }
 
-    def __init__(self, id=None, viewer_os_family=None, viewer_application_name=None, video_title=None, total_row_count=None, player_error_message=None, player_error_code=None, error_type_id=None, country_code=None, view_start=None, view_end=None, viewer_experience_score=None, watch_time=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, id=None, viewer_os_family=None, viewer_application_name=None, video_title=None, total_row_count=None, player_error_message=None, player_error_code=None, error_type_id=None, country_code=None, view_start=None, view_end=None, viewer_experience_score=None, watch_time=None, playback_failure=None, local_vars_configuration=None):  # noqa: E501
         """AbridgedVideoView - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
@@ -87,6 +89,7 @@ class AbridgedVideoView(object):
         self._view_end = None
         self._viewer_experience_score = None
         self._watch_time = None
+        self._playback_failure = None
         self.discriminator = None
 
         if id is not None:
@@ -106,6 +109,8 @@ class AbridgedVideoView(object):
             self.view_end = view_end
         self.viewer_experience_score = viewer_experience_score
         self.watch_time = watch_time
+        if playback_failure is not None:
+            self.playback_failure = playback_failure
 
     @property
     def id(self):
@@ -379,6 +384,27 @@ class AbridgedVideoView(object):
         """
 
         self._watch_time = watch_time
+
+    @property
+    def playback_failure(self):
+        """Gets the playback_failure of this AbridgedVideoView.  # noqa: E501
+
+
+        :return: The playback_failure of this AbridgedVideoView.  # noqa: E501
+        :rtype: bool
+        """
+        return self._playback_failure
+
+    @playback_failure.setter
+    def playback_failure(self, playback_failure):
+        """Sets the playback_failure of this AbridgedVideoView.
+
+
+        :param playback_failure: The playback_failure of this AbridgedVideoView.  # noqa: E501
+        :type playback_failure: bool
+        """
+
+        self._playback_failure = playback_failure
 
     def to_dict(self, serialize=False):
         """Returns the model properties as a dict"""

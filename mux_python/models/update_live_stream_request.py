@@ -42,7 +42,8 @@ class UpdateLiveStreamRequest(object):
         'reconnect_window': 'float',
         'use_slate_for_standard_latency': 'bool',
         'reconnect_slate_url': 'str',
-        'max_continuous_duration': 'int'
+        'max_continuous_duration': 'int',
+        'new_asset_settings': 'UpdateLiveStreamNewAssetSettings'
     }
 
     attribute_map = {
@@ -51,10 +52,11 @@ class UpdateLiveStreamRequest(object):
         'reconnect_window': 'reconnect_window',
         'use_slate_for_standard_latency': 'use_slate_for_standard_latency',
         'reconnect_slate_url': 'reconnect_slate_url',
-        'max_continuous_duration': 'max_continuous_duration'
+        'max_continuous_duration': 'max_continuous_duration',
+        'new_asset_settings': 'new_asset_settings'
     }
 
-    def __init__(self, passthrough=None, latency_mode=None, reconnect_window=60, use_slate_for_standard_latency=False, reconnect_slate_url=None, max_continuous_duration=43200, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, passthrough=None, latency_mode=None, reconnect_window=60, use_slate_for_standard_latency=False, reconnect_slate_url=None, max_continuous_duration=43200, new_asset_settings=None, local_vars_configuration=None):  # noqa: E501
         """UpdateLiveStreamRequest - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
@@ -66,6 +68,7 @@ class UpdateLiveStreamRequest(object):
         self._use_slate_for_standard_latency = None
         self._reconnect_slate_url = None
         self._max_continuous_duration = None
+        self._new_asset_settings = None
         self.discriminator = None
 
         if passthrough is not None:
@@ -80,6 +83,8 @@ class UpdateLiveStreamRequest(object):
             self.reconnect_slate_url = reconnect_slate_url
         if max_continuous_duration is not None:
             self.max_continuous_duration = max_continuous_duration
+        if new_asset_settings is not None:
+            self.new_asset_settings = new_asset_settings
 
     @property
     def passthrough(self):
@@ -236,6 +241,27 @@ class UpdateLiveStreamRequest(object):
             raise ValueError("Invalid value for `max_continuous_duration`, must be a value greater than or equal to `60`")  # noqa: E501
 
         self._max_continuous_duration = max_continuous_duration
+
+    @property
+    def new_asset_settings(self):
+        """Gets the new_asset_settings of this UpdateLiveStreamRequest.  # noqa: E501
+
+
+        :return: The new_asset_settings of this UpdateLiveStreamRequest.  # noqa: E501
+        :rtype: UpdateLiveStreamNewAssetSettings
+        """
+        return self._new_asset_settings
+
+    @new_asset_settings.setter
+    def new_asset_settings(self, new_asset_settings):
+        """Sets the new_asset_settings of this UpdateLiveStreamRequest.
+
+
+        :param new_asset_settings: The new_asset_settings of this UpdateLiveStreamRequest.  # noqa: E501
+        :type new_asset_settings: UpdateLiveStreamNewAssetSettings
+        """
+
+        self._new_asset_settings = new_asset_settings
 
     def to_dict(self, serialize=False):
         """Returns the model properties as a dict"""

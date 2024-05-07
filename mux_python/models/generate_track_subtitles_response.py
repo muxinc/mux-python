@@ -37,7 +37,7 @@ class GenerateTrackSubtitlesResponse(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'data': 'Track'
+        'data': 'list[Track]'
     }
 
     attribute_map = {
@@ -62,7 +62,7 @@ class GenerateTrackSubtitlesResponse(object):
 
 
         :return: The data of this GenerateTrackSubtitlesResponse.  # noqa: E501
-        :rtype: Track
+        :rtype: list[Track]
         """
         return self._data
 
@@ -72,7 +72,7 @@ class GenerateTrackSubtitlesResponse(object):
 
 
         :param data: The data of this GenerateTrackSubtitlesResponse.  # noqa: E501
-        :type data: Track
+        :type data: list[Track]
         """
 
         self._data = data
