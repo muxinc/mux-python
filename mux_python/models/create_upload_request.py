@@ -148,6 +148,7 @@ class CreateUploadRequest(object):
     def test(self):
         """Gets the test of this CreateUploadRequest.  # noqa: E501
 
+        Indicates if this is a test Direct Upload, in which case the Asset that gets created will be a `test` Asset.  # noqa: E501
 
         :return: The test of this CreateUploadRequest.  # noqa: E501
         :rtype: bool
@@ -158,6 +159,7 @@ class CreateUploadRequest(object):
     def test(self, test):
         """Sets the test of this CreateUploadRequest.
 
+        Indicates if this is a test Direct Upload, in which case the Asset that gets created will be a `test` Asset.  # noqa: E501
 
         :param test: The test of this CreateUploadRequest.  # noqa: E501
         :type test: bool

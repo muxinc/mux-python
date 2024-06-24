@@ -15,10 +15,11 @@
 
 from __future__ import absolute_import
 
-__version__ = "3.16.0"
+__version__ = "3.17.0"
 
 # import apis into sdk package
 from mux_python.api.assets_api import AssetsApi
+from mux_python.api.drm_configurations_api import DRMConfigurationsApi
 from mux_python.api.delivery_usage_api import DeliveryUsageApi
 from mux_python.api.dimensions_api import DimensionsApi
 from mux_python.api.direct_uploads_api import DirectUploadsApi
@@ -78,6 +79,8 @@ from mux_python.models.create_track_response import CreateTrackResponse
 from mux_python.models.create_transcription_vocabulary_request import CreateTranscriptionVocabularyRequest
 from mux_python.models.create_upload_request import CreateUploadRequest
 from mux_python.models.create_web_input_request import CreateWebInputRequest
+from mux_python.models.drm_configuration import DRMConfiguration
+from mux_python.models.drm_configuration_response import DRMConfigurationResponse
 from mux_python.models.delivery_report import DeliveryReport
 from mux_python.models.delivery_report_delivered_seconds_by_resolution import DeliveryReportDeliveredSecondsByResolution
 from mux_python.models.dimension_value import DimensionValue
@@ -122,6 +125,7 @@ from mux_python.models.list_all_metric_values_response import ListAllMetricValue
 from mux_python.models.list_assets_response import ListAssetsResponse
 from mux_python.models.list_breakdown_values_response import ListBreakdownValuesResponse
 from mux_python.models.list_breakdown_values_response_meta import ListBreakdownValuesResponseMeta
+from mux_python.models.list_drm_configurations_response import ListDRMConfigurationsResponse
 from mux_python.models.list_delivery_usage_response import ListDeliveryUsageResponse
 from mux_python.models.list_dimension_values_response import ListDimensionValuesResponse
 from mux_python.models.list_dimensions_response import ListDimensionsResponse

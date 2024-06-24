@@ -38,6 +38,7 @@ class CreateLiveStreamRequest(object):
     """
     openapi_types = {
         'playback_policy': 'list[PlaybackPolicy]',
+        'advanced_playback_policies': 'list[CreatePlaybackIDRequest]',
         'new_asset_settings': 'CreateAssetRequest',
         'reconnect_window': 'float',
         'use_slate_for_standard_latency': 'bool',
@@ -56,6 +57,7 @@ class CreateLiveStreamRequest(object):
 
     attribute_map = {
         'playback_policy': 'playback_policy',
+        'advanced_playback_policies': 'advanced_playback_policies',
         'new_asset_settings': 'new_asset_settings',
         'reconnect_window': 'reconnect_window',
         'use_slate_for_standard_latency': 'use_slate_for_standard_latency',
@@ -72,13 +74,14 @@ class CreateLiveStreamRequest(object):
         'max_continuous_duration': 'max_continuous_duration'
     }
 
-    def __init__(self, playback_policy=None, new_asset_settings=None, reconnect_window=60, use_slate_for_standard_latency=False, reconnect_slate_url=None, passthrough=None, audio_only=None, embedded_subtitles=None, generated_subtitles=None, reduced_latency=None, low_latency=None, latency_mode=None, test=None, simulcast_targets=None, max_continuous_duration=43200, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, playback_policy=None, advanced_playback_policies=None, new_asset_settings=None, reconnect_window=60, use_slate_for_standard_latency=False, reconnect_slate_url=None, passthrough=None, audio_only=None, embedded_subtitles=None, generated_subtitles=None, reduced_latency=None, low_latency=None, latency_mode=None, test=None, simulcast_targets=None, max_continuous_duration=43200, local_vars_configuration=None):  # noqa: E501
         """CreateLiveStreamRequest - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
         self.local_vars_configuration = local_vars_configuration
 
         self._playback_policy = None
+        self._advanced_playback_policies = None
         self._new_asset_settings = None
         self._reconnect_window = None
         self._use_slate_for_standard_latency = None
@@ -97,6 +100,8 @@ class CreateLiveStreamRequest(object):
 
         if playback_policy is not None:
             self.playback_policy = playback_policy
+        if advanced_playback_policies is not None:
+            self.advanced_playback_policies = advanced_playback_policies
         if new_asset_settings is not None:
             self.new_asset_settings = new_asset_settings
         if reconnect_window is not None:
@@ -146,6 +151,29 @@ class CreateLiveStreamRequest(object):
         """
 
         self._playback_policy = playback_policy
+
+    @property
+    def advanced_playback_policies(self):
+        """Gets the advanced_playback_policies of this CreateLiveStreamRequest.  # noqa: E501
+
+        An array of playback policy objects that you want applied to this asset and available through `playback_ids`. `advanced_playback_policies` must be used instead of `playback_policy` when creating a DRM playback ID.   # noqa: E501
+
+        :return: The advanced_playback_policies of this CreateLiveStreamRequest.  # noqa: E501
+        :rtype: list[CreatePlaybackIDRequest]
+        """
+        return self._advanced_playback_policies
+
+    @advanced_playback_policies.setter
+    def advanced_playback_policies(self, advanced_playback_policies):
+        """Sets the advanced_playback_policies of this CreateLiveStreamRequest.
+
+        An array of playback policy objects that you want applied to this asset and available through `playback_ids`. `advanced_playback_policies` must be used instead of `playback_policy` when creating a DRM playback ID.   # noqa: E501
+
+        :param advanced_playback_policies: The advanced_playback_policies of this CreateLiveStreamRequest.  # noqa: E501
+        :type advanced_playback_policies: list[CreatePlaybackIDRequest]
+        """
+
+        self._advanced_playback_policies = advanced_playback_policies
 
     @property
     def new_asset_settings(self):

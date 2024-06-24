@@ -39,6 +39,7 @@ class CreateAssetRequest(object):
     openapi_types = {
         'input': 'list[InputSettings]',
         'playback_policy': 'list[PlaybackPolicy]',
+        'advanced_playback_policies': 'list[CreatePlaybackIDRequest]',
         'per_title_encode': 'bool',
         'passthrough': 'str',
         'mp4_support': 'str',
@@ -52,6 +53,7 @@ class CreateAssetRequest(object):
     attribute_map = {
         'input': 'input',
         'playback_policy': 'playback_policy',
+        'advanced_playback_policies': 'advanced_playback_policies',
         'per_title_encode': 'per_title_encode',
         'passthrough': 'passthrough',
         'mp4_support': 'mp4_support',
@@ -62,7 +64,7 @@ class CreateAssetRequest(object):
         'encoding_tier': 'encoding_tier'
     }
 
-    def __init__(self, input=None, playback_policy=None, per_title_encode=None, passthrough=None, mp4_support=None, normalize_audio=False, master_access=None, test=None, max_resolution_tier=None, encoding_tier=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, input=None, playback_policy=None, advanced_playback_policies=None, per_title_encode=None, passthrough=None, mp4_support=None, normalize_audio=False, master_access=None, test=None, max_resolution_tier=None, encoding_tier=None, local_vars_configuration=None):  # noqa: E501
         """CreateAssetRequest - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
@@ -70,6 +72,7 @@ class CreateAssetRequest(object):
 
         self._input = None
         self._playback_policy = None
+        self._advanced_playback_policies = None
         self._per_title_encode = None
         self._passthrough = None
         self._mp4_support = None
@@ -84,6 +87,8 @@ class CreateAssetRequest(object):
             self.input = input
         if playback_policy is not None:
             self.playback_policy = playback_policy
+        if advanced_playback_policies is not None:
+            self.advanced_playback_policies = advanced_playback_policies
         if per_title_encode is not None:
             self.per_title_encode = per_title_encode
         if passthrough is not None:
@@ -128,7 +133,7 @@ class CreateAssetRequest(object):
     def playback_policy(self):
         """Gets the playback_policy of this CreateAssetRequest.  # noqa: E501
 
-        An array of playback policy names that you want applied to this asset and available through `playback_ids`. Options include: `\"public\"` (anyone with the playback URL can stream the asset). And `\"signed\"` (an additional access token is required to play the asset). If no playback_policy is set, the asset will have no playback IDs and will therefore not be playable. For simplicity, a single string name can be used in place of the array in the case of only one playback policy.  # noqa: E501
+        An array of playback policy names that you want applied to this asset and available through `playback_ids`. Options include:  * `\"public\"` (anyone with the playback URL can stream the asset). * `\"signed\"` (an additional access token is required to play the asset).  If no `playback_policy` is set, the asset will have no playback IDs and will therefore not be playable. For simplicity, a single string name can be used in place of the array in the case of only one playback policy.   # noqa: E501
 
         :return: The playback_policy of this CreateAssetRequest.  # noqa: E501
         :rtype: list[PlaybackPolicy]
@@ -139,13 +144,36 @@ class CreateAssetRequest(object):
     def playback_policy(self, playback_policy):
         """Sets the playback_policy of this CreateAssetRequest.
 
-        An array of playback policy names that you want applied to this asset and available through `playback_ids`. Options include: `\"public\"` (anyone with the playback URL can stream the asset). And `\"signed\"` (an additional access token is required to play the asset). If no playback_policy is set, the asset will have no playback IDs and will therefore not be playable. For simplicity, a single string name can be used in place of the array in the case of only one playback policy.  # noqa: E501
+        An array of playback policy names that you want applied to this asset and available through `playback_ids`. Options include:  * `\"public\"` (anyone with the playback URL can stream the asset). * `\"signed\"` (an additional access token is required to play the asset).  If no `playback_policy` is set, the asset will have no playback IDs and will therefore not be playable. For simplicity, a single string name can be used in place of the array in the case of only one playback policy.   # noqa: E501
 
         :param playback_policy: The playback_policy of this CreateAssetRequest.  # noqa: E501
         :type playback_policy: list[PlaybackPolicy]
         """
 
         self._playback_policy = playback_policy
+
+    @property
+    def advanced_playback_policies(self):
+        """Gets the advanced_playback_policies of this CreateAssetRequest.  # noqa: E501
+
+        An array of playback policy objects that you want applied to this asset and available through `playback_ids`. `advanced_playback_policies` must be used instead of `playback_policy` when creating a DRM playback ID.   # noqa: E501
+
+        :return: The advanced_playback_policies of this CreateAssetRequest.  # noqa: E501
+        :rtype: list[CreatePlaybackIDRequest]
+        """
+        return self._advanced_playback_policies
+
+    @advanced_playback_policies.setter
+    def advanced_playback_policies(self, advanced_playback_policies):
+        """Sets the advanced_playback_policies of this CreateAssetRequest.
+
+        An array of playback policy objects that you want applied to this asset and available through `playback_ids`. `advanced_playback_policies` must be used instead of `playback_policy` when creating a DRM playback ID.   # noqa: E501
+
+        :param advanced_playback_policies: The advanced_playback_policies of this CreateAssetRequest.  # noqa: E501
+        :type advanced_playback_policies: list[CreatePlaybackIDRequest]
+        """
+
+        self._advanced_playback_policies = advanced_playback_policies
 
     @property
     def per_title_encode(self):
