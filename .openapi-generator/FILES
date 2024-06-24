@@ -383,8 +383,4 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_drm_configuration.py
-test/test_drm_configuration_response.py
-test/test_drm_configurations_api.py
-test/test_list_drm_configurations_response.py
 tox.ini
