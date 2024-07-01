@@ -34,8 +34,9 @@ class PlaybackPolicy(object):
     """
     PUBLIC = "public"
     SIGNED = "signed"
+    DRM = "drm"
 
-    allowable_values = [PUBLIC, SIGNED]  # noqa: E501
+    allowable_values = [PUBLIC, SIGNED, DRM]  # noqa: E501
 
     """
     Attributes:

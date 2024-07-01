@@ -38,15 +38,17 @@ class PlaybackID(object):
     """
     openapi_types = {
         'id': 'str',
-        'policy': 'PlaybackPolicy'
+        'policy': 'PlaybackPolicy',
+        'drm_configuration_id': 'str'
     }
 
     attribute_map = {
         'id': 'id',
-        'policy': 'policy'
+        'policy': 'policy',
+        'drm_configuration_id': 'drm_configuration_id'
     }
 
-    def __init__(self, id=None, policy=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, id=None, policy=None, drm_configuration_id=None, local_vars_configuration=None):  # noqa: E501
         """PlaybackID - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
@@ -54,12 +56,15 @@ class PlaybackID(object):
 
         self._id = None
         self._policy = None
+        self._drm_configuration_id = None
         self.discriminator = None
 
         if id is not None:
             self.id = id
         if policy is not None:
             self.policy = policy
+        if drm_configuration_id is not None:
+            self.drm_configuration_id = drm_configuration_id
 
     @property
     def id(self):
@@ -104,6 +109,29 @@ class PlaybackID(object):
         """
 
         self._policy = policy
+
+    @property
+    def drm_configuration_id(self):
+        """Gets the drm_configuration_id of this PlaybackID.  # noqa: E501
+
+        The DRM configuration used by this playback ID. Must only be set when `policy` is set to `drm`.  # noqa: E501
+
+        :return: The drm_configuration_id of this PlaybackID.  # noqa: E501
+        :rtype: str
+        """
+        return self._drm_configuration_id
+
+    @drm_configuration_id.setter
+    def drm_configuration_id(self, drm_configuration_id):
+        """Sets the drm_configuration_id of this PlaybackID.
+
+        The DRM configuration used by this playback ID. Must only be set when `policy` is set to `drm`.  # noqa: E501
+
+        :param drm_configuration_id: The drm_configuration_id of this PlaybackID.  # noqa: E501
+        :type drm_configuration_id: str
+        """
+
+        self._drm_configuration_id = drm_configuration_id
 
     def to_dict(self, serialize=False):
         """Returns the model properties as a dict"""

@@ -4,6 +4,7 @@ from __future__ import absolute_import
 
 # import apis into api package
 from mux_python.api.assets_api import AssetsApi
+from mux_python.api.drm_configurations_api import DRMConfigurationsApi
 from mux_python.api.delivery_usage_api import DeliveryUsageApi
 from mux_python.api.dimensions_api import DimensionsApi
 from mux_python.api.direct_uploads_api import DirectUploadsApi
