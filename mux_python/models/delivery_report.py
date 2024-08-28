@@ -46,6 +46,7 @@ class DeliveryReport(object):
         'asset_duration': 'float',
         'asset_resolution_tier': 'str',
         'asset_encoding_tier': 'str',
+        'asset_video_quality': 'str',
         'delivered_seconds': 'float',
         'delivered_seconds_by_resolution': 'DeliveryReportDeliveredSecondsByResolution'
     }
@@ -60,11 +61,12 @@ class DeliveryReport(object):
         'asset_duration': 'asset_duration',
         'asset_resolution_tier': 'asset_resolution_tier',
         'asset_encoding_tier': 'asset_encoding_tier',
+        'asset_video_quality': 'asset_video_quality',
         'delivered_seconds': 'delivered_seconds',
         'delivered_seconds_by_resolution': 'delivered_seconds_by_resolution'
     }
 
-    def __init__(self, live_stream_id=None, asset_id=None, passthrough=None, created_at=None, deleted_at=None, asset_state=None, asset_duration=None, asset_resolution_tier=None, asset_encoding_tier=None, delivered_seconds=None, delivered_seconds_by_resolution=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, live_stream_id=None, asset_id=None, passthrough=None, created_at=None, deleted_at=None, asset_state=None, asset_duration=None, asset_resolution_tier=None, asset_encoding_tier=None, asset_video_quality=None, delivered_seconds=None, delivered_seconds_by_resolution=None, local_vars_configuration=None):  # noqa: E501
         """DeliveryReport - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
@@ -79,6 +81,7 @@ class DeliveryReport(object):
         self._asset_duration = None
         self._asset_resolution_tier = None
         self._asset_encoding_tier = None
+        self._asset_video_quality = None
         self._delivered_seconds = None
         self._delivered_seconds_by_resolution = None
         self.discriminator = None
@@ -101,6 +104,8 @@ class DeliveryReport(object):
             self.asset_resolution_tier = asset_resolution_tier
         if asset_encoding_tier is not None:
             self.asset_encoding_tier = asset_encoding_tier
+        if asset_video_quality is not None:
+            self.asset_video_quality = asset_video_quality
         if delivered_seconds is not None:
             self.delivered_seconds = delivered_seconds
         if delivered_seconds_by_resolution is not None:
@@ -306,7 +311,7 @@ class DeliveryReport(object):
     def asset_encoding_tier(self):
         """Gets the asset_encoding_tier of this DeliveryReport.  # noqa: E501
 
-        The encoding tier that the asset was ingested at. [See the encoding tiers guide for more details.](https://docs.mux.com/guides/use-encoding-tiers)  # noqa: E501
+        This field is deprecated. Please use `asset_video_quality` instead. The encoding tier that the asset was ingested at. [See the video quality guide for more details.](https://docs.mux.com/guides/use-encoding-tiers)  # noqa: E501
 
         :return: The asset_encoding_tier of this DeliveryReport.  # noqa: E501
         :rtype: str
@@ -317,7 +322,7 @@ class DeliveryReport(object):
     def asset_encoding_tier(self, asset_encoding_tier):
         """Sets the asset_encoding_tier of this DeliveryReport.
 
-        The encoding tier that the asset was ingested at. [See the encoding tiers guide for more details.](https://docs.mux.com/guides/use-encoding-tiers)  # noqa: E501
+        This field is deprecated. Please use `asset_video_quality` instead. The encoding tier that the asset was ingested at. [See the video quality guide for more details.](https://docs.mux.com/guides/use-encoding-tiers)  # noqa: E501
 
         :param asset_encoding_tier: The asset_encoding_tier of this DeliveryReport.  # noqa: E501
         :type asset_encoding_tier: str
@@ -330,6 +335,35 @@ class DeliveryReport(object):
             )
 
         self._asset_encoding_tier = asset_encoding_tier
+
+    @property
+    def asset_video_quality(self):
+        """Gets the asset_video_quality of this DeliveryReport.  # noqa: E501
+
+        The video quality that the asset was ingested at. This field replaces `asset_encoding_tier`. [See the video quality guide for more details.](https://docs.mux.com/guides/use-encoding-tiers)  # noqa: E501
+
+        :return: The asset_video_quality of this DeliveryReport.  # noqa: E501
+        :rtype: str
+        """
+        return self._asset_video_quality
+
+    @asset_video_quality.setter
+    def asset_video_quality(self, asset_video_quality):
+        """Sets the asset_video_quality of this DeliveryReport.
+
+        The video quality that the asset was ingested at. This field replaces `asset_encoding_tier`. [See the video quality guide for more details.](https://docs.mux.com/guides/use-encoding-tiers)  # noqa: E501
+
+        :param asset_video_quality: The asset_video_quality of this DeliveryReport.  # noqa: E501
+        :type asset_video_quality: str
+        """
+        allowed_values = ["basic", "plus"]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and asset_video_quality not in allowed_values:  # noqa: E501
+            raise ValueError(
+                "Invalid value for `asset_video_quality` ({0}), must be one of {1}"  # noqa: E501
+                .format(asset_video_quality, allowed_values)
+            )
+
+        self._asset_video_quality = asset_video_quality
 
     @property
     def delivered_seconds(self):

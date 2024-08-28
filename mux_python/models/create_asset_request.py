@@ -47,7 +47,8 @@ class CreateAssetRequest(object):
         'master_access': 'str',
         'test': 'bool',
         'max_resolution_tier': 'str',
-        'encoding_tier': 'str'
+        'encoding_tier': 'str',
+        'video_quality': 'str'
     }
 
     attribute_map = {
@@ -61,10 +62,11 @@ class CreateAssetRequest(object):
         'master_access': 'master_access',
         'test': 'test',
         'max_resolution_tier': 'max_resolution_tier',
-        'encoding_tier': 'encoding_tier'
+        'encoding_tier': 'encoding_tier',
+        'video_quality': 'video_quality'
     }
 
-    def __init__(self, input=None, playback_policy=None, advanced_playback_policies=None, per_title_encode=None, passthrough=None, mp4_support=None, normalize_audio=False, master_access=None, test=None, max_resolution_tier=None, encoding_tier=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, input=None, playback_policy=None, advanced_playback_policies=None, per_title_encode=None, passthrough=None, mp4_support=None, normalize_audio=False, master_access=None, test=None, max_resolution_tier=None, encoding_tier=None, video_quality=None, local_vars_configuration=None):  # noqa: E501
         """CreateAssetRequest - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
@@ -81,6 +83,7 @@ class CreateAssetRequest(object):
         self._test = None
         self._max_resolution_tier = None
         self._encoding_tier = None
+        self._video_quality = None
         self.discriminator = None
 
         if input is not None:
@@ -105,6 +108,8 @@ class CreateAssetRequest(object):
             self.max_resolution_tier = max_resolution_tier
         if encoding_tier is not None:
             self.encoding_tier = encoding_tier
+        if video_quality is not None:
+            self.video_quality = video_quality
 
     @property
     def input(self):
@@ -356,7 +361,7 @@ class CreateAssetRequest(object):
     def encoding_tier(self):
         """Gets the encoding_tier of this CreateAssetRequest.  # noqa: E501
 
-        The encoding tier informs the cost, quality, and available platform features for the asset. By default the `smart` encoding tier is used. [See the guide for more details.](https://docs.mux.com/guides/use-encoding-tiers)  # noqa: E501
+        This field is deprecated. Please use `video_quality` instead. The encoding tier informs the cost, quality, and available platform features for the asset. By default the `smart` encoding tier is used. [See the video quality guide for more details.](https://docs.mux.com/guides/use-encoding-tiers)  # noqa: E501
 
         :return: The encoding_tier of this CreateAssetRequest.  # noqa: E501
         :rtype: str
@@ -367,7 +372,7 @@ class CreateAssetRequest(object):
     def encoding_tier(self, encoding_tier):
         """Sets the encoding_tier of this CreateAssetRequest.
 
-        The encoding tier informs the cost, quality, and available platform features for the asset. By default the `smart` encoding tier is used. [See the guide for more details.](https://docs.mux.com/guides/use-encoding-tiers)  # noqa: E501
+        This field is deprecated. Please use `video_quality` instead. The encoding tier informs the cost, quality, and available platform features for the asset. By default the `smart` encoding tier is used. [See the video quality guide for more details.](https://docs.mux.com/guides/use-encoding-tiers)  # noqa: E501
 
         :param encoding_tier: The encoding_tier of this CreateAssetRequest.  # noqa: E501
         :type encoding_tier: str
@@ -380,6 +385,35 @@ class CreateAssetRequest(object):
             )
 
         self._encoding_tier = encoding_tier
+
+    @property
+    def video_quality(self):
+        """Gets the video_quality of this CreateAssetRequest.  # noqa: E501
+
+        The video quality controls the cost, quality, and available platform features for the asset. By default the `plus` video quality is used. This field replaces the deprecated `encoding_tier` value. [See the video quality guide for more details.](https://docs.mux.com/guides/use-encoding-tiers)  # noqa: E501
+
+        :return: The video_quality of this CreateAssetRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._video_quality
+
+    @video_quality.setter
+    def video_quality(self, video_quality):
+        """Sets the video_quality of this CreateAssetRequest.
+
+        The video quality controls the cost, quality, and available platform features for the asset. By default the `plus` video quality is used. This field replaces the deprecated `encoding_tier` value. [See the video quality guide for more details.](https://docs.mux.com/guides/use-encoding-tiers)  # noqa: E501
+
+        :param video_quality: The video_quality of this CreateAssetRequest.  # noqa: E501
+        :type video_quality: str
+        """
+        allowed_values = ["basic", "plus"]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and video_quality not in allowed_values:  # noqa: E501
+            raise ValueError(
+                "Invalid value for `video_quality` ({0}), must be one of {1}"  # noqa: E501
+                .format(video_quality, allowed_values)
+            )
+
+        self._video_quality = video_quality
 
     def to_dict(self, serialize=False):
         """Returns the model properties as a dict"""

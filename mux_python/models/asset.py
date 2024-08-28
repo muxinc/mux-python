@@ -45,6 +45,7 @@ class Asset(object):
         'resolution_tier': 'str',
         'max_resolution_tier': 'str',
         'encoding_tier': 'str',
+        'video_quality': 'str',
         'max_stored_frame_rate': 'float',
         'aspect_ratio': 'str',
         'playback_ids': 'list[PlaybackID]',
@@ -76,6 +77,7 @@ class Asset(object):
         'resolution_tier': 'resolution_tier',
         'max_resolution_tier': 'max_resolution_tier',
         'encoding_tier': 'encoding_tier',
+        'video_quality': 'video_quality',
         'max_stored_frame_rate': 'max_stored_frame_rate',
         'aspect_ratio': 'aspect_ratio',
         'playback_ids': 'playback_ids',
@@ -98,7 +100,7 @@ class Asset(object):
         'ingest_type': 'ingest_type'
     }
 
-    def __init__(self, id=None, created_at=None, status=None, duration=None, max_stored_resolution=None, resolution_tier=None, max_resolution_tier=None, encoding_tier=None, max_stored_frame_rate=None, aspect_ratio=None, playback_ids=None, tracks=None, errors=None, per_title_encode=None, upload_id=None, is_live=None, passthrough=None, live_stream_id=None, master=None, master_access='none', mp4_support='none', source_asset_id=None, normalize_audio=False, static_renditions=None, recording_times=None, non_standard_input_reasons=None, test=None, ingest_type=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, id=None, created_at=None, status=None, duration=None, max_stored_resolution=None, resolution_tier=None, max_resolution_tier=None, encoding_tier=None, video_quality=None, max_stored_frame_rate=None, aspect_ratio=None, playback_ids=None, tracks=None, errors=None, per_title_encode=None, upload_id=None, is_live=None, passthrough=None, live_stream_id=None, master=None, master_access='none', mp4_support='none', source_asset_id=None, normalize_audio=False, static_renditions=None, recording_times=None, non_standard_input_reasons=None, test=None, ingest_type=None, local_vars_configuration=None):  # noqa: E501
         """Asset - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
@@ -112,6 +114,7 @@ class Asset(object):
         self._resolution_tier = None
         self._max_resolution_tier = None
         self._encoding_tier = None
+        self._video_quality = None
         self._max_stored_frame_rate = None
         self._aspect_ratio = None
         self._playback_ids = None
@@ -150,6 +153,8 @@ class Asset(object):
             self.max_resolution_tier = max_resolution_tier
         if encoding_tier is not None:
             self.encoding_tier = encoding_tier
+        if video_quality is not None:
+            self.video_quality = video_quality
         if max_stored_frame_rate is not None:
             self.max_stored_frame_rate = max_stored_frame_rate
         if aspect_ratio is not None:
@@ -380,7 +385,7 @@ class Asset(object):
     def encoding_tier(self):
         """Gets the encoding_tier of this Asset.  # noqa: E501
 
-        The encoding tier informs the cost, quality, and available platform features for the asset. By default the `smart` encoding tier is used. [See the guide for more details.](https://docs.mux.com/guides/use-encoding-tiers)  # noqa: E501
+        This field is deprecated. Please use `video_quality` instead. The encoding tier informs the cost, quality, and available platform features for the asset. By default the `smart` encoding tier is used. [See the video quality guide for more details.](https://docs.mux.com/guides/use-encoding-tiers)  # noqa: E501
 
         :return: The encoding_tier of this Asset.  # noqa: E501
         :rtype: str
@@ -391,7 +396,7 @@ class Asset(object):
     def encoding_tier(self, encoding_tier):
         """Sets the encoding_tier of this Asset.
 
-        The encoding tier informs the cost, quality, and available platform features for the asset. By default the `smart` encoding tier is used. [See the guide for more details.](https://docs.mux.com/guides/use-encoding-tiers)  # noqa: E501
+        This field is deprecated. Please use `video_quality` instead. The encoding tier informs the cost, quality, and available platform features for the asset. By default the `smart` encoding tier is used. [See the video quality guide for more details.](https://docs.mux.com/guides/use-encoding-tiers)  # noqa: E501
 
         :param encoding_tier: The encoding_tier of this Asset.  # noqa: E501
         :type encoding_tier: str
@@ -404,6 +409,35 @@ class Asset(object):
             )
 
         self._encoding_tier = encoding_tier
+
+    @property
+    def video_quality(self):
+        """Gets the video_quality of this Asset.  # noqa: E501
+
+        The video quality controls the cost, quality, and available platform features for the asset. By default the `plus` video quality is used. This field replaces the deprecated `encoding_tier` value. [See the video quality guide for more details.](https://docs.mux.com/guides/use-encoding-tiers)  # noqa: E501
+
+        :return: The video_quality of this Asset.  # noqa: E501
+        :rtype: str
+        """
+        return self._video_quality
+
+    @video_quality.setter
+    def video_quality(self, video_quality):
+        """Sets the video_quality of this Asset.
+
+        The video quality controls the cost, quality, and available platform features for the asset. By default the `plus` video quality is used. This field replaces the deprecated `encoding_tier` value. [See the video quality guide for more details.](https://docs.mux.com/guides/use-encoding-tiers)  # noqa: E501
+
+        :param video_quality: The video_quality of this Asset.  # noqa: E501
+        :type video_quality: str
+        """
+        allowed_values = ["basic", "plus"]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and video_quality not in allowed_values:  # noqa: E501
+            raise ValueError(
+                "Invalid value for `video_quality` ({0}), must be one of {1}"  # noqa: E501
+                .format(video_quality, allowed_values)
+            )
+
+        self._video_quality = video_quality
 
     @property
     def max_stored_frame_rate(self):
