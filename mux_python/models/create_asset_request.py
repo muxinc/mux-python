@@ -361,7 +361,7 @@ class CreateAssetRequest(object):
     def encoding_tier(self):
         """Gets the encoding_tier of this CreateAssetRequest.  # noqa: E501
 
-        This field is deprecated. Please use `video_quality` instead. The encoding tier informs the cost, quality, and available platform features for the asset. By default the `smart` encoding tier is used. [See the video quality guide for more details.](https://docs.mux.com/guides/use-encoding-tiers)  # noqa: E501
+        This field is deprecated. Please use `video_quality` instead. The encoding tier informs the cost, quality, and available platform features for the asset. The default encoding tier for an account can be set in the Mux Dashboard. [See the video quality guide for more details.](https://docs.mux.com/guides/use-video-quality-levels)  # noqa: E501
 
         :return: The encoding_tier of this CreateAssetRequest.  # noqa: E501
         :rtype: str
@@ -372,12 +372,12 @@ class CreateAssetRequest(object):
     def encoding_tier(self, encoding_tier):
         """Sets the encoding_tier of this CreateAssetRequest.
 
-        This field is deprecated. Please use `video_quality` instead. The encoding tier informs the cost, quality, and available platform features for the asset. By default the `smart` encoding tier is used. [See the video quality guide for more details.](https://docs.mux.com/guides/use-encoding-tiers)  # noqa: E501
+        This field is deprecated. Please use `video_quality` instead. The encoding tier informs the cost, quality, and available platform features for the asset. The default encoding tier for an account can be set in the Mux Dashboard. [See the video quality guide for more details.](https://docs.mux.com/guides/use-video-quality-levels)  # noqa: E501
 
         :param encoding_tier: The encoding_tier of this CreateAssetRequest.  # noqa: E501
         :type encoding_tier: str
         """
-        allowed_values = ["smart", "baseline"]  # noqa: E501
+        allowed_values = ["smart", "baseline", "premium"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and encoding_tier not in allowed_values:  # noqa: E501
             raise ValueError(
                 "Invalid value for `encoding_tier` ({0}), must be one of {1}"  # noqa: E501
@@ -390,7 +390,7 @@ class CreateAssetRequest(object):
     def video_quality(self):
         """Gets the video_quality of this CreateAssetRequest.  # noqa: E501
 
-        The video quality controls the cost, quality, and available platform features for the asset. By default the `plus` video quality is used. This field replaces the deprecated `encoding_tier` value. [See the video quality guide for more details.](https://docs.mux.com/guides/use-encoding-tiers)  # noqa: E501
+        The video quality controls the cost, quality, and available platform features for the asset. The default video quality for an account can be set in the Mux Dashboard. This field replaces the deprecated `encoding_tier` value. [See the video quality guide for more details.](https://docs.mux.com/guides/use-video-quality-levels)  # noqa: E501
 
         :return: The video_quality of this CreateAssetRequest.  # noqa: E501
         :rtype: str
@@ -401,12 +401,12 @@ class CreateAssetRequest(object):
     def video_quality(self, video_quality):
         """Sets the video_quality of this CreateAssetRequest.
 
-        The video quality controls the cost, quality, and available platform features for the asset. By default the `plus` video quality is used. This field replaces the deprecated `encoding_tier` value. [See the video quality guide for more details.](https://docs.mux.com/guides/use-encoding-tiers)  # noqa: E501
+        The video quality controls the cost, quality, and available platform features for the asset. The default video quality for an account can be set in the Mux Dashboard. This field replaces the deprecated `encoding_tier` value. [See the video quality guide for more details.](https://docs.mux.com/guides/use-video-quality-levels)  # noqa: E501
 
         :param video_quality: The video_quality of this CreateAssetRequest.  # noqa: E501
         :type video_quality: str
         """
-        allowed_values = ["basic", "plus"]  # noqa: E501
+        allowed_values = ["basic", "plus", "premium"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and video_quality not in allowed_values:  # noqa: E501
             raise ValueError(
                 "Invalid value for `video_quality` ({0}), must be one of {1}"  # noqa: E501

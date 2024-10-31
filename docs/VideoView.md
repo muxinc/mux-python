@@ -166,6 +166,7 @@ Name | Type | Description | Notes
 **ad_preroll_startup_time** | **int** |  | [optional]
 **ad_watch_time** | **int** |  | [optional]
 **view_content_watch_time** | **int** |  | [optional]
+**view_dropped** | **bool** |  | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

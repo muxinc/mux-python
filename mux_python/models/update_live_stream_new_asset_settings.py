@@ -37,24 +37,29 @@ class UpdateLiveStreamNewAssetSettings(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'mp4_support': 'str'
+        'mp4_support': 'str',
+        'master_access': 'str'
     }
 
     attribute_map = {
-        'mp4_support': 'mp4_support'
+        'mp4_support': 'mp4_support',
+        'master_access': 'master_access'
     }
 
-    def __init__(self, mp4_support=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, mp4_support=None, master_access=None, local_vars_configuration=None):  # noqa: E501
         """UpdateLiveStreamNewAssetSettings - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
         self.local_vars_configuration = local_vars_configuration
 
         self._mp4_support = None
+        self._master_access = None
         self.discriminator = None
 
         if mp4_support is not None:
             self.mp4_support = mp4_support
+        if master_access is not None:
+            self.master_access = master_access
 
     @property
     def mp4_support(self):
@@ -84,6 +89,35 @@ class UpdateLiveStreamNewAssetSettings(object):
             )
 
         self._mp4_support = mp4_support
+
+    @property
+    def master_access(self):
+        """Gets the master_access of this UpdateLiveStreamNewAssetSettings.  # noqa: E501
+
+        Add or remove access to the master version of the video.  # noqa: E501
+
+        :return: The master_access of this UpdateLiveStreamNewAssetSettings.  # noqa: E501
+        :rtype: str
+        """
+        return self._master_access
+
+    @master_access.setter
+    def master_access(self, master_access):
+        """Sets the master_access of this UpdateLiveStreamNewAssetSettings.
+
+        Add or remove access to the master version of the video.  # noqa: E501
+
+        :param master_access: The master_access of this UpdateLiveStreamNewAssetSettings.  # noqa: E501
+        :type master_access: str
+        """
+        allowed_values = ["temporary", "none"]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and master_access not in allowed_values:  # noqa: E501
+            raise ValueError(
+                "Invalid value for `master_access` ({0}), must be one of {1}"  # noqa: E501
+                .format(master_access, allowed_values)
+            )
+
+        self._master_access = master_access
 
     def to_dict(self, serialize=False):
         """Returns the model properties as a dict"""
