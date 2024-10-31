@@ -311,7 +311,7 @@ class DeliveryReport(object):
     def asset_encoding_tier(self):
         """Gets the asset_encoding_tier of this DeliveryReport.  # noqa: E501
 
-        This field is deprecated. Please use `asset_video_quality` instead. The encoding tier that the asset was ingested at. [See the video quality guide for more details.](https://docs.mux.com/guides/use-encoding-tiers)  # noqa: E501
+        This field is deprecated. Please use `asset_video_quality` instead. The encoding tier that the asset was ingested at. [See the video quality guide for more details.](https://docs.mux.com/guides/use-video-quality-levels)  # noqa: E501
 
         :return: The asset_encoding_tier of this DeliveryReport.  # noqa: E501
         :rtype: str
@@ -322,12 +322,12 @@ class DeliveryReport(object):
     def asset_encoding_tier(self, asset_encoding_tier):
         """Sets the asset_encoding_tier of this DeliveryReport.
 
-        This field is deprecated. Please use `asset_video_quality` instead. The encoding tier that the asset was ingested at. [See the video quality guide for more details.](https://docs.mux.com/guides/use-encoding-tiers)  # noqa: E501
+        This field is deprecated. Please use `asset_video_quality` instead. The encoding tier that the asset was ingested at. [See the video quality guide for more details.](https://docs.mux.com/guides/use-video-quality-levels)  # noqa: E501
 
         :param asset_encoding_tier: The asset_encoding_tier of this DeliveryReport.  # noqa: E501
         :type asset_encoding_tier: str
         """
-        allowed_values = ["smart", "baseline"]  # noqa: E501
+        allowed_values = ["smart", "baseline", "premium"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and asset_encoding_tier not in allowed_values:  # noqa: E501
             raise ValueError(
                 "Invalid value for `asset_encoding_tier` ({0}), must be one of {1}"  # noqa: E501
@@ -340,7 +340,7 @@ class DeliveryReport(object):
     def asset_video_quality(self):
         """Gets the asset_video_quality of this DeliveryReport.  # noqa: E501
 
-        The video quality that the asset was ingested at. This field replaces `asset_encoding_tier`. [See the video quality guide for more details.](https://docs.mux.com/guides/use-encoding-tiers)  # noqa: E501
+        The video quality that the asset was ingested at. This field replaces `asset_encoding_tier`. [See the video quality guide for more details.](https://docs.mux.com/guides/use-video-quality-levels)  # noqa: E501
 
         :return: The asset_video_quality of this DeliveryReport.  # noqa: E501
         :rtype: str
@@ -351,12 +351,12 @@ class DeliveryReport(object):
     def asset_video_quality(self, asset_video_quality):
         """Sets the asset_video_quality of this DeliveryReport.
 
-        The video quality that the asset was ingested at. This field replaces `asset_encoding_tier`. [See the video quality guide for more details.](https://docs.mux.com/guides/use-encoding-tiers)  # noqa: E501
+        The video quality that the asset was ingested at. This field replaces `asset_encoding_tier`. [See the video quality guide for more details.](https://docs.mux.com/guides/use-video-quality-levels)  # noqa: E501
 
         :param asset_video_quality: The asset_video_quality of this DeliveryReport.  # noqa: E501
         :type asset_video_quality: str
         """
-        allowed_values = ["basic", "plus"]  # noqa: E501
+        allowed_values = ["basic", "plus", "premium"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and asset_video_quality not in allowed_values:  # noqa: E501
             raise ValueError(
                 "Invalid value for `asset_video_quality` ({0}), must be one of {1}"  # noqa: E501
