@@ -54,6 +54,10 @@ Mux Python is a code generated lightweight wrapper around the Mux REST API and r
 
 2) We don't use a lot of object orientation. For example API calls that happen on a single asset don't exist in the asset class, but are API calls in the AssetsApi which require an asset ID.
 
+### Usage With Webhooks
+
+At this moment, this SDK is not suitable for verifying webhook payloads, due to some incompatibilities in our API spec and our SDK generation tooling. We are working on resolving these issues, but for now you should only use this SDK for Mux's REST APIs.
+
 ### Authentication
 To use the Mux API, you'll need an access token and a secret. [Details on obtaining these can be found here in the Mux documentation.](https://docs.mux.com/docs#section-1-get-an-api-access-token)
 
