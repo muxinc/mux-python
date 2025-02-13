@@ -10,7 +10,6 @@ docs/AssetNonStandardInputReasons.md
 docs/AssetRecordingTimes.md
 docs/AssetResponse.md
 docs/AssetStaticRenditions.md
-docs/AssetStaticRenditionsFiles.md
 docs/AssetsApi.md
 docs/BreakdownValue.md
 docs/Broadcast.md
@@ -26,6 +25,8 @@ docs/CreatePlaybackIDResponse.md
 docs/CreatePlaybackRestrictionRequest.md
 docs/CreateSimulcastTargetRequest.md
 docs/CreateSpaceRequest.md
+docs/CreateStaticRenditionRequest.md
+docs/CreateStaticRenditionResponse.md
 docs/CreateTrackRequest.md
 docs/CreateTrackResponse.md
 docs/CreateTranscriptionVocabularyRequest.md
@@ -157,6 +158,7 @@ docs/SpaceStatus.md
 docs/SpaceType.md
 docs/SpacesApi.md
 docs/StartSpaceBroadcastResponse.md
+docs/StaticRendition.md
 docs/StopSpaceBroadcastResponse.md
 docs/Track.md
 docs/TranscriptionVocabulariesApi.md
@@ -169,6 +171,7 @@ docs/UpdateAssetRequest.md
 docs/UpdateLiveStreamEmbeddedSubtitlesRequest.md
 docs/UpdateLiveStreamGeneratedSubtitlesRequest.md
 docs/UpdateLiveStreamNewAssetSettings.md
+docs/UpdateLiveStreamNewAssetSettingsStaticRenditionsRequest.md
 docs/UpdateLiveStreamRequest.md
 docs/UpdateReferrerDomainRestrictionRequest.md
 docs/UpdateTranscriptionVocabularyRequest.md
@@ -222,7 +225,6 @@ mux_python/models/asset_non_standard_input_reasons.py
 mux_python/models/asset_recording_times.py
 mux_python/models/asset_response.py
 mux_python/models/asset_static_renditions.py
-mux_python/models/asset_static_renditions_files.py
 mux_python/models/breakdown_value.py
 mux_python/models/broadcast.py
 mux_python/models/broadcast_layout.py
@@ -237,6 +239,8 @@ mux_python/models/create_playback_id_response.py
 mux_python/models/create_playback_restriction_request.py
 mux_python/models/create_simulcast_target_request.py
 mux_python/models/create_space_request.py
+mux_python/models/create_static_rendition_request.py
+mux_python/models/create_static_rendition_response.py
 mux_python/models/create_track_request.py
 mux_python/models/create_track_response.py
 mux_python/models/create_transcription_vocabulary_request.py
@@ -352,6 +356,7 @@ mux_python/models/space_response.py
 mux_python/models/space_status.py
 mux_python/models/space_type.py
 mux_python/models/start_space_broadcast_response.py
+mux_python/models/static_rendition.py
 mux_python/models/stop_space_broadcast_response.py
 mux_python/models/track.py
 mux_python/models/transcription_vocabulary.py
@@ -362,6 +367,7 @@ mux_python/models/update_asset_request.py
 mux_python/models/update_live_stream_embedded_subtitles_request.py
 mux_python/models/update_live_stream_generated_subtitles_request.py
 mux_python/models/update_live_stream_new_asset_settings.py
+mux_python/models/update_live_stream_new_asset_settings_static_renditions_request.py
 mux_python/models/update_live_stream_request.py
 mux_python/models/update_referrer_domain_restriction_request.py
 mux_python/models/update_transcription_vocabulary_request.py
@@ -383,4 +389,8 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
+test/test_create_static_rendition_request.py
+test/test_create_static_rendition_response.py
+test/test_static_rendition.py
+test/test_update_live_stream_new_asset_settings_static_renditions_request.py
 tox.ini

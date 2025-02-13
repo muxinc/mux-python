@@ -10,6 +10,7 @@ Method | HTTP request | Description
 [**delete_live_stream**](LiveStreamsApi.md#delete_live_stream) | **DELETE** /video/v1/live-streams/{LIVE_STREAM_ID} | Delete a live stream
 [**delete_live_stream_playback_id**](LiveStreamsApi.md#delete_live_stream_playback_id) | **DELETE** /video/v1/live-streams/{LIVE_STREAM_ID}/playback-ids/{PLAYBACK_ID} | Delete a live stream playback ID
 [**delete_live_stream_simulcast_target**](LiveStreamsApi.md#delete_live_stream_simulcast_target) | **DELETE** /video/v1/live-streams/{LIVE_STREAM_ID}/simulcast-targets/{SIMULCAST_TARGET_ID} | Delete a live stream simulcast target
+[**delete_live_stream_static_renditions**](LiveStreamsApi.md#delete_live_stream_static_renditions) | **DELETE** /video/v1/live-streams/{LIVE_STREAM_ID}/new-asset-settings/static-renditions | Delete a live stream&#39;s static renditions setting for new assets
 [**disable_live_stream**](LiveStreamsApi.md#disable_live_stream) | **PUT** /video/v1/live-streams/{LIVE_STREAM_ID}/disable | Disable a live stream
 [**enable_live_stream**](LiveStreamsApi.md#enable_live_stream) | **PUT** /video/v1/live-streams/{LIVE_STREAM_ID}/enable | Enable a live stream
 [**get_live_stream**](LiveStreamsApi.md#get_live_stream) | **GET** /video/v1/live-streams/{LIVE_STREAM_ID} | Retrieve a live stream
@@ -21,6 +22,7 @@ Method | HTTP request | Description
 [**update_live_stream**](LiveStreamsApi.md#update_live_stream) | **PATCH** /video/v1/live-streams/{LIVE_STREAM_ID} | Update a live stream
 [**update_live_stream_embedded_subtitles**](LiveStreamsApi.md#update_live_stream_embedded_subtitles) | **PUT** /video/v1/live-streams/{LIVE_STREAM_ID}/embedded-subtitles | Update a live stream&#39;s embedded subtitles
 [**update_live_stream_generated_subtitles**](LiveStreamsApi.md#update_live_stream_generated_subtitles) | **PUT** /video/v1/live-streams/{LIVE_STREAM_ID}/generated-subtitles | Update a live stream&#39;s generated subtitles
+[**update_live_stream_static_renditions**](LiveStreamsApi.md#update_live_stream_static_renditions) | **PUT** /video/v1/live-streams/{LIVE_STREAM_ID}/new-asset-settings/static-renditions | Update live stream static renditions for new assets
 
 
 # **create_live_stream**
@@ -445,6 +447,78 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **live_stream_id** | **str**| The live stream ID | 
  **simulcast_target_id** | **str**| The ID of the simulcast target. | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[accessToken](../README.md#accessToken)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | No Content |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **delete_live_stream_static_renditions**
+> delete_live_stream_static_renditions(live_stream_id)
+
+Delete a live stream's static renditions setting for new assets
+
+Deletes a live stream's static renditions settings for new assets. Further assets made via this live stream will not create static renditions unless re-added.
+
+### Example
+
+* Basic Authentication (accessToken):
+```python
+from __future__ import print_function
+import time
+import mux_python
+from mux_python.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.mux.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = mux_python.Configuration(
+    host = "https://api.mux.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: accessToken
+configuration = mux_python.Configuration(
+    username = 'YOUR_USERNAME',
+    password = 'YOUR_PASSWORD'
+)
+
+# Enter a context with an instance of the API client
+with mux_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = mux_python.LiveStreamsApi(api_client)
+    live_stream_id = 'live_stream_id_example' # str | The live stream ID
+
+    try:
+        # Delete a live stream's static renditions setting for new assets
+        api_instance.delete_live_stream_static_renditions(live_stream_id)
+    except ApiException as e:
+        print("Exception when calling LiveStreamsApi->delete_live_stream_static_renditions: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **live_stream_id** | **str**| The live stream ID | 
 
 ### Return type
 
@@ -1264,6 +1338,81 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **live_stream_id** | **str**| The live stream ID | 
  **update_live_stream_generated_subtitles_request** | [**UpdateLiveStreamGeneratedSubtitlesRequest**](UpdateLiveStreamGeneratedSubtitlesRequest.md)|  | 
+
+### Return type
+
+[**LiveStreamResponse**](LiveStreamResponse.md)
+
+### Authorization
+
+[accessToken](../README.md#accessToken)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_live_stream_static_renditions**
+> LiveStreamResponse update_live_stream_static_renditions(live_stream_id, update_live_stream_new_asset_settings_static_renditions_request)
+
+Update live stream static renditions for new assets
+
+Updates a live stream's static renditions settings for new assets. Further assets made via this live stream will create static renditions per the settings provided. You must provide all static renditions desired.
+
+### Example
+
+* Basic Authentication (accessToken):
+```python
+from __future__ import print_function
+import time
+import mux_python
+from mux_python.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.mux.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = mux_python.Configuration(
+    host = "https://api.mux.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: accessToken
+configuration = mux_python.Configuration(
+    username = 'YOUR_USERNAME',
+    password = 'YOUR_PASSWORD'
+)
+
+# Enter a context with an instance of the API client
+with mux_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = mux_python.LiveStreamsApi(api_client)
+    live_stream_id = 'live_stream_id_example' # str | The live stream ID
+update_live_stream_new_asset_settings_static_renditions_request = {"static_renditions":[{"resolution":"audio-only"},{"resolution":"highest"}]} # UpdateLiveStreamNewAssetSettingsStaticRenditionsRequest | 
+
+    try:
+        # Update live stream static renditions for new assets
+        api_response = api_instance.update_live_stream_static_renditions(live_stream_id, update_live_stream_new_asset_settings_static_renditions_request)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling LiveStreamsApi->update_live_stream_static_renditions: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **live_stream_id** | **str**| The live stream ID | 
+ **update_live_stream_new_asset_settings_static_renditions_request** | [**UpdateLiveStreamNewAssetSettingsStaticRenditionsRequest**](UpdateLiveStreamNewAssetSettingsStaticRenditionsRequest.md)|  | 
 
 ### Return type
 

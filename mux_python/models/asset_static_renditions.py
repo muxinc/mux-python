@@ -38,7 +38,7 @@ class AssetStaticRenditions(object):
     """
     openapi_types = {
         'status': 'str',
-        'files': 'list[AssetStaticRenditionsFiles]'
+        'files': 'list[StaticRendition]'
     }
 
     attribute_map = {
@@ -65,7 +65,7 @@ class AssetStaticRenditions(object):
     def status(self):
         """Gets the status of this AssetStaticRenditions.  # noqa: E501
 
-        Indicates the status of downloadable MP4 versions of this asset.  # noqa: E501
+        Indicates the status of downloadable MP4 versions of this asset. This field is only valid when `mp4_support` is enabled  # noqa: E501
 
         :return: The status of this AssetStaticRenditions.  # noqa: E501
         :rtype: str
@@ -76,7 +76,7 @@ class AssetStaticRenditions(object):
     def status(self, status):
         """Sets the status of this AssetStaticRenditions.
 
-        Indicates the status of downloadable MP4 versions of this asset.  # noqa: E501
+        Indicates the status of downloadable MP4 versions of this asset. This field is only valid when `mp4_support` is enabled  # noqa: E501
 
         :param status: The status of this AssetStaticRenditions.  # noqa: E501
         :type status: str
@@ -97,7 +97,7 @@ class AssetStaticRenditions(object):
         Array of file objects.  # noqa: E501
 
         :return: The files of this AssetStaticRenditions.  # noqa: E501
-        :rtype: list[AssetStaticRenditionsFiles]
+        :rtype: list[StaticRendition]
         """
         return self._files
 
@@ -108,7 +108,7 @@ class AssetStaticRenditions(object):
         Array of file objects.  # noqa: E501
 
         :param files: The files of this AssetStaticRenditions.  # noqa: E501
-        :type files: list[AssetStaticRenditionsFiles]
+        :type files: list[StaticRendition]
         """
 
         self._files = files

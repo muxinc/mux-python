@@ -38,15 +38,17 @@ class UpdateLiveStreamNewAssetSettings(object):
     """
     openapi_types = {
         'mp4_support': 'str',
-        'master_access': 'str'
+        'master_access': 'str',
+        'video_quality': 'str'
     }
 
     attribute_map = {
         'mp4_support': 'mp4_support',
-        'master_access': 'master_access'
+        'master_access': 'master_access',
+        'video_quality': 'video_quality'
     }
 
-    def __init__(self, mp4_support=None, master_access=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, mp4_support=None, master_access=None, video_quality=None, local_vars_configuration=None):  # noqa: E501
         """UpdateLiveStreamNewAssetSettings - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
@@ -54,12 +56,15 @@ class UpdateLiveStreamNewAssetSettings(object):
 
         self._mp4_support = None
         self._master_access = None
+        self._video_quality = None
         self.discriminator = None
 
         if mp4_support is not None:
             self.mp4_support = mp4_support
         if master_access is not None:
             self.master_access = master_access
+        if video_quality is not None:
+            self.video_quality = video_quality
 
     @property
     def mp4_support(self):
@@ -118,6 +123,35 @@ class UpdateLiveStreamNewAssetSettings(object):
             )
 
         self._master_access = master_access
+
+    @property
+    def video_quality(self):
+        """Gets the video_quality of this UpdateLiveStreamNewAssetSettings.  # noqa: E501
+
+        The video quality controls the cost, quality, and available platform features for the asset. [See the video quality guide for more details.](https://docs.mux.com/guides/use-video-quality-levels)  # noqa: E501
+
+        :return: The video_quality of this UpdateLiveStreamNewAssetSettings.  # noqa: E501
+        :rtype: str
+        """
+        return self._video_quality
+
+    @video_quality.setter
+    def video_quality(self, video_quality):
+        """Sets the video_quality of this UpdateLiveStreamNewAssetSettings.
+
+        The video quality controls the cost, quality, and available platform features for the asset. [See the video quality guide for more details.](https://docs.mux.com/guides/use-video-quality-levels)  # noqa: E501
+
+        :param video_quality: The video_quality of this UpdateLiveStreamNewAssetSettings.  # noqa: E501
+        :type video_quality: str
+        """
+        allowed_values = ["plus", "premium"]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and video_quality not in allowed_values:  # noqa: E501
+            raise ValueError(
+                "Invalid value for `video_quality` ({0}), must be one of {1}"  # noqa: E501
+                .format(video_quality, allowed_values)
+            )
+
+        self._video_quality = video_quality
 
     def to_dict(self, serialize=False):
         """Returns the model properties as a dict"""
