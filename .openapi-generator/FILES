@@ -389,8 +389,4 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_create_static_rendition_request.py
-test/test_create_static_rendition_response.py
-test/test_static_rendition.py
-test/test_update_live_stream_new_asset_settings_static_renditions_request.py
 tox.ini

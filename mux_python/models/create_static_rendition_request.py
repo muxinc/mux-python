@@ -37,24 +37,29 @@ class CreateStaticRenditionRequest(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'resolution': 'str'
+        'resolution': 'str',
+        'passthrough': 'str'
     }
 
     attribute_map = {
-        'resolution': 'resolution'
+        'resolution': 'resolution',
+        'passthrough': 'passthrough'
     }
 
-    def __init__(self, resolution=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, resolution=None, passthrough=None, local_vars_configuration=None):  # noqa: E501
         """CreateStaticRenditionRequest - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
         self.local_vars_configuration = local_vars_configuration
 
         self._resolution = None
+        self._passthrough = None
         self.discriminator = None
 
         if resolution is not None:
             self.resolution = resolution
+        if passthrough is not None:
+            self.passthrough = passthrough
 
     @property
     def resolution(self):
@@ -82,6 +87,29 @@ class CreateStaticRenditionRequest(object):
             )
 
         self._resolution = resolution
+
+    @property
+    def passthrough(self):
+        """Gets the passthrough of this CreateStaticRenditionRequest.  # noqa: E501
+
+        Arbitrary user-supplied metadata set for the static rendition. Max 255 characters.  # noqa: E501
+
+        :return: The passthrough of this CreateStaticRenditionRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._passthrough
+
+    @passthrough.setter
+    def passthrough(self, passthrough):
+        """Sets the passthrough of this CreateStaticRenditionRequest.
+
+        Arbitrary user-supplied metadata set for the static rendition. Max 255 characters.  # noqa: E501
+
+        :param passthrough: The passthrough of this CreateStaticRenditionRequest.  # noqa: E501
+        :type passthrough: str
+        """
+
+        self._passthrough = passthrough
 
     def to_dict(self, serialize=False):
         """Returns the model properties as a dict"""

@@ -47,7 +47,8 @@ class StaticRendition(object):
         'status': 'str',
         'resolution_tier': 'str',
         'resolution': 'str',
-        'id': 'str'
+        'id': 'str',
+        'passthrough': 'str'
     }
 
     attribute_map = {
@@ -61,10 +62,11 @@ class StaticRendition(object):
         'status': 'status',
         'resolution_tier': 'resolution_tier',
         'resolution': 'resolution',
-        'id': 'id'
+        'id': 'id',
+        'passthrough': 'passthrough'
     }
 
-    def __init__(self, name=None, ext=None, height=None, width=None, bitrate=None, filesize=None, type=None, status=None, resolution_tier=None, resolution=None, id=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, name=None, ext=None, height=None, width=None, bitrate=None, filesize=None, type=None, status=None, resolution_tier=None, resolution=None, id=None, passthrough=None, local_vars_configuration=None):  # noqa: E501
         """StaticRendition - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
@@ -81,6 +83,7 @@ class StaticRendition(object):
         self._resolution_tier = None
         self._resolution = None
         self._id = None
+        self._passthrough = None
         self.discriminator = None
 
         if name is not None:
@@ -105,6 +108,8 @@ class StaticRendition(object):
             self.resolution = resolution
         if id is not None:
             self.id = id
+        if passthrough is not None:
+            self.passthrough = passthrough
 
     @property
     def name(self):
@@ -394,6 +399,29 @@ class StaticRendition(object):
         """
 
         self._id = id
+
+    @property
+    def passthrough(self):
+        """Gets the passthrough of this StaticRendition.  # noqa: E501
+
+        Arbitrary user-supplied metadata set for the static rendition. Max 255 characters.  # noqa: E501
+
+        :return: The passthrough of this StaticRendition.  # noqa: E501
+        :rtype: str
+        """
+        return self._passthrough
+
+    @passthrough.setter
+    def passthrough(self, passthrough):
+        """Sets the passthrough of this StaticRendition.
+
+        Arbitrary user-supplied metadata set for the static rendition. Max 255 characters.  # noqa: E501
+
+        :param passthrough: The passthrough of this StaticRendition.  # noqa: E501
+        :type passthrough: str
+        """
+
+        self._passthrough = passthrough
 
     def to_dict(self, serialize=False):
         """Returns the model properties as a dict"""

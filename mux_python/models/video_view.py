@@ -198,7 +198,23 @@ class VideoView(object):
         'ad_playback_failure_error_type_id': 'int',
         'view_content_startup_time': 'int',
         'ad_preroll_startup_time': 'int',
-        'view_dropped': 'bool'
+        'view_dropped': 'bool',
+        'client_application_name': 'str',
+        'client_application_version': 'str',
+        'video_affiliate': 'str',
+        'viewer_plan': 'str',
+        'viewer_plan_status': 'str',
+        'viewer_plan_category': 'str',
+        'view_drm_level': 'str',
+        'video_brand': 'str',
+        'used_pip': 'bool',
+        'time_shift_enabled': 'bool',
+        'used_captions': 'bool',
+        'video_codec': 'str',
+        'audio_codec': 'str',
+        'video_dynamic_range_type': 'str',
+        'view_cdn_edge_pop': 'str',
+        'view_cdn_origin': 'str'
     }
 
     attribute_map = {
@@ -363,10 +379,26 @@ class VideoView(object):
         'ad_playback_failure_error_type_id': 'ad_playback_failure_error_type_id',
         'view_content_startup_time': 'view_content_startup_time',
         'ad_preroll_startup_time': 'ad_preroll_startup_time',
-        'view_dropped': 'view_dropped'
+        'view_dropped': 'view_dropped',
+        'client_application_name': 'client_application_name',
+        'client_application_version': 'client_application_version',
+        'video_affiliate': 'video_affiliate',
+        'viewer_plan': 'viewer_plan',
+        'viewer_plan_status': 'viewer_plan_status',
+        'viewer_plan_category': 'viewer_plan_category',
+        'view_drm_level': 'view_drm_level',
+        'video_brand': 'video_brand',
+        'used_pip': 'used_pip',
+        'time_shift_enabled': 'time_shift_enabled',
+        'used_captions': 'used_captions',
+        'video_codec': 'video_codec',
+        'audio_codec': 'audio_codec',
+        'video_dynamic_range_type': 'video_dynamic_range_type',
+        'view_cdn_edge_pop': 'view_cdn_edge_pop',
+        'view_cdn_origin': 'view_cdn_origin'
     }
 
-    def __init__(self, view_total_upscaling=None, preroll_ad_asset_hostname=None, player_source_domain=None, region=None, viewer_user_agent=None, preroll_requested=None, page_type=None, startup_score=None, view_seek_duration=None, country_name=None, player_source_height=None, longitude=None, buffering_count=None, video_duration=None, player_source_type=None, city=None, view_id=None, platform_description=None, video_startup_preroll_request_time=None, viewer_device_name=None, video_series=None, viewer_application_name=None, updated_at=None, view_total_content_playback_time=None, cdn=None, player_instance_id=None, video_language=None, player_source_width=None, player_error_message=None, player_mux_plugin_version=None, watched=None, playback_score=None, page_url=None, metro=None, view_max_request_latency=None, requests_for_first_preroll=None, view_total_downscaling=None, latitude=None, player_source_host_name=None, inserted_at=None, view_end=None, mux_embed_version=None, player_language=None, page_load_time=None, viewer_device_category=None, video_startup_preroll_load_time=None, player_version=None, watch_time=None, player_source_stream_type=None, preroll_ad_tag_hostname=None, viewer_device_manufacturer=None, rebuffering_score=None, experiment_name=None, viewer_os_version=None, player_preload=None, buffering_duration=None, player_view_count=None, player_software=None, player_load_time=None, platform_summary=None, video_encoding_variant=None, player_width=None, view_seek_count=None, viewer_experience_score=None, view_error_id=None, video_variant_name=None, preroll_played=None, viewer_application_engine=None, viewer_os_architecture=None, player_error_code=None, buffering_rate=None, events=None, player_name=None, view_start=None, view_average_request_throughput=None, video_producer=None, error_type_id=None, mux_viewer_id=None, video_id=None, continent_code=None, session_id=None, exit_before_video_start=None, video_content_type=None, viewer_os_family=None, player_poster=None, view_average_request_latency=None, video_variant_id=None, player_source_duration=None, player_source_url=None, mux_api_version=None, video_title=None, id=None, short_time=None, rebuffer_percentage=None, time_to_first_frame=None, viewer_user_id=None, video_stream_type=None, player_startup_time=None, viewer_application_version=None, view_max_downscale_percentage=None, view_max_upscale_percentage=None, country_code=None, used_fullscreen=None, isp=None, property_id=None, player_autoplay=None, player_height=None, asn=None, asn_name=None, quality_score=None, player_software_version=None, player_mux_plugin_name=None, sub_property_id=None, player_remote_played=None, view_max_playhead_position=None, view_playing_time=None, view_session_id=None, viewer_connection_type=None, viewer_device_model=None, weighted_average_bitrate=None, custom_1=None, custom_2=None, custom_3=None, custom_4=None, custom_5=None, custom_6=None, custom_7=None, custom_8=None, custom_9=None, custom_10=None, live_stream_latency=None, asset_id=None, environment_id=None, live_stream_id=None, mux_embed=None, playback_id=None, player_error_context=None, view_drm_type=None, view_dropped_frame_count=None, view_has_ad=None, video_startup_failure=None, ad_attempt_count=None, ad_break_count=None, ad_break_error_count=None, ad_break_error_percentage=None, ad_error_count=None, ad_error_percentage=None, ad_impression_count=None, ad_startup_error_count=None, ad_startup_error_percentage=None, ad_exit_before_start_count=None, ad_exit_before_start_percentage=None, long_resume=None, long_rebuffering=None, playback_failure_error_type_id=None, playback_business_exception_error_type_id=None, video_startup_business_exception_error_type_id=None, playback_failure=None, ad_playback_failure_error_type_id=None, view_content_startup_time=None, ad_preroll_startup_time=None, view_dropped=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, view_total_upscaling=None, preroll_ad_asset_hostname=None, player_source_domain=None, region=None, viewer_user_agent=None, preroll_requested=None, page_type=None, startup_score=None, view_seek_duration=None, country_name=None, player_source_height=None, longitude=None, buffering_count=None, video_duration=None, player_source_type=None, city=None, view_id=None, platform_description=None, video_startup_preroll_request_time=None, viewer_device_name=None, video_series=None, viewer_application_name=None, updated_at=None, view_total_content_playback_time=None, cdn=None, player_instance_id=None, video_language=None, player_source_width=None, player_error_message=None, player_mux_plugin_version=None, watched=None, playback_score=None, page_url=None, metro=None, view_max_request_latency=None, requests_for_first_preroll=None, view_total_downscaling=None, latitude=None, player_source_host_name=None, inserted_at=None, view_end=None, mux_embed_version=None, player_language=None, page_load_time=None, viewer_device_category=None, video_startup_preroll_load_time=None, player_version=None, watch_time=None, player_source_stream_type=None, preroll_ad_tag_hostname=None, viewer_device_manufacturer=None, rebuffering_score=None, experiment_name=None, viewer_os_version=None, player_preload=None, buffering_duration=None, player_view_count=None, player_software=None, player_load_time=None, platform_summary=None, video_encoding_variant=None, player_width=None, view_seek_count=None, viewer_experience_score=None, view_error_id=None, video_variant_name=None, preroll_played=None, viewer_application_engine=None, viewer_os_architecture=None, player_error_code=None, buffering_rate=None, events=None, player_name=None, view_start=None, view_average_request_throughput=None, video_producer=None, error_type_id=None, mux_viewer_id=None, video_id=None, continent_code=None, session_id=None, exit_before_video_start=None, video_content_type=None, viewer_os_family=None, player_poster=None, view_average_request_latency=None, video_variant_id=None, player_source_duration=None, player_source_url=None, mux_api_version=None, video_title=None, id=None, short_time=None, rebuffer_percentage=None, time_to_first_frame=None, viewer_user_id=None, video_stream_type=None, player_startup_time=None, viewer_application_version=None, view_max_downscale_percentage=None, view_max_upscale_percentage=None, country_code=None, used_fullscreen=None, isp=None, property_id=None, player_autoplay=None, player_height=None, asn=None, asn_name=None, quality_score=None, player_software_version=None, player_mux_plugin_name=None, sub_property_id=None, player_remote_played=None, view_max_playhead_position=None, view_playing_time=None, view_session_id=None, viewer_connection_type=None, viewer_device_model=None, weighted_average_bitrate=None, custom_1=None, custom_2=None, custom_3=None, custom_4=None, custom_5=None, custom_6=None, custom_7=None, custom_8=None, custom_9=None, custom_10=None, live_stream_latency=None, asset_id=None, environment_id=None, live_stream_id=None, mux_embed=None, playback_id=None, player_error_context=None, view_drm_type=None, view_dropped_frame_count=None, view_has_ad=None, video_startup_failure=None, ad_attempt_count=None, ad_break_count=None, ad_break_error_count=None, ad_break_error_percentage=None, ad_error_count=None, ad_error_percentage=None, ad_impression_count=None, ad_startup_error_count=None, ad_startup_error_percentage=None, ad_exit_before_start_count=None, ad_exit_before_start_percentage=None, long_resume=None, long_rebuffering=None, playback_failure_error_type_id=None, playback_business_exception_error_type_id=None, video_startup_business_exception_error_type_id=None, playback_failure=None, ad_playback_failure_error_type_id=None, view_content_startup_time=None, ad_preroll_startup_time=None, view_dropped=None, client_application_name=None, client_application_version=None, video_affiliate=None, viewer_plan=None, viewer_plan_status=None, viewer_plan_category=None, view_drm_level=None, video_brand=None, used_pip=None, time_shift_enabled=None, used_captions=None, video_codec=None, audio_codec=None, video_dynamic_range_type=None, view_cdn_edge_pop=None, view_cdn_origin=None, local_vars_configuration=None):  # noqa: E501
         """VideoView - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
@@ -534,6 +566,22 @@ class VideoView(object):
         self._view_content_startup_time = None
         self._ad_preroll_startup_time = None
         self._view_dropped = None
+        self._client_application_name = None
+        self._client_application_version = None
+        self._video_affiliate = None
+        self._viewer_plan = None
+        self._viewer_plan_status = None
+        self._viewer_plan_category = None
+        self._view_drm_level = None
+        self._video_brand = None
+        self._used_pip = None
+        self._time_shift_enabled = None
+        self._used_captions = None
+        self._video_codec = None
+        self._audio_codec = None
+        self._video_dynamic_range_type = None
+        self._view_cdn_edge_pop = None
+        self._view_cdn_origin = None
         self.discriminator = None
 
         self.view_total_upscaling = view_total_upscaling
@@ -722,6 +770,25 @@ class VideoView(object):
         self.ad_preroll_startup_time = ad_preroll_startup_time
         if view_dropped is not None:
             self.view_dropped = view_dropped
+        self.client_application_name = client_application_name
+        self.client_application_version = client_application_version
+        self.video_affiliate = video_affiliate
+        self.viewer_plan = viewer_plan
+        self.viewer_plan_status = viewer_plan_status
+        self.viewer_plan_category = viewer_plan_category
+        self.view_drm_level = view_drm_level
+        self.video_brand = video_brand
+        if used_pip is not None:
+            self.used_pip = used_pip
+        if time_shift_enabled is not None:
+            self.time_shift_enabled = time_shift_enabled
+        if used_captions is not None:
+            self.used_captions = used_captions
+        self.video_codec = video_codec
+        self.audio_codec = audio_codec
+        self.video_dynamic_range_type = video_dynamic_range_type
+        self.view_cdn_edge_pop = view_cdn_edge_pop
+        self.view_cdn_origin = view_cdn_origin
 
     @property
     def view_total_upscaling(self):
@@ -4124,6 +4191,342 @@ class VideoView(object):
         """
 
         self._view_dropped = view_dropped
+
+    @property
+    def client_application_name(self):
+        """Gets the client_application_name of this VideoView.  # noqa: E501
+
+
+        :return: The client_application_name of this VideoView.  # noqa: E501
+        :rtype: str
+        """
+        return self._client_application_name
+
+    @client_application_name.setter
+    def client_application_name(self, client_application_name):
+        """Sets the client_application_name of this VideoView.
+
+
+        :param client_application_name: The client_application_name of this VideoView.  # noqa: E501
+        :type client_application_name: str
+        """
+
+        self._client_application_name = client_application_name
+
+    @property
+    def client_application_version(self):
+        """Gets the client_application_version of this VideoView.  # noqa: E501
+
+
+        :return: The client_application_version of this VideoView.  # noqa: E501
+        :rtype: str
+        """
+        return self._client_application_version
+
+    @client_application_version.setter
+    def client_application_version(self, client_application_version):
+        """Sets the client_application_version of this VideoView.
+
+
+        :param client_application_version: The client_application_version of this VideoView.  # noqa: E501
+        :type client_application_version: str
+        """
+
+        self._client_application_version = client_application_version
+
+    @property
+    def video_affiliate(self):
+        """Gets the video_affiliate of this VideoView.  # noqa: E501
+
+
+        :return: The video_affiliate of this VideoView.  # noqa: E501
+        :rtype: str
+        """
+        return self._video_affiliate
+
+    @video_affiliate.setter
+    def video_affiliate(self, video_affiliate):
+        """Sets the video_affiliate of this VideoView.
+
+
+        :param video_affiliate: The video_affiliate of this VideoView.  # noqa: E501
+        :type video_affiliate: str
+        """
+
+        self._video_affiliate = video_affiliate
+
+    @property
+    def viewer_plan(self):
+        """Gets the viewer_plan of this VideoView.  # noqa: E501
+
+
+        :return: The viewer_plan of this VideoView.  # noqa: E501
+        :rtype: str
+        """
+        return self._viewer_plan
+
+    @viewer_plan.setter
+    def viewer_plan(self, viewer_plan):
+        """Sets the viewer_plan of this VideoView.
+
+
+        :param viewer_plan: The viewer_plan of this VideoView.  # noqa: E501
+        :type viewer_plan: str
+        """
+
+        self._viewer_plan = viewer_plan
+
+    @property
+    def viewer_plan_status(self):
+        """Gets the viewer_plan_status of this VideoView.  # noqa: E501
+
+
+        :return: The viewer_plan_status of this VideoView.  # noqa: E501
+        :rtype: str
+        """
+        return self._viewer_plan_status
+
+    @viewer_plan_status.setter
+    def viewer_plan_status(self, viewer_plan_status):
+        """Sets the viewer_plan_status of this VideoView.
+
+
+        :param viewer_plan_status: The viewer_plan_status of this VideoView.  # noqa: E501
+        :type viewer_plan_status: str
+        """
+
+        self._viewer_plan_status = viewer_plan_status
+
+    @property
+    def viewer_plan_category(self):
+        """Gets the viewer_plan_category of this VideoView.  # noqa: E501
+
+
+        :return: The viewer_plan_category of this VideoView.  # noqa: E501
+        :rtype: str
+        """
+        return self._viewer_plan_category
+
+    @viewer_plan_category.setter
+    def viewer_plan_category(self, viewer_plan_category):
+        """Sets the viewer_plan_category of this VideoView.
+
+
+        :param viewer_plan_category: The viewer_plan_category of this VideoView.  # noqa: E501
+        :type viewer_plan_category: str
+        """
+
+        self._viewer_plan_category = viewer_plan_category
+
+    @property
+    def view_drm_level(self):
+        """Gets the view_drm_level of this VideoView.  # noqa: E501
+
+
+        :return: The view_drm_level of this VideoView.  # noqa: E501
+        :rtype: str
+        """
+        return self._view_drm_level
+
+    @view_drm_level.setter
+    def view_drm_level(self, view_drm_level):
+        """Sets the view_drm_level of this VideoView.
+
+
+        :param view_drm_level: The view_drm_level of this VideoView.  # noqa: E501
+        :type view_drm_level: str
+        """
+
+        self._view_drm_level = view_drm_level
+
+    @property
+    def video_brand(self):
+        """Gets the video_brand of this VideoView.  # noqa: E501
+
+
+        :return: The video_brand of this VideoView.  # noqa: E501
+        :rtype: str
+        """
+        return self._video_brand
+
+    @video_brand.setter
+    def video_brand(self, video_brand):
+        """Sets the video_brand of this VideoView.
+
+
+        :param video_brand: The video_brand of this VideoView.  # noqa: E501
+        :type video_brand: str
+        """
+
+        self._video_brand = video_brand
+
+    @property
+    def used_pip(self):
+        """Gets the used_pip of this VideoView.  # noqa: E501
+
+
+        :return: The used_pip of this VideoView.  # noqa: E501
+        :rtype: bool
+        """
+        return self._used_pip
+
+    @used_pip.setter
+    def used_pip(self, used_pip):
+        """Sets the used_pip of this VideoView.
+
+
+        :param used_pip: The used_pip of this VideoView.  # noqa: E501
+        :type used_pip: bool
+        """
+
+        self._used_pip = used_pip
+
+    @property
+    def time_shift_enabled(self):
+        """Gets the time_shift_enabled of this VideoView.  # noqa: E501
+
+
+        :return: The time_shift_enabled of this VideoView.  # noqa: E501
+        :rtype: bool
+        """
+        return self._time_shift_enabled
+
+    @time_shift_enabled.setter
+    def time_shift_enabled(self, time_shift_enabled):
+        """Sets the time_shift_enabled of this VideoView.
+
+
+        :param time_shift_enabled: The time_shift_enabled of this VideoView.  # noqa: E501
+        :type time_shift_enabled: bool
+        """
+
+        self._time_shift_enabled = time_shift_enabled
+
+    @property
+    def used_captions(self):
+        """Gets the used_captions of this VideoView.  # noqa: E501
+
+
+        :return: The used_captions of this VideoView.  # noqa: E501
+        :rtype: bool
+        """
+        return self._used_captions
+
+    @used_captions.setter
+    def used_captions(self, used_captions):
+        """Sets the used_captions of this VideoView.
+
+
+        :param used_captions: The used_captions of this VideoView.  # noqa: E501
+        :type used_captions: bool
+        """
+
+        self._used_captions = used_captions
+
+    @property
+    def video_codec(self):
+        """Gets the video_codec of this VideoView.  # noqa: E501
+
+
+        :return: The video_codec of this VideoView.  # noqa: E501
+        :rtype: str
+        """
+        return self._video_codec
+
+    @video_codec.setter
+    def video_codec(self, video_codec):
+        """Sets the video_codec of this VideoView.
+
+
+        :param video_codec: The video_codec of this VideoView.  # noqa: E501
+        :type video_codec: str
+        """
+
+        self._video_codec = video_codec
+
+    @property
+    def audio_codec(self):
+        """Gets the audio_codec of this VideoView.  # noqa: E501
+
+
+        :return: The audio_codec of this VideoView.  # noqa: E501
+        :rtype: str
+        """
+        return self._audio_codec
+
+    @audio_codec.setter
+    def audio_codec(self, audio_codec):
+        """Sets the audio_codec of this VideoView.
+
+
+        :param audio_codec: The audio_codec of this VideoView.  # noqa: E501
+        :type audio_codec: str
+        """
+
+        self._audio_codec = audio_codec
+
+    @property
+    def video_dynamic_range_type(self):
+        """Gets the video_dynamic_range_type of this VideoView.  # noqa: E501
+
+
+        :return: The video_dynamic_range_type of this VideoView.  # noqa: E501
+        :rtype: str
+        """
+        return self._video_dynamic_range_type
+
+    @video_dynamic_range_type.setter
+    def video_dynamic_range_type(self, video_dynamic_range_type):
+        """Sets the video_dynamic_range_type of this VideoView.
+
+
+        :param video_dynamic_range_type: The video_dynamic_range_type of this VideoView.  # noqa: E501
+        :type video_dynamic_range_type: str
+        """
+
+        self._video_dynamic_range_type = video_dynamic_range_type
+
+    @property
+    def view_cdn_edge_pop(self):
+        """Gets the view_cdn_edge_pop of this VideoView.  # noqa: E501
+
+
+        :return: The view_cdn_edge_pop of this VideoView.  # noqa: E501
+        :rtype: str
+        """
+        return self._view_cdn_edge_pop
+
+    @view_cdn_edge_pop.setter
+    def view_cdn_edge_pop(self, view_cdn_edge_pop):
+        """Sets the view_cdn_edge_pop of this VideoView.
+
+
+        :param view_cdn_edge_pop: The view_cdn_edge_pop of this VideoView.  # noqa: E501
+        :type view_cdn_edge_pop: str
+        """
+
+        self._view_cdn_edge_pop = view_cdn_edge_pop
+
+    @property
+    def view_cdn_origin(self):
+        """Gets the view_cdn_origin of this VideoView.  # noqa: E501
+
+
+        :return: The view_cdn_origin of this VideoView.  # noqa: E501
+        :rtype: str
+        """
+        return self._view_cdn_origin
+
+    @view_cdn_origin.setter
+    def view_cdn_origin(self, view_cdn_origin):
+        """Sets the view_cdn_origin of this VideoView.
+
+
+        :param view_cdn_origin: The view_cdn_origin of this VideoView.  # noqa: E501
+        :type view_cdn_origin: str
+        """
+
+        self._view_cdn_origin = view_cdn_origin
 
     def to_dict(self, serialize=False):
         """Returns the model properties as a dict"""
