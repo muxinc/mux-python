@@ -165,6 +165,22 @@ Name | Type | Description | Notes
 **view_content_startup_time** | **int** |  | [optional]
 **ad_preroll_startup_time** | **int** |  | [optional]
 **view_dropped** | **bool** |  | [optional]
+**client_application_name** | **str** |  | [optional]
+**client_application_version** | **str** |  | [optional]
+**video_affiliate** | **str** |  | [optional]
+**viewer_plan** | **str** |  | [optional]
+**viewer_plan_status** | **str** |  | [optional]
+**viewer_plan_category** | **str** |  | [optional]
+**view_drm_level** | **str** |  | [optional]
+**video_brand** | **str** |  | [optional]
+**used_pip** | **bool** |  | [optional]
+**time_shift_enabled** | **bool** |  | [optional]
+**used_captions** | **bool** |  | [optional]
+**video_codec** | **str** |  | [optional]
+**audio_codec** | **str** |  | [optional]
+**video_dynamic_range_type** | **str** |  | [optional]
+**view_cdn_edge_pop** | **str** |  | [optional]
+**view_cdn_origin** | **str** |  | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

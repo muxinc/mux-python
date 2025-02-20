@@ -350,7 +350,7 @@ class InputSettings(object):
     def passthrough(self):
         """Gets the passthrough of this InputSettings.  # noqa: E501
 
-        This optional parameter should be used tracks with `type` of `text` and `text_type` set to `subtitles`.  # noqa: E501
+        This optional parameter should be used for tracks with `type` of `text` and `text_type` set to `subtitles`.  # noqa: E501
 
         :return: The passthrough of this InputSettings.  # noqa: E501
         :rtype: str
@@ -361,7 +361,7 @@ class InputSettings(object):
     def passthrough(self, passthrough):
         """Sets the passthrough of this InputSettings.
 
-        This optional parameter should be used tracks with `type` of `text` and `text_type` set to `subtitles`.  # noqa: E501
+        This optional parameter should be used for tracks with `type` of `text` and `text_type` set to `subtitles`.  # noqa: E501
 
         :param passthrough: The passthrough of this InputSettings.  # noqa: E501
         :type passthrough: str
