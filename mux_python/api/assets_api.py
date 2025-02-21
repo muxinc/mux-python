@@ -326,6 +326,156 @@ class AssetsApi(object):
             collection_formats=collection_formats,
             _request_auth=local_var_params.get('_request_auth'))
 
+    def create_asset_static_rendition(self, asset_id, create_static_rendition_request, **kwargs):  # noqa: E501
+        """Create a static rendition for an asset  # noqa: E501
+
+        Creates a static rendition (i.e. MP4) for an asset  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.create_asset_static_rendition(asset_id, create_static_rendition_request, async_req=True)
+        >>> result = thread.get()
+
+        :param asset_id: The asset ID. (required)
+        :type asset_id: str
+        :param create_static_rendition_request: (required)
+        :type create_static_rendition_request: CreateStaticRenditionRequest
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :type _preload_content: bool, optional
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: Returns the result object.
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :rtype: CreateStaticRenditionResponse
+        """
+        kwargs['_return_http_data_only'] = True
+        return self.create_asset_static_rendition_with_http_info(asset_id, create_static_rendition_request, **kwargs)  # noqa: E501
+
+    def create_asset_static_rendition_with_http_info(self, asset_id, create_static_rendition_request, **kwargs):  # noqa: E501
+        """Create a static rendition for an asset  # noqa: E501
+
+        Creates a static rendition (i.e. MP4) for an asset  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.create_asset_static_rendition_with_http_info(asset_id, create_static_rendition_request, async_req=True)
+        >>> result = thread.get()
+
+        :param asset_id: The asset ID. (required)
+        :type asset_id: str
+        :param create_static_rendition_request: (required)
+        :type create_static_rendition_request: CreateStaticRenditionRequest
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :type _return_http_data_only: bool, optional
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :type _preload_content: bool, optional
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the authentication
+                              in the spec for a single request.
+        :type _request_auth: dict, optional
+        :return: Returns the result object.
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :rtype: tuple(CreateStaticRenditionResponse, status_code(int), headers(HTTPHeaderDict))
+        """
+
+        local_var_params = locals()
+
+        all_params = [
+            'asset_id',
+            'create_static_rendition_request'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout',
+                '_request_auth'
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params['kwargs']):
+            if key not in all_params:
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method create_asset_static_rendition" % key
+                )
+            local_var_params[key] = val
+        del local_var_params['kwargs']
+        # verify the required parameter 'asset_id' is set
+        if self.api_client.client_side_validation and ('asset_id' not in local_var_params or  # noqa: E501
+                                                        local_var_params['asset_id'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `asset_id` when calling `create_asset_static_rendition`")  # noqa: E501
+        # verify the required parameter 'create_static_rendition_request' is set
+        if self.api_client.client_side_validation and ('create_static_rendition_request' not in local_var_params or  # noqa: E501
+                                                        local_var_params['create_static_rendition_request'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `create_static_rendition_request` when calling `create_asset_static_rendition`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'asset_id' in local_var_params:
+            path_params['ASSET_ID'] = local_var_params['asset_id']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'create_static_rendition_request' in local_var_params:
+            body_params = local_var_params['create_static_rendition_request']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['accessToken']  # noqa: E501
+        
+        response_types_map = {
+            201: "CreateStaticRenditionResponse",
+        }
+
+        return self.api_client.call_api(
+            '/video/v1/assets/{ASSET_ID}/static-renditions', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_types_map=response_types_map,
+            auth_settings=auth_settings,
+            async_req=local_var_params.get('async_req'),
+            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
+            _preload_content=local_var_params.get('_preload_content', True),
+            _request_timeout=local_var_params.get('_request_timeout'),
+            collection_formats=collection_formats,
+            _request_auth=local_var_params.get('_request_auth'))
+
     def create_asset_track(self, asset_id, create_track_request, **kwargs):  # noqa: E501
         """Create an asset track  # noqa: E501
 
@@ -730,6 +880,146 @@ class AssetsApi(object):
 
         return self.api_client.call_api(
             '/video/v1/assets/{ASSET_ID}/playback-ids/{PLAYBACK_ID}', 'DELETE',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_types_map=response_types_map,
+            auth_settings=auth_settings,
+            async_req=local_var_params.get('async_req'),
+            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
+            _preload_content=local_var_params.get('_preload_content', True),
+            _request_timeout=local_var_params.get('_request_timeout'),
+            collection_formats=collection_formats,
+            _request_auth=local_var_params.get('_request_auth'))
+
+    def delete_asset_static_rendition(self, asset_id, static_rendition_id, **kwargs):  # noqa: E501
+        """Delete a single static rendition for an asset  # noqa: E501
+
+        Deletes a single static rendition for an asset  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.delete_asset_static_rendition(asset_id, static_rendition_id, async_req=True)
+        >>> result = thread.get()
+
+        :param asset_id: The asset ID. (required)
+        :type asset_id: str
+        :param static_rendition_id: The static rendition ID. (required)
+        :type static_rendition_id: str
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :type _preload_content: bool, optional
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: Returns the result object.
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :rtype: None
+        """
+        kwargs['_return_http_data_only'] = True
+        return self.delete_asset_static_rendition_with_http_info(asset_id, static_rendition_id, **kwargs)  # noqa: E501
+
+    def delete_asset_static_rendition_with_http_info(self, asset_id, static_rendition_id, **kwargs):  # noqa: E501
+        """Delete a single static rendition for an asset  # noqa: E501
+
+        Deletes a single static rendition for an asset  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.delete_asset_static_rendition_with_http_info(asset_id, static_rendition_id, async_req=True)
+        >>> result = thread.get()
+
+        :param asset_id: The asset ID. (required)
+        :type asset_id: str
+        :param static_rendition_id: The static rendition ID. (required)
+        :type static_rendition_id: str
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :type _return_http_data_only: bool, optional
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :type _preload_content: bool, optional
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the authentication
+                              in the spec for a single request.
+        :type _request_auth: dict, optional
+        :return: Returns the result object.
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :rtype: None
+        """
+
+        local_var_params = locals()
+
+        all_params = [
+            'asset_id',
+            'static_rendition_id'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout',
+                '_request_auth'
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params['kwargs']):
+            if key not in all_params:
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_asset_static_rendition" % key
+                )
+            local_var_params[key] = val
+        del local_var_params['kwargs']
+        # verify the required parameter 'asset_id' is set
+        if self.api_client.client_side_validation and ('asset_id' not in local_var_params or  # noqa: E501
+                                                        local_var_params['asset_id'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `asset_id` when calling `delete_asset_static_rendition`")  # noqa: E501
+        # verify the required parameter 'static_rendition_id' is set
+        if self.api_client.client_side_validation and ('static_rendition_id' not in local_var_params or  # noqa: E501
+                                                        local_var_params['static_rendition_id'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `static_rendition_id` when calling `delete_asset_static_rendition`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'asset_id' in local_var_params:
+            path_params['ASSET_ID'] = local_var_params['asset_id']  # noqa: E501
+        if 'static_rendition_id' in local_var_params:
+            path_params['STATIC_RENDITION_ID'] = local_var_params['static_rendition_id']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # Authentication setting
+        auth_settings = ['accessToken']  # noqa: E501
+        
+        response_types_map = {}
+
+        return self.api_client.call_api(
+            '/video/v1/assets/{ASSET_ID}/static-renditions/{STATIC_RENDITION_ID}', 'DELETE',
             path_params,
             query_params,
             header_params,
@@ -1917,7 +2207,7 @@ class AssetsApi(object):
     def update_asset_mp4_support(self, asset_id, update_asset_mp4_support_request, **kwargs):  # noqa: E501
         """Update MP4 support  # noqa: E501
 
-        Allows you to add or remove mp4 support for assets that were created without it. The values supported are `capped-1080p`, `audio-only`, `audio-only,capped-1080p`, `standard`(deprecated),  and `none`. `none` means that an asset *does not* have mp4 support, so submitting a request with `mp4_support` set to `none` will delete the mp4 assets from the asset in question.  # noqa: E501
+        This method has been deprecated. Please see the [Static Rendition API](https://www.mux.com/docs/guides/enable-static-mp4-renditions#after-asset-creation). Allows you to add or remove mp4 support for assets that were created without it. The values supported are `capped-1080p`, `audio-only`, `audio-only,capped-1080p`, `standard`(deprecated),  and `none`. `none` means that an asset *does not* have mp4 support, so submitting a request with `mp4_support` set to `none` will delete the mp4 assets from the asset in question.   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -1949,7 +2239,7 @@ class AssetsApi(object):
     def update_asset_mp4_support_with_http_info(self, asset_id, update_asset_mp4_support_request, **kwargs):  # noqa: E501
         """Update MP4 support  # noqa: E501
 
-        Allows you to add or remove mp4 support for assets that were created without it. The values supported are `capped-1080p`, `audio-only`, `audio-only,capped-1080p`, `standard`(deprecated),  and `none`. `none` means that an asset *does not* have mp4 support, so submitting a request with `mp4_support` set to `none` will delete the mp4 assets from the asset in question.  # noqa: E501
+        This method has been deprecated. Please see the [Static Rendition API](https://www.mux.com/docs/guides/enable-static-mp4-renditions#after-asset-creation). Allows you to add or remove mp4 support for assets that were created without it. The values supported are `capped-1080p`, `audio-only`, `audio-only,capped-1080p`, `standard`(deprecated),  and `none`. `none` means that an asset *does not* have mp4 support, so submitting a request with `mp4_support` set to `none` will delete the mp4 assets from the asset in question.   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 

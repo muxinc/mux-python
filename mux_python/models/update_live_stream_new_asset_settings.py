@@ -38,15 +38,17 @@ class UpdateLiveStreamNewAssetSettings(object):
     """
     openapi_types = {
         'mp4_support': 'str',
-        'master_access': 'str'
+        'master_access': 'str',
+        'video_quality': 'str'
     }
 
     attribute_map = {
         'mp4_support': 'mp4_support',
-        'master_access': 'master_access'
+        'master_access': 'master_access',
+        'video_quality': 'video_quality'
     }
 
-    def __init__(self, mp4_support=None, master_access=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, mp4_support=None, master_access=None, video_quality=None, local_vars_configuration=None):  # noqa: E501
         """UpdateLiveStreamNewAssetSettings - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
@@ -54,18 +56,21 @@ class UpdateLiveStreamNewAssetSettings(object):
 
         self._mp4_support = None
         self._master_access = None
+        self._video_quality = None
         self.discriminator = None
 
         if mp4_support is not None:
             self.mp4_support = mp4_support
         if master_access is not None:
             self.master_access = master_access
+        if video_quality is not None:
+            self.video_quality = video_quality
 
     @property
     def mp4_support(self):
         """Gets the mp4_support of this UpdateLiveStreamNewAssetSettings.  # noqa: E501
 
-        Specify what level of support for mp4 playback should be added to new assets generated from this live stream. * The `none` option disables MP4 support for new assets. MP4 files will not be produced for an asset generated from this live stream. * The `capped-1080p` option produces a single MP4 file, called `capped-1080p.mp4`, with the video resolution capped at 1080p. This option produces an `audio.m4a` file for an audio-only asset. * The `audio-only` option produces a single M4A file, called `audio.m4a` for a video or an audio-only asset. MP4 generation will error when this option is specified for a video-only asset. * The `audio-only,capped-1080p` option produces both the `audio.m4a` and `capped-1080p.mp4` files. Only the `capped-1080p.mp4` file is produced for a video-only asset, while only the `audio.m4a` file is produced for an audio-only asset. * The `standard`(deprecated) option produces up to three MP4 files with different levels of resolution (`high.mp4`, `medium.mp4`, `low.mp4`, or `audio.m4a` for an audio-only asset).   # noqa: E501
+        Deprecated. See the [Static Renditions API](https://www.mux.com/docs/guides/enable-static-mp4-renditions#during-live-stream-creation) for the updated API. Specify what level of support for mp4 playback should be added to new assets generated from this live stream. * The `none` option disables MP4 support for new assets. MP4 files will not be produced for an asset generated from this live stream. * The `capped-1080p` option produces a single MP4 file, called `capped-1080p.mp4`, with the video resolution capped at 1080p. This option produces an `audio.m4a` file for an audio-only asset. * The `audio-only` option produces a single M4A file, called `audio.m4a` for a video or an audio-only asset. MP4 generation will error when this option is specified for a video-only asset. * The `audio-only,capped-1080p` option produces both the `audio.m4a` and `capped-1080p.mp4` files. Only the `capped-1080p.mp4` file is produced for a video-only asset, while only the `audio.m4a` file is produced for an audio-only asset. * The `standard`(deprecated) option produces up to three MP4 files with different levels of resolution (`high.mp4`, `medium.mp4`, `low.mp4`, or `audio.m4a` for an audio-only asset).   # noqa: E501
 
         :return: The mp4_support of this UpdateLiveStreamNewAssetSettings.  # noqa: E501
         :rtype: str
@@ -76,7 +81,7 @@ class UpdateLiveStreamNewAssetSettings(object):
     def mp4_support(self, mp4_support):
         """Sets the mp4_support of this UpdateLiveStreamNewAssetSettings.
 
-        Specify what level of support for mp4 playback should be added to new assets generated from this live stream. * The `none` option disables MP4 support for new assets. MP4 files will not be produced for an asset generated from this live stream. * The `capped-1080p` option produces a single MP4 file, called `capped-1080p.mp4`, with the video resolution capped at 1080p. This option produces an `audio.m4a` file for an audio-only asset. * The `audio-only` option produces a single M4A file, called `audio.m4a` for a video or an audio-only asset. MP4 generation will error when this option is specified for a video-only asset. * The `audio-only,capped-1080p` option produces both the `audio.m4a` and `capped-1080p.mp4` files. Only the `capped-1080p.mp4` file is produced for a video-only asset, while only the `audio.m4a` file is produced for an audio-only asset. * The `standard`(deprecated) option produces up to three MP4 files with different levels of resolution (`high.mp4`, `medium.mp4`, `low.mp4`, or `audio.m4a` for an audio-only asset).   # noqa: E501
+        Deprecated. See the [Static Renditions API](https://www.mux.com/docs/guides/enable-static-mp4-renditions#during-live-stream-creation) for the updated API. Specify what level of support for mp4 playback should be added to new assets generated from this live stream. * The `none` option disables MP4 support for new assets. MP4 files will not be produced for an asset generated from this live stream. * The `capped-1080p` option produces a single MP4 file, called `capped-1080p.mp4`, with the video resolution capped at 1080p. This option produces an `audio.m4a` file for an audio-only asset. * The `audio-only` option produces a single M4A file, called `audio.m4a` for a video or an audio-only asset. MP4 generation will error when this option is specified for a video-only asset. * The `audio-only,capped-1080p` option produces both the `audio.m4a` and `capped-1080p.mp4` files. Only the `capped-1080p.mp4` file is produced for a video-only asset, while only the `audio.m4a` file is produced for an audio-only asset. * The `standard`(deprecated) option produces up to three MP4 files with different levels of resolution (`high.mp4`, `medium.mp4`, `low.mp4`, or `audio.m4a` for an audio-only asset).   # noqa: E501
 
         :param mp4_support: The mp4_support of this UpdateLiveStreamNewAssetSettings.  # noqa: E501
         :type mp4_support: str
@@ -118,6 +123,35 @@ class UpdateLiveStreamNewAssetSettings(object):
             )
 
         self._master_access = master_access
+
+    @property
+    def video_quality(self):
+        """Gets the video_quality of this UpdateLiveStreamNewAssetSettings.  # noqa: E501
+
+        The video quality controls the cost, quality, and available platform features for the asset. [See the video quality guide for more details.](https://docs.mux.com/guides/use-video-quality-levels)  # noqa: E501
+
+        :return: The video_quality of this UpdateLiveStreamNewAssetSettings.  # noqa: E501
+        :rtype: str
+        """
+        return self._video_quality
+
+    @video_quality.setter
+    def video_quality(self, video_quality):
+        """Sets the video_quality of this UpdateLiveStreamNewAssetSettings.
+
+        The video quality controls the cost, quality, and available platform features for the asset. [See the video quality guide for more details.](https://docs.mux.com/guides/use-video-quality-levels)  # noqa: E501
+
+        :param video_quality: The video_quality of this UpdateLiveStreamNewAssetSettings.  # noqa: E501
+        :type video_quality: str
+        """
+        allowed_values = ["plus", "premium"]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and video_quality not in allowed_values:  # noqa: E501
+            raise ValueError(
+                "Invalid value for `video_quality` ({0}), must be one of {1}"  # noqa: E501
+                .format(video_quality, allowed_values)
+            )
+
+        self._video_quality = video_quality
 
     def to_dict(self, serialize=False):
         """Returns the model properties as a dict"""

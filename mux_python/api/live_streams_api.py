@@ -605,6 +605,135 @@ class LiveStreamsApi(object):
             collection_formats=collection_formats,
             _request_auth=local_var_params.get('_request_auth'))
 
+    def delete_live_stream_new_asset_settings_static_renditions(self, live_stream_id, **kwargs):  # noqa: E501
+        """Delete a live stream's static renditions setting for new assets  # noqa: E501
+
+        Deletes a live stream's static renditions settings for new assets. Further assets made via this live stream will not create static renditions unless re-added.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.delete_live_stream_new_asset_settings_static_renditions(live_stream_id, async_req=True)
+        >>> result = thread.get()
+
+        :param live_stream_id: The live stream ID (required)
+        :type live_stream_id: str
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :type _preload_content: bool, optional
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: Returns the result object.
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :rtype: None
+        """
+        kwargs['_return_http_data_only'] = True
+        return self.delete_live_stream_new_asset_settings_static_renditions_with_http_info(live_stream_id, **kwargs)  # noqa: E501
+
+    def delete_live_stream_new_asset_settings_static_renditions_with_http_info(self, live_stream_id, **kwargs):  # noqa: E501
+        """Delete a live stream's static renditions setting for new assets  # noqa: E501
+
+        Deletes a live stream's static renditions settings for new assets. Further assets made via this live stream will not create static renditions unless re-added.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.delete_live_stream_new_asset_settings_static_renditions_with_http_info(live_stream_id, async_req=True)
+        >>> result = thread.get()
+
+        :param live_stream_id: The live stream ID (required)
+        :type live_stream_id: str
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :type _return_http_data_only: bool, optional
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :type _preload_content: bool, optional
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the authentication
+                              in the spec for a single request.
+        :type _request_auth: dict, optional
+        :return: Returns the result object.
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :rtype: None
+        """
+
+        local_var_params = locals()
+
+        all_params = [
+            'live_stream_id'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout',
+                '_request_auth'
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params['kwargs']):
+            if key not in all_params:
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_live_stream_new_asset_settings_static_renditions" % key
+                )
+            local_var_params[key] = val
+        del local_var_params['kwargs']
+        # verify the required parameter 'live_stream_id' is set
+        if self.api_client.client_side_validation and ('live_stream_id' not in local_var_params or  # noqa: E501
+                                                        local_var_params['live_stream_id'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `live_stream_id` when calling `delete_live_stream_new_asset_settings_static_renditions`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'live_stream_id' in local_var_params:
+            path_params['LIVE_STREAM_ID'] = local_var_params['live_stream_id']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # Authentication setting
+        auth_settings = ['accessToken']  # noqa: E501
+        
+        response_types_map = {}
+
+        return self.api_client.call_api(
+            '/video/v1/live-streams/{LIVE_STREAM_ID}/new-asset-settings/static-renditions', 'DELETE',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_types_map=response_types_map,
+            auth_settings=auth_settings,
+            async_req=local_var_params.get('async_req'),
+            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
+            _preload_content=local_var_params.get('_preload_content', True),
+            _request_timeout=local_var_params.get('_request_timeout'),
+            collection_formats=collection_formats,
+            _request_auth=local_var_params.get('_request_auth'))
+
     def delete_live_stream_playback_id(self, live_stream_id, playback_id, **kwargs):  # noqa: E501
         """Delete a live stream playback ID  # noqa: E501
 
@@ -2439,6 +2568,156 @@ class LiveStreamsApi(object):
 
         return self.api_client.call_api(
             '/video/v1/live-streams/{LIVE_STREAM_ID}/generated-subtitles', 'PUT',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_types_map=response_types_map,
+            auth_settings=auth_settings,
+            async_req=local_var_params.get('async_req'),
+            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
+            _preload_content=local_var_params.get('_preload_content', True),
+            _request_timeout=local_var_params.get('_request_timeout'),
+            collection_formats=collection_formats,
+            _request_auth=local_var_params.get('_request_auth'))
+
+    def update_live_stream_new_asset_settings_static_renditions(self, live_stream_id, update_live_stream_new_asset_settings_static_renditions_request, **kwargs):  # noqa: E501
+        """Update live stream static renditions for new assets  # noqa: E501
+
+        Updates a live stream's static renditions settings for new assets. Further assets made via this live stream will create static renditions per the settings provided. You must provide all static renditions desired.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.update_live_stream_new_asset_settings_static_renditions(live_stream_id, update_live_stream_new_asset_settings_static_renditions_request, async_req=True)
+        >>> result = thread.get()
+
+        :param live_stream_id: The live stream ID (required)
+        :type live_stream_id: str
+        :param update_live_stream_new_asset_settings_static_renditions_request: (required)
+        :type update_live_stream_new_asset_settings_static_renditions_request: UpdateLiveStreamNewAssetSettingsStaticRenditionsRequest
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :type _preload_content: bool, optional
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: Returns the result object.
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :rtype: LiveStreamResponse
+        """
+        kwargs['_return_http_data_only'] = True
+        return self.update_live_stream_new_asset_settings_static_renditions_with_http_info(live_stream_id, update_live_stream_new_asset_settings_static_renditions_request, **kwargs)  # noqa: E501
+
+    def update_live_stream_new_asset_settings_static_renditions_with_http_info(self, live_stream_id, update_live_stream_new_asset_settings_static_renditions_request, **kwargs):  # noqa: E501
+        """Update live stream static renditions for new assets  # noqa: E501
+
+        Updates a live stream's static renditions settings for new assets. Further assets made via this live stream will create static renditions per the settings provided. You must provide all static renditions desired.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.update_live_stream_new_asset_settings_static_renditions_with_http_info(live_stream_id, update_live_stream_new_asset_settings_static_renditions_request, async_req=True)
+        >>> result = thread.get()
+
+        :param live_stream_id: The live stream ID (required)
+        :type live_stream_id: str
+        :param update_live_stream_new_asset_settings_static_renditions_request: (required)
+        :type update_live_stream_new_asset_settings_static_renditions_request: UpdateLiveStreamNewAssetSettingsStaticRenditionsRequest
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :type _return_http_data_only: bool, optional
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :type _preload_content: bool, optional
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the authentication
+                              in the spec for a single request.
+        :type _request_auth: dict, optional
+        :return: Returns the result object.
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :rtype: tuple(LiveStreamResponse, status_code(int), headers(HTTPHeaderDict))
+        """
+
+        local_var_params = locals()
+
+        all_params = [
+            'live_stream_id',
+            'update_live_stream_new_asset_settings_static_renditions_request'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout',
+                '_request_auth'
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params['kwargs']):
+            if key not in all_params:
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method update_live_stream_new_asset_settings_static_renditions" % key
+                )
+            local_var_params[key] = val
+        del local_var_params['kwargs']
+        # verify the required parameter 'live_stream_id' is set
+        if self.api_client.client_side_validation and ('live_stream_id' not in local_var_params or  # noqa: E501
+                                                        local_var_params['live_stream_id'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `live_stream_id` when calling `update_live_stream_new_asset_settings_static_renditions`")  # noqa: E501
+        # verify the required parameter 'update_live_stream_new_asset_settings_static_renditions_request' is set
+        if self.api_client.client_side_validation and ('update_live_stream_new_asset_settings_static_renditions_request' not in local_var_params or  # noqa: E501
+                                                        local_var_params['update_live_stream_new_asset_settings_static_renditions_request'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `update_live_stream_new_asset_settings_static_renditions_request` when calling `update_live_stream_new_asset_settings_static_renditions`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'live_stream_id' in local_var_params:
+            path_params['LIVE_STREAM_ID'] = local_var_params['live_stream_id']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'update_live_stream_new_asset_settings_static_renditions_request' in local_var_params:
+            body_params = local_var_params['update_live_stream_new_asset_settings_static_renditions_request']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['accessToken']  # noqa: E501
+        
+        response_types_map = {
+            200: "LiveStreamResponse",
+        }
+
+        return self.api_client.call_api(
+            '/video/v1/live-streams/{LIVE_STREAM_ID}/new-asset-settings/static-renditions', 'PUT',
             path_params,
             query_params,
             header_params,

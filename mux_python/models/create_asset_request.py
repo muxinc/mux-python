@@ -48,7 +48,8 @@ class CreateAssetRequest(object):
         'test': 'bool',
         'max_resolution_tier': 'str',
         'encoding_tier': 'str',
-        'video_quality': 'str'
+        'video_quality': 'str',
+        'static_renditions': 'list[CreateStaticRenditionRequest]'
     }
 
     attribute_map = {
@@ -63,10 +64,11 @@ class CreateAssetRequest(object):
         'test': 'test',
         'max_resolution_tier': 'max_resolution_tier',
         'encoding_tier': 'encoding_tier',
-        'video_quality': 'video_quality'
+        'video_quality': 'video_quality',
+        'static_renditions': 'static_renditions'
     }
 
-    def __init__(self, input=None, playback_policy=None, advanced_playback_policies=None, per_title_encode=None, passthrough=None, mp4_support=None, normalize_audio=False, master_access=None, test=None, max_resolution_tier=None, encoding_tier=None, video_quality=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, input=None, playback_policy=None, advanced_playback_policies=None, per_title_encode=None, passthrough=None, mp4_support=None, normalize_audio=False, master_access=None, test=None, max_resolution_tier=None, encoding_tier=None, video_quality=None, static_renditions=None, local_vars_configuration=None):  # noqa: E501
         """CreateAssetRequest - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
@@ -84,6 +86,7 @@ class CreateAssetRequest(object):
         self._max_resolution_tier = None
         self._encoding_tier = None
         self._video_quality = None
+        self._static_renditions = None
         self.discriminator = None
 
         if input is not None:
@@ -110,6 +113,8 @@ class CreateAssetRequest(object):
             self.encoding_tier = encoding_tier
         if video_quality is not None:
             self.video_quality = video_quality
+        if static_renditions is not None:
+            self.static_renditions = static_renditions
 
     @property
     def input(self):
@@ -228,7 +233,7 @@ class CreateAssetRequest(object):
     def mp4_support(self):
         """Gets the mp4_support of this CreateAssetRequest.  # noqa: E501
 
-        Specify what level of support for mp4 playback.  * The `capped-1080p` option produces a single MP4 file, called `capped-1080p.mp4`, with the video resolution capped at 1080p. This option produces an `audio.m4a` file for an audio-only asset. * The `audio-only` option produces a single M4A file, called `audio.m4a` for a video or an audio-only asset. MP4 generation will error when this option is specified for a video-only asset. * The `audio-only,capped-1080p` option produces both the `audio.m4a` and `capped-1080p.mp4` files. Only the `capped-1080p.mp4` file is produced for a video-only asset, while only the `audio.m4a` file is produced for an audio-only asset.  The `standard`(deprecated) option produces up to three MP4 files with different levels of resolution (`high.mp4`, `medium.mp4`, `low.mp4`, or `audio.m4a` for an audio-only asset).  MP4 files are not produced for `none` (default).  In most cases you should use our default HLS-based streaming playback (`{playback_id}.m3u8`) which can automatically adjust to viewers' connection speeds, but an mp4 can be useful for some legacy devices or downloading for offline playback. See the [Download your videos guide](https://docs.mux.com/guides/enable-static-mp4-renditions) for more information.   # noqa: E501
+        Deprecated. See the [Static Renditions API](https://www.mux.com/docs/guides/enable-static-mp4-renditions) for the updated API.  Specify what level of support for mp4 playback. You may not enable both `mp4_support` and  `static_renditions`.  * The `capped-1080p` option produces a single MP4 file, called `capped-1080p.mp4`, with the video resolution capped at 1080p. This option produces an `audio.m4a` file for an audio-only asset. * The `audio-only` option produces a single M4A file, called `audio.m4a` for a video or an audio-only asset. MP4 generation will error when this option is specified for a video-only asset. * The `audio-only,capped-1080p` option produces both the `audio.m4a` and `capped-1080p.mp4` files. Only the `capped-1080p.mp4` file is produced for a video-only asset, while only the `audio.m4a` file is produced for an audio-only asset.  The `standard`(deprecated) option produces up to three MP4 files with different levels of resolution (`high.mp4`, `medium.mp4`, `low.mp4`, or `audio.m4a` for an audio-only asset).  MP4 files are not produced for `none` (default).  In most cases you should use our default HLS-based streaming playback (`{playback_id}.m3u8`) which can automatically adjust to viewers' connection speeds, but an mp4 can be useful for some legacy devices or downloading for offline playback. See the [Download your videos guide](https://docs.mux.com/guides/enable-static-mp4-renditions) for more information.   # noqa: E501
 
         :return: The mp4_support of this CreateAssetRequest.  # noqa: E501
         :rtype: str
@@ -239,7 +244,7 @@ class CreateAssetRequest(object):
     def mp4_support(self, mp4_support):
         """Sets the mp4_support of this CreateAssetRequest.
 
-        Specify what level of support for mp4 playback.  * The `capped-1080p` option produces a single MP4 file, called `capped-1080p.mp4`, with the video resolution capped at 1080p. This option produces an `audio.m4a` file for an audio-only asset. * The `audio-only` option produces a single M4A file, called `audio.m4a` for a video or an audio-only asset. MP4 generation will error when this option is specified for a video-only asset. * The `audio-only,capped-1080p` option produces both the `audio.m4a` and `capped-1080p.mp4` files. Only the `capped-1080p.mp4` file is produced for a video-only asset, while only the `audio.m4a` file is produced for an audio-only asset.  The `standard`(deprecated) option produces up to three MP4 files with different levels of resolution (`high.mp4`, `medium.mp4`, `low.mp4`, or `audio.m4a` for an audio-only asset).  MP4 files are not produced for `none` (default).  In most cases you should use our default HLS-based streaming playback (`{playback_id}.m3u8`) which can automatically adjust to viewers' connection speeds, but an mp4 can be useful for some legacy devices or downloading for offline playback. See the [Download your videos guide](https://docs.mux.com/guides/enable-static-mp4-renditions) for more information.   # noqa: E501
+        Deprecated. See the [Static Renditions API](https://www.mux.com/docs/guides/enable-static-mp4-renditions) for the updated API.  Specify what level of support for mp4 playback. You may not enable both `mp4_support` and  `static_renditions`.  * The `capped-1080p` option produces a single MP4 file, called `capped-1080p.mp4`, with the video resolution capped at 1080p. This option produces an `audio.m4a` file for an audio-only asset. * The `audio-only` option produces a single M4A file, called `audio.m4a` for a video or an audio-only asset. MP4 generation will error when this option is specified for a video-only asset. * The `audio-only,capped-1080p` option produces both the `audio.m4a` and `capped-1080p.mp4` files. Only the `capped-1080p.mp4` file is produced for a video-only asset, while only the `audio.m4a` file is produced for an audio-only asset.  The `standard`(deprecated) option produces up to three MP4 files with different levels of resolution (`high.mp4`, `medium.mp4`, `low.mp4`, or `audio.m4a` for an audio-only asset).  MP4 files are not produced for `none` (default).  In most cases you should use our default HLS-based streaming playback (`{playback_id}.m3u8`) which can automatically adjust to viewers' connection speeds, but an mp4 can be useful for some legacy devices or downloading for offline playback. See the [Download your videos guide](https://docs.mux.com/guides/enable-static-mp4-renditions) for more information.   # noqa: E501
 
         :param mp4_support: The mp4_support of this CreateAssetRequest.  # noqa: E501
         :type mp4_support: str
@@ -414,6 +419,29 @@ class CreateAssetRequest(object):
             )
 
         self._video_quality = video_quality
+
+    @property
+    def static_renditions(self):
+        """Gets the static_renditions of this CreateAssetRequest.  # noqa: E501
+
+        An array of static renditions to create for this asset. You may not enable both `static_renditions` and `mp4_support (the latter being deprecated)`  # noqa: E501
+
+        :return: The static_renditions of this CreateAssetRequest.  # noqa: E501
+        :rtype: list[CreateStaticRenditionRequest]
+        """
+        return self._static_renditions
+
+    @static_renditions.setter
+    def static_renditions(self, static_renditions):
+        """Sets the static_renditions of this CreateAssetRequest.
+
+        An array of static renditions to create for this asset. You may not enable both `static_renditions` and `mp4_support (the latter being deprecated)`  # noqa: E501
+
+        :param static_renditions: The static_renditions of this CreateAssetRequest.  # noqa: E501
+        :type static_renditions: list[CreateStaticRenditionRequest]
+        """
+
+        self._static_renditions = static_renditions
 
     def to_dict(self, serialize=False):
         """Returns the model properties as a dict"""
