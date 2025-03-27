@@ -37,30 +37,35 @@ class UpdateAssetRequest(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'passthrough': 'str'
+        'passthrough': 'str',
+        'meta': 'AssetMetadata'
     }
 
     attribute_map = {
-        'passthrough': 'passthrough'
+        'passthrough': 'passthrough',
+        'meta': 'meta'
     }
 
-    def __init__(self, passthrough=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, passthrough=None, meta=None, local_vars_configuration=None):  # noqa: E501
         """UpdateAssetRequest - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
         self.local_vars_configuration = local_vars_configuration
 
         self._passthrough = None
+        self._meta = None
         self.discriminator = None
 
         if passthrough is not None:
             self.passthrough = passthrough
+        if meta is not None:
+            self.meta = meta
 
     @property
     def passthrough(self):
         """Gets the passthrough of this UpdateAssetRequest.  # noqa: E501
 
-        Arbitrary metadata set for the Asset. Max 255 characters. In order to clear this value, the field should be included with an empty string value.  # noqa: E501
+        You can set this field to anything you want. It will be included in the asset details and related webhooks. If you're looking for more structured metadata, such as `title` or `external_id` , you can use the `meta` object instead. **Max: 255 characters**. In order to clear this value, the field should be included with an empty string value.  # noqa: E501
 
         :return: The passthrough of this UpdateAssetRequest.  # noqa: E501
         :rtype: str
@@ -71,13 +76,34 @@ class UpdateAssetRequest(object):
     def passthrough(self, passthrough):
         """Sets the passthrough of this UpdateAssetRequest.
 
-        Arbitrary metadata set for the Asset. Max 255 characters. In order to clear this value, the field should be included with an empty string value.  # noqa: E501
+        You can set this field to anything you want. It will be included in the asset details and related webhooks. If you're looking for more structured metadata, such as `title` or `external_id` , you can use the `meta` object instead. **Max: 255 characters**. In order to clear this value, the field should be included with an empty string value.  # noqa: E501
 
         :param passthrough: The passthrough of this UpdateAssetRequest.  # noqa: E501
         :type passthrough: str
         """
 
         self._passthrough = passthrough
+
+    @property
+    def meta(self):
+        """Gets the meta of this UpdateAssetRequest.  # noqa: E501
+
+
+        :return: The meta of this UpdateAssetRequest.  # noqa: E501
+        :rtype: AssetMetadata
+        """
+        return self._meta
+
+    @meta.setter
+    def meta(self, meta):
+        """Sets the meta of this UpdateAssetRequest.
+
+
+        :param meta: The meta of this UpdateAssetRequest.  # noqa: E501
+        :type meta: AssetMetadata
+        """
+
+        self._meta = meta
 
     def to_dict(self, serialize=False):
         """Returns the model properties as a dict"""

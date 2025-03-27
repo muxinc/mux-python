@@ -38,6 +38,7 @@ class CreateLiveStreamRequest(object):
     """
     openapi_types = {
         'playback_policy': 'list[PlaybackPolicy]',
+        'playback_policies': 'list[PlaybackPolicy]',
         'advanced_playback_policies': 'list[CreatePlaybackIDRequest]',
         'new_asset_settings': 'CreateAssetRequest',
         'reconnect_window': 'float',
@@ -57,6 +58,7 @@ class CreateLiveStreamRequest(object):
 
     attribute_map = {
         'playback_policy': 'playback_policy',
+        'playback_policies': 'playback_policies',
         'advanced_playback_policies': 'advanced_playback_policies',
         'new_asset_settings': 'new_asset_settings',
         'reconnect_window': 'reconnect_window',
@@ -74,13 +76,14 @@ class CreateLiveStreamRequest(object):
         'max_continuous_duration': 'max_continuous_duration'
     }
 
-    def __init__(self, playback_policy=None, advanced_playback_policies=None, new_asset_settings=None, reconnect_window=60, use_slate_for_standard_latency=False, reconnect_slate_url=None, passthrough=None, audio_only=None, embedded_subtitles=None, generated_subtitles=None, reduced_latency=None, low_latency=None, latency_mode=None, test=None, simulcast_targets=None, max_continuous_duration=43200, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, playback_policy=None, playback_policies=None, advanced_playback_policies=None, new_asset_settings=None, reconnect_window=60, use_slate_for_standard_latency=False, reconnect_slate_url=None, passthrough=None, audio_only=None, embedded_subtitles=None, generated_subtitles=None, reduced_latency=None, low_latency=None, latency_mode=None, test=None, simulcast_targets=None, max_continuous_duration=43200, local_vars_configuration=None):  # noqa: E501
         """CreateLiveStreamRequest - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
         self.local_vars_configuration = local_vars_configuration
 
         self._playback_policy = None
+        self._playback_policies = None
         self._advanced_playback_policies = None
         self._new_asset_settings = None
         self._reconnect_window = None
@@ -100,6 +103,8 @@ class CreateLiveStreamRequest(object):
 
         if playback_policy is not None:
             self.playback_policy = playback_policy
+        if playback_policies is not None:
+            self.playback_policies = playback_policies
         if advanced_playback_policies is not None:
             self.advanced_playback_policies = advanced_playback_policies
         if new_asset_settings is not None:
@@ -135,6 +140,7 @@ class CreateLiveStreamRequest(object):
     def playback_policy(self):
         """Gets the playback_policy of this CreateLiveStreamRequest.  # noqa: E501
 
+        Deprecated. Use `playback_policies` instead, which accepts an identical type.  # noqa: E501
 
         :return: The playback_policy of this CreateLiveStreamRequest.  # noqa: E501
         :rtype: list[PlaybackPolicy]
@@ -145,6 +151,7 @@ class CreateLiveStreamRequest(object):
     def playback_policy(self, playback_policy):
         """Sets the playback_policy of this CreateLiveStreamRequest.
 
+        Deprecated. Use `playback_policies` instead, which accepts an identical type.  # noqa: E501
 
         :param playback_policy: The playback_policy of this CreateLiveStreamRequest.  # noqa: E501
         :type playback_policy: list[PlaybackPolicy]
@@ -153,10 +160,33 @@ class CreateLiveStreamRequest(object):
         self._playback_policy = playback_policy
 
     @property
+    def playback_policies(self):
+        """Gets the playback_policies of this CreateLiveStreamRequest.  # noqa: E501
+
+        An array of playback policy names that you want applied to this live stream and available through `playback_ids`. Options include:  * `\"public\"` (anyone with the playback URL can stream the live stream). * `\"signed\"` (an additional access token is required to play the live stream).  If no `playback_policies` is set, the live stream will have no playback IDs and will therefore not be playable. For simplicity, a single string name can be used in place of the array in the case of only one playback policy.   # noqa: E501
+
+        :return: The playback_policies of this CreateLiveStreamRequest.  # noqa: E501
+        :rtype: list[PlaybackPolicy]
+        """
+        return self._playback_policies
+
+    @playback_policies.setter
+    def playback_policies(self, playback_policies):
+        """Sets the playback_policies of this CreateLiveStreamRequest.
+
+        An array of playback policy names that you want applied to this live stream and available through `playback_ids`. Options include:  * `\"public\"` (anyone with the playback URL can stream the live stream). * `\"signed\"` (an additional access token is required to play the live stream).  If no `playback_policies` is set, the live stream will have no playback IDs and will therefore not be playable. For simplicity, a single string name can be used in place of the array in the case of only one playback policy.   # noqa: E501
+
+        :param playback_policies: The playback_policies of this CreateLiveStreamRequest.  # noqa: E501
+        :type playback_policies: list[PlaybackPolicy]
+        """
+
+        self._playback_policies = playback_policies
+
+    @property
     def advanced_playback_policies(self):
         """Gets the advanced_playback_policies of this CreateLiveStreamRequest.  # noqa: E501
 
-        An array of playback policy objects that you want applied to this asset and available through `playback_ids`. `advanced_playback_policies` must be used instead of `playback_policy` when creating a DRM playback ID.   # noqa: E501
+        An array of playback policy objects that you want applied on this live stream and available through `playback_ids`. `advanced_playback_policies` must be used instead of `playback_policies` when creating a DRM playback ID.   # noqa: E501
 
         :return: The advanced_playback_policies of this CreateLiveStreamRequest.  # noqa: E501
         :rtype: list[CreatePlaybackIDRequest]
@@ -167,7 +197,7 @@ class CreateLiveStreamRequest(object):
     def advanced_playback_policies(self, advanced_playback_policies):
         """Sets the advanced_playback_policies of this CreateLiveStreamRequest.
 
-        An array of playback policy objects that you want applied to this asset and available through `playback_ids`. `advanced_playback_policies` must be used instead of `playback_policy` when creating a DRM playback ID.   # noqa: E501
+        An array of playback policy objects that you want applied on this live stream and available through `playback_ids`. `advanced_playback_policies` must be used instead of `playback_policies` when creating a DRM playback ID.   # noqa: E501
 
         :param advanced_playback_policies: The advanced_playback_policies of this CreateLiveStreamRequest.  # noqa: E501
         :type advanced_playback_policies: list[CreatePlaybackIDRequest]

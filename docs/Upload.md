@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 **id** | **str** | Unique identifier for the Direct Upload. | [optional]
 **timeout** | **int** | Max time in seconds for the signed upload URL to be valid. If a successful upload has not occurred before the timeout limit, the direct upload is marked &#x60;timed_out&#x60; | [optional] [default to 3600]
 **status** | **str** |  | [optional]
-**new_asset_settings** | [**Asset**](Asset.md) |  | [optional]
+**new_asset_settings** | [**CreateAssetRequest**](CreateAssetRequest.md) |  | [optional]
 **asset_id** | **str** | Only set once the upload is in the &#x60;asset_created&#x60; state. | [optional]
 **error** | [**UploadError**](UploadError.md) |  | [optional]
 **cors_origin** | **str** | If the upload URL will be used in a browser, you must specify the origin in order for the signed URL to have the correct CORS headers. | [optional]

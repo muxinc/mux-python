@@ -121,7 +121,7 @@ configuration = mux_python.Configuration(
 with mux_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = mux_python.DirectUploadsApi(api_client)
-    create_upload_request = {"cors_origin":"https://example.com/","new_asset_settings":{"playback_policy":["public"]}} # CreateUploadRequest | 
+    create_upload_request = {"cors_origin":"https://example.com/","new_asset_settings":{"playback_policies":["public"]}} # CreateUploadRequest | 
 
     try:
         # Create a new direct upload URL

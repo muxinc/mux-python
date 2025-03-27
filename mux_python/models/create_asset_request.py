@@ -38,7 +38,9 @@ class CreateAssetRequest(object):
     """
     openapi_types = {
         'input': 'list[InputSettings]',
+        'inputs': 'list[InputSettings]',
         'playback_policy': 'list[PlaybackPolicy]',
+        'playback_policies': 'list[PlaybackPolicy]',
         'advanced_playback_policies': 'list[CreatePlaybackIDRequest]',
         'per_title_encode': 'bool',
         'passthrough': 'str',
@@ -49,12 +51,15 @@ class CreateAssetRequest(object):
         'max_resolution_tier': 'str',
         'encoding_tier': 'str',
         'video_quality': 'str',
-        'static_renditions': 'list[CreateStaticRenditionRequest]'
+        'static_renditions': 'list[CreateStaticRenditionRequest]',
+        'meta': 'AssetMetadata'
     }
 
     attribute_map = {
         'input': 'input',
+        'inputs': 'inputs',
         'playback_policy': 'playback_policy',
+        'playback_policies': 'playback_policies',
         'advanced_playback_policies': 'advanced_playback_policies',
         'per_title_encode': 'per_title_encode',
         'passthrough': 'passthrough',
@@ -65,17 +70,20 @@ class CreateAssetRequest(object):
         'max_resolution_tier': 'max_resolution_tier',
         'encoding_tier': 'encoding_tier',
         'video_quality': 'video_quality',
-        'static_renditions': 'static_renditions'
+        'static_renditions': 'static_renditions',
+        'meta': 'meta'
     }
 
-    def __init__(self, input=None, playback_policy=None, advanced_playback_policies=None, per_title_encode=None, passthrough=None, mp4_support=None, normalize_audio=False, master_access=None, test=None, max_resolution_tier=None, encoding_tier=None, video_quality=None, static_renditions=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, input=None, inputs=None, playback_policy=None, playback_policies=None, advanced_playback_policies=None, per_title_encode=None, passthrough=None, mp4_support=None, normalize_audio=False, master_access=None, test=None, max_resolution_tier=None, encoding_tier=None, video_quality=None, static_renditions=None, meta=None, local_vars_configuration=None):  # noqa: E501
         """CreateAssetRequest - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
         self.local_vars_configuration = local_vars_configuration
 
         self._input = None
+        self._inputs = None
         self._playback_policy = None
+        self._playback_policies = None
         self._advanced_playback_policies = None
         self._per_title_encode = None
         self._passthrough = None
@@ -87,12 +95,17 @@ class CreateAssetRequest(object):
         self._encoding_tier = None
         self._video_quality = None
         self._static_renditions = None
+        self._meta = None
         self.discriminator = None
 
         if input is not None:
             self.input = input
+        if inputs is not None:
+            self.inputs = inputs
         if playback_policy is not None:
             self.playback_policy = playback_policy
+        if playback_policies is not None:
+            self.playback_policies = playback_policies
         if advanced_playback_policies is not None:
             self.advanced_playback_policies = advanced_playback_policies
         if per_title_encode is not None:
@@ -115,12 +128,14 @@ class CreateAssetRequest(object):
             self.video_quality = video_quality
         if static_renditions is not None:
             self.static_renditions = static_renditions
+        if meta is not None:
+            self.meta = meta
 
     @property
     def input(self):
         """Gets the input of this CreateAssetRequest.  # noqa: E501
 
-        An array of objects that each describe an input file to be used to create the asset. As a shortcut, input can also be a string URL for a file when only one input file is used. See `input[].url` for requirements.  # noqa: E501
+        Deprecated. Use `inputs` instead, which accepts an identical type.  # noqa: E501
 
         :return: The input of this CreateAssetRequest.  # noqa: E501
         :rtype: list[InputSettings]
@@ -131,7 +146,7 @@ class CreateAssetRequest(object):
     def input(self, input):
         """Sets the input of this CreateAssetRequest.
 
-        An array of objects that each describe an input file to be used to create the asset. As a shortcut, input can also be a string URL for a file when only one input file is used. See `input[].url` for requirements.  # noqa: E501
+        Deprecated. Use `inputs` instead, which accepts an identical type.  # noqa: E501
 
         :param input: The input of this CreateAssetRequest.  # noqa: E501
         :type input: list[InputSettings]
@@ -140,10 +155,33 @@ class CreateAssetRequest(object):
         self._input = input
 
     @property
+    def inputs(self):
+        """Gets the inputs of this CreateAssetRequest.  # noqa: E501
+
+        An array of objects that each describe an input file to be used to create the asset. As a shortcut, input can also be a string URL for a file when only one input file is used. See `input[].url` for requirements.  # noqa: E501
+
+        :return: The inputs of this CreateAssetRequest.  # noqa: E501
+        :rtype: list[InputSettings]
+        """
+        return self._inputs
+
+    @inputs.setter
+    def inputs(self, inputs):
+        """Sets the inputs of this CreateAssetRequest.
+
+        An array of objects that each describe an input file to be used to create the asset. As a shortcut, input can also be a string URL for a file when only one input file is used. See `input[].url` for requirements.  # noqa: E501
+
+        :param inputs: The inputs of this CreateAssetRequest.  # noqa: E501
+        :type inputs: list[InputSettings]
+        """
+
+        self._inputs = inputs
+
+    @property
     def playback_policy(self):
         """Gets the playback_policy of this CreateAssetRequest.  # noqa: E501
 
-        An array of playback policy names that you want applied to this asset and available through `playback_ids`. Options include:  * `\"public\"` (anyone with the playback URL can stream the asset). * `\"signed\"` (an additional access token is required to play the asset).  If no `playback_policy` is set, the asset will have no playback IDs and will therefore not be playable. For simplicity, a single string name can be used in place of the array in the case of only one playback policy.   # noqa: E501
+        Deprecated. Use `playback_policies` instead, which accepts an identical type.  # noqa: E501
 
         :return: The playback_policy of this CreateAssetRequest.  # noqa: E501
         :rtype: list[PlaybackPolicy]
@@ -154,7 +192,7 @@ class CreateAssetRequest(object):
     def playback_policy(self, playback_policy):
         """Sets the playback_policy of this CreateAssetRequest.
 
-        An array of playback policy names that you want applied to this asset and available through `playback_ids`. Options include:  * `\"public\"` (anyone with the playback URL can stream the asset). * `\"signed\"` (an additional access token is required to play the asset).  If no `playback_policy` is set, the asset will have no playback IDs and will therefore not be playable. For simplicity, a single string name can be used in place of the array in the case of only one playback policy.   # noqa: E501
+        Deprecated. Use `playback_policies` instead, which accepts an identical type.  # noqa: E501
 
         :param playback_policy: The playback_policy of this CreateAssetRequest.  # noqa: E501
         :type playback_policy: list[PlaybackPolicy]
@@ -163,10 +201,33 @@ class CreateAssetRequest(object):
         self._playback_policy = playback_policy
 
     @property
+    def playback_policies(self):
+        """Gets the playback_policies of this CreateAssetRequest.  # noqa: E501
+
+        An array of playback policy names that you want applied to this asset and available through `playback_ids`. Options include:  * `\"public\"` (anyone with the playback URL can stream the asset). * `\"signed\"` (an additional access token is required to play the asset).  If no `playback_policies` are set, the asset will have no playback IDs and will therefore not be playable. For simplicity, a single string name can be used in place of the array in the case of only one playback policy.   # noqa: E501
+
+        :return: The playback_policies of this CreateAssetRequest.  # noqa: E501
+        :rtype: list[PlaybackPolicy]
+        """
+        return self._playback_policies
+
+    @playback_policies.setter
+    def playback_policies(self, playback_policies):
+        """Sets the playback_policies of this CreateAssetRequest.
+
+        An array of playback policy names that you want applied to this asset and available through `playback_ids`. Options include:  * `\"public\"` (anyone with the playback URL can stream the asset). * `\"signed\"` (an additional access token is required to play the asset).  If no `playback_policies` are set, the asset will have no playback IDs and will therefore not be playable. For simplicity, a single string name can be used in place of the array in the case of only one playback policy.   # noqa: E501
+
+        :param playback_policies: The playback_policies of this CreateAssetRequest.  # noqa: E501
+        :type playback_policies: list[PlaybackPolicy]
+        """
+
+        self._playback_policies = playback_policies
+
+    @property
     def advanced_playback_policies(self):
         """Gets the advanced_playback_policies of this CreateAssetRequest.  # noqa: E501
 
-        An array of playback policy objects that you want applied to this asset and available through `playback_ids`. `advanced_playback_policies` must be used instead of `playback_policy` when creating a DRM playback ID.   # noqa: E501
+        An array of playback policy objects that you want applied to this asset and available through `playback_ids`. `advanced_playback_policies` must be used instead of `playback_policies` when creating a DRM playback ID.   # noqa: E501
 
         :return: The advanced_playback_policies of this CreateAssetRequest.  # noqa: E501
         :rtype: list[CreatePlaybackIDRequest]
@@ -177,7 +238,7 @@ class CreateAssetRequest(object):
     def advanced_playback_policies(self, advanced_playback_policies):
         """Sets the advanced_playback_policies of this CreateAssetRequest.
 
-        An array of playback policy objects that you want applied to this asset and available through `playback_ids`. `advanced_playback_policies` must be used instead of `playback_policy` when creating a DRM playback ID.   # noqa: E501
+        An array of playback policy objects that you want applied to this asset and available through `playback_ids`. `advanced_playback_policies` must be used instead of `playback_policies` when creating a DRM playback ID.   # noqa: E501
 
         :param advanced_playback_policies: The advanced_playback_policies of this CreateAssetRequest.  # noqa: E501
         :type advanced_playback_policies: list[CreatePlaybackIDRequest]
@@ -210,7 +271,7 @@ class CreateAssetRequest(object):
     def passthrough(self):
         """Gets the passthrough of this CreateAssetRequest.  # noqa: E501
 
-        Arbitrary user-supplied metadata that will be included in the asset details and related webhooks. Can be used to store your own ID for a video along with the asset. **Max: 255 characters**.  # noqa: E501
+        You can set this field to anything you want. It will be included in the asset details and related webhooks. If you're looking for more structured metadata, such as `title` or `external_id`, you can use the `meta` object instead. **Max: 255 characters**.  # noqa: E501
 
         :return: The passthrough of this CreateAssetRequest.  # noqa: E501
         :rtype: str
@@ -221,7 +282,7 @@ class CreateAssetRequest(object):
     def passthrough(self, passthrough):
         """Sets the passthrough of this CreateAssetRequest.
 
-        Arbitrary user-supplied metadata that will be included in the asset details and related webhooks. Can be used to store your own ID for a video along with the asset. **Max: 255 characters**.  # noqa: E501
+        You can set this field to anything you want. It will be included in the asset details and related webhooks. If you're looking for more structured metadata, such as `title` or `external_id`, you can use the `meta` object instead. **Max: 255 characters**.  # noqa: E501
 
         :param passthrough: The passthrough of this CreateAssetRequest.  # noqa: E501
         :type passthrough: str
@@ -442,6 +503,27 @@ class CreateAssetRequest(object):
         """
 
         self._static_renditions = static_renditions
+
+    @property
+    def meta(self):
+        """Gets the meta of this CreateAssetRequest.  # noqa: E501
+
+
+        :return: The meta of this CreateAssetRequest.  # noqa: E501
+        :rtype: AssetMetadata
+        """
+        return self._meta
+
+    @meta.setter
+    def meta(self, meta):
+        """Sets the meta of this CreateAssetRequest.
+
+
+        :param meta: The meta of this CreateAssetRequest.  # noqa: E501
+        :type meta: AssetMetadata
+        """
+
+        self._meta = meta
 
     def to_dict(self, serialize=False):
         """Returns the model properties as a dict"""
