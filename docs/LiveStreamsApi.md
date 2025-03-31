@@ -62,7 +62,7 @@ configuration = mux_python.Configuration(
 with mux_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = mux_python.LiveStreamsApi(api_client)
-    create_live_stream_request = {"playback_policy":["public"],"new_asset_settings":{"playback_policy":["public"]}} # CreateLiveStreamRequest | 
+    create_live_stream_request = {"playback_policies":["public"],"new_asset_settings":{"playback_policies":["public"]}} # CreateLiveStreamRequest | 
 
     try:
         # Create a live stream

@@ -39,16 +39,18 @@ class UpdateLiveStreamNewAssetSettings(object):
     openapi_types = {
         'mp4_support': 'str',
         'master_access': 'str',
-        'video_quality': 'str'
+        'video_quality': 'str',
+        'meta': 'AssetMetadata'
     }
 
     attribute_map = {
         'mp4_support': 'mp4_support',
         'master_access': 'master_access',
-        'video_quality': 'video_quality'
+        'video_quality': 'video_quality',
+        'meta': 'meta'
     }
 
-    def __init__(self, mp4_support=None, master_access=None, video_quality=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, mp4_support=None, master_access=None, video_quality=None, meta=None, local_vars_configuration=None):  # noqa: E501
         """UpdateLiveStreamNewAssetSettings - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
@@ -57,6 +59,7 @@ class UpdateLiveStreamNewAssetSettings(object):
         self._mp4_support = None
         self._master_access = None
         self._video_quality = None
+        self._meta = None
         self.discriminator = None
 
         if mp4_support is not None:
@@ -65,6 +68,8 @@ class UpdateLiveStreamNewAssetSettings(object):
             self.master_access = master_access
         if video_quality is not None:
             self.video_quality = video_quality
+        if meta is not None:
+            self.meta = meta
 
     @property
     def mp4_support(self):
@@ -152,6 +157,27 @@ class UpdateLiveStreamNewAssetSettings(object):
             )
 
         self._video_quality = video_quality
+
+    @property
+    def meta(self):
+        """Gets the meta of this UpdateLiveStreamNewAssetSettings.  # noqa: E501
+
+
+        :return: The meta of this UpdateLiveStreamNewAssetSettings.  # noqa: E501
+        :rtype: AssetMetadata
+        """
+        return self._meta
+
+    @meta.setter
+    def meta(self, meta):
+        """Sets the meta of this UpdateLiveStreamNewAssetSettings.
+
+
+        :param meta: The meta of this UpdateLiveStreamNewAssetSettings.  # noqa: E501
+        :type meta: AssetMetadata
+        """
+
+        self._meta = meta
 
     def to_dict(self, serialize=False):
         """Returns the model properties as a dict"""

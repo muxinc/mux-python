@@ -59,7 +59,7 @@ configuration = mux_python.Configuration(
 with mux_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = mux_python.AssetsApi(api_client)
-    create_asset_request = {"input":[{"url":"https://muxed.s3.amazonaws.com/leds.mp4"}],"playback_policy":["public"],"video_quality":"basic"} # CreateAssetRequest | 
+    create_asset_request = {"inputs":[{"url":"https://muxed.s3.amazonaws.com/leds.mp4"}],"playback_policies":["public"],"video_quality":"basic"} # CreateAssetRequest | 
 
     try:
         # Create an asset

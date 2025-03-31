@@ -20,6 +20,7 @@ from mux_python.models.asset import Asset
 from mux_python.models.asset_errors import AssetErrors
 from mux_python.models.asset_generated_subtitle_settings import AssetGeneratedSubtitleSettings
 from mux_python.models.asset_master import AssetMaster
+from mux_python.models.asset_metadata import AssetMetadata
 from mux_python.models.asset_non_standard_input_reasons import AssetNonStandardInputReasons
 from mux_python.models.asset_recording_times import AssetRecordingTimes
 from mux_python.models.asset_response import AssetResponse

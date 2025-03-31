@@ -6,6 +6,7 @@ docs/Asset.md
 docs/AssetErrors.md
 docs/AssetGeneratedSubtitleSettings.md
 docs/AssetMaster.md
+docs/AssetMetadata.md
 docs/AssetNonStandardInputReasons.md
 docs/AssetRecordingTimes.md
 docs/AssetResponse.md
@@ -205,6 +206,7 @@ mux_python/models/asset.py
 mux_python/models/asset_errors.py
 mux_python/models/asset_generated_subtitle_settings.py
 mux_python/models/asset_master.py
+mux_python/models/asset_metadata.py
 mux_python/models/asset_non_standard_input_reasons.py
 mux_python/models/asset_recording_times.py
 mux_python/models/asset_response.py
@@ -359,4 +361,5 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
+test/test_asset_metadata.py
 tox.ini

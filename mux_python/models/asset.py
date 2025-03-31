@@ -65,7 +65,8 @@ class Asset(object):
         'recording_times': 'list[AssetRecordingTimes]',
         'non_standard_input_reasons': 'AssetNonStandardInputReasons',
         'test': 'bool',
-        'ingest_type': 'str'
+        'ingest_type': 'str',
+        'meta': 'AssetMetadata'
     }
 
     attribute_map = {
@@ -97,10 +98,11 @@ class Asset(object):
         'recording_times': 'recording_times',
         'non_standard_input_reasons': 'non_standard_input_reasons',
         'test': 'test',
-        'ingest_type': 'ingest_type'
+        'ingest_type': 'ingest_type',
+        'meta': 'meta'
     }
 
-    def __init__(self, id=None, created_at=None, status=None, duration=None, max_stored_resolution=None, resolution_tier=None, max_resolution_tier=None, encoding_tier=None, video_quality=None, max_stored_frame_rate=None, aspect_ratio=None, playback_ids=None, tracks=None, errors=None, per_title_encode=None, upload_id=None, is_live=None, passthrough=None, live_stream_id=None, master=None, master_access='none', mp4_support='none', source_asset_id=None, normalize_audio=False, static_renditions=None, recording_times=None, non_standard_input_reasons=None, test=None, ingest_type=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, id=None, created_at=None, status=None, duration=None, max_stored_resolution=None, resolution_tier=None, max_resolution_tier=None, encoding_tier=None, video_quality=None, max_stored_frame_rate=None, aspect_ratio=None, playback_ids=None, tracks=None, errors=None, per_title_encode=None, upload_id=None, is_live=None, passthrough=None, live_stream_id=None, master=None, master_access='none', mp4_support='none', source_asset_id=None, normalize_audio=False, static_renditions=None, recording_times=None, non_standard_input_reasons=None, test=None, ingest_type=None, meta=None, local_vars_configuration=None):  # noqa: E501
         """Asset - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
@@ -135,6 +137,7 @@ class Asset(object):
         self._non_standard_input_reasons = None
         self._test = None
         self._ingest_type = None
+        self._meta = None
         self.discriminator = None
 
         if id is not None:
@@ -195,6 +198,8 @@ class Asset(object):
             self.test = test
         if ingest_type is not None:
             self.ingest_type = ingest_type
+        if meta is not None:
+            self.meta = meta
 
     @property
     def id(self):
@@ -623,7 +628,7 @@ class Asset(object):
     def passthrough(self):
         """Gets the passthrough of this Asset.  # noqa: E501
 
-        Arbitrary user-supplied metadata set for the asset. Max 255 characters.  # noqa: E501
+        You can set this field to anything you want. It will be included in the asset details and related webhooks. If you're looking for more structured metadata, such as `title` or `external_id` , you can use the `meta` object instead. **Max: 255 characters**.  # noqa: E501
 
         :return: The passthrough of this Asset.  # noqa: E501
         :rtype: str
@@ -634,7 +639,7 @@ class Asset(object):
     def passthrough(self, passthrough):
         """Sets the passthrough of this Asset.
 
-        Arbitrary user-supplied metadata set for the asset. Max 255 characters.  # noqa: E501
+        You can set this field to anything you want. It will be included in the asset details and related webhooks. If you're looking for more structured metadata, such as `title` or `external_id` , you can use the `meta` object instead. **Max: 255 characters**.  # noqa: E501
 
         :param passthrough: The passthrough of this Asset.  # noqa: E501
         :type passthrough: str
@@ -902,6 +907,27 @@ class Asset(object):
             )
 
         self._ingest_type = ingest_type
+
+    @property
+    def meta(self):
+        """Gets the meta of this Asset.  # noqa: E501
+
+
+        :return: The meta of this Asset.  # noqa: E501
+        :rtype: AssetMetadata
+        """
+        return self._meta
+
+    @meta.setter
+    def meta(self, meta):
+        """Sets the meta of this Asset.
+
+
+        :param meta: The meta of this Asset.  # noqa: E501
+        :type meta: AssetMetadata
+        """
+
+        self._meta = meta
 
     def to_dict(self, serialize=False):
         """Returns the model properties as a dict"""

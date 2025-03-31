@@ -40,7 +40,7 @@ class Upload(object):
         'id': 'str',
         'timeout': 'int',
         'status': 'str',
-        'new_asset_settings': 'Asset',
+        'new_asset_settings': 'CreateAssetRequest',
         'asset_id': 'str',
         'error': 'UploadError',
         'cors_origin': 'str',
@@ -181,7 +181,7 @@ class Upload(object):
 
 
         :return: The new_asset_settings of this Upload.  # noqa: E501
-        :rtype: Asset
+        :rtype: CreateAssetRequest
         """
         return self._new_asset_settings
 
@@ -191,7 +191,7 @@ class Upload(object):
 
 
         :param new_asset_settings: The new_asset_settings of this Upload.  # noqa: E501
-        :type new_asset_settings: Asset
+        :type new_asset_settings: CreateAssetRequest
         """
 
         self._new_asset_settings = new_asset_settings
