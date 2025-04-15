@@ -339,7 +339,7 @@ class StaticRendition(object):
         :param resolution_tier: The resolution_tier of this StaticRendition.  # noqa: E501
         :type resolution_tier: str
         """
-        allowed_values = ["2160p", "1440p", "1080p", "720p"]  # noqa: E501
+        allowed_values = ["2160p", "1440p", "1080p", "720p", "audio-only"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and resolution_tier not in allowed_values:  # noqa: E501
             raise ValueError(
                 "Invalid value for `resolution_tier` ({0}), must be one of {1}"  # noqa: E501

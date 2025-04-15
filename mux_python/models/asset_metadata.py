@@ -70,7 +70,7 @@ class AssetMetadata(object):
     def title(self):
         """Gets the title of this AssetMetadata.  # noqa: E501
 
-        The video title. Max 512 code points.  # noqa: E501
+        The asset title. Max 512 code points.  # noqa: E501
 
         :return: The title of this AssetMetadata.  # noqa: E501
         :rtype: str
@@ -81,7 +81,7 @@ class AssetMetadata(object):
     def title(self, title):
         """Sets the title of this AssetMetadata.
 
-        The video title. Max 512 code points.  # noqa: E501
+        The asset title. Max 512 code points.  # noqa: E501
 
         :param title: The title of this AssetMetadata.  # noqa: E501
         :type title: str
@@ -96,7 +96,7 @@ class AssetMetadata(object):
     def creator_id(self):
         """Gets the creator_id of this AssetMetadata.  # noqa: E501
 
-        This is an identifier you provide to keep track of the creator of the video. Max 128 code points.  # noqa: E501
+        This is an identifier you provide to keep track of the creator of the asset. Max 128 code points.  # noqa: E501
 
         :return: The creator_id of this AssetMetadata.  # noqa: E501
         :rtype: str
@@ -107,7 +107,7 @@ class AssetMetadata(object):
     def creator_id(self, creator_id):
         """Sets the creator_id of this AssetMetadata.
 
-        This is an identifier you provide to keep track of the creator of the video. Max 128 code points.  # noqa: E501
+        This is an identifier you provide to keep track of the creator of the asset. Max 128 code points.  # noqa: E501
 
         :param creator_id: The creator_id of this AssetMetadata.  # noqa: E501
         :type creator_id: str
@@ -122,7 +122,7 @@ class AssetMetadata(object):
     def external_id(self):
         """Gets the external_id of this AssetMetadata.  # noqa: E501
 
-        This is an identifier you provide to link the video to your own data. Max 128 code points.  # noqa: E501
+        This is an identifier you provide to link the asset to your own data. Max 128 code points.  # noqa: E501
 
         :return: The external_id of this AssetMetadata.  # noqa: E501
         :rtype: str
@@ -133,7 +133,7 @@ class AssetMetadata(object):
     def external_id(self, external_id):
         """Sets the external_id of this AssetMetadata.
 
-        This is an identifier you provide to link the video to your own data. Max 128 code points.  # noqa: E501
+        This is an identifier you provide to link the asset to your own data. Max 128 code points.  # noqa: E501
 
         :param external_id: The external_id of this AssetMetadata.  # noqa: E501
         :type external_id: str
