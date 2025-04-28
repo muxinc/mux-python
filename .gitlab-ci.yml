@@ -31,3 +31,12 @@ nosetest-3.7:
 nosetest-3.8:
   extends: .nosetest
   image: python:3.8-alpine
+nosetest-3.9:
+  extends: .nosetest
+  image: python:3.9-alpine
+nosetest-3.10:
+  extends: .nosetest
+  image: python:3.10-alpine
+nosetest-3.11:
+  extends: .nosetest
+  image: python:3.11-alpine
