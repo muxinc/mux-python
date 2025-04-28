@@ -23,10 +23,19 @@ new_asset_settings = mux_python.CreateAssetRequest(playback_policy=[mux_python.P
 create_live_stream_request = mux_python.CreateLiveStreamRequest(playback_policy=[mux_python.PlaybackPolicy.PUBLIC], new_asset_settings=new_asset_settings)
 create_live_stream_response = live_api.create_live_stream(create_live_stream_request)
 logger.print_debug(str(create_live_stream_response))
+
+stream = create_live_stream_response.data
 assert create_live_stream_response != None
 assert create_live_stream_response.data != None
 assert create_live_stream_response.data.id != None
 print("create-live-stream OK ✅")
+
+# ========== update-live-stream ==========
+update_live_stream_settings = mux_python.UpdateLiveStreamRequest(latency_mode='standard', reconnect_window=35)
+updated_stream = live_api.update_live_stream(stream.id, update_live_stream_settings)
+assert updated_stream.data.latency_mode == 'standard'
+assert updated_stream.data.reconnect_window == 35
+print("update-live-stream OK ✅")
 
 # ========== list-live-streams ==========
 list_live_streams_response = live_api.list_live_streams()
@@ -95,7 +104,7 @@ print("delete-live-stream-playback-id OK ✅")
 
 # ========== reset-stream-key ==========
 live_stream_response_new_stream_key = live_api.reset_stream_key(create_live_stream_response.data.id)
-logger.print_debug(live_stream_response_new_stream_key)
+print(live_stream_response_new_stream_key)
 assert live_stream_response_new_stream_key != None
 assert live_stream_response_new_stream_key.data.stream_key != create_live_stream_response.data.stream_key
 print("reset-stream-key OK ✅")
