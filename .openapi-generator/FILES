@@ -2,12 +2,17 @@
 .gitlab-ci.yml
 README.md
 docs/AbridgedVideoView.md
+docs/Annotation.md
+docs/AnnotationInput.md
+docs/AnnotationResponse.md
+docs/AnnotationsApi.md
 docs/Asset.md
 docs/AssetErrors.md
 docs/AssetGeneratedSubtitleSettings.md
 docs/AssetMaster.md
 docs/AssetMetadata.md
 docs/AssetNonStandardInputReasons.md
+docs/AssetProgress.md
 docs/AssetRecordingTimes.md
 docs/AssetResponse.md
 docs/AssetStaticRenditions.md
@@ -77,6 +82,7 @@ docs/InputTrack.md
 docs/Insight.md
 docs/LaunchWebInputResponse.md
 docs/ListAllMetricValuesResponse.md
+docs/ListAnnotationsResponse.md
 docs/ListAssetsResponse.md
 docs/ListBreakdownValuesResponse.md
 docs/ListBreakdownValuesResponseMeta.md
@@ -108,6 +114,7 @@ docs/ListWebInputsResponse.md
 docs/LiveStream.md
 docs/LiveStreamEmbeddedSubtitleSettings.md
 docs/LiveStreamGeneratedSubtitleSettings.md
+docs/LiveStreamMetadata.md
 docs/LiveStreamResponse.md
 docs/LiveStreamStatus.md
 docs/LiveStreamsApi.md
@@ -177,6 +184,7 @@ docs/WebInputResponse.md
 docs/WebInputsApi.md
 mux_python/__init__.py
 mux_python/api/__init__.py
+mux_python/api/annotations_api.py
 mux_python/api/assets_api.py
 mux_python/api/delivery_usage_api.py
 mux_python/api/dimensions_api.py
@@ -202,12 +210,16 @@ mux_python/configuration.py
 mux_python/exceptions.py
 mux_python/models/__init__.py
 mux_python/models/abridged_video_view.py
+mux_python/models/annotation.py
+mux_python/models/annotation_input.py
+mux_python/models/annotation_response.py
 mux_python/models/asset.py
 mux_python/models/asset_errors.py
 mux_python/models/asset_generated_subtitle_settings.py
 mux_python/models/asset_master.py
 mux_python/models/asset_metadata.py
 mux_python/models/asset_non_standard_input_reasons.py
+mux_python/models/asset_progress.py
 mux_python/models/asset_recording_times.py
 mux_python/models/asset_response.py
 mux_python/models/asset_static_renditions.py
@@ -268,6 +280,7 @@ mux_python/models/input_track.py
 mux_python/models/insight.py
 mux_python/models/launch_web_input_response.py
 mux_python/models/list_all_metric_values_response.py
+mux_python/models/list_annotations_response.py
 mux_python/models/list_assets_response.py
 mux_python/models/list_breakdown_values_response.py
 mux_python/models/list_breakdown_values_response_meta.py
@@ -299,6 +312,7 @@ mux_python/models/list_web_inputs_response.py
 mux_python/models/live_stream.py
 mux_python/models/live_stream_embedded_subtitle_settings.py
 mux_python/models/live_stream_generated_subtitle_settings.py
+mux_python/models/live_stream_metadata.py
 mux_python/models/live_stream_response.py
 mux_python/models/live_stream_status.py
 mux_python/models/metric.py

@@ -37,24 +37,51 @@ class ListAssetsResponse(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'next_cursor': 'str',
         'data': 'list[Asset]'
     }
 
     attribute_map = {
+        'next_cursor': 'next_cursor',
         'data': 'data'
     }
 
-    def __init__(self, data=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, next_cursor=None, data=None, local_vars_configuration=None):  # noqa: E501
         """ListAssetsResponse - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
         self.local_vars_configuration = local_vars_configuration
 
+        self._next_cursor = None
         self._data = None
         self.discriminator = None
 
+        self.next_cursor = next_cursor
         if data is not None:
             self.data = data
+
+    @property
+    def next_cursor(self):
+        """Gets the next_cursor of this ListAssetsResponse.  # noqa: E501
+
+        If there are more pages of data, this field will contain a string that can be used with the `cursor` querystring parameter to fetch the next page of data.  # noqa: E501
+
+        :return: The next_cursor of this ListAssetsResponse.  # noqa: E501
+        :rtype: str
+        """
+        return self._next_cursor
+
+    @next_cursor.setter
+    def next_cursor(self, next_cursor):
+        """Sets the next_cursor of this ListAssetsResponse.
+
+        If there are more pages of data, this field will contain a string that can be used with the `cursor` querystring parameter to fetch the next page of data.  # noqa: E501
+
+        :param next_cursor: The next_cursor of this ListAssetsResponse.  # noqa: E501
+        :type next_cursor: str
+        """
+
+        self._next_cursor = next_cursor
 
     @property
     def data(self):

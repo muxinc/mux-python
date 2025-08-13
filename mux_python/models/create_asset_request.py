@@ -52,7 +52,8 @@ class CreateAssetRequest(object):
         'encoding_tier': 'str',
         'video_quality': 'str',
         'static_renditions': 'list[CreateStaticRenditionRequest]',
-        'meta': 'AssetMetadata'
+        'meta': 'AssetMetadata',
+        'copy_overlays': 'bool'
     }
 
     attribute_map = {
@@ -71,10 +72,11 @@ class CreateAssetRequest(object):
         'encoding_tier': 'encoding_tier',
         'video_quality': 'video_quality',
         'static_renditions': 'static_renditions',
-        'meta': 'meta'
+        'meta': 'meta',
+        'copy_overlays': 'copy_overlays'
     }
 
-    def __init__(self, input=None, inputs=None, playback_policy=None, playback_policies=None, advanced_playback_policies=None, per_title_encode=None, passthrough=None, mp4_support=None, normalize_audio=False, master_access=None, test=None, max_resolution_tier=None, encoding_tier=None, video_quality=None, static_renditions=None, meta=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, input=None, inputs=None, playback_policy=None, playback_policies=None, advanced_playback_policies=None, per_title_encode=None, passthrough=None, mp4_support=None, normalize_audio=False, master_access=None, test=None, max_resolution_tier=None, encoding_tier=None, video_quality=None, static_renditions=None, meta=None, copy_overlays=True, local_vars_configuration=None):  # noqa: E501
         """CreateAssetRequest - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
@@ -96,6 +98,7 @@ class CreateAssetRequest(object):
         self._video_quality = None
         self._static_renditions = None
         self._meta = None
+        self._copy_overlays = None
         self.discriminator = None
 
         if input is not None:
@@ -130,6 +133,8 @@ class CreateAssetRequest(object):
             self.static_renditions = static_renditions
         if meta is not None:
             self.meta = meta
+        if copy_overlays is not None:
+            self.copy_overlays = copy_overlays
 
     @property
     def input(self):
@@ -524,6 +529,29 @@ class CreateAssetRequest(object):
         """
 
         self._meta = meta
+
+    @property
+    def copy_overlays(self):
+        """Gets the copy_overlays of this CreateAssetRequest.  # noqa: E501
+
+        If the created asset is a clip, this controls whether overlays are copied from the source asset.  # noqa: E501
+
+        :return: The copy_overlays of this CreateAssetRequest.  # noqa: E501
+        :rtype: bool
+        """
+        return self._copy_overlays
+
+    @copy_overlays.setter
+    def copy_overlays(self, copy_overlays):
+        """Sets the copy_overlays of this CreateAssetRequest.
+
+        If the created asset is a clip, this controls whether overlays are copied from the source asset.  # noqa: E501
+
+        :param copy_overlays: The copy_overlays of this CreateAssetRequest.  # noqa: E501
+        :type copy_overlays: bool
+        """
+
+        self._copy_overlays = copy_overlays
 
     def to_dict(self, serialize=False):
         """Returns the model properties as a dict"""

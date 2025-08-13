@@ -43,7 +43,8 @@ class UpdateLiveStreamRequest(object):
         'use_slate_for_standard_latency': 'bool',
         'reconnect_slate_url': 'str',
         'max_continuous_duration': 'int',
-        'new_asset_settings': 'UpdateLiveStreamNewAssetSettings'
+        'new_asset_settings': 'UpdateLiveStreamNewAssetSettings',
+        'meta': 'LiveStreamMetadata'
     }
 
     attribute_map = {
@@ -53,10 +54,11 @@ class UpdateLiveStreamRequest(object):
         'use_slate_for_standard_latency': 'use_slate_for_standard_latency',
         'reconnect_slate_url': 'reconnect_slate_url',
         'max_continuous_duration': 'max_continuous_duration',
-        'new_asset_settings': 'new_asset_settings'
+        'new_asset_settings': 'new_asset_settings',
+        'meta': 'meta'
     }
 
-    def __init__(self, passthrough=None, latency_mode=None, reconnect_window=60, use_slate_for_standard_latency=False, reconnect_slate_url=None, max_continuous_duration=43200, new_asset_settings=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, passthrough=None, latency_mode=None, reconnect_window=60, use_slate_for_standard_latency=False, reconnect_slate_url=None, max_continuous_duration=43200, new_asset_settings=None, meta=None, local_vars_configuration=None):  # noqa: E501
         """UpdateLiveStreamRequest - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
@@ -69,6 +71,7 @@ class UpdateLiveStreamRequest(object):
         self._reconnect_slate_url = None
         self._max_continuous_duration = None
         self._new_asset_settings = None
+        self._meta = None
         self.discriminator = None
 
         if passthrough is not None:
@@ -85,6 +88,8 @@ class UpdateLiveStreamRequest(object):
             self.max_continuous_duration = max_continuous_duration
         if new_asset_settings is not None:
             self.new_asset_settings = new_asset_settings
+        if meta is not None:
+            self.meta = meta
 
     @property
     def passthrough(self):
@@ -262,6 +267,27 @@ class UpdateLiveStreamRequest(object):
         """
 
         self._new_asset_settings = new_asset_settings
+
+    @property
+    def meta(self):
+        """Gets the meta of this UpdateLiveStreamRequest.  # noqa: E501
+
+
+        :return: The meta of this UpdateLiveStreamRequest.  # noqa: E501
+        :rtype: LiveStreamMetadata
+        """
+        return self._meta
+
+    @meta.setter
+    def meta(self, meta):
+        """Sets the meta of this UpdateLiveStreamRequest.
+
+
+        :param meta: The meta of this UpdateLiveStreamRequest.  # noqa: E501
+        :type meta: LiveStreamMetadata
+        """
+
+        self._meta = meta
 
     def to_dict(self, serialize=False):
         """Returns the model properties as a dict"""

@@ -53,7 +53,8 @@ class CreateLiveStreamRequest(object):
         'latency_mode': 'str',
         'test': 'bool',
         'simulcast_targets': 'list[CreateSimulcastTargetRequest]',
-        'max_continuous_duration': 'int'
+        'max_continuous_duration': 'int',
+        'meta': 'LiveStreamMetadata'
     }
 
     attribute_map = {
@@ -73,10 +74,11 @@ class CreateLiveStreamRequest(object):
         'latency_mode': 'latency_mode',
         'test': 'test',
         'simulcast_targets': 'simulcast_targets',
-        'max_continuous_duration': 'max_continuous_duration'
+        'max_continuous_duration': 'max_continuous_duration',
+        'meta': 'meta'
     }
 
-    def __init__(self, playback_policy=None, playback_policies=None, advanced_playback_policies=None, new_asset_settings=None, reconnect_window=60, use_slate_for_standard_latency=False, reconnect_slate_url=None, passthrough=None, audio_only=None, embedded_subtitles=None, generated_subtitles=None, reduced_latency=None, low_latency=None, latency_mode=None, test=None, simulcast_targets=None, max_continuous_duration=43200, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, playback_policy=None, playback_policies=None, advanced_playback_policies=None, new_asset_settings=None, reconnect_window=60, use_slate_for_standard_latency=False, reconnect_slate_url=None, passthrough=None, audio_only=None, embedded_subtitles=None, generated_subtitles=None, reduced_latency=None, low_latency=None, latency_mode=None, test=None, simulcast_targets=None, max_continuous_duration=43200, meta=None, local_vars_configuration=None):  # noqa: E501
         """CreateLiveStreamRequest - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
@@ -99,6 +101,7 @@ class CreateLiveStreamRequest(object):
         self._test = None
         self._simulcast_targets = None
         self._max_continuous_duration = None
+        self._meta = None
         self.discriminator = None
 
         if playback_policy is not None:
@@ -135,6 +138,8 @@ class CreateLiveStreamRequest(object):
             self.simulcast_targets = simulcast_targets
         if max_continuous_duration is not None:
             self.max_continuous_duration = max_continuous_duration
+        if meta is not None:
+            self.meta = meta
 
     @property
     def playback_policy(self):
@@ -538,6 +543,27 @@ class CreateLiveStreamRequest(object):
             raise ValueError("Invalid value for `max_continuous_duration`, must be a value greater than or equal to `60`")  # noqa: E501
 
         self._max_continuous_duration = max_continuous_duration
+
+    @property
+    def meta(self):
+        """Gets the meta of this CreateLiveStreamRequest.  # noqa: E501
+
+
+        :return: The meta of this CreateLiveStreamRequest.  # noqa: E501
+        :rtype: LiveStreamMetadata
+        """
+        return self._meta
+
+    @meta.setter
+    def meta(self, meta):
+        """Sets the meta of this CreateLiveStreamRequest.
+
+
+        :param meta: The meta of this CreateLiveStreamRequest.  # noqa: E501
+        :type meta: LiveStreamMetadata
+        """
+
+        self._meta = meta
 
     def to_dict(self, serialize=False):
         """Returns the model properties as a dict"""
