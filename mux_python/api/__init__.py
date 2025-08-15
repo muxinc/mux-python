@@ -3,6 +3,7 @@ from __future__ import absolute_import
 # flake8: noqa
 
 # import apis into api package
+from mux_python.api.annotations_api import AnnotationsApi
 from mux_python.api.assets_api import AssetsApi
 from mux_python.api.drm_configurations_api import DRMConfigurationsApi
 from mux_python.api.delivery_usage_api import DeliveryUsageApi

@@ -545,7 +545,7 @@ void (empty response body)
 
 Delete an asset track
 
-Removes a text track from an asset. Audio and video tracks on assets cannot be removed.
+Removes a text or additional audio track from an asset. Neither video nor the primary audio track can be removed.
 
 ### Example
 
@@ -913,7 +913,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_assets**
-> ListAssetsResponse list_assets(limit=limit, page=page, live_stream_id=live_stream_id, upload_id=upload_id)
+> ListAssetsResponse list_assets(limit=limit, page=page, cursor=cursor, live_stream_id=live_stream_id, upload_id=upload_id)
 
 List assets
 
@@ -951,12 +951,13 @@ with mux_python.ApiClient(configuration) as api_client:
     api_instance = mux_python.AssetsApi(api_client)
     limit = 25 # int | Number of items to include in the response (optional) (default to 25)
 page = 1 # int | Offset by this many pages, of the size of `limit` (optional) (default to 1)
+cursor = 'cursor_example' # str | This parameter is used to request pages beyond the first. You can find the cursor value in the `next_cursor` field of paginated responses. (optional)
 live_stream_id = 'live_stream_id_example' # str | Filter response to return all the assets for this live stream only (optional)
 upload_id = 'upload_id_example' # str | Filter response to return an asset created from this direct upload only (optional)
 
     try:
         # List assets
-        api_response = api_instance.list_assets(limit=limit, page=page, live_stream_id=live_stream_id, upload_id=upload_id)
+        api_response = api_instance.list_assets(limit=limit, page=page, cursor=cursor, live_stream_id=live_stream_id, upload_id=upload_id)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling AssetsApi->list_assets: %s\n" % e)
@@ -968,6 +969,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **int**| Number of items to include in the response | [optional] [default to 25]
  **page** | **int**| Offset by this many pages, of the size of &#x60;limit&#x60; | [optional] [default to 1]
+ **cursor** | **str**| This parameter is used to request pages beyond the first. You can find the cursor value in the &#x60;next_cursor&#x60; field of paginated responses. | [optional] 
  **live_stream_id** | **str**| Filter response to return all the assets for this live stream only | [optional] 
  **upload_id** | **str**| Filter response to return an asset created from this direct upload only | [optional] 
 

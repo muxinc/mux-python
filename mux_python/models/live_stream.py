@@ -59,7 +59,8 @@ class LiveStream(object):
         'test': 'bool',
         'max_continuous_duration': 'int',
         'srt_passphrase': 'str',
-        'active_ingest_protocol': 'str'
+        'active_ingest_protocol': 'str',
+        'meta': 'LiveStreamMetadata'
     }
 
     attribute_map = {
@@ -85,10 +86,11 @@ class LiveStream(object):
         'test': 'test',
         'max_continuous_duration': 'max_continuous_duration',
         'srt_passphrase': 'srt_passphrase',
-        'active_ingest_protocol': 'active_ingest_protocol'
+        'active_ingest_protocol': 'active_ingest_protocol',
+        'meta': 'meta'
     }
 
-    def __init__(self, id=None, created_at=None, stream_key=None, active_asset_id=None, recent_asset_ids=None, status=None, playback_ids=None, new_asset_settings=None, passthrough=None, audio_only=None, embedded_subtitles=None, generated_subtitles=None, reconnect_window=60, use_slate_for_standard_latency=False, reconnect_slate_url=None, reduced_latency=None, low_latency=None, simulcast_targets=None, latency_mode=None, test=None, max_continuous_duration=43200, srt_passphrase=None, active_ingest_protocol=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, id=None, created_at=None, stream_key=None, active_asset_id=None, recent_asset_ids=None, status=None, playback_ids=None, new_asset_settings=None, passthrough=None, audio_only=None, embedded_subtitles=None, generated_subtitles=None, reconnect_window=60, use_slate_for_standard_latency=False, reconnect_slate_url=None, reduced_latency=None, low_latency=None, simulcast_targets=None, latency_mode=None, test=None, max_continuous_duration=43200, srt_passphrase=None, active_ingest_protocol=None, meta=None, local_vars_configuration=None):  # noqa: E501
         """LiveStream - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
@@ -117,6 +119,7 @@ class LiveStream(object):
         self._max_continuous_duration = None
         self._srt_passphrase = None
         self._active_ingest_protocol = None
+        self._meta = None
         self.discriminator = None
 
         if id is not None:
@@ -165,6 +168,8 @@ class LiveStream(object):
             self.srt_passphrase = srt_passphrase
         if active_ingest_protocol is not None:
             self.active_ingest_protocol = active_ingest_protocol
+        if meta is not None:
+            self.meta = meta
 
     @property
     def id(self):
@@ -216,7 +221,7 @@ class LiveStream(object):
     def stream_key(self):
         """Gets the stream_key of this LiveStream.  # noqa: E501
 
-        Unique key used for streaming to a Mux RTMP endpoint. This should be considered as sensitive as credentials, anyone with this stream key can begin streaming.  # noqa: E501
+        Unique key used for streaming to a Mux RTMP endpoint. This should be considered as sensitive as credentials, anyone with this stream key can begin streaming. Max 64 characters.  # noqa: E501
 
         :return: The stream_key of this LiveStream.  # noqa: E501
         :rtype: str
@@ -227,7 +232,7 @@ class LiveStream(object):
     def stream_key(self, stream_key):
         """Sets the stream_key of this LiveStream.
 
-        Unique key used for streaming to a Mux RTMP endpoint. This should be considered as sensitive as credentials, anyone with this stream key can begin streaming.  # noqa: E501
+        Unique key used for streaming to a Mux RTMP endpoint. This should be considered as sensitive as credentials, anyone with this stream key can begin streaming. Max 64 characters.  # noqa: E501
 
         :param stream_key: The stream_key of this LiveStream.  # noqa: E501
         :type stream_key: str
@@ -667,7 +672,7 @@ class LiveStream(object):
     def srt_passphrase(self):
         """Gets the srt_passphrase of this LiveStream.  # noqa: E501
 
-        Unique key used for encrypting a stream to a Mux SRT endpoint.  # noqa: E501
+        Unique key used for encrypting a stream to a Mux SRT endpoint. Max 64 characters.  # noqa: E501
 
         :return: The srt_passphrase of this LiveStream.  # noqa: E501
         :rtype: str
@@ -678,7 +683,7 @@ class LiveStream(object):
     def srt_passphrase(self, srt_passphrase):
         """Sets the srt_passphrase of this LiveStream.
 
-        Unique key used for encrypting a stream to a Mux SRT endpoint.  # noqa: E501
+        Unique key used for encrypting a stream to a Mux SRT endpoint. Max 64 characters.  # noqa: E501
 
         :param srt_passphrase: The srt_passphrase of this LiveStream.  # noqa: E501
         :type srt_passphrase: str
@@ -714,6 +719,27 @@ class LiveStream(object):
             )
 
         self._active_ingest_protocol = active_ingest_protocol
+
+    @property
+    def meta(self):
+        """Gets the meta of this LiveStream.  # noqa: E501
+
+
+        :return: The meta of this LiveStream.  # noqa: E501
+        :rtype: LiveStreamMetadata
+        """
+        return self._meta
+
+    @meta.setter
+    def meta(self, meta):
+        """Sets the meta of this LiveStream.
+
+
+        :param meta: The meta of this LiveStream.  # noqa: E501
+        :type meta: LiveStreamMetadata
+        """
+
+        self._meta = meta
 
     def to_dict(self, serialize=False):
         """Returns the model properties as a dict"""

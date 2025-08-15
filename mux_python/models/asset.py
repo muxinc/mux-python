@@ -66,7 +66,8 @@ class Asset(object):
         'non_standard_input_reasons': 'AssetNonStandardInputReasons',
         'test': 'bool',
         'ingest_type': 'str',
-        'meta': 'AssetMetadata'
+        'meta': 'AssetMetadata',
+        'progress': 'AssetProgress'
     }
 
     attribute_map = {
@@ -99,10 +100,11 @@ class Asset(object):
         'non_standard_input_reasons': 'non_standard_input_reasons',
         'test': 'test',
         'ingest_type': 'ingest_type',
-        'meta': 'meta'
+        'meta': 'meta',
+        'progress': 'progress'
     }
 
-    def __init__(self, id=None, created_at=None, status=None, duration=None, max_stored_resolution=None, resolution_tier=None, max_resolution_tier=None, encoding_tier=None, video_quality=None, max_stored_frame_rate=None, aspect_ratio=None, playback_ids=None, tracks=None, errors=None, per_title_encode=None, upload_id=None, is_live=None, passthrough=None, live_stream_id=None, master=None, master_access='none', mp4_support='none', source_asset_id=None, normalize_audio=False, static_renditions=None, recording_times=None, non_standard_input_reasons=None, test=None, ingest_type=None, meta=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, id=None, created_at=None, status=None, duration=None, max_stored_resolution=None, resolution_tier=None, max_resolution_tier=None, encoding_tier=None, video_quality=None, max_stored_frame_rate=None, aspect_ratio=None, playback_ids=None, tracks=None, errors=None, per_title_encode=None, upload_id=None, is_live=None, passthrough=None, live_stream_id=None, master=None, master_access='none', mp4_support='none', source_asset_id=None, normalize_audio=False, static_renditions=None, recording_times=None, non_standard_input_reasons=None, test=None, ingest_type=None, meta=None, progress=None, local_vars_configuration=None):  # noqa: E501
         """Asset - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
@@ -138,6 +140,7 @@ class Asset(object):
         self._test = None
         self._ingest_type = None
         self._meta = None
+        self._progress = None
         self.discriminator = None
 
         if id is not None:
@@ -200,6 +203,8 @@ class Asset(object):
             self.ingest_type = ingest_type
         if meta is not None:
             self.meta = meta
+        if progress is not None:
+            self.progress = progress
 
     @property
     def id(self):
@@ -928,6 +933,27 @@ class Asset(object):
         """
 
         self._meta = meta
+
+    @property
+    def progress(self):
+        """Gets the progress of this Asset.  # noqa: E501
+
+
+        :return: The progress of this Asset.  # noqa: E501
+        :rtype: AssetProgress
+        """
+        return self._progress
+
+    @progress.setter
+    def progress(self, progress):
+        """Sets the progress of this Asset.
+
+
+        :param progress: The progress of this Asset.  # noqa: E501
+        :type progress: AssetProgress
+        """
+
+        self._progress = progress
 
     def to_dict(self, serialize=False):
         """Returns the model properties as a dict"""

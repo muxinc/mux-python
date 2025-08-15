@@ -1038,7 +1038,7 @@ class AssetsApi(object):
     def delete_asset_track(self, asset_id, track_id, **kwargs):  # noqa: E501
         """Delete an asset track  # noqa: E501
 
-        Removes a text track from an asset. Audio and video tracks on assets cannot be removed.  # noqa: E501
+        Removes a text or additional audio track from an asset. Neither video nor the primary audio track can be removed.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -1070,7 +1070,7 @@ class AssetsApi(object):
     def delete_asset_track_with_http_info(self, asset_id, track_id, **kwargs):  # noqa: E501
         """Delete an asset track  # noqa: E501
 
-        Removes a text track from an asset. Audio and video tracks on assets cannot be removed.  # noqa: E501
+        Removes a text or additional audio track from an asset. Neither video nor the primary audio track can be removed.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -1766,6 +1766,8 @@ class AssetsApi(object):
         :type limit: int
         :param page: Offset by this many pages, of the size of `limit`
         :type page: int
+        :param cursor: This parameter is used to request pages beyond the first. You can find the cursor value in the `next_cursor` field of paginated responses.
+        :type cursor: str
         :param live_stream_id: Filter response to return all the assets for this live stream only
         :type live_stream_id: str
         :param upload_id: Filter response to return an asset created from this direct upload only
@@ -1802,6 +1804,8 @@ class AssetsApi(object):
         :type limit: int
         :param page: Offset by this many pages, of the size of `limit`
         :type page: int
+        :param cursor: This parameter is used to request pages beyond the first. You can find the cursor value in the `next_cursor` field of paginated responses.
+        :type cursor: str
         :param live_stream_id: Filter response to return all the assets for this live stream only
         :type live_stream_id: str
         :param upload_id: Filter response to return an asset created from this direct upload only
@@ -1834,6 +1838,7 @@ class AssetsApi(object):
         all_params = [
             'limit',
             'page',
+            'cursor',
             'live_stream_id',
             'upload_id'
         ]
@@ -1865,6 +1870,8 @@ class AssetsApi(object):
             query_params.append(('limit', local_var_params['limit']))  # noqa: E501
         if 'page' in local_var_params and local_var_params['page'] is not None:  # noqa: E501
             query_params.append(('page', local_var_params['page']))  # noqa: E501
+        if 'cursor' in local_var_params and local_var_params['cursor'] is not None:  # noqa: E501
+            query_params.append(('cursor', local_var_params['cursor']))  # noqa: E501
         if 'live_stream_id' in local_var_params and local_var_params['live_stream_id'] is not None:  # noqa: E501
             query_params.append(('live_stream_id', local_var_params['live_stream_id']))  # noqa: E501
         if 'upload_id' in local_var_params and local_var_params['upload_id'] is not None:  # noqa: E501

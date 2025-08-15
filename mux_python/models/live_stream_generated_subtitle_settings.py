@@ -137,7 +137,7 @@ class LiveStreamGeneratedSubtitleSettings(object):
         :param language_code: The language_code of this LiveStreamGeneratedSubtitleSettings.  # noqa: E501
         :type language_code: str
         """
-        allowed_values = ["en", "en-US"]  # noqa: E501
+        allowed_values = ["en", "en-US", "es", "fr", "de", "pt", "it"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and language_code not in allowed_values:  # noqa: E501
             raise ValueError(
                 "Invalid value for `language_code` ({0}), must be one of {1}"  # noqa: E501

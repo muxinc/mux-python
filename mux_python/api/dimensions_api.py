@@ -37,6 +37,199 @@ class DimensionsApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
+    def list_dimension_elements(self, dimension_id, **kwargs):  # noqa: E501
+        """Lists elements for a trace dimension  # noqa: E501
+
+        Lists the elements (values) for a trace dimension along with their total counts. This endpoint is specifically designed for trace dimensions like video_cdn_trace that contain arrays of values.   # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.list_dimension_elements(dimension_id, async_req=True)
+        >>> result = thread.get()
+
+        :param dimension_id: ID of the Dimension (required)
+        :type dimension_id: str
+        :param limit: Number of items to include in the response
+        :type limit: int
+        :param filters: Filter results using key:value pairs. Must be provided as an array query string parameter.  **Basic filtering:** * `filters[]=dimension:value` - Include rows where dimension equals value * `filters[]=!dimension:value` - Exclude rows where dimension equals value  **For trace dimensions (like video_cdn_trace):** * `filters[]=+dimension:value` - Include rows where trace contains value * `filters[]=-dimension:value` - Exclude rows where trace contains value * `filters[]=dimension:[value1,value2]` - Exact trace match  **Examples:** * `filters[]=country:US` - US views only * `filters[]=+video_cdn_trace:fastly` - Views using Fastly CDN 
+        :type filters: list[str]
+        :param metric_filters: Limit the results to rows that match inequality conditions from provided metric comparison clauses. Must be provided as an array query string parameter.  Possible filterable metrics are the same as the set of metric ids, with the exceptions of `exits_before_video_start`, `unique_viewers`, `video_startup_failure_percentage`, `view_dropped_percentage`, and `views`.  Example:    * `metric_filters[]=aggregate_startup_time>=1000` 
+        :type metric_filters: list[str]
+        :param timeframe: Timeframe window to limit results by. Must be provided as an array query string parameter (e.g. timeframe[]=).  Accepted formats are...    * array of epoch timestamps e.g. `timeframe[]=1498867200&timeframe[]=1498953600`   * duration string e.g. `timeframe[]=24:hours or timeframe[]=7:days` 
+        :type timeframe: list[str]
+        :param order_by: Value to order the results by
+        :type order_by: str
+        :param order_direction: Sort order.
+        :type order_direction: str
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :type _preload_content: bool, optional
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: Returns the result object.
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :rtype: ListDimensionValuesResponse
+        """
+        kwargs['_return_http_data_only'] = True
+        return self.list_dimension_elements_with_http_info(dimension_id, **kwargs)  # noqa: E501
+
+    def list_dimension_elements_with_http_info(self, dimension_id, **kwargs):  # noqa: E501
+        """Lists elements for a trace dimension  # noqa: E501
+
+        Lists the elements (values) for a trace dimension along with their total counts. This endpoint is specifically designed for trace dimensions like video_cdn_trace that contain arrays of values.   # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.list_dimension_elements_with_http_info(dimension_id, async_req=True)
+        >>> result = thread.get()
+
+        :param dimension_id: ID of the Dimension (required)
+        :type dimension_id: str
+        :param limit: Number of items to include in the response
+        :type limit: int
+        :param filters: Filter results using key:value pairs. Must be provided as an array query string parameter.  **Basic filtering:** * `filters[]=dimension:value` - Include rows where dimension equals value * `filters[]=!dimension:value` - Exclude rows where dimension equals value  **For trace dimensions (like video_cdn_trace):** * `filters[]=+dimension:value` - Include rows where trace contains value * `filters[]=-dimension:value` - Exclude rows where trace contains value * `filters[]=dimension:[value1,value2]` - Exact trace match  **Examples:** * `filters[]=country:US` - US views only * `filters[]=+video_cdn_trace:fastly` - Views using Fastly CDN 
+        :type filters: list[str]
+        :param metric_filters: Limit the results to rows that match inequality conditions from provided metric comparison clauses. Must be provided as an array query string parameter.  Possible filterable metrics are the same as the set of metric ids, with the exceptions of `exits_before_video_start`, `unique_viewers`, `video_startup_failure_percentage`, `view_dropped_percentage`, and `views`.  Example:    * `metric_filters[]=aggregate_startup_time>=1000` 
+        :type metric_filters: list[str]
+        :param timeframe: Timeframe window to limit results by. Must be provided as an array query string parameter (e.g. timeframe[]=).  Accepted formats are...    * array of epoch timestamps e.g. `timeframe[]=1498867200&timeframe[]=1498953600`   * duration string e.g. `timeframe[]=24:hours or timeframe[]=7:days` 
+        :type timeframe: list[str]
+        :param order_by: Value to order the results by
+        :type order_by: str
+        :param order_direction: Sort order.
+        :type order_direction: str
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :type _return_http_data_only: bool, optional
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :type _preload_content: bool, optional
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the authentication
+                              in the spec for a single request.
+        :type _request_auth: dict, optional
+        :return: Returns the result object.
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :rtype: tuple(ListDimensionValuesResponse, status_code(int), headers(HTTPHeaderDict))
+        """
+
+        local_var_hosts = [
+            'https://api.mux.com'
+        ]
+        local_var_host = local_var_hosts[0]
+        if kwargs.get('_host_index'):
+            _host_index = int(kwargs.get('_host_index'))
+            if _host_index < 0 or _host_index >= len(local_var_hosts):
+                raise ApiValueError(
+                    "Invalid host index. Must be 0 <= index < %s"
+                    % len(local_var_host)
+                )
+            local_var_host = local_var_hosts[_host_index]
+        local_var_params = locals()
+
+        all_params = [
+            'dimension_id',
+            'limit',
+            'filters',
+            'metric_filters',
+            'timeframe',
+            'order_by',
+            'order_direction'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout',
+                '_request_auth'
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params['kwargs']):
+            if key not in all_params and key != "_host_index":
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method list_dimension_elements" % key
+                )
+            local_var_params[key] = val
+        del local_var_params['kwargs']
+        # verify the required parameter 'dimension_id' is set
+        if self.api_client.client_side_validation and ('dimension_id' not in local_var_params or  # noqa: E501
+                                                        local_var_params['dimension_id'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `dimension_id` when calling `list_dimension_elements`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'dimension_id' in local_var_params:
+            path_params['DIMENSION_ID'] = local_var_params['dimension_id']  # noqa: E501
+
+        query_params = []
+        if 'limit' in local_var_params and local_var_params['limit'] is not None:  # noqa: E501
+            query_params.append(('limit', local_var_params['limit']))  # noqa: E501
+        if 'filters' in local_var_params and local_var_params['filters'] is not None:  # noqa: E501
+            query_params.append(('filters[]', local_var_params['filters']))  # noqa: E501
+            collection_formats['filters[]'] = 'multi'  # noqa: E501
+        if 'metric_filters' in local_var_params and local_var_params['metric_filters'] is not None:  # noqa: E501
+            query_params.append(('metric_filters[]', local_var_params['metric_filters']))  # noqa: E501
+            collection_formats['metric_filters[]'] = 'multi'  # noqa: E501
+        if 'timeframe' in local_var_params and local_var_params['timeframe'] is not None:  # noqa: E501
+            query_params.append(('timeframe[]', local_var_params['timeframe']))  # noqa: E501
+            collection_formats['timeframe[]'] = 'multi'  # noqa: E501
+        if 'order_by' in local_var_params and local_var_params['order_by'] is not None:  # noqa: E501
+            query_params.append(('order_by', local_var_params['order_by']))  # noqa: E501
+        if 'order_direction' in local_var_params and local_var_params['order_direction'] is not None:  # noqa: E501
+            query_params.append(('order_direction', local_var_params['order_direction']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['accessToken']  # noqa: E501
+        
+        response_types_map = {
+            200: "ListDimensionValuesResponse",
+        }
+
+        return self.api_client.call_api(
+            '/data/v1/dimensions/{DIMENSION_ID}/elements', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_types_map=response_types_map,
+            auth_settings=auth_settings,
+            async_req=local_var_params.get('async_req'),
+            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
+            _preload_content=local_var_params.get('_preload_content', True),
+            _request_timeout=local_var_params.get('_request_timeout'),
+            _host=local_var_host,
+            collection_formats=collection_formats,
+            _request_auth=local_var_params.get('_request_auth'))
+
     def list_dimension_values(self, dimension_id, **kwargs):  # noqa: E501
         """Lists the values for a specific dimension  # noqa: E501
 
@@ -53,7 +246,7 @@ class DimensionsApi(object):
         :type limit: int
         :param page: Offset by this many pages, of the size of `limit`
         :type page: int
-        :param filters: Limit the results to rows that match conditions from provided key:value pairs. Must be provided as an array query string parameter.  To exclude rows that match a certain condition, prepend a `!` character to the dimension.  Possible filter names are the same as returned by the List Filters endpoint.  Example:    * `filters[]=operating_system:windows&filters[]=!country:US` 
+        :param filters: Filter results using key:value pairs. Must be provided as an array query string parameter.  **Basic filtering:** * `filters[]=dimension:value` - Include rows where dimension equals value * `filters[]=!dimension:value` - Exclude rows where dimension equals value  **For trace dimensions (like video_cdn_trace):** * `filters[]=+dimension:value` - Include rows where trace contains value * `filters[]=-dimension:value` - Exclude rows where trace contains value * `filters[]=dimension:[value1,value2]` - Exact trace match  **Examples:** * `filters[]=country:US` - US views only * `filters[]=+video_cdn_trace:fastly` - Views using Fastly CDN 
         :type filters: list[str]
         :param metric_filters: Limit the results to rows that match inequality conditions from provided metric comparison clauses. Must be provided as an array query string parameter.  Possible filterable metrics are the same as the set of metric ids, with the exceptions of `exits_before_video_start`, `unique_viewers`, `video_startup_failure_percentage`, `view_dropped_percentage`, and `views`.  Example:    * `metric_filters[]=aggregate_startup_time>=1000` 
         :type metric_filters: list[str]
@@ -93,7 +286,7 @@ class DimensionsApi(object):
         :type limit: int
         :param page: Offset by this many pages, of the size of `limit`
         :type page: int
-        :param filters: Limit the results to rows that match conditions from provided key:value pairs. Must be provided as an array query string parameter.  To exclude rows that match a certain condition, prepend a `!` character to the dimension.  Possible filter names are the same as returned by the List Filters endpoint.  Example:    * `filters[]=operating_system:windows&filters[]=!country:US` 
+        :param filters: Filter results using key:value pairs. Must be provided as an array query string parameter.  **Basic filtering:** * `filters[]=dimension:value` - Include rows where dimension equals value * `filters[]=!dimension:value` - Exclude rows where dimension equals value  **For trace dimensions (like video_cdn_trace):** * `filters[]=+dimension:value` - Include rows where trace contains value * `filters[]=-dimension:value` - Exclude rows where trace contains value * `filters[]=dimension:[value1,value2]` - Exact trace match  **Examples:** * `filters[]=country:US` - US views only * `filters[]=+video_cdn_trace:fastly` - Views using Fastly CDN 
         :type filters: list[str]
         :param metric_filters: Limit the results to rows that match inequality conditions from provided metric comparison clauses. Must be provided as an array query string parameter.  Possible filterable metrics are the same as the set of metric ids, with the exceptions of `exits_before_video_start`, `unique_viewers`, `video_startup_failure_percentage`, `view_dropped_percentage`, and `views`.  Example:    * `metric_filters[]=aggregate_startup_time>=1000` 
         :type metric_filters: list[str]
