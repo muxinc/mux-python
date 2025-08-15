@@ -215,7 +215,8 @@ class VideoView(object):
         'video_dynamic_range_type': 'str',
         'view_cdn_edge_pop': 'str',
         'view_cdn_origin': 'str',
-        'video_creator_id': 'str'
+        'video_creator_id': 'str',
+        'video_cdn_trace': 'list[str]'
     }
 
     attribute_map = {
@@ -397,10 +398,11 @@ class VideoView(object):
         'video_dynamic_range_type': 'video_dynamic_range_type',
         'view_cdn_edge_pop': 'view_cdn_edge_pop',
         'view_cdn_origin': 'view_cdn_origin',
-        'video_creator_id': 'video_creator_id'
+        'video_creator_id': 'video_creator_id',
+        'video_cdn_trace': 'video_cdn_trace'
     }
 
-    def __init__(self, view_total_upscaling=None, preroll_ad_asset_hostname=None, player_source_domain=None, region=None, viewer_user_agent=None, preroll_requested=None, page_type=None, startup_score=None, view_seek_duration=None, country_name=None, player_source_height=None, longitude=None, buffering_count=None, video_duration=None, player_source_type=None, city=None, view_id=None, platform_description=None, video_startup_preroll_request_time=None, viewer_device_name=None, video_series=None, viewer_application_name=None, updated_at=None, view_total_content_playback_time=None, cdn=None, player_instance_id=None, video_language=None, player_source_width=None, player_error_message=None, player_mux_plugin_version=None, watched=None, playback_score=None, page_url=None, metro=None, view_max_request_latency=None, requests_for_first_preroll=None, view_total_downscaling=None, latitude=None, player_source_host_name=None, inserted_at=None, view_end=None, mux_embed_version=None, player_language=None, page_load_time=None, viewer_device_category=None, video_startup_preroll_load_time=None, player_version=None, watch_time=None, player_source_stream_type=None, preroll_ad_tag_hostname=None, viewer_device_manufacturer=None, rebuffering_score=None, experiment_name=None, viewer_os_version=None, player_preload=None, buffering_duration=None, player_view_count=None, player_software=None, player_load_time=None, platform_summary=None, video_encoding_variant=None, player_width=None, view_seek_count=None, viewer_experience_score=None, view_error_id=None, video_variant_name=None, preroll_played=None, viewer_application_engine=None, viewer_os_architecture=None, player_error_code=None, buffering_rate=None, events=None, player_name=None, view_start=None, view_average_request_throughput=None, video_producer=None, error_type_id=None, mux_viewer_id=None, video_id=None, continent_code=None, session_id=None, exit_before_video_start=None, video_content_type=None, viewer_os_family=None, player_poster=None, view_average_request_latency=None, video_variant_id=None, player_source_duration=None, player_source_url=None, mux_api_version=None, video_title=None, id=None, short_time=None, rebuffer_percentage=None, time_to_first_frame=None, viewer_user_id=None, video_stream_type=None, player_startup_time=None, viewer_application_version=None, view_max_downscale_percentage=None, view_max_upscale_percentage=None, country_code=None, used_fullscreen=None, isp=None, property_id=None, player_autoplay=None, player_height=None, asn=None, asn_name=None, quality_score=None, player_software_version=None, player_mux_plugin_name=None, sub_property_id=None, player_remote_played=None, view_max_playhead_position=None, view_playing_time=None, view_session_id=None, viewer_connection_type=None, viewer_device_model=None, weighted_average_bitrate=None, custom_1=None, custom_2=None, custom_3=None, custom_4=None, custom_5=None, custom_6=None, custom_7=None, custom_8=None, custom_9=None, custom_10=None, live_stream_latency=None, asset_id=None, environment_id=None, live_stream_id=None, mux_embed=None, playback_id=None, player_error_context=None, view_drm_type=None, view_dropped_frame_count=None, view_has_ad=None, video_startup_failure=None, ad_attempt_count=None, ad_break_count=None, ad_break_error_count=None, ad_break_error_percentage=None, ad_error_count=None, ad_error_percentage=None, ad_impression_count=None, ad_startup_error_count=None, ad_startup_error_percentage=None, ad_exit_before_start_count=None, ad_exit_before_start_percentage=None, long_resume=None, long_rebuffering=None, playback_failure_error_type_id=None, playback_business_exception_error_type_id=None, video_startup_business_exception_error_type_id=None, playback_failure=None, ad_playback_failure_error_type_id=None, view_content_startup_time=None, ad_preroll_startup_time=None, view_dropped=None, client_application_name=None, client_application_version=None, video_affiliate=None, viewer_plan=None, viewer_plan_status=None, viewer_plan_category=None, view_drm_level=None, video_brand=None, used_pip=None, time_shift_enabled=None, used_captions=None, video_codec=None, audio_codec=None, video_dynamic_range_type=None, view_cdn_edge_pop=None, view_cdn_origin=None, video_creator_id=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, view_total_upscaling=None, preroll_ad_asset_hostname=None, player_source_domain=None, region=None, viewer_user_agent=None, preroll_requested=None, page_type=None, startup_score=None, view_seek_duration=None, country_name=None, player_source_height=None, longitude=None, buffering_count=None, video_duration=None, player_source_type=None, city=None, view_id=None, platform_description=None, video_startup_preroll_request_time=None, viewer_device_name=None, video_series=None, viewer_application_name=None, updated_at=None, view_total_content_playback_time=None, cdn=None, player_instance_id=None, video_language=None, player_source_width=None, player_error_message=None, player_mux_plugin_version=None, watched=None, playback_score=None, page_url=None, metro=None, view_max_request_latency=None, requests_for_first_preroll=None, view_total_downscaling=None, latitude=None, player_source_host_name=None, inserted_at=None, view_end=None, mux_embed_version=None, player_language=None, page_load_time=None, viewer_device_category=None, video_startup_preroll_load_time=None, player_version=None, watch_time=None, player_source_stream_type=None, preroll_ad_tag_hostname=None, viewer_device_manufacturer=None, rebuffering_score=None, experiment_name=None, viewer_os_version=None, player_preload=None, buffering_duration=None, player_view_count=None, player_software=None, player_load_time=None, platform_summary=None, video_encoding_variant=None, player_width=None, view_seek_count=None, viewer_experience_score=None, view_error_id=None, video_variant_name=None, preroll_played=None, viewer_application_engine=None, viewer_os_architecture=None, player_error_code=None, buffering_rate=None, events=None, player_name=None, view_start=None, view_average_request_throughput=None, video_producer=None, error_type_id=None, mux_viewer_id=None, video_id=None, continent_code=None, session_id=None, exit_before_video_start=None, video_content_type=None, viewer_os_family=None, player_poster=None, view_average_request_latency=None, video_variant_id=None, player_source_duration=None, player_source_url=None, mux_api_version=None, video_title=None, id=None, short_time=None, rebuffer_percentage=None, time_to_first_frame=None, viewer_user_id=None, video_stream_type=None, player_startup_time=None, viewer_application_version=None, view_max_downscale_percentage=None, view_max_upscale_percentage=None, country_code=None, used_fullscreen=None, isp=None, property_id=None, player_autoplay=None, player_height=None, asn=None, asn_name=None, quality_score=None, player_software_version=None, player_mux_plugin_name=None, sub_property_id=None, player_remote_played=None, view_max_playhead_position=None, view_playing_time=None, view_session_id=None, viewer_connection_type=None, viewer_device_model=None, weighted_average_bitrate=None, custom_1=None, custom_2=None, custom_3=None, custom_4=None, custom_5=None, custom_6=None, custom_7=None, custom_8=None, custom_9=None, custom_10=None, live_stream_latency=None, asset_id=None, environment_id=None, live_stream_id=None, mux_embed=None, playback_id=None, player_error_context=None, view_drm_type=None, view_dropped_frame_count=None, view_has_ad=None, video_startup_failure=None, ad_attempt_count=None, ad_break_count=None, ad_break_error_count=None, ad_break_error_percentage=None, ad_error_count=None, ad_error_percentage=None, ad_impression_count=None, ad_startup_error_count=None, ad_startup_error_percentage=None, ad_exit_before_start_count=None, ad_exit_before_start_percentage=None, long_resume=None, long_rebuffering=None, playback_failure_error_type_id=None, playback_business_exception_error_type_id=None, video_startup_business_exception_error_type_id=None, playback_failure=None, ad_playback_failure_error_type_id=None, view_content_startup_time=None, ad_preroll_startup_time=None, view_dropped=None, client_application_name=None, client_application_version=None, video_affiliate=None, viewer_plan=None, viewer_plan_status=None, viewer_plan_category=None, view_drm_level=None, video_brand=None, used_pip=None, time_shift_enabled=None, used_captions=None, video_codec=None, audio_codec=None, video_dynamic_range_type=None, view_cdn_edge_pop=None, view_cdn_origin=None, video_creator_id=None, video_cdn_trace=None, local_vars_configuration=None):  # noqa: E501
         """VideoView - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
@@ -585,6 +587,7 @@ class VideoView(object):
         self._view_cdn_edge_pop = None
         self._view_cdn_origin = None
         self._video_creator_id = None
+        self._video_cdn_trace = None
         self.discriminator = None
 
         self.view_total_upscaling = view_total_upscaling
@@ -793,6 +796,8 @@ class VideoView(object):
         self.view_cdn_edge_pop = view_cdn_edge_pop
         self.view_cdn_origin = view_cdn_origin
         self.video_creator_id = video_creator_id
+        if video_cdn_trace is not None:
+            self.video_cdn_trace = video_cdn_trace
 
     @property
     def view_total_upscaling(self):
@@ -4552,6 +4557,27 @@ class VideoView(object):
         """
 
         self._video_creator_id = video_creator_id
+
+    @property
+    def video_cdn_trace(self):
+        """Gets the video_cdn_trace of this VideoView.  # noqa: E501
+
+
+        :return: The video_cdn_trace of this VideoView.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._video_cdn_trace
+
+    @video_cdn_trace.setter
+    def video_cdn_trace(self, video_cdn_trace):
+        """Sets the video_cdn_trace of this VideoView.
+
+
+        :param video_cdn_trace: The video_cdn_trace of this VideoView.  # noqa: E501
+        :type video_cdn_trace: list[str]
+        """
+
+        self._video_cdn_trace = video_cdn_trace
 
     def to_dict(self, serialize=False):
         """Returns the model properties as a dict"""
