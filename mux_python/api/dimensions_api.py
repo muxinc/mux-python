@@ -51,6 +51,8 @@ class DimensionsApi(object):
         :type dimension_id: str
         :param limit: Number of items to include in the response
         :type limit: int
+        :param page: Offset by this many pages, of the size of `limit`
+        :type page: int
         :param filters: Filter results using key:value pairs. Must be provided as an array query string parameter.  **Basic filtering:** * `filters[]=dimension:value` - Include rows where dimension equals value * `filters[]=!dimension:value` - Exclude rows where dimension equals value  **For trace dimensions (like video_cdn_trace):** * `filters[]=+dimension:value` - Include rows where trace contains value * `filters[]=-dimension:value` - Exclude rows where trace contains value * `filters[]=dimension:[value1,value2]` - Exact trace match  **Examples:** * `filters[]=country:US` - US views only * `filters[]=+video_cdn_trace:fastly` - Views using Fastly CDN 
         :type filters: list[str]
         :param metric_filters: Limit the results to rows that match inequality conditions from provided metric comparison clauses. Must be provided as an array query string parameter.  Possible filterable metrics are the same as the set of metric ids, with the exceptions of `exits_before_video_start`, `unique_viewers`, `video_startup_failure_percentage`, `view_dropped_percentage`, and `views`.  Example:    * `metric_filters[]=aggregate_startup_time>=1000` 
@@ -93,6 +95,8 @@ class DimensionsApi(object):
         :type dimension_id: str
         :param limit: Number of items to include in the response
         :type limit: int
+        :param page: Offset by this many pages, of the size of `limit`
+        :type page: int
         :param filters: Filter results using key:value pairs. Must be provided as an array query string parameter.  **Basic filtering:** * `filters[]=dimension:value` - Include rows where dimension equals value * `filters[]=!dimension:value` - Exclude rows where dimension equals value  **For trace dimensions (like video_cdn_trace):** * `filters[]=+dimension:value` - Include rows where trace contains value * `filters[]=-dimension:value` - Exclude rows where trace contains value * `filters[]=dimension:[value1,value2]` - Exact trace match  **Examples:** * `filters[]=country:US` - US views only * `filters[]=+video_cdn_trace:fastly` - Views using Fastly CDN 
         :type filters: list[str]
         :param metric_filters: Limit the results to rows that match inequality conditions from provided metric comparison clauses. Must be provided as an array query string parameter.  Possible filterable metrics are the same as the set of metric ids, with the exceptions of `exits_before_video_start`, `unique_viewers`, `video_startup_failure_percentage`, `view_dropped_percentage`, and `views`.  Example:    * `metric_filters[]=aggregate_startup_time>=1000` 
@@ -143,6 +147,7 @@ class DimensionsApi(object):
         all_params = [
             'dimension_id',
             'limit',
+            'page',
             'filters',
             'metric_filters',
             'timeframe',
@@ -181,6 +186,8 @@ class DimensionsApi(object):
         query_params = []
         if 'limit' in local_var_params and local_var_params['limit'] is not None:  # noqa: E501
             query_params.append(('limit', local_var_params['limit']))  # noqa: E501
+        if 'page' in local_var_params and local_var_params['page'] is not None:  # noqa: E501
+            query_params.append(('page', local_var_params['page']))  # noqa: E501
         if 'filters' in local_var_params and local_var_params['filters'] is not None:  # noqa: E501
             query_params.append(('filters[]', local_var_params['filters']))  # noqa: E501
             collection_formats['filters[]'] = 'multi'  # noqa: E501
