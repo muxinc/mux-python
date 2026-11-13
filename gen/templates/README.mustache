@@ -123,7 +123,7 @@ All exceptions inherit from `ApiException`, you can catch it as in the example a
 
 ### ServiceException
 
-`ServiceException` is thrown when Mux returns a HTTP 5XX Status Code. If you encounter this reproducibly, please get in touch with [support@mux.com](mailto:support@mux.com).
+`ServiceException` is thrown when Mux returns a HTTP 5XX Status Code. If you encounter this reproducibly, please get in touch with us at [mux.com/support](https://www.mux.com/support).
 
 ## Documentation
 
