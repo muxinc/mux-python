@@ -65,7 +65,7 @@ class AssetProgress(object):
     def state(self):
         """Gets the state of this AssetProgress.  # noqa: E501
 
-        The detailed state of the asset ingest process. This field is useful for relaying more granular processing information to end users when a [non-standard input is encountered](https://www.mux.com/docs/guides/minimize-processing-time#non-standard-input).  - `ingesting`: Asset is being ingested (initial processing before or after transcoding). While in this state, the `progress` percentage will be 0. - `transcoding`: Asset is undergoing non-standard transcoding. - `completed`: Asset processing is complete (`status` is `ready`). While in this state, the `progress` percentage will be 100. - `live`: Asset is a live stream currently in progress. While in this state, the `progress` percentage will be -1. - `errored`: Asset has encountered an error (`status` is `errored`). While in this state, the `progress` percentage will be -1.   # noqa: E501
+        The detailed state of the asset ingest process. This field is useful for relaying more granular processing information to end users when a [non-standard input is encountered](https://www.mux.com/docs/guides/minimize-processing-time#non-standard-input).  - `ingesting`: Asset is being ingested (initial processing before or after transcoding). While in this state, the `progress` percentage will be 0. - `transcoding`: Asset is undergoing non-standard transcoding. For assets with a `delivery_profile` of `hls_podcast`, the `progress` percentage runs from 0 to 50 while transcoding. - `optimizing`: Asset is finishing additional processing its `delivery_profile` requires, such as measuring each rendition's bitrate for `hls_podcast` assets. `status` stays `preparing`, and the `progress` percentage runs from 50 to 100. - `completed`: Asset processing is complete (`status` is `ready`). While in this state, the `progress` percentage will be 100. - `live`: Asset is a live stream currently in progress. While in this state, the `progress` percentage will be -1. - `errored`: Asset has encountered an error (`status` is `errored`). While in this state, the `progress` percentage will be -1.   # noqa: E501
 
         :return: The state of this AssetProgress.  # noqa: E501
         :rtype: str
@@ -76,12 +76,12 @@ class AssetProgress(object):
     def state(self, state):
         """Sets the state of this AssetProgress.
 
-        The detailed state of the asset ingest process. This field is useful for relaying more granular processing information to end users when a [non-standard input is encountered](https://www.mux.com/docs/guides/minimize-processing-time#non-standard-input).  - `ingesting`: Asset is being ingested (initial processing before or after transcoding). While in this state, the `progress` percentage will be 0. - `transcoding`: Asset is undergoing non-standard transcoding. - `completed`: Asset processing is complete (`status` is `ready`). While in this state, the `progress` percentage will be 100. - `live`: Asset is a live stream currently in progress. While in this state, the `progress` percentage will be -1. - `errored`: Asset has encountered an error (`status` is `errored`). While in this state, the `progress` percentage will be -1.   # noqa: E501
+        The detailed state of the asset ingest process. This field is useful for relaying more granular processing information to end users when a [non-standard input is encountered](https://www.mux.com/docs/guides/minimize-processing-time#non-standard-input).  - `ingesting`: Asset is being ingested (initial processing before or after transcoding). While in this state, the `progress` percentage will be 0. - `transcoding`: Asset is undergoing non-standard transcoding. For assets with a `delivery_profile` of `hls_podcast`, the `progress` percentage runs from 0 to 50 while transcoding. - `optimizing`: Asset is finishing additional processing its `delivery_profile` requires, such as measuring each rendition's bitrate for `hls_podcast` assets. `status` stays `preparing`, and the `progress` percentage runs from 50 to 100. - `completed`: Asset processing is complete (`status` is `ready`). While in this state, the `progress` percentage will be 100. - `live`: Asset is a live stream currently in progress. While in this state, the `progress` percentage will be -1. - `errored`: Asset has encountered an error (`status` is `errored`). While in this state, the `progress` percentage will be -1.   # noqa: E501
 
         :param state: The state of this AssetProgress.  # noqa: E501
         :type state: str
         """
-        allowed_values = ["ingesting", "transcoding", "completed", "live", "errored"]  # noqa: E501
+        allowed_values = ["ingesting", "transcoding", "optimizing", "completed", "live", "errored"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and state not in allowed_values:  # noqa: E501
             raise ValueError(
                 "Invalid value for `state` ({0}), must be one of {1}"  # noqa: E501
@@ -94,7 +94,7 @@ class AssetProgress(object):
     def progress(self):
         """Gets the progress of this AssetProgress.  # noqa: E501
 
-        Represents the estimated completion percentage. Returns `0 - 100` when in `ingesting`, `transcoding`, or `completed` state, and `-1` when in `live` or `errored` state.  # noqa: E501
+        Represents the estimated completion percentage. Returns `0 - 100` when in `ingesting`, `transcoding`, `optimizing`, or `completed` state, and `-1` when in `live` or `errored` state.  # noqa: E501
 
         :return: The progress of this AssetProgress.  # noqa: E501
         :rtype: float
@@ -105,7 +105,7 @@ class AssetProgress(object):
     def progress(self, progress):
         """Sets the progress of this AssetProgress.
 
-        Represents the estimated completion percentage. Returns `0 - 100` when in `ingesting`, `transcoding`, or `completed` state, and `-1` when in `live` or `errored` state.  # noqa: E501
+        Represents the estimated completion percentage. Returns `0 - 100` when in `ingesting`, `transcoding`, `optimizing`, or `completed` state, and `-1` when in `live` or `errored` state.  # noqa: E501
 
         :param progress: The progress of this AssetProgress.  # noqa: E501
         :type progress: float
